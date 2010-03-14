@@ -1,0 +1,5 @@
+@charset "utf-8";
+
+#header,#google-search-box,#menu,#main-menu{
+	display:none;
+}
