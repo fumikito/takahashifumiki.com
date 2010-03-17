@@ -4,8 +4,9 @@ RewriteCond %{HTTP:Accept-Encoding} gzip
 RewriteCond %{REQUEST_FILENAME} !\.gz$
 RewriteCond %{REQUEST_FILENAME}\.gz -s
 RewriteRule .+ %{REQUEST_URI}.gz
-
+</IfModule>
+<FilesMatch "\.gz$">
 ForceType text/javascript
 AddEncoding x-gzip .gz
-</IfModule>
+</FilesMatch>
 

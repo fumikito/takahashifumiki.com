@@ -2,7 +2,7 @@
 if(is_search()):
 include_once(TEMPLATEPATH."/archive.php");
 else:
-include_once(TEMPLATEPATH."/header.php");
+get_header();
 $footerFlg = true;
 ?>
 
@@ -32,9 +32,18 @@ $footerFlg = true;
 
 <div id="column1">
 
-<ol>
-	<li id="about"><a href="<?php echo $fumiki->root; ?>/about">高橋文樹について</a></li>
-	<li id="inquiery"><a href="<?php echo $fumiki->root; ?>/inquiry">お問い合わせ</a></li>
+<ol class="clearfix">
+	<?php
+		$globalnavi = get_global_navi();
+		query_posts(array("post__in"    => $globalnavi,
+		                  "post_type"   => "page",
+		                  "order_by"    => "ID",
+		                  "order"       => "ASC",
+		                  "post_status" => "publish"));
+		if(have_posts()): while(have_posts()): the_post();
+	?>
+	<li><a class="mincho" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+	<?php endwhile; endif; ?>
 </ol>
 
 <div class="conBox clearfix">
@@ -46,7 +55,7 @@ query_posts('category_name=announcement&showposts=3');
 $queryCounter = 0;
 while(have_posts()):$queryCounter++;  the_post(); ?>
 <li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
-	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 	<span>カテゴリ：<?php the_category(', '); ?><small class="old"><?php the_time('Y/n/d(D)'); ?></small></span>
 	<?php if($queryCounter < 2){echo '<p>'.get_the_excerpt().'</p>';} ?>
 </li>
@@ -57,8 +66,10 @@ while(have_posts()):$queryCounter++;  the_post(); ?>
 
 
 <ul class="banner">
-	<?php $fumiki->banner(2); ?>
-</ul>
+	<?php
+		wp_list_bookmarks("categorize=0&category_name=バナー&title_li=&category_before=&category_after=");
+	?>
+</ul><!-- banner ends-->
 
 </div><!-- #column1 ends -->
 
@@ -125,18 +136,87 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 
 </div><!-- #column2 ends-->
 
+<div id="container">
+	<ul id="gradually-container" class="gradually">
+		<?php
+		$slides = get_posts(array('post_type' => 'attachment',
+		                          'post__in' => get_option("fumiki_slideshow"),
+		                          'post_mime_type' => 'image'));
+		foreach($slides as $s){
+			$data = wp_get_attachment_image_src($s->ID,'full');
+			echo "<li><img src=\"{$data[0]}\" alt=\"{$s->post_excerpt}\" title=\"{$s->post_title}\" width=\"{$data[1]}\" height=\"{$data[2]}\" /></li>\n";
+		}
+		?>
+	</ul>
+	<p class="information"></p>
+</div>
+<!-- #container ends -->
 
+<div class="youtube">
+<?php echo fumiki_youtube(340,180);?>
+</div>
+<!-- .youtube ends -->
+
+<div id="hatena">
+	<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
+	<script language="javascript" type="text/javascript">
+	//<![CDATA[
+		Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
+		Hatena.BookmarkWidget.title = "エントリー";
+		Hatena.BookmarkWidget.sort  = "hot";
+		Hatena.BookmarkWidget.width = 0;
+		Hatena.BookmarkWidget.num   = 5;
+		Hatena.BookmarkWidget.theme = "notheme";
+		Hatena.BookmarkWidget.load();
+	//]]>
+	</script>
+</div>
+<!-- #hatena ends -->
+
+<div class="tweet">
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script>
+	//<![CDATA[
+		new TWTR.Widget({
+		  version: 2,
+		  type: 'profile',
+		  rpp: 3,
+		  interval: 3000,
+		  width: 300,
+		  height: 175,
+		  theme: {
+		    shell: {
+		      background: '#ffffff',
+		      color: '#009fe9'
+		    },
+		    tweets: {
+		      background: '#ffffff',
+		      color: '#999999',
+		      links: '#4d4945'
+		    }
+		  },
+		  features: {
+		    scrollbar: true,
+		    loop: false,
+		    live: true,
+		    hashtags: true,
+		    timestamp: true,
+		    avatars: true,
+		    behavior: 'all'
+		  }
+		}).render().setUser('takahashifumiki').start();
+	//]]>
+	</script>
+</div>
 
 <div id="column3">
-<div id="tag_clouds">
-	<?php st_tag_cloud(array('cloud_section'=> 'random',
+<?php st_tag_cloud(array('cloud_selection'=> 'random',
                              'title'        => '',
 							 'xformat'      => __('<a href="%tag_link%" title="%tag_count% topics" %tag_rel% style="%tag_size% %tag_color%">%tag_name%</a>', 'simpletags'))); ?>
-</div>
 </div><!-- #column3 ends-->
 
 </div><!-- wrapper ends -->
 <?php
-require_once(TEMPLATEPATH."/footer.php");
+get_footer();
 endif;//ref lj.1
 ?>

@@ -1,14 +1,15 @@
 <?php
+/**
+ * アプリケーションの読み込み
+ */
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."slideshow.php");
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."youtube.php");
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."globalnavi.php");
 
 /**
  * グローバル変数の設定
  */
-$fumiki_book = array(
-	"name" => "途中下車",
-	"url"  => "http://www.amazon.co.jp/%E9%80%94%E4%B8%AD%E4%B8%8B%E8%BB%8A-%E5%B9%BB%E5%86%AC%E8%88%8E%E6%96%87%E5%BA%AB-%E9%AB%98%E6%A9%8B-%E6%96%87%E6%A8%B9/dp/4344406850%3FSubscriptionId%3D0Q5JKQGKGX1PM5K1CPG2%26tag%3Dhametuha-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4344406850",
-	"img"  => "book_ad/book.jpg",
-	"desc" => "僕の処女作です。二冊目を早く出したい..."
-);
+
 
 $fumiki_contact = array(
 	"mixi" => "http://mixi.jp/show_friend.pl?id=94088",
@@ -48,7 +49,7 @@ class Fumiki{
 	 * @return void
 	 */
 	function xml(){
-		if(preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"]) == 0) echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
+		if(!preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"])) echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 	}
 
 	/**
@@ -85,7 +86,7 @@ class Fumiki{
 		elseif(is_search()):
 			echo "「".get_search_query()."」の検索結果｜".$this->blogTitle;
 		elseif(is_404()):
-			echo "ごめんなかった。|";
+			echo "404 Page Not Found |";
 			echo $this->blogTitle;
 		endif;
 	}
@@ -121,7 +122,7 @@ class Fumiki{
 		elseif(is_single() || is_page()):
 			echo preg_replace("/\n/s",'',get_the_excerpt());
 		elseif(is_category()):
-			echo strip_tags(category_description());
+			echo preg_replace("/\n/s", "", strip_tags(category_description()));
 		elseif(is_tag()):
 			echo "高橋文樹.com内の「";
 			single_tag_title();
@@ -160,8 +161,9 @@ class Fumiki{
 
 	function js(){
 		$js_path = $this->template."/js/";
-		echo '<script type="text/javascript" src="'.$js_path.'mootools.js"></script>';
-		echo "\n".'<script id="js_initializer" type="text/javascript" src="'.$js_path.'takahashi_onload.js?mode='.rawurlencode($this->mode).'"></script>';
+		echo '<script type="text/javascript" src="'.$js_path.'mootools.js"></script>'."\n";
+		if($this->mode == "home") echo '<script type="text/javascript" src="'.$js_path.'/Gradually.js"></script>'."\n";
+		echo "\n".'<script id="js_initializer" type="text/javascript" src="'.$js_path.'takahashi_onload1.0.js?mode='.rawurlencode($this->mode).'"></script>'."\n";
 	}
 
 	function feed(){
@@ -175,17 +177,17 @@ class Fumiki{
 
 	function archiver(){
 		if(is_category()):
-			echo "\"";
+			echo '"';
 			single_cat_title();
-			echo "\"カテゴリーの記事";
+			echo '"カテゴリーの記事';
 		elseif(is_tag()):
-			echo "\"";
+			echo '"';
 			single_tag_title();
-			echo "\"というタグのついた記事";
+			echo '"というタグのついた記事';
 		elseif(is_search()):
-			echo "\"";
+			echo '"';
 			the_search_query();
-			echo "\"の検索結果";
+			echo '"の検索結果';
 		else:
 
 		endif;
@@ -199,6 +201,7 @@ class Fumiki{
 		global $fumiki_banner;
 		$str = "";
 		$counter;
+		echo get_cat_ID("バナー");
 		foreach($fumiki_banner as $key => $val):
 			$counter++;
 			if($clm > 1):
@@ -236,7 +239,7 @@ class Fumiki{
 	 */
 	function archive_photo(){
 		global $post;
-		$images =& get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image");
+		$images = get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image");
 		if(!empty($images)):
 			ksort($images);
 			$image = current($images);
@@ -255,7 +258,7 @@ class Fumiki{
 	function comments($tag = 'li'){
 		global $wpdb;
 		global $table_prefix;
-		$req = $wpdb->get_results("SELECT comment_ID,comment_post_ID,comment_date,comment_content,comment_author,comment_author_url FROM ".$table_prefix."comments WHERE comment_approved = '1' ORDER BY comment_date DESC LIMIT 5");
+		$req = $wpdb->get_results("SELECT comment_ID,comment_post_ID,comment_date,comment_content,comment_author,comment_author_url FROM ".$table_prefix."comments WHERE comment_approved = '1' AND comment_type != 'pingback' ORDER BY comment_date DESC LIMIT 5");
 		foreach($req as $c):
 			echo "\t\t\t\t<".$tag."><h4>";
 			if($c->comment_author_url):

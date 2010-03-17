@@ -1,6 +1,6 @@
+<?php global $fumiki; ?>
 <div id="footer_wrapper">
 <div id="footer">
-
 
 
 <div class="footer_navi">
@@ -49,9 +49,7 @@
 </div><!-- .footer_navi_child ends-->
 
 <div class="footer_navi_child">
-<ul>
-<?php wp_list_bookmarks('orderby=id&title_before=<h3 class="bm">&title_after=</h3>&title_li='); ?>
-</ul>
+<?php wp_list_bookmarks('category=2&title_before=<h3 class="bm">&title_after=</h3>&title_li=&category_before=&category_after='); ?>
 <div class="about_copytright">
 	<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.1/jp/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.1/jp/80x15.png" width="80" height="15" /></a>
 	高橋文樹.comの<a href="<?php echo $fumiki->root; ?>/policy/">著作権について</a>
@@ -74,6 +72,7 @@
 <?php
 	$fumiki->js();
 	wp_footer();
+	if($_SERVER["SERVER_NAME"] == "takahashifumiki.com"):
 ?>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -84,5 +83,6 @@ try {
 var pageTracker = _gat._getTracker("UA-5329295-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
+<?php endif; ?>
 </body>
 </html>
