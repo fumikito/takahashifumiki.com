@@ -14,8 +14,9 @@ function takahashi_init(){
 	//通常シングルだったら
 	else if(mode.match(/n_single/) || mode.match(/t_single/)) new Single();
 
-	//共通アクション
+	//全ページ共通アクション
 	footer_colorize();
+	searchboxUtil();
 }
 
 var Home = new Class({
@@ -24,7 +25,7 @@ var Home = new Class({
 		this.tategakizer();
 		this.adjustHeight();
 		document.getElement('.desc').toggleClass('toggle');
-		this.searchbox();
+		this.makeSlide();
 	},
 
 	//縦書にする
@@ -90,22 +91,28 @@ var Home = new Class({
 			elt.setStyle('height',valMax);
 		});
 	},
-
-	searchbox: function(){
-		var box = $("s");
-		var btn = document.getElement("#search img");
-		box.addEvent('focus',function(){
-			box.value = "";
-		});
-		box.addEvent('blur',function(){
-			box.value = "入力してください";
-		});
-		box.addEvent('keydown',function(evt){
-			if(evt.key == "enter" && box.value != "") $('search').submit();
-		});
-		btn.addEvent('click',function(){
-			$('search').submit();
-		});
+	
+	makeSlide: function(){
+		var container = null, sources = null;
+		var options = {
+			'panelHeight': 35,
+			'panelWidth': 70,
+			'interval': 3000,
+			'duration': 800,
+			'zIndex': 9000,
+			'onStart': function() {
+				$("container").getElement("p.information").set("html", "now loading....");
+			},
+			'onPreload': function(images) {
+				$("container").getElement("p.information").set("html", images.length.toString() + "loaded");
+			},
+			'onChange': function(image) {
+				$("container").getElement("p.information").set("html", image.title + " : " + image.alt);
+			}
+		};
+		var container	= $("gradually-container");
+		var sources		= $("gradually-container").getElements("li img");
+		new Gradually(container, sources, options);
 	}
 });
 
@@ -127,7 +134,6 @@ var Single = new Class({
 		if (photos.length > 0) {
 			this.make_slimBox(photos);
 		}
-		if(document.getElement('.tweet')) this.tweet();
 		//this.hatena();
 		//this.google();
 		if($('fumiki_flash_container')) this.flash_embed();
@@ -201,27 +207,6 @@ var Single = new Class({
 			div.inject(elt,'before');
 			elt.dispose();
 		});
-	},
-
-	tweet: function(){
-		var app = this.theme_dir + 'web-app/?mode=twitter';
-		var req = new Request.JSON({
-			url: app,
-			method: 'get',
-			link: 'cancel',
-			onSuccess: function(json,txt){
-				var t = document.getElement('.tweet p');
-				t.empty();
-				t.set('text',json[0].text);
-			},
-			onFailure: function(xhr){
-				var t = document.getElement('.tweet p');
-				t.empty();
-				t.toggleClass('failure');
-				t.set('text','読み込みに失敗しましたorz');
-			}
-		});
-		req.send();
 	},
 
 	hatena: function(){
@@ -303,29 +288,51 @@ var Single = new Class({
 	}
 });
 
-/***************************************************************
+
+
+/*-------------------------------------
  * 共通アクション
- ***************************************************************/
+ */
 
 /**
  * リンクのホバーアクション
+ * @return
  */
 function footer_colorize(){
 	$$('#footer li a').each(function(elt,index){
 		var fx = new Fx.Morph(elt,{link:'cancel'});
-		elt.addEvent('mouseenter',function(){
-			fx.start({
+		elt.addEvent('mouseenter',(function(){
+			this.start({
 				color:["#00A0E9"],
 				backgroundColor:["#cee8f4"],
 				paddingLeft:[10]
 			});
-		});
-		elt.addEvent('mouseleave',function(){
-			fx.start({
+		}).bindWithEvent(fx));
+		elt.addEvent('mouseleave',(function(){
+			this.start({
 				color:["#cee8f4"],
 				backgroundColor:["#00A0E9"],
 				paddingLeft: [0]
 			});
-		});
+		}).bindWithEvent(fx));
 	});
+}
+
+
+/**
+ * 検索フォームの使い勝手を変える
+ * @return
+ */
+function searchboxUtil (){
+	var box = $("s");
+	if(box){
+		box.addEvents({
+			'focus': function(e){
+				e.target.value = "";
+			},
+			'blur': function(e){
+				box.value = ">>入力してください";
+			}
+		});
+	}
 }
