@@ -100,8 +100,20 @@ body.hot_home #breadcrumb li{display:inline;line-height:1;font-size:10px;}
 /*---------------------
  * 検索フォーム
  */
-#s{color:#ccc;}
-
+#s{
+	color:#ccc;
+	border:3px solid #00A0E9;
+	border-right:none;
+	font-size:12px;
+	line-height:1;
+	height:12px;
+	padding:3px;
+	vertical-align:top;
+	margin:0;
+}
+#submit {
+	cursor:pointer;
+}
 
 /*---------------------
  * コメント欄
@@ -482,13 +494,13 @@ body.home #header table{
 	font-size:12px;
 }
 
-/*検索*/
+/*見出し下部フォームエリア*/
 body.home #header ul{
 	clear:both;
 	background:url(img/body_rss.gif) left top no-repeat;
 	margin:10px 0 0 80px;
 }
-
+/*RSSリンク*/
 body.home #header ul a{
 	display:block;
 	height:33px;
@@ -500,26 +512,17 @@ body.home #header ul a:hover{
 	-moz-opacity:0.6;
 	filter:alpha(opacity=60);
 }
+/*検索フォーム*/
 body.home #header ul li.search{
 	padding:33px 0 0;
+	vertical-align:top;
 }
 body.home #header ul div{
-	width:98px;
-	height:22px;
-	border:1px solid #00A0E9;
-	float:left;
+	/*width:98px;*/
+	/*height:22px;*/
 }
 body.home #s{
-	border:none;
-	margin:0;
-	padding:2px;
-	width:94px;
-}
-body.home #header ul span{
-	display:block;
-	float:left;
-	height:22px;
-	cursor:pointer;
+	width:104px;
 }
 
 
@@ -534,7 +537,7 @@ body.home #column1{
 /*グローバルナビ*/
 body.home #column1 ol{
 	padding:200px 12px 0 0;
-	margin-bottom:10px;
+	margin-bottom:30px;
 }
 
 body.home #column1 ol li{
@@ -557,6 +560,35 @@ body.home #column1 ol li a{
 /*告知*/
 body.home #column1 .conBox{
 	margin-right:10px;
+	width:450px;
+}
+body.home #column1 .conBox ul{
+	width:400px;
+}
+body.home #column1 .conBox ul li.first img{
+	float:left;
+}
+body.home #column1 .conBox ul li.odd,
+body.home #column1 .conBox ul li.even{
+	width:184px;
+}
+body.home #column1 .conBox ul li.odd{
+	clear:left;
+	float:left;
+}
+body.home #column1 .conBox ul li.even{
+	clear:right;
+	float:right;
+}
+
+
+/*---------------------
+ * Twitter
+ */
+body.home .tweet{
+	margin-top:20px;
+	width:200px;
+	float:right;
 }
 
 
@@ -564,15 +596,10 @@ body.home #column1 .conBox{
  * 二段目
  */
 
-/*バナー*/
-body.home .banner{
-	width:125px;
-	float:left;
-}
-
 body.home #column2{
 	clear:both;
-	padding-top:10px;
+	padding-top:30px;
+	margin-bottom:30px;
 }
 body.home #column2 .conBox{margin-right:10px;}
 /*文芸*/
@@ -595,16 +622,31 @@ body.home #column2 .others  a.cat_top{background-position:-664px bottom;}
  * 三段目
  */
 body.home #column3{
-	padding-top:10px;
+	padding-top:30px;
+	padding-bottom:30px;
 	clear:both;
 }
 
 body.home #column3{
 }
 
+
+/*バナー*/
+body.home .banner{
+	width:280px;
+	float:left;
+}
+body.home .banner li{
+	float:left;
+	margin-right:15px;
+	margin-bottom:15px;
+}
+
+/*タグクラウド*/
 body.home .st-tag-cloud{
-	padding:10px;
-	text-align:left;
+	text-align:center;
+	width:380px;
+	float:right;
 }
 body.home .st-tag-cloud a:link,
 body.home .st-tag-cloud a:visited,
@@ -612,12 +654,72 @@ body.home .st-tag-cloud a:hover,
 body.home .st-tag-cloud a:active{text-decoration:none;}
 
 /*---------------------*
+ * Youtube
+ */
+body.home .youtube{
+	background:url(img/home_macbook.png) left top no-repeat;
+	width:340px;
+	height:213px;
+	padding:23px 85px 55px 87px;
+	margin-top:30px;
+	float:right;
+}
+
+/*---------------------*
+ * はてな
+ */
+body.home #hatena{
+	width:150px;
+	float:left;
+}
+body.home .hatena-bookmark-widget-title{
+	background:#00A0E9;
+	padding:5px;
+	font-size:14px;
+	line-height:1;
+	margin-bottom:10px;
+	text-align:center;
+}
+body.home .hatena-bookmark-widget-title img{display:none;}
+body.home .hatena-bookmark-widget-title a{
+	text-decoration:none;
+	color:#fff;
+}
+body.home .hatena-bookmark-widget-footer{}
+body.home .hatena-bookmark-widget-body ul{
+	margin-bottom:10px;
+	padding-left:20px;
+}
+body.home .hatena-bookmark-widget-body li{
+	margin-bottom:3px;
+	font-size:10px;
+	list-style:square outside;
+	color:#00A0E9;
+	text-align:left;
+}
+body.home .hatena-bookmark-widget-body li strong{
+	margin-left:0.5em;
+}
+body.home .hatena-bookmark-widget-body li strong a,
+body.home .hatena-bookmark-widget-body li em a{
+	background:#00A0E9;
+	color:#fff;
+	text-decoration:none;
+	padding:0 3px;
+}
+body.home .hatena-bookmark-widget-body li strong a:hover{
+	background:none;
+	color:#00A0E9;
+}
+body.home .hatena-bookmark-widget-footer{display:none;}
+
+/*---------------------*
  * スライドショー
  */
-body.home div#container {
+body.home #container {
 	width: 700px;
 	padding: 10px 10px 0px 10px;
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 30px 0px;
 	background: #fff;
 	clear:both;
 }
@@ -651,7 +753,13 @@ body.home p.information {
 	padding: 5px 10px 10px 10px;
 	margin-bottom: 0px;
 }
-					
+
+
+/*フッター*/
+body.home #footer{
+	width:700px;
+	margin:0 auto;
+}
 /****************************************
  * トップページ設定終わり
  ****************************************/
@@ -1427,11 +1535,5 @@ a.more{
 }
 
 #error404 #s{
-	border:#00a0e9 3px solid;
-	font-size:12px;
-	line-height:1;
-	height:12px;
-	padding:3px;
-	vertical-align:top;
 	width:200px;
 }

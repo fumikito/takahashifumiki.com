@@ -331,7 +331,7 @@ function searchboxUtil (){
 				e.target.value = "";
 			},
 			'blur': function(e){
-				box.value = ">>入力してください";
+				box.value = String.fromCharCode(8811) + "検索語句";
 			}
 		});
 	}

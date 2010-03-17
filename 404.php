@@ -12,7 +12,7 @@ get_header();
 </h1>
 <form action="<?php echo $fumiki->root; ?>" method="get" id="search" name="search">
 	<div id="s_form">
-		<input id="s" name="s" type="text" value="&raquo;入力してください" /><input id="submit" type="image" name="submit" alt="検索する" src="<?php echo $fumiki->template; ?>/img/body_btn_search.gif" value="検索する" />
+		<input id="s" name="s" type="text" value="&raquo;検索語句" /><input id="submit" type="image" name="submit" alt="検索する" src="<?php echo $fumiki->template; ?>/img/body_btn_search.gif" value="検索する" />
 	</div>
 </form>
 </div>

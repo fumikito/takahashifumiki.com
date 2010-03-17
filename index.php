@@ -21,8 +21,7 @@ $footerFlg = true;
 	<li><a rel="alternate" type="application/rss+xml" href="<?php $fumiki->feed(); ?>">高橋文樹.comの最新エントリーフィード</a></li>
 	<li class="search">
 		<form action="<?php echo $fumiki->root; ?>" method="get" id="search" name="search">
-			<div><input id="s" name="s" type="text" value="入力してください" /></div>
-			<span><img alt="検索する" src="<?php echo $fumiki->template; ?>/img/body_btn_search.gif" width="37" height="27" /></span>
+			<input id="s" name="s" type="text" value="&raquo;検索語句" /><input id="submit" name="submit" value="Submit" type="image" alt="検索する" src="<?php echo $fumiki->template; ?>/img/body_btn_search.gif" />
 		</form>
 	</li>
 </ul>
@@ -51,30 +50,46 @@ $footerFlg = true;
 <ul>
 <?php
 //告知の出力
-query_posts('category_name=announcement&showposts=3');
+query_posts('category_name=announcement&showposts=5');
 $queryCounter = 0;
-while(have_posts()):$queryCounter++;  the_post(); ?>
-<li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
+while(have_posts()):$queryCounter++;  the_post();
+if($queryCounter < 2){
+	$pclass = "first clearfix";
+}elseif($queryCounter % 2 == 0){
+	$pclass = "even";
+}else{
+	$pclass = "odd";
+}
+?>
+<li class="<?php echo $pclass; ?>">
+	<?php if($queryCounter < 2) $fumiki->archive_photo("thumbnail"); ?>
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 	<span>カテゴリ：<?php the_category(', '); ?><small class="old"><?php the_time('Y/n/d(D)'); ?></small></span>
-	<?php if($queryCounter < 2){echo '<p>'.get_the_excerpt().'</p>';} ?>
+	<div class="excerpt">
+		<?php
+			if($queryCounter == 1) the_excerpt();
+			else echo mb_substr(get_the_excerpt(), 0, 60, 'utf-8');
+		?>
+	</div>
 </li>
 <?php endwhile; ?>
 </ul>
-<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/announcement/" title="告知の詳細">告知の詳細</a>
+<p class="cat_top">
+	<a href="<?php echo $fumiki->root; ?>/category/announcement/" title="告知の詳細">
+		告知の詳細
+	</a>
+</p>
 </div><!-- .conBox ends-->
-
-
-<ul class="banner">
-	<?php
-		wp_list_bookmarks("categorize=0&category_name=バナー&title_li=&category_before=&category_after=");
-	?>
-</ul><!-- banner ends-->
 
 </div><!-- #column1 ends -->
 
 
-<div id="column2">
+<div class="tweet">
+	<?php fumiki_twitter(200, 100, "true"); ?>
+</div>
+<!-- .tweet ends -->
+
+<div id="column2" class="clearfix">
 
 <div class="conBox clearfix literature">
 <h3>文芸活動</h3>
@@ -136,6 +151,8 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 
 </div><!-- #column2 ends-->
 
+
+
 <div id="container">
 	<ul id="gradually-container" class="gradually">
 		<?php
@@ -148,12 +165,14 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 		}
 		?>
 	</ul>
-	<p class="information"></p>
+	<p class="information">&nbsp;</p>
 </div>
 <!-- #container ends -->
 
+
+
 <div class="youtube">
-<?php echo fumiki_youtube(340,180);?>
+<?php echo fumiki_youtube(340, 213);?>
 </div>
 <!-- .youtube ends -->
 
@@ -162,7 +181,7 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 	<script language="javascript" type="text/javascript">
 	//<![CDATA[
 		Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
-		Hatena.BookmarkWidget.title = "エントリー";
+		Hatena.BookmarkWidget.title = "はてな最新人気記事";
 		Hatena.BookmarkWidget.sort  = "hot";
 		Hatena.BookmarkWidget.width = 0;
 		Hatena.BookmarkWidget.num   = 5;
@@ -173,43 +192,12 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 </div>
 <!-- #hatena ends -->
 
-<div class="tweet">
-	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-	<script>
-	//<![CDATA[
-		new TWTR.Widget({
-		  version: 2,
-		  type: 'profile',
-		  rpp: 3,
-		  interval: 3000,
-		  width: 300,
-		  height: 175,
-		  theme: {
-		    shell: {
-		      background: '#ffffff',
-		      color: '#009fe9'
-		    },
-		    tweets: {
-		      background: '#ffffff',
-		      color: '#999999',
-		      links: '#4d4945'
-		    }
-		  },
-		  features: {
-		    scrollbar: true,
-		    loop: false,
-		    live: true,
-		    hashtags: true,
-		    timestamp: true,
-		    avatars: true,
-		    behavior: 'all'
-		  }
-		}).render().setUser('takahashifumiki').start();
-	//]]>
-	</script>
-</div>
-
-<div id="column3">
+<div id="column3" class="clearfix">
+<ul class="banner clearfix">
+	<?php
+		wp_list_bookmarks("categorize=0&category_name=バナー&title_li=&category_before=&category_after=");
+	?>
+</ul><!-- banner ends-->
 <?php st_tag_cloud(array('cloud_selection'=> 'random',
                              'title'        => '',
 							 'xformat'      => __('<a href="%tag_link%" title="%tag_count% topics" %tag_rel% style="%tag_size% %tag_color%">%tag_name%</a>', 'simpletags'))); ?>

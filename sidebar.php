@@ -1,39 +1,7 @@
 <?php global $fumiki; ?>
 <div id="right">
 		<div class="tweet">
-			<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-			<script>
-			//<![CDATA[
-				new TWTR.Widget({
-				  version: 2,
-				  type: 'profile',
-				  rpp: 3,
-				  interval: 3000,
-				  width: 300,
-				  height: 175,
-				  theme: {
-				    shell: {
-				      background: '#ffffff',
-				      color: '#009fe9'
-				    },
-				    tweets: {
-				      background: '#ffffff',
-				      color: '#999999',
-				      links: '#4d4945'
-				    }
-				  },
-				  features: {
-				    scrollbar: true,
-				    loop: false,
-				    live: true,
-				    hashtags: true,
-				    timestamp: true,
-				    avatars: true,
-				    behavior: 'all'
-				  }
-				}).render().setUser('takahashifumiki').start();
-			//]]>
-			</script>
+			<?php fumiki_twitter(); ?>
 		</div>
 
 

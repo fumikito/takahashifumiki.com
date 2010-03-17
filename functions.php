@@ -10,7 +10,6 @@ require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."g
  * グローバル変数の設定
  */
 
-
 $fumiki_contact = array(
 	"mixi" => "http://mixi.jp/show_friend.pl?id=94088",
 	"skype" => "skype:fumikito?chat",
@@ -19,10 +18,6 @@ $fumiki_contact = array(
 	"hametuha" => "http://hametuha.org"
 );
 
-$fumiki_banner = array(
-	"破滅派" => "http://hametuha.com",
-	"Mootools 1.2.1ドキュメント日本語訳" => "http://takahashifumiki.com/category/web/mootools"
-);
 
 /**
  * Fumiki
@@ -240,15 +235,18 @@ class Fumiki{
 	 * @return
 	 * @param $cont Object
 	 */
-	function archive_photo(){
+	function archive_photo($size = "medium"){
 		global $post;
 		$images = get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image");
 		if(!empty($images)):
 			ksort($images);
 			$image = current($images);
-			echo wp_get_attachment_image($image->ID,"medium");
+			echo wp_get_attachment_image($image->ID,$size);
 		else:
-			echo '<img class="attachment-medium" src="'.$this->template.'/img/archive_nophoto.gif" width="200" height="150" alt="写真なし" />';
+			$width = ($size == "medium") ? 200 : 150;
+			$height = ($size == "medium") ? 150 : 100;
+			$src = ($size == "medium") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
+			echo '<img class="attachment-medium" src="'.$this->template.'/img/'.$src.'" width="'.$width.'" height="'.$height.'" alt="写真なし" />';
 		endif;
 	}
 
@@ -439,4 +437,49 @@ EOD;
 }
 //フィルター登録
 add_filter("the_content",'fumiki_inquiry');
+
+/**
+ * Twitterウィジェットを表示
+ * @param integer $width
+ * @param integer $height
+ * @return void
+ */
+function fumiki_twitter($width = 300, $height =175, $loop = "false")
+{
+?>
+	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+		new TWTR.Widget({
+		  version: 2,
+		  type: 'profile',
+		  rpp: 3,
+		  interval: 3000,
+		  width: <?php echo $width; ?>,
+		  height: <?php echo $height; ?>,
+		  theme: {
+		    shell: {
+		      background: '#ffffff',
+		      color: '#00A0E9'
+		    },
+		    tweets: {
+		      background: '#ffffff',
+		      color: '#999999',
+		      links: '#4d4945'
+		    }
+		  },
+		  features: {
+		    scrollbar: true,
+		    loop: <?php echo $loop; ?>,
+		    live: true,
+		    hashtags: true,
+		    timestamp: true,
+		    avatars: true,
+		    behavior: 'all'
+		  }
+		}).render().setUser('takahashifumiki').start();
+	//]]>
+	</script>
+<?php
+}
 ?>
