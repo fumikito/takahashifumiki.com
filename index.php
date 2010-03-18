@@ -13,9 +13,7 @@ $footerFlg = true;
 
 <h1><?php echo $fumiki->blogTitle; ?></h1>
 
-<div class="desc">
-	<?php echo $fumiki->desc(); ?>
-</div><!-- .desc ends-->
+<div class="desc"><?php echo $fumiki->desc(); ?></div><!-- .desc ends-->
 
 <ul>
 	<li><a rel="alternate" type="application/rss+xml" href="<?php $fumiki->feed(); ?>">高橋文樹.comの最新エントリーフィード</a></li>
@@ -134,7 +132,7 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 <h3>その他雑文</h3>
 <ul>
 <?php
-//雑記の出力
+//雑文の出力
 query_posts('category_name=others&showposts=5');
 $queryCounter = 0;
 while(have_posts()):$queryCounter++; the_post(); ?>
@@ -151,7 +149,7 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 
 </div><!-- #column2 ends-->
 
-
+<?php /*
 
 <div id="container">
 	<ul id="gradually-container" class="gradually">
@@ -168,7 +166,7 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 	<p class="information">&nbsp;</p>
 </div>
 <!-- #container ends -->
-
+*/?>
 
 
 <div class="youtube">

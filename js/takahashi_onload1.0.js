@@ -20,63 +20,20 @@ function takahashi_init(){
 }
 
 var Home = new Class({
+	//縦書き用コントローラ
+	tategaki: null,
+	
 	//コンストラクタ
 	initialize: function(){
-		this.tategakizer();
+		//縦書きにする
+		this.tategaki = new Tategakizer();
+		new Fx.Tween(this.tategaki.make(document.getElement('.desc'),"。")).start('color','#4D4945');
+		
+		//目次の高さを揃える
 		this.adjustHeight();
+		
 		document.getElement('.desc').toggleClass('toggle');
-		this.makeSlide();
-	},
-
-	//縦書にする
-	tategakizer: function(){
-		var tate = document.getElement('div.desc');
-		var str = tate.get('text');
-		str = str.trim().split('。');
-		var table = [];
-		str.each(function(elt,index){
-			if(elt != '') table.push(elt.split(''));
-		});
-
-		//最大行を数える
-		var num = 0;
-		table.each(function(elt,index){
-			if(elt.length > num) num = elt.length;
-		});
-
-		var nstr = '';
-
-		//行の数だけループ
-		for(i=0;i<=num;i++){
-			if(i == num){
-				nstr += '<tr>';
-				for(k=table.length;k>0;k--){
-					if(table[k-1][num-1]){
-						nstr += '<td>&nbsp;</td>';
-					}else{
-						nstr += '<td>&nbsp;</td>';
-					}
-				}
-				nstr += '</tr>';
-			}else{
-				nstr += '<tr>';
-				for(j=table.length;j>0;j--){
-					nstr += '<td align="center">';
-					if(table[j-1][i]){
-						nstr += table[j-1][i];
-					}else{
-						if (!table[j - 1][i - 1]) nstr += '&nbsp;';
-						else nstr += '&nbsp;';
-					}
-					nstr += '</td>';
-				}
-				nstr += '</tr>';
-			}
-		}
-		tate.empty();
-		tate.set('html','<table align="center" cellpading="0" cellspacing="0">' + nstr + '</table>');
-		var fx = new Fx.Tween(tate);
-		fx.start('color','#4D4945');
+		//this.makeSlide();
 	},
 
 	//高さをそろえる

@@ -481,6 +481,7 @@ body.home #header h1{
 	background:url(img/body_h1.gif) left top no-repeat;
 	text-indent:-9999px;
 }
+/*リード*/
 body.home #header .desc{
 	width:80px;
 	float:left;
@@ -489,9 +490,15 @@ body.home #header .desc{
 }
 
 /*縦書*/
-body.home #header table{
-	line-height:1;
+body.home #header .desc p{
+	float:right;
+	line-height:1.1;
 	font-size:12px;
+	width:1em;
+	text-align:center;
+}
+body.home #header .desc span{
+	display:block;
 }
 
 /*見出し下部フォームエリア*/
@@ -537,7 +544,7 @@ body.home #column1{
 /*グローバルナビ*/
 body.home #column1 ol{
 	padding:200px 12px 0 0;
-	margin-bottom:30px;
+	margin-bottom:70px;
 }
 
 body.home #column1 ol li{
