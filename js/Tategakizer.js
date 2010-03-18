@@ -8,16 +8,19 @@ var Tategakizer = new Class({
 		
 	},
 	
+	/**
+	 * 指定された要素を縦書きにする
+	 */
 	make: function(element,splitter){
 		var txt = element.get('text');
-		var lines = txt.split(splitter);
+		var lines = (splitter) ? txt.split(splitter) : [txt];
 		element.empty();
 		lines.each((function(elt,index){
 			var str = (elt != "") ? elt + splitter : elt;
 			var line = this.line(str, 'p');
 			if(line.get('text')) line.inject(element);
 		}),this);
-		return element
+		return element.addClass('tategaki');
 	},
 	
 	line: function(str, linewrapper){
@@ -39,6 +42,8 @@ var Tategakizer = new Class({
 	
 	filter: function(element){
 		if(this.shibu.contains(element.get('text'))) element.addClass('shibu');
+		if(this.nibu.contains(element.get('text'))) element.addClass('nibu');
+		if(this.tcy.contains(element.get('text'))) element.addClass('tcy');
 		return element;
 	},
 	
@@ -49,5 +54,6 @@ var Tategakizer = new Class({
 	//文字列をチェックする属性
 	tcy: ["「","」","（","）"],
 	tcy_demi: [],
-	shibu: ["。","、"]
+	shibu: ["。","、"],
+	nibu: ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","っ","ァ","ィ","ゥ","ェ","ォ","ッ"],
 });

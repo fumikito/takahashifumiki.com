@@ -28,7 +28,9 @@ var Home = new Class({
 		//縦書きにする
 		this.tategaki = new Tategakizer();
 		new Fx.Tween(this.tategaki.make(document.getElement('.desc'),"。")).start('color','#4D4945');
-		
+		$$('#column1 ol a,#column1 h2,#column2 h3,#column1 h3 a').each(function(elt,index){
+			this.tategaki.make(elt,'');
+		},this);
 		//目次の高さを揃える
 		this.adjustHeight();
 		

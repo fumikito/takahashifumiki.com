@@ -44,7 +44,7 @@ $footerFlg = true;
 </ol>
 
 <div class="conBox clearfix">
-<h2>告知</h2>
+<h2 class="mincho">告知</h2>
 <ul>
 <?php
 //告知の出力
@@ -90,7 +90,7 @@ if($queryCounter < 2){
 <div id="column2" class="clearfix">
 
 <div class="conBox clearfix literature">
-<h3>文芸活動</h3>
+<h3 class="mincho">文芸活動</h3>
 <ul>
 <?php
 //文芸活動の出力
@@ -110,7 +110,7 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 
 
 <div class="conBox clearfix web">
-<h3>ウェブ制作</h3>
+<h3 class="mincho">ウェブ制作</h3>
 <ul>
 <?php
 //Web制作の出力
@@ -129,7 +129,7 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 
 
 <div class="conBox clearfix others">
-<h3>その他雑文</h3>
+<h3 class="mincho">その他雑文</h3>
 <ul>
 <?php
 //雑文の出力
