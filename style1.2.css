@@ -475,14 +475,21 @@ body.home .conBox a.cat_top{
 	-moz-transform: rotate(90deg);
 	margin-left: -0.15em;
 }
-
+.ascii{
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+}
 /*---------------------
  * 縦書き個別設定
  */
 body.home #column1 .conBox h3 p,
 body.home .conBox h4 p{
-	width:1em;
+	float:right;
+	width:1.5em;
 }
+
+
 
 /*---------------------
  * ラッパー

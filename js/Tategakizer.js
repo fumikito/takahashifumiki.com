@@ -9,9 +9,9 @@ var Tategakizer = new Class({
 	},
 	
 	/**
-	 * 指定された要素を縦書きにする
+	 * 指定された要素を特定の要素で区切って縦書きにする
 	 */
-	make: function(element,splitter){
+	devide: function(element,splitter){
 		var txt = element.get('text');
 		var lines = (splitter) ? txt.split(splitter) : [txt];
 		element.empty();
@@ -21,6 +21,39 @@ var Tategakizer = new Class({
 			if(line.get('text')) line.inject(element);
 		}),this);
 		return element.addClass('tategaki');
+	},
+	
+	/**
+	 * 指定された要素を指定の文字数で区切って返す
+	 */
+	make: function(element,limit){
+		var txt = this.applyTcy(element.get('text')).split(':::');
+		// TODO: 縦中横の実装 txt = this.applyTcy(txt);
+		var pArr = [];
+		var counter = 0;
+		txt.each(function(elt,index){
+			console.log(elt);
+			if(counter % limit == 0) pArr.push(new Element('p'));
+			if(elt.match(/^autoAscii/)){
+				new Element('span').set('text',elt.replace(/^autoAscii/,"")).addClass('ascii').setStyles({
+					width: (elt.length - 9) + 'em',
+					height: (elt.length - 9) + 'em'
+				}).inject(pArr[counter]);
+			}else if(elt.match(/^autoTcy/)){
+				new Element('span').set('text',elt.replace(/^autoTcy/,"")).addClass('horizontal').inject(pArr[counter]);
+			}else{
+				var arr = elt.split('');
+				arr.each(function(letter,idx){
+					console.log(letter);
+					this.wrap(letter,'span').inject(pArr[counter]);
+				},this);
+			}
+			console.log('here');
+		},this);
+		element.empty().addClass('tategaki');
+		pArr.each(function(elt,index){
+			elt.inject(element);
+		});
 	},
 	
 	line: function(str, linewrapper){
@@ -51,9 +84,14 @@ var Tategakizer = new Class({
 		
 	},
 	
+	applyTcy: function(str){
+		var newStr = str.replace(/(^|[^ -~])([ -~]{5,})([^ -~]|$)/g, "$1:::autoAscii$2:::$3").replace(/(^|[^ -~])([ -~][ -~])([^ -~]|$)/g,"$1:::autoTcy$2:::$3");
+		return newStr.replace(/^:::/,"").replace(/:::$/,"");
+	},
+	
 	//文字列をチェックする属性
-	tcy: ["「","」","（","）"],
+	tcy: ["「","」","（","）","：","ー","＝"],
 	tcy_demi: [],
 	shibu: ["。","、"],
-	nibu: ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","っ","ァ","ィ","ゥ","ェ","ォ","ッ"],
+	nibu: ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","っ","ァ","ィ","ゥ","ェ","ォ","ッ","ャ","ュ","ョ"],
 });

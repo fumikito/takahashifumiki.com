@@ -27,9 +27,12 @@ var Home = new Class({
 	initialize: function(){
 		//縦書きにする
 		this.tategaki = new Tategakizer();
-		new Fx.Tween(this.tategaki.make(document.getElement('.desc'),"。")).start('color','#4D4945');
-		$$('#column1 ol a,#column1 h2,#column2 h3,#column1 h3 a').each(function(elt,index){
-			this.tategaki.make(elt,'');
+		new Fx.Tween(this.tategaki.devide(document.getElement('.desc'),"。")).start('color','#4D4945');
+		$$('#column1 ol a,#column1 h2,#column2 h3').each(function(elt,index){
+			this.tategaki.devide(elt,'');
+		},this);
+		$$('#column1 h3 a,#column2 h4 a').each(function(elt,index){
+			this.tategaki.make(elt,15);
 		},this);
 		//目次の高さを揃える
 		this.adjustHeight();
@@ -82,7 +85,6 @@ var Single = new Class({
 	initialize: function(){
 		var str = $('js_initializer').src.split('js/takahashi_onload');
 		this.theme_dir = str[0];
-		//if(window.getSize().x > 1200) alert('でかい');
 		if($$('.n_single')) window.addEvent('resize',this.windowAdjust);
 		this.codeFormatter();
 		var jpg = $$('.entry a[href$=jpg]');
