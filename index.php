@@ -149,24 +149,21 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 
 </div><!-- #column2 ends-->
 
-<?php /*
 
 <div id="container">
-	<ul id="gradually-container" class="gradually">
+	<div id="floom" class="floom">
 		<?php
 		$slides = get_posts(array('post_type' => 'attachment',
 		                          'post__in' => get_option("fumiki_slideshow"),
 		                          'post_mime_type' => 'image'));
 		foreach($slides as $s){
 			$data = wp_get_attachment_image_src($s->ID,'full');
-			echo "<li><img src=\"{$data[0]}\" alt=\"{$s->post_excerpt}\" title=\"{$s->post_title}\" width=\"{$data[1]}\" height=\"{$data[2]}\" /></li>\n";
+			echo "<img src=\"{$data[0]}\" alt=\"{$s->post_excerpt}\" title=\"{$s->post_title}\" width=\"{$data[1]}\" height=\"{$data[2]}\" />\n";
 		}
 		?>
-	</ul>
-	<p class="information">&nbsp;</p>
+	</div>
 </div>
 <!-- #container ends -->
-*/?>
 
 
 <div class="youtube">

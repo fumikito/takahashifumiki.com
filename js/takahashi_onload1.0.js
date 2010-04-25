@@ -38,7 +38,7 @@ var Home = new Class({
 		this.adjustHeight();
 		
 		document.getElement('.desc').toggleClass('toggle');
-		//this.makeSlide();
+		this.makeSlide();
 	},
 
 	//高さをそろえる
@@ -55,26 +55,13 @@ var Home = new Class({
 	},
 	
 	makeSlide: function(){
-		var container = null, sources = null;
-		var options = {
-			'panelHeight': 35,
-			'panelWidth': 70,
-			'interval': 3000,
-			'duration': 800,
-			'zIndex': 9000,
-			'onStart': function() {
-				$("container").getElement("p.information").set("html", "now loading....");
+		$('floom').floom($$('#floom img'),{
+			slidesBase: "",
+			sliceFxIn: {
+				top: 20
 			},
-			'onPreload': function(images) {
-				$("container").getElement("p.information").set("html", images.length.toString() + "loaded");
-			},
-			'onChange': function(image) {
-				$("container").getElement("p.information").set("html", image.title + " : " + image.alt);
-			}
-		};
-		var container	= $("gradually-container");
-		var sources		= $("gradually-container").getElements("li img");
-		new Gradually(container, sources, options);
+			axis: 'vertical'
+		});
 	}
 });
 

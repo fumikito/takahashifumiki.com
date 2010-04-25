@@ -3,8 +3,15 @@
 		<div class="tweet">
 			<?php fumiki_twitter(); ?>
 		</div>
-
-
+		
+		<div class="social">
+			<ul class="banner">
+				<?php
+					wp_list_bookmarks("categorize=0&category_name=バナー&title_li=&category_before=&category_after=");
+				?>
+			</ul>
+		</div>
+		
 		<ul id="column1">
 			<li class="catnav">
 				<h3>カテゴリー</h3>
@@ -54,10 +61,16 @@
 					<?php
 						wp_list_bookmarks("categorize=0&category_name=バナー&title_li=&category_before=&category_after=");
 					?>
-				</ul><!-- banner ends-->
+				</ul>
+				<!-- banner ends-->
 			</li>
 			<li class="insight">
 				<iframe frameborder="0" allowtransparency="true" height="600" width="120" marginheight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=2574999&pid=878276315" marginwidth="0"><script language="javascript" src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=2574999&pid=878276315"></script><noscript><a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=2574999&pid=878276315" target="_blank" ><img src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=2574999&pid=878276315" height="600" width="120" border="0"></a></noscript></iframe>
+			</li>
+			<li class="insight">
+				<a href="http://www.lastfm.jp/user/fumikito/?chartstyle=basic10">
+					<img src="http://imagegen.last.fm/basic10/tracks/10/fumikito.gif" border="0" />
+				</a>
 			</li>
 			<li class="adscense">
 				<script type="text/javascript"><!--

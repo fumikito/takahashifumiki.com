@@ -107,7 +107,7 @@ else:
 			<?php fumiki_to_top(); ?>
 		</div><!--#end_meta ends-->
 
-		<?php if(!is_page()) comments_template(); ?>
+		<?php comments_template(); ?>
 
 	</div><!-- #main ends-->
 

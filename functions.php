@@ -158,7 +158,7 @@ class Fumiki{
 		$js_path = $this->template."/js/";
 		echo '<script type="text/javascript" src="'.$js_path.'mootools.js"></script>'."\n";
 		if($this->mode == "home"){
-			echo '<script type="text/javascript" src="'.$js_path.'/Gradually.js"></script>'."\n";
+			echo '<script type="text/javascript" src="'.$js_path.'/floom-1.0.js"></script>'."\n";
 			echo '<script type="text/javascript" src="'.$js_path.'/Tategakizer.js"></script>'."\n";
 		}
 		echo "\n".'<script id="js_initializer" type="text/javascript" src="'.$js_path.'takahashi_onload1.0.js?mode='.rawurlencode($this->mode).'"></script>'."\n";
