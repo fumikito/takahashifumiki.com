@@ -5,6 +5,10 @@ else:
 get_header();
 $footerFlg = true;
 ?>
+<div id="indicator">
+	<img src="<?php bloginfo("template_directory"); ?>/css/multibox/loader.gif" alt="Loading..." width="31" height="31" />
+	<span>初期化中<small>...</small></span>
+</div>
 
 <div id="wrapper">
 
@@ -19,7 +23,7 @@ $footerFlg = true;
 	<li><a rel="alternate" type="application/rss+xml" href="<?php $fumiki->feed(); ?>">高橋文樹.comの最新エントリーフィード</a></li>
 	<li class="search">
 		<form action="<?php echo $fumiki->root; ?>" method="get" id="search" name="search">
-			<input id="s" name="s" type="text" value="&raquo;検索語句" /><input id="submit" name="submit" value="Submit" type="image" alt="検索する" src="<?php echo $fumiki->template; ?>/img/body_btn_search.gif" />
+			<input id="s" name="s" type="text" value="&raquo;検索語句" /><input id="submit" name="submit" value="Submit" type="image" alt="検索する" src="<?php echo $fumiki->template; ?>/img/body_btn_search.gif" width="37" />
 		</form>
 	</li>
 </ul>
@@ -48,7 +52,7 @@ $footerFlg = true;
 <ul>
 <?php
 //告知の出力
-query_posts('category_name=announcement&showposts=5');
+query_posts('category_name=announcement&showposts=7');
 $queryCounter = 0;
 while(have_posts()):$queryCounter++;  the_post();
 if($queryCounter < 2){
@@ -60,30 +64,18 @@ if($queryCounter < 2){
 }
 ?>
 <li class="<?php echo $pclass; ?>">
-	<?php if($queryCounter < 2) $fumiki->archive_photo("thumbnail"); ?>
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-	<span>カテゴリ：<?php the_category(', '); ?><small class="old"><?php the_time('Y/n/d(D)'); ?></small></span>
-	<div class="excerpt">
-		<?php
-			if($queryCounter == 1) the_excerpt();
-			else echo mb_substr(get_the_excerpt(), 0, 60, 'utf-8');
-		?>
-	</div>
 </li>
 <?php endwhile; ?>
 </ul>
-<p class="cat_top">
-	<a href="<?php echo $fumiki->root; ?>/category/announcement/" title="告知の詳細">
-		告知の詳細
-	</a>
-</p>
+<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/announcement/" title="告知の詳細">▼告知の詳細▲</a>
 </div><!-- .conBox ends-->
 
 </div><!-- #column1 ends -->
 
 
 <div class="tweet">
-	<?php fumiki_twitter(200, 100, "true"); ?>
+	<?php fumiki_twitter(200, 300, "true"); ?>
 </div>
 <!-- .tweet ends -->
 
@@ -99,12 +91,10 @@ $queryCounter = 0;
 while(have_posts()):$queryCounter++; the_post(); ?>
 <li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
 	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	<span>カテゴリ：<?php the_category(', '); ?><small class="old"><?php the_time('Y/n/d(D)'); ?></small></span>
-	<?php if($queryCounter < 2){echo '<p>'.get_the_excerpt().'</p>';} ?>
 </li>
 <?php endwhile; ?>
 </ul>
-<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/literature/" title="文芸活動の詳細">文芸活動の詳細</a>
+<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/literature/" title="文芸活動の詳細">▼文芸活動の詳細▲</a>
 </div><!-- .conBox ends-->
 
 
@@ -119,12 +109,10 @@ $queryCounter = 0;
 while(have_posts()):$queryCounter++; the_post(); ?>
 <li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
 	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	<span>カテゴリ：<?php the_category(', '); ?><small class="old"><?php the_time('Y/n/d(D)'); ?></small></span>
-	<?php if($queryCounter < 2){echo '<p>'.get_the_excerpt().'</p>';} ?>
 </li>
 <?php endwhile; ?>
 </ul>
-<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/web/" title="ウェブ制作詳細">ウェブ制作詳細</a>
+<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/web/" title="ウェブ制作詳細">▼ウェブ制作詳細▲</a>
 </div><!-- .conBox ends-->
 
 
@@ -138,12 +126,10 @@ $queryCounter = 0;
 while(have_posts()):$queryCounter++; the_post(); ?>
 <li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
 	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	<span>カテゴリ：<?php the_category(', '); ?><small class="old"><?php the_time('Y/n/d(D)'); ?></small></span>
-	<?php if($queryCounter < 2){echo '<p>'.get_the_excerpt().'</p>';} ?>
 </li>
 <?php endwhile; ?>
 </ul>
-<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/others/" title="その他雑文">その他雑文の詳細</a>
+<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/others/" title="その他雑文">▼その他雑文の詳細▲</a>
 </div><!-- .conBox ends-->
 
 
@@ -199,6 +185,7 @@ while(have_posts()):$queryCounter++; the_post(); ?>
 </div><!-- #column3 ends-->
 
 </div><!-- wrapper ends -->
+
 <?php
 get_footer();
 endif;//ref lj.1

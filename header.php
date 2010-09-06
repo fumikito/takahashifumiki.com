@@ -14,16 +14,6 @@ $fumiki->xml(); ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <link rel="pingback" href="<?php echo $fumiki->root; ?>/xmlrpc.php" />
 <link rel="shortcut icon" href="<?php echo $fumiki->template; ?>/img/favicon.ico" />
 <?php  $fumiki->canonical(); ?>
-<?php
-	if(is_singular()) wp_enqueue_script('comment-reply');
-	wp_head();
-?>
-<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $fumiki->template; ?>/style1.2.css" />
-<!--[if lt IE 8]>
-<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $fumiki->template; ?>/css/ie.css" />
-<![endif]-->
-<!--[if lt IE 7]>
-<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $fumiki->template; ?>/css/ie6.css" />
-<![endif]-->
+<?php wp_head(); ?>
 </head>
 <body<?php $fumiki->body(); ?>>

@@ -1,5 +1,6 @@
 <?php
 include_once(TEMPLATEPATH."/header.php");
+
 ?>
 <div id="wrapper">
 

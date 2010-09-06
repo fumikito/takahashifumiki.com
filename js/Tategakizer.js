@@ -32,24 +32,30 @@ var Tategakizer = new Class({
 		var pArr = [];
 		var counter = 0;
 		txt.each(function(elt,index){
-			console.log(elt);
 			if(counter % limit == 0) pArr.push(new Element('p'));
 			if(elt.match(/^autoAscii/)){
-				new Element('span').set('text',elt.replace(/^autoAscii/,"")).addClass('ascii').setStyles({
+				/*new Element('span').set('text',elt.replace(/^autoAscii/,"")).addClass('ascii').setStyles({
 					width: (elt.length - 9) + 'em',
 					height: (elt.length - 9) + 'em'
-				}).inject(pArr[counter]);
+				}).inject(pArr[counter]);*/
+				new Element('span').set('text',elt.replace(/^autoAscii/,"")).addClass('ascii').inject(pArr[counter]);
 			}else if(elt.match(/^autoTcy/)){
 				new Element('span').set('text',elt.replace(/^autoTcy/,"")).addClass('horizontal').inject(pArr[counter]);
 			}else{
 				var arr = elt.split('');
 				arr.each(function(letter,idx){
-					console.log(letter);
 					this.wrap(letter,'span').inject(pArr[counter]);
 				},this);
 			}
-			console.log('here');
 		},this);
+		//.asciiの文字を全部分割して、入れ替える
+		$$(".ascii").each(function (elt, index){
+			var str = elt.get("text").split("");
+			for(var i = 0, l = str.length; i < l; i++){
+				new Element("span").addClass("ascii").set("text", str[i]).inject(elt, "before");
+			}
+			elt.dispose();
+		});
 		element.empty().addClass('tategaki');
 		pArr.each(function(elt,index){
 			elt.inject(element);
@@ -93,5 +99,5 @@ var Tategakizer = new Class({
 	tcy: ["「","」","（","）","：","ー","＝"],
 	tcy_demi: [],
 	shibu: ["。","、"],
-	nibu: ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","っ","ァ","ィ","ゥ","ェ","ォ","ッ","ャ","ュ","ョ"],
+	nibu: ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","っ","ァ","ィ","ゥ","ェ","ォ","ッ","ャ","ュ","ョ"]
 });

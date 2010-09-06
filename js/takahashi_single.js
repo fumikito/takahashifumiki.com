@@ -1,79 +1,37 @@
 /**
  * @author Takahashi Fumiki
+ * @version 1.2
  */
 
-window.addEvent('domready',takahashi_init);
-
-function takahashi_init(){
-	//モードを取得
-	var str = $('js_initializer').src;
-	var mode = str.substr(str.lastIndexOf('?mode=') + 6,15);
-
-	//ホームだったら
-	if(mode == 'home') new Home();
-	//通常シングルだったら
-	else if(mode.match(/n_single/) || mode.match(/t_single/)) new Single();
-
-	//全ページ共通アクション
-	footer_colorize();
-	searchboxUtil();
-}
-
-var Home = new Class({
-	//縦書き用コントローラ
-	tategaki: null,
-	
-	//コンストラクタ
-	initialize: function(){
-		//縦書きにする
-		this.tategaki = new Tategakizer();
-		new Fx.Tween(this.tategaki.devide(document.getElement('.desc'),"。")).start('color','#4D4945');
-		$$('#column1 ol a,#column1 h2,#column2 h3').each(function(elt,index){
-			this.tategaki.devide(elt,'');
-		},this);
-		$$('#column1 h3 a,#column2 h4 a').each(function(elt,index){
-			this.tategaki.make(elt,15);
-		},this);
-		//目次の高さを揃える
-		this.adjustHeight();
-		
-		document.getElement('.desc').toggleClass('toggle');
-		this.makeSlide();
-	},
-
-	//高さをそろえる
-	adjustHeight: function(){
-		var uls = $$('#column2 .conBox ul')
-		var valMax = 0;
-		uls.each(function(elt,index){
-			var num = elt.getSize().y;
-			if(num > valMax) valMax = num;
-		});
-		uls.each(function(elt,index){
-			elt.setStyle('height',valMax);
-		});
-	},
-	
-	makeSlide: function(){
-		$('floom').floom($$('#floom img'),{
-			slidesBase: "",
-			sliceFxIn: {
-				top: 20
-			},
-			axis: 'vertical'
-		});
-	}
+window.addEvent("domready", function(event){
+	var single = new Single();
 });
+
 
 var Single = new Class({
 	theme_dir: '',
 
-	//コンストラクタ
+	/**
+	 * コンストラクタ
+	 */
 	initialize: function(){
-		var str = $('js_initializer').src.split('js/takahashi_onload');
+		//テンプレートディレクトリを取得
+		var str;
+		$$("script").each(function(elt, index){
+			if(elt.src.match(/takahashi_single\.js/)){
+				str = elt.src.split("js/takahashi_single");
+				return false;
+			}
+		});
 		this.theme_dir = str[0];
-		if($$('.n_single')) window.addEvent('resize',this.windowAdjust);
+		
+		//Windowのリサイズイベントを取得
+		if($$('.n_single'))
+			window.addEvent('resize',this.windowAdjust);
+		//FIXME: コードフォーマッターを適用
 		this.codeFormatter();
+		
+		//Multiboxの対象を探す
 		var jpg = $$('.entry a[href$=jpg]');
 		var jpeg = $$('.entry a[href$=jpeg]');
 		var gif = $$('.entry a[href$=gif]');
@@ -84,7 +42,12 @@ var Single = new Class({
 		}
 		//this.hatena();
 		//this.google();
-		if($('fumiki_flash_container')) this.flash_embed();
+		
+		//Flashが埋め込まれていたら埋め込み
+		if($('fumiki_flash_container'))
+			this.flash_embed();
+		
+		//スムーススクロール初期化
 		new SmoothScroll();
 	},
 
@@ -196,29 +159,20 @@ var Single = new Class({
 	},
 
 	/**
-	 * スリムボックスのチェック
+	 * MultiBoxの初期化
 	 * @param {Object} elts
 	 */
 	make_slimBox: function(elts){
 		//rel="shadowbox"を追加
 		elts.each(function(elt,index){
-			elt.rel = 'slimbox';
+			elt.addClass('multibox');
 			if(elt.getElement('img')){
 				elt.title = elt.getElement('img').alt;
 			}
+			console.log(elt);
 		});
-		//CSS読み込み
-		var css = new Asset.css(this.theme_dir + 'js/slimbox/slimbox.css');
-		//Slimbox読み込み
-		var sb = new Asset.javascript(this.theme_dir + 'js/slimbox/slimbox.js');
-		sb.addEvent('load',this.slimBox_init);
-	},
-
-	/**
-	 * スリムボックスの初期化
-	 */
-	slimBox_init: function(){
-		$$('a[rel^=slimbox]').slimbox({loop:true});
+		var multibox = new MultiBox("multibox");
+		
 	},
 
 	/**
@@ -235,52 +189,3 @@ var Single = new Class({
 		new Swiff(params[0],option);
 	}
 });
-
-
-
-/*-------------------------------------
- * 共通アクション
- */
-
-/**
- * リンクのホバーアクション
- * @return
- */
-function footer_colorize(){
-	$$('#footer li a').each(function(elt,index){
-		var fx = new Fx.Morph(elt,{link:'cancel'});
-		elt.addEvent('mouseenter',(function(){
-			this.start({
-				color:["#00A0E9"],
-				backgroundColor:["#cee8f4"],
-				paddingLeft:[10]
-			});
-		}).bindWithEvent(fx));
-		elt.addEvent('mouseleave',(function(){
-			this.start({
-				color:["#cee8f4"],
-				backgroundColor:["#00A0E9"],
-				paddingLeft: [0]
-			});
-		}).bindWithEvent(fx));
-	});
-}
-
-
-/**
- * 検索フォームの使い勝手を変える
- * @return
- */
-function searchboxUtil (){
-	var box = $("s");
-	if(box){
-		box.addEvents({
-			'focus': function(e){
-				e.target.value = "";
-			},
-			'blur': function(e){
-				box.value = String.fromCharCode(8811) + "検索語句";
-			}
-		});
-	}
-}

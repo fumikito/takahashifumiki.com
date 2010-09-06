@@ -62,6 +62,15 @@ else:
 		</div><!-- .meta ends -->
 
 		<div class="entry<?php if($post->post_password) echo ' blocked'; ?>">
+			<?php
+				$date_diff = floor((time() - strtotime(get_the_date("Y-m-d"))) / 60 / 60 / 24);
+				if($date_diff > 365 && !is_page()):
+			?>
+			<p class="notice_old">
+				この記事は<?php echo floor($date_diff / 365); ?>年以上前のものです。状況は変わっていたりします。<br />
+				<cite title="Guillaume Apollinaire «Cors de chasse»">Passons Passsons puisque tout passe</cite>です。
+			</p>
+			<?php endif; ?>
 			<?php the_content(); ?>
 		</div><!-- .entry ends-->
 

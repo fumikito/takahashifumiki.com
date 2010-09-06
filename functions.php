@@ -1,4 +1,21 @@
 <?php
+/*
+ * 便利関数群
+ */
+
+if(!function_exists("h")){
+	/**
+	 * htmlspecialcharsのエイリアス
+	 * @param string $str
+	 * @return string
+	 */
+	function h($str){
+		return htmlspecialchars($str, ENT_QUOTES);
+	}
+}
+
+
+
 /**
  * アプリケーションの読み込み
  */
@@ -25,6 +42,7 @@ $fumiki_contact = array(
  *
  */
 class Fumiki{
+	var $version = "1.2.1";
 	var $root;
 	var $template;
 	var $blogTitle;
@@ -37,6 +55,36 @@ class Fumiki{
 		$this->root = get_bloginfo('siteurl');
 		$this->template = get_bloginfo('template_directory');
 		$this->blogTitle = get_bloginfo('name');
+		//initアクションにフックを登録
+		add_action("init", array($this, "init"));
+	}
+	
+	/**
+	 * WordPressの初期化後にフックを登録する
+	 */
+	function init(){
+		if(!is_admin()){
+			//MooToolsをスクリプトとして登録
+			wp_register_script(
+				"mootools",
+				get_bloginfo("template_directory")."/js/mootools.js",
+				array(),
+				"1.2.4",
+				true
+			);
+			//Overlayを登録
+			wp_register_script(
+				"overlay",
+				get_bloginfo("template_directory")."/js/Overlay.js",
+				array("mootools"),
+				"0.9",
+				true
+			);
+			//Javascriptの読み込みを登録
+			add_action("wp_enqueue_scripts", array($this, "js"));
+			//CSSの読み込みを登録
+			add_action("wp_print_styles", array($this, "css"));
+		}
 	}
 
 	/**
@@ -44,7 +92,8 @@ class Fumiki{
 	 * @return void
 	 */
 	function xml(){
-		if(!preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"])) echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
+		if(!preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"]))
+			echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 	}
 
 	/**
@@ -91,19 +140,19 @@ class Fumiki{
 	 * @return
 	 */
 	function body(){
-		if(is_home()):
+		if(is_home()){
 			$this->mode = "home";
-		elseif(is_single()):
+		}elseif(is_single()){
 			if(is_tategaki()) $this->mode = "t_single";
 			else $this->mode = "n_single";
 			$this->mode .= " not_home";
-		elseif(is_page()):
+		}elseif(is_page()){
 			$this->mode = "n_single not_home page";
-		elseif(is_archive()):
-			$this->mode = "n_single not_home";
-		elseif(is_search()):
-			$this->mode = "n_single not_home";
-		endif;
+		}elseif(is_archive()){
+			$this->mode = "n_single not_home archive";
+		}elseif(is_search()){
+			$this->mode = "n_single not_home search";
+		}
 		echo ' class="'.$this->mode.'"';
 	}
 
@@ -112,19 +161,19 @@ class Fumiki{
 	 * @return
 	 */
 	function desc(){
-		if(is_home()):
+		if(is_home()){
 			bloginfo('description');
-		elseif(is_single() || is_page()):
+		}elseif(is_single() || is_page()){
 			echo preg_replace("/\n/s",'',get_the_excerpt());
-		elseif(is_category()):
+		}elseif(is_category()){
 			echo preg_replace("/\n/s", "", strip_tags(category_description()));
-		elseif(is_tag()):
+		}elseif(is_tag()){
 			echo "高橋文樹.com内の「";
 			single_tag_title();
 			echo "」というキーワードの記事です。";
-		else:
+		}else{
 			bloginfo('description');
-		endif;
+		}
 	}
 
 	/**
@@ -132,13 +181,13 @@ class Fumiki{
 	 * @return
 	 */
 	function canonical(){
-		if(is_single() || is_page()):
+		if(is_single() || is_page()){
 			echo '<link rel="canonical" href="';
 			the_permalink();
 			echo '" />';
-		else:
+		}else{
 
-		endif;
+		}
 	}
 
 	/**
@@ -154,16 +203,124 @@ class Fumiki{
 		echo $str;
 	}
 
-	function js(){
-		$js_path = $this->template."/js/";
-		echo '<script type="text/javascript" src="'.$js_path.'mootools.js"></script>'."\n";
-		if($this->mode == "home"){
-			echo '<script type="text/javascript" src="'.$js_path.'/floom-1.0.js"></script>'."\n";
-			echo '<script type="text/javascript" src="'.$js_path.'/Tategakizer.js"></script>'."\n";
+	/**
+	 * CSSを書き込む
+	 */
+	function css(){
+		global $is_winIE;
+		if(!is_admin()){
+			//メインスタイル
+			wp_enqueue_style("main", get_bloginfo("template_directory")."/style.css", array(), $this->version, "screen");
+			//IE用CSS
+			if($is_winIE){
+				wp_enqueue_style("ie-common", get_bloginfo("template_directory")."/css/ie.css", array(), $this->version, "screen");
+				if(preg_match("/MSIE 7\.0/",$_SERVER["HTTP_USER_AGENT"]))
+					wp_enqueue_style("ie7", get_bloginfo("template_directory")."/css/ie7.css", array(), $this->version, "screen");
+				elseif(preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"]))
+					wp_enqueue_style("ie6", get_bloginfo("template_directory")."/css/ie6.css", array(), $this->version, "screen");
+			}
+			//シングルページ用CSS
+			if(is_singular()){
+				//Multibox用のCSS
+				wp_enqueue_style("multibox", get_bloginfo("template_directory")."/css/multibox/multibox.css", array(), "1.4.1", "screen");
+				//MultiboxのIE用CSS
+				if($is_winIE && preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"])){
+					wp_enqueue_style("multibox-ie", get_bloginfo("template_directory")."/css/multibox/multibox-ie6.css", array(), "1.4.1", "screen");
+				}
+			}
 		}
-		echo "\n".'<script id="js_initializer" type="text/javascript" src="'.$js_path.'takahashi_onload1.0.js?mode='.rawurlencode($this->mode).'"></script>'."\n";
 	}
-
+	
+	/**
+	 * Javascriptを書き込む
+	 */
+	function js(){
+		//ホームの場合はスライドショーと縦書きを読み込む
+		if(is_home()){
+			//スライドショー
+			wp_enqueue_script(
+				"floom",
+				get_bloginfo("template_directory")."/js/floom.js",
+				array("mootools"),
+				"1.0",
+				true
+			);
+			//縦書き
+			wp_enqueue_script(
+				"tategakizer",
+				get_bloginfo("template_directory")."/js/Tategakizer.js",
+				array("mootools"),
+				$this->version,
+				true
+			);
+			//その他もろもろ
+			wp_enqueue_script(
+				"takahashi_home",
+				get_bloginfo("template_directory")."/js/takahashi_home.js",
+				array("mootools"),
+				$this->version,
+				true
+			);
+		}
+		//シングルページの場合
+		if(is_singular()){
+			//コメント用スクリプト
+			wp_enqueue_script('comment-reply');
+			//MultiBox
+			wp_enqueue_script(
+				"multibox",
+				get_bloginfo("template_directory")."/js/Multibox.js",
+				array("overlay"),
+				"1.4.1",
+				true
+			);
+			//その他
+			wp_enqueue_script(
+				"takahashi_single",
+				get_bloginfo("template_directory")."/js/takahashi_single.js",
+				array("mootools"),
+				$this->version,
+				true
+			);
+		}
+		//全ページ共通のスクリプトを読み込む
+		wp_enqueue_script(
+			"takahashi_onload",
+			get_bloginfo("template_directory")."/js/takahashi_onload.js",
+			array("mootools"),
+			$this->version,
+			true
+		);
+		//
+		//Google Analyticsを読み込む
+		add_action("wp_print_scripts", array($this, "ga"), 10000);
+	}
+	
+	/**
+	 * Google Analyticsのコードを吐き出す
+	 */
+	function ga(){
+		if($_SERVER["SERVER_NAME"] == "takahashifumiki.com"):
+		?>
+			<!-- Google Analytics // -->
+			<script type="text/javascript">
+			//<![CDATA[
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-5329295-1']);
+			  _gaq.push(['_trackPageview']);
+			
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			//]]>
+			</script>
+			<!-- // Google Analytics -->
+		<?php
+		endif;
+	}
+	
 	function feed(){
 		echo $this->feed_uri;
 	}
@@ -267,7 +424,7 @@ class Fumiki{
 			else:
 				echo $c->comment_author;
 			endif;
-			echo "</h4><cite>".mb_substr(strip_tags($c->comment_content),0,50,'utf-8')."...<a href=\"".$this->root."?p=".$c->comment_post_ID."\" rel=\"nofollow\">続き</a></cite>".
+			echo "</h4><cite>".mb_substr(strip_tags($c->comment_content),0,50,'utf-8')."...<a href=\"".$this->root."?p=".$c->comment_post_ID."\" rel=\"nofollow\">続きを読む&raquo;</a></cite>".
 			     "<small>".date('Y/n/d(D)',strtotime($c->comment_date))."</small></".$tag.">";
 		endforeach;
 	}
@@ -421,7 +578,7 @@ function fumiki_inquiry($content){
 	$s = $fumiki_contact['skype'];
 	$str = <<< EOD
 	<p>
-		メール・コメント以外に、下記のサービスを利用してで高橋文樹にコンタクトを取ることができます。
+		メール・コメント以外に、下記のサービスを利用して高橋文樹にコンタクトを取ることができます。
 	</p>
 	<ol id="web_service" class="clearfix">
 		<li class="hametuha"><a title="破滅派通信編集部" href="$h">破滅派通信編集部</a></li>
@@ -444,7 +601,7 @@ add_filter("the_content",'fumiki_inquiry');
  * @param integer $height
  * @return void
  */
-function fumiki_twitter($width = 300, $height =175, $loop = "false")
+function fumiki_twitter($width = 300, $height =200, $loop = "true")
 {
 ?>
 	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
@@ -469,12 +626,12 @@ function fumiki_twitter($width = 300, $height =175, $loop = "false")
 		    }
 		  },
 		  features: {
-		    scrollbar: true,
+		    scrollbar: false,
 		    loop: <?php echo $loop; ?>,
 		    live: true,
 		    hashtags: true,
 		    timestamp: true,
-		    avatars: true,
+		    avatars: false,
 		    behavior: 'all'
 		  }
 		}).render().setUser('takahashifumiki').start();
@@ -482,4 +639,3 @@ function fumiki_twitter($width = 300, $height =175, $loop = "false")
 	</script>
 <?php
 }
-?>
