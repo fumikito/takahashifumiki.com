@@ -49,13 +49,27 @@ else:
 			<?php if(!is_page()): ?>
 			<ul>
 				<li>
+					<span>【記事の長さ】</span>
+					<?php
+						$length = mb_strlen(strip_tags(preg_replace("/\[[^\]]*?\]/", "", get_the_content())), "utf-8");
+						$time_to_finish = round($length / 400);
+						echo "<em class=\"old\">{$time_to_finish}分</em>程度<small>（約{$length}文字）</small>";
+					?>
+				</li>
+				<li>
 					<span>【カテゴリ】</span><?php the_category(', '); ?>
 				</li>
 				<li>
 					<?php the_tags('<span>【タグ】</span>',', ',''); ?>
 				</li>
-				<li><span>【コメント】</span><a href="#comments_wrapper"><?php comments_number('まだない','1件','%件'); ?></a></li>
 			</ul>
+			<p class="right">
+				<?php $fumiki->hatena_add("", "", "", "はてブ"); ?>
+				<?php $fumiki->mixi_check(false); ?>
+				<?php $fumiki->gree_like(); ?>
+				<?php $fumiki->tweet_this(); ?>
+				<?php $fumiki->facebook_like("", 120, 21, "button_count"); ?>
+			</p>
 			<?php else: ?>
 				<br class="clrB" />
 			<?php endif; ?>
@@ -71,30 +85,44 @@ else:
 				<cite title="Guillaume Apollinaire «Cors de chasse»">Passons Passsons puisque tout passe</cite>です。
 			</p>
 			<?php endif; ?>
+			<p class="center">
+			<script type="text/javascript"><!--
+				google_ad_client = "pub-0087037684083564";
+				/* 高橋文樹 投稿内広告 */
+				google_ad_slot = "5844658673";
+				google_ad_width = 468;
+				google_ad_height = 60;
+				//-->
+			</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+			</p>
 			<?php the_content(); ?>
 		</div><!-- .entry ends-->
 
 		<?php
-			if($multipage) wp_link_pages('before=<div class="page_navi old"><span class="mincho">続き</span>&after=</div>');
-			else echo '<div id="page_finish"><span class="mincho">終わり</span></div>';
+			if($multipage) wp_link_pages('before=<div class="page_navi old clrB"><span class="mincho">続き</span>&after=</div>');
+			else echo '<div id="page_finish" class="clrB"><span class="mincho">終わり</span></div>';
 		?>
 
 		<div id="end_meta" class="clearfix">
 			<div class="end_meta_box">
-				<?php $fumiki->socialbk(get_permalink(),the_title("","",false)."|高橋文樹.com"); ?>
-				<div class="adsence">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-0087037684083564";
-						/* 160x90, 作成済み 09/05/04 */
-						google_ad_slot = "9800691688";
-						google_ad_width = 160;
-						google_ad_height = 90;
-						//-->
-						</script>
-						<script type="text/javascript"
-						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</div>
+				<?php
+					$random = rand(0, 2);
+					$sort = ($random >= 1) ? "hot" : "count";
+					$title = ($random >= 1) ? "新着" : "人気";
+				?>
+				<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
+				<script language="javascript" type="text/javascript">
+				Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
+				Hatena.BookmarkWidget.title = "はてなブックマーク<?php echo $title; ?>";
+				Hatena.BookmarkWidget.sort  = "<?php echo $sort; ?>";
+				Hatena.BookmarkWidget.width = 0;
+				Hatena.BookmarkWidget.num   = 5;
+				Hatena.BookmarkWidget.theme = "default";
+				Hatena.BookmarkWidget.load();
+				</script>
 			</div>
 			<div class="end_meta_box">
 				<?php related_posts(); ?>
@@ -107,9 +135,13 @@ else:
 						現在、コメントは<?php comments_number('0','1','%'); ?>件です。<br />
 						<a href="#respond">コメント</a>したり、<a href="<?php echo $fumiki->root; ?>/inquiry/">コンタクト</a>してください。。
 					</dd>
-					<dt>この記事にリンクしてるブログ</dt>
-					<dd>
-						すいません、この機能は準備中です...
+					<dt>ソーシャルメディア</dt>
+					<dd class="center">
+						<?php $fumiki->hatena_add("", "", "", "このエントリーをはてブする"); ?><br /><br />
+						<?php $fumiki->mixi_check(); ?>
+						<?php $fumiki->gree_like(); ?>
+						<?php $fumiki->tweet_this(); ?><br /><br />
+						<?php $fumiki->facebook_like("", 200, 80); ?>
 					</dd>
 				</dl>
 			</div>

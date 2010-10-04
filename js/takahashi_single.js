@@ -169,7 +169,6 @@ var Single = new Class({
 			if(elt.getElement('img')){
 				elt.title = elt.getElement('img').alt;
 			}
-			console.log(elt);
 		});
 		var multibox = new MultiBox("multibox");
 		

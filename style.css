@@ -45,7 +45,7 @@ p{margin:10px 0}
 /* end MacIE5 */
 /*====clear style====*/
 
-body{margin:0;padding:0;word-wrap:break-word;text-align:justify;font-family:"メイリオ",'Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;font-size:10px;}
+body{margin:0;padding:0;word-wrap:break-word;text-align:justify;text-justify: inter-ideographfont-family:"メイリオ",'Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;font-size:10px;}
 /****************************************
  * クリアスタイル終わり
  ****************************************/
@@ -57,7 +57,7 @@ body{margin:0;padding:0;word-wrap:break-word;text-align:justify;font-family:"メ
  * 2.グローバル設定
  ****************************************/
 /*---------------------
- * テキスト・背景色終わり
+ * テキスト・背景色
  */
 body{
 	background:#fff;
@@ -70,7 +70,9 @@ a:active{color:#E4007F;text-decoration:underline;}
 a{overflow:hidden;}
 .mincho{font-family:"ヒラギノ明朝 Pro W3","細明朝体","MS P明朝" ,"ヒラギノ明朝体3",serif;}
 .old{font-family:Georgia, "Times New Roman", Times, serif;}
-
+.center{text-align:center;}
+.left{text-align:left}
+.right{text-align:right}
 
 
 /*---------------------
@@ -972,7 +974,7 @@ body.n_single .meta .calendar .time{
 }
 /*カテゴリー、タグ*/
 body.n_single .meta ul{
-	clear:left;
+	clear:both;
 	padding-top:10px;
 	text-align:right;
 }
@@ -984,6 +986,12 @@ body.n_single .meta ul li{
 body.n_single .meta ul li span{
 	font-size:1.2em;
 	font-weight:bolder;
+}
+body.n_single .meta ul li em{
+	font-size:18px;
+	margin-right:3px;
+	color:#E4007F;
+	font-style:normal;
 }
 body.n_single .meta .socialbk{
 	margin-left:20px;
@@ -1280,6 +1288,13 @@ a.blogpeople{background-image:url(img/socialbk/pingking.gif)}
 }
 #yarpp li a:hover{
 	background:#E4BAD2;
+}
+
+/*はてなブックマークウィジェット*/
+#end_meta .hatena-bookmark-widget{
+	width:auto;
+	margin-right:30px;
+	margin-left:15px;
 }
 
 /*メセナ*/
