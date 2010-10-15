@@ -266,7 +266,6 @@ class Fumiki
 			$this->version,
 			true
 		);
-		//
 		//Google Analyticsを読み込む
 		add_action("wp_print_scripts", array($this, "ga"), 10000);
 	}
@@ -376,7 +375,7 @@ EOS;
 		if(empty($url))
 			$url = get_permalink();
 		$html = <<<EOS
-		<a href="http://2bu.in/j/4595/{$url}" target="_blank" style="text-decoration:none;border:none;padding:0px;margine:0px;"><img src="http://2bu.in/tw" alt="Twitter「つぶやく」ボタン" style="border:none;padding:0px;margine:0px;" /></a><a href="http://2bu.in/d/{$url}" title="Twitterの「つぶやき」を見る" target="_blank" style="text-decoration:none;border:none;padding:0px;margine:0px;"><img src="http://2bu.in/i/4595/{$url}" alt="" style="border:none;padding:0px;margine:0px;" /></a>
+		<a href="http://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="高橋文樹.com" data-count="horizontal" data-via="takahashifumiki" data-related="hametuha:オンライン文芸誌" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 EOS;
 		if($echo)
 			echo $html;
@@ -384,11 +383,16 @@ EOS;
 			return $html;
 	}
 	
+	/**
+	 *  フィードのURLを返す
+	 */
 	function feed(){
 		echo $this->feed_uri;
 	}
 
-
+	/**
+	 *  コメントフィードのURLを返す
+	 */
 	function comment_feed(){
 		echo $this->comment_feed_uri;
 	}
@@ -438,8 +442,8 @@ EOS;
 
 	/**
 	 * カレンダーを出力
-	 * @return
 	 * @param $cont Object
+	 * @return
 	 */
 	function dateformat($cont){
 		$arr = explode(' ',$cont);
@@ -452,8 +456,8 @@ EOS;
 	
 	/**
 	 * ループ内で投稿に属する画像を一枚出力
-	 * @return
 	 * @param $cont Object
+	 * @return
 	 */
 	function archive_photo($size = "medium"){
 		global $post;
@@ -498,7 +502,8 @@ EOS;
 	 * @param $url Object
 	 * @param $title Object
 	 */
-	function socialbk($url,$title){?>
+	function socialbk($url,$title){
+		?>
 <div class="socialbk clearfix">
 <a class="yahoo" href="#" onclick="window.open('http://bookmarks.yahoo.co.jp/bookmarklet/showpopup?t=<?php echo $title; ?>&amp;u=<?php echo $url; ?>&amp;opener=bm&amp;ei=UTF-8','popup','width=550px,height=480px,status=1,location=0,resizable=1,scrollbars=0,left=100,top=50',0); return false;" title="この記事をYahoo!ブックマークに追加" rel="nofollow">この記事をYahoo!ブックマークに追加</a>
 <a class="google" href="http://www.google.com/bookmarks/mark?op=edit&bkmk=<?php echo $url; ?>&title=<?php echo $title; ?>" title="この記事をGoogle Bookmarksに追加" target="_blank" rel="nofollow">この記事をGoogle Bookmarksに追加</a>
@@ -511,7 +516,8 @@ EOS;
 <a class="pookmark" href="javascript:window.location='http://pookmark.jp/post?url='+encodeURIComponent('<?php echo $url; ?>')+'&title='+encodeURIComponent('<?php echo $title ?>');" title="このページを POOKMARK Airlines の行き先に登録する">このページを POOKMARK Airlines の行き先に登録する</a>
 <a class="blogpeople" href="javascript:void(window.open('http://www.blogpeople.net/ib_addlink.jsp?u='+escape(location.href)+'&amp;t='+escape(document.title),'blog_ib','scrollbars=no,width=475,height=350,left=100,top=100,status=yes,resizable=yes'))" rel="nofollow" title="このエントリを BlogPeople Instant Bookmark に登録">このエントリを BlogPeople Instant Bookmark に登録</a>
 </div>
-	<?php }
+		<?php
+	}
 
 	function newpost(){
 		$p = new WP_Query('showposts=5');
