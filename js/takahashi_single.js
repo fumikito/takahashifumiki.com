@@ -43,6 +43,8 @@ var Single = new Class({
 		//this.hatena();
 		//this.google();
 		
+		this.linkFormat();
+		
 		//Flashが埋め込まれていたら埋め込み
 		if($('fumiki_flash_container'))
 			this.flash_embed();
@@ -186,5 +188,33 @@ var Single = new Class({
 		if(params[1]) option.width = params[1];
 		if(params[2]) option.height = params[2];
 		new Swiff(params[0],option);
+	},
+	
+	/**
+	 *  リンクを装飾する
+	 */
+	linkFormat: function(){
+		$$('.entry>p>a').each(function(elt, index){
+			if(!elt.getElement("img")){
+				var ext = elt.href.match(/\.[a-z]+$/);
+				//拡張子別にクラスを設定
+				if(ext)
+					switch(ext[0]){
+						case ".zip":
+						case ".gzip":
+							elt.addClass("zip");
+							break;
+						case ".pdf":
+							elt.addClass("pdf");
+							break;
+						case ".epub":
+							elt.addClass("epub");
+							break;
+					}
+				//外部か否か
+				if(!elt.href.match(/^http:\/\/takahashifumiki\.com/))
+					elt.addClass("external");
+			}
+		});
 	}
 });

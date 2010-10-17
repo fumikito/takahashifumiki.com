@@ -1026,7 +1026,9 @@ body.n_single .meta .socialbk{
  * 個別タグ設定
  */
 /*段落*/
-.entry p{margin:15px 0;}
+.entry p{
+	margin:15px 0;
+}
 
 /*見出し*/
 .entry h2{
@@ -1067,6 +1069,7 @@ body.n_single .meta .socialbk{
 .entry ul li li, .entry ol li li, .entry dd li{font-size:0.8em;}
 .entry ul li ul li{list-style-type:circle;}
 .entry ol li ol li{list-style-type:decimal-leading-zero;}
+
 /*定義リスト*/
 .entry dl dt{
 	font-size:1.2em;
@@ -1085,7 +1088,8 @@ body.n_single .meta .socialbk{
 	padding:10px 10px 10px 80px;
 	background:#bbb url(img/single_blockquote.gif) left top no-repeat;
 	color:#fff;
--webkit-border-radius:5px;border-radius:5px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 }
 .entry blockquote p{margin:8px 0}
@@ -1101,9 +1105,55 @@ body.n_single .meta .socialbk{
 .entry cite::after{content:'"'}
 
 /*注意書き*/
-.entry .alert{font-size:0.75em;color:#AAA}
-.entry .alert:before{content:"〔※"}
+.entry .alert{
+	font-size:0.8em;
+	font-weight:bold;
+	color:#000;
+}
+.entry .alert:before{content:"〔※ "}
 .entry .alert:after{content:"〕"}
+
+/*挿入*/
+.entry ins{
+	text-decoration:none;
+	font-size:0.8em;
+	color:#666;
+}
+.entry ins:before{content:"［*"}
+.entry ins:after{content:"］"}
+.entry .google ins:before{content:""} /*Googleアドセンスがinsタグなので、スタイル消去*/
+.entry .google ins:after{content:""}
+
+
+/*削除*/
+.entry del{
+	font-size:0.8em;
+	color:#aaa;
+}
+.entry del:before{content:" "}
+.entry del:after{content:" "}
+
+/*リンク装飾*/
+.entry a.external,
+.entry a.zip,
+.entry a.pdf,
+.entry a.epub{
+	padding-right:16px;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+.entry a.external{
+	background-image:url(./img/linkicon_external.png);
+}
+.entry a.zip{
+	background-image:url(./img/linkicon_zip.png);
+}
+.entry a.pdf{
+	background-image:url(./img/linkicon_pdf.png);
+}
+.entry a.epub{
+	background-image:url(./img/linkicon_epub.png);
+}
 
 /*テーブル*/
 .entry table{
@@ -1131,6 +1181,7 @@ body.n_single .meta .socialbk{
 	margin:0;
 	font-size:0.85em;
 }
+
 /*コードフォーマット*/
 .entry pre,.entry .code-format{
 	background:#4D4945;
@@ -1171,6 +1222,7 @@ body.n_single .meta .socialbk{
 -webkit-border-radius:3px;border-radius:3px;	-moz-border-radius:3px; margin-bottom:15px; }
 .entry div.wp-caption.alignright{background:#fafafa url(img/single_img_right.gif) left bottom no-repeat;}
 .entry div.wp-caption.alignleft{background:#fafafa url(img/single_img_left.gif) right bottom no-repeat;}
+
 /*キャプション*/
 .entry .wp-caption-text{
 	font-size:0.75em;

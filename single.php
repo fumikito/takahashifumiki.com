@@ -85,7 +85,7 @@ else:
 				<cite title="Guillaume Apollinaire «Cors de chasse»">Passons Passsons puisque tout passe</cite>です。
 			</p>
 			<?php endif; ?>
-			<p class="center">
+			<p class="center google">
 			<script type="text/javascript"><!--
 				google_ad_client = "pub-0087037684083564";
 				/* 高橋文樹 投稿内広告 */
