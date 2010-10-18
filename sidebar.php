@@ -1,5 +1,5 @@
 <?php global $fumiki; ?>
-<div id="right">
+	<div id="right">
 		<div class="tweet">
 			<?php fumiki_twitter(); ?>
 		</div>

@@ -19,17 +19,7 @@ else:
 <div id="wrapper">
 
 
-
-<div id="header" class="clearfix">
-<a id="logo" rel="home" href="<?php echo $fumiki->root; ?>"><?php echo $fumiki->blogTitle; ?></a>
-<div id="breadcrumb">
-<?php if(function_exists('bcn_display')) bcn_display(); ?>
-</div>
-<a id="toTop"></a>
-</div><!-- #header ends-->
-
-
-
+<?php get_header("single"); ?>
 
 
 <div id="content" class="clearfix">
@@ -46,7 +36,7 @@ else:
 						$fumiki->dateformat($buf);
 					?>
 			</div>
-			<?php if(!is_page()): ?>
+			<!-- .calendar ends -->
 			<ul>
 				<li>
 					<span>【記事の長さ】</span>
@@ -70,9 +60,6 @@ else:
 				<?php $fumiki->tweet_this(); ?>
 				<?php $fumiki->facebook_like("", 120, 21, "button_count"); ?>
 			</p>
-			<?php else: ?>
-				<br class="clrB" />
-			<?php endif; ?>
 		</div><!-- .meta ends -->
 
 		<div class="entry<?php if($post->post_password) echo ' blocked'; ?>">
@@ -86,24 +73,25 @@ else:
 			</p>
 			<?php endif; ?>
 			<p class="center google">
-			<script type="text/javascript"><!--
-				google_ad_client = "pub-0087037684083564";
-				/* 高橋文樹 投稿内広告 */
-				google_ad_slot = "5844658673";
-				google_ad_width = 468;
-				google_ad_height = 60;
-				//-->
-			</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+				<script type="text/javascript"><!--
+					google_ad_client = "pub-0087037684083564";
+					/* 高橋文樹 投稿内広告 */
+					google_ad_slot = "5844658673";
+					google_ad_width = 468;
+					google_ad_height = 60;
+					//-->
+				</script>
+				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 			</p>
+			<!-- .google ends -->
 			<?php the_content(); ?>
 		</div><!-- .entry ends-->
 
 		<?php
-			if($multipage) wp_link_pages('before=<div class="page_navi old clrB"><span class="mincho">続き</span>&after=</div>');
-			else echo '<div id="page_finish" class="clrB"><span class="mincho">終わり</span></div>';
+			if($multipage)
+				wp_link_pages('before=<div class="page_navi old clrB"><span class="mincho">続き</span>&after=</div>');
+			else
+				echo '<div id="page_finish" class="clrB"><span class="mincho">終わり</span></div>';
 		?>
 
 		<div id="end_meta" class="clearfix">
@@ -146,7 +134,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 				</dl>
 			</div>
 			<?php fumiki_to_top(); ?>
-		</div><!--#end_meta ends-->
+		</div>
+		<!--#end_meta ends-->
 
 		<?php comments_template(); ?>
 
@@ -166,4 +155,3 @@ endif;//縦書との分岐終了(ref:l.14)
 get_footer();
 
 endif;//Mootoolsと通常single.phpの分岐終了(ref:l.4)
-?>

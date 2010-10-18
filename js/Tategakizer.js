@@ -80,9 +80,12 @@ var Tategakizer = new Class({
 	},
 	
 	filter: function(element){
-		if(this.shibu.contains(element.get('text'))) element.addClass('shibu');
-		if(this.nibu.contains(element.get('text'))) element.addClass('nibu');
-		if(this.tcy.contains(element.get('text'))) element.addClass('tcy');
+		if(this.shibu.contains(element.get('text')))
+			element.addClass('shibu');
+		if(this.nibu.contains(element.get('text')))
+			element.addClass('nibu');
+		if(this.tcy.contains(element.get('text')))
+			element.addClass('tcy');
 		return element;
 	},
 	
@@ -91,12 +94,16 @@ var Tategakizer = new Class({
 	},
 	
 	applyTcy: function(str){
-		var newStr = str.replace(/(^|[^ -~])([ -~]{5,})([^ -~]|$)/g, "$1:::autoAscii$2:::$3").replace(/(^|[^ -~])([ -~][ -~])([^ -~]|$)/g,"$1:::autoTcy$2:::$3");
+		var newStr = str.replace(/(^|[^ -~])([ -~]{4,})([^ -~]|$)/g, "$1:::autoAscii$2:::$3")
+		                .replace(/(:::[^ -~])([ -~]{4,})([^ -~]|$)/,  "$1:::autoAscii$2:::$3")
+		                .replace(/:::autoAscii([0-9]+):::/, "$1")
+		                .replace(/(^|[^ -~])([ -~][ -~])([^ -~]|$)/g,"$1:::autoTcy$2:::$3");
+		console.log(newStr);
 		return newStr.replace(/^:::/,"").replace(/:::$/,"");
 	},
 	
 	//文字列をチェックする属性
-	tcy: ["「","」","（","）","：","ー","＝"],
+	tcy: ["「","」","（","）","：","ー","＝", "【", "】", "〜"],
 	tcy_demi: [],
 	shibu: ["。","、"],
 	nibu: ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","っ","ァ","ィ","ゥ","ェ","ォ","ッ","ャ","ュ","ョ"]

@@ -28,6 +28,7 @@ require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."g
 //クラスの初期化
 require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."fumiki.class.php");
 $fumiki = new Fumiki();
+
 //initアクションにフックを登録
 add_action("init", array($fumiki, "init"));
 
@@ -134,33 +135,6 @@ function flash_converter($atts,$content = null){
 }
 //ショートコードに登録
 add_shortcode('flash','flash_converter');
-
-/**
- * お問い合わせページにリンクを追加
- * @param string $content
- * @return string
- */
-function fumiki_inquiry($content){
-	if(is_page('inquiry')){
-		global $fumiki;
-		$str = <<< EOD
-		<p>
-			メール・コメント以外に、下記のサービスを利用して高橋文樹にコンタクトを取ることができます。
-		</p>
-		<ol id="web_service" class="clearfix">
-			<li class="hametuha"><a title="破滅派通信編集部" href="{$fumiki->contact['hametuha']}">破滅派通信編集部</a></li>
-			<li class="twitter"><a title="twitter"  href="{$fumiki->contact['twitter']}" rel="nofollow">twitter</a></li>
-			<li class="mixi"><a title="mixi"  href="{$fumiki->contact['mixi']}" rel="nofollow">mixi</a></li>
-			<li class="facebook"><a title="Facebook"  href="{$fumiki->contact['facebook']}" rel="nofollow">Facebook</a></li>
-			<li class="skype"><a title="skyupe"  href="{$fumiki->contact['skype']}" rel="nofollow">skype</a></li>
-		</ol>
-EOD;
-		$content = $str.$content;
-	}
-	return $content;
-}
-//フィルター登録
-add_filter("the_content",'fumiki_inquiry');
 
 /**
  * Twitterウィジェットを表示
