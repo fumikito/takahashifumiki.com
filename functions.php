@@ -26,7 +26,7 @@ require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."g
 
 
 //クラスの初期化
-require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."fumiki.class.php");
+require_once dirname(__FILE__)."/fumiki.class.php";
 $fumiki = new Fumiki();
 
 //initアクションにフックを登録
@@ -180,3 +180,128 @@ function fumiki_twitter($width = 300, $height =200, $loop = "true")
 	</script>
 <?php
 }
+
+
+/**
+ * フッターの文言を変更する
+ *
+ * @return string
+ */
+function fumiki_footer_notice($text) {
+	$text = '<a href="'.get_bloginfo("url").'">takahashifumiki.com</a> is proudly powered by <a href="http://ja.wordpress.org/">WordPress</a>.';
+	return $text;
+}
+add_filter("admin_footer_text", "fumiki_footer_notice");
+
+
+/**
+ * WordPressのプロフィール画面に追加するコンタクトメソッド
+ *
+ * @var array
+ */
+$original_contactmethods = array(
+	"twitter" => "Twitter"
+);
+
+/**
+ * デフォルトのコンタクトフィールドを削除する
+ * 
+ * @param array $contactmethods
+ * @return array
+ * @author WP Beginners
+ * @url http://www.wpbeginner.com/wp-tutorials/how-to-remove-default-author-profile-fields-in-wordpress/
+ */
+function hide_profile_fields( $contactmethods ) {
+	unset($contactmethods['aim']);
+	unset($contactmethods['jabber']);
+	unset($contactmethods['yim']);
+	return $contactmethods;
+}
+add_filter('user_contactmethods','hide_profile_fields',10,1);
+
+/**
+ * デフォルトのプロフィール編集画面に新しいコンタクトフィールドを追加する
+ * 
+ * @param array $contactmethods
+ * @return array
+ * @author WP Beginners
+ * @url http://www.wpbeginner.com/wp-tutorials/how-to-display-authors-twitter-and-facebook-on-the-profile-page/
+ */
+function original_profile_fields( $contactmethods ) {
+	global $original_contactmethods;
+	foreach($original_contactmethods as $key => $val)
+		$contactmethods[$key] = $val;
+	return $contactmethods;
+}
+add_filter('user_contactmethods','original_profile_fields',11,1);
+
+
+/**
+ * 会員登録ページのメッセージを変更する
+ * 
+ * @param string $message
+ * @return string
+ */
+function change_login_message($message){
+	if(isset($_GET["action"]) && $_GET["action"] == "register")
+		$message = preg_replace("/^(<p[^>]*?>)[^<]*?(<\/p>)$/", "$1<a target=\"_blank\" href=\"".get_bloginfo("url")."/ebooks/contract/\">利用規約</a>に同意の上、高橋文樹.comに登録してください。$2", $message);
+	return $message;
+}
+add_filter("login_message", "change_login_message");
+
+/**
+ * ユーザーに対して表示するメッセージ
+ *
+ * @var string
+ */
+$fumiki_echo = "こんにちは！";
+
+/**
+ * ページトップに表示するメッセージを変更する
+ * 
+ * @param string $str
+ * @return void
+ */
+function register_echo($str)
+{
+	global $fumiki_echo;
+	$fumiki_echo = $str;
+}
+
+/**
+ * 初期メッセージの登録
+ */
+function hello_text()
+{
+	if(is_user_logged_in()){
+		global $user_identity;
+		register_echo("こんにちは、{$user_identity}さん。<br />ご機嫌いかがですか？");
+	}else
+		register_echo('<a href="'.get_bloginfo('url').'/ebooks/">電子書籍販売中</a>！<br />試験的に登録してみてください。');
+}
+add_action("init", "hello_text");
+
+/**
+ * メッセージを表示する
+ * 
+ * @return void
+ */
+function do_echo()
+{
+	global $fumiki_echo;
+	echo $fumiki_echo;
+}
+
+/**
+ * アスキーアートを表示する
+ * 
+ * @return void
+ */
+function ascii_art($atts,$content = null)
+{
+	//brを削除する
+	$content = str_replace("<br />", "", $content);
+	return "<pre class=\"aa\">{$content}</pre>";
+	//var_dump($content);
+}
+add_shortcode("aa", "ascii_art");

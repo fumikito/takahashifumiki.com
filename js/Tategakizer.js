@@ -98,7 +98,6 @@ var Tategakizer = new Class({
 		                .replace(/(:::[^ -~])([ -~]{4,})([^ -~]|$)/,  "$1:::autoAscii$2:::$3")
 		                .replace(/:::autoAscii([0-9]+):::/, "$1")
 		                .replace(/(^|[^ -~])([ -~][ -~])([^ -~]|$)/g,"$1:::autoTcy$2:::$3");
-		console.log(newStr);
 		return newStr.replace(/^:::/,"").replace(/:::$/,"");
 	},
 	

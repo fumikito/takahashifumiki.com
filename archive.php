@@ -1,21 +1,15 @@
 <?php
+if(is_author() && $wp_query->query_vars["author_name"] != "admin"){
+	include_once TEMPLATEPATH."/404.php";
+	die();
+}
 include_once(TEMPLATEPATH."/header.php");
 
 ?>
 <div id="wrapper">
 
 
-
-<div id="header" class="clearfix">
-<a id="logo" rel="home" href="<?php echo $fumiki->root; ?>"><?php echo $fumiki->blogTitle; ?></a>
-<div id="breadcrumb">
-<?php if(function_exists('bcn_display')) bcn_display(); ?>
-</div>
-<a id="toTop"></a>
-</div><!-- #header ends-->
-
-
-
+<?php get_header("single"); ?>
 
 
 <div id="content" class="clearfix">

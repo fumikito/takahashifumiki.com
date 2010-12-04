@@ -78,7 +78,7 @@ a{overflow:hidden;}
 /*---------------------
  * ヘッダー
  */
-body.not_home #header{background:#fff url(img/single_header_h1.gif) right 20px no-repeat;padding-top:20px;padding-bottom:20px;}
+body.not_home #header{position:relative;background:#fff url(img/single_header_h1.gif) right 20px no-repeat;padding-top:20px;padding-bottom:20px;}
 body.not_home #logo{display:block;float:right;width:196px;height:49px;text-indent:-9999px;}
 body.not_home a#logo:hover{
 	background:#fff;
@@ -86,11 +86,39 @@ body.not_home a#logo:hover{
 	-moz-opacity:0.6;
 	filter:alpha(opacity=60);
 }
-body.not_home #breadcrumb{
+body.not_home #message{
+	background:url(img/header_message.jpg) left top no-repeat;
+	width:268px;
+	height:73px;
+	position:absolute;
+	left:50%;
+	top:0;
+	margin-left:-134px;
+}
+body.not_home #message p{
+	margin:0;
+	padding:15px 20px;
+	color:#a19e91;
+}
+#account{
+	position:absolute;
+	height:73px;
+	top:0;
+	left:20px;
+}
+#account li{
 	float:left;
+}
+body.home #account{
+	left: 50%;
+	margin-left:80px;
+}
+body.not_home #breadcrumb{
+	clear:both;
 	height:12px;
-	margin:15px 0 0 30px;
-	text-align:left;
+	margin:0 15px 0 0;
+	padding-top:10px;
+	text-align:right;
 }
 body.hot_home #breadcrumb li{display:inline;line-height:1;font-size:10px;}
 
@@ -1182,8 +1210,17 @@ body.n_single .meta .socialbk{
 	font-size:0.85em;
 }
 
+/*アスキーアート*/
+.entry pre.aa{
+	font-family:IPAMonaGothic,'ＭＳ ゴシック',monospace;
+	font-size:12px;
+	line-height:1.5;
+	margin:20px 0;
+	color:#999;
+}
+
 /*コードフォーマット*/
-.entry pre,.entry .code-format{
+.entry .code-format{
 	background:#4D4945;
 	color:#fff;
 	margin:10px;
@@ -1541,6 +1578,60 @@ body.n_single #column2 .insight{
  * 通常記事設定終わり
  ****************************************/
 
+
+
+
+/****************************************
+ * 5.5.電子書籍用設定
+ ****************************************/
+/*見出し*/
+body.n_single .ebook .meta h1{
+	font-size:4.5em;
+	padding-bottom:30px;
+}
+body.n_single .ebook .meta h1 small{
+	font-size:0.5em;
+}
+body.n_single .ebook .meta h1 span:first-letter{
+	display:inline;
+	float:none;
+	font-size:1em;
+	margin:0;
+}
+
+/*価格*/
+.entry .ebook-price{
+	font-size:3em;
+}
+.entry .ebook-price small{
+	font-size:0.3em;
+}
+.entry .real-price,
+.entry .ebook-price small strong{
+	color:#FA8404;
+}
+
+/*ダウンロードリスト*/
+.ebook  .entry .file-list{
+	margin-bottom:30px;
+	
+}
+.ebook  .entry .file-list dd{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.ebook .entry .file-list .download{
+	display:block;
+	width:100px;
+	margin-left:20px;
+	text-align:center;
+	float:right;
+	text-decoration:none;
+}
+
+/****************************************
+ * 電子書籍用設定
+ ****************************************/
 
 
 

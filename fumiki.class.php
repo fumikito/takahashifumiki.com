@@ -6,9 +6,8 @@
  * @package wordpress
  * @author Takahashi Fumiki
  */
-class Fumiki
-{
-	var $version = "1.2.4";
+class Fumiki{
+	var $version = "1.2.6";
 	var $root;
 	var $template;
 	var $blogTitle;
@@ -97,13 +96,15 @@ class Fumiki
 			single_tag_title();
 			echo "｜";
 			echo $this->blogTitle;
-		elseif(is_archive()):
-			$month = explode(" ",single_month_title('',false));
-			echo preg_replace("/月/","",$month[1])."年".$month[0]."月の投稿一覧";
-			echo "｜";
-			echo $this->blogTitle;
 		elseif(is_search()):
 			echo "「".get_search_query()."」の検索結果｜".$this->blogTitle;
+		elseif(is_author()):
+			echo "高橋文樹の記事一覧｜".$this->blogTitle;
+		elseif(is_archive()):
+			$month = explode("月", single_month_title('',false));
+			echo "{$month[1]}年{$month[0]}月の投稿一覧";
+			echo "｜";
+			echo $this->blogTitle;
 		elseif(is_404()):
 			echo "404 Page Not Found |";
 			echo $this->blogTitle;
@@ -340,11 +341,9 @@ EOS;
 			$url = get_permalink();
 		if(empty($title))
 			$title = the_title("", "", false);
-		if(empty($icon))
-			$icon = get_bloginfo("template_directory")."/img/socialbk/hatena.gif";
 		$html = <<<EOS
-			<a href="http://b.hatena.ne.jp/entry/add/{$url}"><img src="{$icon}" width="16" height="12" style="border: none;" alt="{$string}" title="{$string}" />{$string}</a>
-			<a href="http://b.hatena.ne.jp/entry/{$url}"><img src="http://b.hatena.ne.jp/entry/image/{$url}" alt="はてなブックマーク - {$title}" title="はてなブックマーク - {$title}"></a>
+			<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+			<script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 EOS;
 		if($echo)
 			echo $html;
@@ -399,19 +398,24 @@ EOS;
 
 	function archiver(){
 		if(is_category()):
-			echo '"';
+			echo 'カテゴリー&quot;';
 			single_cat_title();
-			echo '"カテゴリーの記事';
+			echo '&quot;の記事';
 		elseif(is_tag()):
-			echo '"';
+			echo 'タグ&quot;';
 			single_tag_title();
-			echo '"というタグのついた記事';
+			echo '&quot;のついた記事';
 		elseif(is_search()):
-			echo '"';
+			echo '検索&quot;';
 			the_search_query();
-			echo '"の検索結果';
-		else:
-
+			echo '&quot;の結果';
+		elseif(is_author()):
+			echo '高橋文樹の書いた記事';
+		elseif(is_date()):
+			echo '年月別&quot;';
+			$month = explode('月', single_month_title('', false));
+			echo "{$month[1]}年{$month[0]}月";
+			echo '&quot;の記事';
 		endif;
 	}
 	/**

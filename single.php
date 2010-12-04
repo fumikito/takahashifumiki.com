@@ -72,7 +72,8 @@ else:
 				<cite title="Guillaume Apollinaire «Cors de chasse»">Passons Passsons puisque tout passe</cite>です。
 			</p>
 			<?php endif; ?>
-			<p class="center google">
+			<?php the_content(); ?>
+			<p class="center google clrB">
 				<script type="text/javascript"><!--
 					google_ad_client = "pub-0087037684083564";
 					/* 高橋文樹 投稿内広告 */
@@ -84,7 +85,6 @@ else:
 				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 			</p>
 			<!-- .google ends -->
-			<?php the_content(); ?>
 		</div><!-- .entry ends-->
 
 		<?php

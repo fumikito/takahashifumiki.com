@@ -1,4 +1,8 @@
 <?php
+/*
+ * Template Name: 電子書籍
+ */
+
 	the_post();
 	get_header();
 ?>
@@ -31,24 +35,15 @@
 			
 			<div class="entry">
 				<?php the_content(); ?>
-				<?php
-					if(is_page("links"))
-						wp_list_bookmarks("categorize=1&category=2,115");
-					if(is_page("inquiry"))
-						wp_list_bookmarks("categorize=1&category=115");
-				?>
-				<p class="center google clrB">
-				<script type="text/javascript"><!--
-					google_ad_client = "pub-0087037684083564";
-					/* 高橋文樹 投稿内広告 */
-					google_ad_slot = "5844658673";
-					google_ad_width = 468;
-					google_ad_height = 60;
-					//-->
-				</script>
-				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-				</p>
-				<!-- .google ends -->
+				<?php foreach(get_posts("post_type=ebook&post_status=publish") as $ebook): ?>
+				<dl>
+					<dt><a href="<?php echo get_permalink($ebook->ID); ?>"><?php echo $ebook->post_title; ?></a></dt>
+					<dd>
+						<?php echo wpautop($ebook->post_excerpt); ?>
+						<p class="right"><a href="<?php echo get_permalink($ebook->ID); ?>"><small>詳細&raquo;</small></a></p>
+					</dd>
+				</dl>
+				<?php endforeach; ?>
 			</div>
 			<!-- .entry ends -->
 			
@@ -59,6 +54,19 @@
 			
 			<div id="end_meta" style="background:none">
 				<?php fumiki_to_top(); ?>
+				
+			<p class="center google">
+				<script type="text/javascript"><!--
+					google_ad_client = "pub-0087037684083564";
+					/* 高橋文樹 投稿内広告 */
+					google_ad_slot = "5844658673";
+					google_ad_width = 468;
+					google_ad_height = 60;
+					//-->
+				</script>
+				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+			</p>
+			<!-- .google ends -->
 			</div>
 			<!-- #end_meta -->
 			
@@ -75,3 +83,4 @@
 
 <?php
 	get_footer();
+

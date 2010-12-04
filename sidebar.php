@@ -56,9 +56,18 @@
 
 
 		<ul id="column2">
-			<li class="insight">
-				<!-- valuecommerce -->
-				<iframe frameborder="0" allowtransparency="true" height="600" width="120" marginheight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=2574999&pid=879419532" marginwidth="0"><script language="javascript" src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=2574999&pid=879419532"></script><noscript><a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=2574999&pid=879419532" target="_blank" ><img src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=2574999&pid=879419532" height="600" width="120" border="0"></a></noscript></iframe>
+			<li class="adscense">
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-0087037684083564";
+				/* 高橋文樹.com 右カラム */
+				google_ad_slot = "9905205451";
+				google_ad_width = 120;
+				google_ad_height = 600;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
 			</li>
 			<li class="insight">
 				<!-- lastfm -->
@@ -81,22 +90,13 @@
 				<!-- 併せて読みたい -->
 				<a href="http://awasete.com/show.phtml?u=http%3A%2F%2Ftakahashifumiki.com%2F"><img src="http://img.awasete.com/image.phtml?u=http%3A%2F%2Ftakahashifumiki.com%2F&s=1" width="125" height="125" alt="あわせて読みたいブログパーツ" border="0"></a>
 			</li>
-			<li class="adscense">
-				<script type="text/javascript"><!--
-				google_ad_client = "pub-0087037684083564";
-				/* 高橋文樹.com 右カラム */
-				google_ad_slot = "9905205451";
-				google_ad_width = 120;
-				google_ad_height = 600;
-				//-->
-				</script>
-				<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-				</script>
+			<li class="insight">
+				<!-- amazon -->
+				<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=takahashifumiki-22&o=9&p=11&l=ez&f=ifr&f=ifr" width="120" height="600" scrolling="no" marginwidth="0" marginheight="0" border="0" frameborder="0" style="border:none;"></iframe>
 			</li>
 			<li class="insight">
 				<!-- nakanohito -->
-				<script LANGUAGE="Javascript">
+				<script type="text/javascript">
 				<!--
 				var refer = document.referrer;
 				document.write("<a href='http://nakanohito.jp/'>");

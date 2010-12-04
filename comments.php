@@ -94,7 +94,7 @@ else : ?>
 
 <label>
 	<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" />
-	名前 <?php if ($req) echo '(必須)<small>※公開はされません</small>';; ?>
+	名前 
 </label>
 
 <label>
