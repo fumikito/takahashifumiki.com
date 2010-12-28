@@ -26,7 +26,8 @@ var Single = new Class({
 		this.theme_dir = str[0];
 		
 		//Windowのリサイズイベントを取得
-		if($$('.n_single'))
+		var body = document.getElement('body');
+		if(body.hasClass('n_single') && body.hasClass('post'))
 			window.addEvent('resize',this.windowAdjust);
 		//FIXME: コードフォーマッターを適用
 		this.codeFormatter();
@@ -51,6 +52,10 @@ var Single = new Class({
 		
 		//スムーススクロール初期化
 		new SmoothScroll();
+		
+		//セールタイマーを実行
+		if($('sale-timer'))
+			this.sale_timer();
 	},
 
 	//センター寄せ
@@ -77,18 +82,21 @@ var Single = new Class({
 		var footer = $('footer');
 		if(footer.getParent().getSize().x > 1200){
 			footer.setStyles({
-				width:'1200px',
+				width:'1160px',
+				padding: '0 20px 0',
 				margin:'0 auto'
 			});
 		}else if(footer.getParent().getSize().x < 900){
 			footer.setStyles({
-				width: '900px',
+				width: '860px',
+				padding: '10px 20px 0',
 				margin: '0 auto'
 			});
-			footer.getParent().setStyle("width",'1000px');
+			footer.getParent().setStyle("width",'900px');
 		}else{
 			footer.setStyles({
 				width:'auto',
+				padding:'10px 20px 0',
 				margin: '0 auto'
 			});
 			footer.getParent().setStyle('width','auto');
@@ -212,9 +220,37 @@ var Single = new Class({
 							break;
 					}
 				//外部か否か
-				if(!elt.href.match(/^http:\/\/takahashifumiki\.com/))
+				if(elt.href && !elt.href.match(/^#/) && !elt.href.match(/^http:\/\/takahashifumiki\.com/))
 					elt.addClass("external");
 			}
 		});
+	},
+	
+	/*
+	 * タイマーのカウントダウン
+	 */
+	sale_timer: function(){
+		var container = $('sale-timer');
+		var limit = container.getElement('input').value;
+		var countDown = function(hour, minuit, second){
+			var diff = limit.toInt() - Math.floor(new Date().getTime() / 1000);
+			if(diff > 0){
+				//残り時間があれば表示を更新
+				var left_hour = (diff > 3600 * 100) ? Math.floor(diff / 3600) : ("0" + Math.floor(diff / 3600)).slice(-2);
+				hour.set('text', left_hour);
+				minuit.set('text', ("0" + Math.floor(diff % 3600 / 60)).slice(-2));
+				second.set('text', ('0' + diff % 60).slice(-2) );
+			}else{
+				//なければセールを終了
+				$clear(intervalID);
+				//表示を0にする
+				hour.set('text', "00");
+				minuit.set('text', "00");
+				second.set('text', "00");
+				//ページをリフレッシュ
+				window.location.reload();
+			}
+		};
+		var intervalID = countDown.periodical(1000, limit, container.getElements('span'));
 	}
 });

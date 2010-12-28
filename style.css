@@ -45,6 +45,14 @@ p{margin:10px 0}
 /* end MacIE5 */
 /*====clear style====*/
 
+/*インラインブロック*/
+.inline-block{
+	display:inline;
+	display: -moz-inline-box;
+	display: inline-block;
+	/display: inline;
+	/zoom: 1;
+}
 body{margin:0;padding:0;word-wrap:break-word;text-align:justify;text-justify: inter-ideographfont-family:"メイリオ",'Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;font-size:10px;}
 /****************************************
  * クリアスタイル終わり
@@ -68,60 +76,146 @@ a:visited{color:#3f3f3f;text-decoration:underline;}
 a:hover{color:#E4007F;text-decoration:none;}
 a:active{color:#E4007F;text-decoration:underline;}
 a{overflow:hidden;}
-.mincho{font-family:"ヒラギノ明朝 Pro W3","細明朝体","MS P明朝" ,"ヒラギノ明朝体3",serif;}
+/*フォントファミリー*/
+.mincho{font-family:"ヒラギノ明朝 ProN W3", 'HiraMinProN-W3',"細明朝体","MS P明朝" ,"ヒラギノ明朝体3",serif;}
 .old{font-family:Georgia, "Times New Roman", Times, serif;}
+.sans{font-family:sans-serif;}
+.mono{font-family:'andale mono', 'lucida console', monospace;}
+/*テキスト寄せ*/
 .center{text-align:center;}
 .left{text-align:left}
 .right{text-align:right}
+.top{vertical-align: top}
+.middle{vertical-align: middle}
+.bottom{vertical-align:bottom}
 
 
 /*---------------------
  * ヘッダー
  */
-body.not_home #header{position:relative;background:#fff url(img/single_header_h1.gif) right 20px no-repeat;padding-top:20px;padding-bottom:20px;}
-body.not_home #logo{display:block;float:right;width:196px;height:49px;text-indent:-9999px;}
+body.not_home #header{
+	position:relative;
+	padding-bottom:20px;
+}
+body.not_home #navi{
+	position:absolute;
+	right:0;
+	top:0;
+}
+/*ロゴ*/
+body.not_home a#logo img{
+	padding-top:15px;
+	margin-left:15px;
+}
 body.not_home a#logo:hover{
 	background:#fff;
 	opacity:0.6;
 	-moz-opacity:0.6;
 	filter:alpha(opacity=60);
 }
-body.not_home #message{
-	background:url(img/header_message.jpg) left top no-repeat;
-	width:268px;
-	height:73px;
-	position:absolute;
-	left:50%;
-	top:0;
-	margin-left:-134px;
+body.not_home #header .desc{
+	margin:0 0 0 15px;
+	padding:5px 0;
+	font-size:12px;
+	color:#999;
+}
+/*ぱんくず*/
+body.not_home #breadcrumb{
+	color:#ccc;
+	height:12px;
+	margin:0 0 0 15px;
+	height:20px;
+	line-height:20px;
+	background:url(img/single_header_bc.gif) left center no-repeat;
+	padding-left:25px;
+}
+body.not_home #breadcrumb a:link,
+body.not_home #breadcrumb a:visited{color:#aaa;}
+body.not_home #breadcrumb a:hover,
+body.not_home #breadcrumb a:active{color:#E4007F;}
+/*ナビゲーション*/
+.not_home #navi ol{
+}
+.not_home #navi ol li{
+	border-left:1px solid #ddd;
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	line-height:1;
+	display:inline;
+	display: -moz-inline-box;
+	display: inline-block;
+	/display: inline;
+	/zoom: 1;
+	padding:10px 10px 5px;
+}
+
+.not_home #navi ol li:hover,
+.not_home #navi ol li.current{
+	background:url(img/single_header_navi_bg.gif) center top no-repeat;
+}
+.not_home #navi ol a:link,
+.not_home #navi ol a:visited{
+	text-decoration:none;
+}
+.not_home #navi ol span{
+	font-size:10px;
+	color:#aaa;
+}
+/*メッセージ*/
+body.not_home #message img{
+	vertical-align:middle;
 }
 body.not_home #message p{
 	margin:0;
-	padding:15px 20px;
-	color:#a19e91;
+	color:#444;
+	font-size:11px;
+	height:20px;
+	line-height:20px;
 }
+
+/*ログインボックス*/
 #account{
-	position:absolute;
-	height:73px;
-	top:0;
-	left:20px;
+	margin:20px 0 10px;
 }
 #account li{
-	float:left;
+	display:inline;
 }
-body.home #account{
-	left: 50%;
-	margin-left:80px;
+#account li a{
+	padding:5px 10px;
+	font-size:12px;
+	text-decoration:none;
+	color:#fff;
+	border-left:1px dotted #fff;
 }
-body.not_home #breadcrumb{
-	clear:both;
-	height:12px;
-	margin:0 15px 0 0;
-	padding-top:10px;
-	text-align:right;
+#account li a:hover{
+	opacity:0.6;
+	-moz-opacity:0.6;
+	filter:alpha(opacity=60);
 }
-body.hot_home #breadcrumb li{display:inline;line-height:1;font-size:10px;}
+#account li a.first{
+	border-left:none;
+}
+#account li a.green{
+	background:#B4CC31;
+}
+#account li a.blue{
+	background:#00A0E9;
+}
+#account li a.red{
+	background:#E4007F;
+}
 
+/*トップページログイン用*/
+#account_home{
+	position:absolute;
+	right:0;
+	top:50px;
+	width:40px;
+}
+#account_home li{
+	height:120px;
+}
 /*---------------------
  * トップに戻る
  */
@@ -147,6 +241,7 @@ body.hot_home #breadcrumb li{display:inline;line-height:1;font-size:10px;}
 	line-height:1;
 	height:12px;
 	padding:3px;
+	width:120px;
 	vertical-align:top;
 	margin:0;
 }
@@ -364,6 +459,7 @@ a.comment-reply-link:active{
 #footer h3.feed{height:26px; background-position:left -28px;margin-top:30px;}
 #footer h3.pages{background-position:left -52px;}
 #footer h3.bm{background-position:left -80px;}
+#footer h3.cal{background-position:left bottom;}
 
 /*リンクの色設定*/
  #footer li{
@@ -395,6 +491,10 @@ a.comment-reply-link:active{
 	font-size:0.85em;
 	margin:5px 0 5px 15px;
 	list-style:square outside;
+}
+/*ドロップダウン*/
+#footer select{
+	margin:10px 0 10px 30px;
 }
 
 /*著作権について*/
@@ -1354,10 +1454,10 @@ a.blogpeople{background-image:url(img/socialbk/pingking.gif)}
 
 /*関連投稿*/
 #yarpp div{
-	padding:10px 30px 10px 0;
+/*	padding:10px 30px 10px 0;
 	font-size:2.5em;
 	font-weight:bolder;
-}
+*/}
 #yarpp h3{
 	width:156px;
 	height:34px;
@@ -1397,7 +1497,6 @@ a.blogpeople{background-image:url(img/socialbk/pingking.gif)}
 
 }
 .end_meta_box dl.mesena{
-	border-bottom:1px dotted #ddd;
 	padding-bottom:3px;
 	font-size:1.2em;
 }
@@ -1427,9 +1526,15 @@ body.n_single #right{
 
 /*つぶやき*/
 body.n_single div.tweet{
-	min-height:262px;
+	min-height:290px;
 }
-
+body.n_single div.tweet form{
+	text-align:right;
+	display:block;
+	margin:10px;
+	height:28px;
+	background:url(img/single_right_search.gif) left center no-repeat;
+}
 /*バナーエリア*/
 body.n_single #right .social .banner{
 	padding:10px 0 10px 20px;
@@ -1457,27 +1562,21 @@ body.n_single #column1{
 }
 
 /*共通設定*/
-body.n_single #column1 .book_ad,
 body.n_single #column1 .newpost,
-body.n_single #column1 .comment,
 body.n_single #column1 .tags,
 body.n_single #column1 .catnav{
 	background:url(img/single_news_body.gif) left top repeat-y;
 	margin-left:5px;
 	font-size:1.2em;
 }
-body.n_single #column1 .book_ad h3,
 body.n_single #column1 .newpost h3,
-body.n_single #column1 .comment h3,
 body.n_single #column1 .tags h3,
 body.n_single #column1 .catnav h3{
 	background:url(img/single_news_head.gif) left top no-repeat;
 	height:70px;
 	text-indent:-9999px;
 }
-body.n_single #column1 .book_ad div,
 body.n_single #column1 .newpost ul,
-body.n_single #column1 .comment ul,
 body.n_single #column1 .tags ul,
 body.n_single #column1 .catnav ul{
 	padding-bottom:40px;
@@ -1487,25 +1586,9 @@ body.n_single #column1 .catnav ul{
 
 /*書籍紹介*/
 body.n_single #column1 .book_ad{
+	
+}
 
-}
-body.n_single #column1 .book_ad h3{background-image:url(img/single_bookad_head.gif);}
-body.n_single #column1 .book_ad img{
-	display:block;
-	margin:0 0 5px 13px;
-	padding:5px;
-	background:#f3f3f3;
-	border:1px solid #efefef;
-}
-body.n_single #column1 .book_ad div{
-	padding:0 17px 40px 11px;
-	font-size:11px;
-	color:#aaa;
-}
-body.n_single #column1 .book_ad div strong{
-	font-size:12px;
-	color:#444;
-}
 
 /*新着記事*/
 body.n_single #column1 .comment h3{background-image:url(img/single_comment_head.gif);}
@@ -1537,14 +1620,6 @@ body.n_single #column1 .newpost li.last{
 	border-bottom:none;
 }
 
-/*コメント*/
-body.n_single #column1 .comment cite{
-	font-size:11px;
-}
-body.n_single #column1 .comment small{
-	display:block;
-	text-align:right;
-}
 /*タグクラウド*/
 body.n_single #column1 .tags a:link,
 body.n_single #column1 .tags a:visited,
@@ -1584,51 +1659,335 @@ body.n_single #column2 .insight{
 /****************************************
  * 5.5.電子書籍用設定
  ****************************************/
-/*見出し*/
-body.n_single .ebook .meta h1{
-	font-size:4.5em;
-	padding-bottom:30px;
+/*サイドバー共通*/
+#right .rectangle{
+	margin:0 0 20px;
+	background:#eee;
+	padding:10px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
 }
-body.n_single .ebook .meta h1 small{
-	font-size:0.5em;
+#right .green{
+	color:#ABCD03;
 }
-body.n_single .ebook .meta h1 span:first-letter{
-	display:inline;
-	float:none;
-	font-size:1em;
-	margin:0;
-}
-
-/*価格*/
-.entry .ebook-price{
-	font-size:3em;
-}
-.entry .ebook-price small{
-	font-size:0.3em;
-}
-.entry .real-price,
-.entry .ebook-price small strong{
+#right .orange{
 	color:#FA8404;
 }
 
-/*ダウンロードリスト*/
-.ebook  .entry .file-list{
-	margin-bottom:30px;
-	
+/*一覧ページサイドバー*/
+#right dl.about-ebook dt{
+	font-size:22px;
+	font-weight:bold;
+	padding-bottom:5px;
+	margin-bottom:5px;
+	border-bottom:1px dotted #ccc;
 }
-.ebook  .entry .file-list dd{
-	padding-top:10px;
-	padding-bottom:10px;
-}
-.ebook .entry .file-list .download{
+#right dl.about-ebook dt span{
 	display:block;
-	width:100px;
-	margin-left:20px;
-	text-align:center;
-	float:right;
-	text-decoration:none;
+	font-size:14px;
+	font-weight:normal;
+	font-style:italic;
+}
+#right dl.about-ebook dd{
+	font-size:12px;
+	line-height:1.5;
+	margin-bottom:20px;
+	color:#666;
+}
+#right dl.about-ebook dd small{
+	margin-top:10px;
+	display:block;
+	text-align:right;
+}
+#right dl.about-ebook dd small a{
+	padding:3px 5px;
+	font-size:10px;
+	background:#E4007F;
+	color:#fff;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
 }
 
+/*サイドバー購入ページ*/
+#right .conversion,
+#right .price{
+	margin:20px 0;
+}
+#right .price{
+	padding-bottom:20px;
+	border-bottom:1px dotted #ccc;
+	position:relative;
+}
+#right .how-to-buy{
+	margin-top:20px;
+	padding-top:20px;
+	border-top:1px dotted #ccc;
+}
+/*セール中*/
+#right .price del{
+	color:#999;
+	font-size:18px;
+}
+#right .price .discount{
+	font-size:14px;
+	color:#fff;
+	background:#E4007F;
+	padding:5px;
+	border-radius:10px;
+}
+#right .price .discount span{
+	font-size:18px;
+	font-weight:bold;
+}
+#right .price .onsale{
+	position:absolute;
+	right:0;
+	top:0;
+}
+#right .price .limit{
+	font-size:12px;
+}
+#right .price .limit strong{
+	font-size:14px;
+}
+#sale-timer{
+	background:#fff url(img/ebook_clock.png) 10px center no-repeat;
+	height:50px;
+	line-height:50px;
+	padding:5px 10px;
+	border:3px solid #ccc;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	font-size:27px;
+}
+#sale-timer small{
+	font-size:14px;
+}
+
+#right .thank-you{
+	font-size:14px;
+}
+#right .price h3,
+#right .conversion h3{
+	font-size:22px;
+	font-weight:bold;
+}
+#right .price h3 span,
+#right .conversion h3 span{
+	font-size:11px;
+	font-weight:normal;
+	font-style:italic;
+	display:block;
+}
+#right .price .real-price{
+	font-size:34px;
+}
+#right .conversion h4{
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 0;
+}
+
+/*書籍メタ情報*/
+body.ebook .ebook-meta{
+	padding:0;
+}
+body.ebook .ebook-meta h1{
+	float:none;
+	padding-bottom:10px;
+	border-bottom:1px dotted #ddd;
+}
+
+/*書籍詳細*/
+.entry .ebook-detail{
+	margin-top:20px;
+}
+.entry .ebook-detail img{
+	float:left;
+	margin-right:20px;
+}
+.entry .ebook-detail dl{
+	
+}
+.entry .ebook-detail dl dt{
+	color:#999;
+	margin-bottom:5px;
+	font-size:1.2em;
+	line-height:1;
+}
+.entry .ebook-detail dl dd{
+	border-left:none;
+	font-size:1.8em;
+	color: #00A0E9;
+	margin-top:0;
+	line-height:1.2;
+}
+.entry .ebook-detail dl dd.desc{
+	font-size:16px;
+	color:#444;
+}
+.entry .ebook-detail dl dd small{
+	font-size:0.5em;
+	color:#999;
+}
+/*対応端末リスト*/
+.ebook .device-list{
+	
+}
+.ebook .device-list .device{
+	width:100px;
+	height:120px;
+	float:left;
+	margin-bottom:10px;
+	margin-right:10px;
+}
+.ebook .device-list .valid{
+	background:url(img/ebook_device_bg_valid.gif) center bottom no-repeat;
+	color:#00A0E9;
+}
+.ebook .device-list .invalid{
+	background:url(img/ebook_device_bg_invalid.gif) center bottom no-repeat;
+	color:#999;
+}
+.ebook .device-list .device small{
+	display:block;
+	font-size:10px;
+}
+.ebook .device-list .device span{
+	display:block;
+	font-size:11px;
+	line-height:1.1;
+	font-weight:bold;
+}
+.ebook .device-list .device img{
+	display:block;
+	margin:5px auto;
+}
+.ebook .device-list p{
+	font-size:11px;
+	color:#999;
+	line-height:1.4;
+	margin:10px 0;
+	padding-top:5px;
+	border-top:1px dotted #E5E5E5;
+}
+
+/*ダウンロードリスト*/
+.ebook .file-list{
+	margin-bottom:30px;
+	width:100%;
+	border-collapse: collapse;
+	border:none;
+}
+.ebook .file-list td{
+	padding:15px 5px 5px;
+	border-bottom:1px dotted #E5E5E5;
+}
+.ebook .file-list td.width150{
+	width:150px;
+}
+.ebook .file-list small{
+	font-size:10px;
+}
+.ebook .file-list td .title{
+	font-size:14px;
+}
+.ebook .file-list td p{
+	margin:10px 0;
+	font-size:12px;
+}
+.ebook .file-list .download{
+	display:block;
+	width:150px;
+	height:21px;
+	line-height:21px;
+	background:url(img/ebook_btn_dlbase.gif) left top no-repeat;
+	text-decoration:none;
+}
+.ebook .file-list .download img{
+	float:left;
+}
+.ebook .file-list .download small{
+	font-size:10px;
+	padding-left:5px;
+	color:#999;
+}
+.ebook .file-list small.desc{
+	color:#999;
+}
+
+.ebook .entry p.desc a{
+	font-size:11px;
+	color:#fff;
+	padding:3px 5px;
+	background:#E4007F;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+/*一覧ページ見出し*/
+body.ebooks .catch{
+	padding:20px 0;
+	margin-bottom:20px;
+	border-bottom:1px dotted #eee;
+}
+
+/*リボン*/
+.entry .book-list img.campaign{
+	position:absolute;
+	left:-9px;
+	top:-11px;
+}
+
+/*商品詳細*/
+.entry .book-list{
+	position:relative;
+	padding-bottom:20px;
+	border-bottom:1px dotted #E5E5E5;
+}
+.entry .book-list dl{
+	width:310px;
+	margin-top:0;
+	float:left;
+}
+.entry .book-list dd{
+	margin-left:0;
+	padding-left:0;
+}
+.entry .book-list dd.orange{
+	color:#FA8404;
+}
+
+/*ボタン*/
+.entry .book-list p.more{
+	margin:0;
+	padding:15px 0 10px;
+}
+.entry .book-list p.more a{
+	background:#E4007F;
+	padding:8px 12px;
+	font-size:16px;
+	color:#fff;
+	text-decoration:none;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	-moz-box-shadow: 0 0 5px #888;
+	text-shadow: 0px 2px 3px rgba(255,255,255,0.7);
+}
+.entry .book-list p.more a:hover{
+	text-shadow:none;
+}
+.entry .book-list p.more a:active{
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+}
 /****************************************
  * 電子書籍用設定
  ****************************************/
@@ -1741,38 +2100,283 @@ body.page #web_service li a:hover{
 
 
 /****************************************
- * 7.アーカイブ設定
+ * 7.アカウント設定
  ****************************************/
-/*サムネイル*/
-.hook_image{
-	float:left;
+/*プラグインのCSSを打ち消し*/
+body.login{
+	padding:0;
+}
+/*レイアウト*/
+#account-logo{
+ 	width:200px;
+ 	float:right;
+}
+#account-content{
+ 	width:460px;
+ 	float:left;
+}
+#account-content .entry{
+ 	padding:0 0 0 40px;
+}
+.account-wrap{
+}
+
+/*メイン*/
+.account-wrap form{
 	display:block;
+	padding:20px;
+	border: 1px solid #ececec;
+	background:#f0f0f0;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	box-shadow:1px 1px 5px #ccc;
+	-webkit-box-shadow:1px 1px 5px #ccc;
+	-moz-box-shadow:1px 1px 5px #ccc;
+}
+.account-wrap form p{
+	border-bottom:1px dotted #ccc;
+	padding-bottom:10px;
+	margin:20px 0 10px;
+}
+.account-wrap form p.submit{
+	border-bottom:none;
+	text-align:center;
+	margin-bottom:0;
+	padding-bottom:0;
+}
+/*フォームパーツ*/
+.account-wrap form label{
+	color:#999;
+	font-size:16px;
+	font-weight:bold;
+	text-shadow: 0px 2px 3px #fff;
+}
+.account-wrap form input[type=text],
+.account-wrap form input[type=password],
+.account-wrap form textarea{
+	font-size:11px;
 	width:200px;
-	border:1px solid #ccc;
+	padding:5px;
+	background:#fff;
+	border:1px solid #ddd;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+.account-wrap form textarea{
+	resize:vertical;
+}
+.account-wrap p.submit input[type=submit]{
+	display:inline-block;
+	padding:5px 10px;
+	font-size:12px;
+	font-weight:bold;
+	border:1px solid #13455B;
+	background: #21759B url(img/button-grad-active.png) left bottom repeat-x;
+	-webkit-border-radius:10px;
+	cursor:pointer;
+	color:#EAF2FA;
+	text-shadow: rgba(0, 0, 0, 0.296875) 0px -1px 0px;
+}
+.account-wrap p.submit input[type=submit]:hover{
+	border-color:#000;
+	color:#ccccff;
+}
+.account-wrap p.submit input[type=submit]:active{
+	background-position:left top;
+}
+.account-wrap p.error,
+.account-wrap p.message{
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	padding:5px;
-	margin-right:10px;
+	font-size:11px;
 }
-.hook_image span{
+/* リンク */
+.account-wrap .tml-action-links{
+	padding-left:0;
+}
+.account-wrap ul.tml-action-links li{
+	display:inline;
+	font-size:11px;
+	margin-left:5px;
+}
+/*フォームテーブル*/
+.account-wrap .form-table{
+	border:none;
+	border-collapse: collapse;
+	width:100%;
+}
+.account-wrap .form-table th{
+	background:none;
+	vertical-align: top;
+}
+.account-wrap .form-table th label{	
+	font-size:11px;
+}
+.account-wrap .form-table th,
+.account-wrap .form-table td{
+	border-bottom:dotted 1px #ddd;
+}
+.account-wrap .form-table td{
+	width:230px;
+}
+.account-wrap .form-table .description{
+	font-size:10px;
 	display:block;
-	width:200px;
-	max-height:150px;
+	clear:both;
+}
+.account-wrap #pass-strength-result{
+	margin:12px auto 5px;
+}
+
+
+/****************************************
+ * アカウント設定終わり
+ ****************************************/
+ 
+
+
+/****************************************
+ * 7.アーカイブ設定
+ ****************************************/
+/*メタ情報*/
+body.archive #main .meta{
+	margin-bottom:20px;
+}
+body.archive #main .meta h1{
+	font-size:22px;
+}
+body.archive #main .meta span{
+	padding:3px 5px;
+	background:#00A0E9;
+	color:#fff;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+}
+/*コンテンツボックス*/
+body.archive .archive-box{
+	padding-right:10px;
+	float:left;
+}
+body.archive .entry .even,
+body.archive .entry .forth{
+	padding-right:0;
+}
+body.archive .archive-box-big{
+	width:280px;
+	padding-right:10px;
+	float:left;
+}
+body.archive .archive-box-small{
+	width:135px;
+}
+/*共通設定*/
+body.archive .archive-box .photo{
+	position:relative;
+	text-align:center;
 	overflow:hidden;
-} 
+	background:#000;
+}
+body.archive .entry .archive-box h2{
+	position:absolute;
+	margin:0;
+	padding:5px;
+	background:url(img/archive_box_bg.png) left top repeat;
+	text-align:left;
+}
 
-/*dl一覧*/
-
-
-/*続きを読む*/
-a.more{
-	clear:left;
+body.archive .archive-box small{
 	display:block;
 	text-align:right;
-	font-size:0.8em;
+	color:#999;
+}
+body.archive .archive-box .cat{
+	background:#000;
+	margin:0;
+	padding:2px;
+	font-size:10px;
+	color:#fff;
+}
+body.archive .archive-box .cat a{
+	color:#fff;
+}
+body.archive .archive-box .tag {
+	font-size:10px;
+	margin:0;
+}
+body.archive .archive-box .tag img{
+	vertical-align: text-bottom;
+	margin-right:10px;
+}
+body.archive .archive-box .desc{
+	font-size:12px;
+	line-height:1.4;
+	height:4.2em;
+	overflow:hidden;
+	margin:10px 0;
+}
+body.archive .archive-box .desc p{
+	margin:0;
+}
+/*大きいヤツ*/
+body.archive .archive-box-big .photo{
+	width:280px;
+	height:200px;
+}
+body.archive .entry .archive-box-big h2{
+	left:0;
+	bottom:0;
+	font-size:16px;
 }
 
+body.archive .entry p.google{
+	margin:10px 0;
+	padding:5px 0;
+	border-top:1px dotted #ccc;
+	border-bottom:1px dotted #ccc;
+}
+
+/*小さいボックス*/
+body.archive .archive-box-small .photo{
+	width:135px;
+	height:100px;
+}
+body.archive .entry .archive-box-small h2{
+	bottom:0;
+	left:0;
+	font-size:16px;
+}
+body.archive .archive-box-small .desc{
+	height:7.0em;
+}
+body.archive .archive-box-small .tag{
+	line-height:1.1;
+	height:3em;
+	overflow:hidden;
+}
+
+/*続きを読む*/
+body.archive .entry a.more{
+	font-size:10px;	
+	padding:3px 5px;
+	background:#E4007F;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	color:#fff;
+}
+
+/*ページナビゲーション*/
+body.archive #page_finish{
+	font-size:12px;
+}
+/*トップに戻る*/
+body.archive #page_finish .toTop{
+	margin-bottom:10px;
+}
 /****************************************
  * アーカイブ設定終わり
  ****************************************/

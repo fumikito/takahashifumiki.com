@@ -25,3 +25,12 @@ body.n_single #column1{
 body.n_single #column2{
 	overflow:hidden;
 } 
+
+/*グローバルナビ*/
+#navi{
+	text-align:right;
+}
+/*フッター*/
+.footer_navi_child{
+	width:45%;
+}

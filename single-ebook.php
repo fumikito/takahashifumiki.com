@@ -2,11 +2,11 @@
 	the_post();
 	//状態によって切り替え
 	if(lwp_is_canceled()){
-		register_echo("購入はキャンセルされました。");
+		register_echo('<img src="'.get_bloginfo('template_directory').'/img/single_header_msg_alert.gif" alt="" width="21" height="20" />購入はキャンセルされました。');
 	}elseif(lwp_is_success()){
-		register_echo("ご購入ありがとうございました。<br />電子書籍ファイルをダウンロードしてください。");
+		register_echo('<img src="'.get_bloginfo('template_directory').'/img/single_header_msg_heart.gif" alt="" width="21" height="20" />ご購入ありがとうございました。電子書籍ファイルをダウンロードしてください。');
 	}elseif(lwp_is_transaction_error()){
-		register_echo("決済処理でエラーが発生しました。<br />高橋文樹まで<a href=\"".get_bloginfo("url")."/inquiry\">連絡</a>してください。");
+		register_echo('<img src="'.get_bloginfo('template_directory').'/img/single_header_msg_alert.gif" alt="" width="21" height="20" />決済処理でエラーが発生しました。高橋文樹まで<a href="'.get_bloginfo("url").'"/inquiry">連絡</a>してください。');
 	}
 	get_header();
 ?>
@@ -20,18 +20,8 @@
 <div id="content" class="clearfix ebook">
 
 	<div id="main">
-		<div class="meta">
-			<h1 class="mincho"><span><small>電子書籍</small><br /><?php the_title(); ?></span></h1>
-			<div class="calendar old">
-					<?php
-						ob_start();
-						the_date('Y n j D g:iA');
-						$buf = ob_get_contents();
-						ob_end_clean();
-						$fumiki->dateformat($buf);
-					?>
-			</div>
-			<!-- .calendar ends -->
+		<div class="meta ebook-meta">
+			<h1 class="center"><img src="<?php echo get_post_meta( $post->ID, "eye-catch", true); ?>" alt="<?php the_title(); ?>" width="540" height="300" /></h1>
 			<p class="right clrB">
 				<?php $fumiki->hatena_add("", "", "", "はてブ"); ?>
 				<?php $fumiki->mixi_check(false); ?>
@@ -42,136 +32,133 @@
 		</div><!-- .meta ends -->
 
 		<div class="entry">
+			<!-- ▼ebook-detail -->
+			<div class="ebook-detail clearfix">
+				<img class="cover" alt="<?php the_title(); ?>" src="<?php echo get_post_meta($post->ID, "cover", true); ?>" width="240" height="320" />
+				<dl>
+					<dt class="sans">書名</dt>
+					<dd class="mincho"><?php the_title(); ?></dd>
+					<dt class="sans">分量</dt>
+					<dd class="mincho"><small>四〇〇字詰め原稿用紙</small><span class="old"><?php echo lwp_ammount();?></span><small>枚</small></dd>
+					<dt class="sans">ISBN</dt>
+					<dd class="old"><?php echo lwp_isbn();?></dd>
+					<dt class="sans">販売開始日</dt>
+					<dd class="old"><?php the_date();?></dd>
+				</dl>
+			</div>
+			<!-- ▲ebook-detail -->
+			
+			<h2>あらすじ</h2>
+			<?php the_excerpt(); ?>
+			
 			<?php the_content(); ?>
-			<p class="ebook-price center">
-				<?php if(lwp_is_owner()): ?>
-					<span class="real-price">ご購入ありがとうございます。</span>
-				<?php elseif(lwp_on_sale()): ?>
-					<del class="old">&yen;<?php echo lwp_original_price(); ?></del>
-					→
-					<span class="real-price old">&yen;<?php echo lwp_price(); ?></span>
-					<br />
-					<small>
-						<?php echo lwp_campaign_end(); ?>までセール中！
-						（あと<strong><?php echo round((lwp_campaign_end(null, true) - time()) / 60 / 60 / 24); ?>日</strong>）
-					</small>
-				<?php else: ?>
-					<span class="real-price old">&yen;<?php echo lwp_price(); ?></span>
-				<?php endif; ?>
-			</p>
 			
-			<?php if(!lwp_is_owner()): ?>
-				<?php if(is_user_logged_in()): ?>
-			<div class="center">
-				<?php lwp_buy_now($post, get_bloginfo("template_directory")."/img/btn_buynow.jpg"); ?>
+			<h3 class="clrB">対応端末一覧</h3>
+			<div class="device-list clearfix">
+				<?php $devices = lwp_get_devices(); ?>
+				<?php foreach($devices as $d): ?>
+				<div class="device<?php echo ($d["valid"]) ? ' valid' : ' invalid';?>">
+					<small class="center sans"><?php echo $d["valid"] ? "確認済" : "未確認"; ?></small>
+					<img src="<?php bloginfo('template_directory'); ?>/img/ebook_devices/<?php echo $d["slug"]; ?>.png" alt="<?php echo $d["name"]; ?>" width="48" height="48"/>
+					<span class="sans center"><?php echo $d["name"]; ?></span>
+				</div>
+				<!-- .device ends -->
+				<?php endforeach; ?>
+				<p class="clrB sans">
+					ここに掲載されていないものでも表示できる場合があります。端末は管理人が購入し次第検証いたします。<br />
+					端末追加のご要望については<a href="<?php bloginfo('url'); ?>/inquiry">お問い合わせ</a>よりご連絡ください。
+				</p>
 			</div>
-				<?php endif; ?>
-			<?php endif; ?>
+			<!-- .device-list -->
 			
-			<?php
-				$free_files = lwp_get_files(true);
-				$files = lwp_get_files();
-			?>
+			<p class="right desc">
+				<a href="<?php bloginfo('url'); ?>/ebooks/devices">端末ごとの読み方</a>
+			</p>
+
+			
 			<h3>ファイルのダウンロード</h3>
-			<dl class="file-list">
-				<?php foreach($files as $f): ?>
-				<dt><?php echo $f->name; ?></dt>
-				<dd class="clearfix">
-					<?php if(lwp_is_owner()): ?>
-					<a class="download" href="<?php echo lwp_file_link($f->ID); ?>"  title="<?php echo $f->name; ?>をダウンロード">
-						<img src="<?php bloginfo("template_directory"); ?>/img/btn_dl_active.gif" width="100" hegith="100" alt="<?php echo $f->name; ?>をダウンロード"/>
-					</a>
-					<?php else: ?>
-					<img class="download" src="<?php bloginfo("template_directory"); ?>/img/btn_dl_inactive.gif" width="100" hegith="100" alt="購入して<?php echo $f->name; ?>をダウンロード"  title="購入して<?php echo $f->name; ?>をダウンロード"/>
-					<?php endif; ?>
-					<?php echo wpautop($f->desc); ?>
-				</dd>
+			<?php
+				$files = lwp_get_files();
+				$coutner = 0;
+			?>
+			<table class="file-list sans">
+				<tbody>
+				<?php foreach($files as $f): $counter++;?>
+					<tr class="<?php echo ($counter % 2 == 0) ? 'even' : 'odd';?>">
+						<td class="center">
+							<?php $ext = lwp_get_ext($f); ?>
+							<img src="<?php bloginfo('template_directory'); ?>/img/ebook_filetype/<?php echo $ext; ?>.png" alt="<?php echo $ext; ?>" width="75" height="75" /><br />
+							<em class="old"><?php echo strtoupper($ext); ?></em>
+						</td>
+						<td>
+							<div class="file-meta">
+								<strong class="title "><?php echo $f->name; ?></strong>
+								<small>（<?php lwp_get_date($f); ?>）</small>
+							</div>
+							<div class="desc">
+								<?php echo wpautop($f->desc); ?>
+								<small>対応端末：<?php echo implode(', ', lwp_get_file_devices($f)); ?></small>
+							</div>
+						</td>
+						<td class="width150 center">
+							<?php
+								$accessibility = lwp_get_accessibility($f);
+								if(
+									($accessibility == "owner" && lwp_is_owner() ) //購入者限定でかつ所有権がある
+									||
+									($accessibility == "member" && is_user_logged_in()) //メンバーならダウンロードできるファイル
+									||
+									($accessibility == "any") // 誰でもダウンロードできるファイル
+								):
+							?>
+								<a class="download clearfix" href="<?php echo lwp_file_link($f->ID); ?>"  title="<?php echo $f->name; ?>をダウンロード">
+									<img src="<?php bloginfo('template_directory'); ?>/img/ebook_btn_dlactive.gif" alt="ダウンロード" width="88" height="21" />
+									<small class="mono middle"><?php echo lwp_get_size($f); ?></small>
+								</a>
+								<small class="desc">クリックしてダウンロード</small>
+							<?php else: ?>
+								<span class="download clearfix" title="ダウンロードできません">
+									<img src="<?php bloginfo('template_directory'); ?>/img/ebook_btn_dldeact.gif" alt="ダウンロード不可" width="88" height="21" />
+									<small class="mono middle"><?php echo lwp_get_size($f); ?></small>
+								</span>
+								<small class="desc">
+									<?php
+										switch($accessibility){
+											case "owner":
+												echo "購入後ダウンロード可能";
+												break;
+											case "member":
+												echo "会員のみダウンロード可能";
+												break;
+											default:
+												echo "ダウンロードできません";
+												break;
+										}
+									?>
+								</small>
+							<?php endif; ?>
+						</td>
+					</tr>
 				<?php endforeach; ?>
-				<?php foreach($free_files as $f): ?>
-				<dt><?php echo $f->name; ?></dt>
-				<dd class="clearfix">
-					<a class="download" href="<?php echo lwp_file_link($f->ID); ?>"  title="<?php echo $f->name; ?>をダウンロード">
-						<img src="<?php bloginfo("template_directory"); ?>/img/btn_dl_active.gif" width="100" hegith="100" alt="<?php echo $f->name; ?>をダウンロード"/>
-					</a>
-					<?php echo wpautop($f->desc); ?>
-				</dd>
-				<?php endforeach; ?>
-			</dl>
-			<?php if(!lwp_is_owner()): ?>
-				<?php if(is_user_logged_in()): ?>
-			<div class="center">
-				<?php lwp_buy_now($post, get_bloginfo("template_directory")."/img/btn_buynow.jpg"); ?>
-			</div>
-				<?php endif; ?>
-			<?php endif; ?>
-			<h3>購入方法</h3>
-			<p>
-				高橋文樹.comでは、決済にPayPalを利用しています。各種クレジットカードとPayPalアカウントを利用して買い物をすることができます。<br />
-				一度PayPalのサイトに移動して決済を完了すると、電子書籍ファイルをダウンロードできるようになります。<br />
-				【参考リンク】
-				<a target="_blank" href="https://www.paypal.com/jp/cgi-bin/webscr?cmd=xpt/Marketing_CommandDriven/homepage/AboutPP-outside&nav=1">PayPalについてもっと詳しく<small>（外部）</small></a>
-				, <a href="<?php bloginfo("url"); ?>/ebooks/flow/">購入から利用までの流れ</a>
+				</tbody>
+			</table>
+			<p class="right desc">
+				<a href="<?php bloginfo('url'); ?>/ebooks/devices">ダウンロードして読む方法</a>
 			</p>
-			<?php if(!is_user_logged_in()): ?>
-			<h3>会員登録のお願い</h3>
-			<p>
-				高橋文樹.comで販売している電子書籍を購入するには、<a href="<?php bloginfo("url"); ?>/wp-register.php">会員登録</a>が必要です。<br />
-				すでに登録済みの方は<a href="<?php bloginfo("url"); ?>/wp-login.php?redirect_to=<?php echo rawurlencode(get_permalink()); ?>">ログイン</a>してください。
-			</p>
-			<?php endif; ?>
+			
 		</div><!-- .entry ends-->
 
 		
-		<div id="page_finish" class="clrB"><a href="<?php bloginfo("url"); ?>/ebooks/"><span class="mincho">高橋文樹の電子書籍一覧へ&raquo;</span></a></div>
-
-		<div id="end_meta" class="clearfix">
-			<div class="end_meta_box">
-				<?php
-					$random = rand(0, 2);
-					$sort = ($random >= 1) ? "hot" : "count";
-					$title = ($random >= 1) ? "新着" : "人気";
-				?>
-				<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
-				<script language="javascript" type="text/javascript">
-				Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
-				Hatena.BookmarkWidget.title = "はてなブックマーク<?php echo $title; ?>";
-				Hatena.BookmarkWidget.sort  = "<?php echo $sort; ?>";
-				Hatena.BookmarkWidget.width = 0;
-				Hatena.BookmarkWidget.num   = 5;
-				Hatena.BookmarkWidget.theme = "default";
-				Hatena.BookmarkWidget.load();
-				</script>
-			</div>
-			<div class="end_meta_box">
-				<?php related_posts(); ?>
-			</div>
-			<div class="end_meta_box">
-				<h3 class="mesena"><?php the_title(); ?>の反響</h3>
-				<dl class="mesena">
-					<dt>コメント</dt>
-					<dd>
-						現在、コメントは<?php comments_number('0','1','%'); ?>件です。<br />
-						<a href="#respond">コメント</a>したり、<a href="<?php echo $fumiki->root; ?>/inquiry/">コンタクト</a>してください。。
-					</dd>
-					<dt>ソーシャルメディア</dt>
-					<dd class="center">
-						<?php $fumiki->hatena_add("", "", "", "このエントリーをはてブする"); ?><br /><br />
-						<?php $fumiki->mixi_check(); ?>
-						<?php $fumiki->gree_like(); ?>
-						<?php $fumiki->tweet_this(); ?><br /><br />
-						<?php $fumiki->facebook_like("", 200, 80); ?>
-					</dd>
-				</dl>
-			</div>
-			<?php fumiki_to_top(); ?>
+		<div id="page_finish" class="clrB">
+			<a href="#toTop"><span class="sans">▲購入する</span></a>
 		</div>
-		<!--#end_meta ends-->
+		<!-- #page_finish ends -->
 
 		<?php comments_template(); ?>
 
 	</div><!-- #main ends-->
 
-	<?php get_sidebar();?>
+	<?php get_sidebar("ebook");?>
 
 </div><!-- #content ends-->
 

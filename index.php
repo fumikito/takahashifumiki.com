@@ -26,22 +26,20 @@ $footerFlg = true;
 				<a rel="alternate" type="application/rss+xml" href="<?php $fumiki->feed(); ?>">高橋文樹.comの最新エントリーフィード</a>
 			</li>
 			<li class="search">
-				<form action="<?php echo $fumiki->root; ?>" method="get" id="search" name="search">
-					<input id="s" name="s" type="text" value="&raquo;検索語句" /><input id="submit" name="submit" value="Submit" type="image" alt="検索する" src="<?php echo $fumiki->template; ?>/img/body_btn_search.gif" width="37" />
-				</form>
+				<?php get_search_form(); ?>
 			</li>
 		</ul>
 	
 	</div><!-- #header ends -->
 	
-	<ul id="account" class="clearfix">
+	<ul id="account_home">
 		<?php if(is_user_logged_in()): ?>
-		<li><a href="<?php echo admin_url(); ?>profile.php?page=lwp-history"><img src="<?php bloginfo("template_directory"); ?>/img/account_history.jpg" alt="購入履歴" title="購入履歴"/></a></li>
-		<li><a href="<?php echo admin_url(); ?>profile.php"><img src="<?php bloginfo("template_directory"); ?>/img/account_profile.jpg" alt="登録情報" title="登録情報"/></a></li>
-		<li><a href="<?php echo wp_logout_url(get_bloginfo('url'));?>"><img src="<?php bloginfo("template_directory"); ?>/img/account_logout.jpg" alt="ログアウト" title="ログアウト"/></a></li>
+		<li><a href="<?php echo bloginfo("url"); ?>/book-shelf/"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_book.jpg" alt="購入履歴" title="購入履歴" width="40" height="120" /></a></li>
+		<li><a href="<?php echo bloginfo("url"); ?>/login/?action=profile"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_profile.jpg" alt="登録情報" title="登録情報" width="40" height="120" /></a></li>
+		<li><a href="<?php echo wp_logout_url(get_bloginfo('url'));?>"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_logout.jpg" alt="ログアウト" title="ログアウト" width="40" height="120" /></a></li>
 		<?php else: ?>
-		<li><a href="<?php bloginfo("url"); ?>/wp-register.php"><img src="<?php bloginfo("template_directory"); ?>/img/account_register.jpg" alt="新規登録" title="新規登録"/></a></li>
-		<li><a href="<?php bloginfo("url"); ?>/wp-login.php?redirect_to=<?php echo rawurlencode(get_bloginfo('url')); ?>"><img src="<?php bloginfo("template_directory"); ?>/img/account_login.jpg" alt="ログイン" title="ログイン"/></a></li>
+		<li><a href="<?php bloginfo("url"); ?>/login/?action=register"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_signup.jpg" alt="新規登録" title="新規登録" width="40" height="120" /></a></li>
+		<li><a href="<?php bloginfo("url"); ?>/login/?redirect_to=<?php echo rawurlencode(get_bloginfo('url')); ?>"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_login.jpg" alt="ログイン" title="ログイン" width="40" height="120" /></a></li>
 		<?php endif; ?>
 	</ul><!-- #account -->
 
@@ -151,7 +149,15 @@ $footerFlg = true;
 
 </div><!-- #column2 ends-->
 
-
+<p class="center">
+	<?php
+		$fumiki->hatena_add(get_bloginfo('url'), get_bloginfo('name'), "", "はてブ");
+		$fumiki->mixi_check(get_bloginfo('url'));
+		$fumiki->gree_like(get_bloginfo('url'));
+		$fumiki->tweet_this(get_bloginfo('url'));
+		$fumiki->facebook_like(get_bloginfo('url'), 120, 21, "button_count");
+	?>
+</p>
 
 
 <div id="container">

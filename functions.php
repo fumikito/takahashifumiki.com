@@ -237,19 +237,6 @@ add_filter('user_contactmethods','original_profile_fields',11,1);
 
 
 /**
- * 会員登録ページのメッセージを変更する
- * 
- * @param string $message
- * @return string
- */
-function change_login_message($message){
-	if(isset($_GET["action"]) && $_GET["action"] == "register")
-		$message = preg_replace("/^(<p[^>]*?>)[^<]*?(<\/p>)$/", "$1<a target=\"_blank\" href=\"".get_bloginfo("url")."/ebooks/contract/\">利用規約</a>に同意の上、高橋文樹.comに登録してください。$2", $message);
-	return $message;
-}
-add_filter("login_message", "change_login_message");
-
-/**
  * ユーザーに対して表示するメッセージ
  *
  * @var string
@@ -275,9 +262,9 @@ function hello_text()
 {
 	if(is_user_logged_in()){
 		global $user_identity;
-		register_echo("こんにちは、{$user_identity}さん。<br />ご機嫌いかがですか？");
+		register_echo('<img src="'.get_bloginfo('template_directory').'/img/single_header_msg_smile.gif" alt="" width="21" height="20" />こんにちは、'.$user_identity.'さん。サイト訪問ありがとうございます。');
 	}else
-		register_echo('<a href="'.get_bloginfo('url').'/ebooks/">電子書籍販売中</a>！<br />試験的に登録してみてください。');
+		register_echo('<img src="'.get_bloginfo('template_directory').'/img/single_header_msg_light.gif" alt="" width="21" height="20" /><a href="'.get_bloginfo('url').'/ebooks/">電子書籍販売中</a>！　ものは試しで買ってください。');
 }
 add_action("init", "hello_text");
 

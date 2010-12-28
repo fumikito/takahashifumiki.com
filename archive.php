@@ -14,34 +14,94 @@ include_once(TEMPLATEPATH."/header.php");
 
 <div id="content" class="clearfix">
 
-
-
-
 	<div id="main">
 		<div class="meta">
-			<h1 class="mincho"><span><?php $fumiki->archiver(); ?></span></h1>
-			<br class="clrB" />
+			<h1 class="mincho"><?php $fumiki->archiver(); ?></h1>
+			<p class="right">
+				<span><?php echo number_format($wp_query->found_posts); ?>件の記事があります</span>
+			</p>
+			<div class="meta_desc">
+			<?php if(is_category()): ?>
+				<?php echo wpautop(category_description()); ?>
+			<?php endif; ?>
+			</div>
 		</div><!-- .meta ends -->
 
-		<div class="entry<?php if($post->post_password) echo ' blocked'; ?>">
-			<dl>
-			<?php if(have_posts()): while(have_posts()): the_post(); ?>
-				<dt><a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></dt>
-				<dd>
-					<a class="hook_image" href="<?php the_permalink(); ?>">
-						<span><?php $fumiki->archive_photo(); ?></span>
-					</a>
-					<?php the_excerpt(); ?>
-					<a class="more" href="<?php the_permalink(); ?>"><?php the_title(); ?>の続きを読む&raquo;</a>
-					<span>【カテゴリー】</span><?php the_category(","); the_tags('<span>【タグ】</span>');?>
-					<br />
-					<small class="old"><?php the_time('Y/n/j(D) g:iA'); ?></small>
-				</dd>
+		<div class="entry clearfix">
+			<?php $counter = 0;if(have_posts()): while(have_posts()): the_post(); $counter++;?>
+				<?php if($counter < 5): ?>
+				<?php if($counter == 3): ?>
+					<p class="center google clrB">
+					<script type="text/javascript"><!--
+						google_ad_client = "pub-0087037684083564";
+						/* 高橋文樹 投稿内広告 */
+						google_ad_slot = "5844658673";
+						google_ad_width = 468;
+						google_ad_height = 60;
+						//-->
+					</script>
+					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</p>
+					<!-- .google ends -->
+				<?php endif; ?>
+					
+					<div class="archive-box archive-box-big <?php echo ($counter % 2 == 0) ? 'even': 'odd';?>">
+						<small class="old"><?php the_time('Y/n/j(D) g:iA'); ?></small>
+						<div class="photo">
+							<?php $fumiki->archive_photo(); ?>
+							<h2>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h2>
+						</div>
+						<div class="cat old">Category:<?php the_category(",");?></div>
+						<div class="desc">
+							<p><?php echo get_the_excerpt(); ?></p>
+						</div>
+						<p class="tag">
+							<img src="<?php bloginfo('template_directory'); ?>/img/archive_icon_tag.png" alt="タグ" width="16" height="16" /><?php  the_tags('');?>
+						</p>
+						<p class="right">
+							<a class="more old" href="<?php the_permalink(); ?>">Read more...&raquo;</a>
+						</p>
+					</div>
+					<!-- .archive-box-big ends -->
+				<?php else: ?>
+					<?php if($counter == 5): ?>
+					<div class="clrB"></div>
+					<?php endif; ?>
+					<div class="archive-box archive-box-small <?php echo (($counter - 4) % 4 == 0) ? 'forth': '';?>">
+						<small class="old"><?php the_time('Y/n/j(D)'); ?></small>
+						<div class="photo">
+							<?php $fumiki->archive_photo("thumbnail"); ?>
+							<h2>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h2>
+						</div>
+						<div class="cat old">Category:<?php the_category(",");?></div>
+						<div class="desc">
+							<p><?php echo get_the_excerpt(); ?></p>
+						</div>
+						<p class="tag">
+							<img src="<?php bloginfo('template_directory'); ?>/img/archive_icon_tag.png" alt="タグ" width="16" height="16" /><?php  the_tags('');?>
+						</p>
+						<p class="right">
+							<a class="more old" href="<?php the_permalink(); ?>">Read more...&raquo;</a>
+						</p>
+					</div>
+					<!-- .archive-box-small ends -->
+					
+					<?php if($counter % 4 == 0): ?>
+						<div class="clrB"></div>
+					<?php endif; ?>
+				<?php endif; ?>
 			<?php endwhile; endif; ?>
-			</dl>
 		</div><!-- .entry ends-->
 
-		<div id="page_finish" class="old"><?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?></div>
+		<div id="page_finish" class="old clrB">
+			<?php fumiki_to_top(); ?>
+			<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+		</div>
+		<!-- #page_finish -->
 
 	</div><!-- #main ends-->
 

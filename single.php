@@ -43,6 +43,7 @@ else:
 					<?php
 						$length = mb_strlen(strip_tags(preg_replace("/\[[^\]]*?\]/", "", get_the_content())), "utf-8");
 						$time_to_finish = round($length / 400);
+						$length = number_format($length);
 						echo "<em class=\"old\">{$time_to_finish}分</em>程度<small>（約{$length}文字）</small>";
 					?>
 				</li>

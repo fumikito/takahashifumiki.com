@@ -15,6 +15,9 @@ var Tategakizer = new Class({
 		var txt = element.get('text');
 		var lines = (splitter) ? txt.split(splitter) : [txt];
 		element.empty();
+		if(lines[lines.length - 1].clean().length == 0){
+			lines.pop();
+		}
 		lines.each((function(elt,index){
 			var str = (elt != "") ? elt + splitter : elt;
 			var line = this.line(str, 'p');

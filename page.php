@@ -57,7 +57,48 @@
 			</div>
 			<!-- #page_finish ends -->
 			
-			<div id="end_meta" style="background:none">
+			<div id="end_meta" class="clearfix">
+				<div class="end_meta_box">
+					<?php
+						$random = rand(0, 2);
+						$sort = ($random >= 1) ? "hot" : "count";
+						$title = ($random >= 1) ? "新着" : "人気";
+					?>
+					<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
+					<script language="javascript" type="text/javascript">
+					Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
+					Hatena.BookmarkWidget.title = "はてなブックマーク<?php echo $title; ?>";
+					Hatena.BookmarkWidget.sort  = "<?php echo $sort; ?>";
+					Hatena.BookmarkWidget.width = 0;
+					Hatena.BookmarkWidget.num   = 5;
+					Hatena.BookmarkWidget.theme = "default";
+					Hatena.BookmarkWidget.load();
+					</script>
+				</div>
+				<div class="end_meta_box">
+					<div id="yarpp">
+						<h3 class="関連する投稿"></h3>
+						<?php
+							$args = "child_of=".get_the_ID();
+							if($post->post_parent != 0)
+								$args .= '&include='.implode(',', get_post_ancestors($post));
+							wp_page_menu($args);
+						?>
+					</div>
+				</div>
+				<div class="end_meta_box">
+					<h3 class="mesena"><?php the_title(); ?>の反響</h3>
+					<dl class="mesena">
+						<dt>ソーシャルメディア</dt>
+						<dd class="center">
+							<?php $fumiki->hatena_add("", "", "", "このエントリーをはてブする"); ?><br /><br />
+							<?php $fumiki->mixi_check(); ?>
+							<?php $fumiki->gree_like(); ?>
+							<?php $fumiki->tweet_this(); ?><br /><br />
+							<?php $fumiki->facebook_like("", 200, 80); ?>
+						</dd>
+					</dl>
+				</div>
 				<?php fumiki_to_top(); ?>
 			</div>
 			<!-- #end_meta -->
@@ -65,7 +106,12 @@
 		</div>
 		<!-- #main ends -->
 		
-		<?php get_sidebar("page"); ?>
+		<?php
+			if($post->post_parent == get_page_by_path("ebooks")->ID){
+				get_sidebar('ebooks');
+			}else
+				get_sidebar("page");
+		?>
 		
 	</div>
 	<!-- #content -->

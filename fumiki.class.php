@@ -7,7 +7,7 @@
  * @author Takahashi Fumiki
  */
 class Fumiki{
-	var $version = "1.2.6";
+	var $version = "1.2.7";
 	var $root;
 	var $template;
 	var $blogTitle;
@@ -81,8 +81,12 @@ class Fumiki{
 		elseif(is_page() || is_single()):
 			single_post_title();
 			echo "｜";
-			if(in_category(47)) echo $this->MooTitle;
-			else echo $this->blogTitle;
+			if("ebook" == get_post_type())
+				echo "電子書籍｜";
+			if(in_category(47))
+				echo $this->MooTitle;
+			else
+				echo $this->blogTitle;
 
 		elseif(is_category()):
 			if(is_category(47)):
@@ -119,15 +123,20 @@ class Fumiki{
 		if(is_home()){
 			$this->mode = "home";
 		}elseif(is_single()){
-			if(is_tategaki()) $this->mode = "t_single";
-			else $this->mode = "n_single";
+			if(is_tategaki())
+				$this->mode = "t_single";
+			elseif("ebook" == get_post_type())
+				$this->mode = "n_single ebook page";
+			else
+				$this->mode = "n_single post";
 			$this->mode .= " not_home";
 		}elseif(is_page()){
-			$this->mode = "n_single not_home page";
+			global $post;
+			$this->mode = "n_single not_home page ".$post->post_name;
 		}elseif(is_archive()){
-			$this->mode = "n_single not_home archive";
+			$this->mode = "n_single not_home archive page";
 		}elseif(is_search()){
-			$this->mode = "n_single not_home search";
+			$this->mode = "n_single not_home archive search page";
 		}
 		echo ' class="'.$this->mode.'"';
 	}
@@ -406,13 +415,13 @@ EOS;
 			single_tag_title();
 			echo '&quot;のついた記事';
 		elseif(is_search()):
-			echo '検索&quot;';
+			echo '&quot;';
 			the_search_query();
-			echo '&quot;の結果';
+			echo '&quot;の検索結果';
 		elseif(is_author()):
 			echo '高橋文樹の書いた記事';
 		elseif(is_date()):
-			echo '年月別&quot;';
+			echo '&quot;';
 			$month = explode('月', single_month_title('', false));
 			echo "{$month[1]}年{$month[0]}月";
 			echo '&quot;の記事';
@@ -471,8 +480,8 @@ EOS;
 			$image = current($images);
 			echo wp_get_attachment_image($image->ID,$size);
 		else:
-			$width = ($size == "medium") ? 200 : 150;
-			$height = ($size == "medium") ? 150 : 100;
+			$width = ($size == "medium") ? 280 : 150;
+			$height = ($size == "medium") ? 200 : 100;
 			$src = ($size == "medium") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
 			echo '<img class="attachment-medium" src="'.$this->template.'/img/'.$src.'" width="'.$width.'" height="'.$height.'" alt="写真なし" />';
 		endif;

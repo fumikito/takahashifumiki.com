@@ -31,7 +31,9 @@ window.addEvent('domready',function(event){
 				e.target.value = "";
 			},
 			'blur': function(e){
-				box.value = String.fromCharCode(8811) + "検索語句";
+				if(box.value == ""){
+					box.value = String.fromCharCode(8811) + "検索語句";
+				}
 			}
 		});
 	}

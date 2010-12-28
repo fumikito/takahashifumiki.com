@@ -50,11 +50,16 @@
 			
 			<div class="footer_navi_child">
 				<h3 class="pages">主なページ</h3>
-				<?php wp_page_menu('sort_column=ID&show_home=1'); ?>
+				<?php wp_page_menu('sort_column=ID&show_home=1&hierarchical=0&depth=1'); ?>
 			</div><!-- .footer_navi_child ends-->
 				
 			<div class="footer_navi_child">
 				<?php wp_list_bookmarks('category=2&title_before=<h3 class="bm">&title_after=</h3>&title_li=&category_before=&category_after=&orderby=id'); ?>
+				<h3 class="cal">年月別アーカイブ</h3>
+				<select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
+				  <option value=""><?php echo attribute_escape(__('Select Month')); ?></option> 
+				  <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
+				</select>
 				<div class="about_copytright">
 					<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.1/jp/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.1/jp/80x15.png" width="80" height="15" /></a>
 					高橋文樹.comの<a href="<?php echo $fumiki->root; ?>/policy/">著作権について</a>
