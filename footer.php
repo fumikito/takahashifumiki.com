@@ -8,6 +8,9 @@
 			
 			<ul class="footer_navi_child">
 				<li class="cat-item">
+					<a href="<?php echo $fumiki->root; ?>/author/admin/" title="すべての投稿">すべてのカテゴリー</a>
+				</li>
+				<li class="cat-item">
 					<a href="<?php echo $fumiki->root; ?>/category/announcement/" title="<?php echo strip_tags(category_description(71)); ?>">告知</a>
 				</li>
 				<li class="cat-item">

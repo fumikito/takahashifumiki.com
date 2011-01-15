@@ -37,7 +37,8 @@ class Fumiki{
 	 * WordPressの初期化後にフックを登録する
 	 */
 	function init(){
-		if(!is_admin()){
+		global $wp_iwphone;
+		if(!is_admin() &&  (!$wp_iwphone|| !$wp_iwphone->detectiPhone())){
 			//MooToolsをスクリプトとして登録
 			wp_register_script(
 				"mootools",
@@ -334,7 +335,7 @@ EOS;
 			$url = get_permalink();
 		$url = rawurlencode($url);
 		$html = <<<EOS
-			<iframe src="http://share.gree.jp/share?url={$url}&type=0&height=20" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" style="border:none; overflow:hidden; width:100px; height:20px;" allowTransparency="true"></iframe>
+			<iframe src="http://share.gree.jp/share?url={$url}&type=0&height=20" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" style="border:none; overflow:hidden; width:80px; height:20px;" allowTransparency="true"></iframe>
 EOS;
 		if($echo)
 			echo $html;

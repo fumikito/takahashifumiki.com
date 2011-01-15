@@ -50,6 +50,7 @@
 			
 			<h2>あらすじ</h2>
 			<?php the_excerpt(); ?>
+			<?php edit_post_link("［編集］","<p class=\"right\"><small>","</small></p>");?>
 			
 			<?php the_content(); ?>
 			

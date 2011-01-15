@@ -60,7 +60,7 @@ function fumiki_comment_layout($comment, $args, $depth){
  * @return
  * @param $id Object[optional]
  */
-function fumiki_get_tb($id = ''){
+function fumiki_get_tb($id = '', $echo = true){
 	global $wpdb;
 	global $table_prefix;
 	$req = $wpdb->get_results("SELECT comment_ID,comment_post_ID,comment_date,comment_content,comment_author,comment_author_url ".
@@ -82,8 +82,12 @@ function fumiki_get_tb($id = ''){
 			$str .= '</li>';
 		endforeach;
 		$str .= '</ul>';
-		echo $str;
-		return true;
+		if($echo){
+			echo $str;
+			return true;
+		}else{
+			return $str;
+		}
 	}
 	else return false;
 }

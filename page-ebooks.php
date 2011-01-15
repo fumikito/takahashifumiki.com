@@ -28,7 +28,7 @@
 				<div class="book-list clearfix ebook-detail">
 					
 					<!-- ▼cover-image -->
-					<img alt="<?php echo $ebook->post_title; ?>" src="<?php echo get_post_meta($ebook->ID, "cover", true); ?>" width="240" height="320" />
+					<img class="cover" alt="<?php echo $ebook->post_title; ?>" src="<?php echo get_post_meta($ebook->ID, "cover", true); ?>" width="240" height="320" />
 					<?php if(lwp_is_free(false, $ebook)):?>
 					<img class="campaign" alt="無料" src="<?php bloginfo('template_directory'); ?>/img/ebook_ribon_free.png" width="120" height="124" /> 
 					<?php elseif(lwp_on_sale($ebook)): ?>

@@ -94,7 +94,17 @@ include_once(TEMPLATEPATH."/header.php");
 						<div class="clrB"></div>
 					<?php endif; ?>
 				<?php endif; ?>
-			<?php endwhile; endif; ?>
+			<?php endwhile; else: ?>
+			<!-- ▼投稿無し -->
+				<h2>該当する投稿はありませんでした</h2>
+				<p>ご迷惑おかけいたします。以下の方法をお試しください。</p>
+				<ul>
+					<li>右カラムにある<a href="#s">検索フォーム</a>から別の言葉で探す</li>
+					<li><a href="#header">ページ上部のグローバルナビゲーション</a>から探す</li>
+					<li><a href="<?php bloginfo('url'); ?>/inquiry">メールフォーム</a>から問い合わせる</li>
+				</ul>
+			<!-- ▲投稿無し -->
+			<?php endif; ?>
 		</div><!-- .entry ends-->
 
 		<div id="page_finish" class="old clrB">

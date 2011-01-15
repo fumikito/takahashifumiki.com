@@ -26,7 +26,7 @@ else:
 
 	<div id="main">
 		<div class="meta">
-			<h1 class="mincho"><span><?php the_title(); ?></span></h1>
+			<h1 class="mincho"><span><?php the_title(); ?><?php edit_post_link(" [編集]","<small>","</small>"); ?></span></h1>
 			<div class="calendar old">
 					<?php
 						ob_start();
