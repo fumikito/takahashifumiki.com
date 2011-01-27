@@ -154,6 +154,10 @@
 			<a href="#toTop"><span class="sans">▲購入する</span></a>
 		</div>
 		<!-- #page_finish ends -->
+		<div id="end_meta">
+		<!-- X:S ZenBackWidget --><script type="text/javascript">document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//takahashifumiki.com&nsid=93705046058920128%3A%3A93705053843541286&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));</script><!-- X:E ZenBackWidget -->
+		</div>
+		<!-- end meta ends -->
 
 		<?php comments_template(); ?>
 

@@ -1583,19 +1583,11 @@ body.n_single #column1 .catnav ul{
 	background:url(img/single_news_foot.gif) left bottom no-repeat;
 }
 
-
-/*書籍紹介*/
-body.n_single #column1 .book_ad{
-	
-}
-
-
 /*新着記事*/
 body.n_single #column1 .comment h3{background-image:url(img/single_comment_head.gif);}
 body.n_single #column1 .tags h3{background-image:url(img/single_tags_head.gif);}
 body.n_single #column1 .catnav h3{background-image:url(img/single_category_head.gif);}
 body.n_single #column1 .book_ad p{text-align:center;}
-
 body.n_single #column1 .newpost li,
 body.n_single #column1 .comment li,
 body.n_single #column1 .tags li,
@@ -1605,6 +1597,29 @@ body.n_single #column1 .catnav li{
 	border-bottom:1px solid #ddd;
 }
 
+/*はてぶ*/
+body.n_single #column1 .hatena-bookmark-widget-title{
+	background:url(img/single_news_head_hatena.gif) left top no-repeat;
+	padding:46px 10px 0;
+	font-size:14px;
+	font-weight:bold;
+}
+body.n_single #column1 .hatena-bookmark-widget-title a{
+	text-decoration:none;
+}
+body.n_single #column1 .hatena-bookmark-widget-title img{
+	display:none;
+}
+body.n_single #column1 .hatena-bookmark-widget-footer{
+	display:none;
+}
+body.n_single #column1 .hatena-bookmark-count a{
+	text-decoration:none;
+	color:#fff;
+	background:#E4007F;
+	padding:1px 2px;
+	margin-left:0.5em;
+}
 /*カテゴリ一覧*/
 body.n_single #column1 .catnav li{
 	padding:5px;

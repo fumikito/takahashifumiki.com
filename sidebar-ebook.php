@@ -22,7 +22,7 @@
 					<span class="real-price old orange">&yen;<?php echo lwp_price(); ?></span>
 				</p>
 				<p class="right sans">
-					<span class="discount"><span>20%</span>OFF!</span>
+					<span class="discount"><span><?php echo ceil((1 - lwp_price() / lwp_original_price()) * 100);?>%</span>OFF!</span>
 				</p>
 				<p class="limit sans center">
 					<strong class="orange"><?php echo lwp_campaign_end(); ?></strong>までセール中！

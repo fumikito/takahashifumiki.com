@@ -6,7 +6,7 @@
 		</div>
 		
 		<div class="social">
-			<ul class="banner">
+			<ul class="banner clearfix">
 				<?php
 					wp_list_bookmarks("categorize=0&category_name=バナー&title_li=&category_before=&category_after=");
 				?>
@@ -17,15 +17,36 @@
 			<li class="book_ad">
 				<script charset="utf-8" type="text/javascript" src="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822/JP/hametuha-22/8001/44e350e4-5f34-4f29-b6a0-62408c33402d"> </script>
 			</li>
-			<li class="catnav">
-				<h3>カテゴリー</h3>
-				<ul>
-					<?php wp_list_categories("title_li=&depth=2&exclude=47");?>
-				</ul>
-			</li>
 			<li class="newpost">
 				<h3>新着記事</h3>
 				<?php $fumiki->newpost(); ?>
+			</li>
+			<li class="newpost">
+				<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
+				<script language="javascript" type="text/javascript">
+				//<![CDATA[
+					Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
+					Hatena.BookmarkWidget.title = "はてブ新着記事";
+					Hatena.BookmarkWidget.sort  = "hot";
+					Hatena.BookmarkWidget.width = 0;
+					Hatena.BookmarkWidget.num   = 5;
+					Hatena.BookmarkWidget.theme = "notheme";
+					Hatena.BookmarkWidget.load();
+				//]]>
+				</script>
+			</li>
+			<li class="newpost">
+				<script language="javascript" type="text/javascript">
+				//<![CDATA[
+					Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
+					Hatena.BookmarkWidget.title = "はてブ人気記事";
+					Hatena.BookmarkWidget.sort  = "count";
+					Hatena.BookmarkWidget.width = 0;
+					Hatena.BookmarkWidget.num   = 5;
+					Hatena.BookmarkWidget.theme = "notheme";
+					Hatena.BookmarkWidget.load();
+				//]]>
+				</script>
 			</li>
 			<li class="tags">
 				<h3>タグ</h3>
@@ -35,11 +56,14 @@
 
 
 		<ul id="column2">
+			<li class="insight">
+				<a href="<?php bloginfo("url"); ?>/ebooks"><img src="<?php bloginfo('template_directory'); ?>/img/single_right_nitch.jpg" alt="高橋文樹.comの管理人の愛犬ニッチからの緊急のお願いをお読みください。" width="120" height="600"/></a>
+			</li>
 			<li class="adscense">
 				<script type="text/javascript"><!--
 				google_ad_client = "pub-0087037684083564";
-				/* 高橋文樹.com 右カラム */
-				google_ad_slot = "9905205451";
+				/* 120x600, 作成済み 09/04/11 */
+				google_ad_slot = "5922527571";
 				google_ad_width = 120;
 				google_ad_height = 600;
 				//-->
@@ -48,15 +72,12 @@
 				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 				</script>
 			</li>
-			<li class="insight">
-				<!-- lastfm -->
-				<a href="http://www.lastfm.jp/user/fumikito/?chartstyle=TakahashiFumikiRight2"><img src="http://imagegen.last.fm/TakahashiFumikiRight2/recenttracks/fumikito.gif" border="0" alt="fumikito's Profile Page" /></a>
-			</li>
+			
 			<li class="adscense">
 				<script type="text/javascript"><!--
 				google_ad_client = "pub-0087037684083564";
-				/* 120x600, 作成済み 09/04/11 */
-				google_ad_slot = "5922527571";
+				/* 高橋文樹.com 右カラム */
+				google_ad_slot = "9905205451";
 				google_ad_width = 120;
 				google_ad_height = 600;
 				//-->

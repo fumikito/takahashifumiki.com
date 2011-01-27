@@ -96,44 +96,7 @@ else:
 		?>
 
 		<div id="end_meta" class="clearfix">
-			<div class="end_meta_box">
-				<?php
-					$random = rand(0, 2);
-					$sort = ($random >= 1) ? "hot" : "count";
-					$title = ($random >= 1) ? "新着" : "人気";
-				?>
-				<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
-				<script language="javascript" type="text/javascript">
-				Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
-				Hatena.BookmarkWidget.title = "はてなブックマーク<?php echo $title; ?>";
-				Hatena.BookmarkWidget.sort  = "<?php echo $sort; ?>";
-				Hatena.BookmarkWidget.width = 0;
-				Hatena.BookmarkWidget.num   = 5;
-				Hatena.BookmarkWidget.theme = "default";
-				Hatena.BookmarkWidget.load();
-				</script>
-			</div>
-			<div class="end_meta_box">
-				<?php related_posts(); ?>
-			</div>
-			<div class="end_meta_box">
-				<h3 class="mesena"><?php the_title(); ?>の反響</h3>
-				<dl class="mesena">
-					<dt>コメント</dt>
-					<dd>
-						現在、コメントは<?php comments_number('0','1','%'); ?>件です。<br />
-						<a href="#respond">コメント</a>したり、<a href="<?php echo $fumiki->root; ?>/inquiry/">コンタクト</a>してください。。
-					</dd>
-					<dt>ソーシャルメディア</dt>
-					<dd class="center">
-						<?php $fumiki->hatena_add("", "", "", "このエントリーをはてブする"); ?><br /><br />
-						<?php $fumiki->mixi_check(); ?>
-						<?php $fumiki->gree_like(); ?>
-						<?php $fumiki->tweet_this(); ?><br /><br />
-						<?php $fumiki->facebook_like("", 200, 80); ?>
-					</dd>
-				</dl>
-			</div>
+			<!-- X:S ZenBackWidget --><script type="text/javascript">document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//takahashifumiki.com&nsid=93705046058920128%3A%3A93705053843541286&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));</script><!-- X:E ZenBackWidget -->
 			<?php fumiki_to_top(); ?>
 		</div>
 		<!--#end_meta ends-->
