@@ -180,8 +180,9 @@ var Single = new Class({
 				elt.title = elt.getElement('img').alt;
 			}
 		});
-		var multibox = new MultiBox("multibox");
-		
+		var multibox = new MultiBox("multibox",{
+		  useOverlay: true
+		});
 	},
 
 	/**

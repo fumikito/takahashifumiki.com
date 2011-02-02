@@ -17,6 +17,7 @@ var MultiBox = new Class({
 			initialHeight: 250,
 			container: document.body, //this will need to be setup to the box open in relation to this.
 			overlay: false, //this will be a reference to an overlay instance. - TODO: implement below.
+			useOverlay: false,
 			contentColor: '#FFF',
 			showNumbers: true,
 			showControls: true,
@@ -51,13 +52,16 @@ var MultiBox = new Class({
 		this.createArray = [];
 		
 		if(this.options.useOverlay){
-			this.overlay = new Overlay({container: this.options.container, onClick:this.close.bind(this)});
-		}
-		this.overlay = this.options.overlay;
-		if(this.overlay){
+			// FIXED: onClick option dosen't work
+			//this.overlay = new Overlay({container: this.options.container, onClick:this.close.bind(this)});
+			this.overlay = new Overlay({container: this.options.container});
 			this.overlay.setOnClick(this.close.bind(this));
+		}else{
+  		this.overlay = this.options.overlay;
+  		if(this.overlay){
+  			this.overlay.setOnClick(this.close.bind(this));
+  		}
 		}
-		
 		this.content = $$('.'+className);
 		if(this.options.descClassName){
 			this.descriptions = $$('.'+this.options.descClassName);
@@ -313,7 +317,7 @@ var MultiBox = new Class({
 		if(!this.opened){
 			this.opened = true;
 			
-			if(this.options.overlay){
+			if(this.overlay){
 				this.overlay.show();
 			}
 
@@ -414,7 +418,7 @@ var MultiBox = new Class({
 	},
 	
 	close: function(){
-		if(this.options.overlay){
+		if(this.overlay){
 			this.overlay.hide();
 		}
 		if (this.options.showControls) {
@@ -614,8 +618,8 @@ var MultiBox = new Class({
 		this.controlEffects.start({'height': this.controls.getCoordinates().height});
 		this.iframeEffects.start({'height': this.iframe.getStyle('height').toInt()+this.controls.getStyle('height').toInt()});
 		
-		if(this.options.overlay){
-			this.options.overlay.position();
+		if(this.overlay){
+			this.overlay.position();
 		}
 
 	},

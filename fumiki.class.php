@@ -7,7 +7,7 @@
  * @author Takahashi Fumiki
  */
 class Fumiki{
-	var $version = "1.2.8";
+	var $version = "1.2.9";
 	var $root;
 	var $template;
 	var $blogTitle;
@@ -52,7 +52,7 @@ class Fumiki{
 				"overlay",
 				get_bloginfo("template_directory")."/js/Overlay.js",
 				array("mootools"),
-				"0.9",
+				"0.9.1",
 				true
 			);
 			//Javascriptの読み込みを登録
@@ -255,9 +255,9 @@ class Fumiki{
 			//MultiBox
 			wp_enqueue_script(
 				"multibox",
-				get_bloginfo("template_directory")."/js/Multibox.js",
+				get_bloginfo("template_directory")."/js/MultiBox.js",
 				array("overlay"),
-				"1.4.1",
+				"1.4.1.1",
 				true
 			);
 			//その他
