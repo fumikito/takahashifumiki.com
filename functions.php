@@ -296,3 +296,5 @@ function ascii_art($atts,$content = null)
 	//var_dump($content);
 }
 add_shortcode("aa", "ascii_art");
+
+

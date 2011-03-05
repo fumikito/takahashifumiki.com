@@ -59,6 +59,16 @@ class Fumiki{
 			add_action("wp_enqueue_scripts", array($this, "js"));
 			//CSSの読み込みを登録
 			add_action("wp_print_styles", array($this, "css"));
+			//管理バーを消す
+			if(is_user_logged_in() && !current_user_can("administrator")){
+			    show_admin_bar(false);
+			    wp_deregister_script( 'admin-bar' );
+			    wp_deregister_style( 'admin-bar' );
+				add_filter('show_admin_bar', '__return_false');
+				remove_action( 'wp_head', 'wp_admin_bar_header' );
+				remove_action( 'wp_head', '_admin_bar_bump_cb' );
+				remove_action('wp_footer','wp_admin_bar_render',1000);
+			}
 		}
 	}
 
@@ -390,6 +400,13 @@ EOS;
 			echo $html;
 		else
 			return $html;
+	}
+	
+	function facebook_comments()
+	{
+		?>
+		<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=182792691765099&amp;xfbml=1"></script><fb:comments href="<?php the_permalink(); ?>" num_posts="2" width="auto"></fb:comments>
+		<?php
 	}
 	
 	/**

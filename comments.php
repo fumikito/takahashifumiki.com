@@ -1,5 +1,6 @@
 <div id="comments_wrapper">
 <?php
+global $fumiki;
 /**
  * 直接読み込まれた場合の処理
  */
@@ -124,6 +125,8 @@ do_action('comment_form', $post->ID); ?>
 </form>
 </div><!-- respond ends -->
 <?php endif; /*ref52*/ ?>
+
+<?php $fumiki->facebook_comments(); ?>
 
 <?php fumiki_to_top(); ?>
 
