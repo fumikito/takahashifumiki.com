@@ -7,7 +7,7 @@
  * @author Takahashi Fumiki
  */
 class Fumiki{
-	var $version = "1.2.9";
+	var $version = "1.2.10";
 	var $root;
 	var $template;
 	var $blogTitle;
