@@ -57,10 +57,10 @@ var MultiBox = new Class({
 			this.overlay = new Overlay({container: this.options.container});
 			this.overlay.setOnClick(this.close.bind(this));
 		}else{
-  		this.overlay = this.options.overlay;
-  		if(this.overlay){
-  			this.overlay.setOnClick(this.close.bind(this));
-  		}
+	  		this.overlay = this.options.overlay;
+	  		if(this.overlay){
+	  			this.overlay.setOnClick(this.close.bind(this));
+	  		}
 		}
 		this.content = $$('.'+className);
 		if(this.options.descClassName){

@@ -36,17 +36,18 @@ var Overlay = new Class({
 		
 		this.options.container = $(this.options.container);
 		
-		this.container = new Element('div').setProperty('id', 'OverlayContainer').setStyles({
+		this.container = new Element('div').setProperty('id', 'MooverlayContainer').setStyles({
 			position: 'absolute',
 			left: '0px',
 			top: '0px',
 			width: '100%',
+			display: 'none',
 			zIndex: this.options.zIndex
 		}).injectInside(this.options.container);
 		
 		this.iframe = new Element('iframe').setProperties({
-			'id': 'OverlayIframe',
-			'name': 'OverlayIframe',
+			'id': 'MooverlayIframe',
+			'name': 'MooverlayIframe',
 			'src': 'javascript:void(0);',
 			'frameborder': 0,
 			'scrolling': 'no'
@@ -61,7 +62,7 @@ var Overlay = new Class({
 			'zIndex': 1
 		}).injectInside(this.container);
 		
-		this.overlay = new Element('div').setProperty('id', 'Overlay').setStyles({
+		this.overlay = new Element('div').setProperty('id', 'Mooverlay').setStyles({
 			position: 'absolute',
 			left: '0px',
 			top: '0px',
@@ -111,6 +112,7 @@ var Overlay = new Class({
 	
 	show: function(){
 		//this.fade.start(0,this.options.opacity);
+		this.container.setStyle("display", "block");
 		this.container.fade(this.options.opacity);
 	},
 	

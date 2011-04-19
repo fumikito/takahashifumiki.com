@@ -4,7 +4,7 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 */
 ?>
 <div id="yarpp">
-<h3>関連する投稿</h3>
+<h3>&quot;<?php the_title(); ?>&quot;に関連する投稿</h3>
 <?php if ($related_query->have_posts()):?>
 <ol>
 	<?php while ($related_query->have_posts()) : $related_query->the_post(); ?>

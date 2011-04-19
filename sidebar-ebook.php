@@ -110,7 +110,6 @@
 	<div class="tweet">
 		<?php fumiki_twitter(); ?>
 		<?php get_search_form(); ?>
-		
 	</div>
 	
 </div><!-- #right ends-->

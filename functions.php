@@ -38,22 +38,75 @@ add_action("init", array($fumiki, "init"));
  ************************************/
 function fumiki_comment_layout($comment, $args, $depth){
 	$GLOBALS['comment'] = $comment;
+	$type = feedback_type(false,false,false,false,false,false,false,false,false,false);
+	switch($type){
+		case "Tweet":
+			$prefix = "<small>@</small>";
+			$avatar = 16;
+			break;
+		case "はてなブックマーク":
+			$prefix = "<small>id:</small>";
+			$avatar = 16;
+			break;
+		case "Delicious":
+			$prefix = "";
+			$avatar = 16;
+			break;
+		default:
+			$prefix = "";
+			$avatar = 40;
+	}
 ?>
 	<li <?php if(get_user_by_email($comment->comment_author_email)): comment_class('fumiki'); else: comment_class(); endif; ?> id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
-			<?php echo get_avatar($comment,40 ); ?>
-			<cite><?php comment_author_link(); ?><?php if(!get_user_by_email($comment->comment_author_email)) echo "<small>さん</small>"; ?></cite>
-			<span class="old"><?php comment_date(); comment_time(); edit_comment_link('（編集）'); ?></span>
+			<?php echo get_avatar($comment,$avatar ); ?>
+			<cite>
+				<?php echo $prefix; ?>
+				<?php comment_author_link(); ?>
+				<?php if(!get_user_by_email($comment->comment_author_email)) : ?>
+					<small>さん</small>
+				<?php endif; ?>
+			</cite>
+			<span class="old">
+				<?php comment_date(); comment_time(); ?>
+				<?php if($type == "コメント") edit_comment_link('（編集）'); ?>
+			</span>
 		</div><!-- .comment-author ends-->
 
 		<?php comment_text(); ?>
 
+		<?php if($type == "コメント" && false === array_search($comment->comment_type, array("pingback", "trackback") )): ?>
 		<div class="reply">
 			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 		</div><!-- .reply ends-->
+		<?php endif; ?>
+<?php
+}
 
-<?php }
-
+/**
+ * feedback champruからセルクマを外す
+ *
+ * @return $comments
+ */
+function champru_comments($comments_array, $type){
+	foreach ($comments_array as $comment) {
+	    switch ($type){
+		    case 'tweet':
+		        if ($comment->comment_author != 'takahashifumiki')
+		            $comments[] = $comment;
+				break;
+		    case 'hatena':
+		        if ($comment->comment_author != 'fumikito')
+		            $comments[] = $comment;
+				break;
+		    default:
+		        $comments[] = $comment;
+		        break;
+	    }
+	}
+return $comments;
+}
+add_filter('feedback-champuru/comments_array', 'champru_comments', 10, 2);
 
 /**
  * トラックバックの数取得

@@ -7,7 +7,7 @@
  * @author Takahashi Fumiki
  */
 class Fumiki{
-	var $version = "1.2.10";
+	var $version = "1.2.13";
 	var $root;
 	var $template;
 	var $blogTitle;
@@ -22,12 +22,16 @@ class Fumiki{
 		"facebook" => "http://www.facebook.com/profile.php?id=1034317368&ref=profile",
 		"hametuha" => "http://hametuha.org"
 	);
+	var $debug = false;
 
 	/**
 	 * コンストラクタ
 	 * @return void
 	 */
 	function __construct(){
+		if($_SERVER["SERVER_NAME"] == "takahashifumiki.com"){
+			$this->debug = false;
+		}
 		$this->root = get_bloginfo('siteurl');
 		$this->template = get_bloginfo('template_directory');
 		$this->blogTitle = get_bloginfo('name');
@@ -39,28 +43,12 @@ class Fumiki{
 	function init(){
 		global $wp_iwphone;
 		if(!is_admin() &&  (!$wp_iwphone|| !$wp_iwphone->detectiPhone())){
-			//MooToolsをスクリプトとして登録
-			wp_register_script(
-				"mootools",
-				get_bloginfo("template_directory")."/js/mootools.js",
-				array(),
-				"1.2.4",
-				true
-			);
-			//Overlayを登録
-			wp_register_script(
-				"overlay",
-				get_bloginfo("template_directory")."/js/Overlay.js",
-				array("mootools"),
-				"0.9.1",
-				true
-			);
 			//Javascriptの読み込みを登録
 			add_action("wp_enqueue_scripts", array($this, "js"));
 			//CSSの読み込みを登録
 			add_action("wp_print_styles", array($this, "css"));
 			//管理バーを消す
-			if(is_user_logged_in() && !current_user_can("administrator")){
+			if(is_user_logged_in()){
 			    show_admin_bar(false);
 			    wp_deregister_script( 'admin-bar' );
 			    wp_deregister_style( 'admin-bar' );
@@ -205,23 +193,38 @@ class Fumiki{
 	function css(){
 		global $is_winIE;
 		if(!is_admin()){
-			//メインスタイル
-			wp_enqueue_style("main", get_bloginfo("template_directory")."/style.css", array(), $this->version, "screen");
-			//IE用CSS
-			if($is_winIE){
-				wp_enqueue_style("ie-common", get_bloginfo("template_directory")."/css/ie.css", array(), $this->version, "screen");
-				if(preg_match("/MSIE 7\.0/",$_SERVER["HTTP_USER_AGENT"]))
-					wp_enqueue_style("ie7", get_bloginfo("template_directory")."/css/ie7.css", array(), $this->version, "screen");
-				elseif(preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"]))
-					wp_enqueue_style("ie6", get_bloginfo("template_directory")."/css/ie6.css", array(), $this->version, "screen");
-			}
-			//シングルページ用CSS
-			if(is_singular()){
-				//Multibox用のCSS
-				wp_enqueue_style("multibox", get_bloginfo("template_directory")."/css/multibox/multibox.css", array(), "1.4.1", "screen");
-				//MultiboxのIE用CSS
-				if($is_winIE && preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"])){
-					wp_enqueue_style("multibox-ie", get_bloginfo("template_directory")."/css/multibox/multibox-ie6.css", array(), "1.4.1", "screen");
+			if(!$this->debug){
+				//共通
+				wp_enqueue_style("main", get_bloginfo("template_directory")."/css/common-compressed.css", array(), $this->version, "screen");
+				//IEなら
+				if($is_winIE){
+					wp_enqueue_style("ie-common", get_bloginfo("template_directory")."/css/ie.css", array(), $this->version, "screen");
+					if(preg_match("/MSIE 7\.0/",$_SERVER["HTTP_USER_AGENT"])){
+						wp_enqueue_style("ie7", get_bloginfo("template_directory")."/css/ie7.css", array(), $this->version, "screen");
+					}elseif(preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"])){
+						wp_enqueue_style("ie6", get_bloginfo("template_directory")."/css/ie6.css", array(), $this->version, "screen");
+						wp_enqueue_style("multibox-ie", get_bloginfo("template_directory")."/css/multibox-ie6.css", array(), "1.4.1", "screen");
+					}
+				}
+			}else{
+				//メインスタイル
+				wp_enqueue_style("main", get_bloginfo("template_directory")."/css/common.css", array(), $this->version, "screen");
+				//IE用CSS
+				if($is_winIE){
+					wp_enqueue_style("ie-common", get_bloginfo("template_directory")."/css/ie.css", array(), $this->version, "screen");
+					if(preg_match("/MSIE 7\.0/",$_SERVER["HTTP_USER_AGENT"]))
+						wp_enqueue_style("ie7", get_bloginfo("template_directory")."/css/ie7.css", array(), $this->version, "screen");
+					elseif(preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"]))
+						wp_enqueue_style("ie6", get_bloginfo("template_directory")."/css/ie6.css", array(), $this->version, "screen");
+				}
+				//シングルページ用CSS
+				if(is_singular()){
+					//Multibox用のCSS
+					wp_enqueue_style("multibox", get_bloginfo("template_directory")."/css/multibox.css", array(), "1.4.1", "screen");
+					//MultiboxのIE用CSS
+					if($is_winIE && preg_match("/MSIE 6\.0/",$_SERVER["HTTP_USER_AGENT"])){
+						wp_enqueue_style("multibox-ie", get_bloginfo("template_directory")."/css/multibox-ie6.css", array(), "1.4.1", "screen");
+					}
 				}
 			}
 		}
@@ -231,6 +234,22 @@ class Fumiki{
 	 * Javascriptを書き込む
 	 */
 	function js(){
+		//MooToolsをスクリプトとして登録
+		wp_register_script(
+			"mootools",
+			get_bloginfo("template_directory")."/js/mootools.js",
+			array(),
+			"1.2.4",
+			true
+		);
+		//Overlayを登録
+		wp_register_script(
+			"overlay",
+			get_bloginfo("template_directory")."/js/Overlay.js",
+			array("mootools"),
+			"0.9.1",
+			true
+		);
 		//ホームの場合はスライドショーと縦書きを読み込む
 		if(is_home()){
 			//スライドショー
@@ -329,12 +348,12 @@ EOS;
 		if(empty($url))
 			$url = get_permalink();
 		$html = <<<EOS
-            <a href="http://mixi.jp/share.pl" class="mixi-check-button" data-key="24728c01049dfcbb0bfd168040ccf1ba5cbb458d" data-url="{$url}" data-button="button-{$button}">mixiチェック</a>
+            <iframe scrolling="no" frameborder="0" allowTransparency="true" style="overflow:hidden; border:0; width:80px; height:20px" src="http://plugins.mixi.jp/favorite.pl?href=http%3A%2F%2Ftakahashifumiki.com&service_key=d288247468354a3415683ce1320a8403e84d5351&show_faces=false&width=140"></iframe>
 EOS;
 		if($echo)
-			echo $html.$script;
+			echo $html;//.$script;
 		else
-			return $html.$script;
+			return $html;//.$script;
 	}
 	
 	/**

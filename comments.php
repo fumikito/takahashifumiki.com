@@ -17,18 +17,16 @@ if ( post_password_required() ) {
  ***********************/
 if(have_comments()): ?>
 
-
-
 <h3 class="comment_header mincho"><small class="old"><?php comments_number('0','1','%'); ?></small><span><?php the_title(); ?></span>へのコメント</h3>
 <ul id="comment_wrapper" class="clrL">
 <?php
 //コメントの取得
-wp_list_comments('style=ul&type=comment&callback=fumiki_comment_layout');
+wp_list_comments('style=ul&callback=fumiki_comment_layout');
 ?>
 </ul>
-<?php previous_comments_link(); ?>
-<?php next_comments_link(); ?>
-
+<div class="pagenate-commment">
+<?php paginate_comments_links(array("prev_text"=> "&laquo;", "next_text" => "&raquo;")); ?>
+</div>
 <?php else:
 /**************************
  * コメントがないとき
@@ -40,29 +38,15 @@ if('open' == $post->comment_status): ?>
  * コメントが禁止されているとき
  *************************/
 else: ?>
-だめだわ。
 
 <?php endif; endif;//ref17,35
 /***********************
  * コメントループの終了
  ***********************/
 
-/************************
- * トラックバックエリア
- ***********************/
-?>
-
-<div id="trackback">
-<h3>トラックバック</h3>
-<?php if(!fumiki_get_tb($post->ID)): ?>
-<p>トラックバックはありません。送ってください。</p>
-<?php endif; ?>
-<div class="tburl">
-<label>トラックバックURI<input type="input" readonly="readonly" value="<?php trackback_url(); ?>" onclick="this.selected = true;" /></label>
-</div>
-</div><!-- #trackback-->
-
-<?php
+ 
+ 
+ 
 /************************
  * コメントが投稿できるときだけフォームを表示
  ***********************/
@@ -125,8 +109,6 @@ do_action('comment_form', $post->ID); ?>
 </form>
 </div><!-- respond ends -->
 <?php endif; /*ref52*/ ?>
-
-<?php $fumiki->facebook_comments(); ?>
 
 <?php fumiki_to_top(); ?>
 
