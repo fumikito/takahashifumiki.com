@@ -2,12 +2,6 @@
  * @author Takahashi Fumiki
  * @version 1.2
  */
-
-window.addEvent("domready", function(event){
-	var single = new Single();
-});
-
-
 var Single = new Class({
 	theme_dir: '',
 
@@ -16,14 +10,12 @@ var Single = new Class({
 	 */
 	initialize: function(){
 		//テンプレートディレクトリを取得
-		var str;
 		$$("script").each(function(elt, index){
 			if(elt.src.match(/takahashi_single\.js/)){
-				str = elt.src.split("js/takahashi_single");
+				this.theme_dir = elt.src.split("js/takahashi_single")[0];
 				return false;
 			}
-		});
-		this.theme_dir = str[0];
+		}, this);
 		
 		//Windowのリサイズイベントを取得
 		var body = document.getElement('body');

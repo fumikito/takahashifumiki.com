@@ -6,6 +6,7 @@ $fumiki->xml(); ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta property="fb:admins" content="1034317368" />
 	<title><?php $fumiki->title(); ?></title>
 	<meta name="author" content="Takahashi Fumiki" />
 	<meta name="copyright" content="copyright 2008- takahashifumiki.com" />

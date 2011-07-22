@@ -37,4 +37,13 @@ window.addEvent('domready',function(event){
 			}
 		});
 	}
+	
+	//ホームかどうかを判断する
+	if($$('body.home').length == 1){
+		var home = new Home();
+	}
+	//シングルページかどうかを判断する
+	if($$('body.n_single').length == 1 || $$('body.t_single').length == 1){
+		var singel = new Single();
+	}
 });

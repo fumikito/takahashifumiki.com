@@ -1,0 +1,280 @@
+@charset "utf-8";
+/**
+ * Custome editor style-sheet
+ * @package fumiki
+ */
+
+/*フロート解除*/
+.clrL{clear:left;}
+.clrR{clear:right;}
+.clrB{clear:both;}
+
+/*clearfix*/
+.clearfix:after {content: ".";display: block;clear: both;height: 0;visibility: hidden;}
+.clearfix { display: inline-block; }
+/* exlude MacIE5 \*/
+* html .clearfix { height: 1% }
+.clearfix {display:block;}
+/* end MacIE5 */
+/*====clear style====*/
+
+body.mceContentBody{
+	word-wrap:break-word;
+	text-align:justify;
+	text-justify: inter-ideograph;
+	font-family:"メイリオ",'Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;
+	font-size:16px;
+	color:#4D4945;
+	max-width:800px;
+	display:block;
+	margin:0 auto;
+}
+a:link{color:#202020;text-decoration:underline;}
+a:visited{color:#3f3f3f;text-decoration:underline;}
+a:hover{color:#E4007F;text-decoration:none;}
+a:active{color:#E4007F;text-decoration:underline;}
+a{overflow:hidden;}
+/*フォントファミリー*/
+.mincho{font-family:"ヒラギノ明朝 ProN W3", 'HiraMinProN-W3', "IPA P明朝", "細明朝体","MS P明朝" ,"ヒラギノ明朝体3",serif;}
+.old{font-family:Georgia, "Times New Roman", Times, serif;}
+.sans{font-family:"ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;}
+.mono, pre{font-family:'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;}
+/*テキスト寄せ*/
+.center{text-align:center;}
+.left{text-align:left}
+.right{text-align:right}
+.top{vertical-align: top}
+.middle{vertical-align: middle}
+.bottom{vertical-align:bottom}
+
+
+/****************************************
+ * 4.通常記事設定
+ ****************************************/
+/*---------------------*
+ * 個別タグ設定
+ */
+/*段落*/
+p{
+	margin:15px 0;
+}
+
+/*見出し*/
+h2{
+	font-size:2.2em;
+	padding-top:30px;
+	margin-bottom:20px;
+	line-height:1.2;
+	color:#00A0E9;
+}
+h3{
+	font-size:1.8em;
+	padding:30px 0 5px;
+	margin-bottom:15px;
+	line-height:1.2;
+	border-bottom:1px dotted #e5e5e5;
+}
+h4{
+	font-size:1.4em;
+	padding-top:30px;
+	margin-bottom:15px;
+	line-height:1.2;}
+h5{
+	font-size:1.2em;
+	padding-top:30px;
+	margin-bottom:15px;
+	line-height:1.2;
+}
+
+
+/*リスト共通設定*/
+ol,ul,dl{
+	margin:20px 0;
+}
+ol li,ul li,dl dd{margin:8px 0 8px 20px;}
+ul, ol{padding-left:20px;}
+ul li{list-style:outside disc;}
+ol li{list-style:outside decimal;}
+ul li li, ol li li, dd li{font-size:0.8em;}
+ul li ul li{list-style-type:circle;}
+ol li ol li{list-style-type:decimal-leading-zero;}
+
+/*定義リスト*/
+dl dt{
+	font-size:1.2em;
+	font-weight:bold;
+	margin:15px 0 0;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+dl dd{
+	border-left:5px solid #4D4945;
+	padding-left:10px;
+}
+
+/*引用*/
+blockquote, cite, q{color:#000;font-weight:bold;}
+blockquote{
+	margin:20px 0;
+	padding:10px 10px 10px 80px;
+	background:#bbb url(img/single_blockquote.gif) left top no-repeat;
+	color:#fff;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+blockquote p{margin:8px 0}
+blockquote cite{
+	display:block;
+	text-align:right;
+	font-size:0.8em;
+	color:#fff;
+}
+blockquote a:link{color:#fff;}
+blockquote a:visited{color:#fff;}
+cite:before{content:'"'}
+cite:after{content:'"'}
+
+/*注意書き*/
+.alert{
+	font-size:0.8em;
+	font-weight:bold;
+	color:#000;
+}
+.alert:before{content:"〔※ "}
+.alert:after{content:"〕"}
+
+/*挿入*/
+ins{
+	text-decoration:none;
+	font-size:0.8em;
+	color:#666;
+}
+ins:before{content:"［*"}
+ins:after{content:"］"}
+
+
+/*削除*/
+del{
+	font-size:0.8em;
+	color:#aaa;
+}
+del:before{content:" "}
+del:after{content:" "}
+
+/*リンク装飾*/
+a.external,
+a.zip,
+a.pdf,
+a.epub{
+	padding-right:16px;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+a.external{
+	background-image:url(./img/linkicon_external.png);
+}
+a.zip{
+	background-image:url(./img/linkicon_zip.png);
+}
+a.pdf{
+	background-image:url(./img/linkicon_pdf.png);
+}
+a.epub{
+	background-image:url(./img/linkicon_epub.png);
+}
+
+/*テーブル*/
+table{
+	margin:20px 0;
+	border-spacing:0;
+	empty-cells:show;
+	border-right:1px solid #ABCD03;
+	border-left:1px solid #ABCD03;
+}
+table caption{
+	color:#ABCD03;
+	text-align:left;
+	font-size:1.5em;
+}
+table th{
+	text-align:left;
+	background-color:#ABCD03;
+	color:#fff;
+	padding:10px 15px;
+	margin:0;
+}
+table td{
+	border-bottom:1px dotted #ABCD03;
+	padding:10px 15px;
+	margin:0;
+	font-size:0.85em;
+}
+
+/*アスキーアート*/
+pre.aa{
+	font-family:IPAMonaGothic,'ＭＳ ゴシック',monospace;
+	font-size:12px;
+	line-height:1.5;
+	margin:20px 0;
+	color:#999;
+}
+
+/*コードフォーマット*/
+.code-format{
+	background:#4D4945;
+	color:#fff;
+	margin:10px;
+	padding:10px;
+	border:2px solid #CCC;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-border-radius:15px;
+	overflow:auto;
+	font-family:'andale mono','lucida';
+}
+.code-format table{width:100%;}
+.code-format tr.even{background:#57534E;}
+.code-format th{
+	color:#938C84;
+	background-color:transparent;
+	font-weight:bold;
+	text-align:right;
+	border-right:#938C84 2px solid;
+	padding:0 5px 0 0;
+	vertical-align:top;
+}
+.code-format td{
+	padding:0 0 0 15px;
+	border-bottom:none;
+}
+.code-format .quote{color:#A5EFB8}
+.code-format .notation{color:#BCE3F4}
+
+/*画像*/
+.alignright{float:right;padding:10px; margin-left:20px;border:1px solid #ddd;background:#fafafa;}
+.alignleft{float:left;padding:10px;margin-right:20px;border:1px solid #ddd;background:#fafafa;}
+.aligncenter{margin:20px auto;padding:10px;border:1px solid #ddd;background:#fafafa;}
+img.aligncenter{display:block;}
+div.wp-caption{
+	text-align:center; background:#fafafa;
+	-webkit-border-radius:3px;border-radius:3px;
+	-moz-border-radius:3px;
+	margin-bottom:15px;
+	box-shadow:0 0 3px rgba(0,0,0, 0.3);
+	-webkit-box-shadow:0 0 3px rgba(0,0,0, 0.3);
+	-moz-box-shadow:0 0 3px rgba(0,0,0, 0.3);
+}
+
+/*キャプション*/
+.wp-caption-text{
+	font-size:0.75em;
+	color:#AAA;
+	margin:5px 0;
+}
+.alignright p.wp-caption-text{text-align:right;}
+.alignleft p.wp-caption-text{text-align:left;}
+.aligncenter p.wp-caption-text{text-align:center;}
+
+/*
+ * 個別タグ設定終わり
+ *--------------------*/

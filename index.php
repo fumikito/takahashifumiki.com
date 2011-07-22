@@ -5,11 +5,12 @@ else:
 get_header();
 $footerFlg = true;
 ?>
+<!--
 <div id="indicator">
 	<img src="<?php bloginfo("template_directory"); ?>/css/multibox/loader.gif" alt="Loading..." width="31" height="31" />
 	<span>初期化中<small>...</small></span>
 </div>
-
+-->
 <div id="wrapper">
 
 

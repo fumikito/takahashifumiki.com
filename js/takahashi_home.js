@@ -2,12 +2,6 @@
  * @author Takahashi Fumiki
  * @version 1.2
  */
-
-window.addEvent("domready", function(event){
-	var home = new Home();
-});
-
-
 var Home = new Class({
 	//縦書き用コントローラ
 	tategaki: null,
@@ -68,9 +62,11 @@ var Home = new Class({
 	},
 	
 	hideIndicator: function(){
+		/*
 		$("indicator").fade("out");
 		setTimeout(function(){
 			$("indicator").dispose();
 		}, 500);
+		*/
 	}
 });

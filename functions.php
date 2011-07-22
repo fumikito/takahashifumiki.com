@@ -23,7 +23,8 @@ require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."s
 require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."youtube.php");
 require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."apps".DIRECTORY_SEPARATOR."globalnavi.php");
 
-
+//エディタースタイル
+add_editor_style("editor-style.css");
 
 //クラスの初期化
 require_once dirname(__FILE__)."/fumiki.class.php";
@@ -350,4 +351,13 @@ function ascii_art($atts,$content = null)
 }
 add_shortcode("aa", "ascii_art");
 
+/**
+ * 画像サイズを追加する
+ */
+add_image_size( 'medium-thumbnail', 300, 225, true );
 
+/*
+add_filter("attachment_fields_to_edit", function($form_fields, $post){
+	return $form_fields;
+});
+*/
