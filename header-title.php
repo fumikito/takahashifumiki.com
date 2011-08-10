@@ -19,9 +19,11 @@
 			所要時間: <span class="mono"><?php echo floor($length / 400); ?> Min.</span>
 			<small class="mono">(<?php echo number_format($length); ?> letters)</small>
 		</li>
+		<?php if(is_single()): ?>
 		<li class="inline-block feedback">フィードバック: <span class="mono"><?php echo comments_number('0', "1", '%n'); ?></span></li><br />
 		<li class="inline-block category">カテゴリー: <?php the_category(','); ?></li>
 		<li class="inline-block tag"><?php the_tags('タグ: '); ?></li>
+		<?php endif;?>
 	</ul>
 	<?php endif; ?>
 </div>
