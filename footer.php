@@ -70,6 +70,10 @@
 				<option value="">月別投稿の一覧</option> 
 				<?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
 			</select>
+			<h4 class="mono second">Insight</h4>
+			<div class="inner center">
+				<?php fumiki_nakanohito(); ?>
+			</div>
 		</div>
 
 		<div class="grid_4">
