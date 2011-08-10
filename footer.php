@@ -51,7 +51,7 @@
 			</ol>
 			<h4 class="mono second">Contact me with</h4>
 			<ol class="inner">
-				<li><a class="mail" href="<?php bloginfo('url'); ?>/inquiery/">お問い合わせ</a></li>
+				<li><a class="mail" href="<?php bloginfo('url'); ?>/inquiry/">お問い合わせ</a></li>
 				<li><a class="feed" href="<?php bloginfo('rss_url'); ?>">RSSフィード</a></li>
 			</ol>
 		</div>

@@ -117,18 +117,30 @@ function fumiki_title(){
 	}
 }
 
+/**
+ * いいねボタンを出力する
+ * @param string $title
+ * @param string $url 
+ * @return void
+ */
 function fumiki_share($title, $url){
-	
+	$feed_url = get_bloginfo('rss_url');
+	$feed_src = get_bloginfo('template_directory')."/img/RSS-container.png";
 	echo <<<EOS
 	<div class="like">
 	<!-- Hatena -->
 	<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	<!-- Facebook -->
-	<iframe src="http://www.facebook.com/plugins/like.php?href={$fb_url}&amp;send=false&amp;layout=box_count&amp;width=70&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=60" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px; height:60px;" allowTransparency="true"></iframe>
+	<iframe src="http://www.facebook.com/plugins/like.php?href={$fb_url}&amp;send=false&amp;layout=box_count&amp;width=72&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=60" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:72px; height:60px;" allowTransparency="true"></iframe>
 	<!-- twitter -->
-	<a href="http://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="hametuha" data-related="takahashifumiki:破滅派の主催者です。" data-lang="ja">ツイート</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	<a href="http://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	<!-- Google + -->
 	<g:plusone size="tall" href="{$url}"></g:plusone>
+	<!-- FeedBurner -->
+	<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
+		<span class="mono">0</span>
+		<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
+	</a>
 	</div>
 EOS;
 }

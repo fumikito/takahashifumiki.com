@@ -1239,10 +1239,46 @@ body.home #indicator span{
  *--------------------*/
 
 
+
 /*---------------------
- * 関連投稿
+ * いいね・関連投稿
  */
- .related{
+.share{
+	margin:20px 0; 
+}
+.share h3{
+	font-size:2em;
+	color:#4C5A65;
+	text-shadow:1px 1px 2px #fff;
+}
+.share p{
+	font-size:1.4em;
+	margin:1em 0;
+	text-shadow:1px 1px 2px #fff;
+}
+.share iframe,
+.share a,
+.share #___plusone_0{
+	margin-right:10px !important;
+}
+#feedburner-count{
+	width:52px;
+	height:62px;
+	position:relative;
+	overflow:hidden;
+	text-decoration:none;
+}
+#feedburner-count span{
+	position:absolute;
+	display:block;
+	width:52px;
+	font-size:14px;
+	text-align:center;
+	height:35px;
+	line-height:35px;
+}
+/*関連投稿*/
+.related{
 	 background:#eee;
 	 border-top:1px solid #ddd;
 	 border-bottom:1px solid #ddd;
@@ -1278,34 +1314,6 @@ body.home #indicator span{
 	margin-bottom:5px;
 }
 
-/*はてなブックマークウィジェット*/
-#end_meta .hatena-bookmark-widget{
-	width:auto;
-	margin-right:30px;
-	margin-left:15px;
-}
-
-/*メセナ*/
-.end_meta_box h3.mesena{
-	width:156px;
-	height:34px;
-	background:url(img/single_metaend_header3.gif) left top no-repeat;
-	text-indent:-9999px;
-}
-.end_meta_box p.mesena{
-
-}
-.end_meta_box dl.mesena{
-	padding-bottom:3px;
-	font-size:1.2em;
-}
-.end_meta_box dl.mesena dt{
-	border-top:1px dotted #ddd;
-	margin:8px 0 5px;
-	padding-top:3px;
-	font-size:1.2em;
-	font-weight:bolder;
-}
 /*******************
  * 投稿末尾終わり
  *******************/
