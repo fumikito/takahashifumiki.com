@@ -84,9 +84,9 @@ else:
 
 <h4>翻訳者について</h4>
 <ul>
-<li><a href="<?php echo $fumiki->root; ?>/about">高橋文樹について</a></li>
-<li><a href="<?php echo $fumiki->root; ?>/about/history">略歴</a></li>
-<li><a href="<?php echo $fumiki->root; ?>/about/translation">翻訳プロジェクト</a></li>
+<li><a href="<?php bloginfo('url'); ?>/about">高橋文樹について</a></li>
+<li><a href="<?php bloginfo('url'); ?>/about/history">略歴</a></li>
+<li><a href="<?php bloginfo('url'); ?>/about/translation">翻訳プロジェクト</a></li>
 </ul>
 </div><!--main-menu ends-->
 

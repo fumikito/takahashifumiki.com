@@ -22,17 +22,17 @@ define('moo_dir',get_bloginfo('template_directory')."/mootools/");
 
 	-->
 
-	<title><?php $fumiki->title(); ?></title>
+	<title><?php wp_title('>', true, 'right'); ?>MooTools 1.2.1日本語ドキュメント</title>
 
 	<!-- Shortcut Icons -->
 	<link href="<?php echo moo_dir; ?>img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 	<!-- StyleSheets -->
-	<link href="<?php echo $fumiki->template; ?>/css/moo_style.css" rel="stylesheet" type="text/css" media="screen" />
-	<link href="<?php echo $fumiki->template; ?>/css/moo_print.css" rel="stylesheet" type="text/css" media="print" />
+	<link href="<?php bloginfo('template_directory'); ?>/mootools/moo_style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="<?php bloginfo('template_directory'); ?>/mootools/moo_print.css" rel="stylesheet" type="text/css" media="print" />
 
 	<!-- RSS -->
-	<link rel="alternate" type="application/rss+xml" title="高橋文樹.com最新エントリー" href="<?php $fumiki->feed(); ?>"/>
+	<link rel="alternate" type="application/rss+xml" title="高橋文樹.com最新エントリー" href="<?php bloginfo('rss_url'); ?>"/>
 <!-- Google Analytics // -->
 			<script type="text/javascript">
 			//<![CDATA[
@@ -57,15 +57,15 @@ define('moo_dir',get_bloginfo('template_directory')."/mootools/");
 		<a href="http://ja.wordpress.org" id="mediatemple"><span>Template created by WordPress</span></a>
 
 		<div id="logo">
-			<h1><a href="<?php echo $fumiki->root; ?>/topics/web/mootools"><span>MooTools</span></a></h1>
+			<h1><a href="<?php bloginfo('url'); ?>/topics/web/mootools"><span>MooTools</span></a></h1>
 			<h2><span>軽量のJavascriptフレームワーク</span></h2>
 		</div><!--logo ends-->
 
 		<ol id="navigation">
 			<li class="first"><a href="<?php bloginfo('url'); ?>/topics/web/mootools">ホーム</a></li>
-			<li><a href="<?php echo $fumiki->root; ?>/web/mootools/294">ダウンロード</a></li>
-			<li><a href="<?php echo $fumiki->root; ?>/web/mootools/152">ドキュメント</a></li>
-			<li><a href="<?php echo $fumiki->root; ?>/web/172">アバウト</a></li>
+			<li><a href="<?php bloginfo('url'); ?>/web/mootools/294">ダウンロード</a></li>
+			<li><a href="<?php bloginfo('url'); ?>/web/mootools/152">ドキュメント</a></li>
+			<li><a href="<?php bloginfo('url'); ?>/web/172">アバウト</a></li>
 			<li><a href="http://demos.mootools.net">デモ</a></li>
 		</ol><!--navigation ends-->
 

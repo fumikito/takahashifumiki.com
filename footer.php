@@ -1,85 +1,98 @@
-<?php global $fumiki; ?>
-<div id="footer_wrapper">
-	<div id="footer">
-		
-		
-		<div class="footer_navi">
-			<h3>カテゴリー</h3>
-			
-			<ul class="footer_navi_child">
-				<li class="cat-item">
-					<a href="<?php echo $fumiki->root; ?>/author/admin/" title="すべての投稿">すべてのカテゴリー</a>
+<div id="footer" class="dark_bg shadow">
+	<div id="footer-post" class="margin mono clearfix">
+		<div class="grid_4">
+			<h4 class="mono">Recent Entries</h4>
+			<ul>
+				<?php $recent = new WP_Query("posts_per_page=5"); if($recent->have_posts()) while($recent->have_posts ()): $recent->the_post(); ?>
+				<li>
+					<a href="<?php the_permalink(); ?>">
+						<?php the_title(); ?><br /><small><?php the_date(); ?></small>
+					</a>
 				</li>
-				<li class="cat-item">
-					<a href="<?php echo $fumiki->root; ?>/category/announcement/" title="<?php echo strip_tags(category_description(71)); ?>">告知</a>
-				</li>
-				<li class="cat-item">
-					<a href="<?php echo $fumiki->root; ?>/category/literature/" title="<?php echo strip_tags(category_description(3)); ?>">文芸活動</a>
-					<ul>
-						<?php wp_list_categories('child_of=3&title_li='); ?>
-					</ul>
-				</li>
-			</ul><!-- .footer_navi_child ends -->
-			
-			<div class="footer_navi_child">
-				<ul>
-					<li><a href="<?php echo $fumiki->root; ?>/category/web/" title="<?php echo strip_tags(category_description(6)); ?>">Web制作</a>
-						<ul>
-							<li><a href="<?php echo $fumiki->root; ?>/category/web/programing/" title="<?php echo strip_tags(category_description(8)); ?>">プログラミング</a></li>
-							<li><a href="<?php echo $fumiki->root; ?>/category/web/design/" title="<?php echo strip_tags(category_description(7)); ?>">デザイン</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="<?php echo $fumiki->root; ?>/category/others/" title="<?php echo strip_tags(category_description(10)); ?>">その他雑文</a>
-					</li>
-				</ul>
-				
-				<h3 class="feed">フィード</h3>
-				<ul>
-					<li><a href="<?php $fumiki->feed(); ?>" rel="alternate" title="高橋文樹.comの新着エントリー">新着エントリー</a></li>
-					<li><a href="<?php $fumiki->comment_feed(); ?>" rel="alternate" title="高橋文樹.comの新着コメント">新着コメント</a></li>
-				</ul>
-				
-			</div><!-- .footer_navi_child ends -->
+				<?php endwhile;?>
+			</ul>
+		</div>
 		
-		</div><!-- .footer_navi_ends-->
+		<div class="grid_4">
+			<h4 class="mono">Hatena Hot Entries</h4>
+			<?php fumiki_hotentry(); ?>
+		</div>
 		
+		<div class="grid_4">
+			<h4 class="mono">Hatena Popular</h4>
+			<?php fumiki_hotentry("", "count", false); ?>
+		</div>
 		
-		
-		
-		
-		
-		<div class="footer_navi">
-			
-			<div class="footer_navi_child">
-				<h3 class="pages">主なページ</h3>
-				<?php wp_page_menu('sort_column=ID&show_home=1&hierarchical=0&depth=1'); ?>
-			</div><!-- .footer_navi_child ends-->
-				
-			<div class="footer_navi_child">
-				<?php wp_list_bookmarks('category=2&title_before=<h3 class="bm">&title_after=</h3>&title_li=&category_before=&category_after=&orderby=id'); ?>
-				<h3 class="cal">年月別アーカイブ</h3>
-				<select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
-				  <option value=""><?php echo attribute_escape(__('Select Month')); ?></option> 
-				  <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
-				</select>
-				<div class="about_copytright">
-					<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.1/jp/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.1/jp/80x15.png" width="80" height="15" /></a>
-					高橋文樹.comの<a href="<?php echo $fumiki->root; ?>/policy/">著作権について</a>
-				</div>
-			</div><!-- .footer_navi_child ends-->
-		
-		</div><!--footer_navi_ends -->
-		
-		
-		
-		<div class="copy">
-			&copy; 高橋文樹 2008-<?php echo date('Y'); ?>
-		</div><!-- .copy ends-->
-		
-	</div><!-- #footer ends-->
+		<div class="grid_4">
+			<?php if ( function_exists('dynamic_sidebar')) dynamic_sidebar('フッター右端');  ?>
+		</div>
+	</div>
 	
-</div><!-- #footer_wrapper ends -->
+	<div id="footer-nav" class="margin mono clearfix divider">
+		<div class="grid_4">
+			<?php $admin = get_userdata(1); ?>
+			<div class="inner">
+				<h4 class="mono">About me</h4>
+				<?php echo get_avatar(1, 48); ?>
+				<div class="admin-name">
+				<?php echo $admin->display_name; ?>
+				</div>
+				<div class="profile clrB">
+				<?php echo wpautop($admin->description);?>
+				</div>
+			</div>
+			<h4 class="mono second">Find me at</h4>
+			<ol class="inner no-text clearfix">
+				<li><a class="facebook" href="http://www.facebook.com/takahashifumiki">Facebook</a></li>
+				<li><a class="twitter" href="https://twitter.com/#!/takahashifumiki">twitter</a></li>
+				<li><a class="google" href="https://plus.google.com/114216546098171717764/posts">Google+</a></li>
+				<li><a class="youtube" href="http://www.youtube.com/user/takahashifumiki">Youtube</a></li>
+				<li><a class="github" href="https://github.com/fumikito">Github</a></li>
+			</ol>
+			<h4 class="mono second">Contact me with</h4>
+			<ol class="inner">
+				<li><a class="mail" href="<?php bloginfo('url'); ?>/inquiery/">お問い合わせ</a></li>
+				<li><a class="feed" href="<?php bloginfo('rss_url'); ?>">RSSフィード</a></li>
+			</ol>
+		</div>
+		
+		<div class="grid_4">
+			<h4>Follow me @ twitter</h4>
+			<?php fumiki_twitter(); ?>
+			<a href="http://twitter.com/takahashifumiki" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false" data-lang="ja">Follow @takahashifumiki</a><script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+		</div>
+
+		<div class="grid_4">
+			<h4 class="mono">Main Pages</h4>
+			<?php wp_nav_menu( array( 'theme_location' => 'main-pages','container_class' => 'main-page')); ?>
+			<h4 class="mono second">Monthly Archive</h4>
+			<select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
+				<option value="">月別投稿の一覧</option> 
+				<?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
+			</select>
+		</div>
+
+		<div class="grid_4">
+			<h4 class="mono">Categories</h4>
+			<ul>
+			<?php wp_list_cats("show_count=0&depth=2&hierarchical=1&exclude=47"); ?>
+			</ul>
+		</div>
+	</div>
+	<!-- #footer-nav ends -->
+	
+	<div id="copy-note" class="margin mono clearfix divider">
+		<p>
+			&copy; 2008-<?php echo date('Y'); ?> Takahashi Fumiki
+		</p>
+		<p class="poweredby">
+			Proudly powered by <a href="http://wordpress.org">WordPress</a>.
+		</p>
+		
+	</div><!-- .copy ends-->
+	
+</div>
+<!-- #footer ends -->
 
 <?php wp_footer(); ?>
 </body>

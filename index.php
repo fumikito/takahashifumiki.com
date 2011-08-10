@@ -1,223 +1,129 @@
 <?php
-if(is_search()):
-	include_once(TEMPLATEPATH."/archive.php");
-else:
-get_header();
-$footerFlg = true;
+if(is_author() && $wp_query->query_vars["author_name"] != "admin"){
+	include_once TEMPLATEPATH."/404.php";
+	die();
+}
+include_once(TEMPLATEPATH."/header.php");
+
 ?>
-<!--
-<div id="indicator">
-	<img src="<?php bloginfo("template_directory"); ?>/css/multibox/loader.gif" alt="Loading..." width="31" height="31" />
-	<span>初期化中<small>...</small></span>
-</div>
--->
 <div id="wrapper">
 
 
-	<div id="header">
-	
-		<h1><?php echo $fumiki->blogTitle; ?></h1>
-	
-		<div class="desc">
-			<?php echo $fumiki->desc(); ?>
-		</div><!-- .desc ends-->
-		
-		<ul>
-			<li>
-				<a rel="alternate" type="application/rss+xml" href="<?php $fumiki->feed(); ?>">高橋文樹.comの最新エントリーフィード</a>
-			</li>
-			<li class="search">
-				<?php get_search_form(); ?>
-			</li>
-		</ul>
-	
-	</div><!-- #header ends -->
-	
-	<ul id="account_home">
-		<?php if(is_user_logged_in()): ?>
-		<li><a href="<?php echo bloginfo("url"); ?>/book-shelf/"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_book.jpg" alt="購入履歴" title="購入履歴" width="40" height="120" /></a></li>
-		<li><a href="<?php echo bloginfo("url"); ?>/login/?action=profile"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_profile.jpg" alt="登録情報" title="登録情報" width="40" height="120" /></a></li>
-		<li><a href="<?php echo wp_logout_url(get_bloginfo('url'));?>"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_logout.jpg" alt="ログアウト" title="ログアウト" width="40" height="120" /></a></li>
-		<?php else: ?>
-		<li><a href="<?php bloginfo("url"); ?>/login/?action=register"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_signup.jpg" alt="新規登録" title="新規登録" width="40" height="120" /></a></li>
-		<li><a href="<?php bloginfo("url"); ?>/login/?redirect_to=<?php echo rawurlencode(get_bloginfo('url')); ?>"><img src="<?php bloginfo("template_directory"); ?>/img/home_login_login.jpg" alt="ログイン" title="ログイン" width="40" height="120" /></a></li>
-		<?php endif; ?>
-	</ul><!-- #account -->
-
-<div id="column1">
-
-	<ol class="clearfix">
-		<?php
-			$globalnavi = get_global_navi();
-			query_posts(array("post__in"    => $globalnavi,
-			                  "post_type"   => "page",
-			                  "order_by"    => "ID",
-			                  "order"       => "ASC",
-			                  "post_status" => "publish"));
-			if(have_posts()): while(have_posts()): the_post();
-		?>
-		<li><a class="mincho" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-		<?php endwhile; endif; ?>
-	</ol>
-	
-	<div class="conBox clearfix">
-		<h2 class="mincho">告知</h2>
-		<ul>
-		<?php
-			//告知の出力
-			query_posts('category_name=announcement&showposts=7');
-			$queryCounter = 0;
-			while(have_posts()):$queryCounter++;  the_post();
-			if($queryCounter < 2){
-				$pclass = "first clearfix";
-			}elseif($queryCounter % 2 == 0){
-				$pclass = "even";
-			}else{
-				$pclass = "odd";
-			}
-		?>
-			<li class="mincho <?php echo $pclass; ?>">
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-			</li>
-		<?php endwhile; ?>
-		</ul>
-		<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/announcement/" title="告知の詳細">▼告知の詳細▲</a>
-	</div><!-- .conBox ends-->
-
-</div><!-- #column1 ends -->
+<?php get_header("single"); ?>
 
 
+<div id="content" class="clearfix">
 
-<div class="tweet">
-	<?php fumiki_twitter(200, 200, "true"); ?>
-</div>
-<!-- .tweet ends -->
+	<div id="main">
+		<div class="meta">
+			<h1 class="mincho"><?php $fumiki->archiver(); ?></h1>
+			<p class="right">
+				<span><?php echo number_format($wp_query->found_posts); ?>件の記事があります</span>
+			</p>
+			<div class="meta_desc">
+			<?php if(is_category()): ?>
+				<?php echo wpautop(category_description()); ?>
+			<?php endif; ?>
+			</div>
+		</div><!-- .meta ends -->
 
+		<div class="entry clearfix">
+			<?php $counter = 0;if(have_posts()): while(have_posts()): the_post(); $counter++;?>
+				<?php if($counter < 5): ?>
+				<?php if($counter == 3): ?>
+					<p class="center google clrB">
+					<script type="text/javascript"><!--
+						google_ad_client = "pub-0087037684083564";
+						/* 高橋文樹 投稿内広告 */
+						google_ad_slot = "5844658673";
+						google_ad_width = 468;
+						google_ad_height = 60;
+						//-->
+					</script>
+					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</p>
+					<!-- .google ends -->
+				<?php endif; ?>
+					
+					<div class="archive-box archive-box-big <?php echo ($counter % 2 == 0) ? 'even': 'odd';?>">
+						<small class="old"><?php the_time('Y/n/j(D) g:iA'); ?></small>
+						<div class="photo">
+							<?php $fumiki->archive_photo(); ?>
+							<h2>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h2>
+						</div>
+						<div class="cat old">Category:<?php the_category(",");?></div>
+						<div class="desc">
+							<p><?php echo get_the_excerpt(); ?></p>
+						</div>
+						<p class="tag">
+							<img src="<?php bloginfo('template_directory'); ?>/img/archive_icon_tag.png" alt="タグ" width="16" height="16" /><?php  the_tags('');?>
+						</p>
+						<p class="right">
+							<a class="more old" href="<?php the_permalink(); ?>">Read more...&raquo;</a>
+						</p>
+					</div>
+					<!-- .archive-box-big ends -->
+				<?php else: ?>
+					<?php if($counter == 5): ?>
+					<div class="clrB"></div>
+					<?php endif; ?>
+					<div class="archive-box archive-box-small <?php echo (($counter - 4) % 4 == 0) ? 'forth': '';?>">
+						<small class="old"><?php the_time('Y/n/j(D)'); ?></small>
+						<div class="photo">
+							<?php $fumiki->archive_photo("thumbnail"); ?>
+							<h2>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h2>
+						</div>
+						<div class="cat old">Category:<?php the_category(",");?></div>
+						<div class="desc">
+							<p><?php echo get_the_excerpt(); ?></p>
+						</div>
+						<p class="tag">
+							<img src="<?php bloginfo('template_directory'); ?>/img/archive_icon_tag.png" alt="タグ" width="16" height="16" /><?php  the_tags('');?>
+						</p>
+						<p class="right">
+							<a class="more old" href="<?php the_permalink(); ?>">Read more...&raquo;</a>
+						</p>
+					</div>
+					<!-- .archive-box-small ends -->
+					
+					<?php if($counter % 4 == 0): ?>
+						<div class="clrB"></div>
+					<?php endif; ?>
+				<?php endif; ?>
+			<?php endwhile; else: ?>
+			<!-- ▼投稿無し -->
+				<h2>該当する投稿はありませんでした</h2>
+				<p>ご迷惑おかけいたします。以下の方法をお試しください。</p>
+				<ul>
+					<li>右カラムにある<a href="#s">検索フォーム</a>から別の言葉で探す</li>
+					<li><a href="#header">ページ上部のグローバルナビゲーション</a>から探す</li>
+					<li><a href="<?php bloginfo('url'); ?>/inquiry">メールフォーム</a>から問い合わせる</li>
+				</ul>
+			<!-- ▲投稿無し -->
+			<?php endif; ?>
+		</div><!-- .entry ends-->
 
+		<div id="page_finish" class="old clrB">
+			<?php fumiki_to_top(); ?>
+			<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+		</div>
+		<!-- #page_finish -->
 
-<div id="column2" class="clearfix">
+	</div><!-- #main ends-->
 
-	<div class="conBox clearfix literature">
-		<h3 class="mincho">文芸活動</h3>
-		<ul>
-		<?php
-		//文芸活動の出力
-		query_posts('category_name=literature&showposts=5');
-		$queryCounter = 0;
-		while(have_posts()):$queryCounter++; the_post(); ?>
-			<li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
-				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-			</li>
-		<?php endwhile; ?>
-		</ul>
-		<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/literature/" title="文芸活動の詳細">▼文芸活動の詳細▲</a>
-	</div><!-- .conBox ends-->
-	
-	
-	
-	<div class="conBox clearfix web">
-		<h3 class="mincho">ウェブ制作</h3>
-		<ul>
-		<?php
-		//Web制作の出力
-		query_posts(array('category_name' => 'web','category__not_in'=>array(47),'showposts'=>'5'));
-		$queryCounter = 0;
-		while(have_posts()):$queryCounter++; the_post(); ?>
-			<li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
-				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-			</li>
-		<?php endwhile; ?>
-		</ul>
-		<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/web/" title="ウェブ制作詳細">▼ウェブ制作詳細▲</a>
-	</div><!-- .conBox ends-->
-	
-	
-	<div class="conBox clearfix others">
-		<h3 class="mincho">その他雑文</h3>
-		<ul>
-		<?php
-		//雑文の出力
-		query_posts('category_name=others&showposts=5');
-		$queryCounter = 0;
-		while(have_posts()):$queryCounter++; the_post(); ?>
-			<li<?php if($queryCounter < 2){ echo ' class="first"'; }?>>
-				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-			</li>
-		<?php endwhile; ?>
-		</ul>
-		<a class="cat_top" href="<?php echo $fumiki->root; ?>/category/others/" title="その他雑文">▼その他雑文の詳細▲</a>
-	</div><!-- .conBox ends-->
+	<?php get_sidebar(); ?>
 
-</div><!-- #column2 ends-->
-
-<p class="center">
-	<?php
-		$fumiki->hatena_add(get_bloginfo('url'), get_bloginfo('name'), "", "はてブ");
-		$fumiki->mixi_check(get_bloginfo('url'));
-		$fumiki->gree_like(get_bloginfo('url'));
-		$fumiki->tweet_this(get_bloginfo('url'));
-		$fumiki->facebook_like(get_bloginfo('url'), 120, 21, "button_count");
-	?>
-</p>
-
-
-<div id="container">
-	<div id="floom" class="floom">
-		<?php
-		$slides = get_posts(array('post_type' => 'attachment',
-		                          'post__in' => get_option("fumiki_slideshow"),
-		                          'post_mime_type' => 'image'));
-		foreach($slides as $s){
-			$data = wp_get_attachment_image_src($s->ID,'full');
-			echo "<img src=\"{$data[0]}\" alt=\"{$s->post_excerpt}\" title=\"{$s->post_title}\" width=\"{$data[1]}\" height=\"{$data[2]}\" />\n";
-		}
-		?>
-	</div>
-</div>
-<!-- #container ends -->
-
-
-<div class="youtube">
-	<?php echo fumiki_youtube(340, 213);?>
-</div>
-<!-- .youtube ends -->
+</div><!-- #content ends-->
 
 
 
-<div id="hatena">
-	<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
-	<script language="javascript" type="text/javascript">
-	//<![CDATA[
-		Hatena.BookmarkWidget.url   = "http://takahashifumiki.com";
-		Hatena.BookmarkWidget.title = "はてな最新人気記事";
-		Hatena.BookmarkWidget.sort  = "hot";
-		Hatena.BookmarkWidget.width = 0;
-		Hatena.BookmarkWidget.num   = 5;
-		Hatena.BookmarkWidget.theme = "notheme";
-		Hatena.BookmarkWidget.load();
-	//]]>
-	</script>
-</div>
-<!-- #hatena ends -->
 
-<div id="column3" class="clearfix">
-	<ul class="banner clearfix">
-		<?php
-			wp_list_bookmarks("categorize=0&category_name=バナー&title_li=&category_before=&category_after=");
-		?>
-	</ul>
-	<!-- banner ends-->
-	
-	<?php
-		st_tag_cloud(array('cloud_selection'=> 'random',
-	                             'title'        => '',
-								 'xformat'      => __('<a href="%tag_link%" title="%tag_count% topics" %tag_rel% style="%tag_size% %tag_color%">%tag_name%</a>', 'simpletags')));
-	?>
-</div><!-- #column3 ends-->
 
-</div><!-- wrapper ends -->
-
+</div><!-- #wrapper ends -->
 <?php
-get_footer();
-endif;//ref lj.1
+include_once(TEMPLATEPATH."/footer.php");
 ?>
