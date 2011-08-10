@@ -8,10 +8,34 @@
  * @return void
  */
 function _fumiki_head(){
-	
-	?>
+	global $wpdb;
+	if(is_front_page() || is_singular()){
+	$title = is_singular() ? wp_title('|', false, "right").get_bloginfo('name') : get_bloginfo('name');
+	$url = is_singular() ? get_permalink() : get_bloginfo('url');
+	$image = get_bloginfo('url')."/img/facebook-top.jpg";
+	if(is_singular()){
+		$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
+		if(!empty($images)){
+			$image = current($images)->guid;
+		}
+	}
+	$type = is_singular() ? 'article' : "website";
+	$desc = is_singular() ? get_the_excerpt() : get_bloginfo('description');
+	$desc = str_replace("\n", "", $desc);
+	echo <<<EOS
+<meta property="og:title" content="{$title}"/>
+<meta property="og:url" content="{$url}" />
+<meta property="og:image" content="{$image}" />
+<meta property="og:description" content="{$desc}" />
+<meta property="og:type" content="{$type}" />
+<meta property="og:site_name" content="高橋文樹.com"/>
+<meta property="fb:page_id" content="240120469352376"/>
 <meta property="fb:admins" content="1034317368" />
-	<?php
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {lang: 'ja'}
+</script>
+EOS;
+	}
 }
 add_action('wp_head', '_fumiki_head', 0);
 
@@ -36,6 +60,10 @@ function _fumiki_assets(){
 			FUMIKI_VERSION,
 			true
 		);
+		//wp-pagenaviのCSSを打ち消し
+		wp_dequeue_style("wp-pagenavi");
+		////tmkm-amazonのCSSを打ち消し
+		remove_action("wp_head", "add_tmkmamazon_stylesheet");
 	}
 }
 add_action("wp_enqueue_scripts", "_fumiki_assets");
@@ -84,3 +112,42 @@ function _fumiki_register_widget(){
 }
 add_action('widgets_init', '_fumiki_register_widget');
 get_template_part("widgets/facebook");
+
+
+/**
+ * flashプラグインの後方互換
+ * @return str
+ */
+function flash_converter($atts,$content = null){
+        $arr = shortcode_atts(array(
+                0 => null,
+                'w' => null,
+                'h' => null
+        ),$atts);
+        $str = '<div id="fumiki_flash_container">'.
+                   '<span style="display:none">';
+        $str .= $arr[0];
+        if(!is_null($arr['w'])) $str .= '::'.$arr['w'];
+        if(!is_null($arr['h'])) $str .= '::'.$arr['h'];
+        $str .= '</span>'.
+                           '<noscript>'.
+                           '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"';
+        if(!is_null($arr['w'])) $str .= ' width="'.$arr['w'].'"';
+        if(!is_null($arr['h'])) $str .= ' height="'.$arr['h'].'"';
+        $str .= '>'.
+                '<param name="movie" value="'.$arr[0].'" />'.
+                        '<!--[if !IE]>-->'.
+                        '<object type="application/x-shockwave-flash" data="'.$arr[0].'"';
+        if(!is_null($arr['w'])) $str .= ' width="'.$arr['w'].'"';
+        if(!is_null($arr['h'])) $str .= ' height="'.$arr['h'].'"';
+        $str .= '>'.
+                '<!--<![endif]-->'.
+                        '<!--[if !IE]>-->'.
+                        '</object>'.
+                        '<!--<![endif]-->'.
+                        '</object>'.
+                        '</noscript>'.
+                        '</div>';
+        return $str;
+}
+add_shortcode('flash','flash_converter');
