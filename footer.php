@@ -1,8 +1,8 @@
 <div id="footer" class="dark_bg shadow">
-	<div id="footer-post" class="margin mono clearfix">
+	<div id="footer-post" class="margin sans clearfix">
 		<div class="grid_4">
 			<h4 class="mono">Recent Entries</h4>
-			<ul>
+			<ul class="sans">
 				<?php $recent = new WP_Query("posts_per_page=5"); if($recent->have_posts()) while($recent->have_posts ()): $recent->the_post(); ?>
 				<li>
 					<a href="<?php the_permalink(); ?>">
@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	
-	<div id="footer-nav" class="margin mono clearfix divider">
+	<div id="footer-nav" class="margin sans clearfix divider">
 		<div class="grid_4">
 			<?php $admin = get_userdata(1); ?>
 			<div class="inner">
@@ -57,7 +57,7 @@
 		</div>
 		
 		<div class="grid_4">
-			<h4>Follow me @ twitter</h4>
+			<h4 class="mono">Follow me @ twitter</h4>
 			<?php fumiki_twitter(); ?>
 			<a href="http://twitter.com/takahashifumiki" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false" data-lang="ja">Follow @takahashifumiki</a><script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
 		</div>
