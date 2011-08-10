@@ -1240,72 +1240,42 @@ body.home #indicator span{
 
 
 /*---------------------
- * 投稿末尾
+ * 関連投稿
  */
-
-/*ページナビ*/
-.n_single .page_navi,#page_finish{
-	margin:0 340px 20px 40px;
-	padding-bottom:10px;
-	background:url(img/single_bottom_line.gif) right bottom no-repeat;
-	text-align:right;
-	font-size:1.8em;
-}
-.n_single .page_navi span,#page_finish span{
-	font-weight:bolder;
-	margin-right:10px;
-}
-
-#end_meta{
-	margin:0 340px 20px 40px;
-	padding-bottom:20px;
-	background:url(img/single_bottom_line.gif) right bottom no-repeat;
-}
-
-/*メタボックス*/
-.end_meta_box{
-	width:33%;
-	float:left;
-}
-
-/*ソーシャルブックマーク*/
-.end_meta_box .socialbk{
-	width:74px;
-	height:134px;
-	padding:110px 30px 0 40px;
-	background:url(img/single_metaend_header1.gif) left top no-repeat;
-	margin:0 auto;
-}
-
-.end_meta_box .socialbk a{
-	width:18px;
-	height:25px;
-}
+ .related{
+	 background:#eee;
+	 border-top:1px solid #ddd;
+	 border-bottom:1px solid #ddd;
+	 padding: 20px 10px;
+	 margin:20px 0;
+ }
 
 /*アドセンス*/
-.end_meta_box .adsence{
-	width:160px;
-	height:134px;
-	padding:2px 5px 0 5px;
-	background:url(img/single_metaend_adsence.gif) left top no-repeat;
-	margin:0 auto;
+.related .google{
+	width:336px;
+	float:right;
+	padding-left:10px;
 }
-
 
 /*関連投稿*/
 #yarpp h3{
-	font-size:1.2em;
+	font-size:2em;
+	color:#8ab29f;
+	margin-bottom:10px;
 }
 #yarpp ol{
-	padding:10px 30px 10px 15px;
+	padding:5px 0 0 0;
 }
 #yarpp li{
-	margin:5px 0;
-	list-style:circle outside;
+	margin:0 0 8px;
+	list-style:none;
+	padding-bottom:7px;
+	color:#333F46;
 }
-#yarpp li a{margin-right:0.5em;}
-#yarpp li a:hover{
-	background:#E4BAD2;
+#yarpp li a.button{
+	display:block;
+	font-size:1.2em;
+	margin-bottom:5px;
 }
 
 /*はてなブックマークウィジェット*/
