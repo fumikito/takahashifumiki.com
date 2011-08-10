@@ -96,7 +96,7 @@ EOS;
  */
 function fumiki_title(){
 	if(is_singular()){
-		return single_post_title('', false);
+		return get_the_title();
 	}elseif(is_home()){
 		return "最新の投稿";
 	}elseif(is_category()){
@@ -188,5 +188,21 @@ function google_ads($number = 1){
 			</div>
 EOS;
 			break;
+	}
+}
+
+function the_expiration_info($post = null){
+	$post = _fumiki_get_post($post);
+	$date_diff = floor((time() - strtotime($post->post_date)) / 60 / 60 / 24);
+	if($date_diff > 365 && !is_page()){
+		$year = floor($date_diff / 365)."年";
+		if(($date_diff / 365) - $year > 0.5){
+			$year .= "半";
+		}
+		echo <<<EOS
+<p class="message warning">
+この記事は{$year}以上前のものです。状況は変わっているかもしれません。
+</p>
+EOS;
 	}
 }

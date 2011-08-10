@@ -130,7 +130,8 @@ a{overflow:hidden;}
 	width:220px;
 	margin-right:20px;
 }
-a.button{
+a.button,
+input.button{
 	padding:5px 7px;
 	-webkit-border-radius:3px;
 	border:1px solid #273138;
@@ -149,7 +150,8 @@ a.button:link,
 a.button:visited{
 	text-decoration: none;
 }
-a.button:hover{
+a.button:hover,
+input.button:hover{
 	background: #4c5a65; /* Old browsers */
 	background: -moz-linear-gradient(top, #4c5a65 0%, #2e3940 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c5a65), color-stop(100%,#2e3940)); /* Chrome,Safari4+ */
@@ -159,14 +161,37 @@ a.button:hover{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c5a65', endColorstr='#2e3940',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, #4c5a65 0%,#2e3940 100%); /* W3C */
 }
-a.button:active{
+a.button:active,
+input.button:active{
 	background:#252e34;
+}
+/*メッセージボックス*/
+p.message{
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	font-size:14px;
+	padding:5px;
+}
+p.warning{
+	color:#ff4d44;
+	border:1px solid #ff4d44;
+	background: #ffd4d2 url('img/icon-warning.png') 5px center no-repeat;
+	padding-left:25px;
+}
+p.success{
+	color:#059119;
+	border:1px solid #059119;
+	background: #c6f4cd url('img/icon-accepted.png') 5px center no-repeat;
+	padding-left:25px;
 }
 .avatar, .twtr-profile-img{
 	box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,1) inset;
 	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,1) inset;
 	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,1) inset;
 }
+
+
 
 /*---------------------
  * ヘッダー
@@ -1243,6 +1268,7 @@ body.home #indicator span{
 
 /* フォームパーツ */
 .entry input[type=text],
+.entry input[type=password],
 .entry textarea{
 	border:1px solid #ddd;
 	border-radius:3px;
@@ -1731,10 +1757,10 @@ body.login{
 	padding:0;
 }
 body.login #submit{margin:0;}
+
 /*レイアウト*/
-#account-logo{
- 	width:200px;
- 	float:right;
+#content.account{
+ 	width:600px;
 }
 #account-content{
  	width:460px;

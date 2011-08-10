@@ -7,5 +7,14 @@
 	the_post();
 	get_header('meta');
 	get_header('navi');
-	the_content();
+	get_header('title');
+?>
+
+<div id="content" class="margin account" class="clearfix">
+	<div class="entry">
+	<?php the_content(); ?>
+	</div>
+</div>
+
+<?php
 	get_footer();

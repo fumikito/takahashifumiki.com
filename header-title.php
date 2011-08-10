@@ -10,7 +10,7 @@
 	
 	
 	<ul class="title-meta">
-		<?php if(is_singular()): ?>
+		<?php if(is_singular() && !is_page('login')): ?>
 			<li class="inline-block date">
 				公開日: <?php the_date(); ?>
 				<small>（最終更新: <?php the_modified_date(); ?>）</small>
@@ -25,7 +25,7 @@
 			<li class="inline-block category">カテゴリー: <?php the_category(','); ?></li>
 			<li class="inline-block tag"><?php the_tags('タグ: '); ?></li>
 			<?php endif;?>
-		<?php elseif(is_archive()):?>
+		<?php elseif(is_archive() || is_search()):?>
 			<Li class="inline-block count"><?php echo number_format($wp_query->found_posts); ?>件の記事が見つかりました</li>
 		<?php endif; ?>
 	</ul>
