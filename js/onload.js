@@ -1,19 +1,26 @@
 jQuery(document).ready(function($){
+	//なかのひと
+	if($('#nakanohito').length > 0){
+		var tag = "<a href='http://nakanohito.jp/'>";
+		tag += "<img src='http://nakanohito.jp/an/?u=201672&h=893199&w=96&guid=ON&t=&version=js&refer="+escape(document.referrer)+"&url="+escape(document.URL)+"' border='0' width='96' height='96' />";
+		tag += "</a>";
+		$('#nakanohito').text(tag);
+	}
 	//スライドアニメーション
-	$('#nav').css('height', 'auto');
-	var navHeight = $('#nav').height();
-	$('#nav').css('height', 0);
+	$('#navi').css('height', 'auto');
+	var navHeight = $('#navi').height();
+	$('#navi').css('height', 0);
 	$('#header .button').click(function(e){
 		e.preventDefault();
 		console.log(e, $(this).attr("class"), navHeight);
 		if($(this).hasClass('toggle')){
 			$(this).removeClass('toggle');
-			$('#nav').animate({
+			$('#navi').animate({
 				height: 0
 			});
 		}else{
 			$(this).addClass('toggle');
-			$('#nav').animate({
+			$('#navi').animate({
 				height: navHeight
 			});
 		}

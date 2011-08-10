@@ -23,7 +23,6 @@ function _fumiki_profile_fields( $contactmethods ) {
 	$original_contactmethods = array(
 		"twitter" => "Twitter"
 	);
-	global $original_contactmethods;
 	foreach($original_contactmethods as $key => $val)
 		$contactmethods[$key] = $val;
 	return $contactmethods;

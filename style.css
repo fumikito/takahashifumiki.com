@@ -259,7 +259,7 @@ p.success{
 }
 
 /*ナビゲーション*/
-#nav{
+#navi{
 	border-bottom:1px solid #777c7f;
 	background:url('img/bg-texture-gray.jpg') left top repeat;
 	color:#252e34;
@@ -267,45 +267,45 @@ p.success{
 	overflow: hidden;
 	height:0;
 }
-#nav .grid_4{
+#navi .grid_4{
 	width:200px;
 	margin-right:20px;
 	padding-left:20px;
 	padding-bottom:20px;
 }
-#nav .mono{
+#navi .mono{
 	font-size:1.4em;
 }
-#nav ul ul{
+#navi ul ul{
 	padding-left: 10px;
 }
-#nav ul li{
+#navi ul li{
 	margin:5px 0;
 	font-size:1.1em;
 }
-#nav ul li a{
+#navi ul li a{
 	display: block;
 	padding:3px 5px;
 	border-radius:5px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 }
-#nav ul li a:link,
-#nav ul li a:visited{
+#navi ul li a:link,
+#navi ul li a:visited{
 	text-decoration: none;
 }
-#nav ul li a:hover{
+#navi ul li a:hover{
 	background-color: #fff;
 }
-#nav p.description{
+#navi p.description{
 	font-size:1.1em;
 	line-height:1.4;
 }
-#nav .avatar{
+#navi .avatar{
 	float:left;
 	margin-right:10px;
 }
-#nav .user-name{
+#navi .user-name{
 	margin:0;
 	height:48px;
 	line-height:48px;
@@ -1275,6 +1275,11 @@ body.home #indicator span{
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
 }
+table.form-table input[type=text],
+table.form-table input[type=password]{
+	width:300px;
+	font-size:16px;
+}
 /*
  * 個別タグ設定終わり
  *--------------------*/
@@ -1762,124 +1767,56 @@ body.login #submit{margin:0;}
 #content.account{
  	width:600px;
 }
-#account-content{
- 	width:460px;
- 	float:left;
-}
-#account-content .entry{
- 	padding:0 0 0 40px;
-}
-.account-wrap{
-}
 
 /*メイン*/
-.account-wrap form{
-	display:block;
-	padding:20px;
-	border: 1px solid #ececec;
-	background:#f0f0f0;
-	border-radius:10px;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	box-shadow:1px 1px 5px #ccc;
-	-webkit-box-shadow:1px 1px 5px #ccc;
-	-moz-box-shadow:1px 1px 5px #ccc;
-}
-.account-wrap form p{
-	border-bottom:1px dotted #ccc;
-	padding-bottom:10px;
-	margin:20px 0 10px;
-}
-.account-wrap form p.submit{
-	border-bottom:none;
-	text-align:center;
-	margin-bottom:0;
-	padding-bottom:0;
+.login form p.submit input.button{
+	font-size:20px;
+	cursor:pointer;
 }
 /*フォームパーツ*/
-.account-wrap form label{
-	color:#999;
-	font-size:16px;
-	font-weight:bold;
-	text-shadow: 0px 2px 3px #fff;
-}
-.account-wrap form input[type=text],
-.account-wrap form input[type=password],
-.account-wrap form textarea{
-	font-size:11px;
-	width:200px;
-	padding:5px;
-	background:#fff;
-	border:1px solid #ddd;
-	border-radius:5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-}
-.account-wrap form textarea{
+.login form textarea{
 	resize:vertical;
+	width:300px;
+	display: block;
 }
-.account-wrap p.submit input[type=submit]{
-	display:inline-block;
-	padding:5px 10px;
-	font-size:12px;
-	font-weight:bold;
-	border:1px solid #13455B;
-	background: #21759B url(img/button-grad-active.png) left bottom repeat-x;
-	-webkit-border-radius:10px;
-	cursor:pointer;
-	color:#EAF2FA;
-	text-shadow: rgba(0, 0, 0, 0.296875) 0px -1px 0px;
-}
-.account-wrap p.submit input[type=submit]:hover{
-	border-color:#000;
-	color:#ccccff;
-}
-.account-wrap p.submit input[type=submit]:active{
-	background-position:left top;
-}
-.account-wrap p.error,
-.account-wrap p.message{
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	font-size:11px;
-}
-/* リンク */
-.account-wrap .tml-action-links{
-	padding-left:0;
-}
-.account-wrap ul.tml-action-links li{
-	display:inline;
-	font-size:11px;
-	margin-left:5px;
-}
-/*フォームテーブル*/
-.account-wrap .form-table{
-	border:none;
-	border-collapse: collapse;
-	width:100%;
-}
-.account-wrap .form-table th{
-	background:none;
-	vertical-align: top;
-}
-.account-wrap .form-table th label{	
-	font-size:11px;
-}
-.account-wrap .form-table th,
-.account-wrap .form-table td{
-	border-bottom:dotted 1px #ddd;
-}
-.account-wrap .form-table td{
-	width:230px;
-}
-.account-wrap .form-table .description{
-	font-size:10px;
+.form-table .description{
 	display:block;
+	margin:1em 0;
 	clear:both;
 }
-.account-wrap #pass-strength-result{
-	margin:12px auto 5px;
+.registerform p{
+	clear:left;
+}
+.registerform p label{
+	display:block;
+	width:250px;
+	float:left;
+	paddign-top:3px;
+}
+.registerform p input{
+	font-size:14px;
+	width:300px;
+}
+/* リンク */
+.login .tml-action-links{
+	padding-left:0;
+}
+.login ul.tml-action-links li{
+	color:#252e34;
+	display:inline-table;
+	font-size:12px;
+	line-height: 24px;
+	height:24px;
+	margin:0 5px 0 10px;
+	background: url('img/meta-icons.png') left -192px no-repeat;
+	padding-left:28px;
+}
+.login ul.tml-action-links li:first-child{
+	background-position: left -168px;
+}
+/*フォームテーブル*/
+.login .form-table{
+	width:100%;
 }
 
 

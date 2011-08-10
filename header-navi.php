@@ -1,4 +1,4 @@
-<div id="nav">
+<div id="navi">
 	<div class="margin clearfix">
 		<div class="grid_4">
 			<?php if(is_user_logged_in()): global $user_ID, $user_email, $user_identity; ?>
