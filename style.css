@@ -326,11 +326,9 @@ a.button:active{
 .title-meta .date{}
 .title-meta .length{background-position: left -48px;}
 .title-meta .feedback{background-position: left -72px;}
-
 .title-meta .category{background-position: left 0;}
 .title-meta .tag{background-position: left -120px;}
-
-
+.title-meta .count{background-position: left -144px;}
 
 /*---------------------
  * フッター
@@ -976,6 +974,12 @@ body.home #indicator span{
 	padding-bottom:70px;
 	background:url('img/content-footernote.png') center bottom no-repeat;
 }
+.entry .google{
+	background:#f0f0f0;
+	padding:2px 5px;
+	margin-bottom:20px;
+	text-align:center;
+}
 
 .syntaxhighlighter{
 	padding-top:5px !important;
@@ -1106,18 +1110,18 @@ body.home #indicator span{
 	font-weight:bold;
 	color:#000;
 }
-.entry .alert:before{content:"〔※ "}
-.entry .alert:after{content:"〕"}
+.entry .alert:before{content:" ※"}
+.entry .alert:after{content:" "}
 
 /*挿入*/
 .entry ins{
 	text-decoration:none;
-	font-size:0.8em;
 	color:#666;
 }
-.entry ins:before{content:"［*"}
-.entry ins:after{content:"］"}
-
+.entry ins:before{content:" › "}
+.entry ins:after{content:" ‹ "}
+.entry .google ins:before{content:'';}
+.entry .google ins:after{content:'';}
 
 /*削除*/
 .entry del{
@@ -1238,7 +1242,8 @@ body.home #indicator span{
 
 
 /* フォームパーツ */
-.entry input[type=text]{
+.entry input[type=text],
+.entry textarea{
 	border:1px solid #ddd;
 	border-radius:3px;
 	-webkit-border-radius:3px;
@@ -1718,61 +1723,6 @@ body.ebooks .catch{
 
 
 
-
-/****************************************
- * 5.縦書記事設定
- ****************************************/
-/*body*/
-body.t_single{}
-body.t_single #wrapper{
-	background:#fff;
-}
-
-/*ラッパー*/
-body.t_single #wrapper{
-}
-body.t_single #main{
-	width:100%;
-}
-
-/*ヘッダー*/
-body.t_single #header{margin:0 50px; height:auto;}
-
-/*メタデータ*/
-body.t_single #header .meta{padding:10px 0 0;}
-body.t_single #header .meta h1,
-body.t_single #header .meta ul,
-body.t_single #header .meta ul li
-{display:inline;}
-
-body.t_single #header .meta ul{}
-/*コンテンツ*/
-body.t_single #header .entry{
-	width:100%;
-}
-
-/*パンクズ*/
-body.t_single #breadcrumb{
-	width:728px;
-	height:auto;
-	margin:0 auto 10px;
-	padding:10px;
-	border-top:1px dotted #ddd;
-	border-bottom:1px dotted #ddd;
-	text-align:left;
-}
-
-
-body.t_single .google_banner{
-	padding-bottom:10px;
-}
-/****************************************
- * 縦書記事設定終わり
- ****************************************/
-
-
-
-
 /****************************************
  * 7.アカウント設定
  ****************************************/
@@ -1913,17 +1863,18 @@ body.login #submit{margin:0;}
  
 
 
+
 /****************************************
  * 7.アーカイブ設定
  ****************************************/
 /*メタ情報*/
-body.archive #main .meta{
+.archive .meta{
 	margin-bottom:20px;
 }
-body.archive #main .meta h1{
+.archive .meta h1{
 	font-size:22px;
 }
-body.archive #main .meta span{
+.archive .meta span{
 	padding:3px 5px;
 	background:#00A0E9;
 	color:#fff;
@@ -1932,30 +1883,30 @@ body.archive #main .meta span{
 	-moz-border-radius:3px;
 }
 /*コンテンツボックス*/
-body.archive .archive-box{
+.archive .archive-box{
 	padding-right:10px;
+	margin-bottom:20px;
 	float:left;
 }
-body.archive .entry .even,
-body.archive .entry .forth{
+.archive .even,
+.archive .forth{
 	padding-right:0;
 }
-body.archive .archive-box-big{
+.archive .archive-box-big{
 	width:280px;
 	padding-right:10px;
 	float:left;
 }
-body.archive .archive-box-small{
+.archive .archive-box-small{
 	width:135px;
 }
 /*共通設定*/
-body.archive .archive-box .photo{
+.archive .archive-box .photo{
 	position:relative;
 	text-align:center;
 	overflow:hidden;
-	background:#000;
 }
-body.archive .entry .archive-box h2{
+.archive .archive-box h2{
 	position:absolute;
 	margin:0;
 	padding:5px;
@@ -1963,95 +1914,82 @@ body.archive .entry .archive-box h2{
 	text-align:left;
 }
 
-body.archive .archive-box small{
+.archive .archive-box small{
 	display:block;
 	text-align:right;
 	color:#999;
+	font-size:1.1em;
 }
-body.archive .archive-box .cat{
-	background:#000;
+.archive .archive-box .cat{
 	margin:0;
 	padding:2px;
 	font-size:10px;
 	color:#fff;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	height:12px;
+	line-height: 12px;
+	overflow: hidden;
+	text-overflow:ellipsis;
 }
-body.archive .archive-box .cat a{
+.archive .archive-box .cat a{
 	color:#fff;
 }
-body.archive .archive-box .tag {
+.archive .archive-box .tag {
 	font-size:10px;
 	margin:0;
 }
-body.archive .archive-box .tag img{
+.archive .archive-box .tag img{
 	vertical-align: text-bottom;
 	margin-right:10px;
 }
-body.archive .archive-box .desc{
+.archive .archive-box .desc{
 	font-size:12px;
 	line-height:1.4;
 	height:4.2em;
 	overflow:hidden;
 	margin:10px 0;
 }
-body.archive .archive-box .desc p{
+.archive .archive-box .desc p{
 	margin:0;
 }
 /*大きいヤツ*/
-body.archive .archive-box-big .photo{
+.archive .archive-box-big .photo{
 	width:280px;
 	height:200px;
 }
-body.archive .entry .archive-box-big h2{
+.archive .archive-box-big h2{
 	left:0;
 	bottom:0;
-	font-size:16px;
+	font-size:1.4em;
 }
 
-body.archive .entry p.google{
-	margin:10px 0;
+.archive p.google{
+	margin:10px 0 20px;
 	padding:5px 0;
-	border-top:1px dotted #ccc;
-	border-bottom:1px dotted #ccc;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	background:#efefef;
 }
 
 /*小さいボックス*/
-body.archive .archive-box-small .photo{
+.archive .archive-box-small .photo{
 	width:135px;
 	height:100px;
 }
-body.archive .entry .archive-box-small h2{
+.archive .archive-box-small h2{
 	bottom:0;
 	left:0;
-	font-size:16px;
+	font-size:1.2em;
 }
-body.archive .archive-box-small .desc{
+.archive .archive-box-small .desc{
 	height:7.0em;
 }
-body.archive .archive-box-small .tag{
+.archive .archive-box-small .tag{
 	line-height:1.1;
 	height:3em;
 	overflow:hidden;
 }
 
-/*続きを読む*/
-body.archive .entry a.more{
-	font-size:10px;	
-	padding:3px 5px;
-	background:#E4007F;
-	border-radius:3px;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	color:#fff;
-}
-
-/*ページナビゲーション*/
-body.archive #page_finish{
-	font-size:12px;
-}
-/*トップに戻る*/
-body.archive #page_finish .toTop{
-	margin-bottom:10px;
-}
 /****************************************
  * アーカイブ設定終わり
  ****************************************/
@@ -2144,39 +2082,6 @@ div.tmkm-amazon-view:after {
 	clear: both;
 	visibility: hidden;
 }
-
-/****************************************
- * 9.pagenavi-css
- ****************************************/
-.wp-pagenavi a, .wp-pagenavi a:link {
-	padding: 2px 4px 2px 4px; 
-	margin: 2px;
-}
-.wp-pagenavi a:visited {
-	padding: 2px 4px 2px 4px; 
-	margin: 2px;
-}
-.wp-pagenavi a:hover {	
-}
-.wp-pagenavi a:active {
-	padding: 2px 4px 2px 4px; 
-	margin: 2px;
-}
-.wp-pagenavi span.pages {
-	padding: 2px 4px 2px 4px; 
-	margin: 2px 2px 2px 2px;
-	color: #000000;
-}
-.wp-pagenavi span.current {
-	padding: 2px 4px 2px 4px; 
-	margin: 2px;
-	font-weight: bold;
-}
-.wp-pagenavi span.extend {
-	padding: 2px 4px 2px 4px; 
-	margin: 2px;	
-}
-
 div.tmkm-amazon-view hr.tmkm-amazon-clear {
 	clear: both;
 	border: none;
@@ -2184,4 +2089,47 @@ div.tmkm-amazon-view hr.tmkm-amazon-clear {
 	margin: 0;
 	padding: 0;
 	visibility: hidden;
+}
+
+
+/****************************************
+ * 9.pagenavi-css
+ ****************************************/
+.wp-pagenavi{
+	font-size:1.4em;
+}
+.wp-pagenavi a, .wp-pagenavi a:link {
+	padding: 2px 4px 2px 4px;
+	background:#252e34;
+	color:#fff;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	margin: 2px;
+}
+.wp-pagenavi a:visited {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+}
+.wp-pagenavi a:hover {	
+	background: #4C5A65;
+}
+.wp-pagenavi a:active {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+	background: #4C5A65;
+}
+.wp-pagenavi span.pages {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px 2px 2px 2px;
+	color: #000000;
+	border:none;
+}
+.wp-pagenavi span.current {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+	font-weight: bold;
+	color:#252e34;
+}
+.wp-pagenavi span.extend {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;	
 }

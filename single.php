@@ -18,6 +18,7 @@ get_header('title');
 <div id="content" class="margin clearfix">
 	<div id="main">
 		<div class="entry clearfix">
+			<?php google_ads(); ?>
 			<?php the_content(); ?>
 			<div class="clrB">
 				<?php link_pages('ページ: '); ?>

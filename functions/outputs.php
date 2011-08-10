@@ -144,3 +144,49 @@ function fumiki_share($title, $url){
 	</div>
 EOS;
 }
+
+/**
+ * アーカイブページのサムネイルを表示する
+ * @param string $size thumbnail か medium 
+ * @return void
+ */
+function fumiki_archive_photo($size = "medium"){
+	$post = _fumiki_get_post();
+	$images = get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&orderby=menu_order&order=ASC");
+	if(!empty($images)){
+		$image = current($images);
+		echo wp_get_attachment_image($image->ID,$size);
+	}else{
+		$width = ($size == "medium") ? 280 : 150;
+		$height = ($size == "medium") ? 200 : 100;
+		$src = ($size == "medium") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
+		echo '<img class="attachment-medium" src="'.get_bloginfo('template_directory').'/img/'.$src.'" width="'.$width.'" height="'.$height.'" alt="写真なし" />';
+	}
+}
+
+/**
+ * Google Adsenceを出力する
+ * @param type $number 
+ */
+function google_ads($number = 1){
+	switch($number){
+		case 1:
+		default:
+			echo <<<EOS
+			<div class="google">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-0087037684083564";
+				/* 高橋文樹 top */
+				google_ad_slot = "4068259334";
+				google_ad_width = 600;
+				google_ad_height = 15;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+EOS;
+			break;
+	}
+}
