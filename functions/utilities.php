@@ -55,3 +55,38 @@ function get_last_login($user_id = false) {
     $the_last_login = mysql2date($date_format, $last_login, false);
     return $the_last_login;
 }
+
+/**
+ * 投稿の文字数を返す
+ * @param object $post
+ * @return int
+ */
+function fumiki_content_length($post = null){
+	$content = _fumiki_get_post($post)->post_content;
+	if(is_string($content)){
+		return mb_strlen($content, 'utf-8');
+	}else{
+		return 0;
+	}
+}
+
+/**
+ * 本番サーバの場合はtrueを返す
+ * @return boolean
+ */
+function is_production(){
+	return ($_SERVER['SERVER_NAME'] == 'takahashifumiki.com');
+}
+
+/**
+ * 投稿を返す（メタ情報を取るときなどにメンドクサイので）
+ * @global object $post
+ * @param object $post
+ * @return object
+ */
+function _fumiki_get_post($post = null){
+	if(!$post){
+		global $post;
+	}
+	return get_post($post);
+}

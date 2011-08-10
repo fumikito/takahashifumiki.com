@@ -50,18 +50,18 @@ function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true")
 }
 
 /**
- * Facebookのいいねボックスを表示
+ * なかのひとを出力する
+ * @return void
  */
-function fumiki_fb_like($width = 200, $height = 300, $icons = 20){
-	$css = get_bloginfo('template_directory')."/css/facebook.css?".  filemtime(TEMPLATEPATH."/css/facebook.css");
-	$page_id = "240120469352376";
-	$app_key = "5e50204f4bd7cfd897c775db46e122a8";
-	echo <<<EOS
-<div id="fb-root"></div>
-<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
-<script type="text/javascript">FB.init("{$app_key}");</script>
-<fb:fan profile_id="{$page_id}" connections="{$icons}" width="{$width}" height="{$height}" css="{$css}" ></fb:fan>
-EOS;
+function fumiki_nakanohito(){
+	if(is_production()){
+		?>
+		<p id="nakanohito"></p>
+		<noscript>
+		<img src="http://nakanohito.jp/an/?u=201672&h=893199&w=96&guid=ON&t=" width="96" height="96" alt="" border="0" />
+		</noscript>
+		<?php
+	}
 }
 
 /**
@@ -86,5 +86,49 @@ Hatena.BookmarkWidget.theme = "notheme";
 Hatena.BookmarkWidget.load();
 //]]>
 </script>
+EOS;
+}
+
+
+/**
+ * ページのタイトルを取得する
+ * @return string
+ */
+function fumiki_title(){
+	if(is_singular()){
+		return single_post_title('', false);
+	}elseif(is_home()){
+		return "最新の投稿";
+	}elseif(is_category()){
+		return 'カテゴリー: '.single_cat_title('', false);
+	}elseif(is_tag()){
+		return 'タグ: '.single_tag_title('', false);
+	}elseif(is_tax()){
+		return '';
+	}elseif(is_date()){
+		$month = explode("月", single_month_title('',false));
+        return "{$month[1]}年{$month[0]}月の投稿";
+	}elseif(is_search()){
+		return "検索: ".get_search_query();
+	}elseif(is_404()){
+		return "ご指定のページは見つかりませんでした";
+	}else{
+		return "高橋文樹.comの投稿";
+	}
+}
+
+function fumiki_share($title, $url){
+	
+	echo <<<EOS
+	<div class="like">
+	<!-- Hatena -->
+	<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<!-- Facebook -->
+	<iframe src="http://www.facebook.com/plugins/like.php?href={$fb_url}&amp;send=false&amp;layout=box_count&amp;width=70&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=60" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px; height:60px;" allowTransparency="true"></iframe>
+	<!-- twitter -->
+	<a href="http://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="hametuha" data-related="takahashifumiki:破滅派の主催者です。" data-lang="ja">ツイート</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	<!-- Google + -->
+	<g:plusone size="tall" href="{$url}"></g:plusone>
+	</div>
 EOS;
 }

@@ -75,3 +75,12 @@ function _fumiki_last_login($login) {
     update_usermeta($user->ID, 'last_login', current_time('mysql'));
 }
 add_action('wp_login','_fumiki_last_login');
+
+/**
+ * ウィジェットを登録する
+ */
+function _fumiki_register_widget(){
+	register_widget('Fumiki_Facebook_Like');
+}
+add_action('widgets_init', '_fumiki_register_widget');
+get_template_part("widgets/facebook");
