@@ -971,138 +971,24 @@ body.home #indicator span{
 /****************************************
  * 4.通常記事設定
  ****************************************/
-/*---------------------
- * 共通設定
- */
-body.n_single{
-}
-
-body.n_single #wrapper{
-	margin:0 50px;
-	max-width:1200px;
-	/*background:#fff url(img/single_right_body.gif) right 61px repeat-y;*/
-}
-
-body.n_single #content{
-	overflow:hidden;
-	padding-bottom:10px;
-}
-
-body.n_single #main{
-	float:left;
-	width:100%;
-}
-
-body.n_single .entry{
-	padding:0 340px 0 40px;
-	font-size:1.4em;
+.entry{
+	font-size:1.6em;
 	line-height:1.8;
-}
-
-body.n_single #right{
-	width:300px;
-	float:left;
-	margin-left:-300px;
+	padding-bottom:70px;
+	background:url('img/content-footernote.png') center bottom no-repeat;
 }
 
 .syntaxhighlighter{
-	padding-top:5px; !important
-	padding-bottom:5px; !important
+	padding-top:5px !important;
+	padding-bottom:5px !important;
 	border-radius:5px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
+	-webkit-box-shadow:1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow:1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset;
+	box-shadow:1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset;
 }
 
-
-
-/*---------------------
- * タイトル設定
- */
-body.n_single .meta{
-	margin:0 340px 0 30px;
-	padding:10px 0;
-	border-bottom:1px dotted #ddd;
-}
-
-/*見出し*/
-body.n_single .meta h1{
-	font-size:3.3em;
-	line-height:1.2;
-	width:100%;
-	float:left;
-}
-body.n_single .meta h1 span{
-	display:block;
-	padding-right:100px;
-}
-body.n_single .meta h1 span:first-letter{
-	display:block;
-	float:left;
-	font-size:2.4em;
-	margin:0 8px 10px 0;
-}
-/*カレンダー*/
-body.n_single .meta .calendar{
-	width:80px;
-	height:95px;
-	float:left;
-	margin-left:-80px;
-	background:url(img/single_title_calendar.gif) left top no-repeat;
-}
-body.n_single .meta .calendar span{
-	display:block;
-	text-align:center;
-}
-body.n_single .meta .calendar .year{
-	height:25px;
-	line-height:25px;
-	font-size:14px;
-	color:#fff;
-}
-
-body.n_single .meta .calendar .date{
-	height:29px;
-	line-height:29px;
-	color:#4f4946;
-	font-size:20px;
-}
-body.n_single .meta .calendar .day{
-	height:18px;
-	line-height:18px;
-}
-body.n_single .meta .calendar .time{
-	font-size:9px;
-	margin-top:5px;
-	line-height:1;
-	color:#00A0E9;
-}
-/*カテゴリー、タグ*/
-body.n_single .meta ul{
-	clear:both;
-	padding-top:10px;
-	text-align:right;
-}
-
-body.n_single .meta ul li{
-	display:inline;
-	font-size:1.2em;
-}
-body.n_single .meta ul li span{
-	font-size:1.2em;
-	font-weight:bolder;
-}
-body.n_single .meta ul li em{
-	font-size:18px;
-	margin-right:3px;
-	color:#E4007F;
-	font-style:normal;
-}
-body.n_single .meta .socialbk{
-	margin-left:20px;
-}
-/*
- * タイトル設定終わり
- *---------------------*/
 
 /*---------------------*
  * 古い記事についての表記
@@ -1135,27 +1021,31 @@ body.n_single .meta .socialbk{
 }
 
 /*見出し*/
+.entry h2,.entry h3,.entry h4, .entry h5{
+	text-shadow:1px 1px 2px #fff;
+}
 .entry h2{
-	font-size:2.2em;
+	font-size:1.8em;
 	padding-top:30px;
 	margin-bottom:20px;
 	line-height:1.2;
-	color:#00A0E9;
+	color:#8AB29F;
 }
 .entry h3{
-	font-size:1.8em;
+	font-size:1.5em;
 	padding:30px 0 5px;
 	margin-bottom:15px;
 	line-height:1.2;
-	border-bottom:1px dotted #e5e5e5;
+	color:#333F46;
+	border-bottom:1px dotted #333F46;
 }
 .entry h4{
-	font-size:1.4em;
+	font-size:1.3em;
 	padding-top:30px;
 	margin-bottom:15px;
 	line-height:1.2;}
 .entry h5{
-	font-size:1.2em;
+	font-size:1.1em;
 	padding-top:30px;
 	margin-bottom:15px;
 	line-height:1.2;
@@ -1187,27 +1077,27 @@ body.n_single .meta .socialbk{
 }
 
 /*引用*/
-.enrty blockquote, .entry cite, .entry q{color:#000;font-weight:bold;}
+.entry cite, .entry q{color:#000;font-weight:bold;}
 .entry blockquote{
 	margin:20px 0;
 	padding:10px 10px 10px 80px;
-	background:#bbb url(img/single_blockquote.gif) left top no-repeat;
-	color:#fff;
+	background:#bbb url(img/blockquote.gif) 10px 10px no-repeat;
 	border-radius:5px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
+	-webkit-box-shadow:1px 1px 2px #fff, 1px 1px 3px rgba(0,0,0,0.3) inset;
 }
-.entry blockquote p{margin:8px 0}
+.entry blockquote p{margin:8px 0; color:#000;}
 .entry blockquote cite{
 	display:block;
 	text-align:right;
 	font-size:0.8em;
-	color:#fff;
+	color:#000;
+	font-weight:normal;
 }
-.entry blockquote a:link{color:#fff;}
-.entry blockquote a:visited{color:#fff;}
-.entry cite::before{content:'"'}
-.entry cite::after{content:'"'}
+.entry cite:before{content:'"'}
+.entry cite:after{content:'"'}
+
 
 /*注意書き*/
 .entry .alert{
@@ -1226,8 +1116,6 @@ body.n_single .meta .socialbk{
 }
 .entry ins:before{content:"［*"}
 .entry ins:after{content:"］"}
-.entry .google ins:before{content:""} /*Googleアドセンスがinsタグなので、スタイル消去*/
-.entry .google ins:after{content:""}
 
 
 /*削除*/
@@ -1265,26 +1153,29 @@ body.n_single .meta .socialbk{
 	margin:20px 0;
 	border-spacing:0;
 	empty-cells:show;
-	border-right:1px solid #ABCD03;
-	border-left:1px solid #ABCD03;
+	border-collapse: collapse;
+}
+.entry table thead th,
+.entry table thead td{
+	background:#4D4945;
+	color:#f3f3f3;
+	padding:5px 8px;
 }
 .entry table caption{
-	color:#ABCD03;
+	color:#000;
 	text-align:left;
 	font-size:1.5em;
 }
-.entry table th{
+.entry tbody th,
+.entry tbody td{
 	text-align:left;
-	background-color:#ABCD03;
-	color:#fff;
-	padding:10px 15px;
-	margin:0;
-}
-.entry table td{
-	border-bottom:1px dotted #ABCD03;
-	padding:10px 15px;
-	margin:0;
+	padding:5px 8px;
 	font-size:0.85em;
+	border-bottom:1px dotted #999;
+}
+.entry tbody tr:nth-child(2n) td,
+.entry tbody tr:nth-child(2n) th{
+	background: #f3f3f3;
 }
 
 /*アスキーアート*/
@@ -1328,50 +1219,21 @@ body.n_single .meta .socialbk{
 .entry .code-format .notation{color:#BCE3F4}
 
 /*画像*/
-.entry .alignright{float:right;padding:10px; margin-left:20px;border:1px solid #ddd;background:#fafafa;}
-.entry .alignleft{float:left;padding:10px;margin-right:20px;border:1px solid #ddd;background:#fafafa;}
-.entry .aligncenter{margin:20px auto;padding:10px;border:1px solid #ddd;background:#fafafa;}
+.entry .alignright{float:right; margin-left:20px;}
+.entry .alignleft{float:left;margin-right:20px;}
+.entry .aligncenter{margin:20px auto;}
 .entry img.aligncenter{display:block;}
-.entry div.wp-caption{text-align:center; background:#fafafa url(img/entry_caption_bg.gif) right bottom no-repeat;
--webkit-border-radius:3px;border-radius:3px;	-moz-border-radius:3px; margin-bottom:15px;
-box-shadow:0 0 3px rgba(0,0,0, 0.3); -webkit-box-shadow:0 0 3px rgba(0,0,0, 0.3); -moz-box-shadow:0 0 3px rgba(0,0,0, 0.3);}
-.entry div.wp-caption.alignright{background:#fafafa url(img/single_img_right.gif) left bottom no-repeat;}
-.entry div.wp-caption.alignleft{background:#fafafa url(img/single_img_left.gif) right bottom no-repeat;}
+.entry div.wp-caption{margin-bottom:15px;}
 
 /*キャプション*/
 .entry .wp-caption-text{
 	font-size:0.75em;
-	color:#AAA;
-	margin:5px 0;
+	color:#666;
+	margin:0.25em 0 0;
 }
-.entry .alignright p.wp-caption-text{text-align:right;}
-.entry .alignleft p.wp-caption-text{text-align:left;}
-.entry .aligncenter p.wp-caption-text{text-align:center;}
-
 
 /*パスワード保護されていた場合*/
 .blocked form{}
-
-/*ソーシャルブックマーク*/
-.socialbk a{
-	display:block;
-	width:16px;
-	height:16px;
-	text-indent:-9999px;
-	margin-left:5px;
-	float:left;
-	background:url(img/socialbk/yahoo.gif) left top no-repeat
-}
-a.yahoo{margin-left:0}
-a.google{background-image:url(img/socialbk/google.gif)}
-a.hatena{background-image:url(img/socialbk/hatena.gif)}
-a.twitter{background-image:url(img/socialbk/twitter.gif)}
-a.delicious{background-image:url(img/socialbk/delicious.gif)}
-a.livedoor{background-image:url(img/socialbk/livedoorclip.gif)}
-a.nifty{background-image:url(img/socialbk/nifty_ico.gif)}
-a.buzzur{background-image:url(img/socialbk/buzzurl.gif)}
-a.pookmark{background-image:url(img/socialbk/addpookmark.gif)}
-a.blogpeople{background-image:url(img/socialbk/pingking.gif)}
 /*
  * 個別タグ設定終わり
  *--------------------*/
@@ -1479,157 +1341,6 @@ a.blogpeople{background-image:url(img/socialbk/pingking.gif)}
  *******************/
 
 
-
-
-
-
-/*---------------------
- * 右カラム
- */
-
-/*背景設定*/
-body.n_single #right{
-}
-
-/*つぶやき*/
-body.n_single div.tweet{
-	min-height:290px;
-}
-body.n_single div.tweet form{
-	text-align:right;
-	display:block;
-	margin:10px;
-	height:28px;
-	background:url(img/single_right_search.gif) left center no-repeat;
-}
-/*バナーエリア*/
-body.n_single #right .social .banner{
-	padding:10px 0 10px 20px;
-	text-align:center;
-}
-body.n_single #right .social .banner li{
-	float:left;
-	width:140px;
-}
-
-
-/*---------------------
- * コメント設定 （上書き）
- */
-body.n_single #comments_wrapper{
-	margin:0 320px 0 20px;
-}
-
-/*---------------------
- * カラム1
- */
-body.n_single #column1{
-	width:170px;
-	float:left;
-}
-
-/*共通設定*/
-body.n_single #column1 .newpost,
-body.n_single #column1 .tags,
-body.n_single #column1 .catnav{
-	background:url(img/single_news_body.gif) left top repeat-y;
-	margin-left:5px;
-	font-size:1.2em;
-}
-body.n_single #column1 .newpost h3,
-body.n_single #column1 .tags h3,
-body.n_single #column1 .catnav h3{
-	background:url(img/single_news_head.gif) left top no-repeat;
-	height:70px;
-	text-indent:-9999px;
-}
-body.n_single #column1 .newpost ul,
-body.n_single #column1 .tags ul,
-body.n_single #column1 .catnav ul{
-	padding-bottom:40px;
-	background:url(img/single_news_foot.gif) left bottom no-repeat;
-}
-
-/*新着記事*/
-body.n_single #column1 .comment h3{background-image:url(img/single_comment_head.gif);}
-body.n_single #column1 .tags h3{background-image:url(img/single_tags_head.gif);}
-body.n_single #column1 .catnav h3{background-image:url(img/single_category_head.gif);}
-body.n_single #column1 .book_ad p{text-align:center;}
-body.n_single #column1 .newpost li,
-body.n_single #column1 .comment li,
-body.n_single #column1 .tags li,
-body.n_single #column1 .catnav li{
-	padding:5px 0;
-	margin:0 17px 0 11px;
-	border-bottom:1px solid #ddd;
-}
-
-/*はてぶ*/
-body.n_single #column1 .hatena-bookmark-widget-title{
-	background:url(img/single_news_head_hatena.gif) left top no-repeat;
-	padding:46px 10px 0;
-	font-size:14px;
-	font-weight:bold;
-}
-body.n_single #column1 .hatena-bookmark-widget-title a{
-	text-decoration:none;
-}
-body.n_single #column1 .hatena-bookmark-widget-title img{
-	display:none;
-}
-body.n_single #column1 .hatena-bookmark-widget-footer{
-	display:none;
-}
-body.n_single #column1 .hatena-bookmark-count a{
-	text-decoration:none;
-	color:#fff;
-	background:#E4007F;
-	padding:1px 2px;
-	margin-left:0.5em;
-}
-/*カテゴリ一覧*/
-body.n_single #column1 .catnav li{
-	padding:5px;
-}
-body.n_single #column1 .catnav li ul{background:none;padding-bottom:3px;}
-body.n_single #column1 .catnav li li{
-	padding:3px 0;
-	margin:0 0 0 20px;
-	list-style:circle outside;
-	border-bottom:none;
-}
-body.n_single #column1 .newpost li.last{
-	border-bottom:none;
-}
-
-/*タグクラウド*/
-body.n_single #column1 .tags a:link,
-body.n_single #column1 .tags a:visited,
-body.n_single #column1 .tags a:hover,
-body.n_single #column1 .tags a:active{text-decoration:none;}
-
-
-/*---------------------
- * カラム2
- */
-body.n_single #column2{
-	width:130px;
-	float:right;
-}
-/*アドセンス*/
-body.n_single #column2 .adscense{
-	margin:0 5px;
-}
-
-/*広告バナー*/
-body.n_single #column2 .insight{
-	padding-top:10px;
-	margin-bottom:10px;
-	text-align:center;
-}
-/*
- * 右カラム終わり
- *---------------------*/
 
 /****************************************
  * 通常記事設定終わり
@@ -2025,14 +1736,7 @@ body.t_single #breadcrumb{
 	text-align:left;
 }
 
-/*コメント欄*/
-body.t_single #comments_wrapper,
-body.t_single #end_meta,
-body.t_single .google_banner{
-	background:#fff;
-	width:728px;
-	margin:0 auto;
-}
+
 body.t_single .google_banner{
 	padding-bottom:10px;
 }
@@ -2430,7 +2134,10 @@ div.tmkm-amazon-view {
 div.tmkm-amazon-view img {
 	float: left;
 	margin: 5px 20px 10px 0px;
-	-webkit-box-shadow:0 0 8px #000;
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5);
+	-moz-box-shadow:0 0 5px  rgba(0,0,0,0.5);
+	box-shadow:0 0 5px  rgba(0,0,0,0.5);
+	padding:0 !important;
 }
 
 div.tmkm-amazon-view p {

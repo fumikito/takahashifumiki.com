@@ -17,9 +17,21 @@ get_header('title');
 
 <div id="content" class="margin clearfix">
 	<div id="main">
-		<div class="post">
+		<div class="entry clearfix">
 			<?php the_content(); ?>
 		</div>
+		<div class="share">
+			<h3 class="mono">Share This</h3>
+			<p>この記事を気に入ったら、ぜひシェアしてください。</p>
+			<?php fumiki_share(get_the_title()."|".get_bloginfo('name'), get_permalink()); ?>
+		</div>
+		<div class="related">
+			<div class="google">
+				
+			</div>
+			<?php related_posts(); ?>
+		</div>
+		<?php comments_template(); ?>
 	</div>
 	<!-- #main ends -->
 	
