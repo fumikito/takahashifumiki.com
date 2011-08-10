@@ -99,18 +99,30 @@ a{overflow:hidden;}
 .shadow{
 	text-shadow:1px 1px 2px rgba(0, 0, 0, 0.8);
 }
-
+/*背景画像*/
+.dark_bg{
+	background: url(img/bg-texture-dark.jpg);
+}
 
 /****************************************
  * 2. レイアウトパーツ
  ****************************************/
+/*全体レイアウト*/
 .margin{
 	width:960px;
 	margin:0 auto;
 }
-.dark_bg{
-	background: url(img/bg-texture-dark.jpg);
+#main{
+	float:left;
+	width:600px;
+	padding:20px;
 }
+#sidebar{
+	float:left;
+	width:300px;
+	padding:20px 10px;
+}
+
 .grid_4{
 	float:left;
 	width:220px;
@@ -274,23 +286,48 @@ a.button:active{
 	font-size:14px;
 }
 
-/*ぱんくず*/
-body.not_home #breadcrumb{
-	color:#ccc;
-	height:12px;
-	margin:0 0 0 15px;
-	height:20px;
-	line-height:20px;
-	background:url(img/single_header_bc.gif) left center no-repeat;
-	padding-left:25px;
+
+/*---------------------
+ * ヘッダーメタ
+ */
+/*タイトル*/
+.title{
+	margin:40px 100px;
+	color:#8ab29f;
+	font-size:3.6em;
+	line-height: 1.1;
+	text-shadow:1px 1px 2px #fff;
 }
-body.not_home #breadcrumb a:link,
-body.not_home #breadcrumb a:visited{color:#aaa;}
-body.not_home #breadcrumb a:hover,
-body.not_home #breadcrumb a:active{color:#E4007F;}
 
+/*ぱんくず*/
+.breadcrumb{
+	color:#333f46;
+	height:24px;
+	line-height:24px;
+	margin:10px;
+	background:url(img/meta-icons.png) left -96px no-repeat;
+	font-size:1.1em;
+	padding-left:30px;
+}
+/*タイトルメタ*/
+.title-meta{
+	margin:10px;
+}
+.title-meta li{
+	font-size:1.1em;
+	height:24px;
+	line-height:24px;
+	background:url(img/meta-icons.png) left -24px no-repeat;
+	padding-left:30px;
+	color:#333f46;
+	margin: 0 20px 5px 0;
+}
+.title-meta .date{}
+.title-meta .length{background-position: left -48px;}
+.title-meta .feedback{background-position: left -72px;}
 
-
+.title-meta .category{background-position: left 0;}
+.title-meta .tag{background-position: left -120px;}
 
 
 
@@ -475,6 +512,10 @@ body.not_home #breadcrumb a:active{color:#E4007F;}
 #footer ol.inner li .google{background-position: left -160px;}
 #footer ol.inner li .youtube{background-position: left -64px;}
 #footer ol.inner li .github{background-position: left -192px;}
+
+
+
+
 
 
 

@@ -13,6 +13,19 @@ else:
 get_header('meta');
 get_header('navi');
 get_header('title');
+?>
 
+<div id="content" class="margin clearfix">
+	<div id="main">
+		<div class="post">
+			<?php the_content(); ?>
+		</div>
+	</div>
+	<!-- #main ends -->
+	
+	<?php get_sidebar(); ?>
+</div>
+
+<?php
 get_footer();
 endif;//Mootoolsと通常single.phpの分岐終了
