@@ -964,6 +964,16 @@ table.form-table input[type=password]{
 /****************************************
  * 5.5.電子書籍用設定
  ****************************************/
+/* 概要 */
+.ebook .excerpt{
+	margin:1.5em 0;
+	font-size:1.6em;
+	color:#666;
+}
+.ebook .book-info img{
+	
+}
+
 /*サイドバー共通*/
 #right .rectangle{
 	margin:0 0 20px;
@@ -1106,41 +1116,49 @@ body.ebook .ebook-meta h1{
 }
 
 /*書籍詳細*/
-.entry .ebook-detail{
+.ebook-detail{
 	margin-top:20px;
 }
-.entry .ebook-detail img{
+.ebook-detail img.cover{
 	float:left;
 	margin-right:20px;
-}
-.entry .ebook-detail img.cover{
 	box-shadow:1px 1px 5px #000;
 	-moz-box-shadow:1px 1px 5px #000;
 	-webkit-box-shadow:1px 1px 5px #000;
 }
-.entry .ebook-detail dl{
-	
+.ebook-detail dl{
+	width:340px;
+	float:left;
 }
-.entry .ebook-detail dl dt{
-	color:#999;
+.ebook-detail dl dt{
+	color:#8AB29F;
 	margin-bottom:5px;
-	font-size:1.2em;
+	font-size:1.4em;
 	line-height:1;
+	text-shadow:1px 1px 2px #fff;
 }
-.entry .ebook-detail dl dd{
+.ebook-detail dl dd{
 	border-left:none;
-	font-size:1.8em;
-	color: #00A0E9;
-	margin-top:0;
+	font-size:1.4em;
+	margin-bottom:1em;
 	line-height:1.2;
+	text-shadow:1px 1px 2px #fff;
 }
-.entry .ebook-detail dl dd.desc{
-	font-size:16px;
-	color:#444;
+.ebook-detail dl dd.book-title{
+	font-size:2em;
+	font-weight: bold;
 }
-.entry .ebook-detail dl dd small{
-	font-size:0.5em;
+.ebook-detail dl dd.price{
+	font-size:2em;
+	color:#ed8600;
+}
+.ebook-detail dl dd small{
+	font-size:0.85em;
+	color:#666;
+}
+.ebook-detail dl dd del{
 	color:#999;
+	text-shadow:none;
 }
 /*対応端末リスト*/
 .ebook .device-list{
@@ -1154,11 +1172,11 @@ body.ebook .ebook-meta h1{
 	margin-right:10px;
 }
 .ebook .device-list .valid{
-	background:url(img/ebook_device_bg_valid.gif) center bottom no-repeat;
-	color:#00A0E9;
+	background:url('img/ebook-devices/bg_device.gif') left bottom no-repeat;
+	color:#8AB29F;
 }
 .ebook .device-list .invalid{
-	background:url(img/ebook_device_bg_invalid.gif) center bottom no-repeat;
+	background:url('img/ebook-devices/bg_device.gif') right bottom no-repeat;
 	color:#999;
 }
 .ebook .device-list .device small{
@@ -1176,12 +1194,12 @@ body.ebook .ebook-meta h1{
 	margin:5px auto;
 }
 .ebook .device-list p{
-	font-size:11px;
-	color:#999;
+	font-size:12px;
+	color:#666;
 	line-height:1.4;
 	margin:10px 0;
 	padding-top:5px;
-	border-top:1px dotted #E5E5E5;
+	text-shadow:1px 1px 2px #fff;
 }
 
 /*ダウンロードリスト*/
@@ -1190,6 +1208,9 @@ body.ebook .ebook-meta h1{
 	width:100%;
 	border-collapse: collapse;
 	border:none;
+}
+.ebook .file-list td.center{
+	text-align: center;
 }
 .ebook .file-list td{
 	padding:15px 5px 5px;
@@ -1201,7 +1222,7 @@ body.ebook .ebook-meta h1{
 .ebook .file-list small{
 	font-size:10px;
 }
-.ebook .file-list td .title{
+.ebook .file-list td .file-title{
 	font-size:14px;
 }
 .ebook .file-list td p{
@@ -1213,7 +1234,7 @@ body.ebook .ebook-meta h1{
 	width:150px;
 	height:21px;
 	line-height:21px;
-	background:url(img/ebook_btn_dlbase.gif) left top no-repeat;
+	background:url(img/ebook-devices/btn_dlbase.gif) left top no-repeat;
 	text-decoration:none;
 }
 .ebook .file-list .download img{
@@ -1506,6 +1527,8 @@ body.login #submit{margin:0;}
 /****************************************
  * アーカイブ設定終わり
  ****************************************/
+
+
 
 /****************************************
  * 3.トップページ設定

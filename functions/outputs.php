@@ -112,6 +112,8 @@ function fumiki_title(){
 		return "検索: ".get_search_query();
 	}elseif(is_404()){
 		return "ご指定のページは見つかりませんでした";
+	}elseif(is_archive() && get_post_type() !== 'post'){
+		return get_post_type();
 	}else{
 		return "高橋文樹.comの投稿";
 	}
@@ -139,7 +141,7 @@ function fumiki_share($title, $url){
 		preg_match("/circulation=\"(.*)\"/isU", $response, $res_array);
 		if(is_numeric($res_array[1])){
 			$subscribers = $res_array[1];
-			set_transient('feedburner_sbscribers', $res_array[1], 60 * 60 * 24);
+			set_transient('feedburner_subscribers', $res_array[1], 60 * 60 * 24);
 		}
 	}else{
 		$subscribers = $saved_data;

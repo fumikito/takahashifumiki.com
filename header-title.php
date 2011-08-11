@@ -10,7 +10,7 @@
 	
 	
 	<ul class="title-meta">
-		<?php if(is_singular() && !is_page('login') && !is_page('book-shelf')): ?>
+		<?php if(is_singular() && !is_page('login') && !is_page('book-shelf') && (get_post_type() != 'ebook') ): ?>
 			<li class="inline-block date">
 				公開日: <?php the_date(); ?>
 				<small>（最終更新: <?php the_modified_date(); ?>）</small>
@@ -28,5 +28,6 @@
 		<?php elseif(is_archive() || is_search()):?>
 			<Li class="inline-block count"><?php echo number_format($wp_query->found_posts); ?>件の記事が見つかりました</li>
 		<?php endif; ?>
+		<?php edit_post_link('編集する', '<li class="inline-block count">', '</li>'); ?>
 	</ul>
 </div>
