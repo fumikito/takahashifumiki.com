@@ -12,11 +12,6 @@ AUTHOR URI:http://takahashifumiki.com
  * TOC
  * 1.クリアスタイル
  * 2.グローバル設定
- * 3.トップページ設定
- * 4.通常記事設定
- * 5.縦書記事設定
- * 6.ページ設定
- * 7.アーカイブ設定
  ****************************************************/
 
 
@@ -931,8 +926,11 @@ table.form-table input[type=password]{
 	margin-bottom:3px;
 }
 #sidebar img,
-#sidebar iframe{
+#sidebar iframe,
+.widget_text .textwidget{
 	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
+	box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
 }
 /*バナー*/
 .widget_sp_image-description{
@@ -953,6 +951,18 @@ table.form-table input[type=password]{
 	font-size:1.1em;
 	text-align:center;
 	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
+}
+/*通常テキスト*/
+.widget_text .textwidget{
+	background:#f0f0f0;
+	color:#4C5A65;
+	background:url('img/bg-texture-white.jpg') repeat;
+	padding:10px;
+	font-size:1.2em;
+}
+.widget_text .textwidget h5{
+	font-size:1.4em;
+	margin-bottom:1em;
 }
 /****************************************
  * 通常記事設定終わり
