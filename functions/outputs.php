@@ -112,10 +112,8 @@ function fumiki_title(){
 		return "検索: ".get_search_query();
 	}elseif(is_404()){
 		return "ご指定のページは見つかりませんでした";
-	}elseif(is_archive() && get_post_type() !== 'post'){
-		return get_post_type();
 	}else{
-		return "高橋文樹.comの投稿";
+		return wp_title('', false);
 	}
 }
 
@@ -131,7 +129,7 @@ function fumiki_share($title, $url){
 	$subscribers = 'N/A';
 	$saved_data = get_transient('feedburner_subscribers');
 	if(false === $saved_data){
-		$endpoint = "https://feedburner.google.com/api/awareness/1.0/GetFeedData?id=i25crst2uldga4n0o9ld5pkgpc";
+		$endpoint = "https://feedburner.google.com/api/awareness/1.0/GetFeedData?id=i25crst2uldga4n0o9ld5pkgpc&dates=".date('Y-m-d', gmmktime() - (60 * 60 * 24 * 2));
 		$ch = curl_init();
 		curl_setopt($ch,CURLOPT_URL,$endpoint);
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);  
@@ -228,6 +226,11 @@ EOS;
 	}
 }
 
+/**
+ * 投稿が古い場合にメッセージを出力する
+ * @param object $post 
+ * @return void
+ */
 function the_expiration_info($post = null){
 	$post = _fumiki_get_post($post);
 	$date_diff = floor((time() - strtotime($post->post_date)) / 60 / 60 / 24);
