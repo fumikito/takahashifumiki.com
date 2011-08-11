@@ -10,7 +10,7 @@
 	
 	
 	<ul class="title-meta">
-		<?php if(is_singular() && !is_page('login')): ?>
+		<?php if(is_singular() && !is_page('login') && !is_page('book-shelf')): ?>
 			<li class="inline-block date">
 				公開日: <?php the_date(); ?>
 				<small>（最終更新: <?php the_modified_date(); ?>）</small>

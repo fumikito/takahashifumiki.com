@@ -166,10 +166,26 @@ function fumiki_archive_photo($size = "medium"){
 
 /**
  * Google Adsenceを出力する
- * @param type $number 
+ * @param int $number 
+ * @return void
  */
 function google_ads($number = 1){
 	switch($number){
+		case 2:
+			echo <<<EOS
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-0087037684083564";
+			/* 高橋文樹 投稿内広告 */
+			google_ad_slot = "5844658673";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+EOS;
+			break;
 		case 1:
 		default:
 			echo <<<EOS

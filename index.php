@@ -10,20 +10,7 @@ get_header('title');
 		<div class="archive clearfix">
 			<?php $counter = 0;if(have_posts()): while(have_posts()): the_post(); $counter++;?>
 				<?php if($counter == 3 || $counter == 5): ?>
-					<p class="center google clrB">
-					<script type="text/javascript"><!--
-					google_ad_client = "ca-pub-0087037684083564";
-					/* 高橋文樹 投稿内広告 */
-					google_ad_slot = "5844658673";
-					google_ad_width = 468;
-					google_ad_height = 60;
-					//-->
-					</script>
-					<script type="text/javascript"
-					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-					</p>
-					<!-- .google ends -->
+					<p class="center google clrB"><?php google_ads(2);?></p>
 				<?php endif; ?>
 				<?php if($counter < 5): ?>
 					<div class="archive-box archive-box-big <?php echo ($counter % 2 == 0) ? 'even': 'odd';?>">
