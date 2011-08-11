@@ -12,7 +12,6 @@ jQuery(document).ready(function($){
 	$('#navi').css('height', 0);
 	$('#header .button').click(function(e){
 		e.preventDefault();
-		console.log(e, $(this).attr("class"), navHeight);
 		if($(this).hasClass('toggle')){
 			$(this).removeClass('toggle');
 			$('#navi').animate({
@@ -25,6 +24,20 @@ jQuery(document).ready(function($){
 			});
 		}
 	});
+	//Fancybox
+	if($.fancybox){
+		$('.entry a').each(function(index, elt){
+			if(elt.href.match(/(jpe?g|gif|png)$/i)){
+				elt.rel = 'fancyboxGroup';
+				if($(elt).next('wp-caption-text').length > 0){
+					elt.title = $(elt).next('wp-caption-text').text();
+				}else if($(elt).find('img').length > 0){
+					elt.title = $(elt).find('img').attr('alt');
+				}
+			}
+		});
+		$('.entry a[rel=fancyboxGroup]').fancybox();
+	}
 	//Tooltip
 	var originalTip = document.createElement('div');
 	$(originalTip).addClass('tooltip');
@@ -63,4 +76,12 @@ jQuery(document).ready(function($){
 				break;
 		}
 	});
+	//ホームの調整
+	if($('.sidebar-home').length > 0){
+		$('.sidebar-home .widget').each(function(index, elt){
+			if(index % 3 == 0){
+				$(elt).addClass('clrL');
+			}
+		});
+	}
 });
