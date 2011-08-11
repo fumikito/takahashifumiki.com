@@ -126,6 +126,25 @@ function fumiki_title(){
 function fumiki_share($title, $url){
 	$feed_url = get_bloginfo('rss_url');
 	$feed_src = get_bloginfo('template_directory')."/img/RSS-container.png";
+	$subscribers = 'N/A';
+	$saved_data = get_transient('feedburner_subscribers');
+	if(false === $saved_data){
+		$endpoint = "https://feedburner.google.com/api/awareness/1.0/GetFeedData?id=i25crst2uldga4n0o9ld5pkgpc";
+		$ch = curl_init();
+		curl_setopt($ch,CURLOPT_URL,$endpoint);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);  
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,5);
+		$response = curl_exec($ch);
+		$res_array = array();
+		preg_match("/circulation=\"(.*)\"/isU", $response, $res_array);
+		if(is_numeric($res_array[1])){
+			$subscribers = $res_array[1];
+			set_transient('feedburner_sbscribers', $res_array[1], 60 * 60 * 24);
+		}
+	}else{
+		$subscribers = $saved_data;
+	}
+	
 	echo <<<EOS
 	<div class="like">
 	<!-- Hatena -->
@@ -138,7 +157,7 @@ function fumiki_share($title, $url){
 	<g:plusone size="tall" href="{$url}"></g:plusone>
 	<!-- FeedBurner -->
 	<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
-		<span class="mono">0</span>
+		<span class="mono">{$subscribers}</span>
 		<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
 	</a>
 	</div>
