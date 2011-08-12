@@ -925,13 +925,85 @@ table.form-table input[type=password]{
 	text-shadow: 1px 1px 2px #000;
 	margin-bottom:3px;
 }
-#sidebar img,
+#sidebar .widget_sp_image img,
 #sidebar iframe,
 .widget_text .textwidget{
 	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
 	box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
 	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
 }
+/*いますぐ購入*/
+.lwpwidget-buynow{
+	background: #30383d;
+	padding:10px;
+	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.4) inset;
+}
+.lwp-buynow-title{
+	font-size:2em;
+	text-shadow:1px 1px 3px #000;
+	text-align:center;
+	display:block;
+}
+.lwpwidget-buynow .lwp-on-sale{
+	font-size:1.2em;
+	color:#f15652;
+	margin-bottom: 0;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	text-align:center;
+}
+.lwpwidget-buynow .lwp-timer{
+	font-size:1.2em;
+	height:24px;
+	line-height:24px;
+	font-weight:bold;
+	color:#f15652;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	text-align:center;
+}
+.lwpwidget-buynow .lwp-timer .day,
+.lwpwidget-buynow .lwp-timer .hour,
+.lwpwidget-buynow .lwp-timer .minutes,
+.lwpwidget-buynow .lwp-timer .seconds{
+	font-size:1.4em;
+	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
+}
+.lwpwidget-buynow .price{
+	text-align: center;
+}
+.lwpwidget-buynow .price p{
+	color:#fef09a;
+	font-size:3em;
+	font-family:'Georgia', seif;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+}
+.lwpwidget-buynow .price del{
+	color:#fefefe;
+	font-size:1.4em;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	font-family:'Georgia', seif;
+	margin-right:0.5em;
+}
+.lwpwidget-buynow .price small{
+	color:#f15652;
+	font-size:1.4em;
+	font-family:'Georgia', seif;
+}
+a.lwp-buynow{
+	display:block;
+	margin:0 auto;
+	width: 150px;
+	height:40px;
+	overflow:hidden;
+	text-indent: -9999px;
+	background: url('img/btn-buynow.png') left top no-repeat;
+}
+a.lwp-buynow:hover{
+	background-position: left -40px;
+}
+a.lwp-buynow:active{
+	background-position: left -80px;
+}
+
 /*バナー*/
 .widget_sp_image-description{
 	font-size:1.4em;
@@ -953,7 +1025,7 @@ table.form-table input[type=password]{
 	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
 }
 /*通常テキスト*/
-.widget_text .textwidget{
+.widget_text .textwidget .widget_bg{
 	background:#f0f0f0;
 	color:#4C5A65;
 	background:url('img/bg-texture-white.jpg') repeat;

@@ -27,7 +27,7 @@ get_header('title');
 					<?php if(lwp_on_sale()): ?>
 						<?php echo lwp_currency_symbol().number_format(lwp_price());?><br />
 						<del><?php echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
-						<small class="mono"><?php echo lwp_discout_rate(); ?>% OFf</small>
+						<small class="mono"><?php echo lwp_discout_rate(); ?></small>
 					<?php else: ?>
 						<?php echo lwp_currency_symbol().number_format(lwp_price()); ?>
 					<?php endif; ?>
@@ -41,10 +41,16 @@ get_header('title');
 			</dl>
 		</div>
 		<div class="entry clearfix">
+			<p class="clrL center">
+				<?php echo lwp_buy_now(null, null); ?>
+			</p>
 			<?php the_content(); ?>
 			<div class="clrB">
 				<?php link_pages('ページ: '); ?>
 			</div>
+			<p class="clrB center">
+				<?php echo lwp_buy_now(null, null); ?>
+			</p>
 		</div>
 		<div class="share">
 			<h3 class="mono">Share This eBook</h3>
