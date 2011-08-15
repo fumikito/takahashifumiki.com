@@ -41,6 +41,9 @@ get_header('title');
 			</dl>
 		</div>
 		<div class="entry clearfix">
+			<?php if(lwp_is_owner() && !lwp_is_free()): ?>
+				<p class="message success">お買い上げありがとうございます。「ダウンロード」からファイルをダウンロードして下さい。感想お待ちしています。</p>
+			<?php endif; ?>
 			<p class="clrL center">
 				<?php echo lwp_buy_now(null, null); ?>
 			</p>

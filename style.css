@@ -126,7 +126,8 @@ a{overflow:hidden;}
 	margin-right:20px;
 }
 a.button,
-input.button{
+input.button,
+#lwp-submit{
 	padding:5px 7px;
 	-webkit-border-radius:3px;
 	border:1px solid #273138;
@@ -146,7 +147,8 @@ a.button:visited{
 	text-decoration: none;
 }
 a.button:hover,
-input.button:hover{
+input.button:hover,
+#lwp-submit:hover{
 	background: #4c5a65; /* Old browsers */
 	background: -moz-linear-gradient(top, #4c5a65 0%, #2e3940 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c5a65), color-stop(100%,#2e3940)); /* Chrome,Safari4+ */
@@ -157,7 +159,8 @@ input.button:hover{
 	background: linear-gradient(top, #4c5a65 0%,#2e3940 100%); /* W3C */
 }
 a.button:active,
-input.button:active{
+input.button:active,
+#lwp-submit:active{
 	background:#252e34;
 }
 /*メッセージボックス*/
@@ -1662,16 +1665,17 @@ body.login #submit{margin:0;}
 	background:url('img/top-bg-face.png') left bottom no-repeat;
 	min-height: 480px;
 	font-size:2em;
+	line-height:1.1;
 }
 .main-menu li{
 	width:1em;
 	float:right;
 	margin-left:0.75em;
+	text-align: center;
 }
 .main-menu li a{
 	text-decoration: none;
 	color:#8AB29F;
-	line-height:1.1;
 }
 .main-menu li a:hover{
 	color:#b48b8b;

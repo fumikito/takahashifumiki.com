@@ -52,7 +52,7 @@
 <div id="header" class="margin dark_bg">
 	<div id="logo">
 		<a rel="home" href="<?php bloginfo('url')?>">
-			<img src="<?php bloginfo('template_directory')?>/img/header-logo.png" alt="<?php bloginfo('name'); ?>" width="380" heigth="40" />
+			<img src="<?php bloginfo('template_directory')?>/img/header-logo.png" alt="<?php bloginfo('name'); ?>" width="380" height="40" />
 		</a>
 		<p class="shadow"><?php $desc = explode("。", get_bloginfo("description")); echo $desc[0]; ?></p>
 	</div>
