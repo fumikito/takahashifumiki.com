@@ -14,7 +14,7 @@ class Fumiki_Facebook_Like extends WP_Widget{
 		extract($args);
 		extract($instance);
 		if(file_exists(TEMPLATEPATH."/css/facebook.css")){
-			$css = ' css="'.get_bloginfo('template_directory')."/css/facebook.css?".  filemtime(TEMPLATEPATH."/css/facebook.css").'"';
+			$css = ' css="'.get_bloginfo('template_directory')."/css/facebook.css?".filemtime(TEMPLATEPATH."/css/facebook.css").'"';
 		}else{
 			$css = '';
 		}

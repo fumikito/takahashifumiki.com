@@ -145,6 +145,8 @@ function fumiki_share($title, $url){
 		$subscribers = $saved_data;
 	}
 	
+	$fb_url = is_front_page() ? urlencode('http://www.facebook.com/pages/高橋文樹/240120469352376') : urlencode($url);
+	
 	echo <<<EOS
 	<div class="like">
 	<!-- Hatena -->

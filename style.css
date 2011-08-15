@@ -63,7 +63,6 @@ html,body{margin:0;padding:0;}
  * テキスト・背景色
  */
 body{
-	background:#fff;
 	color:#4D4945;
 	word-wrap:break-word;
 	text-align:justify;
@@ -621,7 +620,8 @@ p.success{
 	font-size:1.3em;
 	padding-top:30px;
 	margin-bottom:15px;
-	line-height:1.2;}
+	line-height:1.2;
+}
 .entry h5{
 	font-size:1.1em;
 	padding-top:30px;
@@ -803,6 +803,7 @@ p.success{
 .entry .alignleft{float:left;margin-right:20px;}
 .entry .aligncenter{margin:20px auto;}
 .entry img.aligncenter{display:block;}
+
 .entry div.wp-caption{margin-bottom:15px;}
 
 /*キャプション*/
@@ -1038,6 +1039,22 @@ a.lwp-buynow:active{
 .widget_text .textwidget h5{
 	font-size:1.4em;
 	margin-bottom:1em;
+}
+/*Disqus*/
+#dsq-references{
+	font-size:1.2em;
+	border-top:1px solid #ccc !important;
+}
+#dsq-references li{
+	border-bottom:1px solid #ccc !important;
+	padding:20px 10px !important;
+}
+#dsq-references li:nth-child(even){
+	background:#f0f0f0;
+}
+#dsq-references .dsq-meta{
+	text-align:right;
+	margin:10px 0;
 }
 /****************************************
  * 通常記事設定終わり

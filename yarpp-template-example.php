@@ -24,7 +24,7 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 
 	<?php if ($related_query->have_posts()):?>
 	<ol>
-		<?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
+		<?php while ($related_query->have_posts()) :  $related_query->the_post(); ?>
 		<li>
 			<span class="mono"><?php the_date('Y.m.d'); ?></span>
 			<a class="button" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?><small>（関連度：<?php the_score(); ?>）</small></a>
@@ -37,7 +37,7 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 	<?php
 		$cats = get_the_category();
 		$cat = current($cats);
-		query_posts("showposts=5&cat={$cat->term_id}");
+		query_posts("showposts=3&cat={$cat->term_id}");
 		if(have_posts()):
 	?>
 		<ol>

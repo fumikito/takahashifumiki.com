@@ -5,7 +5,7 @@
 	
 	<?php $title = fumiki_title(); ?>
 	<div class="title mincho<?php if(mb_strlen($title, 'utf-8') <= 20) echo ' center'; ?>">
-		<?php echo htmlspecialchars($title, ENT_QUOTES, 'utf-8'); ?>
+		<?php echo $title; ?>
 	</div>
 	
 	

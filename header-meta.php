@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
-<title><?php wp_title("|", true, 'right'); bloginfo('name'); if(is_front_page()) "|".bloginfo('description'); ?></title>
+<title><?php wp_title("|", true, 'right'); bloginfo('name'); if(is_front_page()) echo "|".get_bloginfo('description'); ?></title>
 <meta name="author" content="Takahashi Fumiki" />
 <meta name="copyright" content="copyright 2008- takahashifumiki.com" />
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" title="高橋文樹.com 最新の投稿" />

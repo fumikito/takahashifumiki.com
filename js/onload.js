@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 		var tag = "<a href='http://nakanohito.jp/'>";
 		tag += "<img src='http://nakanohito.jp/an/?u=201672&h=893199&w=96&guid=ON&t=&version=js&refer="+escape(document.referrer)+"&url="+escape(document.URL)+"' border='0' width='96' height='96' />";
 		tag += "</a>";
-		$('#nakanohito').text(tag);
+		$('#nakanohito').html(tag);
 	}
 	//スライドアニメーション
 	$('#navi').css('height', 'auto');
@@ -63,7 +63,6 @@ jQuery(document).ready(function($){
 					left: $(elt).scrollLeft()
 				});
 				$('body').append(tip);
-				console.log(elt, tip.offset());
 				$(elt).blur(function(e){
 					
 				});
