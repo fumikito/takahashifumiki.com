@@ -20,7 +20,6 @@ AUTHOR URI:http://takahashifumiki.com
 /****************************************
  * 1.クリアスタイル
  ****************************************/
-html, body{height:100%;}
 /*デフォルト設定*/
 h1,h2,h3,h4,h5,ul,ol,dl,li,dt,dd{margin:0px;padding:0px;}
 a img{border-style:none;}
@@ -49,7 +48,7 @@ p{margin:10px 0}
 	/display: inline;
 	/zoom: 1;
 }
-body{margin:0;padding:0;}
+html,body{margin:0;padding:0;}
 /****************************************
  * クリアスタイル終わり
  ****************************************/
@@ -371,6 +370,7 @@ p.success{
 /*コピーライト*/
 #copy-note{
 	font-size:12px;
+	padding-bottom:20px;
 }
 #copy-note p{
 	width:33%;
@@ -1730,16 +1730,12 @@ body.home #column1 .conBox h3{
  * 8.404設定
  ****************************************/
 #error404{
-	min-width:800px;
-	height:620px;
+	width:620px;
+	margin:0 auto;
+	height:540px;
 	position:relative;
 	overflow:hidden;
-	background:url(img/bg_face.gif) -300px -200px no-repeat;
-}
-#error404 .logo{
-	position:absolute;
-	left:50%;
-	margin-left:200px;
+	background:url(img/top-bg-face.png) left bottom no-repeat;
 }
 #error404 div.container{
 	position:absolute;
@@ -1752,26 +1748,13 @@ body.home #column1 .conBox h3{
 #error404 h1{
 	text-align:center;
 	font-size:30px;
-	color:#ccc;
+	color:#8ab29f;
 }
 #error404 h1 span{
 	font-family:Georgia, serif;
 }
 #error404 h1 small{
 	font-size:12px;
-}
-
-#error404 #s_form{
-	background: url(img/search_bg.png) 3px center no-repeat;
-	height:32px;
-	width:280px;
-	margin:10px auto 0;
-	padding-top:6px;
-	padding-left:38px;
-}
-
-#error404 #s{
-	width:200px;
 }
 
 
