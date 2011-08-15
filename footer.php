@@ -94,10 +94,8 @@
 		</p>
 		
 	</div><!-- .copy ends-->
-	
 </div>
 <!-- #footer ends -->
-
 <?php wp_footer(); ?>
 </body>
 </html>

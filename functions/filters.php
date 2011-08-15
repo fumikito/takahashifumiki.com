@@ -28,3 +28,16 @@ function _fumiki_profile_fields( $contactmethods ) {
 	return $contactmethods;
 }
 add_filter('user_contactmethods','_fumiki_profile_fields',11,1);
+
+/**
+ * スマートフォンの場合、クラスを付加する
+ * @param array $classes
+ * @return arrary
+ */
+function _fumiki_smartphone($classes){
+	if(is_smartphone()){
+		$classes[] = 'smartphone';
+	}
+	return $classes;
+}
+add_filter('body_class', '_fumiki_smartphone');

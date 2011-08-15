@@ -41,6 +41,26 @@ function is_IE($version = 0)
 }
 
 /**
+ * スマートフォンの場合はtrue
+ * @return boolean
+ */
+function is_smartphone(){
+	$container = $_SERVER['HTTP_USER_AGENT'];
+	$useragents = array (
+		"iPhone",
+		"iPod",
+		"Mobile Safari" //Android
+	);
+	$iphone =  false;
+	foreach ( $useragents as $useragent ) {
+		if (preg_match("/{$useragent}/",$container)){
+			$iphone = true;
+		}
+	}
+	return $iphone;
+}
+
+/**
  * 最後にログインした時間を取得する
  * @param int $user_id 
  * @return string

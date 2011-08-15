@@ -9,6 +9,7 @@
  */
 function _fumiki_head(){
 	global $wpdb;
+	//Facebook用のメタ情報
 	if(is_front_page() || is_singular()){
 	$title = is_singular() ? wp_title('|', false, "right").get_bloginfo('name') : get_bloginfo('name');
 	$url = is_singular() ? get_permalink() : get_bloginfo('url');
@@ -34,6 +35,16 @@ function _fumiki_head(){
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
   {lang: 'ja'}
 </script>
+EOS;
+	}
+	if(is_smartphone()){
+		$dir = get_bloginfo('template_directory');
+		echo <<<EOS
+<meta name="Viewport" content="width=640" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="apple-touch-icon" href="{$dir}/img/home.png" />
+<link rel="apple-touch-startup-image" href="{$dir}/img/start-up.png" />
 EOS;
 	}
 }

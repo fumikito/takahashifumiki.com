@@ -62,6 +62,7 @@ get_header('navi');
 			</div>
 			<!-- .archive-box-small ends -->
 		<?php endif; endwhile; ?>
+			<?php if(!is_smartphone()): ?>
 			<div class="archive-box archive-box-small sixth last">
 				<div>
 					<script type="text/javascript"><!--
@@ -78,6 +79,7 @@ get_header('navi');
 				</div>
 			</div>
 			<!-- .archive-box-small ends -->
+			<?php endif; ?>
 	</div>
 	<div id="page_finish" class="mono clrB">
 		<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>

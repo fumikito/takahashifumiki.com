@@ -1646,7 +1646,7 @@ body.login #submit{margin:0;}
 	float:left;
 	padding-right:15px;
 }
-#sidebar.sidebar-home .widget:nth-child(4n){
+#sidebar.sidebar-home .widget:nth-child(3n+1){
 	clear:left;
 }
 .share-home{
@@ -1721,105 +1721,6 @@ body.home #column1 .conBox h3{
 	text-align:center;
 }
 
-
-/*---------------------
- * 見出し
- */
-
-
-/*---------------------
- * 一段目
- */
-body.home #column1{
-	width:470px;
-	float:left;
-}
-
-/*グローバルナビ*/
-body.home #column1 ol{
-	padding:200px 12px 0 0;
-	height:395px;
-	margin-bottom:30px;
-}
-
-body.home #column1 ol li{
-	width:28px;
-	float:right;
-	padding-top:8px;
-	background:url(img/body_globalnavi_top.gif) center top no-repeat;
-}
-body.home #column1 ol li a{
-	display:block;
-	padding-bottom:10px;
-	background:url(img/body_globalnavi_bottom.gif) center bottom no-repeat;
-	text-align:center;
-	text-decoration:none;
-	font-weight:bold;
-	font-size:20px;
-	line-height:1.2;
-}
-body.home #column1 ol li p{margin:0;}
-body.home #column1 ol li span{display:block;}
-
-/*告知*/
-body.home #column1 .conBox{
-	margin-right:10px;
-	width:450px;
-}
-body.home #column1 .conBox h2{
-	margin-left:20px;
-}
-body.home #column1 .conBox ul{
-	width:400px;
-}
-body.home #column1 .conBox ul li{
-	width: 34px;
-	margin-left:10px;
-	float:right;
-}
-
-
-/*---------------------
- * Twitter
- */
-body.home .tweet{
-	margin-top:20px;
-	width:200px;
-	float:right;
-}
-
-
-/*---------------------
- * 二段目
- */
-
-body.home #column2{
-	clear:both;
-	padding-top:30px;
-	margin-bottom:30px;
-}
-body.home #column2 .conBox{margin-right:10px;}
-/*文芸*/
-body.home #column2 .literature h3{background-image:url(img/home_icon_book.png);}
-body.home #column2 .literature ul{width:167px;}
-/*web*/
-body.home #column2 .web h3{background-image:url(img/home_icon_computer.png);}
-/*その他*/
-body.home #column2 .others h3{background-image:url(img/home_icon_coffee.png);}
-body.home #column2 .others ul{width:167px;}
-
-
-/*---------------------
- * 三段目
- */
-body.home #column3{
-	padding-top:30px;
-	padding-bottom:30px;
-	clear:both;
-}
-
-body.home #column3{
-}
 
  /****************************************
  * 8.404設定
@@ -1958,4 +1859,175 @@ div.tmkm-amazon-view hr.tmkm-amazon-clear {
 	padding: 2px 4px 2px 4px; 
 	margin: 2px;
 	border:none;
+}
+
+/**
+ * iPhone用テンプレート
+ */
+/*全体*/
+.smartphone .margin{
+	 width:640px;
+}
+.smartphone .grid_4{
+	 width:300px;
+}
+/*ヘッダー*/
+.smartphone #navi .grid_4{
+	width:270px;
+}
+.smartphone #search{
+	 width:100px;
+}
+.smartphone #s{
+	 width:70px;
+	 background-position: 80px center;
+}
+.smartphone #navi ul li a:link,
+.smartphone #navi ul li a:visited{
+	background-color: #fff;
+}
+/*サイドバー*/
+.smartphone #sidebar{
+	 width:620px;
+}
+.smartphone .widget{
+	 width:300px;
+	 margin-right:20px;
+	 float:left;
+}
+.smartphone .widget:nth-child(2n){
+	 margin-right: 0;
+}
+.smartphone .widget:nth-child(2n + 1){
+	 clear:left;
+}
+.smartphone .widget h4{
+	font-size:1.6em;
+}
+/*メインタイトル*/
+.smartphone .title-meta li,
+.smartphone .breadcrumb{
+	font-size:1.6em;
+}
+/*フッター*/
+.smartphone #footer{
+	font-size:1.4em;
+}
+.smartphone #footer-nav .grid_4{
+	margin-bottom:20px;
+}
+.smartphone #footer-nav .grid_4:nth-child(3),
+.smartphone #footer-post .grid_4:nth-child(3){
+	clear:left;
+}
+.smartphone #footer ul li a:link,
+.smartphone #footer ul li a:visited{
+	background-color:#252E34;
+}
+.smartphone #footer .hatena-bookmark-widget-body .hatena-bookmark-count a:link,
+.smartphone #footer .hatena-bookmark-widget-body .hatena-bookmark-count a:visited{
+	background-color: #fff;
+}
+/*投稿画面*/
+.smartphone .entry .wp-caption-text{
+	font-size:1.2em;
+}
+.smartphone .share{
+	font-size:1.4em;
+}
+.smartphone #yarpp li a.button {
+	font-size:1.4em;
+}
+/*アーカイブ*/
+.smartphone .archive .archive-box-big,
+.smartphone .archive .archive-box-small{
+	width:auto;
+	float:none;
+	padding-right: 0;
+	margin-bottom:30px;
+	padding-bottom:30px;
+	border-bottom: 1px solid #ddd;
+}
+.smartphone .archive .archive-box .cat{
+	height:24px;
+	line-height:24px;
+	font-size:16px;
+	padding-left:5px;
+}
+.smartphone .archive .archive-box small{
+	text-align: left;
+	font-size:1.6em;
+	height:20px;
+	line-height:20px;
+}
+.smartphone .archive .archive-box-big h2{
+	font-size:1.8em;
+	width:280px;
+}
+.smartphone .archive .archive-box{
+	position:relative;
+}
+.smartphone .archive .archive-box-big .desc{
+	height:160px;
+	width:300px;
+	position: absolute;
+	right:0;
+	top:10px;
+	font-size:1.6em;
+}
+.smartphone .archive .archive-box-big .right{
+	position:absolute;
+	right:0;
+	top:170px;
+	font-size:2em;
+}
+.smartphone .archive .archive-box-small h2{
+	font-size:2em;
+	background: none;
+	left: 150px;
+	top:0;
+	width:440px;
+}
+.smartphone .archive .archive-box-small .photo{
+	overflow: visible;
+}
+.smartphone .archive .archive-box-small .desc{
+	height:auto;
+	font-size:1.1em;
+}
+.smartphone .archive .archive-box-small .tag{
+	height:auto;
+	font-size:1.4em;
+}
+.smartphone .archive .archive-box-small .right{
+	position:absolute;
+	right:0;
+	top:80px;
+	font-size:2em;
+}
+.smartphone .wp-pagenavi{
+	font-size:2em;
+}
+/*トップページ*/
+.smartphone .main-menu{
+	margin-left:20px;
+	margin-right:20px;
+}
+.smartphone .home-archive{
+	padding:0 20px;
+}
+.smartphone #sidebar.sidebar-home{
+	margin:30px 0 0 0;
+	padding:20px 0 20px 10px;
+}
+.smartphone #sidebar.sidebar-home .widget{
+	padding-right:10px;
+	float: left;
+	margin-right:0;
+}
+.smartphone #sidebar.sidebar-home .widget:nth-child(3n+1){
+	clear:none;
+}
+.smartphone #sidebar.sidebar-home .widget:nth-child(odd){
+	clear:left;
 }
