@@ -13,7 +13,7 @@ function _fumiki_head(){
 	if(is_front_page() || is_singular()){
 	$title = is_singular() ? wp_title('|', false, "right").get_bloginfo('name') : get_bloginfo('name');
 	$url = is_singular() ? get_permalink() : get_bloginfo('url');
-	$image = get_bloginfo('url')."/img/facebook-top.jpg";
+	$image = get_bloginfo('template_directory')."/img/facebook-top.jpg";
 	if(is_singular()){
 		$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
 		if(!empty($images)){
@@ -71,13 +71,35 @@ function _fumiki_assets(){
 			FUMIKI_VERSION,
 			true
 		);
-		//wp-pagenaviのCSSを打ち消し
-		wp_dequeue_style("wp-pagenavi");
 		////tmkm-amazonのCSSを打ち消し
 		remove_action("wp_head", "add_tmkmamazon_stylesheet");
 	}
 }
 add_action("wp_enqueue_scripts", "_fumiki_assets");
+
+
+function _fumiki_dequeue_styles(){
+	//wp-pagenaviのCSSを打ち消し
+	wp_dequeue_style("wp-pagenavi");
+	//問い合わせページでなければ削除
+	if(!is_page('inquiry')){
+		wp_dequeue_style('contact-form-7');
+	}
+	//ログインページでなければ削除
+	if(!is_page('login')){
+		wp_dequeue_style('theme-my-login');
+	}
+}
+add_action('wp_print_styles', '_fumiki_dequeue_styles', 10000);
+
+
+function _fumiki_dequeue_scripts(){
+	//問い合わせページでなければ削除
+	if(!is_page('inquiry')){
+		wp_dequeue_script('contact-form-7');
+	}
+}
+add_action('wp_print_scripts', '_fumiki_dequeue_scripts', 10000);
 
 /**
  * メニューを登録する

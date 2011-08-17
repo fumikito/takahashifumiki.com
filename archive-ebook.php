@@ -21,7 +21,7 @@ get_header('title');
 					<?php if(lwp_on_sale()): ?>
 						<?php echo lwp_currency_symbol().number_format(lwp_price());?><br />
 						<del><?php echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
-						<small class="mono"><?php echo lwp_discout_rate(); ?>% OFf</small>
+						<small class="mono"><?php echo lwp_discout_rate(); ?></small>
 					<?php else: ?>
 						<?php echo lwp_currency_symbol().number_format(lwp_price()); ?>
 					<?php endif; ?>
