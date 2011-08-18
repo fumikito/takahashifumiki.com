@@ -78,6 +78,10 @@ function _fumiki_assets(){
 add_action("wp_enqueue_scripts", "_fumiki_assets");
 
 
+/**
+ * CSSを削除する
+ * @return void
+ */
 function _fumiki_dequeue_styles(){
 	//wp-pagenaviのCSSを打ち消し
 	wp_dequeue_style("wp-pagenavi");
@@ -93,6 +97,10 @@ function _fumiki_dequeue_styles(){
 add_action('wp_print_styles', '_fumiki_dequeue_styles', 10000);
 
 
+/**
+ * Javascriptを削除する
+ * @return void
+ */
 function _fumiki_dequeue_scripts(){
 	//問い合わせページでなければ削除
 	if(!is_page('inquiry')){
@@ -184,3 +192,16 @@ function flash_converter($atts,$content = null){
         return $str;
 }
 add_shortcode('flash','flash_converter');
+
+
+/**
+ * テンプレートリダイレクトで行う
+ * @return void
+ */
+function _fumiki_template_redirect(){
+	//Facebookページの場合は
+	if(is_page('facebook')){
+		get_template_part('functions/facebook');
+	}
+}
+add_action('template_redirect', '_fumiki_template_redirect');

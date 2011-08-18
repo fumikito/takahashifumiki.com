@@ -110,3 +110,26 @@ function _fumiki_get_post($post = null){
 	}
 	return get_post($post);
 }
+
+/**
+ * テンプレートディレクトまでのパスを返す
+ * @param boolean $echo falseにすると値を返す。初期値はtrueでURLを出力。
+ * @return mixed
+ */
+function ssl_template_directory($echo = true){
+	if(is_ssl()){
+		if(is_production()){
+			$url = preg_replace('/https?:\/\/takahashifumiki.com/', 'https://fumiki.sakura.ne.jp/main', get_bloginfo('template_directory'));
+		}else{
+			$url = str_replace('http:', 'https:', get_bloginfo('template_directory'));
+		}
+	}else{
+		$url = get_bloginfo('template_directory');
+	}
+	if($echo){
+		echo $url;
+	}else{
+		return $url;
+	}
+}
+

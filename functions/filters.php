@@ -38,6 +38,23 @@ function _fumiki_smartphone($classes){
 	if(is_smartphone()){
 		$classes[] = 'smartphone';
 	}
+	if(is_page('facebook')){
+		$classes[] = 'facebook';
+	}
 	return $classes;
 }
 add_filter('body_class', '_fumiki_smartphone');
+
+
+/**
+ * リライトルールを変更する
+ * @param WP_Rewrite $wp_rewrite 
+ * @return void
+ */
+function _fumiki_rewrite($wp_rewrite){
+	$new_rewrite = array(
+		'main/facebook' => 'index.php?pagename=facebook'
+	);
+	 $wp_rewrite->rules = array_merge($new_rewrite, $wp_rewrite->rules);
+}
+add_filter('generate_rewrite_rules', '_fumiki_rewrite');

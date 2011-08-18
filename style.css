@@ -2035,3 +2035,31 @@ div.tmkm-amazon-view hr.tmkm-amazon-clear {
 .smartphone #sidebar.sidebar-home .widget:nth-child(odd){
 	clear:left;
 }
+
+
+/****************************************
+ * 11. Facebook ページ
+ ****************************************/
+body.facebook{
+}
+.facebook .margin{
+	width:auto;
+	padding:20px;
+	border:1px solid #ddd;
+}
+.facebook .meta{
+	text-align:left;
+	padding:30px 0;
+}
+.facebook .meta p{
+	font-size:1.6em;
+	text-shadow:1px 1px 2px #fff;
+	height:30px;
+	line-height:30px;
+}
+.facebook .meta p img{
+	vertical-align: middle;
+}
+.facebook .title{
+	margin:0;
+}
