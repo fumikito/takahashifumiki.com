@@ -52,9 +52,15 @@ add_filter('body_class', '_fumiki_smartphone');
  * @return void
  */
 function _fumiki_rewrite($wp_rewrite){
-	$new_rewrite = array(
-		'main/facebook' => 'index.php?pagename=facebook'
-	);
-	 $wp_rewrite->rules = array_merge($new_rewrite, $wp_rewrite->rules);
+	if(is_production()){
+		$new_rewrite = array(
+			'main/facebook' => 'main/index.php?pagename=facebook'
+		);
+	}else{
+		$new_rewrite = array(
+			'main/facebook' => 'index.php?pagename=facebook'
+		);
+	}
+	$wp_rewrite->rules = array_merge($new_rewrite, $wp_rewrite->rules);
 }
 add_filter('generate_rewrite_rules', '_fumiki_rewrite');

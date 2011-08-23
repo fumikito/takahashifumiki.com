@@ -11,19 +11,19 @@ function _fumiki_head(){
 	global $wpdb;
 	//Facebook用のメタ情報
 	if(is_front_page() || is_singular()){
-	$title = is_singular() ? wp_title('|', false, "right").get_bloginfo('name') : get_bloginfo('name');
-	$url = is_singular() ? get_permalink() : get_bloginfo('url');
-	$image = get_bloginfo('template_directory')."/img/facebook-top.jpg";
-	if(is_singular()){
-		$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
-		if(!empty($images)){
-			$image = current($images)->guid;
+		$title = is_singular() ? wp_title('|', false, "right").get_bloginfo('name') : get_bloginfo('name');
+		$url = is_singular() ? get_permalink() : get_bloginfo('url');
+		$image = get_bloginfo('template_directory')."/img/facebook-top.jpg";
+		if(is_singular()){
+			$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
+			if(!empty($images)){
+				$image = current($images)->guid;
+			}
 		}
-	}
-	$type = is_singular() ? 'article' : "website";
-	$desc = is_singular() ? get_the_excerpt() : get_bloginfo('description');
-	$desc = str_replace("\n", "", $desc);
-	echo <<<EOS
+		$type = is_singular() ? 'article' : "website";
+		$desc = is_singular() ? get_the_excerpt() : get_bloginfo('description');
+		$desc = str_replace("\n", "", $desc);
+		echo <<<EOS
 <meta property="og:title" content="{$title}"/>
 <meta property="og:url" content="{$url}" />
 <meta property="og:image" content="{$image}" />

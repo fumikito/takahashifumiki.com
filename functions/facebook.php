@@ -25,6 +25,9 @@ function fb_init(){
  */
 function fb_is_like_me(){
 	global $facebook;
+	if(!$facebook){
+		return false;
+	}
 	$signed = $facebook -> getSignedRequest();
 	return (boolean) $signed['page']['liked'];
 }

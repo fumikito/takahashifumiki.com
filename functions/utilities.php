@@ -117,14 +117,10 @@ function _fumiki_get_post($post = null){
  * @return mixed
  */
 function ssl_template_directory($echo = true){
-	if(is_ssl()){
-		if(is_production()){
-			$url = preg_replace('/https?:\/\/takahashifumiki.com/', 'https://fumiki.sakura.ne.jp/main', get_bloginfo('template_directory'));
-		}else{
-			$url = str_replace('http:', 'https:', get_bloginfo('template_directory'));
-		}
+	if($_SERVER['SERVER_NAME'] == 'fumiki.sakura.ne.jp'){
+		$url = preg_replace('/https?:\/\/takahashifumiki\.com/', 'https://fumiki.sakura.ne.jp/main', get_bloginfo('template_directory'));
 	}else{
-		$url = get_bloginfo('template_directory');
+		$url = str_replace('http:', 'https:', get_bloginfo('template_directory'));
 	}
 	if($echo){
 		echo $url;

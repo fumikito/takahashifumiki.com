@@ -128,6 +128,8 @@ input.button,
 #lwp-submit{
 	padding:5px 7px;
 	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
 	border:1px solid #273138;
 	color:#fff;
 	background: #3d4850; /* Old browsers */
@@ -139,6 +141,8 @@ input.button,
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d4850', endColorstr='#1c252b',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, #3d4850 0%,#1c252b 100%); /* W3C */
 	-webkit-box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset;
+	-moz-box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset;
+	box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset;
 }
 a.button:link,
 a.button:visited{
@@ -360,6 +364,8 @@ p.success{
 	margin-top:20px;
 	border-top:1px solid #252e34;
 	-webkit-box-shadow:0 -1px 5px rgba(0,0,0,0.5);
+	-moz-box-shadow:0 -1px 5px rgba(0,0,0,0.5);
+	box-shadow:0 -1px 5px rgba(0,0,0,0.5);
  }
 .divider{
 	padding-top:90px;
@@ -456,6 +462,8 @@ p.success{
 #footer .hatena-bookmark-widget-body .hatena-bookmark-count a{
 	background: #fff;
 	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
 	color:#252e34;
 	text-shadow:none;
 }
@@ -876,7 +884,7 @@ table.form-table input[type=password]{
 	 background:#eee;
 	 border-top:1px solid #ddd;
 	 border-bottom:1px solid #ddd;
-	 padding: 20px 10px;
+	 padding: 20px 0;
 	 margin:20px 0;
  }
 
@@ -885,27 +893,82 @@ table.form-table input[type=password]{
 	width:336px;
 	float:right;
 	padding-left:10px;
+	margin-left:10px;
+	border-left:1px dashed #ddd;
 }
-
+/*説明書き*/
+#yarpp .meta{
+	width:243px;
+	float:left;
+}
+#yarpp .meta h4{
+	font-size:1.6em;
+	color:#4C5A65;
+	text-shadow:1px 1px 2px #fff;
+}
+#yarpp .meta p{
+	font-size:1.2em;
+	color:#666;
+	text-shadow:1px 1px 2px #fff;
+}
+#yarpp .meta p a{
+	font-weight: bold;
+}
 /*関連投稿*/
 #yarpp h3{
 	font-size:2em;
 	color:#8ab29f;
-	margin-bottom:10px;
+	margin:10px 20px ;
+	text-shadow:1px 1px 2px #fff;
 }
 #yarpp ol{
-	padding:5px 0 0 0;
+	border-top:1px dashed #ddd;
 }
 #yarpp li{
-	margin:0 0 8px;
+	padding:10px 20px;
 	list-style:none;
 	padding-bottom:7px;
 	color:#333F46;
+	border-bottom:1px dashed #ddd;
+	font-size:1.1em;
 }
-#yarpp li a.button{
-	display:block;
+#yarpp li:nth-child(odd){
+	background: #f3f3f3;
+}
+#yarpp ol li .score{
+	width:100px;
+	margin-left:10px;
+	float:right;
+	text-align:center;
+	color:#ccc;
+	text-align:center;
+}
+#yarpp .score small{
+	display: block;
+	height:80px;
+	line-height: 80px;
+	font-size:50px;
+	text-shadow:1px 1px 2px #fff;
+}
+#yarpp .thumb{
+	width:150px; height:100px;
+	overflow: hidden;
+	float:left;
+	text-align: center;
+	margin:0 18px 10px 0;
+	border:1px solid #ddd;
+	background: #fff;
+}
+#yarpp .detail{
+	width:280px;
+	float: left;
+}
+#yarpp ol li span{
 	font-size:1.2em;
-	margin-bottom:5px;
+}
+#yarpp li a.more{
+	font-size:1.2em;
+	margin:5px 0;
 }
 
 
@@ -917,9 +980,13 @@ table.form-table input[type=password]{
  * サイドバー
  */
 #sidebar{
-	-webkit-border-radius:10px;
 	color:#f0f0f0;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
 	-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5);
+	-moz-box-shadow:0 0 5px rgba(0,0,0,0.5);
+	box-shadow:0 0 5px rgba(0,0,0,0.5);
 }
 #sidebar div.widget{
 	margin-bottom:30px;
@@ -933,14 +1000,16 @@ table.form-table input[type=password]{
 #sidebar iframe,
 .widget_text .textwidget{
 	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
-	box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
 	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
+	box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
 }
 /*いますぐ購入*/
 .lwpwidget-buynow{
 	background: #30383d;
 	padding:10px;
 	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.4) inset;
+	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.4) inset;
+	box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.4) inset;
 }
 .lwp-buynow-title{
 	font-size:2em;
@@ -1177,6 +1246,8 @@ a.lwp-buynow:active{
 	border:3px solid #ccc;
 	border-radius:15px;
 	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
 	font-size:27px;
 }
 #sale-timer small{

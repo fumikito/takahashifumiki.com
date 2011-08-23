@@ -169,10 +169,11 @@ EOS;
 /**
  * アーカイブページのサムネイルを表示する
  * @param string $size thumbnail か medium 
+ * @param object $post (optional) 指定しないばあいは現在の投稿
  * @return void
  */
-function fumiki_archive_photo($size = "medium"){
-	$post = _fumiki_get_post();
+function fumiki_archive_photo($size = "medium", $post = null){
+	$post = _fumiki_get_post($post);
 	$images = get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&orderby=menu_order&order=ASC");
 	if(!empty($images)){
 		$image = current($images);
