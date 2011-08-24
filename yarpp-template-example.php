@@ -30,7 +30,14 @@
 <?php
 	$pages = get_children("post_parent={$post->ID}&post_type=page&post_status=publish");
 	if($post->post_parent > 0){
-		$pages[] = get_page($post->post_parent);
+		$parent = get_page($post->post_parent);
+		$pages[] = $parent;
+		$cousins = get_children("post_parent={$parent->ID}&post_type=page&post_status=publish");
+		foreach($cousins as $cousin){
+			if($cousin->ID != $post->ID){
+				$pages[] = $cousin;
+			}
+		}
 	}
 	if(!empty($pages)):
 ?>

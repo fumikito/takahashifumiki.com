@@ -936,7 +936,7 @@ table.form-table input[type=password]{
 	background: #f3f3f3;
 }
 #yarpp ol li .score{
-	width:100px;
+	width:150px;
 	margin-left:10px;
 	float:right;
 	text-align:center;
@@ -951,7 +951,8 @@ table.form-table input[type=password]{
 	text-shadow:1px 1px 2px #fff;
 }
 #yarpp .thumb{
-	width:150px; height:100px;
+	width:150px;
+	height:100px;
 	overflow: hidden;
 	float:left;
 	text-align: center;
@@ -960,7 +961,7 @@ table.form-table input[type=password]{
 	background: #fff;
 }
 #yarpp .detail{
-	width:280px;
+	width:230px;
 	float: left;
 }
 #yarpp ol li span{
