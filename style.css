@@ -1112,19 +1112,26 @@ a.lwp-buynow:active{
 }
 /*Disqus*/
 #dsq-references{
-	font-size:1.2em;
-	border-top:1px solid #ccc !important;
+	font-size:1.1em;
+	border-top:1px dotted #ddd !important;
 }
 #dsq-references li{
-	border-bottom:1px solid #ccc !important;
-	padding:20px 10px !important;
+	border-bottom:1px dotted #ccc !important;
+	padding:10px 10px 10px 40px !important;
+	background: url('img/icon-trackback.png') left center no-repeat !important;
 }
 #dsq-references li:nth-child(even){
-	background:#f0f0f0;
+	background-color:#EEF9FD !important;
 }
 #dsq-references .dsq-meta{
 	text-align:right;
-	margin:10px 0;
+	margin:5px 0;
+	font-size:0.9em;
+	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
+}
+#dsq-references .dsq-content{
+	font-size:0.9em;
+	line-height: 1.2;
 }
 /****************************************
  * 通常記事設定終わり

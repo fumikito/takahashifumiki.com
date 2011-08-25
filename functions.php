@@ -6,7 +6,7 @@
 /**
  * @var string
  */
-define("FUMIKI_VERSION", "2.3.1");
+define("FUMIKI_VERSION", "2.3.3");
 
 //エディタースタイルを登録
 add_editor_style("editor-style.css");
