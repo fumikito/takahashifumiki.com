@@ -271,3 +271,15 @@ function is_on_air(){
 		return false;
 	}
 }
+
+
+/**
+ * アスキーアートを表示する
+ * @param array $args
+ * @param string $content
+ * @return string
+ */
+function _fumiki_asciiart($args, $content){
+	return "<div style=\"line-height:1.8; font-size:16px; font-family:'Mona','IPA モナー Pゴシック','IPAMonaPGothic','IPA mona PGothic','IPA MONAPGOTHIC','MS PGothic AA','mona-gothic-jisx0208.1990-0','MS PGothic','ＭＳ Ｐゴシック', Osaka, mono;\">".$content.'</div>';
+}
+add_shortcode('aa', '_fumiki_asciiart');
