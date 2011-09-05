@@ -250,3 +250,24 @@ function the_expiration_info($post = null){
 EOS;
 	}
 }
+
+/**
+ * Ustreamのチャンネルがオンエア中になっているかどうかを返す
+ * @return boolean
+ */
+function is_on_air(){
+	$ust_status_array = get_transient( 'ustream_status' ) ;
+	if(false === $ust_status_array){
+		$opt = stream_context_create(array(
+			'http' => array( 'timeout' => 3 )
+		));
+		$ust_status_serial = file_get_contents('http://api.ustream.tv/php/channel/' . urlencode('一人バーベキュー入門') . '/getValueOf/status',0,$opt);
+		$ust_status_array = unserialize($ust_status_serial);
+		set_transient('ustream_status', $ust_status_serial, 120);
+	}
+	if(isset($ust_status_array['results']) && $ust_status_array['results'] == 1){
+		return true;
+	}else{
+		return false;
+	}
+}

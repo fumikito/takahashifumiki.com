@@ -70,6 +70,7 @@ body{
 	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',"メイリオ",'Meiryo',sans-serif;
 	font-size:10px;
 	background: url(img/bg-texture-white.jpg);
+	position: relative;
 }
 a:link{color:inherit;text-decoration:underline;}
 a:visited{color:inherit;text-decoration:underline;}
@@ -541,9 +542,20 @@ p.success{
 #footer ol.inner li .google{background-position: left -160px;}
 #footer ol.inner li .youtube{background-position: left -64px;}
 #footer ol.inner li .github{background-position: left -192px;}
-
-
-
+/* Ustream */
+#ustream-badge{
+	display:none;
+	width:40px;
+	height:225px;
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:999;
+	text-indent:-9999px;
+	overflow: hidden;
+	background:url('img/icon-ustream.jpg') left top no-repeat;
+	-webkit-box-shadow:0 0 5px #666;
+}
 
 
 
@@ -898,8 +910,9 @@ table.form-table input[type=password]{
 }
 /*説明書き*/
 #yarpp .meta{
-	width:243px;
+	width:233px;
 	float:left;
+	padding:5px;
 }
 #yarpp .meta h4{
 	font-size:1.6em;
@@ -1117,8 +1130,8 @@ a.lwp-buynow:active{
 }
 #dsq-references li{
 	border-bottom:1px dotted #ccc !important;
-	padding:10px 10px 10px 40px !important;
-	background: url('img/icon-trackback.png') left center no-repeat !important;
+	padding:10px 10px 10px 50px !important;
+	background: url('img/icon-trackback.png') 10px center no-repeat !important;
 }
 #dsq-references li:nth-child(even){
 	background-color:#EEF9FD !important;

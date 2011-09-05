@@ -71,6 +71,11 @@ function _fumiki_assets(){
 			FUMIKI_VERSION,
 			true
 		);
+		//Ajaxの変数を確認
+		wp_localize_script('fumiki-core', 'FumikiAjax', array(
+			'endpoint' => admin_url('admin-ajax.php'),
+			'nonce' => wp_create_nonce('fumiki_ajax')
+		));
 		////tmkm-amazonのCSSを打ち消し
 		remove_action("wp_head", "add_tmkmamazon_stylesheet");
 	}
@@ -193,6 +198,21 @@ function flash_converter($atts,$content = null){
 }
 add_shortcode('flash','flash_converter');
 
+
+/**
+ * Ustreamのステータスを返す
+ * @return void
+ */
+function _fumiki_ustream_status(){
+	if(wp_verify_nonce($_REQUEST['nonce'], 'fumiki_ajax')){
+		$res = is_on_air() ? 1 : 0;
+		header('Content-Type: application/json');
+		echo json_encode(array('status' => $res));
+		die();
+	}
+}
+add_action('wp_ajax_ustream_status', '_fumiki_ustream_status');
+add_action('wp_ajax_nopriv_ustream_status', '_fumiki_ustream_status');
 
 /**
  * テンプレートリダイレクトで行う

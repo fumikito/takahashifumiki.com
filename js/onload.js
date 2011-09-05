@@ -83,4 +83,77 @@ jQuery(document).ready(function($){
 			}
 		});
 	}
+	//Get Ustream Status
+	//リクエストを発行する関数を定義
+	var setUstreamStatus = function(){
+		$.post(
+			FumikiAjax.endpoint,
+			{
+				action: 'ustream_status',
+				nonce: FumikiAjax.nonce
+			},
+			function(data){
+				if(data.status == 1){
+					if($('#ustream-badge').length < 1){
+						$('body').append('<a id="ustream-badge" href="http://ustre.am/oqqL">Ustream 一人バーベキュー配信中</a>');
+						var topBadgeShouldBe = function(){
+							return ($(window).scrollTop() + ($(window).height() - 225) / 2);
+						};
+						$('#ustream-badge').css({
+							top: topBadgeShouldBe() + "px"
+						}).fadeIn('slow');
+						setInterval(function(){
+							$('#ustream-badge').fadeTo(1000, 0.4, function(){
+								$('#ustream-badge').fadeTo(1000, 1);
+							});
+						}, 3000);
+						//バッジの追従
+						var scrolleTimer = null;
+						var scrolleBadge = function(e){
+							//これまでのタイマーを初期化してリセット
+							clearTimeout(scrolleTimer);
+							scrolleTimer = setTimeout(function(){
+								$('#ustream-badge').animate({
+									top: topBadgeShouldBe() + "px"
+								}, {
+									duration: 'slow'
+								});
+								clearTimeout(scrolleTimer);
+							}, 1000);
+						};
+						//スクロールイベント
+						$(window).scroll(scrolleBadge);
+						//リサイズイベント
+						$(window).resize(scrolleBadge);
+						//バッジのマウスオーバー
+						$('#ustream-badge').hover(
+							function(e){
+								$('#ustream-badge').animate({
+									width: '320px'
+								},{
+									duration: 'fast'
+								});
+							},
+							function(e){
+								$('#ustream-badge').animate({
+									width: "40px"
+								},{
+									duration: 'fast'
+								});
+							}	
+						);
+					}
+				}else{
+					if($('#ustream-badge').length > 0){
+						$('#ustream-badge').remove();
+					}
+				}
+			}
+		);
+	};
+	
+	//初回実行
+	setUstreamStatus();
+	//タイマー
+	setInterval(setUstreamStatus, 120000);
 });

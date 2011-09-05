@@ -31,7 +31,9 @@
 	$pages = get_children("post_parent={$post->ID}&post_type=page&post_status=publish");
 	if($post->post_parent > 0){
 		$parent = get_page($post->post_parent);
-		$pages[] = $parent;
+		if($parent){
+			$pages[] = $parent;
+		}
 		$cousins = get_children("post_parent={$parent->ID}&post_type=page&post_status=publish");
 		foreach($cousins as $cousin){
 			if($cousin->ID != $post->ID){
@@ -45,14 +47,15 @@
 			<?php foreach($pages as $page): ?>
 			<li class="clearfix">
 				<div class="thumb">
-					<a href="<?php echo get_permalink($page->ID); ?>"><?php fumiki_archive_photo("thumbnail", $post); ?></a>
+					<a href="<?php echo get_permalink($page->ID); ?>"><?php fumiki_archive_photo("thumbnail", $page); ?></a>
 				</div>
 				<div class="detail">
 					<span class="mono"><?php echo mysql2date('Y.m.d', $page->post_date, false); ?></span><br />
 					<a class="more" href="<?php echo get_permalink($page->ID) ?>" rel="bookmark"><?php echo apply_filters('the_title', $page->post_title); ?></a>
-					<p><?php
+					<p>
+						<?php
 						$excerpt = empty($page->post_excerpt) ? strip_tags(apply_filters('the_content', $page->post_content)) : $page->post_excerpt;
-						echo mb_substr(apply_filters('get_the_excerpt', $excerpt), 0, 60, 'utf-8'); 
+						echo mb_substr(apply_filters('the_excerpt', $excerpt), 0, 60, 'utf-8'); 
 					?>[...] </p>
 				</div>
 			</li>
