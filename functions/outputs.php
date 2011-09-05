@@ -265,7 +265,7 @@ function is_on_air(){
 		$ust_status_array = unserialize($ust_status_serial);
 		set_transient('ustream_status', $ust_status_serial, 120);
 	}
-	if(isset($ust_status_array['results']) && $ust_status_array['results'] == 1){
+	if(isset($ust_status_array['results']) && $ust_status_array['results'] == 'live'){
 		return true;
 	}else{
 		return false;
