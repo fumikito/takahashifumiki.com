@@ -17,7 +17,8 @@ function _fumiki_head(){
 		if(is_singular()){
 			$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
 			if(!empty($images)){
-				$image = current($images)->guid;
+				$image = wp_get_attachment_image_src(current($images)->ID, 'medium');
+				$image = $image[0];
 			}
 		}
 		$type = is_singular() ? 'article' : "website";

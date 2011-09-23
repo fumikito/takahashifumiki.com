@@ -64,3 +64,17 @@ function _fumiki_rewrite($wp_rewrite){
 	$wp_rewrite->rules = array_merge($new_rewrite, $wp_rewrite->rules);
 }
 add_filter('generate_rewrite_rules', '_fumiki_rewrite');
+
+/**
+ * iframeが削除されないようにする
+ * @param array $initArray
+ * @return array 
+ */
+function _fumiki_add_iframe($initArray) {
+	if(!empty($initArray["extended_valid_elements"])){
+		$initArray["extended_valid_elements"] .= ",";
+	}
+	$initArray[ 'extended_valid_elements' ] .= "iframe[id|class|title|style|align|frameborder|height|longdesc|marginheight|marginwidth|name|scrolling|src|width]";
+	return $initArray;
+}
+add_filter('tiny_mce_before_init', '_fumiki_add_iframe');

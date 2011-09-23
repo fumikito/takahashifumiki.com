@@ -84,7 +84,7 @@
 
 
 <div class="meta">
-<?php switch(get_post_type()): 
+<?php wp_reset_query(); switch(get_post_type()): 
 	case 'post': $current = ""; foreach(get_the_category() as $cat){ if($cat->category_parent == 0){ $current = $cat->name; break;}} ?>
 	<h4>投稿カテゴリーについて</h4>
 	<p>
