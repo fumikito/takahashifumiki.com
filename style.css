@@ -1971,6 +1971,9 @@ div.tmkm-amazon-view hr.tmkm-amazon-clear {
 .smartphone #navi .grid_4{
 	width:270px;
 }
+.smartphone #navi .grid_4:nth-child(3){
+	clear:left;
+}
 .smartphone #search{
 	 width:100px;
 }
