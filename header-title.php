@@ -4,13 +4,13 @@
 	</div>
 	
 	<?php $title = fumiki_title(); ?>
-	<div class="title mincho<?php if(mb_strlen($title, 'utf-8') <= 20) echo ' center'; ?>">
+	<h1 class="title mincho<?php if(mb_strlen($title, 'utf-8') <= 20) echo ' center'; ?>">
 		<?php echo $title; ?>
-	</div>
+	</h1>
 	
 	
 	<ul class="title-meta">
-		<?php if(is_singular() && !is_page('login') && !is_page('book-shelf') && (get_post_type() != 'ebook') ): ?>
+		<?php if(is_singular() && !is_page_template('page-account.php')): ?>
 			<li class="inline-block date">
 				公開日: <?php the_date(); ?>
 				<small>（最終更新: <?php the_modified_date(); ?>）</small>

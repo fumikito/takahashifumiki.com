@@ -11,7 +11,11 @@
 				</p>
 				<p>
 					<a class="button" href="<?php bloginfo('url'); ?>/book-shelf/">本棚</a>
-					<a class="button" href="<?php bloginfo('url'); ?>/login?action=profile">登録情報</a>
+					<?php if(current_user_can('edit_others_posts')): ?>
+						<a class="button" href="<?php echo admin_url(); ?>">管理画面</a>
+					<?php else: ?>
+						<a class="button" href="<?php echo wp_login_url(); ?>?action=profile">登録情報</a>
+					<?php endif; ?>
 					<a class="button" href="<?php echo wp_logout_url(); ?>">ログアウト</a>
 				</p>
 			</div>
@@ -21,10 +25,11 @@
 				<p class="user-name">ようこそ!</p>
 				<p class="greet clrB">
 					高橋文樹.comではユーザー登録を受け付けています。登録をすることで、電子書籍の購入やお得な更新情報が手に入ります。
+						<?php echo admin_url(); ?>
 				</p>
 				<p>
 					<a class="button" href="<?php echo wp_login_url(); ?>">ログイン</a>
-					<a class="button" href="<?php echo bloginfo('url'); ?>/login/?action=register">新規登録</a>
+					<?php echo preg_replace("/<a/", "<a class=\"button\"", wp_register('','',false)); ?>
 				</p>
 			<?php endif;?>
 		</div>

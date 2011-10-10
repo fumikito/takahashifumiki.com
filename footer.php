@@ -1,18 +1,6 @@
 <div id="footer" class="dark_bg shadow">
+	<?php if(!is_ssl()): ?>
 	<div id="footer-post" class="margin sans clearfix">
-		<div class="grid_4">
-			<h4 class="mono">Recent Entries</h4>
-			<ul class="sans">
-				<?php $recent = new WP_Query("posts_per_page=5"); if($recent->have_posts()) while($recent->have_posts ()): $recent->the_post(); ?>
-				<li>
-					<a href="<?php the_permalink(); ?>">
-						<?php the_title(); ?><br /><small><?php the_date(); ?></small>
-					</a>
-				</li>
-				<?php endwhile;?>
-			</ul>
-		</div>
-		
 		<div class="grid_4">
 			<h4 class="mono">Hatena Hot Entries</h4>
 			<?php fumiki_hotentry(); ?>
@@ -24,11 +12,23 @@
 		</div>
 		
 		<div class="grid_4">
+			<h4 class="mono">Follow me @ twitter</h4>
+			<?php fumiki_twitter(); ?>
+			<a href="http://twitter.com/takahashifumiki" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false" data-lang="ja">Follow @takahashifumiki</a><script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+		</div>
+		
+		<div class="grid_4">
 			<?php if ( function_exists('dynamic_sidebar')) dynamic_sidebar('フッター右端');  ?>
+			<h4 class="mono second">Insight</h4>
+			<div class="inner center">
+				<?php fumiki_nakanohito(); ?>
+			</div>
+
 		</div>
 	</div>
+	<?php endif; /* is_ssl() */?>
 	
-	<div id="footer-nav" class="margin sans clearfix divider">
+	<div id="footer-nav" class="margin sans clearfix<?php if(!is_ssl()) echo ' divider'; ?>">
 		<div class="grid_4">
 			<?php $admin = get_userdata(1); ?>
 			<div class="inner">
@@ -57,11 +57,18 @@
 		</div>
 		
 		<div class="grid_4">
-			<h4 class="mono">Follow me @ twitter</h4>
-			<?php fumiki_twitter(); ?>
-			<a href="http://twitter.com/takahashifumiki" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false" data-lang="ja">Follow @takahashifumiki</a><script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+			<h4 class="mono">Recent Entries</h4>
+			<ul class="sans">
+				<?php $recent = new WP_Query("posts_per_page=7"); if($recent->have_posts()) while($recent->have_posts ()): $recent->the_post(); ?>
+				<li>
+					<a href="<?php the_permalink(); ?>">
+						<?php the_title(); ?><br /><small><?php the_date(); ?></small>
+					</a>
+				</li>
+				<?php endwhile; wp_reset_query();?>
+			</ul>
 		</div>
-
+		
 		<div class="grid_4">
 			<h4 class="mono">Main Pages</h4>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-pages','container_class' => 'main-page')); ?>
@@ -70,10 +77,6 @@
 				<option value="">月別投稿の一覧</option> 
 				<?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
 			</select>
-			<h4 class="mono second">Insight</h4>
-			<div class="inner center">
-				<?php fumiki_nakanohito(); ?>
-			</div>
 		</div>
 
 		<div class="grid_4">
