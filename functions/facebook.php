@@ -31,18 +31,3 @@ function fb_is_like_me(){
 	$signed = $facebook -> getSignedRequest();
 	return (boolean) $signed['page']['liked'];
 }
-
-/**
- * 投稿内のコンテンツを表示する
- * @param string $content
- * @return string
- */
-function _fb_sslize_assets($content){
-	if(is_production()){
-		$content = str_replace('http://takahashifumiki.com/wp-content/uploads', 'https://fumiki.sakura.ne.jp/main/wp-content/uploads', $content);
-	}else{
-		$content = str_replace('http://mac', 'https://mac', $content);
-	}
-	return $content;
-}
-add_filter('the_content', '_fb_sslize_assets');

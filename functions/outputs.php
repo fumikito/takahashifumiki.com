@@ -72,7 +72,7 @@ function fumiki_nakanohito(){
  * @param type $num 初期値は5
  * @return void
  */
-function fumiki_hotentry($title = "はてなブックマーク", $sort = "hot", $need_script = true, $num = 5){
+function fumiki_hotentry($title = "はてなブックマーク", $sort = "hot", $need_script = true, $num = 7){
 	echo ($need_script) ? '<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>' : '';
 	echo <<<EOS
 <script language="javascript" type="text/javascript">
@@ -162,6 +162,9 @@ function fumiki_share($title, $url){
 		<span class="mono">{$subscribers}</span>
 		<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
 	</a>
+	<!-- mixi check -->
+	<a href="http://mixi.jp/share.pl" class="mixi-check-button" data-button="button-5" data-key="d288247468354a3415683ce1320a8403e84d5351" data-url="{$url}">mixiチェック</a>
+	<script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script>
 	</div>
 EOS;
 }

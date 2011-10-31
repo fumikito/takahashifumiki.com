@@ -214,15 +214,3 @@ function _fumiki_ustream_status(){
 }
 add_action('wp_ajax_ustream_status', '_fumiki_ustream_status');
 add_action('wp_ajax_nopriv_ustream_status', '_fumiki_ustream_status');
-
-/**
- * テンプレートリダイレクトで行う
- * @return void
- */
-function _fumiki_template_redirect(){
-	//Facebookページの場合は
-	if(is_page('facebook')){
-		get_template_part('functions/facebook');
-	}
-}
-add_action('template_redirect', '_fumiki_template_redirect');

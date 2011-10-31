@@ -126,7 +126,8 @@ a{overflow:hidden;}
 }
 a.button,
 input.button,
-#lwp-submit{
+#lwp-submit,
+#nlmg-resign-form p.submit input{
 	padding:5px 7px;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
@@ -151,7 +152,8 @@ a.button:visited{
 }
 a.button:hover,
 input.button:hover,
-#lwp-submit:hover{
+#lwp-submit:hover,
+#nlmg-resign-form p.submit input:hover{
 	background: #4c5a65; /* Old browsers */
 	background: -moz-linear-gradient(top, #4c5a65 0%, #2e3940 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c5a65), color-stop(100%,#2e3940)); /* Chrome,Safari4+ */
@@ -163,7 +165,8 @@ input.button:hover,
 }
 a.button:active,
 input.button:active,
-#lwp-submit:active{
+#lwp-submit:active,
+#nlmg-resign-form p.submit input:active{
 	background:#252e34;
 }
 /*メッセージボックス*/
@@ -308,9 +311,10 @@ p.success{
 }
 #navi .user-name{
 	margin:0;
-	height:48px;
-	line-height:48px;
+	height:30px;
+	line-height:1.1;
 	font-size:14px;
+	padding-top:8px;
 }
 
 
@@ -850,7 +854,9 @@ p.success{
 table.form-table input[type=text],
 table.form-table input[type=password]{
 	width:300px;
-	font-size:16px;
+	font-size:20px;
+	padding:5px 10px;
+	color:#444;
 }
 
 
@@ -1535,7 +1541,8 @@ body.login #submit{margin:0;}
 }
 
 /*メイン*/
-.login form p.submit input.button{
+.login form p.submit input.button,
+#nlmg-resign-form p.submit input{
 	font-size:20px;
 	cursor:pointer;
 }
@@ -1544,24 +1551,41 @@ body.login #submit{margin:0;}
 	resize:vertical;
 	width:300px;
 	display: block;
+	padding:5px 10px;
+	font-size:20px;
+}
+.login form select{
+	font-size:20px;
+}
+.login form select option{
+	font-size:20px;
 }
 .form-table .description{
 	display:block;
 	margin:1em 0;
 	clear:both;
 }
-.registerform p{
+.login form p label{
+	padding:5px 0;
+	font-weight:bold;
+}
+.login p input.input{
+	font-size:20px;
+	padding:5px 10px;
+	width:300px;
+}
+.login form p{
 	clear:left;
 }
-.registerform p label{
+.login form p label{
 	display:block;
 	width:250px;
 	float:left;
 	paddign-top:3px;
 }
-.registerform p input{
-	font-size:14px;
-	width:300px;
+.login form p.forgetmenot label{
+	float:none;
+	width:auto;
 }
 /* リンク */
 .login .tml-action-links{
@@ -1868,6 +1892,7 @@ body.home #column1 .conBox h3{
 }
 
 
+
 /****************************************
  * 8.div.tmkm-amazon-view
  ****************************************/
@@ -1897,7 +1922,6 @@ div.tmkm-amazon-view p em {
 	font-style: normal;
 	font-weight:bold;
 }
-
 div.tmkm-amazon-view:after {
 	content: ".";
 	display: block;
@@ -1912,6 +1936,35 @@ div.tmkm-amazon-view hr.tmkm-amazon-clear {
 	margin: 0;
 	padding: 0;
 	visibility: hidden;
+}
+
+/* Rakuten Link*/
+.entry div.rakuten_details{
+	width:auto;
+	border:none;
+	clear:both;
+}
+.rakuten_image img{
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5);
+	-moz-box-shadow:0 0 5px  rgba(0,0,0,0.5);
+	box-shadow:0 0 5px  rgba(0,0,0,0.5);
+}
+div.rakuten_details a.tooltip{
+	font-size:0.75em;
+	cursor: pointer;
+}
+div.rakuten_details a.tooltip span{
+	padding:10px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+.entry div.rakuten_details div.rakuten_info{
+	width:420px;
+	font-size:0.85em;
+}
+.entry div.rakuten_details .rakuten_credit{
+	font-size:0.75em;
 }
 
 
@@ -2136,26 +2189,28 @@ div.tmkm-amazon-view hr.tmkm-amazon-clear {
 /****************************************
  * 11. Facebook ページ
  ****************************************/
-body.facebook{
+body.fan-gate-body{
+	margin:0 auto;
+	overflow: hidden;
 }
-.facebook .margin{
+.fan-gate-body .margin{
 	width:auto;
 	padding:20px;
 	border:1px solid #ddd;
 }
-.facebook .meta{
+.fan-gate-body .meta{
 	text-align:left;
 	padding:30px 0;
 }
-.facebook .meta p{
+.fan-gate-body .meta p{
 	font-size:1.6em;
 	text-shadow:1px 1px 2px #fff;
 	height:30px;
 	line-height:30px;
 }
-.facebook .meta p img{
+.fan-gate-body .meta p img{
 	vertical-align: middle;
 }
-.facebook .title{
+.fan-gate-body .title{
 	margin:0;
 }

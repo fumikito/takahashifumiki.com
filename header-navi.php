@@ -25,7 +25,6 @@
 				<p class="user-name">ようこそ!</p>
 				<p class="greet clrB">
 					高橋文樹.comではユーザー登録を受け付けています。登録をすることで、電子書籍の購入やお得な更新情報が手に入ります。
-						<?php echo admin_url(); ?>
 				</p>
 				<p>
 					<a class="button" href="<?php echo wp_login_url(); ?>">ログイン</a>
