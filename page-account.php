@@ -6,17 +6,19 @@
 		auth_redirect ();
 		die();
 	}
-	the_post();
 	get_header('meta');
 	get_header('navi');
-	get_header('title');
 ?>
+	<?php if(have_posts()): while(have_posts()): the_post(); ?>
+	<?php get_header('title'); ?>
 
 <div id="content" class="margin account" class="clearfix">
 	<div class="entry">
 	<?php the_content(); ?>
 	</div>
 </div>
+	
+	<?php endwhile; endif; ?>
 
 <?php
 	get_footer();
