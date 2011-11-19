@@ -45,7 +45,7 @@
 			<ol class="inner no-text clearfix">
 				<li><a class="facebook" href="http://www.facebook.com/takahashifumiki">Facebook</a></li>
 				<li><a class="twitter" href="https://twitter.com/#!/takahashifumiki">twitter</a></li>
-				<li><a class="google" href="https://plus.google.com/114216546098171717764/posts">Google+</a></li>
+				<li><a class="google" href="https://plus.google.com/u/0/108058172987021898722/posts">Google+</a></li>
 				<li><a class="youtube" href="http://www.youtube.com/user/takahashifumiki">Youtube</a></li>
 				<li><a class="github" href="https://github.com/fumikito">Github</a></li>
 			</ol>

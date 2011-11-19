@@ -17,6 +17,7 @@ get_template_part("functions/actions");
 get_template_part("functions/filters");
 get_template_part("functions/utilities");
 get_template_part("functions/outputs");
+get_template_part("functions/wp_die");
 //サイドバーの登録
 register_sidebar(array(
 	 'name' => "フッター右端",

@@ -1097,6 +1097,10 @@ a.lwp-buynow:hover{
 a.lwp-buynow:active{
 	background-position: left -80px;
 }
+.lwpwidget-buynow .lwp-transfer{
+	text-align:center;
+	font-size:1.2em;
+}
 
 /*バナー*/
 .widget_sp_image-description{

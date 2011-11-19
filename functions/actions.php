@@ -22,6 +22,9 @@ function _fumiki_head(){
 			}
 		}
 		$type = is_singular() ? 'article' : "website";
+		if(get_post_type() == 'ebook'){
+			$type = 'book';
+		}
 		$desc = is_singular() ? get_the_excerpt() : get_bloginfo('description');
 		$desc = str_replace("\n", "", $desc);
 		echo <<<EOS
@@ -31,7 +34,7 @@ function _fumiki_head(){
 <meta property="og:description" content="{$desc}" />
 <meta property="og:type" content="{$type}" />
 <meta property="og:site_name" content="高橋文樹.com"/>
-<meta property="fb:page_id" content="240120469352376"/>
+<meta property="og:locale" content="ja_JP" />
 <meta property="fb:admins" content="1034317368" />
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
   {lang: 'ja'}

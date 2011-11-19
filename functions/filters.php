@@ -146,6 +146,7 @@ function _fumiki_login_ssl($url){
 add_filter('login_url', '_fumiki_login_ssl');
 add_filter('register', '_fumiki_login_ssl');
 add_filter('logout_url', '_fumiki_login_ssl');
+add_filter('logout_redirect', '_fumiki_login_ssl');
 
 /**
  * Theme My Loginが出力する管理画面へのURLをSSLにする
