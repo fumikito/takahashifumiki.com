@@ -162,6 +162,9 @@ function fumiki_share($title, $url){
 		<span class="mono">{$subscribers}</span>
 		<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
 	</a>
+	<!-- linkedin -->
+	<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+	<script type="IN/Share" data-url="{$url}" data-counter="top"></script>
 	<!-- mixi check -->
 	<a href="http://mixi.jp/share.pl" class="mixi-check-button" data-button="button-5" data-key="d288247468354a3415683ce1320a8403e84d5351" data-url="{$url}">mixiチェック</a>
 	<script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script>

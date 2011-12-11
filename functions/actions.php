@@ -32,6 +32,7 @@ function _fumiki_head(){
 <meta property="og:url" content="{$url}" />
 <meta property="og:image" content="{$image}" />
 <meta property="og:description" content="{$desc}" />
+<meta name="description" content="{$desc}" />
 <meta property="og:type" content="{$type}" />
 <meta property="og:site_name" content="高橋文樹.com"/>
 <meta property="og:locale" content="ja_JP" />
@@ -76,8 +77,12 @@ function _fumiki_assets(){
 			true
 		);
 		//Ajaxの変数を確認
+		$endpoint = admin_url('admin-ajax.php');
+		if(!is_ssl()){
+			$endpoint = str_replace('https://', 'http://', $endpoint);
+		}
 		wp_localize_script('fumiki-core', 'FumikiAjax', array(
-			'endpoint' => admin_url('admin-ajax.php'),
+			'endpoint' => $endpoint,
 			'nonce' => wp_create_nonce('fumiki_ajax')
 		));
 		////tmkm-amazonのCSSを打ち消し
@@ -94,6 +99,7 @@ add_action("wp_enqueue_scripts", "_fumiki_assets");
 function _fumiki_dequeue_styles(){
 	//wp-pagenaviのCSSを打ち消し
 	wp_dequeue_style("wp-pagenavi");
+	wp_dequeue_style('wp-tmkm-amazon');
 	//問い合わせページでなければ削除
 	if(!is_page('inquiry')){
 		wp_dequeue_style('contact-form-7');

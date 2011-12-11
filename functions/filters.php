@@ -107,11 +107,14 @@ add_filter('tiny_mce_before_init', '_fumiki_tinymce', 10000);
  * @return string 
  */
 function _fumiki_ssl_content($content){
+	$upload_dir = wp_upload_dir();
+	$upload_dir_url = $upload_dir['baseurl'];
 	if(is_ssl()){
-		$upload_dir = wp_upload_dir();
-		$upload_dir_url = $upload_dir['baseurl'];
 		$upload_dir_ssl_url = str_replace('http:', 'https:', $upload_dir_url);
 		$content = str_replace($upload_dir_url, $upload_dir_ssl_url, $content);
+	}else{
+		$upload_dir_cdn_url = str_replace('http://', 'http://s.', $upload_dir_url);
+		$content = str_replace($upload_dir_url, $upload_dir_cdn_url, $content);
 	}
 	return $content;
 }
@@ -201,3 +204,48 @@ function _fumiki_remove_disqus(){
 	}
 }
 add_action('wp_footer', '_fumiki_remove_disqus', 1);
+
+
+/**
+ * テーマディレクトリのURLをCDN対応にする
+ * @param string $url
+ * @return string
+ */
+function _fumiki_static_url($url){
+	if(!is_ssl()){
+		//SSLじゃなかったらCDN用URLに変える
+		$root_uri = home_url();
+		$static_uri = str_replace('http://', 'http://s.', $root_uri);
+		$url = str_replace($root_uri, $static_uri, $url);
+	}
+	return $url;
+}
+add_filter('template_directory_uri', '_fumiki_static_url');
+
+/**
+ * wp_enqueue_scriptで読み込まれたJavascriptのSRC属性をCDN対応
+ * @param type $src
+ * @return type 
+ */
+function _fumiki_script_loader_src($src){
+	$home_url = home_url();
+	if(!is_ssl() && false !== strpos($src, $home_url)){
+		$src = str_replace('http://', 'http://s.', $src);
+	}
+	return $src;
+}
+add_filter('script_loader_src', '_fumiki_script_loader_src');
+
+/**
+ * CSSのURLを書き換える
+ * @param string $tag
+ * @return string
+ */
+function _fumiki_style_loader_tag($tag){
+	$home_url = home_url();
+	if(!is_ssl() && false !== strpos('href="'.$home_url, $tag)){
+		$tag = str_replace('href="http://', 'href="http://s.', $tag);
+	}
+	return $tag;
+}
+add_filter('style_loader_tag', '_fumiki_style_loader_tag');
