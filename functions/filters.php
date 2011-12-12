@@ -86,12 +86,17 @@ function _fumiki_tinymce($initArray) {
 			'classes' => 'message success'
 		),
 		array(
-			'title' => '注意',
+			'title' => 'エラー',
 			'block' => 'p',
 			'classes' => 'message warning'
 		),
 		array(
-			'title' => '注意書き',
+			'title' => '注意',
+			'block' => 'p',
+			'classes' => 'message notice',
+		),
+		array(
+			'title' => '注釈',
 			'inline' => 'span',
 			'classes' => 'alert'
 		)

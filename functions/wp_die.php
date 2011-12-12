@@ -51,7 +51,7 @@ function _fumiki_wp_die( $message, $title = '', $args = array() ) {
 	}
 
 	if ( isset( $r['back_link'] ) && $r['back_link'] ) {
-		$message .= "\n<p><a class=\"button\" href='javascript:history.back()'>戻る</p>";
+		$message .= "\n<p><a class=\"button\" href='javascript:history.back()'>戻る</a></p>";
 	}
 
 	if ( defined( 'WP_SITEURL' ) && '' != WP_SITEURL )
