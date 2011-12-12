@@ -223,7 +223,7 @@ p.warning{
 p.success{
 	color:#059119;
 	border:1px solid #059119;
-	background: #c6f4cd url('img/icon-accepted.png') 5px center no-repeat;
+	background: #c6f4cd url('img/icon-accepted_32.png') 5px center no-repeat;
 	padding-left:42px;
 }
 p.notice{

@@ -25,6 +25,10 @@ the_post();
 				<h1 class="title mincho"><?php the_title(); ?></h1>
 			</div>
 			<div class="entry clearfix">
+				<p class="message warning">
+					現在調整中です。
+				</p>
+				<?php /*
 				<table>
 					<tbody>
 						<tr>
@@ -72,6 +76,8 @@ the_post();
 						ログインしてアカウントを紐付けて「いいね！」すると、この表示が変わります。
 					</p>
 				<?php endif;?>
+				 * 
+				 */?>
 				<?php the_content();?>
 			</div>
 		</div>

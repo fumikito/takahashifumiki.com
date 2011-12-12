@@ -25,7 +25,7 @@ body.mceContentBody{
 	font-family:"メイリオ",'Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;
 	font-size:16px;
 	color:#4D4945;
-	max-width:800px;
+	max-width:600px;
 	display:block;
 	margin:0 auto;
 	background:url('img/bg-texture-white.jpg') left top repeat;
@@ -293,14 +293,20 @@ p.message{
 p.warning{
 	color:#ff4d44;
 	border:1px solid #ff4d44;
-	background: #ffd4d2 url('img/icon-warning.png') 5px center no-repeat;
-	padding-left:25px;
+	background: #ffd4d2 url('img/icon-warning_32.png') 5px center no-repeat;
+	padding-left:42px;
 }
 p.success{
 	color:#059119;
 	border:1px solid #059119;
-	background: #c6f4cd url('img/icon-accepted.png') 5px center no-repeat;
-	padding-left:25px;
+	background: #c6f4cd url('img/icon-accepted_32.png') 5px center no-repeat;
+	padding-left:42px;
+}
+p.notice{
+	color:#05a;
+	border:1px solid #06C;
+	background: #9fc9f4 url('img/icon-notice_32.png') 5px center no-repeat;
+	padding-left:42px;
 }
 /* ボタン */
 a.button{
