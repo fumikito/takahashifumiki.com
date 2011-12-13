@@ -149,7 +149,9 @@ input.button,
 a.button:link,
 a.button:visited,
 .button-primary:link,
-.button-primary:visited{
+.button-primary:visited,
+.lwp-buynow:link,
+.lwp-buynow:visited{
 	text-decoration: none;
 }
 a.button:hover,
@@ -174,7 +176,8 @@ p.submit{
 	float:right;
 	margin:0 0 10px;
 }
-.button-primary{
+.button-primary,
+.lwp-buynow{
 	font-size:1.1em;
 	font-weight:bold;
 	cursor:pointer;
@@ -197,7 +200,16 @@ p.submit{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
 	text-shadow:1px 1px 3px #aaa;
 }
-.button-primary:hover{
+
+.button-primary:link,
+.button-primary:visited,
+.lwp-buynow:link,
+.lwp-buynow:visited{
+	color:#fff;
+}
+.button-primary:hover,
+.lwp-buynow:hover{
+	color:#fff;
 	background: #ffc387; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffc387 0%, #ffa73d 52%, #ffa551 52%, #ff7f04 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc387), color-stop(52%,#ffa73d), color-stop(52%,#ffa551), color-stop(100%,#ff7f04)); /* Chrome,Safari4+ */
@@ -206,6 +218,10 @@ p.submit{
 	background: -ms-linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* IE10+ */
 	background: linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc387', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
+}
+.button-primary:active,
+.lwp-buynow:active{
+	color:#fff;
 }
 /*メッセージボックス*/
 p.message{
@@ -373,7 +389,40 @@ p.notice{
 	text-shadow:1px 1px 2px #fff;
 	font-weight: normal;
 }
-
+/*投稿件数*/
+.header{
+	position: relative;
+}
+.header .post-counts{
+	position:absolute;
+	display:block;
+	width:70px;
+	height:70px;
+	line-height: 70px;
+	color:#fff;
+	text-align: center;
+	right:20px;
+	top:-30px;
+	background: #b50063; /* Old browsers */
+	background: -moz-linear-gradient(top,  #b50063 0%, #e4007f 25%, #e4007f 61%, #b50063 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b50063), color-stop(25%,#e4007f), color-stop(61%,#e4007f), color-stop(100%,#b50063)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #b50063 0%,#e4007f 25%,#e4007f 61%,#b50063 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #b50063 0%,#e4007f 25%,#e4007f 61%,#b50063 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #b50063 0%,#e4007f 25%,#e4007f 61%,#b50063 100%); /* IE10+ */
+	background: linear-gradient(top,  #b50063 0%,#e4007f 25%,#e4007f 61%,#b50063 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b50063', endColorstr='#b50063',GradientType=0 ); /* IE6-9 */
+	-webkit-border-radius:40px;
+	-moz-border-radius:40px;
+	border-radius:40px;
+	-webkit-box-shadow:1px 1px 5px #000;
+	-moz-box-shadow:1px 1px 5px #000;
+	box-shadow:1px 1px 5px #000;
+	border:5px solid #fff;
+	white-space: nowrap;
+}
+.header .post-counts strong{
+	font-size:20px;
+}
 /*ぱんくず*/
 .breadcrumb{
 	color:#333f46;
@@ -392,14 +441,14 @@ p.notice{
 	font-size:1.1em;
 	height:24px;
 	line-height:24px;
-	background:url(img/meta-icons.png) left -24px no-repeat;
+	background:url(img/meta-icons.png) left -25px no-repeat;
 	padding-left:30px;
 	color:#333f46;
 	margin: 0 20px 5px 0;
 }
 .title-meta .date{}
-.title-meta .length{background-position: left -48px;}
-.title-meta .feedback{background-position: left -72px;}
+.title-meta .length{background-position: left -49px;}
+.title-meta .feedback{background-position: left -73px;}
 .title-meta .category{background-position: left 0;}
 .title-meta .tag{background-position: left -120px;}
 .title-meta .count{background-position: left -144px;}
@@ -910,7 +959,8 @@ table.form-table input[type=password]{
 .share{
 	margin:20px 0; 
 }
-.share h3{
+.share h3,
+#disqus_thread h3{
 	font-size:2em;
 	color:#4C5A65;
 	text-shadow:1px 1px 2px #fff;
@@ -946,7 +996,7 @@ table.form-table input[type=password]{
 	 background:#eee;
 	 border-top:1px solid #ddd;
 	 border-bottom:1px solid #ddd;
-	 padding: 20px 0;
+	 padding: 0 0 20px;
 	 margin:20px 0;
  }
 
@@ -1125,24 +1175,14 @@ table.form-table input[type=password]{
 	font-size:1.4em;
 	font-family:'Georgia', seif;
 }
-a.lwp-buynow{
-	display:block;
-	margin:0 auto;
-	width: 150px;
-	height:40px;
-	overflow:hidden;
-	text-indent: -9999px;
-	background: url('img/btn-buynow.png') left top no-repeat;
-}
-a.lwp-buynow:hover{
-	background-position: left -40px;
-}
-a.lwp-buynow:active{
-	background-position: left -80px;
-}
 .lwpwidget-buynow .lwp-transfer{
 	text-align:center;
 	font-size:1.2em;
+}
+.lwpwidget-buynow .lwp-buynow-btn{
+	font-size:1.5em;
+	text-align: center;
+	margin: 1em 0;
 }
 
 /*バナー*/
@@ -1177,26 +1217,39 @@ a.lwp-buynow:active{
 	font-size:1.4em;
 	margin-bottom:1em;
 }
-/*Disqus*/
-#dsq-references{
+/*Disqus comment*/
+#dsq-content ul{
 	font-size:1.1em;
 	border-top:1px dotted #ddd !important;
 }
-#dsq-references li{
+#dsq-content .dsq-comment-text{
+	font-size:1.2em;
+	line-height:1.4;
+}
+.dsq-comment-footer{
+	font-size:1.1em;
+	font-weight: bold;
+}
+/* Trackback*/
+#dsq-references li,
+.dsq-trackback-url + ul li{
 	border-bottom:1px dotted #ccc !important;
 	padding:10px 10px 10px 50px !important;
 	background: url('img/icon-trackback.png') 10px center no-repeat !important;
 }
-#dsq-references li:nth-child(even){
-	background-color:#EEF9FD !important;
+#dsq-references li:nth-child(even),
+.dsq-trackback-url + ul li:nth-child(even){
+	background-color:#fcfcfc !important;
 }
-#dsq-references .dsq-meta{
+#dsq-references .dsq-meta,
+.dsq-trackback-date{
 	text-align:right;
 	margin:5px 0;
 	font-size:0.9em;
 	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
 }
-#dsq-references .dsq-content{
+#dsq-references .dsq-content,
+.dsq-trackback-excerpt{
 	font-size:0.9em;
 	line-height: 1.2;
 }
@@ -1834,8 +1887,8 @@ body.login #submit{margin:0;}
 	clear:left;
 }
 .share-home{
-	margin-left:100px;
-	width:500px;
+	margin-left:50px;
+	width:550px;
 }
 /*---------------------
  * 縦書き
@@ -2099,14 +2152,32 @@ div.rakuten_details a.tooltip span{
 	 width:300px;
 }
 /*ヘッダー*/
+.smartphone #navi .mono{
+	font-size:1.8em;
+}
+.smartphone #navi .button{
+	font-size:14px;
+}
+.smartphone #navi .user-name{
+	font-size:18px;
+}
+.smartphone #logo p{
+	font-size:14px;
+}
 .smartphone #navi .grid_4{
 	width:270px;
 }
 .smartphone #navi .grid_4:nth-child(3){
 	clear:left;
 }
+.smartphone #header .button{
+	font-size:24px;
+	padding-left:10px;
+	padding-right:10px;
+}
 .smartphone #search{
 	 width:100px;
+	 top:30px;
 }
 .smartphone #s{
 	 width:70px;
@@ -2131,13 +2202,26 @@ div.rakuten_details a.tooltip span{
 .smartphone .widget:nth-child(2n + 1){
 	 clear:left;
 }
-.smartphone .widget h4{
+.smartphone #sidebar .widgettitle{
+	font-size:1.8em;
+}
+.smartphone #sidebar .widget_text .widget_bg{
 	font-size:1.6em;
 }
+
 /*メインタイトル*/
+.smartphone .title{
+	font-size:4em;
+	margin-right:30px;
+	margin-left:30px;
+}
 .smartphone .title-meta li,
 .smartphone .breadcrumb{
 	font-size:1.6em;
+}
+.smartphone .header .post-counts{
+	top:-70px;
+	right:10px;
 }
 /*フッター*/
 .smartphone #footer{
@@ -2160,7 +2244,7 @@ div.rakuten_details a.tooltip span{
 }
 /*投稿画面*/
 .smartphone .entry .wp-caption-text{
-	font-size:1.2em;
+	font-size:0.9em;
 }
 .smartphone .share{
 	font-size:1.4em;
@@ -2242,6 +2326,7 @@ div.rakuten_details a.tooltip span{
 .smartphone .main-menu{
 	margin-left:20px;
 	margin-right:20px;
+	font-size:3em;
 }
 .smartphone .home-archive{
 	padding:0 20px;
@@ -2260,6 +2345,20 @@ div.rakuten_details a.tooltip span{
 }
 .smartphone #sidebar.sidebar-home .widget:nth-child(odd){
 	clear:left;
+}
+/*電子書籍*/
+.smartphone .ebook-detail{
+	font-size: 1.4em;
+}
+.smartphone .ebook-detail dl dd{
+	margin-bottom: 0.5em;
+}
+.smartphone #lwp-invoice tbody td.lwp-column-method-desc{
+	font-size:1.6em;
+}
+/*ログイン*/
+.smartphone .login ul.tml-action-links li{
+	font-size:16px;
 }
 
 

@@ -1,11 +1,11 @@
 <?php
-the_post();
 get_header('meta');
 get_header('navi');
 get_header('title');
 ?>
 <div id="content" class="margin clearfix">
 	<div id="main">
+		<?php if(have_posts()): while(have_posts()): the_post(); ?>
 		<div class="entry clearfix">
 			<?php google_ads(); ?>
 			<?php the_content(); ?>
@@ -18,7 +18,8 @@ get_header('title');
 			<p>この記事を気に入ったら、ぜひシェアしてください。</p>
 			<?php fumiki_share(get_the_title()."|".get_bloginfo('name'), get_permalink()); ?>
 		</div>
-		<?php related_posts(); ?>
+		<?php endwhile; endif; ?>
+		<?php get_template_part('related-posts'); ?>
 	</div>
 	<!-- #main ends -->
 	

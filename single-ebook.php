@@ -1,5 +1,4 @@
 <?php
-the_post();
 
 get_header('meta');
 get_header('navi');
@@ -8,6 +7,7 @@ get_header('title');
 
 <div id="content" class="margin clearfix">
 	<div id="main" class="ebook">
+		<?php if(have_posts()): while(have_posts()): the_post(); ?>
 		<div class="eyecatch">
 			<img src="<?php echo get_post_meta(get_the_ID(), 'eye-catch', true); ?>" alt="<?php the_title(); ?>" width="570" height="300" />
 		</div>
@@ -43,17 +43,20 @@ get_header('title');
 		<div class="entry clearfix">
 			<?php if(lwp_is_owner() && !lwp_is_free()): ?>
 				<p class="message success">お買い上げありがとうございます。「ダウンロード」からファイルをダウンロードして下さい。感想お待ちしています。</p>
+			<?php else: ?>
+				<p class="center">
+					<?php echo lwp_buy_now(null, null); ?>
+				</p>
 			<?php endif; ?>
-			<p class="clrL center">
-				<?php echo lwp_buy_now(null, null); ?>
-			</p>
 			<?php the_content(); ?>
 			<div class="clrB">
 				<?php link_pages('ページ: '); ?>
 			</div>
-			<p class="clrB center">
-				<?php echo lwp_buy_now(null, null); ?>
-			</p>
+			<?php if(!lwp_is_owner() && !lwp_is_free()): ?>
+				<p class="clrB center">
+					<?php echo lwp_buy_now(null, null); ?>
+				</p>
+			<?php endif; ?>
 		</div>
 		<div class="share">
 			<h3 class="mono">Share This eBook</h3>
@@ -141,6 +144,7 @@ get_header('title');
 				</tbody>
 			</table>
 		</div>
+		<?php endwhile; endif; ?>
 		<?php comments_template(); ?>
 	</div>
 	<!-- #main ends -->

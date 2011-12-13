@@ -36,7 +36,7 @@ get_header('title');
 		</div>
 		<div class="entry excerpt clrL">
 			<?php the_excerpt(); ?>
-			<p class="submit center">
+			<p class="center">
 				<a href="<?php the_permalink(); ?>" class="button">もっと詳しく</a>
 			</p>
 		</div>

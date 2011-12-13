@@ -63,7 +63,7 @@
 	<a class="button mono" href="#navi">Menu</a>
 	<div id="search">
 		<form method="get" action="<?php bloginfo('url'); ?>">
-			<input type="text" class="tooltip" title="キーワードを入力したらEnterを教えて下さい。" name="s" id="s" value="検索キーワード..." onfocus="this.value='';" onblur="if(this.value == '') this.value='検索キーワード...';" />
+			<input type="text" class="tooltip" title="キーワードを入力したらEnterを教えて下さい。" name="s" id="s" value="検索" onfocus="this.value='';" onblur="if(this.value == '') this.value='検索';" />
 		</form>
 	</div>
 </div>

@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 		}
 	});
 	//Fancybox
-	if($.fancybox){
+	if($.fancybox && !$('body').hasClass('smartphone')){
 		$('.entry a').each(function(index, elt){
 			if(elt.href.match(/(jpe?g|gif|png)$/i)){
 				elt.rel = 'fancyboxGroup';

@@ -1,5 +1,4 @@
 <?php
-the_post();
 /****************************
  * MooToolsのときだけテンプレ変更
  ****************************/
@@ -17,6 +16,7 @@ get_header('title');
 
 <div id="content" class="margin clearfix">
 	<div id="main">
+		<?php if(have_posts()): while(have_posts()): the_post();?>
 		<div class="entry clearfix">
 			<?php google_ads(); ?>
 			<?php the_expiration_info(); ?>
@@ -30,8 +30,9 @@ get_header('title');
 			<p>この記事が気に入ったら、ぜひシェアしてください。</p>
 			<?php fumiki_share(get_the_title()."|".get_bloginfo('name'), get_permalink()); ?>
 		</div>
-		<?php related_posts(); ?>
+		<?php endwhile; endif; ?>
 		<?php comments_template(); ?>
+		<?php get_template_part('related-posts'); ?>
 	</div>
 	<!-- #main ends -->
 	

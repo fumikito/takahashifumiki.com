@@ -1,5 +1,5 @@
 <div id="footer" class="dark_bg shadow">
-	<?php if(!is_ssl()): ?>
+	<?php if(!is_ssl() && !is_smartphone()): ?>
 	<div id="footer-post" class="margin sans clearfix">
 		<div class="grid_4">
 			<h4 class="mono">Hatena Hot Entries</h4>
@@ -55,7 +55,6 @@
 				<li><a class="feed" href="<?php bloginfo('rss_url'); ?>">RSSフィード</a></li>
 			</ol>
 		</div>
-		
 		<div class="grid_4">
 			<h4 class="mono">Recent Entries</h4>
 			<ul class="sans">
@@ -85,6 +84,7 @@
 			<?php wp_list_cats("show_count=0&depth=2&hierarchical=1&exclude=47"); ?>
 			</ul>
 		</div>
+		
 	</div>
 	<!-- #footer-nav ends -->
 	

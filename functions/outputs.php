@@ -199,21 +199,6 @@ function fumiki_archive_photo($size = "medium", $post = null){
  */
 function google_ads($number = 1){
 	switch($number){
-		case 2:
-			echo <<<EOS
-			<script type="text/javascript"><!--
-			google_ad_client = "ca-pub-0087037684083564";
-			/* 高橋文樹 投稿内広告 */
-			google_ad_slot = "5844658673";
-			google_ad_width = 468;
-			google_ad_height = 60;
-			//-->
-			</script>
-			<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-EOS;
-			break;
 		case 1:
 		default:
 			echo <<<EOS
@@ -230,6 +215,36 @@ EOS;
 				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 				</script>
 			</div>
+EOS;
+			break;
+		case 2:
+			echo <<<EOS
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-0087037684083564";
+			/* 高橋文樹 投稿内広告 */
+			google_ad_slot = "5844658673";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+EOS;
+			break;
+		case 3:
+			echo <<<EOS
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-0087037684083564";
+				/* 高橋文樹.com2011関連投稿 */
+				google_ad_slot = "0384965250";
+				google_ad_width = 336;
+				google_ad_height = 280;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
 EOS;
 			break;
 	}

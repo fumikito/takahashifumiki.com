@@ -6,7 +6,7 @@ get_header('title');
 
 <div id="content" class="margin clearfix">
 	<div id="main">
-
+		<?php get_search_form(); ?>
 		<div class="archive clearfix">
 			<?php $counter = 0;if(have_posts()): while(have_posts()): the_post(); $counter++;?>
 				<?php if($counter == 3 || $counter == 5): ?>

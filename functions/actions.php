@@ -139,13 +139,15 @@ add_action("init", "_fumiki_menu");
  * アドミンバーを消す
  */
 function _fumiki_remove_adminbar(){
-	show_admin_bar(false);
-	wp_deregister_script( 'admin-bar' );
-	wp_deregister_style( 'admin-bar' );
-	add_filter('show_admin_bar', '__return_false');
-	remove_action( 'wp_head', 'wp_admin_bar_header' );
-	remove_action( 'wp_head', '_admin_bar_bump_cb' );
-	remove_action('wp_footer','wp_admin_bar_render',1000);
+	if(!is_admin()){
+		show_admin_bar(false);
+		wp_deregister_script( 'admin-bar' );
+		wp_deregister_style( 'admin-bar' );
+		add_filter('show_admin_bar', '__return_false');
+		remove_action( 'wp_head', 'wp_admin_bar_header' );
+		remove_action( 'wp_head', '_admin_bar_bump_cb' );
+		remove_action('wp_footer','wp_admin_bar_render',1000);
+	}
 }
 add_action('init', "_fumiki_remove_adminbar");
 
