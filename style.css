@@ -127,7 +127,8 @@ a{overflow:hidden;}
 /*ボタン*/
 a.button,
 input.button,
-#nlmg-resign-form p.submit input{
+#nlmg-resign-form p.submit input,
+.button-secondary{
 	padding:5px 7px;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
@@ -156,7 +157,8 @@ a.button:visited,
 }
 a.button:hover,
 input.button:hover,
-#nlmg-resign-form p.submit input:hover{
+#nlmg-resign-form p.submit input:hover,
+.button-secondary:hover{
 	background: #4c5a65; /* Old browsers */
 	background: -moz-linear-gradient(top, #4c5a65 0%, #2e3940 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c5a65), color-stop(100%,#2e3940)); /* Chrome,Safari4+ */
@@ -165,10 +167,12 @@ input.button:hover,
 	background: -ms-linear-gradient(top, #4c5a65 0%,#2e3940 100%); /* IE10+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c5a65', endColorstr='#2e3940',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, #4c5a65 0%,#2e3940 100%); /* W3C */
+	cursor: pointer;
 }
 a.button:active,
 input.button:active,
-#nlmg-resign-form p.submit input:active{
+#nlmg-resign-form p.submit input:active,
+.button-secondary{
 	background:#252e34;
 }
 /* プライマリーボタン */
@@ -1623,6 +1627,46 @@ body.ebooks .catch{
 	box-shadow:none;
 	-webkit-box-shadow:none;
 	-moz-box-shadow:none;
+}
+
+/* 本棚 */
+.entry .wp-list-table thead th,
+.entry .wp-list-table tfoot th{
+	padding:3px 5px;
+	background:#4D4945;
+	color: #000;
+	font-size:0.8em;
+	font-weight: normal;
+	text-shadow:0px 1px 1px #fff;
+background: #3d3d3d; /* Old browsers */
+background: -moz-linear-gradient(top,  #3d3d3d 21%, #545353 51%, #3d3d3d 78%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(21%,#3d3d3d), color-stop(51%,#545353), color-stop(78%,#3d3d3d)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #3d3d3d 21%,#545353 51%,#3d3d3d 78%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #3d3d3d 21%,#545353 51%,#3d3d3d 78%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #3d3d3d 21%,#545353 51%,#3d3d3d 78%); /* IE10+ */
+background: linear-gradient(top,  #3d3d3d 21%,#545353 51%,#3d3d3d 78%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d3d', endColorstr='#3d3d3d',GradientType=0 ); /* IE6-9 */
+
+}
+.entry .wp-list-table{
+	width:100%;
+}
+.entry .wp-list-table thead th a:link,
+.entry .wp-list-table tfoot th a:link,
+.entry .wp-list-table thead th a:visited,
+.entry .wp-list-table tfoot th a:visited{
+	text-decoration: none;
+}
+.wp-list-table tbody td{
+	padding:3px 5px;
+	font-size:0.75em;
+}
+.tablenav-pages{
+	font-size:0.75em;
+	text-align: right;
+	float: right;
+	height:33px;
+	line-height: 33px;
 }
 /****************************************
  * 電子書籍用設定
