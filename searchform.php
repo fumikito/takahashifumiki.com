@@ -1,7 +1,7 @@
 <form method="get">
 	<p>
 		<?php if(is_search()): ?>
-			<input type="text" name="s" value="<?php the_search_query(); ?>" />
+			<input type="<?php attr_search(); ?>" name="s" value="<?php the_search_query(); ?>" />
 		<?php endif; ?>
 		<select name="order">
 			<option value="ASC"<?php if(isset($_REQUEST['order']) && $_REQUEST['order'] == 'ASC') echo ' selected="selected"';?>>昇順</option>

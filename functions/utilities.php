@@ -129,3 +129,32 @@ function ssl_template_directory($echo = true){
 	}
 }
 
+/**
+ * HTML5に対応したtype属性を出力する
+ * @global boolean $is_IE
+ * @param boolean $echo
+ * @return string
+ */
+function attr_email($echo = true){
+	global $is_IE;
+	$type = $is_IE ? 'text' : 'email';
+	if($echo){
+		echo $type;
+	}
+	return $type;
+}
+
+/**
+ * HTML5に対応したtype属性を返す
+ * @global boolean $is_IE
+ * @param boolean $echo
+ * @return string
+ */
+function attr_search($echo = true){
+	global $is_IE;
+	$type = !is_smartphone() ? 'text' : 'search';
+	if($echo){
+		echo $type;
+	}
+	return $type;
+}

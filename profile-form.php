@@ -104,8 +104,8 @@ foreach ( array( 'posts', 'pages' ) as $post_cap )
 
 		<table class="form-table">
 		<tr>
-			<th><label for="email"><?php _e( 'E-mail', 'theme-my-login' ); ?> <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></th>
-			<td><input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ) ?>" class="regular-text" /></td>
+			<th><label for="email">メールアドレス <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></th>
+			<td><input type="<?php attr_email(); ?>" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ) ?>" class="regular-text" /></td>
 		</tr>
 
 		<tr>

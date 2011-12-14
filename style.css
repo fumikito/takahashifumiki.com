@@ -937,6 +937,8 @@ p.notice{
 /* フォームパーツ */
 .entry input[type=text],
 .entry input[type=password],
+.entry input[type=email],
+.entry input[type=search],
 .entry textarea{
 	border:1px solid #ddd;
 	border-radius:3px;
@@ -944,7 +946,9 @@ p.notice{
 	-moz-border-radius:3px;
 }
 table.form-table input[type=text],
-table.form-table input[type=password]{
+table.form-table input[type=password],
+table.form-table input[type=email],
+table.form-table input[type=search]{
 	width:300px;
 	font-size:20px;
 	padding:5px 10px;
