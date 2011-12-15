@@ -49,7 +49,8 @@ function is_smartphone(){
 	$useragents = array (
 		"iPhone",
 		"iPod",
-		"Mobile Safari" //Android
+		"Mobile Safari", //Android,
+		"Android.*?Mobile"
 	);
 	$iphone =  false;
 	foreach ( $useragents as $useragent ) {

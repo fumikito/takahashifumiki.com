@@ -178,16 +178,16 @@ EOS;
  * @param object $post (optional) 指定しないばあいは現在の投稿
  * @return void
  */
-function fumiki_archive_photo($size = "medium", $post = null){
+function fumiki_archive_photo($size = "medium-thumbnail", $post = null){
 	$post = _fumiki_get_post($post);
 	$images = get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&orderby=menu_order&order=ASC");
 	if(!empty($images)){
 		$image = current($images);
 		echo wp_get_attachment_image($image->ID,$size);
 	}else{
-		$width = ($size == "medium") ? 280 : 150;
-		$height = ($size == "medium") ? 200 : 100;
-		$src = ($size == "medium") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
+		$width = ($size == "medium-thumbnail") ? 280 : 150;
+		$height = ($size == "medium-thumbnail") ? 200 : 100;
+		$src = ($size == "medium-thumbnail") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
 		echo '<img class="attachment-medium" src="'.get_bloginfo('template_directory').'/img/'.$src.'" width="'.$width.'" height="'.$height.'" alt="写真なし" />';
 	}
 }
@@ -304,3 +304,18 @@ function _fumiki_asciiart($args, $content){
 	return "<div style=\"line-height:1.8; font-size:16px; font-family:'Mona','IPA モナー Pゴシック','IPAMonaPGothic','IPA mona PGothic','IPA MONAPGOTHIC','MS PGothic AA','mona-gothic-jisx0208.1990-0','MS PGothic','ＭＳ Ｐゴシック', Osaka, mono;\">".$content.'</div>';
 }
 add_shortcode('aa', '_fumiki_asciiart');
+
+/**
+ * 文字列を特定の長さで切って返す
+ * @param string $string
+ * @param int $length
+ * @param string $ellipsis
+ * @return string 
+ */
+function fumiki_trim($string, $length = 32, $ellipsis = '&hellip;'){
+	if(mb_strlen($string, 'utf-8') >= $length){
+		return mb_substr($string, 0, $length, 'utf-8').$ellipsis;
+	}else{
+		return $string;
+	}
+}

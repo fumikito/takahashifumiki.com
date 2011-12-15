@@ -19,21 +19,21 @@ get_header('navi');
 		<?php get_search_form(); ?>
 		<div class="archive clearfix">
 			<?php $counter = 0;if(have_posts()): while(have_posts()): the_post(); $counter++;?>
-				<?php if($counter == 3 || $counter == 5): ?>
+				<?php if((!is_smartphone() && $counter == 3) || $counter == 5 || (is_smartphone() && $counter == 9)): ?>
 					<p class="center google clrB"><?php google_ads(2);?></p>
 				<?php endif; ?>
-				<?php if($counter < 5): ?>
+				<?php if($counter < 5 && !is_smartphone()): ?>
 					<div class="archive-box archive-box-big <?php echo ($counter % 2 == 0) ? 'even': 'odd';?>">
 						<small class="mono"><?php the_time('Y/n/j(D) g:iA'); ?></small>
 						<div class="photo dark_bg">
 							<?php fumiki_archive_photo(); ?>
-							<h2>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</h2>
 						</div>
 						<div class="cat dark_bg"><span class="mono">Category: </span><?php the_category(",");?></div>
+						<h2>
+							<a href="<?php the_permalink(); ?>"><?php echo fumiki_trim(get_the_title(), 28); ?></a>
+						</h2>
 						<div class="desc">
-							<p><?php echo get_the_excerpt(); ?></p>
+							<p class="clearfix"><?php echo get_the_excerpt(); ?></p>
 						</div>
 						<p class="tag">
 							<img src="<?php bloginfo('template_directory'); ?>/img/archive_icon_tag.png" alt="タグ" width="16" height="16" /><?php  the_tags('');?>
@@ -52,13 +52,13 @@ get_header('navi');
 						<small class="old"><?php the_time('Y/n/j(D)'); ?></small>
 						<div class="photo dark_bg">
 							<?php fumiki_archive_photo("thumbnail"); ?>
-							<h2>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</h2>
 						</div>
 						<div class="cat dark_bg"><span class="mono">Category: </span><?php the_category(",");?></div>
+						<h2>
+							<a href="<?php the_permalink(); ?>"><?php echo fumiki_trim(get_the_title(), 28); ?></a>
+						</h2>
 						<div class="desc">
-							<p><?php echo get_the_excerpt(); ?></p>
+							<p class="clearfix"><?php echo fumiki_trim(get_the_excerpt(), 77); ?></p>
 						</div>
 						<p class="tag">
 							<img src="<?php bloginfo('template_directory'); ?>/img/archive_icon_tag.png" alt="タグ" width="16" height="16" /><?php  the_tags('');?>

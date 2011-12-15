@@ -121,6 +121,10 @@ function _fumiki_dequeue_scripts(){
 	if(!is_page('inquiry')){
 		wp_dequeue_script('contact-form-7');
 	}
+	//スマートフォンならFancybox削除
+	if(is_smartphone()){
+		wp_deregister_script('instapress');
+	}
 }
 add_action('wp_print_scripts', '_fumiki_dequeue_scripts', 10000);
 

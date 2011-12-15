@@ -2,13 +2,20 @@
 	<?php if(!is_ssl() && !is_smartphone()): ?>
 	<div id="footer-post" class="margin sans clearfix">
 		<div class="grid_4">
-			<h4 class="mono">Hatena Hot Entries</h4>
-			<?php fumiki_hotentry(); ?>
+			<h4 class="mono">This week's Popular</h4>
+			<?php if(function_exists('WPPP_show_popular_posts')){
+				WPPP_show_popular_posts( "title=&number=7&days=7&cachename=wppp_weekly_posts&format=<a href=\"%post_permalink%\" title=\"%post_title_attribute%\">%post_title%</a><span><strong>%post_views%views</strong></span>");
+			}?>
 		</div>
 		
 		<div class="grid_4">
-			<h4 class="mono">Hatena Popular</h4>
-			<?php fumiki_hotentry("", "count", false); ?>
+			<?php
+				$count = (int)round(rand(0, 1));
+				$hatena_key = array("hot", "count");
+				$hatena_title = array("Recent", "Popular");
+			?>
+			<h4 class="mono">Hatena B! <?php echo $hatena_title[$count]; ?></h4>
+			<?php fumiki_hotentry("",  $hatena_key[$count], true); ?>
 		</div>
 		
 		<div class="grid_4">
@@ -75,6 +82,7 @@
 			<select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
 				<option value="">月別投稿の一覧</option> 
 				<?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
+				<?php get_calendar(); ?>
 			</select>
 		</div>
 
