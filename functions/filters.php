@@ -254,3 +254,20 @@ function _fumiki_style_loader_tag($tag){
 	return $tag;
 }
 add_filter('style_loader_tag', '_fumiki_style_loader_tag');
+
+
+/**
+ * Nginxでエラーになるのを防ぐ
+ * @param string $permalink
+ * @param object $post
+ * @param string $leavename
+ * @return string 
+ */
+function _fumiki_save_ebook($permalink, $post = null, $leavename = ''){
+	if($post->post_type == 'ebook' || get_post_type() == 'ebook'){
+		$permalink = untrailingslashit($permalink);
+	}
+	return $permalink;
+}
+add_filter('post_link', '_fumiki_save_ebook');
+add_filter('the_permalink', '_fumiki_save_ebook', 10000);
