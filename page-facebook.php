@@ -2,7 +2,6 @@
 /*
  * Template Name:Facebook
  */
-the_post();
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="ja" lang="ja">
 <head>
@@ -21,30 +20,17 @@ the_post();
 <body <?php body_class('fan-gate-body'); ?>>
 	<div id="fb-root">
 		<div class="margin fan-gate">
+			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 			<div class="meta">
 				<h1 class="title mincho"><?php the_title(); ?></h1>
 			</div>
 			<div class="entry clearfix">
-				<p class="message warning">
-					現在調整中です。
-				</p>
-				<?php /*
 				<table>
 					<tbody>
 						<tr>
-							<th>Facebook ログイン</th>
-							<td>
-								<?php if(get_user_id_on_fangate()): ?>
-									Facebookにログイン中です。
-								<?php else: ?>
-									Facebookにログインしていません。
-								<?php endif; ?>
-							</td>
-						</tr>
-						<tr>
 							<th>いいね</th>
 							<td>
-								<?php if(is_user_like_me()): ?>
+								<?php if(is_user_like_fangate()): ?>
 									いいねありがとうございます！
 								<?php else: ?>
 									いいねしてください…
@@ -52,22 +38,38 @@ the_post();
 							</td>
 						</tr>
 						<tr>
-							<th>高橋文樹アカウント</th>
+							<th>Facebookへのログイン</th>
+							<td>
+								<?php if(is_guest_on_fangate()): ?>
+									Facebookにログインしていません。
+								<?php else: ?>
+									Facebookにログイン中です。
+								<?php endif; ?>
+							</td>
+						</tr>
+						<tr>
+							<th>高橋文樹.comアカウント</th>
 							<td>
 								<?php if(is_user_logged_in()):?>
-									<?php if(is_user_connected_with('facebook')): ?>
-										高橋文樹.comにログインして、Facebookアカウントとの紐付けもできています。
-									<?php else: ?>
-										高橋文樹.comにログイン中ですが、Facebookアカウントと紐づいていません。<a target="_top" href="<?php echo admin_url('profile.php'); ?>">こちら</a>から設定してください。
-									<?php endif; ?>
+										高橋文樹.comにログインしています。
 								<?php else:?>
 									高橋文樹.comにログインしていません。<a target="_top" href="<?php echo wp_login_url()?>">こちら</a>からログインしてください。
 								<?php endif; ?>
 							</td>
 						</tr>
+						<tr>
+							<th>Facebookと高橋文樹.comの紐付け</th>
+							<td>
+								<?php if(get_user_id_on_fangate()): ?>
+									あなたのFacebookアカウントは高橋文樹.comに登録されています。
+								<?php else: ?>
+									あなたのFacebookアカウントと紐づいたユーザーは高橋文樹.comにいません。
+								<?php endif; ?>
+							</td>
+						</tr>
 					</tbody>
 				</table>
-				<?php if(is_user_logged_in() && is_user_connected_with('facebook') && is_user_like_me()): ?>
+				<?php if(is_user_logged_in() && get_user_id_on_fangate() && is_user_like_fangate()): ?>
 					<p class="message success center">
 						ありがとうございます！
 					</p>
@@ -76,10 +78,9 @@ the_post();
 						ログインしてアカウントを紐付けて「いいね！」すると、この表示が変わります。
 					</p>
 				<?php endif;?>
-				 * 
-				 */?>
 				<?php the_content();?>
 			</div>
+			<?php	endwhile; endif; ?>
 		</div>
 	</div>
 <?php wp_footer(); ?>

@@ -4,7 +4,7 @@
 		<div class="grid_4">
 			<h4 class="mono">This week's Popular</h4>
 			<?php if(function_exists('WPPP_show_popular_posts')){
-				WPPP_show_popular_posts( "title=&number=7&days=7&cachename=wppp_weekly_posts&format=<a href=\"%post_permalink%\" title=\"%post_title_attribute%\">%post_title%</a><span><strong>%post_views%views</strong></span>");
+				WPPP_show_popular_posts( "title=&number=7&exclude=1142&days=7&cachename=wppp_weekly_posts&format=<a href=\"%post_permalink%\" title=\"%post_title_attribute%\">%post_title%</a><span><strong>%post_views%views</strong></span>");
 			}?>
 		</div>
 		
