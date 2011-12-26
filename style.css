@@ -1475,6 +1475,89 @@ body.ebook .ebook-meta h1{
 	color:#999;
 	text-shadow:none;
 }
+/*立ち読みエリア*/
+.ebook-more{
+	position: relative;
+	max-height: 200px;
+	overflow: hidden;
+	font-size:0.7em;
+}
+.ebook-more-cover{
+	position: absolute;
+	height: 198px;
+	width:100%;
+	background: #fff;
+	top:0;
+	left:0;
+	border:1px dashed #ccc;
+	border-left: none;
+	border-right: none;
+	opacity:0.6;
+}
+.ebook-read-more{
+	position: absolute;
+	display: block;
+	width:100%;
+	top:50%;
+	margin:-20px 0 0 !important;
+	font-size: 2em;
+}
+.ebook-more-body{
+	padding:1em 2em;
+}
+#fancybox-content #ebook-more-content{
+	font-size:2em;
+}
+/* スマートフォン用立ち読み */
+.ebook-more-modal{
+	position: absolute;
+	background: #fff;
+	z-index:1000;
+	overflow: hidden;
+	padding: 0;
+	margin:0;
+}
+.ebook-more-modal .ebook-more-body{
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	width:auto;
+	font-size: 3em;
+	padding-top:0;
+	padding-bottom: 0;
+}
+.ebook-more-modal .ebook-more-title{
+	position: absolute;
+	left:0;
+	top:0;
+	font-weight: bold;
+	height:40px;
+	line-height: 40px;
+	font-size:20px;
+	text-indent: 1em;
+	color:#999;
+	font-style: italic;
+}
+.ebook-more-modal .ebook-more-body::-webkit-scrollbar {
+	background: #eee;
+	overflow: visible;
+	width: 10px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.ebook-more-modal .ebook-more-body::-webkit-scrollbar-thumb {
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	background:#333;
+}
+.ebook-more-modal .ebook-more-body::-webkit-scrollbar-corner {
+	background: transparent;
+}
+.ebook-more-modal .ebook-more-close{
+	position: absolute;
+	top:1em;
+	right:1em;
+	font-size:30px;
+}
 /*対応端末リスト*/
 .ebook .device-list{
 	

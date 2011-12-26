@@ -256,18 +256,34 @@ function _fumiki_style_loader_tag($tag){
 add_filter('style_loader_tag', '_fumiki_style_loader_tag');
 
 
+
 /**
- * Nginxでエラーになるのを防ぐ
- * @param string $permalink
- * @param object $post
- * @param string $leavename
- * @return string 
+ * リダイレクトループにならないようにする
  */
-function _fumiki_save_ebook($permalink, $post = null, $leavename = ''){
-	if($post->post_type == 'ebook' || get_post_type() == 'ebook'){
-		$permalink = untrailingslashit($permalink);
+function _fumiki_wp_redirect(){
+	if(is_singular('ebook')){
+		remove_action('template_redirect', 'redirect_canonical');
 	}
-	return $permalink;
 }
-add_filter('post_link', '_fumiki_save_ebook');
-add_filter('the_permalink', '_fumiki_save_ebook', 10000);
+add_action('template_redirect', '_fumiki_wp_redirect', 1);
+
+/**
+ * 電子書籍の立ち読みを表示する
+ * @param string $content
+ * @return string
+ */
+function _fumiki_read_more($content){
+	if(is_singular('ebook')){
+		$contents = preg_split("/.*?<span id=\"more-[0-9]+\"><\/span>.*?\n/", $content);
+		if(count($contents) > 1){
+			$content = $contents[0];
+			$title = get_the_title();
+			$content .= <<<EOS
+<div class="ebook-more clearfix"><div id="ebook-more-content" class="ebook-more-body mincho">{$contents[1]}</div><div class="ebook-more-cover"></div><p class="ebook-read-more center"><a title="{$title} 立ち読み" class="button sans" href="#ebook-more-content">立ち読み</a></p></div>
+EOS;
+			
+		}
+	}
+	return $content;
+}
+add_filter('the_content', '_fumiki_read_more');

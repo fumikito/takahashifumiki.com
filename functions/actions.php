@@ -108,6 +108,10 @@ function _fumiki_dequeue_styles(){
 	if(!is_page('login')){
 		wp_dequeue_style('theme-my-login');
 	}
+	//電子書籍ページでなければfancybox削除
+	if(is_smartphone()){
+		wp_dequeue_style('fancybox');
+	}
 }
 add_action('wp_print_styles', '_fumiki_dequeue_styles', 10000);
 

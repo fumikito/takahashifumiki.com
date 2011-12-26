@@ -37,7 +37,62 @@ jQuery(document).ready(function($){
 			}
 		});
 		$('.entry a[rel=fancyboxGroup]').fancybox();
+		
+		//Ebook reading
+		w = 700;
+		h = $(window).height() - 80;
+		title = true;
+		$('.ebook-read-more a').fancybox({
+			autoDimensions: false,
+			centerOnScroll: true,
+			height: h,
+			width: w,
+			titleShow: title,
+			titlePosition: 'inside'
+		});
 	}
+	
+	if($('body').hasClass('smartphone')){
+		$('.ebook-read-more a').click(function(e){
+			e.preventDefault();
+			//サイズ情報を作成
+			var t,b,w,h,pad;
+			w = $(window).width();
+			h = window.innerHeight ? window.innerHeight : $(window).height();
+			t = $(window).scrollTop();
+			b = h + t;
+			pad = 40;
+			//コンテナ作成
+			var container = $(document.createElement('div'));
+			container.addClass('ebook-more-modal').css({
+				top: b,
+				left: 0,
+				width: w,
+				height: h - pad,
+				paddingTop:pad
+			});
+			//コンテンツをコピー
+			var content = $('#ebook-more-content').clone(false).attr('id', '').css({
+				height: h - pad - 20
+			});
+			//タイトルヘッダー作成
+			var title = $(document.createElement('div')).addClass('ebook-more-title sans');
+			title.text($(this).attr('title'));
+			//閉じるボタン作成
+			var closeBtn = $(document.createElement('a'));
+			closeBtn.addClass('button').addClass('ebook-more-close').text('×').attr('href', "#");
+			//追加してスライドイン
+			container.append(content).append(title).append(closeBtn).appendTo($('body')).animate({
+				top: t
+			}, 300, 'linear', function(e){
+				closeBtn.click(function(e){
+					e.preventDefault();
+					container.remove();
+				});
+			});
+		});
+	}
+	
 	//Tooltip
 	var originalTip = document.createElement('div');
 	$(originalTip).addClass('tooltip');
@@ -83,6 +138,7 @@ jQuery(document).ready(function($){
 			}
 		});
 	}
+	
 	//Get Ustream Status
 	//リクエストを発行する関数を定義
 	var setUstreamStatus = function(){
