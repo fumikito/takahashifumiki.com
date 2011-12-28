@@ -53,6 +53,7 @@ jQuery(document).ready(function($){
 	}
 	
 	if($('body').hasClass('smartphone')){
+		var smartPhoneReadContainer = null;
 		$('.ebook-read-more a').click(function(e){
 			e.preventDefault();
 			//サイズ情報を作成
@@ -60,36 +61,38 @@ jQuery(document).ready(function($){
 			w = $(window).width();
 			h = window.innerHeight ? window.innerHeight : $(window).height();
 			t = $(window).scrollTop();
-			b = h + t;
 			pad = 40;
 			//コンテナ作成
-			var container = $(document.createElement('div'));
-			container.addClass('ebook-more-modal').css({
-				top: b,
-				left: 0,
-				width: w,
-				height: h - pad,
-				paddingTop:pad
-			});
-			//コンテンツをコピー
-			var content = $('#ebook-more-content').clone(false).attr('id', '').css({
-				height: h - pad - 20
-			});
-			//タイトルヘッダー作成
-			var title = $(document.createElement('div')).addClass('ebook-more-title sans');
-			title.text($(this).attr('title'));
-			//閉じるボタン作成
-			var closeBtn = $(document.createElement('a'));
-			closeBtn.addClass('button').addClass('ebook-more-close').text('×').attr('href', "#");
-			//追加してスライドイン
-			container.append(content).append(title).append(closeBtn).appendTo($('body')).animate({
-				top: t
-			}, 300, 'linear', function(e){
-				closeBtn.click(function(e){
-					e.preventDefault();
-					container.remove();
+			if(smartPhoneReadContainer == null){
+				smartPhoneReadContainer = $(document.createElement('div')).addClass('ebook-more-modal').css({
+					top: b + t,
+					left: 0,
+					width: w,
+					height: h - pad,
+					paddingTop:pad,
+					display:'none'
 				});
-			});
+				//タイトルヘッダー作成
+				var title = $(document.createElement('div')).addClass('ebook-more-title sans').text($(this).attr('title'));
+				//閉じるボタン作成
+				var closeBtn = $(document.createElement('a')).addClass('button').addClass('ebook-more-close').text('×').attr('href', "#");
+				//追加
+				smartPhoneReadContainer.append(title).append(closeBtn).appendTo($('body'));
+				//クリックイベント添付
+				closeBtn.click(function(event){
+					event.preventDefault();
+					smartPhoneReadContainer.css('display','none');
+					$('#ebook-more-content').css({
+						height: 'auto'
+					}).prependTo($('.ebook-more'));
+				});
+			}
+			//スライドイン
+			smartPhoneReadContainer.css('top', t).fadeIn();
+			//コンテンツを移動
+			$('#ebook-more-content').css({
+				height: h - pad - 20
+			}).prependTo(smartPhoneReadContainer);
 		});
 	}
 	
