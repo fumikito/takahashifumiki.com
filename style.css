@@ -1866,6 +1866,18 @@ body.login #submit{margin:0;}
 	float:none;
 	width:auto;
 }
+/* OAuth */
+#wpg-login,
+#wpg-register,
+#wpg-regsiter{
+	text-align: center;
+}
+.login p.notice {
+	color: #05A;
+	border: 1px solid #06C;
+	background-color: #9FC9F4;
+	padding-left: 42px;
+}
 /* リンク */
 .login .tml-action-links{
 	padding-left:0;

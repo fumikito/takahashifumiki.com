@@ -5,13 +5,16 @@ Theme My Login will always look in your theme's directory first, before using th
 */
 ?>
 <div class="login" id="theme-my-login<?php $template->the_instance(); ?>">
-	<?php $template->the_action_template_message( 'lostpassword' ); ?>
+	<p class="message notice">
+		登録したメールアドレスを入力してください。パスワード再設定用のURLが送信されます。
+		メールアドレスも忘れてしまった方は<a href="/inquiry/">お問い合わせ</a>よりご連絡ください。
+	</p>
 	<?php $template->the_errors(); ?>
 	<form name="lostpasswordform" id="lostpasswordform<?php $template->the_instance(); ?>" action="<?php $template->the_action_url( 'lostpassword' ); ?>" method="post">
 		<table class="form-table">
 			<tbody>
 				<tr>
-					<th><label for="user_login<?php $template->the_instance(); ?>"><?php _e( 'Username or E-mail:', 'theme-my-login' ) ?></label></th>
+					<th><label for="user_login<?php $template->the_instance(); ?>">メールアドレス</label></th>
 					<td><input type="<?php attr_email(); ?>" name="user_login" id="user_login<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value( 'user_login' ); ?>" size="20" /></td>
 				</tr>
 			</tbody>
@@ -21,7 +24,7 @@ do_action( 'lostpassword_form' ); // Wordpress hook
 do_action_ref_array( 'tml_lostpassword_form', array( &$template ) ); // TML hook
 ?>
 		<p class="center">
-			<input class="button-primary" type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php _e( 'Get New Password', 'theme-my-login' ); ?>" />
+			<input class="button-primary" type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="パスワード再登録" />
 			<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'lostpassword' ); ?>" />
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 		</p>
