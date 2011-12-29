@@ -6,7 +6,7 @@
 /**
  * @var string
  */
-define("FUMIKI_VERSION", "2.3.26");
+define("FUMIKI_VERSION", "2.3.27");
 
 //エディタースタイルを登録
 add_editor_style("editor-style.css");
@@ -47,3 +47,4 @@ register_sidebar(array(
  * 画像サイズを追加する
  */
 add_image_size( 'medium-thumbnail', 300, 225, true );
+add_image_size( 'pinky-cover', 90, 120, true );

@@ -174,10 +174,12 @@ add_action('wp_login','_fumiki_last_login');
  * ウィジェットを登録する
  */
 function _fumiki_register_widget(){
+	get_template_part("widgets/facebook");	
 	register_widget('Fumiki_Facebook_Like');
+	get_template_part('widgets/ebook');
+	register_widget('Fumiki_eBook');
 }
 add_action('widgets_init', '_fumiki_register_widget');
-get_template_part("widgets/facebook");
 
 
 /**
