@@ -3,8 +3,15 @@
  * @package takahashifumiki
  */
 
-
-
+function _fumiki_meta_title($title, $sep = '|', $seplocation = 'right'){
+	if(is_singular('ebook')){
+		$title .= '電子書籍 '.$sep." ";
+	}elseif(is_post_type_archive('ebook')){
+		$title = '電子書籍一覧 '.$sep." ";
+	}
+	return $title;
+}
+add_filter('wp_title', '_fumiki_meta_title');
 
 /**
  * プロフィール編集画面にコンタクトフィールドを追加する

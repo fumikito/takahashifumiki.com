@@ -97,6 +97,8 @@ EOS;
 function fumiki_title(){
 	if(is_singular()){
 		return get_the_title();
+	}elseif(is_post_type_archive('ebook')){
+		return "高橋文樹の電子書籍一覧";
 	}elseif(is_home()){
 		return "最新の投稿";
 	}elseif(is_category()){
