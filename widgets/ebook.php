@@ -25,7 +25,16 @@ class Fumiki_eBook extends WP_Widget{
 		?>
 		<ul class="widgets-ebook">
 		<?php
-			$query = new WP_Query("post_type=ebook&post_status=publish&posts_per_page={$number}&orderby=rand");
+			$query_string = array(
+				"post_type" => "ebook",
+				"post_status" => "publish",
+				"posts_per_page" => $number,
+				"orderby" => "rand"
+			);
+			if(is_singular('ebook')){
+				$query_string["post__not_in"] = array(get_the_ID());
+			}
+			$query = new WP_Query($query_string);
 			if($query->have_posts()): while($query->have_posts()): $query->the_post(); $counter++;
 				$class = '';
 				if(lwp_is_free()){

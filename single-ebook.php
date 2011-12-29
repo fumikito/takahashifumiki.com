@@ -17,19 +17,29 @@ get_header('title');
 		</div>
 		<div class="ebook-detail clearfix">
 			<img class="cover" src="<?php echo get_post_meta(get_the_ID(), 'cover', true); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
+			<?php if(lwp_on_sale()): ?>
+				<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
+			<?php endif; ?>
+
 			<dl>
 				<dt>書名</dt>
 				<dd class="book-title"><?php the_title(); ?></dd>
 				<dt>著者</dt>
 				<dd><?php the_author(); ?></dd>
 				<dt>価格</dt>
-				<dd class="price mono">
-					<?php if(lwp_on_sale()): ?>
-						<?php echo lwp_currency_symbol().number_format(lwp_price());?><br />
-						<del><?php echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
+				<dd class="price">
+					<?php if(lwp_on_sale() && !lwp_is_owner()): ?>
+						<del class="old"><?php echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
 						<small class="mono"><?php echo lwp_discout_rate(); ?></small>
-					<?php else: ?>
-						<?php echo lwp_currency_symbol().number_format(lwp_price()); ?>
+						<br />
+					<?php endif; ?>
+					<span class="old"><?php echo lwp_currency_symbol().number_format(lwp_price()); ?></span>
+					<?php if(!lwp_is_owner() && !lwp_is_free()): ?>
+						<?php echo lwp_buy_now(null, null); ?>
+					<?php endif; ?>
+					<?php if(lwp_on_sale() && !lwp_is_owner()): ?>
+						<p class="lwp-rest"><?php echo lwp_campaign_end(); ?>までセール中！</p>
+						<?php echo lwp_campaign_timer(null, '残り時間:'); ?>
 					<?php endif; ?>
 				</dd>
 				<dt>分量</dt>
@@ -45,25 +55,11 @@ get_header('title');
 				<p class="message success">お買い上げありがとうございます。「ダウンロード」からファイルをダウンロードして下さい。感想お待ちしています。</p>
 			<?php elseif(lwp_is_free(true)): ?>
 				<p class="message notice">このコンテンツは無料です。「ダウンロード」からファイルをダウンロードして下さい。感想お待ちしています。</p>
-			<?php else: ?>
-				<p class="center">
-					<?php echo lwp_buy_now(null, null); ?>
-				</p>
 			<?php endif; ?>
 			<?php the_content(); ?>
 			<div class="clrB">
 				<?php link_pages('ページ: '); ?>
 			</div>
-			<?php if(!lwp_is_owner() && !lwp_is_free()): ?>
-				<p class="clrB center">
-					<?php echo lwp_buy_now(null, null); ?>
-				</p>
-			<?php endif; ?>
-		</div>
-		<div class="share">
-			<h3 class="mono">Share This eBook</h3>
-			<p>この電子書籍が気になったら、ぜひシェアしてください。</p>
-			<?php fumiki_share(get_the_title()."|".get_bloginfo('name'), get_permalink()); ?>
 		</div>
 		<div class="entry clearfix">
 			<h2>対応端末</h2>
@@ -147,7 +143,14 @@ get_header('title');
 			</table>
 		</div>
 		<?php endwhile; endif; ?>
+		<div class="share">
+			<h3 class="mono">Share This eBook</h3>
+			<p>この電子書籍が気になったら、ぜひシェアしてください。</p>
+			<?php fumiki_share(get_the_title()."|".get_bloginfo('name'), get_permalink()); ?>
+		</div>
 		<?php comments_template(); ?>
+		
+		<?php if ( function_exists('dynamic_sidebar')) dynamic_sidebar('電子書籍詳細下');  ?>
 	</div>
 	<!-- #main ends -->
 	

@@ -980,6 +980,7 @@ table.form-table input[type=search]{
 	margin:20px 0; 
 }
 .share h3,
+.entry-widget-title,
 #disqus_thread h3{
 	font-size:2em;
 	color:#4C5A65;
@@ -1439,6 +1440,7 @@ body.ebook .ebook-meta h1{
 /*書籍詳細*/
 .ebook-detail{
 	margin-top:20px;
+	position: relative;
 }
 .ebook-detail img.cover{
 	float:left;
@@ -1446,6 +1448,11 @@ body.ebook .ebook-meta h1{
 	box-shadow:1px 1px 5px #000;
 	-moz-box-shadow:1px 1px 5px #000;
 	-webkit-box-shadow:1px 1px 5px #000;
+}
+.ebook-detail img.on-sale{
+	position: absolute;
+	left:-15px;
+	top:-15px;
 }
 .ebook-detail dl{
 	width:340px;
@@ -1457,6 +1464,7 @@ body.ebook .ebook-meta h1{
 	font-size:1.4em;
 	line-height:1;
 	text-shadow:1px 1px 2px #fff;
+	font-weight: bold;
 }
 .ebook-detail dl dd{
 	border-left:none;
@@ -1472,6 +1480,21 @@ body.ebook .ebook-meta h1{
 .ebook-detail dl dd.price{
 	font-size:2em;
 	color:#ed8600;
+}
+.ebook-detail dl dd.price .lwp-buynow{
+	font-size:0.8em;
+}
+.ebook-detail dl dd.price .lwp-rest,
+.ebook-detail dl dd.price .lwp-timer{
+	font-size:0.6em;
+	color:#06c;
+}
+.ebook-detail dl dd.price .lwp-timer .day,
+.ebook-detail dl dd.price .lwp-timer .hour,
+.ebook-detail dl dd.price .lwp-timer .minutes,
+.ebook-detail dl dd.price .lwp-timer .seconds{
+	font-weight: bold;
+	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
 }
 .ebook-detail dl dd small{
 	font-size:0.85em;
@@ -1724,6 +1747,9 @@ body.ebooks .catch{
 	-moz-box-shadow:none;
 }
 /* 電子書籍ウィジェット */
+.entry-widget-title{
+	margin:1em 0 0.5em;
+}
 .widgets-ebook-content{
 	padding:5px 0;
 	border-bottom: 1px dashed #535154;
@@ -1731,6 +1757,10 @@ body.ebooks .catch{
 }
 .widgets-ebook-content:first-child{
 	border-top: 1px dashed #535154;
+}
+.widget_fumiki_ebook .widgets-ebook-content{
+	border-color: #ddd;
+	padding:10px 0;
 }
 .widgets-ebook-content .attachment-pinky-cover{
 	float:left;
@@ -1744,9 +1774,20 @@ body.ebooks .catch{
 	position:relative;
 	padding-right:3em;
 }
+.widget_fumiki_ebook .widgets-ebook-content h4{
+	font-size:2em;
+}
 .widgets-ebook-content h4 a{
 	text-shadow:1px 1px 2px #000;
 	text-decoration: none;
+}
+.widget_fumiki_ebook .widgets-ebook-content h4 a{
+	text-shadow:1px 1px 2px #fff;
+}
+.ebook .widget_fumiki_ebook .excerpt{
+	font-size:1.2em;
+	text-shadow:1px 1px 2px #fff;
+	margin:0.75em;
 }
 .widgets-ebook-content h4 .price{
 	position:absolute;

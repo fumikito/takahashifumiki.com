@@ -6,7 +6,7 @@
 /**
  * @var string
  */
-define("FUMIKI_VERSION", "2.3.29");
+define("FUMIKI_VERSION", "2.3.30");
 
 //エディタースタイルを登録
 add_editor_style("editor-style.css");
@@ -42,6 +42,14 @@ register_sidebar(array(
 	 'after_widget' => "</div>",
 	 'before_title' => '<h4 class="widgettitle mono">',
 	 'after_title' => "</h4>"
+));
+register_sidebar(array(
+	 'name' => "電子書籍詳細下",
+	 'id' => 'ebook-related',
+	 'before_widget' => '<div id="%1$s" class="widget-body clearfix %2$s">',
+	 'after_widget' => "</div>",
+	 'before_title' => '<h3 class="mono entry-widget-title">',
+	 'after_title' => "</h3>"
 ));
 /**
  * 画像サイズを追加する

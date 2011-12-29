@@ -9,6 +9,10 @@ get_header('title');
 		<?php if(have_posts()): while(have_posts()): the_post(); $counter++;?>
 		<div class="ebook-detail clearfix">
 			<a href="<?php the_permalink(); ?>"><img class="cover" src="<?php echo get_post_meta(get_the_ID(), 'cover', true); ?>" alt="<?php the_title(); ?>" width="240" height="320" /></a>
+			<?php if(lwp_on_sale()): ?>
+				<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
+			<?php endif; ?>
+
 			<dl>
 				<dt>書名</dt>
 				<dd class="book-title">
@@ -17,13 +21,19 @@ get_header('title');
 				<dt>著者</dt>
 				<dd><?php the_author(); ?></dd>
 				<dt>価格</dt>
-				<dd class="price mono">
-					<?php if(lwp_on_sale()): ?>
-						<?php echo lwp_currency_symbol().number_format(lwp_price());?><br />
-						<del><?php echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
+				<dd class="price">
+					<?php if(lwp_on_sale() && !lwp_is_owner()): ?>
+						<del class="old"><?php echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
 						<small class="mono"><?php echo lwp_discout_rate(); ?></small>
-					<?php else: ?>
-						<?php echo lwp_currency_symbol().number_format(lwp_price()); ?>
+						<br />
+					<?php endif; ?>
+					<span class="old"><?php echo lwp_currency_symbol().number_format(lwp_price()); ?></span>
+					<?php if(!lwp_is_owner() && !lwp_is_free()): ?>
+						<?php echo lwp_buy_now(null, null); ?>
+					<?php endif; ?>
+					<?php if(lwp_on_sale() && !lwp_is_owner()): ?>
+						<p class="lwp-rest"><?php echo lwp_campaign_end(); ?>までセール中！</p>
+						<?php echo lwp_campaign_timer(null, '残り時間:'); ?>
 					<?php endif; ?>
 				</dd>
 				<dt>分量</dt>
@@ -37,7 +47,7 @@ get_header('title');
 		<div class="entry excerpt clrL">
 			<?php the_excerpt(); ?>
 			<p class="center">
-				<a href="<?php the_permalink(); ?>" class="button">もっと詳しく</a>
+				<a href="<?php the_permalink(); ?>" class="button">電子書籍『<?php the_title(); ?>』の詳細</a>
 			</p>
 		</div>
 		<?php endwhile; endif;?>
@@ -48,7 +58,6 @@ get_header('title');
 
 	</div>
 	<!-- #main ends -->
-	
 	<?php get_sidebar('ebook'); ?>
 </div>
 
