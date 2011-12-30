@@ -1774,17 +1774,17 @@ body.ebooks .catch{
 	position:relative;
 	padding-right:3em;
 }
-.widget_fumiki_ebook .widgets-ebook-content h4{
+#main .widgets-ebook-content h4{
 	font-size:2em;
 }
 .widgets-ebook-content h4 a{
 	text-shadow:1px 1px 2px #000;
 	text-decoration: none;
 }
-.widget_fumiki_ebook .widgets-ebook-content h4 a{
+#main .widgets-ebook-content h4 a{
 	text-shadow:1px 1px 2px #fff;
 }
-.ebook .widget_fumiki_ebook .excerpt{
+.ebook #main .excerpt{
 	font-size:1.2em;
 	text-shadow:1px 1px 2px #fff;
 	margin:0.75em;
