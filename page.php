@@ -23,7 +23,7 @@ get_header('title');
 	</div>
 	<!-- #main ends -->
 	
-	<?php get_sidebar(); ?>
+	<?php if(is_ebook_related_pages()){ get_sidebar('ebook'); }else{get_sidebar();} ?>
 </div>
 
 <?php

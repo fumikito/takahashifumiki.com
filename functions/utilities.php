@@ -96,7 +96,8 @@ function fumiki_content_length($post = null){
  * @return boolean
  */
 function is_production(){
-	return ($_SERVER['SERVER_NAME'] == 'takahashifumiki.com');
+	//NginxのリバースプロキシでSever Nameが変更してる
+	return (boolean)($_SERVER['SERVER_NAME'] == 'takahashifumiki.com' || $_SERVER['SERVER_NAME'] == '_');
 }
 
 /**
@@ -127,6 +128,29 @@ function ssl_template_directory($echo = true){
 		echo $url;
 	}else{
 		return $url;
+	}
+}
+
+/**
+ * 指定したページが電子書籍関連ページか否かを返す
+ * @global object $post
+ * @param mixed $page
+ * @return boolean
+ */
+function is_ebook_related_pages($page = null){
+	if(is_page('ebooks')){
+		//親ページの場合
+		return true;
+	}else{
+		//子ページの場合
+		$parent = get_page_by_path('ebooks');
+		if(is_null($page)){
+			global $post;
+			$page = $post;
+		}else{
+			$page = get_page($page);
+		}
+		return ($page->post_parent == $parent->ID);
 	}
 }
 

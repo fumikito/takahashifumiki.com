@@ -6,7 +6,7 @@ $theme_dir = "/wp-content/themes/takahashifumiki/";
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>メンテナンス中｜高橋文樹.com</title>
     <link rel="stylesheet" href="<?php echo $theme_dir; ?>style.css" type="text/css" />
-    <?php if($_SERVER["SERVER_NAME"] == "takahashifumiki.com"): ?>
+    <?php if($_SERVER["SERVER_NAME"] == "takahashifumiki.com" || $_SERVER['SERVER_NAME'] == '_'): ?>
     <!-- Google Analytics // -->
 	<script type="text/javascript">
 	//<![CDATA[

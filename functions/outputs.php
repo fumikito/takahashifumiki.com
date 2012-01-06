@@ -58,7 +58,7 @@ function fumiki_nakanohito(){
 		?>
 		<p id="nakanohito"></p>
 		<noscript>
-		<img src="http://nakanohito.jp/an/?u=201672&h=893199&w=96&guid=ON&t=" width="96" height="96" alt="" border="0" />
+		<a href="http://nakanohito.jp/"><img src="http://nakanohito.jp/an/?u=201672&amp;h=893199&amp;w=96&amp;guid=ON&amp;t=" border="0" width="96" height="96" alt="" /></a>
 		</noscript>
 		<?php
 	}
