@@ -217,6 +217,18 @@ function _fumiki_remove_disqus(){
 }
 add_action('wp_footer', '_fumiki_remove_disqus', 1);
 
+/**
+ * キャプチャがSSL対応になっていないので直す
+ * @param array $dir
+ * @return array 
+ */
+function _fumiki_simplecaptch_override($dir){
+	if(is_ssl() && isset($dir['url'])){
+		$dir['url'] = str_replace('http:', 'https:', $dir['url']);
+	}
+	return $dir;
+}
+add_filter('wpcf7_upload_dir', '_fumiki_simplecaptch_override');
 
 /**
  * テーマディレクトリのURLをCDN対応にする

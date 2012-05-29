@@ -167,9 +167,8 @@ function fumiki_share($title, $url){
 	<!-- linkedin -->
 	<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
 	<script type="IN/Share" data-url="{$url}" data-counter="top"></script>
-	<!-- mixi check -->
-	<a href="http://mixi.jp/share.pl" class="mixi-check-button" data-button="button-5" data-key="d288247468354a3415683ce1320a8403e84d5351" data-url="{$url}">mixiチェック</a>
-	<script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script>
+	<!-- mixi いいね -->
+	<div data-plugins-type="mixi-favorite" data-service-key="d288247468354a3415683ce1320a8403e84d5351" data-size="large" data-href="{$url}" data-show-faces="false" data-show-count="true" data-show-comment="true" data-width="75" data-height="65"></div><script type="text/javascript">(function(d) {var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//static.mixi.jp/js/plugins.js#lang=ja';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script>
 	</div>
 EOS;
 }

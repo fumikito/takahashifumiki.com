@@ -6,7 +6,7 @@ Theme My Login will always look in your theme's directory first, before using th
 ?>
 <div class="login" id="theme-my-login<?php $template->the_instance(); ?>">
 	<p class="message notice">
-		登録確認用のメールが送信されますので、そのメールに記載されたURLへ移動し、登録を完了してください。
+		<a target="_blank" href="/ebooks/contract/">利用規約</a>にご同意頂いた上で登録していただくと、登録確認用のメールが送信されます。そのメールに記載されたURLへ移動すると登録完了です。
 	</p>
 	<?php $template->the_errors(); ?>
     <form class="registerform" name="registerform" id="registerform<?php $template->the_instance(); ?>" action="<?php $template->the_action_url( 'register' ); ?>" method="post" onsubmit="(function($){$('input[name=user_login]').val($('input[name=user_email]').val());})(jQuery);">
@@ -18,7 +18,7 @@ Theme My Login will always look in your theme's directory first, before using th
 		<?php do_action_ref_array( 'tml_register_form', array( &$template ) ); //TML hook ?>
 		<?php do_action( 'register_form' ); // Wordpress hook ?>
         <p class="center">
-            <input class="button-primary" type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php _e( 'Register', 'theme-my-login' ); ?>" />
+            <input class="button-primary" type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="利用規約に同意して登録" />
 			<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'register' ); ?>" />
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
         </p>

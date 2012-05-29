@@ -51,6 +51,16 @@ get_header('title');
 			</dl>
 		</div>
 		<div class="entry clearfix">
+			<?php if(!lwp_is_free()): ?>
+				<p class="message notice">
+					<?php if(is_user_logged_in()): ?>
+						この書籍を宣伝しませんか？　以下のURLを使って宣伝すると、<strong><?php the_lwp_reward(); ?></strong>の報酬が入ります。
+						<input readonly="readonly" type="text" class="reglar-text promotion-link" value="<?php the_lwp_promotion_link(); ?>" onclick="this.select(); "/>
+					<?php else: ?>
+						<a href="<?php echo wp_login_url(); ?>">会員登録</a>をすると、この書籍を宣伝して売上の一部<strong><?php the_lwp_reward(); ?></strong>を収益として受け取ることができます。
+					<?php endif; ?>
+				</p>
+			<?php endif; ?>
 			<?php if(lwp_is_owner()): ?>
 				<p class="message success">お買い上げありがとうございます。「ダウンロード」からファイルをダウンロードして下さい。感想お待ちしています。</p>
 			<?php elseif(lwp_is_free(true)): ?>

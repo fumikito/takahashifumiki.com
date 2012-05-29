@@ -12,7 +12,7 @@ function _fumiki_head(){
 	//Facebook用のメタ情報
 	if(is_front_page() || is_singular()){
 		$title = is_singular() ? wp_title('|', false, "right").get_bloginfo('name') : get_bloginfo('name');
-		$url = is_singular() ? get_permalink() : get_bloginfo('url');
+		$url = is_singular() ? get_permalink() : trailingslashit(get_bloginfo('url'));
 		$image = get_bloginfo('template_directory')."/img/facebook-top.jpg";
 		if(is_singular()){
 			$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
@@ -28,6 +28,7 @@ function _fumiki_head(){
 		$desc = is_singular() ? get_the_excerpt() : get_bloginfo('description');
 		$desc = str_replace("\n", "", $desc);
 		echo <<<EOS
+<meta property="og:locale" content="ja_jp" />
 <meta property="og:title" content="{$title}"/>
 <meta property="og:url" content="{$url}" />
 <meta property="og:image" content="{$image}" />
@@ -35,7 +36,6 @@ function _fumiki_head(){
 <meta name="description" content="{$desc}" />
 <meta property="og:type" content="{$type}" />
 <meta property="og:site_name" content="高橋文樹.com"/>
-<meta property="og:locale" content="ja_JP" />
 <meta property="fb:admins" content="1034317368" />
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
   {lang: 'ja'}
@@ -147,7 +147,7 @@ add_action("init", "_fumiki_menu");
  * アドミンバーを消す
  */
 function _fumiki_remove_adminbar(){
-	if(!is_admin()){
+	if(!is_admin() && $_SERVER['SERVER_NAME'] != 'takahashifumiki.local'){
 		show_admin_bar(false);
 		wp_deregister_script( 'admin-bar' );
 		wp_deregister_style( 'admin-bar' );

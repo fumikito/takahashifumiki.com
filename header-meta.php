@@ -7,7 +7,6 @@
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" title="高橋文樹.com 最新の投稿" />
 <link rel="pingback" href="<?php bloginfo('url'); ?>/xmlrpc.php" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/favicon.ico" />
-<meta name="author" content="Takahashi Fumiki" />
 <meta name="copyright" content="copyright 2008- takahashifumiki.com" />
 </head>
 <body <?php body_class(''); ?>>

@@ -97,7 +97,13 @@ a{overflow:hidden;}
 .dark_bg{
 	background: url(img/bg-texture-dark.jpg);
 }
-
+/* ルビ */
+.no-ruby rt:before{
+	content: '（';
+}
+.no-ruby rt:after{
+	content: '）';
+}
 
 
 /*---------------------
@@ -1628,7 +1634,16 @@ body.ebook .ebook-meta h1{
 	padding-top:5px;
 	text-shadow:1px 1px 2px #fff;
 }
-
+/*プロモーションリンク*/
+.ebook input.promotion-link{
+	border:none;
+	background: transparent;
+	display:block;
+	padding:0;
+	width:100%;
+	font-size:0.85em;
+	font-style:italic;
+}
 /*ダウンロードリスト*/
 .ebook .file-list{
 	margin-bottom:30px;

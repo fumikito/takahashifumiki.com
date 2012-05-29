@@ -9,14 +9,19 @@
 				<p class="greet clrB">
 					こんにちは。お越しいただけて嬉しいです。最後にログインしたのは<?php echo get_last_login(); ?>ですね。これからもまた来てください。
 				</p>
-				<p>
-					<a class="button" href="<?php bloginfo('url'); ?>/book-shelf/">本棚</a>
-					<?php if(current_user_can('edit_others_posts')): ?>
+				<?php if(current_user_can('edit_others_posts')): ?>
+					<p>
 						<a class="button" href="<?php echo admin_url(); ?>">管理画面</a>
-					<?php else: ?>
-						<a class="button" href="<?php echo wp_login_url(); ?>?action=profile">登録情報</a>
-					<?php endif; ?>
-					<a class="button" href="<?php echo wp_logout_url(); ?>">ログアウト</a>
+					</p>
+				<?php else: ?>
+					<p>
+						<a class="button" href="<?php echo wp_login_url(); ?>?action=profile">プロフィール</a>
+						<a class="button" href="<?php bloginfo('url'); ?>/book-shelf/">購入履歴</a>
+						<a class="button" href="<?php echo lwp_reward_link(); ?>">報酬</a>
+					</p>
+				<?php endif; ?>
+				<p>
+					<a class="" href="<?php echo wp_logout_url(); ?>">ログアウト</a>しますか？
 				</p>
 			</div>
 			<?php else: ?>
