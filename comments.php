@@ -1,0 +1,5 @@
+<?php
+/*
+ * Replaced by Disqus
+ */
+?>

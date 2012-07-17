@@ -83,7 +83,7 @@ function get_last_login($user_id = false) {
  * @return int
  */
 function fumiki_content_length($post = null){
-	$content = _fumiki_get_post($post)->post_content;
+	$content = strip_tags(apply_filters('the_content', _fumiki_get_post($post)->post_content));
 	if(is_string($content)){
 		return mb_strlen($content, 'utf-8');
 	}else{

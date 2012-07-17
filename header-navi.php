@@ -1,74 +1,31 @@
-<div id="navi">
-	<div class="margin clearfix">
-		<div class="grid_4">
-			<?php if(is_user_logged_in()): global $user_ID, $user_email, $user_identity; ?>
-			<p class="mono">You are logged in</p>
-			<div class="user_box">
-				<?php echo get_avatar($user_email, 48); ?>
-				<p class="user-name"><?php echo $user_identity; ?>さん</p>
-				<p class="greet clrB">
-					こんにちは。お越しいただけて嬉しいです。最後にログインしたのは<?php echo get_last_login(); ?>ですね。これからもまた来てください。
-				</p>
-				<?php if(current_user_can('edit_others_posts')): ?>
-					<p>
-						<a class="button" href="<?php echo admin_url(); ?>">管理画面</a>
-					</p>
-				<?php else: ?>
-					<p>
-						<a class="button" href="<?php echo wp_login_url(); ?>?action=profile">プロフィール</a>
-						<a class="button" href="<?php bloginfo('url'); ?>/book-shelf/">購入履歴</a>
-						<a class="button" href="<?php echo lwp_reward_link(); ?>">報酬</a>
-					</p>
-				<?php endif; ?>
-				<p>
-					<a class="" href="<?php echo wp_logout_url(); ?>">ログアウト</a>しますか？
-				</p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=264573556888294";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="navi" class="clearfix">
+	<?php if(is_front_page()): ?>
+	<ul class="recent-posts-top">
+		<?php $recent_query = new WP_Query(array(
+			'post_status' => 'publish',
+			'posts_per_page' => 5,
+			'post_type' => array('post', 'page', 'ebook', 'events')
+		)); $counter = 0; while($recent_query->have_posts()): $recent_query->the_post(); $counter++;?>
+		<li>
+			<strong>【更新情報：<?php echo get_post_type_object(get_post_type())->labels->name; ?>】</strong>
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<small>（<?php echo human_time_diff(strtotime(get_the_date('Y-m-d H:i:s')));?>前）</small>
+		</li>
+		<?php endwhile;?>
+	</ul>
+	<?php else: ?>
+		<?php if(function_exists('bcn_display') && !is_smartphone()): ?>
+			<div class="breadcrumb">
+				<i>&nbsp;</i><?php bcn_display(); ?>
 			</div>
-			<?php else: ?>
-			<p class="mono">Welcom, Guest!</p>
-				<?php echo get_avatar(1, 48); ?>
-				<p class="user-name">ようこそ!</p>
-				<p class="greet clrB">
-					高橋文樹.comではユーザー登録を受け付けています。登録をすることで、電子書籍の購入やお得な更新情報が手に入ります。
-				</p>
-				<p>
-					<a class="button" href="<?php echo wp_login_url(); ?>">ログイン</a>
-					<?php echo preg_replace("/<a/", "<a class=\"button\"", wp_register('','',false)); ?>
-				</p>
-			<?php endif;?>
-		</div>
-		<div class="grid_4">
-			<p class="mono">Description</p>
-			<p class="description">
-				<?php bloginfo('description'); ?>
-			</p>
-			<p class="mono">Topics</p>
-			<p><?php wp_tag_cloud('smallest=8&largest=14&unit=px&number=20&order=RAND'); ?></p>
-		</div>
-		<div class="grid_4">
-			<p class="mono">Main Pages</p>
-			<?php wp_nav_menu(array( 'theme_location' => 'main-pages','container_class' => 'main-page')); ?>
-		</div>
-		<div class="grid_4">
-			<p class="mono">Categories</p>
-			<ul>
-				<?php wp_list_cats("show_count=0&depth=1&hierarchical=1&exclude=47"); ?>
-			</ul>
-		</div>
-	</div>
-</div>
-
-<div id="header" class="margin dark_bg">
-	<div id="logo">
-		<a rel="home" href="<?php bloginfo('url')?>">
-			<img src="<?php bloginfo('template_directory')?>/img/header-logo.png" alt="<?php bloginfo('name'); ?>" width="380" height="40" />
-		</a>
-		<p class="shadow"><?php $desc = explode("。", get_bloginfo("description")); echo $desc[0]; ?></p>
-	</div>
-	<a class="button mono" href="#navi">Menu</a>
-	<div id="search">
-		<form method="get" action="<?php bloginfo('url'); ?>">
-			<input type="<?php attr_search(); ?>" class="tooltip" title="キーワードを入力したらEnterを教えて下さい。" name="s" id="s" value="検索" onfocus="this.value='';" onblur="if(this.value == '') this.value='検索';" />
-		</form>
-	</div>
-</div>
+		<?php endif; ?>
+	<?php endif; ?>
+</div><!-- //#navi -->

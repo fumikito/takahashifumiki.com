@@ -56,81 +56,18 @@ EOS;
 add_action('wp_head', '_fumiki_head', 0);
 
 /**
- * JSやCSSを読み込む
+ * faviconなどを書き出す 
  */
-function _fumiki_assets(){
-	if(!is_admin()){
-		//メインCSS
-		wp_enqueue_style(
-			'fumiki-style',
-			get_bloginfo('template_directory')."/style.css",
-			array(),
-			FUMIKI_VERSION
-		);
-		//JS
-		//wp_enqueue_script('mootools-core',"https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools-yui-compressed.js",array(),"1.3.2",ture);
-		wp_enqueue_script(
-			'fumiki-core',
-			get_bloginfo('template_directory')."/js/onload.js",
-			array('jquery'),
-			FUMIKI_VERSION,
-			true
-		);
-		//Ajaxの変数を確認
-		$endpoint = admin_url('admin-ajax.php');
-		if(!is_ssl()){
-			$endpoint = str_replace('https://', 'http://', $endpoint);
-		}
-		wp_localize_script('fumiki-core', 'FumikiAjax', array(
-			'endpoint' => $endpoint,
-			'nonce' => wp_create_nonce('fumiki_ajax')
-		));
-		////tmkm-amazonのCSSを打ち消し
-		remove_action("wp_head", "add_tmkmamazon_stylesheet");
-	}
+function _fumiki_identity(){
+	$dir = get_template_directory_uri();
+	echo <<<EOS
+<link rel="shortcut icon" href="{$dir}/img/favicon.ico" />
+<meta name="copyright" content="copyright 2008- takahashifumiki.com" />
+EOS;
 }
-add_action("wp_enqueue_scripts", "_fumiki_assets");
+add_action('wp_head', '_fumiki_identity');
 
 
-/**
- * CSSを削除する
- * @return void
- */
-function _fumiki_dequeue_styles(){
-	//wp-pagenaviのCSSを打ち消し
-	wp_dequeue_style("wp-pagenavi");
-	wp_dequeue_style('wp-tmkm-amazon');
-	//問い合わせページでなければ削除
-	if(!is_page('inquiry')){
-		wp_dequeue_style('contact-form-7');
-	}
-	//ログインページでなければ削除
-	if(!is_page('login')){
-		wp_dequeue_style('theme-my-login');
-	}
-	//電子書籍ページでなければfancybox削除
-	if(is_smartphone()){
-		wp_dequeue_style('fancybox');
-	}
-}
-add_action('wp_print_styles', '_fumiki_dequeue_styles', 10000);
-
-
-/**
- * Javascriptを削除する
- * @return void
- */
-function _fumiki_dequeue_scripts(){
-	//問い合わせページでなければ削除
-	if(!is_page('inquiry')){
-		wp_dequeue_script('contact-form-7');
-	}
-	//スマートフォンならFancybox削除
-	if(is_smartphone()){
-		wp_deregister_script('instapress');
-	}
-}
-add_action('wp_print_scripts', '_fumiki_dequeue_scripts', 10000);
 
 /**
  * メニューを登録する
@@ -143,21 +80,6 @@ function _fumiki_menu(){
 }
 add_action("init", "_fumiki_menu");
 
-/**
- * アドミンバーを消す
- */
-function _fumiki_remove_adminbar(){
-	if(!is_admin() && $_SERVER['SERVER_NAME'] != 'takahashifumiki.local'){
-		show_admin_bar(false);
-		wp_deregister_script( 'admin-bar' );
-		wp_deregister_style( 'admin-bar' );
-		add_filter('show_admin_bar', '__return_false');
-		remove_action( 'wp_head', 'wp_admin_bar_header' );
-		remove_action( 'wp_head', '_admin_bar_bump_cb' );
-		remove_action('wp_footer','wp_admin_bar_render',1000);
-	}
-}
-add_action('init', "_fumiki_remove_adminbar");
 
 /**
  * ログイン時間を記録する

@@ -22,10 +22,7 @@ class Fumiki_Facebook_Like extends WP_Widget{
 			echo $before_widget;
 			echo $before_title . 'Facebook' . $after_title;
 			echo <<<EOS
-<div id="fb-root"></div>
-<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
-<script type="text/javascript">FB.init("{$app_key}");</script>
-<fb:fan profile_id="{$page_id}" connections="{$icons}" width="{$width}" height="{$height}"{$css}></fb:fan>
+<fb:fan profile_id="{$page_id}" stream="false" connections="{$icons}" width="{$width}" height="{$height}"{$css}></fb:fan>
 EOS;
 			echo $after_widget;
 		}

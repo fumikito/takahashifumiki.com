@@ -58,6 +58,16 @@
 	font-size:0.85em;
 	border-bottom:1px dotted #999;
 }
+#lwp-invoice input[type=text],
+#lwp-invoice textarea{
+	border:1px solid #ddd;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+}
+#lwp-invoice textarea{
+	width: 90%;
+}
 #lwp-invoice  tbody tr:nth-child(2n) td,
 #lwp-invoice  tbody tr:nth-child(2n) th{
 	background: #f3f3f3;
@@ -124,3 +134,13 @@
 	vertical-align: top;
 	color:#000;
 }
+#lwp-invoice p.check-url-image{
+	text-align: center;
+	margin: 1em;
+	}
+	#lwp-invoice p.check-url-image strong{
+		font-size: 1.6em;
+		letter-spacing: 0.25em;
+		margin: 0.5em 0;
+		font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
+	}

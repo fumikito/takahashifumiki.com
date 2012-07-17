@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+/*---------------------
+ * 色設定
+ */
+
+$body-color: #4D4945;
+$deep-blue: #252e34;
+$semi-blue: #333F46;
+$pale-green: #8ab29f;
+$pale-yellow: #FBEE88;
+$white: #fcfcfc;
+$beige: #eeeeee;
+$thin-grey: #ddd;
+$light-grey: #666;
+$warning-red: #ff4d44;
+
+
+/*---------------------
+ * フォント設定
+ */
+$serif: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体","MS P明朝" ,"ヒラギノ明朝体3",serif;
+$old: Georgia, "Times New Roman", Times, serif;
+$sans: "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+$mono: 'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
+.mincho{ font-family: $serif; }
+.old{font-family: $old;}
+.sans{font-family: $sans;}
+.mono{font-family: $mono;}
+
+
+/*---------------------
+ * クリア設定
+ */
+html,body{margin:0;padding:0;}
+a img{border-style: none;}
+li{list-style: none;}
+p{margin:1em 0}
+
+
+/*フロート解除*/
+.clrL{clear: left;}
+.clrR{clear: right;}
+.clrB{clear: both;}
+
+/*clearfix*/
+.clearfix:after {content: ".";display: block;clear: both;height: 0;visibility: hidden;}
+.clearfix { display: inline-block; }
+/* exlude MacIE5 \*/
+* html .clearfix { height: 1% }
+.clearfix {display:block;}
+/* end MacIE5 */
+
+
+/*---------------------
+ * アラインメント
+ */
+.center{text-align: center;}
+.left{text-align: left}
+.right{text-align: right}
+.top{vertical-align: top}
+.middle{vertical-align: middle}
+.bottom{vertical-align: bottom}
+
+
+
+/*インラインブロック*/
+.inline-block{
+	display: inline-block;
+}
+
+/*リンク装飾*/
+a{
+	overflow: hidden;
+	&:link,
+	&:visited{
+		color: inherit;
+		text-decoration: underline;
+	}
+	&:hover{
+		color: inherit;
+		text-decoration: none;
+	}
+	&:active{
+		color: inherit;
+		text-decoration: underline;
+	}
+}
+
+/*---------------------
+ * 装飾
+ */
+/*背景画像*/
+.dark_bg{
+	background: url('../../img/bg-texture-dark.jpg');
+}
+/* テキストシャドウ */
+.shadow{
+	text-shadow:1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.hilight{
+	text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ルビ非対応ブラウザ */
+.no-ruby{
+	rt:before{
+		content: '（';
+	}
+	rt:after{
+		content: '）';
+	}
+}
+
+/* border */
+@mixin border-radius($radius: 10px){
+	-webkit-border-radius: $radius;
+	-khtml-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin divider($px: 1px, $style: solid){
+	border-top: $px $style $thin-grey;
+	border-bottom: $px $style $thin-grey;
+}
+
+/*メッセージボックス*/
+p.message{
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:0.5em;
+}
+p.warning{
+	color:#ff4d44;
+	border:1px solid #ff4d44;
+	background: #ffd4d2 url('../../img/icon-warning_32.png') 5px center no-repeat;
+	padding-left:42px;
+}
+p.success{
+	color:#059119;
+	border:1px solid #059119;
+	background: #c6f4cd url('../../img/icon-accepted_32.png') 5px center no-repeat;
+	padding-left:42px;
+}
+p.notice{
+	color:#05a;
+	border:1px solid #06C;
+	background: #9fc9f4 url('../../img/icon-notice_32.png') 5px center no-repeat;
+	padding-left:42px;
+}
+.ui-tooltip-dark{
+	font-size: 2em;
+	line-height: 1.1;
+}
+.ui-tooltip-content{
+	padding: 10px 20px;
+	font-weight: normal;
+}

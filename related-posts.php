@@ -1,41 +1,55 @@
 <div id="yarpp" class="related clearfix">
-<?php if(get_post_type() == 'post'): ?>
-<h3>&quot;<?php the_title(); ?>&quot;に関連する投稿</h3>
-	<?php if(function_exists('related_posts')) related_posts(); ?>
-<?php elseif(get_post_type() == 'page'):?>
-<h3>&quot;<?php the_title(); ?>&quot;に関連するページ</h3>
-	<?php if(function_exists('related_pages')) related_pages(); ?>
-<?php endif;?>
-		
-<div class="google"><?php google_ads(3); ?></div>
 
+	<div class="grid_4">
+		<?php
+		switch(get_post_type()){
+			case 'post':
+			case 'page':
+				$obj = get_post_type_object(get_post_type());
+		?>
+				<h3>関連する<?php echo $obj->labels->name; ?></h3>
+				<?php if(function_exists('related_posts')) related_posts(); ?>
+		<?php
+			break;
+		} ?>
+	</div>
 
-<div class="meta">
-<?php 
-	switch(get_post_type()): 
-		case 'post': $current = ""; foreach(get_the_category() as $cat){ if($cat->category_parent == 0){ $current = $cat->name; break;}} ?>
-		<h4>投稿カテゴリーについて</h4>
-		<p>
-			この投稿のカテゴリ<?php the_category(', '); ?>にはこの投稿と似た話題の記事があります。<br />
-			このカテゴリー以外の話題として<?php foreach(array('告知', '文芸活動', 'Web制作', 'その他') as $cat): if($cat != $current): ?>、<a href="<?php echo get_category_link(get_cat_ID($cat)); ?>"><?php echo $cat;?></a><?php endif; endforeach;?>があります。
-		</p>
-		<h4>キーワードについて</h4>
-		<p>この投稿に含まれるキーワード（<?php the_tags(''); ?>）を持つ投稿は内容が似ているかも知れません。</p>
-		<h4>その他</h4>
-		<p><a href="#footer">フッター</a>に最新投稿および人気記事のリストがあります。参考にしてください。</p>
-		<?php break;
-	case 'page': ?>
-		<h4>主要ページ</h4>
-		<p>高橋文樹.comの主要なページは<a href="#footer-nav">フッター</a>に記載しています。ぜひご一読ください。</p>
-		<h4>キーワード</h4>
-		<p>
-			高橋文樹.comで扱っている主要な話題はこちらです。
-		</p>
-		<p><?php wp_tag_cloud('smallest=8&largest=14&unit=px&number=20&order=RAND'); ?></p>
-		<?php break;
-	case 'ebook':
-		break;
-endswitch;?>
-</div>			
-
+	<div class="grid_4">
+		<h3>新着エントリー</h3>
+		<ol>
+		<?php
+			$query = new WP_Query('post_type=post&posts_per_page=5&post_status=publish');
+			if($query->have_posts()): while($query->have_posts()): $query->the_post(); 
+		?>
+			<li>
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<small class="date old"><?php the_time('Y/m/d'); ?></small>
+				<small class="score old"><?php echo human_time_diff(strtotime($post->post_date)); ?></small>
+			</li>
+		<?php endwhile; endif; wp_reset_query(); ?>
+		</ol>
+	</div>
+	
+	<div class="grid_4">
+		<h3>今週の人気エントリー</h3>
+		<?php if(function_exists('WPPP_show_popular_posts')){
+			WPPP_show_popular_posts( "list_tag=ol&title=&number=7&exclude=1142&days=7&cachename=wppp_weekly_posts&format=<a href=\"%post_permalink%\" title=\"%post_title_attribute%\">%post_title%</a><small class=\"date old\">%post_time%</small><small class=\"score old\">%post_views%PV</small>");
+		}?>
+	</div>
+	
+	<div class="grid_4">
+		<h3>はてな人気エントリー</h3>
+		<?php $hatena = get_hatena_rss(); ?>
+		<ol>
+			<?php $counter = 0; foreach($hatena->item as $item): $counter++;?>
+			<li>
+				<a href="<?php echo $item->link; ?>"><?php echo str_replace(" | 高橋文樹.com", "", (string)$item->title); ?></a>
+				<small class="date old"><?php echo mysql2date('Y/m/d', (string)  get_hatena_date($item)); ?></small>
+				<small class="score old"><?php echo number_format(get_hatena_count($item)); ?>B</small>
+			</li>
+			<?php if($counter >= 5){ break; } endforeach; ?>
+		</ol>
+	</div>
+	
+	
 </div><!--#related_post-->

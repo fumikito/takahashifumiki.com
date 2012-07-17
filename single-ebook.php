@@ -105,7 +105,7 @@ get_header('title');
 								<small>（<?php lwp_get_date($f); ?>）</small>
 							</div>
 							<div class="desc">
-								<?php echo wpautop($f->desc); ?>
+								<?php echo wpautop($f->detail); ?>
 								<small>対応端末：<?php echo implode(', ', lwp_get_file_devices($f)); ?></small>
 							</div>
 						</td>

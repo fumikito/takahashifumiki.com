@@ -6,24 +6,6 @@ jQuery(document).ready(function($){
 		tag += "</a>";
 		$('#nakanohito').html(tag);
 	}
-	//スライドアニメーション
-	$('#navi').css('height', 'auto');
-	var navHeight = $('#navi').height();
-	$('#navi').css('height', 0);
-	$('#header .button').click(function(e){
-		e.preventDefault();
-		if($(this).hasClass('toggle')){
-			$(this).removeClass('toggle');
-			$('#navi').animate({
-				height: 0
-			});
-		}else{
-			$(this).addClass('toggle');
-			$('#navi').animate({
-				height: navHeight
-			});
-		}
-	});
 	//Fancybox
 	if($.fancybox && !$('body').hasClass('smartphone')){
 		$('.entry a').each(function(index, elt){
@@ -95,51 +77,37 @@ jQuery(document).ready(function($){
 			}).prependTo(smartPhoneReadContainer);
 		});
 	}
-	
 	//Tooltip
-	var originalTip = document.createElement('div');
-	$(originalTip).addClass('tooltip');
-	$('.tooltip').each(function(index, elt){
-		var getTip = function(element){
-			var alt = element.alt;
-			if(alt == undefined || alt == ''){
-				alt = element.title;
+	$('.share .prev a, .share .next a').qtip({
+		content: {
+			text: function(api){
+				return $(this).text();
 			}
-			var t = $(originalTip).clone();
-			t.text(alt);
-			t.css({
-				position: 'absolute',
-				display: 'none'
-			});
-			return t;
-		}
-		switch(elt.nodeName.toLowerCase()){
-			case 'input':
-				var tip = getTip(elt);
-				tip.css({
-					top: $(elt).scrollTop() * $(elt).height() + 10,
-					left: $(elt).scrollLeft()
-				});
-				$('body').append(tip);
-				$(elt).blur(function(e){
-					
-				});
-				$(elt).focus(function(e){
-					
-				});
-				break;
-			default:
-				
-				break;
+		},
+		style: {
+			classes: 'ui-tooltip-dark ui-tooltip-shadow ui-tooltip-rounded'
 		}
 	});
 	//ホームの調整
-	if($('.sidebar-home').length > 0){
-		$('.sidebar-home .widget').each(function(index, elt){
-			if(index % 3 == 0){
-				$(elt).addClass('clrL');
+	if($('body.home').length > 0){
+		$('.recent-posts-top li:eq(0)').addClass('current');
+		var enterNext = function(){
+			var cur = $('.recent-posts-top .current');
+			var next = cur.next('li');
+			if(next.length < 1){
+				next = $('.recent-posts-top li:eq(0)');
 			}
-		});
+			setTimeout(function(){
+				cur.removeClass('current');
+				next.addClass('current');
+				cur.fadeOut('normal', function(){
+					next.fadeIn('normal', function(){
+						enterNext();
+					});
+				});
+			}, 5000);
+		};
+		enterNext();
 	}
 	
 	//Get Ustream Status

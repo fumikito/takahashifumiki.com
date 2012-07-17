@@ -9,6 +9,11 @@ function _fumiki_meta_title($title, $sep = '|', $seplocation = 'right'){
 	}elseif(is_post_type_archive('ebook')){
 		$title = '電子書籍一覧 '.$sep." ";
 	}
+	if(is_singular('events')){
+		$title .= 'イベント '.$sep." ";
+	}elseif(is_post_type_archive('events')){
+		$title = 'イベント一覧 '.$sep." ";
+	}
 	return $title;
 }
 add_filter('wp_title', '_fumiki_meta_title');
@@ -285,6 +290,31 @@ function _fumiki_wp_redirect(){
 	}
 }
 add_action('template_redirect', '_fumiki_wp_redirect', 1);
+
+global $normal_sidebar_counter;
+$normal_sidebar_counter = 0;
+
+/**
+ * サイドバーのウィジェットを
+ * @global int $normal_sidebar_counter
+ * @param array $params 
+ * @return array
+ */
+function _fumiki_sidebar_container($params){
+	global $normal_sidebar_counter;
+	if($params[0]['name'] == '通常投稿'){
+		$normal_sidebar_counter++;
+		if($normal_sidebar_counter % 3 == 1){
+			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 clrL"', $params[0]['before_widget']);
+		}
+		if($normal_sidebar_counter % 3 == 0){
+			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 last"', $params[0]['before_widget']);
+		}
+	}
+	return $params;
+}
+add_filter('dynamic_sidebar_params', '_fumiki_sidebar_container');
+
 
 /**
  * 電子書籍の立ち読みを表示する
