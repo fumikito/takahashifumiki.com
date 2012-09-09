@@ -1,3 +1,4 @@
+<? if(!is_smartphone() || is_front_page()): ?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -6,6 +7,8 @@
   js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=264573556888294";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<? endif; ?>
+
 <div id="navi" class="clearfix">
 	<?php if(is_front_page()): ?>
 	<ul class="recent-posts-top">
@@ -22,7 +25,7 @@
 		<?php endwhile;?>
 	</ul>
 	<?php else: ?>
-		<?php if(function_exists('bcn_display') && !is_smartphone()): ?>
+		<?php if(function_exists('bcn_display')): ?>
 			<div class="breadcrumb">
 				<i>&nbsp;</i><?php bcn_display(); ?>
 			</div>

@@ -7,23 +7,18 @@ get_header('title');
 	<div id="main">
 		<?php if(have_posts()): while(have_posts()): the_post(); ?>
 		<div class="entry clearfix">
-			<?php google_ads(); ?>
 			<?php the_content(); ?>
-				<div class="clrB">
-				<?php link_pages('ページ: '); ?>
-			</div>
+			<?php wp_link_pages(array(
+				'before' => '<div class="wp-pagenavi clrB"><span class="pages">ページ: </span>',
+				'after' => '</div>'
+			)); ?>
+			<? get_template_part('templates/single-share'); ?>
 		</div>
-		<div class="share">
-			<h3 class="mono">Share This</h3>
-			<p>この記事を気に入ったら、ぜひシェアしてください。</p>
-			<?php fumiki_share(get_the_title()."|".get_bloginfo('name'), get_permalink()); ?>
-		</div>
-		<?php endwhile; endif; ?>
-		<?php get_template_part('related-posts'); ?>
+		<? endwhile; endif; ?>
+		<? get_template_part('templates/related-posts'); ?>
+		<? get_sidebar(); ?>
 	</div>
 	<!-- #main ends -->
-	
-	<?php if(is_ebook_related_pages()){ get_sidebar('ebook'); }else{get_sidebar();} ?>
 </div>
 
 <?php

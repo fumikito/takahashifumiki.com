@@ -291,8 +291,12 @@ function _fumiki_wp_redirect(){
 }
 add_action('template_redirect', '_fumiki_wp_redirect', 1);
 
+
 global $normal_sidebar_counter;
 $normal_sidebar_counter = 0;
+
+global $ebook_sidebar_counter;
+$ebook_sidebar_counter = 0;
 
 /**
  * サイドバーのウィジェットを
@@ -301,13 +305,22 @@ $normal_sidebar_counter = 0;
  * @return array
  */
 function _fumiki_sidebar_container($params){
-	global $normal_sidebar_counter;
+	global $normal_sidebar_counter, $ebook_sidebar_counter;
 	if($params[0]['name'] == '通常投稿'){
 		$normal_sidebar_counter++;
 		if($normal_sidebar_counter % 3 == 1){
 			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 clrL"', $params[0]['before_widget']);
 		}
 		if($normal_sidebar_counter % 3 == 0){
+			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 last"', $params[0]['before_widget']);
+		}
+	}
+	if($params[0]['name'] == '電子書籍'){
+		$ebook_sidebar_counter++;
+		if($ebook_sidebar_counter % 3 == 1){
+			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 clrL"', $params[0]['before_widget']);
+		}
+		if($ebook_sidebar_counter % 3 == 0){
 			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 last"', $params[0]['before_widget']);
 		}
 	}
@@ -336,3 +349,14 @@ EOS;
 	return $content;
 }
 add_filter('the_content', '_fumiki_read_more');
+
+/**
+ * LWPフォームのヘッダーを変更
+ * @param string $title
+ * @return string 
+ */
+function _fumiki_lwp_form_title($title){
+	return '<img src="'.get_stylesheet_directory_uri().'/img/header-logo-big.png" width="380" height="40" alt="'.esc_attr($title).'" />'.
+		   '<span>'.get_bloginfo('description').'</span>';
+}
+add_filter('lwp_form_title', '_fumiki_lwp_form_title');

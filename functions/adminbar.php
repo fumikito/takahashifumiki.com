@@ -1,7 +1,12 @@
 <?php
 
-//管理バーを常に表示
-add_filter('show_admin_bar', '__return_true');
+/**
+ * 管理バーの追加を監視する 
+ */
+function _fumiki_admin_bar_visible(){
+	return !isset($_GET['lwp']);
+}
+add_filter('show_admin_bar', '_fumiki_admin_bar_visible');
 
 
 /**
@@ -9,49 +14,21 @@ add_filter('show_admin_bar', '__return_true');
  * @param WP_Admin_Bar $wp_admin_bar 
  */
 function _fumiki_admin_bar($wp_admin_bar){
-	//共通
-	if(!is_admin()){
-		//WordPressロゴ削除
-		$wp_admin_bar->remove_node('wp-logo');
-	}
-	//ログインしていないユーザー向け
-	if(!is_user_logged_in()){
-		$wp_admin_bar->add_menu(array(
-			'parent' => 'top-secondary',
-			'id' => 'my-account',
-			'title' => 'こんにちはゲストさん！'
-		));
-		$wp_admin_bar->add_group(array(
-			'parent' => 'my-account',
-			'id' => 'user-actions'
-		));
-		if(is_singular()){
-			$url = wp_login_url(get_permalink());
-		}else{
-			$url = wp_login_url();
-		}
-		$wp_admin_bar->add_menu(array(
-			'id' => 'adminbar-login',
-			'parent' => 'user-actions',
-			'title' => 'ログイン',
-			'href' => $url
-		));
-		$wp_admin_bar->add_menu(array(
-			'id' => 'adminbar-register',
-			'parent' => 'user-actions',
-			'title' => 'はじめての方は新規登録',
-			'href' => preg_replace("/^.*href=\"([^\"]+)\".*$/", "$1", wp_register('', '', false))
-		));
-	}else{
-		$wp_admin_bar->remove_node('new-content');
-	}
-	$wp_admin_bar->remove_node('site-name');
 	//ロゴ追加
+	$style = is_admin() ? ' style="width: 190px;height: 20px; margin-top:4px;"' : '';
 	$wp_admin_bar->add_menu(array(
-		'id' => 'site-name',
-		'title' => '<img alt="'.get_bloginfo('name').'" src="'.get_template_directory_uri().'/img/header-logo.png" width="190" height="20"/>',
+		'id' => 'main-menues',
+		'title' => '<img alt="'.get_bloginfo('name').'" src="'.get_template_directory_uri().'/img/header-logo.png" width="190" height="20"'.$style.' />',
 		'href' => home_url('/', 'http')
 	));
+	//ダッシュボード
+	if(current_user_can('edit_posts') && !is_admin()){
+		$wp_admin_bar->add_menu(array(
+			'parent' => 'main-menues',
+			'title' => 'ダッシュボード',
+			'href' => admin_url()
+		));
+	}
 	//主要ページのメニューを追加
 	$menu_name = 'main-pages';
 	$location = get_nav_menu_locations();
@@ -59,7 +36,7 @@ function _fumiki_admin_bar($wp_admin_bar){
 	$menu_items = wp_get_nav_menu_items($menu->term_id);
 	foreach($menu_items as $key => $item){
 		$wp_admin_bar->add_menu(array(
-			'parent' => 'site-name',
+			'parent' => 'main-menues',
 			'id' => 'page-menu-'.$key,
 			'title' => $item->title,
 			'href' => $item->url
@@ -105,4 +82,49 @@ function _fumiki_admin_bar($wp_admin_bar){
 		'href' => get_post_type_archive_link('events')
 	));
 }
-add_action( 'admin_bar_menu', '_fumiki_admin_bar', 10000);
+add_action( 'admin_bar_menu', '_fumiki_admin_bar', 1);
+
+/**
+ * 管理バーを修正する
+ * @param WP_Admin_Bar $wp_admin_bar 
+ */
+function _fumiki_admin_bar_fix($wp_admin_bar){
+	//共通
+	if(!is_admin()){
+		//WordPressロゴ削除
+		$wp_admin_bar->remove_node('wp-logo');
+	}
+	//ログインしていないユーザー向け
+	if(!is_user_logged_in()){
+		$wp_admin_bar->add_menu(array(
+			'parent' => 'top-secondary',
+			'id' => 'my-account',
+			'title' => 'こんにちはゲストさん！'
+		));
+		$wp_admin_bar->add_group(array(
+			'parent' => 'my-account',
+			'id' => 'user-actions'
+		));
+		if(is_singular()){
+			$url = wp_login_url(get_permalink());
+		}else{
+			$url = wp_login_url();
+		}
+		$wp_admin_bar->add_menu(array(
+			'id' => 'adminbar-login',
+			'parent' => 'user-actions',
+			'title' => 'ログイン',
+			'href' => $url
+		));
+		$wp_admin_bar->add_menu(array(
+			'id' => 'adminbar-register',
+			'parent' => 'user-actions',
+			'title' => 'はじめての方は新規登録',
+			'href' => preg_replace("/^.*href=\"([^\"]+)\".*$/", "$1", wp_register('', '', false))
+		));
+	}else{
+		$wp_admin_bar->remove_menu('new-content');
+	}
+	$wp_admin_bar->remove_menu('site-name');
+}
+add_action( 'admin_bar_menu', '_fumiki_admin_bar_fix', 10000);

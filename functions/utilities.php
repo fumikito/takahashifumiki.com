@@ -50,7 +50,8 @@ function is_smartphone(){
 		"iPhone",
 		"iPod",
 		"Mobile Safari", //Android,
-		"Android.*?Mobile"
+		"Android.*?Mobile",
+		"Opera Mini"
 	);
 	$iphone =  false;
 	foreach ( $useragents as $useragent ) {
@@ -59,6 +60,14 @@ function is_smartphone(){
 		}
 	}
 	return $iphone;
+}
+
+/**
+ * iPadの場合はtrue
+ * @return boolean
+ */
+function is_ipad(){
+	return false !== strpos($_SERVER['HTTP_USER_AGENT'], 'iPad');
 }
 
 /**
@@ -182,4 +191,67 @@ function attr_search($echo = true){
 		echo $type;
 	}
 	return $type;
+}
+
+/**
+ * XMLRPCのエンドポイントを追加するフック
+ * @param array $methods
+ * @return array
+ */
+function mywp_methods($methods){
+	$methods['mywp.users'] = 'mywp_users';
+	$methods['mywp.login'] = 'mywp_login';
+	return $methods;
+}
+add_filter('xmlrpc_methods', 'mywp_methods');
+
+/**
+ * ユーザーを取得する
+ * @global wpdb $wpdb
+ * @param array $args
+ * @return array
+ */
+function mywp_users($args){
+	global $wpdb;
+	//XML-RPCの引数はすべて一つの配列にまとまってきます
+	$paged = isset($args[0]) ? max(1, absint($args[0])) : 1;
+	$per_page = 20; //1ページ20件
+	$offset = ($paged - 1) * $per_page;
+	$sql = <<<EOS
+		SELECT SQL_CALC_FOUND_ROWS
+			u.ID, u.display_name
+		FROM {$wpdb->users} AS u
+		INNER JOIN {$wpdb->usermeta} AS um
+		ON u.ID = um.user_id AND um.meta_key = 'privacy_level'
+		WHERE CAST(um.meta_value AS UNSIGNED) = 0
+		ORDER BY u.user_registered DESC
+		LIMIT %d, %d
+EOS;
+	//データを連想配列で取得
+	$users = (array)$wpdb->get_results($wpdb->prepare($sql, $offset, $per_page), ARRAY_A);	
+	$total = intval($wpdb->get_var("SELECT FOUND_ROWS()"));
+	return array(
+		'total' => $total,
+		'users' => $users
+	);
+}
+
+/**
+ * ログインできているかどうかを試す
+ * @global wp_xmlrpc_server $wp_xmlrpc_server
+ * @param array $args
+ * @reuturn boolean
+ */
+function mywp_login($args){
+	global $wp_xmlrpc_server;
+	$username = $wp_xmlrpc_server->escape($args[0]);
+	$password = $wp_xmlrpc_server->escape($args[1]);
+	if(!($user = $wp_xmlrpc_server->login($username, $password))){
+		return $wp_xmlrpc_server->error;
+	}
+	return array(
+		'name' => $user->display_name,
+		'user_id' => $user->ID,
+		'mail' => $user->user_email
+	);
 }

@@ -79,7 +79,7 @@ function _fumiki_wp_die( $message, $title = '', $args = array() ) {
 		if(is_admin()){
 			wp_enqueue_style(
 				'fumiki-style',
-				get_bloginfo('template_directory')."/style.css",
+				get_template_directory_uri()."/styles/stylesheets/core.css",
 				array(),
 				FUMIKI_VERSION
 			);
@@ -95,39 +95,26 @@ function _fumiki_wp_die( $message, $title = '', $args = array() ) {
     <?php wp_head(); ?>
 </head>
 <body>
-	
-	<div id="header" class="margin dark_bg">
-		<div id="logo">
-			<a rel="home" href="<?php bloginfo('url'); ?>">
-				<img src="<?php bloginfo('template_directory'); ?>/img/header-logo.png" alt="高橋文樹.com" width="380" height="40" />
-			</a>
-			<p class="shadow">小説家高橋文樹が自ら情報を発信するブログです。</p>
-		</div>
-	</div>
-	
 	<div id="error404">
-		<div class="container">
-			<h1>
-				<span><?php echo $r['response'].": ".get_status_header_desc($r['response']); ?></span>
-			</h1>
-<?php endif; ?>
-	<?php echo $message; ?>
-	<?php if ( !function_exists( 'did_action' ) || !did_action( 'admin_head' ) ) : ?>
-			
+		<div class="logo center">
+			<a rel="home" href="http://takahashifumiki.com">
+				<img src="<?= get_template_directory_uri(); ?>/img/header-logo-big.png" alt="高橋文樹.com" width="380" height="40" />
+			</a>
+			<p class="description">小説家高橋文樹が自ら情報を発信するブログです。</p>
 		</div>
-		<!-- .container ends -->
-	</div>
-	<!-- .error404 ends -->
-	<div id="footer" class="dark_bg shadow">
-		<div id="copy-note" class="margin mono clearfix divider">
+		<h1>
+			<?php echo $r['response']." ".get_status_header_desc($r['response']); ?>
+		</h1>
+<?php endif; ?>
+		<?= $message; ?>
+<?php if ( !function_exists( 'did_action' ) || !did_action( 'admin_head' ) ) : ?>
+		<div id="copy-note" class="center">
 			<p>
 				&copy; 2008-<?php echo date('Y'); ?> Takahashi Fumiki
 			</p>
-			<p class="poweredby">
-				Proudly powered by <a href="http://wordpress.org">WordPress</a>.
-			</p>
 		</div><!-- .copy ends-->
 	</div>
+	<!-- .error404 ends -->
 	<?php endif; ?>
 	<?php wp_footer(); ?>
 </body>

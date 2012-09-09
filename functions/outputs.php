@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * @package WordPress
  */
@@ -21,8 +21,8 @@ function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true")
 		  type: 'profile',
 		  rpp: 5,
 		  interval: 3000,
-		  width: <?php echo $width; ?>,
-		  height: <?php echo $height; ?>,
+		  width: <? echo $width; ?>,
+		  height: <? echo $height; ?>,
 		  theme: {
 		    shell: {
 		      background: 'none',
@@ -36,7 +36,7 @@ function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true")
 		  },
 		  features: {
 		    scrollbar: false,
-		    loop: <?php echo $loop; ?>,
+		    loop: <? echo $loop; ?>,
 		    live: true,
 		    hashtags: true,
 		    timestamp: true,
@@ -46,7 +46,7 @@ function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true")
 		}).render().setUser('takahashifumiki').start();
 	//]]>
 	</script>
-<?php
+<?
 }
 
 /**
@@ -60,7 +60,7 @@ function fumiki_nakanohito(){
 		<noscript>
 		<a href="http://nakanohito.jp/"><img src="http://nakanohito.jp/an/?u=201672&amp;h=893199&amp;w=96&amp;guid=ON&amp;t=" border="0" width="96" height="96" alt="" /></a>
 		</noscript>
-		<?php
+		<?
 	}
 }
 
@@ -99,6 +99,8 @@ function fumiki_title(){
 		return get_the_title();
 	}elseif(is_post_type_archive('ebook')){
 		return "高橋文樹の電子書籍一覧";
+	}elseif(is_post_type_archive('events')){
+		return "高橋文樹のイベント一覧";
 	}elseif(is_home()){
 		return "最新の投稿";
 	}elseif(is_category()){
@@ -164,13 +166,16 @@ function fumiki_share($title, $url){
 		<span class="mono">{$subscribers}</span>
 		<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
 	</a>
-	<!-- linkedin -->
-	<script src="http://platform.linkedin.com/in.js" type="text/javascript" async="async"></script>
-	<script type="IN/Share" data-url="{$url}" data-counter="top"></script>
 	<!-- mixi いいね -->
 	<div data-plugins-type="mixi-favorite" data-service-key="d288247468354a3415683ce1320a8403e84d5351" data-size="large" data-href="{$url}" data-show-faces="false" data-show-count="true" data-show-comment="true" data-width="75" data-height="65"></div><script type="text/javascript">(function(d) {var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//static.mixi.jp/js/plugins.js#lang=ja';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script>
 	</div>
 EOS;
+	
+	/*
+	<!-- linkedin -->
+	<script src="http://platform.linkedin.com/in.js" type="text/javascript" async="async"></script>
+	<script type="IN/Share" data-url="{$url}" data-counter="top"></script>
+	 */
 }
 
 /**
@@ -194,34 +199,47 @@ function fumiki_archive_photo($size = "medium-thumbnail", $post = null){
 }
 
 
+/**
+ * アーカイブページでループを出力する
+ * @param string $additional_class
+ * @param string $score
+ * @param int $level 
+ */
 function fumiki_loop_container($additional_class = '', $score = false, $level = 2){
 	?>
-	<div class="archive-box archive-box-small<?php if(!empty($additional_class)) echo ' '.$additional_class;?>">
-		<small class="old"><?php the_time('Y/n/j (D)'); ?></small>
-		<a class="photo dark_bg" href="<?php the_permalink(); ?>">
-			<?php fumiki_archive_photo("thumbnail"); ?>
+	<div class="archive-box archive-box-small<? if(!empty($additional_class)) echo ' '.$additional_class;?> arvhice-<?= get_post_type(); ?>">
+		<? if(is_search()): ?>
+			<span class="post-type-label"><?= get_post_type_object(get_post_type())->labels->name; ?></span>
+		<? endif; ?>
+		<small class="old"><? the_time('Y/n/j (D)'); ?></small>
+		<a class="photo dark_bg" href="<? the_permalink(); ?>">
+			<? if(get_post_type() == 'ebook'): ?>
+				
+			<? else: ?>
+				<? fumiki_archive_photo("thumbnail"); ?>
+			<? endif; ?>
 		</a>
-		<div class="cat dark_bg"><span class="mono">Category: </span><?php the_category(",");?></div>
-		<h<?php echo $level; ?> class="archive-title">
-			<a href="<?php the_permalink(); ?>"><?php echo fumiki_trim(get_the_title(), 28); ?></a>
-		</h<?php echo $level; ?>>
+		<h<? echo $level; ?> class="archive-title">
+			<a href="<? the_permalink(); ?>"><?= fumiki_trim(get_the_title(), 28); ?></a>
+		</h<? echo $level; ?>>
 
 		<div class="desc">
-			<p class="clearfix"><?php echo fumiki_trim(get_the_excerpt(), 40); ?></p>
+			<p class="clearfix"><?= fumiki_trim(get_the_excerpt(), 40); ?></p>
 		</div>
-		<p class="tag">
-			<img src="<?php bloginfo('template_directory'); ?>/img/archive_icon_tag.png" alt="タグ" width="16" height="16" /><?php  the_tags('');?>
-		</p>
-		<p class="right">
-			<a class="button" href="<?php the_permalink(); ?>">Read more...&raquo;</a>
-		</p>
-		<?php if($score): ?>
-			<span class="score"><?php echo $score; ?></span>
-		<?php endif; ?>
+		<div class="taxonomies">
+		<? if(get_post_type() == 'post'): ?>
+			<span class="cat"><? the_category(",");?></span>
+			<span class="tag"><? the_tags('', ' ');?></span>
+		<? endif; ?>
+		</div>
+		<? if($score): ?>
+			<span class="score"><? echo $score; ?></span>
+		<? endif; ?>
 	</div>
 	<!-- .archive-box-small ends -->
-	<?php
+	<?
 }
+
 
 /**
  * Google Adsenceを出力する
@@ -286,6 +304,21 @@ EOS;
 				google_ad_slot = "6378073345";
 				google_ad_width = 300;
 				google_ad_height = 250;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+EOS;
+			break;
+		case 5:
+			echo <<<EOS
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-0087037684083564";
+				/* 髙橋文樹スマートフォン */
+				google_ad_slot = "4758038990";
+				google_ad_width = 320;
+				google_ad_height = 50;
 				//-->
 				</script>
 				<script type="text/javascript"

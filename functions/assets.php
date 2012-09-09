@@ -69,6 +69,8 @@ function _fumiki_dequeue_styles(){
 	if(is_smartphone()){
 		wp_dequeue_style('fancybox');
 	}
+	//LWP FORMはいらない
+	wp_dequeue_style('lwp-form');
 }
 add_action('wp_print_styles', '_fumiki_dequeue_styles', 10000);
 

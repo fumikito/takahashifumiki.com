@@ -5,8 +5,9 @@ $theme_dir = "/wp-content/themes/takahashifumiki/";
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>メンテナンス中｜高橋文樹.com</title>
-    <link rel="stylesheet" href="<?php echo $theme_dir; ?>style.css" type="text/css" />
-    <?php if($_SERVER["SERVER_NAME"] == "takahashifumiki.com" || $_SERVER['SERVER_NAME'] == '_'): ?>
+    <link rel="stylesheet" href="<?php echo $theme_dir; ?>styles/stylesheets/core.css" type="text/css" />
+    <meta name="Viewport" content="width=320" />
+	<?php if($_SERVER["SERVER_NAME"] == "takahashifumiki.com" || $_SERVER['SERVER_NAME'] == '_'): ?>
     <!-- Google Analytics // -->
 	<script type="text/javascript">
 	//<![CDATA[
@@ -25,41 +26,20 @@ $theme_dir = "/wp-content/themes/takahashifumiki/";
 	<?php endif; ?>
 </head>
 <body>
-	<div id="header" class="margin dark_bg">
-		<div id="logo">
-			<a rel="home" href="http://takahashifumiki.com">
-				<img src="<?php echo $theme_dir; ?>/img/header-logo.png" alt="高橋文樹.com" width="380" height="40" />
-			</a>
-			<p class="shadow">小説家高橋文樹が自ら情報を発信するブログです。</p>
-		</div>
-	</div>
-
 	<div id="error404">
-		<div class="container">
-			<h1>
-				<span>503: Service Unavailable</span>
-				<br />
-			    <small>
-					<?php 
-					$mamo_msg = $this->mamo_template_tag_message();
-					?>
-					<?php echo preg_replace('/<h1.*h1>/', '', $mamo_msg); ?>
-			    </small>
-			</h1>
+		<div class="logo center">
+			<a rel="home" href="http://takahashifumiki.com">
+				<img src="<?php echo $theme_dir; ?>/img/header-logo-big.png" alt="高橋文樹.com" width="380" height="40" />
+			</a>
+			<p class="description">小説家高橋文樹が自ら情報を発信するブログです。</p>
 		</div>
-		<!-- .container ends -->
-	</div>
-	<!-- .error404 ends -->
-	
-	<div id="footer" class="dark_bg shadow">
-		<div id="copy-note" class="margin mono clearfix divider">
+		<?= $mamo_msg = $this->mamo_template_tag_message(); ?>
+		<div id="copy-note" class="center">
 			<p>
 				&copy; 2008-<?php echo date('Y'); ?> Takahashi Fumiki
 			</p>
-			<p class="poweredby">
-				Proudly powered by <a href="http://wordpress.org">WordPress</a>.
-			</p>
 		</div><!-- .copy ends-->
 	</div>
+	<!-- .error404 ends -->
 </body>
 </html>

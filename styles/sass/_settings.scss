@@ -9,12 +9,12 @@ $deep-blue: #252e34;
 $semi-blue: #333F46;
 $pale-green: #8ab29f;
 $pale-yellow: #FBEE88;
+$orange: #ED8600;
 $white: #fcfcfc;
 $beige: #eeeeee;
 $thin-grey: #ddd;
 $light-grey: #666;
 $warning-red: #ff4d44;
-
 
 /*---------------------
  * フォント設定
@@ -27,7 +27,7 @@ $mono: 'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'O
 .old{font-family: $old;}
 .sans{font-family: $sans;}
 .mono{font-family: $mono;}
-
+strong{font-weight: bold;}
 
 /*---------------------
  * クリア設定

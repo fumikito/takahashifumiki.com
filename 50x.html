@@ -4,8 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>nginx error!｜高橋文樹.com</title>
-    <link rel="stylesheet" href="/wp-content/themes/takahashifumiki/style.css" type="text/css" />
-    <!-- Google Analytics // -->
+    <link rel="stylesheet" href="/wp-content/themes/takahashifumiki/styles/stylesheets/core.css" type="text/css" />
+    <meta name="Viewport" content="width=320" />
+	<!-- Google Analytics // -->
 	<script type="text/javascript">
 	//<![CDATA[
 	  var _gaq = _gaq || [];
@@ -22,38 +23,23 @@
 	<!-- // Google Analytics -->
 </head>
 <body>
-	<div id="header" class="margin dark_bg">
-		<div id="logo">
-			<a rel="home" href="/">
-				<img src="/wp-content/themes/takahashifumiki/img/header-logo.png" alt="高橋文樹.com" width="380" height="40" />
-			</a>
-			<p class="shadow">小説家高橋文樹が自ら情報を発信するブログです。</p>
-		</div>
-	</div>
-
 	<div id="error404">
-		<div class="container">
-			<h1>
-				<span>Nginx Error!</span>
-			</h1>
-			<p class="message warning">
-				大変申し訳ございません。サーバでエラーが発生したため、現在ご利用できません。
-				お手数ですが、<a href="https://takahashifumiki.com/inquiry/">お問い合わせ</a>やTwitter（<a href="https://twitter.com/#!/takahashifumiki">@takahashifumiki</a>）などで高橋文樹までお知らせいただけると幸いです。
-			</p>
+		<div class="logo center">
+			<a rel="home" href="http://takahashifumiki.com">
+				<img src="/wp-content/themes/takahashifumiki/img/header-logo-big.png" alt="高橋文樹.com" width="380" height="40" />
+			</a>
+			<p class="description">小説家高橋文樹が自ら情報を発信するブログです。</p>
 		</div>
-		<!-- .container ends -->
-	</div>
-	<!-- .error404 ends -->
-	
-	<div id="footer" class="dark_bg shadow">
-		<div id="copy-note" class="margin mono clearfix divider">
+		<h1>Nginx Error!</h1>
+		<p class="message warning left">
+			大変申し訳ございません。サーバでエラーが発生したため、現在ご利用できません。
+			お手数ですが、<a href="https://takahashifumiki.com/inquiry/">お問い合わせ</a>やTwitter（<a href="https://twitter.com/#!/takahashifumiki">@takahashifumiki</a>）などで高橋文樹までお知らせいただけると幸いです。
+		</p>
+		<div id="copy-note" class="center">
 			<p>
-				&copy; 2008- Takahashi Fumiki
-			</p>
-			<p class="poweredby">
-				Proudly powered by <a href="http://wordpress.org">WordPress</a>.
+				&copy; 2008-<?php echo date('Y'); ?> Takahashi Fumiki
 			</p>
 		</div><!-- .copy ends-->
 	</div>
+	<!-- .error404 ends -->
 </body>
-</html>

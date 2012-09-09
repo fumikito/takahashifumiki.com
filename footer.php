@@ -18,6 +18,11 @@
 					<a class="button mono" href="<?php echo home_url('/about/'); ?>">Want to know more?</a>
 				</p>
 			</div>
+		</div>
+		
+		<? if(!is_smartphone()): ?>
+		
+		<div class="grid_4">
 			<h4 class="mono second">Recent tweet</h4>
 			<blockquote class="clearfix left">
 				<i class="tweet"></i>
@@ -39,9 +44,7 @@
 			</p>
 		</div>
 		
-		<div class="grid_4">
-			<?php dynamic_sidebar('フッター右端'); ?>
-		</div>
+		<? endif; ?>
 		
 		<div class="grid_4">
 			<h4 class="mono second">Find me at</h4>
@@ -55,17 +58,20 @@
 				<li><a target="_blank" class="instagram" href="http://listagr.am/n/takahashifumiki">Instagram</a></li>
 				<li><a target="_blank" class="linkedin" href="http://www.linkedin.com/pub/<?php echo rawurlencode('文樹-高橋'); ?>/41/5b4/a54">Linkedin</a></li>
 			</ol>
+			<? if(!is_smartphone()): ?>
 			<h4 class="mono second next">My Web sites</h4>
 			<ol class="inner">
 				<li><a class="hametuha" href="http://hametuha.com/author/takahashi_fumiki/">破滅派 | 文芸誌</a></li>
 				<li><a class="hametuha" target="_blank" href="http://hametuha.co.jp">株式会社破滅派</a></li>
 			</ol>
+			<? endif; ?>
 		</div>
+		
 		
 		<div class="grid_4">
 			<h4 class="mono second">Contact me with</h4>
 			<ol class="inner">
-				<li><a class="mail" href="<?php echo home_url('/inquiry/', 'https'); ?>/inquiry/">お問い合わせ</a></li>
+				<li><a class="mail" href="<?php echo home_url('/inquiry/', 'https'); ?>">お問い合わせ</a></li>
 				<li><a class="feed" href="<?php bloginfo('rss_url'); ?>">RSSフィード</a></li>
 				<li class="contact">執筆・Web制作のお仕事については<a href="<?php echo home_url('/inquiry/', 'https'); ?>">お問い合わせフォーム</a>よりご連絡下さい。</li>
 			</ol>

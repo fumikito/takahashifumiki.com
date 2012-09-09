@@ -14,8 +14,8 @@ get_header('navi');
 		</div>
 	</div>
 	
-	<? fumiki_share(get_bloginfo('name'), home_url());?>
-
+	
+	<? if(!is_smartphone()) fumiki_share(get_bloginfo('name'), home_url());?>
 	
 	
 	<div class="desc-box clearfix">
@@ -99,84 +99,11 @@ get_header('navi');
 	</div>
 	
 	<div class="desc-parts clearfix">
-		<h2>私とあなたの関わり方</h2>
-		<p class="desc">
-			高橋文樹.comは私とこのサイトを訪れる方の交流の場にしようと思っています。
-			とはいえ私には人に与えられるものが多くないため、一般的なWebサイトと同じものがほとんどです。
-			しかし、中には実験的なもの／珍しいものもありますので、
-			宝探しでもするつもりでお楽しみください。
-		</p>
+		<h2><?= post_custom('excerpt_title'); ?></h2>
+		<div class="desc">
+			<?= post_custom('excerpt'); ?>
+		</div>
 		<? dynamic_sidebar('通常投稿'); ?>
-		<div class="grid_3">
-			<h3>文学について</h3>
-			<p>
-				高橋文樹は小説家ですので、文学的なコンテンツを提供しています。
-				カテゴリー<?= get_cat_tag('文芸活動'); ?>などに読書日記を上げたりしています。
-			</p>
-		</div>
-		<div class="grid_3">
-			<h3>電子書籍</h3>
-			<p>
-				このサイトでは私の作品を<a href="<?= get_post_type_archive_link('ebook'); ?>">電子書籍</a>にして販売しています。
-				文芸作品で対価を得るための新しい方法として模索中ですので、
-				ご興味のある方はご覧下さい。
-			</p>
-		</div>
-		<div class="grid_3 last">
-			<h3>破滅派について</h3>
-			<p>
-				<a href="http://hametuha.com">破滅派</a>というのは私が主催する文芸同人誌ですが、
-				登記して<a href="http://hametuha.co.jp">株式会社化</a>しました。
-				「文芸は経済的に自立しえるのか」というテーマの元、日々悪戦苦闘しています。
-				破滅派タグにまとまっています。
-			</p>
-		</div>
-		<div class="grid_3">
-			<h3>Web制作について</h3>
-			<p>
-				私は小説で生計を立てられないので、Web制作で生活をまかなっています。
-				その中で考えたことや知ったことを折に触れて記事にしています。
-				カテゴリー<?= get_cat_tag('Web制作') ?>にまとまっています。
-				このサイトのアクセスのほとんどはこの話題になってしまいました……
-			</p>
-		</div>
-		<div class="grid_3">
-			<h3>WordPress</h3>
-			<p>
-				<a href="http://ja.wordpress.org" target="_blank">WordPress</a>とはこのサイトのベースになっているオープンソースソフトウェアです。
-				かれこれ5年ばかりいじっており、プラグインという拡張用ソフトウェアも幾つか
-				自作しています（<a href="<?= home_url('/about/wp-plugins/'); ?>">一覧</a>）。
-				興味のある方はWordPressタグや<a href="http://profiles.wordpress.org/Takahashi_Fumiki/" target="_blank">公式リポジトリ</a>をご覧下さい。
-			</p>
-		</div>
-		<div class="grid_3 last">
-			<h3>Do It Yourself</h3>
-			<p>
-				自分で作ることを<abbr title="Do It Yourself">DIY</abbr>と言いますが、
-				私は山梨に3,000坪の土地を共同購入し、セルフビルドで家を建てています。
-				自らの求めに応じて作るという観念に取り憑かれた結果、家まで作ることになりました。
-				この詳細は建築タグなどにまとめられています。
-			</p>
-		</div>
-		<div class="grid_3">
-			<h3>キーワード一覧</h3>
-			<p class="tagcloud">
-				<? wp_tag_cloud('smallest=8&largest=24&unit=px&order=RAND'); ?>
-			</p>
-		</div>
-		<div class="grid_3">
-			<h3>注意事項</h3>
-			<p>
-				このサイトを利用するにあたって基本的に注意するようなことはありませんが、
-				<a href="<?= home_url('/policy/'); ?>">プライバシーポリシー</a>や<a href="<?= home_url('/ebook/contract/'); ?>">電子書籍を購入するにあたっての利用規約</a>をお読み頂ければ、
-				そんなにひどいことにはならないと思われます。
-				不明な点などありましたら、<a href="<?= home_url('/inquiry/', 'https'); ?>">お問い合わせ</a>よりご連絡ください。
-			</p>
-		</div>
-		<div class="grid_3 last">
-			<h3>注意事項</h3>
-			<script charset="utf-8" type="text/javascript" src="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822/JP/hametuha-22/8001/44e350e4-5f34-4f29-b6a0-62408c33402d"></script>
-		</div>
 	</div>
 	
 	<? endif; ?>

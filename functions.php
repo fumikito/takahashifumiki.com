@@ -6,7 +6,7 @@
 /**
  * @var string
  */
-define("FUMIKI_VERSION", "2.3.34");
+define("FUMIKI_VERSION", "3.0.5");
 
 //エディタースタイルを登録
 add_editor_style("editor-style.css");
@@ -23,14 +23,6 @@ get_template_part("functions/wp_die");
 get_template_part("functions/nlp");
 //サイドバーの登録
 register_sidebar(array(
-	 'name' => "フッター右端",
-	 'id' => 'footer-sidebar',
-	 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	 'after_widget' => "</div>",
-	 'before_title' => '<h4 class="widgettitle mono">',
-	 'after_title' => "</h4>"
-));
-register_sidebar(array(
 	 'name' => "通常投稿",
 	 'id' => 'normal-sidebar',
 	 'before_widget' => '<div id="%1$s" class="widget grid_3">',
@@ -41,17 +33,17 @@ register_sidebar(array(
 register_sidebar(array(
 	 'name' => "電子書籍",
 	 'id' => 'ebook-sidebar',
-	 'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	 'before_widget' => '<div id="%1$s" class="widget grid_3 %2$s">',
 	 'after_widget' => "</div>",
-	 'before_title' => '<h4 class="widgettitle mono">',
-	 'after_title' => "</h4>"
+	 'before_title' => '<h3>',
+	 'after_title' => "</h3>"
 ));
 register_sidebar(array(
 	 'name' => "電子書籍詳細下",
 	 'id' => 'ebook-related',
 	 'before_widget' => '<div id="%1$s" class="widget-body clearfix %2$s">',
 	 'after_widget' => "</div>",
-	 'before_title' => '<h3 class="mono entry-widget-title">',
+	 'before_title' => '<h3 class="entry-widget-title">',
 	 'after_title' => "</h3>"
 ));
 /**

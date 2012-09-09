@@ -35,6 +35,7 @@ class Fumiki_eBook extends WP_Widget{
 				$query_string["post__not_in"] = array(get_the_ID());
 			}
 			$query = new WP_Query($query_string);
+			$counter = 0;
 			if($query->have_posts()): while($query->have_posts()): $query->the_post(); $counter++;
 				$class = '';
 				if(lwp_is_free()){
@@ -58,9 +59,6 @@ class Fumiki_eBook extends WP_Widget{
 				</h4>
 				<p class="excerpt">
 					<?php echo fumiki_trim(get_the_excerpt(), 40); ?>
-				</p>
-				<p class="right">
-					<a href="<?php the_permalink(); ?>" class="button mono">More&raquo;</a>
 				</p>
 				<?php if(lwp_on_sale()): ?>
 					<img class="sale-icon" src="<?php bloginfo('template_directory'); ?>/img/icon-sale-32.png" width="32" height="32" alt="Sale" />

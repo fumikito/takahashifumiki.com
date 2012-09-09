@@ -5,8 +5,9 @@
 
 @import "compass/reset";
 @import "compass/css3/box-shadow";
+@import "compass/css3/background-size";
+@import "compass/typography/text/ellipsis";
 @import "_settings";
-
 
 
 /****************************************
@@ -53,12 +54,12 @@ a.button,
 input.button,
 #nlmg-resign-form p.submit input,
 .button-secondary{
-	padding:5px 7px;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
-	border:1px solid #273138;
-	color:#fff;
+	display: inline-block;
+	padding: 5px 7px;
+	border: 1px solid #273138;
+	color: #fff;
+	@include border-radius(3px);
+	@include box-shadow(1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset);
 	background: #3d4850; /* Old browsers */
 	background: -moz-linear-gradient(top, #3d4850 0%, #1c252b 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d4850), color-stop(100%,#1c252b)); /* Chrome,Safari4+ */
@@ -67,9 +68,6 @@ input.button,
 	background: -ms-linear-gradient(top, #3d4850 0%,#1c252b 100%); /* IE10+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d4850', endColorstr='#1c252b',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, #3d4850 0%,#1c252b 100%); /* W3C */
-	-webkit-box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset;
-	-moz-box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset;
-	box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset;
 }
 a.button:link,
 a.button:visited,
@@ -97,27 +95,24 @@ a.button:active,
 input.button:active,
 #nlmg-resign-form p.submit input:active,
 .button-secondary{
-	background:#252e34;
+	background: #252e34;
 }
 /* プライマリーボタン */
 p.submit{
-	float:right;
-	margin:0 0 10px;
+	float: right;
+	margin: 0 0 10px;
 }
 .button-primary,
 .lwp-buynow{
-	font-size:1.1em;
-	font-weight:bold;
-	cursor:pointer;
-	padding:5px 7px;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 5px 7px;
 	border:1px solid #9B4C03;
-	color:#fff;
-	-webkit-box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(255,255,255,0.5), 0 0 3px rgba(255,255,255,0.5) inset;
-	-moz-box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(255,255,255,0.5), 0 0 3px rgba(255,255,255,0.5) inset;
-	box-shadow:1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(255,255,255,0.5), 0 0 3px rgba(255,255,255,0.5) inset;
+	color: #fff;
+	@include border-radius(3px);
+	@include box-shadow(1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(255,255,255,0.5), 0 0 3px rgba(255,255,255,0.5) inset);
 	background: #ffb76b; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffb76b), color-stop(50%,#ffa73d), color-stop(51%,#ff7c00), color-stop(100%,#ff7f04)); /* Chrome,Safari4+ */
@@ -127,30 +122,26 @@ p.submit{
 	background: linear-gradient(top,  #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
 	text-shadow:1px 1px 3px #aaa;
+	&:link,
+	&:visited{
+		color: #fff;
+	}
+	&:hover{
+		color: #fff;
+		background: #ffc387; /* Old browsers */
+		background: -moz-linear-gradient(top,  #ffc387 0%, #ffa73d 52%, #ffa551 52%, #ff7f04 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc387), color-stop(52%,#ffa73d), color-stop(52%,#ffa551), color-stop(100%,#ff7f04)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* IE10+ */
+		background: linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc387', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
+	}
+	&:active{
+		color: #fff;
+	}
 }
 
-.button-primary:link,
-.button-primary:visited,
-.lwp-buynow:link,
-.lwp-buynow:visited{
-	color:#fff;
-}
-.button-primary:hover,
-.lwp-buynow:hover{
-	color:#fff;
-	background: #ffc387; /* Old browsers */
-	background: -moz-linear-gradient(top,  #ffc387 0%, #ffa73d 52%, #ffa551 52%, #ff7f04 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc387), color-stop(52%,#ffa73d), color-stop(52%,#ffa551), color-stop(100%,#ff7f04)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* IE10+ */
-	background: linear-gradient(top,  #ffc387 0%,#ffa73d 52%,#ffa551 52%,#ff7f04 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc387', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
-}
-.button-primary:active,
-.lwp-buynow:active{
-	color:#fff;
-}
 
 
 /* Admin bar */
@@ -159,7 +150,7 @@ p.submit{
 	.ab-top-secondary{
 		background: url('../../img/bg-texture-dark.jpg') left top repeat !important;
 	}
-	#wp-admin-bar-site-name a img{
+	#wp-admin-bar-main-menues a img{
 		width: 190px;
 		height: 20px;
 		margin-top: 4px;
@@ -312,6 +303,10 @@ p.submit{
 		.category i{background-position: left 0;}
 		.tag i{background-position: left -120px;}
 		.count i{background-position: left -73px;}
+		.id i{background-position: left -384px}
+		.user i{background-position: left -168px}
+		.status i{background-position: left -360px}
+		.secret i{background-position: left -192px}
 	}
 }
 
@@ -465,15 +460,19 @@ p.submit{
 				background: none;
 				@include border-radius(5px);
 				&:link, &:visited{
-					color:#fff;
-					text-decoration:none;
+					color: #fff;
+					text-decoration: none;
 				}
 				&:hover, &active{
-					background:#252e34;
+					background: #252e34;
 				}
 			}
 		}
 	}
+}
+
+p#nakanohito{
+	text-align: center;
 }
 
 /*コピーライト*/
@@ -538,14 +537,15 @@ p.submit{
 	}
 
 	.syntaxhighlighter{
-		width: 940px !important;
+		width: 960px !important;
 		padding-top:5px !important;
 		padding-bottom:5px !important;
 		margin-left: -100px !important; 
 		@include border-radius(5px);
-		-webkit-box-shadow:1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset;
-		-moz-box-shadow:1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset;
-		box-shadow:1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset;
+		@include box-shadow(1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset);
+		> table{
+			font-size: 0.85em !important;
+		}
 	}
 
 	/*見出し*/
@@ -658,6 +658,9 @@ p.submit{
 		border-spacing: 0;
 		empty-cells: show;
 		border-collapse: collapse;
+		&.form-table{
+			width:100%;
+		}
 		thead{
 			th, td{
 				background:#4D4945;
@@ -701,8 +704,8 @@ p.submit{
 		padding: 10px;
 		border: 2px solid #CCC;
 		@include border-radius(15px);
-		overflow:auto;
-		font-family:'andale mono','lucida';
+		overflow: auto;
+		font-family: $mono;
 		table{width:100%;}
 		tr.even{background:#57534E;}
 		th{
@@ -728,7 +731,11 @@ p.submit{
 	.aligncenter,
 	div.alignnon{margin:1.5em auto;}
 	img.aligncenter{display: block;}
-	
+	img{
+		&.size-full{
+			max-width: 760px;
+		}
+	}
 	div.wp-caption{margin-bottom:15px;}
 
 	/*キャプション*/
@@ -901,171 +908,6 @@ table.form-table{
 	}
  }
 
-
-
-
-
-
-
-/*---------------------
- * サイドバー
- */
-#sidebar{
-	color: #f0f0f0;
-	@include border-radius(10px);
-	@include box-shadow(0 0 5px rgba(0,0,0,0.5));
-}
-#sidebar div.widget{
-	margin-bottom:30px;
-}
-#sidebar .widgettitle{
-	font-size:1.4em;
-	text-shadow: 1px 1px 2px #000;
-	margin-bottom:3px;
-}
-#sidebar .widget_sp_image img,
-#sidebar iframe,
-.widget_text .textwidget{
-	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
-	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
-	box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
-}
-/*いますぐ購入*/
-.lwpwidget-buynow{
-	background: #30383d;
-	padding:10px;
-	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.4) inset;
-	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.4) inset;
-	box-shadow:1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.4) inset;
-}
-.lwp-buynow-title{
-	font-size:2em;
-	text-shadow:1px 1px 3px #000;
-	text-align:center;
-	display:block;
-}
-.lwpwidget-buynow .lwp-on-sale{
-	font-size:1.2em;
-	color:#f15652;
-	margin-bottom: 0;
-	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
-	text-align:center;
-}
-.lwpwidget-buynow .lwp-timer{
-	font-size:1.2em;
-	height:24px;
-	line-height:24px;
-	font-weight:bold;
-	color:#f15652;
-	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
-	text-align:center;
-}
-.lwpwidget-buynow .lwp-timer .day,
-.lwpwidget-buynow .lwp-timer .hour,
-.lwpwidget-buynow .lwp-timer .minutes,
-.lwpwidget-buynow .lwp-timer .seconds{
-	font-size:1.4em;
-	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
-}
-.lwpwidget-buynow .price{
-	text-align: center;
-}
-.lwpwidget-buynow .price p{
-	color:#fef09a;
-	font-size:3em;
-	font-family:'Georgia', seif;
-	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
-}
-.lwpwidget-buynow .price del{
-	color:#fefefe;
-	font-size:1.4em;
-	text-shadow:1px 1px 3px rgba(0,0,0,0.5);
-	font-family:'Georgia', seif;
-	margin-right:0.5em;
-}
-.lwpwidget-buynow .price small{
-	color:#f15652;
-	font-size:1.4em;
-	font-family:'Georgia', seif;
-}
-.lwpwidget-buynow .lwp-transfer{
-	text-align:center;
-	font-size:1.2em;
-}
-.lwpwidget-buynow .lwp-buynow-btn{
-	font-size:1.5em;
-	text-align: center;
-	margin: 1em 0;
-}
-
-/*バナー*/
-.widget_sp_image-description{
-	font-size:1.4em;
-	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-/*foursquare*/
-.widget .checkin .date{
-	display:block;
-	font-size:1.2em;
-	text-align:right;
-	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-.widget .checkin .description{
-	font-size:1.4em;
-}
-.widget_foursquare_recent_checkins_widget p{
-	font-size:1.1em;
-	text-align:center;
-	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
-}
-/*通常テキスト*/
-.widget_text .textwidget .widget_bg{
-	background:#f0f0f0;
-	color:#4C5A65;
-	background:url('img/bg-texture-white.jpg') repeat;
-	padding:10px;
-	font-size:1.2em;
-}
-.widget_text .textwidget h5{
-	font-size:1.4em;
-	margin-bottom:1em;
-}
-/*Disqus comment*/
-#dsq-content ul{
-	font-size:1.1em;
-	border-top:1px dotted #ddd !important;
-}
-#dsq-content .dsq-comment-text{
-	font-size:1.2em;
-	line-height:1.4;
-}
-.dsq-comment-footer{
-	font-size:1.1em;
-	font-weight: bold;
-}
-/* Trackback*/
-#dsq-references li,
-.dsq-trackback-url + ul li{
-	border-bottom:1px dotted #ccc !important;
-	padding:10px 10px 10px 50px !important;
-	background: url('img/icon-trackback.png') 10px center no-repeat !important;
-}
-#dsq-references li:nth-child(even),
-.dsq-trackback-url + ul li:nth-child(even){
-	background-color:#fcfcfc !important;
-}
-#dsq-references .dsq-meta,
-.dsq-trackback-date{
-	text-align:right;
-	margin:5px 0;
-	font-size:0.9em;
-	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
-}
-#dsq-references .dsq-content,
-.dsq-trackback-excerpt{
-	font-size:0.9em;
-	line-height: 1.2;
-}
 /****************************************
  * 通常記事設定終わり
  ****************************************/
@@ -1076,15 +918,6 @@ table.form-table{
 /****************************************
  * 5.5.電子書籍用設定
  ****************************************/
-/* 概要 */
-.ebook .excerpt{
-	margin:1.5em 0;
-	font-size:1.6em;
-	color:#666;
-}
-.ebook .book-info img{
-	
-}
 
 /*サイドバー共通*/
 #right .rectangle{
@@ -1215,7 +1048,7 @@ table.form-table{
 }
 #right .conversion h4{
 	font-size:14px;
-	font-weight:bold;
+	font-weight: bold;
 	margin:10px 0;
 }
 
@@ -1224,77 +1057,75 @@ body.ebook .ebook-meta{
 	padding:0;
 }
 body.ebook .ebook-meta h1{
-	float:none;
-	padding-bottom:10px;
-	border-bottom:1px dotted #ddd;
+	float: none;
+	padding-bottom: 10px;
+	border-bottom: 1px dotted #ddd;
 }
 
 /*書籍詳細*/
 .ebook-detail{
-	margin-top:20px;
 	position: relative;
-}
-.ebook-detail img.cover{
-	float:left;
-	margin-right:20px;
-	box-shadow:1px 1px 5px #000;
-	-moz-box-shadow:1px 1px 5px #000;
-	-webkit-box-shadow:1px 1px 5px #000;
-}
-.ebook-detail img.on-sale{
-	position: absolute;
-	left:-15px;
-	top:-15px;
-}
-.ebook-detail dl{
-	width:340px;
-	float:left;
-}
-.ebook-detail dl dt{
-	color:#8AB29F;
-	margin-bottom:5px;
-	font-size:1.4em;
-	line-height:1;
-	text-shadow:1px 1px 2px #fff;
-	font-weight: bold;
-}
-.ebook-detail dl dd{
-	border-left:none;
-	font-size:1.4em;
-	margin-bottom:1em;
-	line-height:1.2;
-	text-shadow:1px 1px 2px #fff;
-}
-.ebook-detail dl dd.book-title{
-	font-size:2em;
-	font-weight: bold;
-}
-.ebook-detail dl dd.price{
-	font-size:2em;
-	color:#ed8600;
-}
-.ebook-detail dl dd.price .lwp-buynow{
-	font-size:0.8em;
-}
-.ebook-detail dl dd.price .lwp-rest,
-.ebook-detail dl dd.price .lwp-timer{
-	font-size:0.6em;
-	color:#06c;
-}
-.ebook-detail dl dd.price .lwp-timer .day,
-.ebook-detail dl dd.price .lwp-timer .hour,
-.ebook-detail dl dd.price .lwp-timer .minutes,
-.ebook-detail dl dd.price .lwp-timer .seconds{
-	font-weight: bold;
-	font-family:'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
-}
-.ebook-detail dl dd small{
-	font-size:0.85em;
-	color:#666;
-}
-.ebook-detail dl dd del{
-	color:#999;
-	text-shadow:none;
+	img.cover{
+		@include box-shadow(1px 1px 5px #000);
+	}
+	 img.on-sale{
+		position: absolute;
+		left: 110px;
+		top: 0px;
+	}
+	table{
+		fons-size: 1.2em;
+		td{
+			text-shadow:1px 1px 2px #fff;
+			line-height: 1.2;
+		}
+		.book-title{
+			font-size: 2em;
+			font-weight: bold;
+		}
+		.price{
+			font-size:2em;
+			color: $orange;
+			.lwp-buynow{
+				font-size:0.8em;
+			}
+			.lwp-rest,
+			.lwp-timer{
+				font-size: 0.6em;
+				color: #06c;
+			}
+			.lwp-timer .day,
+			.lwp-timer .hour,
+			.lwp-timer .minutes,
+			.lwp-timer .seconds{
+				font-weight: bold;
+				font-family: $mono;
+			}
+		}
+		small{
+			font-size: 0.85em;
+			color: #666;
+		}
+		del{
+			color: #999;
+			text-shadow: none;
+		}
+		/*プロモーションリンク*/
+		input.promotion-link{
+			border: none;
+			background: transparent;
+			display: block;
+			padding: 0;
+			width: 100%;
+			font-size: 0.85em;
+			font-style: italic;
+		}
+	}
+	div.excerpt,
+	p.center{
+		clear: right;
+		float: right;
+	}
 }
 /*立ち読みエリア*/
 .ebook-more{
@@ -1318,9 +1149,9 @@ body.ebook .ebook-meta h1{
 .ebook-read-more{
 	position: absolute;
 	display: block;
-	width:100%;
-	top:50%;
-	margin:-20px 0 0 !important;
+	width: 100%;
+	top: 50%;
+	margin: -20px 0 0 !important;
 	font-size: 2em;
 }
 .ebook-more-body{
@@ -1333,53 +1164,55 @@ body.ebook .ebook-meta h1{
 .ebook-more-modal{
 	position: absolute;
 	background: #fff;
-	z-index:1000;
+	z-index: 1000;
 	overflow: hidden;
 	padding: 0;
 	margin:0;
-}
-.ebook-more-modal .ebook-more-body{
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	width:auto;
-	font-size: 3em;
-	padding-top:0;
-	padding-bottom: 0;
-}
-.ebook-more-modal .ebook-more-title{
-	position: absolute;
-	left:0;
-	top:0;
-	font-weight: bold;
-	height:40px;
-	line-height: 40px;
-	font-size:20px;
-	text-indent: 1em;
-	color:#999;
-	font-style: italic;
-}
-.ebook-more-modal .ebook-more-body::-webkit-scrollbar {
-	background: #eee;
-	overflow: visible;
-	width: 10px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-}
-.ebook-more-modal .ebook-more-body::-webkit-scrollbar-thumb {
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	background:#333;
-}
-.ebook-more-modal .ebook-more-body::-webkit-scrollbar-corner {
-	background: transparent;
-}
-.ebook-more-modal .ebook-more-close{
-	position: absolute;
-	top:1em;
-	right:1em;
-	font-size:30px;
+	.ebook-more-body{
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		width: auto;
+		font-size: 1.2em;
+		padding-top: 0;
+		padding-bottom: 0;
+		&::-webkit-scrollbar {
+			background: #eee;
+			overflow: visible;
+			width: 10px;
+			@include border-radius(5px);
+		}
+		&::-webkit-scrollbar-thumb {
+			@include border-radius(5px);
+			background: #333;
+		}
+		&::-webkit-scrollbar-corner {
+			background: transparent;
+		}
+	}
+	.ebook-more-title{
+		position: absolute;
+		left:0;
+		top:0;
+		font-weight: bold;
+		height: 40px;
+		line-height: 40px;
+		font-size: 20px;
+		text-indent: 1em;
+		color: #999;
+		font-style: italic;
+	}
+	.ebook-more-close{
+		position: absolute;
+		top:10px;
+		right: 10px;
+		font-size:15px;
+	}
 }
 .ebook{
+	/* アイキャッチ */
+	.eyecatch{
+		text-align: center;
+	}
 	/*対応端末リスト*/
 	.device-list{
 		.device{
@@ -1419,16 +1252,6 @@ body.ebook .ebook-meta h1{
 			padding-top: 5px;
 			text-shadow: 1px 1px 2px #fff;
 		}
-	}
-	/*プロモーションリンク*/
-	input.promotion-link{
-		border: none;
-		background: transparent;
-		display: block;
-		padding: 0;
-		width: 100%;
-		font-size: 0.85em;
-		font-style: italic;
 	}
 	/*ダウンロードリスト*/
 	.file-list{
@@ -1486,6 +1309,98 @@ body.ebook .ebook-meta h1{
 	}
 }
 
+/* 電子書籍ページ用設定上書き */
+body.single-ebook h1.title{
+	text-align: center;
+	padding-bottom: 0;
+}
+body.single-ebook,
+body.post-type-archive-ebook{
+	 h1.title{
+		text-align: center;
+	}
+	.header .excerpt{
+		padding: 20px 200px 80px; 
+		font-size: 1.4em;
+		font-weight: normal;
+		text-shadow: 1px 1px 2px #fff;
+		font-style: italic;
+	}
+	.title-meta{
+		.google{
+			width: 300px;
+			text-align: center;
+		}
+		table,.excerpt, p.center{
+			width: 400px;
+		}
+		.excerpt{
+			font-size: 1.4em;
+			font-style: italic;
+			margin: 1em 0;
+		}
+		p.center a{
+			font-size: 1.2em;
+		}
+	}
+}
+
+/* 電子書籍サイドバー */
+.ebook-sidebar{
+	.widget_fumiki_ebook{
+		padding-left: 10px;
+		margin-bottom: 40px;
+		h3{
+			font-size: 2em;
+			color: $deep-blue;
+			padding-bottom: 5px;
+			border-bottom: 1px dotted $deep-blue;
+			font-weight: bold;
+			text-shadow: 1px 1px 2px #fff;
+			margin: 2em 0 1em;
+		}
+		li{
+			width: 180px;
+			padding-right: 10px;
+			float: left;
+			position: relative;
+			.attachment-pinky-cover{
+				display: block;
+				margin: 0 auto 10px;
+				@include box-shadow(1px 1px 5px rgba(0, 0, 0, 0.5));
+			}
+			h4{
+				position: relative;
+				text-align: center;
+				a{
+					font-size: 1.5em;
+					color: $pale-green;
+					text-shadow: 1px 1px 2px #fff;
+					text-decoration: none;
+				}
+				.price{
+					position: absolute;
+					background-color: $orange;
+					padding: 3px 5px;
+					top: -120px;
+					right: -5px;
+					font-size: 2em;
+					color: #fff;
+				}
+			}
+			.excerpt{
+				margin: 0.5em;
+				font-size: 1.1em;
+				line-height: 1.1;
+			}
+			.sale-icon{
+				position: absolute;
+				top: -17px;
+				left: 30px;
+			}
+		}
+	}
+}
 
 /*一覧ページ見出し*/
 body.ebooks .catch{
@@ -1496,143 +1411,78 @@ body.ebooks .catch{
 
 /*リボン*/
 .entry .book-list img.campaign{
-	position:absolute;
-	left:-9px;
-	top:-11px;
+	position: absolute;
+	left: -9px;
+	top: -11px;
 }
 
 /*商品詳細*/
 .entry .book-list{
-	position:relative;
-	padding-bottom:20px;
-	border-bottom:1px dotted #E5E5E5;
-}
-.entry .book-list dl{
-	width:310px;
-	margin-top:0;
-	float:left;
-}
-.entry .book-list dd{
-	margin-left:0;
-	padding-left:0;
-}
-.entry .book-list dd.orange{
-	color:#FA8404;
-}
-
-/*ボタン*/
-.entry .book-list p.more{
-	margin:0;
-	padding:15px 0 10px;
-}
-.entry .book-list p.more a{
-	background:#E4007F;
-	padding:8px 12px;
-	font-size:16px;
-	color:#fff;
-	text-decoration:none;
-	border-radius:10px;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-	box-shadow: 0 0 5px #888;
-	-webkit-box-shadow: 0 0 5px #888;
-	-moz-box-shadow: 0 0 5px #888;
-	text-shadow: 0px 2px 3px rgba(255,255,255,0.7);
-}
-.entry .book-list p.more a:hover{
-	text-shadow:none;
-}
-.entry .book-list p.more a:active{
-	box-shadow:none;
-	-webkit-box-shadow:none;
-	-moz-box-shadow:none;
-}
-/* 電子書籍ウィジェット */
-.entry-widget-title{
-	margin:1em 0 0.5em;
-}
-.widgets-ebook-content{
-	padding:5px 0;
-	border-bottom: 1px dashed #535154;
-	position:relative;
-}
-.widgets-ebook-content:first-child{
-	border-top: 1px dashed #535154;
-}
-.widget_fumiki_ebook .widgets-ebook-content{
-	border-color: #ddd;
-	padding:10px 0;
-}
-.widgets-ebook-content .attachment-pinky-cover{
-	float:left;
-	margin-right:5px;
-	-webkit-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
-	-moz-box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
-	box-shadow:1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5);
-}
-.widgets-ebook-content h4{
-	font-size:1.6em;
-	position:relative;
-	padding-right:3em;
-}
-#main .widgets-ebook-content h4{
-	font-size:2em;
-}
-.widgets-ebook-content h4 a{
-	text-shadow:1px 1px 2px #000;
-	text-decoration: none;
-}
-#main .widgets-ebook-content h4 a{
-	text-shadow:1px 1px 2px #fff;
-}
-.ebook #main .excerpt{
-	font-size:1.2em;
-	text-shadow:1px 1px 2px #fff;
-	margin:0.75em;
-}
-.widgets-ebook-content h4 .price{
-	position:absolute;
-	right:0;
-	top:0;
-	background-color: #FFDE20;
-	color:#000;
-	font-weight: normal;
-	font-style: italic;
-	padding:3px;
-	line-height:1;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-}
-.widgets-ebook-content .sale-icon{
-	position:absolute;
-	left: -5px;
-	top:-1px;
+	position: relative;
+	padding-bottom: 20px;
+	border-bottom: 1px dotted #E5E5E5;	
+	dl{
+		width: 310px;
+		margin-top: 0;
+		float: left;
+		dd{
+			margin-left:0;
+			padding-left:0;
+			&.orange{
+				color: $orange;
+			}
+		}
+	}
+	/*ボタン*/
+	p.more{
+		margin:0;
+		padding:15px 0 10px;
+		a{
+			background: #E4007F;
+			padding: 8px 12px;
+			font-size: 16px;
+			color: #fff;
+			text-decoration: none;
+			@include border-radius(10px);
+			@include box-shadow(0 0 5px #888);
+			text-shadow: 0px 2px 3px rgba(255,255,255,0.7);
+			&:hover{
+				text-shadow: none;
+			}
+			&:active{
+				@include box-shadow(none);
+			}
+		}
+	}
 }
 
-/* 本棚 */
-.entry .wp-list-table{
-	width:99%;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	border:1px solid #262c30;
-}
-.entry .wp-list-table thead th,
-.entry .wp-list-table tfoot th{
-	padding:3px 5px;
-	color: #fff;
-	font-size:0.8em;
-	text-shadow:1px 1px 3px #000;
-	background: url('img/bg-texture-dark.jpg') left top repeat;
-}
-.entry .wp-list-table thead th a:link,
-.entry .wp-list-table tfoot th a:link,
-.entry .wp-list-table thead th a:visited,
-.entry .wp-list-table tfoot th a:visited{
-	text-decoration: none;
-}
-.wp-list-table tbody td{
-	padding:3px 5px;
-	font-size:0.75em;
+
+/* 購入履歴 */
+.entry{
+	.wp-list-table{
+		width:99%;
+		-webkit-border-radius:3px;
+		border-radius:3px;
+		border:1px solid #262c30;
+		thead,
+		tfoot{
+			th{
+				padding:3px 5px;
+				color: #fff;
+				font-size: 0.8em;
+				text-shadow: 1px 1px 3px #000;
+				background: url('../../img/bg-texture-dark.jpg') left top repeat;
+				a:link,
+				a:visited{
+					text-decoration: none;
+				}
+			}
+		}
+		tbody td{
+			padding:3px 5px;
+			font-size:0.75em;
+		}
+	}
 }
 .tablenav-pages{
 	font-size:0.75em;
@@ -1645,6 +1495,17 @@ body.ebooks .catch{
  * 電子書籍用設定
  ****************************************/
 
+/****************************************
+ * 8.イベント設定
+ ****************************************/
+body.single-events{
+	.title{
+		text-align: center;
+	}
+}
+/****************************************
+ * 8.イベント設定
+ ****************************************/
 
 
 /****************************************
@@ -1653,60 +1514,55 @@ body.ebooks .catch{
 /*プラグインのCSSを打ち消し*/
 body.login{
 	padding:0;
+	#submit{margin:0;}
 }
-body.login #submit{margin:0;}
 
-/*レイアウト*/
-#content.account{
- 	width:600px;
-}
 
 /*メイン*/
 .login form p.submit input.button,
 #nlmg-resign-form p.submit input{
-	font-size:20px;
-	cursor:pointer;
+	font-size: 20px;
+	cursor: pointer;
 }
 /*フォームパーツ*/
-.login form textarea{
-	resize:vertical;
-	width:300px;
-	display: block;
-	padding:5px 10px;
-	font-size:20px;
-}
-.login form select{
-	font-size:20px;
-}
-.login form select option{
-	font-size:20px;
+.login form{
+	textarea{
+		resize: vertical;
+		width: 300px;
+		display: block;
+		padding: 5px 10px;
+		font-size: 20px;
+	}
+	select{
+		font-size: 20px;
+	}
+	select option{
+		font-size: 20px;
+	}
+	p{
+		clear: left;
+		label{
+			padding: 3px 0 5px;
+			font-weight: bold;
+			display: block;
+			width: 250px;
+			float: left;
+		}
+		&.forgetmenot label{
+			float: none;
+			width: auto;
+		}
+	}
 }
 .form-table .description{
-	display:block;
-	margin:1em 0;
-	clear:both;
-}
-.login form p label{
-	padding:5px 0;
-	font-weight:bold;
+	display: block;
+	margin: 1em 0;
+	clear: both;
 }
 .login p input.input{
 	font-size:20px;
 	padding:5px 10px;
 	width:300px;
-}
-.login form p{
-	clear:left;
-}
-.login form p label{
-	display :block;
-	width: 250px;
-	float: left;
-	paddign-top:3px;
-}
-.login form p.forgetmenot label{
-	float:none;
-	width:auto;
 }
 /* OAuth */
 #wpg-login,
@@ -1723,23 +1579,19 @@ body.login #submit{margin:0;}
 /* リンク */
 .login .tml-action-links{
 	padding-left:0;
-}
-.login ul.tml-action-links li{
-	color:#252e34;
-	display:inline-table;
-	font-size:12px;
-	line-height: 24px;
-	height:24px;
-	margin:0 5px 0 10px;
-	background: url('img/meta-icons-2.png') left -192px no-repeat;
-	padding-left:28px;
-}
-.login ul.tml-action-links li:first-child{
-	background-position: left -168px;
-}
-/*フォームテーブル*/
-.login .form-table{
-	width:100%;
+	li{
+		color: #252e34;
+		display: inline-table;
+		font-size:12px;
+		line-height: 24px;
+		height:24px;
+		margin:0 5px 0 10px;
+		background: url('../../img/meta-icons-2.png') left -192px no-repeat;
+		padding-left:28px;
+		&:first-child{
+			background-position: left -168px;
+		}
+	}
 }
 
 
@@ -1805,7 +1657,6 @@ body.login #submit{margin:0;}
 		margin: 0;
 		padding: 5px 0;
 		text-align: left;
-		min-height: 3.3em;
 		line-height: 1.1;
 		a:link{
 			text-decoration: none;
@@ -1827,18 +1678,6 @@ body.login #submit{margin:0;}
 		padding-bottom: 3px;
 	}
 	.cat{
-		margin: 0;
-		padding: 2px;
-		font-size: 10px;
-		color: #fff;
-		text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-		height: 12px;
-		line-height: 12px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		a{
-			color: #fff;
-		}
 	}
 	.tag {
 		font-size:10px;
@@ -1851,7 +1690,6 @@ body.login #submit{margin:0;}
 	.desc{
 		font-size: 11px;
 		line-height: 1.4;
-		height: 5.6em;
 		overflow: hidden;
 		margin: 10px 0;
 		p{
@@ -1872,9 +1710,27 @@ body.login #submit{margin:0;}
 
 /*小さいボックス*/
 .archive .archive-box-small{
+	position: relative;
+	width:150px;
+	padding-right: 12px;
+	margin-bottom: 12px;
+	&.forth{
+		padding-right: 0;
+	}
+	.post-type-label{
+		position: absolute;
+		display: block;
+		top: 14px;
+		background: #000;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		padding: 3px 5px;
+		z-index: 10;
+	}
 	.photo{
-		width:135px;
+		width: 150px;
 		height:100px;
+		oveflow: hidden;
 	}
 	.archive-title{
 		bottom:0;
@@ -1883,21 +1739,30 @@ body.login #submit{margin:0;}
 		font-weight: bold;
 	}
 	.desc{
-		height:5.6em;
-		p:first-letter{
-			display: block;
-			float: left;
-			font-size: 2em;
-			font-weight: bold;
-			margin-right: 3px;
-			color: #000;
-			text-shadow: 1px 1px 2px #fff;
-		}
+		margin:0;
 	}
-	.tag{
-		line-height: 1.1;
-		height: 3em;
-		overflow: hidden;
+	.taxonomies{
+		text-align: left;
+		.cat, .tag{
+			font-size: 1.1em;
+			line-height: 1;
+			text-align: left;
+			a{
+				display: inline-block;
+				padding: 3px 3px 3px 18px;
+				margin-bottom: 5px;
+				background: $pale-green url('../../img/archive-icons.png') 2px -16px no-repeat;
+				color: #fff;
+				text-decoration: none;
+				@include border-radius(5px);
+			}
+		}
+		.cat{
+			a{
+				background-color: $deep-blue;
+				background-position: 2px top;
+			}
+		}
 	}
 	.score{
 		possition: absolute;
@@ -1919,7 +1784,6 @@ body.login #submit{margin:0;}
 		margin: 0;
 		height: 40px; 
 		line-height: 40px;
-		margin-top: -20px;
 		margin-bottom: 20px;
 	}
 	input[type=text]{
@@ -2022,132 +1886,6 @@ body.home{
 			text-align: right;
 			margin: 30px;
 		}
-		.desc-box{
-			padding: 40px 10px 80px;
-			.static{
-				float: right;
-				width: 300px;
-				padding-top: 24px;
-				table{
-					width: 100%;
-					border-collapse: collapse;
-					caption{
-						font-weight: bold;
-						padding: 5px 10px;
-						border-bottom: 1px dotted #ddd;
-						color: $deep-blue;
-						font-size: 1.2em;
-					}
-					th,td{
-						padding: 5px 10px;
-						font-size: 1.2em;
-					}
-					th{
-						font-weight: bold;
-					}
-					td{
-						
-					}
-				}
-			}
-			.main-box{
-				float: left;
-				width: 640px;
-				.grid_2{
-					width: 300px;
-					float: left;
-					padding-right: 20px;
-					h2{
-						background: url('../../img/meta-icons-2.png') left -384px no-repeat;
-						line-height: 24px;
-						height: 24px;
-						font-size: 18px;
-						font-weight: bold;
-						padding-left: 30px;
-						color: $deep-blue;
-						text-shadow: 1px 1px 2px #fff;
-						&.purpose{
-							background-position: left -408px;
-						}
-						&.history{
-							background-position: left -144px;
-						}
-						&.contact{
-							background-position: left -432px;
-						}
-					}
-					p{
-						padding-left: 30px;
-						color: #888;
-						text-shadow: 1px 1px 2px #fff;
-						margin: 1em 0 2em;
-						line-height: 1.4;
-						font-size: 1.2em;
-					}
-				}
-			}
-		}
-		.desc-parts{
-			padding: 0 10px;
-			h2{
-				font-size: 3em;
-				color: $pale-green;
-				text-shadow: 1px 1px 2px #fff;
-				text-align: center;
-			}
-			p.desc{
-				text-align: center;
-				color: #888;
-				margin: 1em 100px 80px;
-				text-shadow: 1px 1px 2px #fff;
-				font-size: 1.4em;
-				line-height: 1.4;
-			}
-			.grid_3{
-				width: 280px;
-				padding-right: 40px;
-				margin-bottom: 40px;
-				float: left;
-				&.last{
-					padding-right: 0;
-				}
-				h3{
-					background: url('../../img/meta-icons-2.png') left -360px no-repeat;
-					line-height: 24px;
-					height: 24px;
-					font-size: 18px;
-					font-weight: bold;
-					padding-left: 30px;
-					color: $deep-blue;
-					text-shadow: 1px 1px 2px #fff;
-				}
-				p{
-					margin: 1em 0 2em 30px;
-					line-height: 1.4;
-					font-size: 1.4em;
-					text-shadow: 1px 1px 2px #fff;
-					&.tagcloud{
-						a:link{
-							color: #666;
-							text-decoration: none;
-						}
-						a:visited{
-							color: #999;
-							text-decoration: none;
-						}
-						a:hover,a:active{
-							color: $warning-red;
-						}
-					}
-					abbr{
-						font-style: italic;
-						font-weight: bold;
-						border-bottom: 1px dashed #888;
-					}
-				}
-			}
-		}
-
 		.nav-menu{
 			margin: 30px 0;
 			text-align: center;
@@ -2164,63 +1902,425 @@ body.home{
 		}
 	}
 }
+/* トップページ中段 */
+.desc-box{
+	padding: 40px 10px 80px;
+	.static{
+		float: right;
+		width: 300px;
+		padding-top: 24px;
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			caption{
+				font-weight: bold;
+				padding: 5px 10px;
+				border-bottom: 1px dotted #ddd;
+				color: $deep-blue;
+				font-size: 1.2em;
+			}
+			th,td{
+				padding: 5px 10px;
+				font-size: 1.2em;
+			}
+			th{
+				font-weight: bold;
+			}
+			td{
+
+			}
+		}
+	}
+	.main-box{
+		float: left;
+		width: 640px;
+		.grid_2{
+			width: 300px;
+			float: left;
+			padding-right: 20px;
+			h2{
+				background: url('../../img/meta-icons-2.png') left -384px no-repeat;
+				line-height: 24px;
+				height: 24px;
+				font-size: 18px;
+				font-weight: bold;
+				padding-left: 30px;
+				color: $deep-blue;
+				text-shadow: 1px 1px 2px #fff;
+				&.purpose{
+					background-position: left -408px;
+				}
+				&.history{
+					background-position: left -144px;
+				}
+				&.contact{
+					background-position: left -432px;
+				}
+			}
+			p{
+				padding-left: 30px;
+				color: #888;
+				text-shadow: 1px 1px 2px #fff;
+				margin: 1em 0 2em;
+				line-height: 1.4;
+				font-size: 1.2em;
+			}
+		}
+	}
+}
+/* トップページサイドバー */
+.desc-parts{
+	padding: 0 10px;
+	h2{
+		font-size: 3em;
+		color: $pale-green;
+		text-shadow: 1px 1px 2px #fff;
+		text-align: center;
+	}
+	div.desc{
+		text-align: center;
+		color: #888;
+		margin: 1em 100px 80px;
+		text-shadow: 1px 1px 2px #fff;
+		font-size: 1.4em;
+		line-height: 1.4;
+	}
+	.grid_3{
+		width: 280px;
+		padding-right: 40px;
+		margin-bottom: 40px;
+		float: left;
+		&.last{
+			padding-right: 0;
+		}
+		h3{
+			background: url('../../img/meta-icons-2.png') left -360px no-repeat;
+			line-height: 24px;
+			height: 24px;
+			font-size: 18px;
+			font-weight: bold;
+			padding-left: 30px;
+			color: $deep-blue;
+			text-shadow: 1px 1px 2px #fff;
+			margin-bottom: 0.5em;
+		}
+		ul{
+			padding-left: 30px;
+			li{
+				margin: 10px 0;
+				list-style: outside circle;
+				font-size: 1.8em;
+
+			}
+		}
+		iframe{
+			margin-left: 30px;
+		}
+		.widget_sp_image-image-link{
+			margin-left: 30px;
+		}
+		.widget_sp_image-description{
+			padding-left: 30px;
+			font-size: 1.2em;
+			p{
+				margin: 1em 0;
+			}
+		}
+		.textwidget{
+			margin: 1em 0 2em 30px;
+			line-height: 1.4;
+			font-size: 1.4em;
+			text-shadow: 1px 1px 2px #fff;
+			abbr{
+				font-style: italic;
+				font-weight: bold;
+				border-bottom: 1px dashed #888;
+			}
+		}
+		.tagcloud,.st-tag-cloud{
+			padding-left: 30px;
+			text-align: left;
+			a:link{
+				color: #666;
+				text-decoration: none;
+			}
+			a:visited{
+				color: #999;
+				text-decoration: none;
+			}
+			a:hover,a:active{
+				color: $warning-red;
+			}
+		}
+		/* 電子書籍ウィジェット */
+		.widgets-ebook-content{
+			position: relative;
+			border-top: 1px dashed $thin-grey;
+			padding-top: 10px;
+			&:first-child{
+				border-top: none;
+			}
+			.attachment-pinky-cover{
+				float: left;
+				margin-right:  10px;
+				@include box-shadow(1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5));
+			}
+			h4{
+				position: relative;
+				padding-right:3em;
+				a{
+					text-decoration: none;
+				}
+				.price{
+					position: absolute;
+					right: 0;
+					top: 0;
+					background-color: #FFDE20;
+					color: #000;
+					font-weight: normal;
+					font-style: italic;
+					padding: 3px;
+					line-height: 1;
+					@include border-radius(3px);
+				}
+			}
+			.excerpt{
+				font-size: 0.85em;
+				text-shadow:1px 1px 2px #fff;
+				margin:0.75em;
+			}
+			.sale-icon{
+				position: absolute;
+				left: -5px;
+				top: -1px;
+			}
+			a.button{
+				font-size: 0.8em;
+			}
+		}
+
+	}
+}
 
 
  /****************************************
  * 8.404設定
  ****************************************/
 #error404{
-	width:620px;
-	margin:0 auto;
-	height:540px;
-	position:relative;
-	overflow:hidden;
-	background:url(img/top-bg-face.png) left bottom no-repeat;
-}
-#error404 div.container{
-	position:absolute;
-	width:400px;
-	height:200px;
-	left:50%;
-	top:50%;
-	margin:-150px 0 0 -200px;
-}
-#error404 h1{
-	text-align:center;
-	font-size:30px;
-	color:#8ab29f;
-}
-#error404 h1 span{
-	font-family:Georgia, serif;
-}
-#error404 h1 small{
-	font-size:12px;
-}
-#error404 .container p{
-	font-size:1.4em;
+	width: 320px;
+	margin: 0 auto;
+	height: 480px;
+	position: relative;
+	overflow: hidden;
+	.logo{
+		margin-top: 40px;
+		img{
+			width: 300px;
+			height: 31px;
+		}
+		.description{
+			font-size: 1.2em;
+			color: #888;
+			text-shadow: 1px 1px 2px #fff;
+		}
+	}
+	h1{
+		text-align: center;
+		font-size: 30px;
+		color: #8ab29f;
+		text-shadow: 1px 1px 2px #fff;
+		font-weight: bold;
+		margin: 30px 0;	
+	}
+	p.message{
+		font-size: 1.4em;
+		margin: 1em 10px;
+	}
+	#copy-note{
+		font-family: $mono;
+		font-size: 10px;
+		color: #888;
+		text-shadow: 1px 1px 2px #fff;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: 2em;
+		height: 2em;
+		padding: 0;
+		p{
+			width: 100%;
+			float: none;
+			margin: 0;
+			height: 2em;
+			line-height: 2em;
+		}
+	}
 }
 
 /****************************************
  * 7.決済フォーム
  ****************************************/
 #lwp-invoice{
+	width: 640px;
+	margin: 0 auto;
+	.header{
+		padding: 20px 40px;
+		border-bottom: 1px dotted $deep-blue;
+		h1{
+			span{
+				font-size: 1.2em;
+				color: #888;
+				display: block;
+				margin: 0.5em 0;
+				text-shadow: 1px 1px 2px #fff;
+			}
+		}
+	}
+	.form-table{
+		width:100%;
+		margin:20px 0;
+		border-spacing: 0;
+		empty-cells: show;
+		border-collapse: collapse;
+		caption{
+			color: #000;
+			text-align: left;
+			font-size: 1.5em;
+		}
+		thead{
+			th,td{
+				background: #4D4945;
+				color: #f3f3f3;
+				padding:5px 8px;
+			}
+		}
+		tbody{
+			th,td{
+				text-align: left;
+				padding: 5px 8px;
+				font-size: 0.85em;
+				border-bottom: 1px dotted #999;
+			}	
+			tr:nth-child(2n) td,
+			tr:nth-child(2n) th{
+				background: #f3f3f3;
+			}
+		}
+		th.lwp-column-method{
+			text-align: center;
+		}
+		.lwp-column-method-desc{
+			small{
+				display: block;
+				padding-top: 0.5em;
+				margin-top: 0.5em;
+				border-top: 1px solid #ddd;
+				color: #666;
+			}
+			strong{
+				color: #e4007f;
+			}
+		}
+	}
 	
+	p.check-url-image{
+		text-align: center;
+		margin: 1em;
+		strong{
+			font-size: 1.6em;
+			letter-spacing: 0.25em;
+			margin: 0.5em 0;
+			font-family: $mono;
+		}
+	}
+	
+	input[type=text],
+	textarea{
+		border:1px solid #ddd;
+		border-radius:3px;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+	}
+	textarea{
+		width: 90%;
+	}
+	.footer{
+		margin: 20px;
+		font-size: 1.4em;
+		text-align: center;
+		text-shadow: 1px 1px 2px #fff;
+		color: #252e35;
+	}
+	.main{
+		font-size:1.6em;
+		margin:30px 10px;
+		p a.button{
+			display: inline-block;
+		}
+	}
 }
-#lwp-invoice .form-table{
-	width:100%;
+
+#lwp-submit{
+	cursor: pointer;
 }
-#lwp-invoice tbody th.lwp-column-method{
-	text-align: center;
+/* Indicator */
+.lwp-indicator{
+	text-align: right;
+	font-size:small;
+	height:15px;
+	line-height: 15px;
+	margin:10px 0;
 }
-.lwp-column-method-desc small{
-	display:block;
-	padding-top:0.5em;
-	margin-top:0.5em;
-	border-top:1px solid #ddd;
-	color:#666;
+.lwp-indicator-progress-bg{
+	display: inline-block;
+	width: 100px;
+	height: 13px;
+	border: 1px solid #ccc;
+	margin-right: 5px;
+	text-align: left;
+	background-color: #222;
+	background-image: linear-gradient(bottom, rgb(222,222,222) 28%, rgb(235,235,235) 84%);
+	background-image: -o-linear-gradient(bottom, rgb(222,222,222) 28%, rgb(235,235,235) 84%);
+	background-image: -moz-linear-gradient(bottom, rgb(222,222,222) 28%, rgb(235,235,235) 84%);
+	background-image: -webkit-linear-gradient(bottom, rgb(222,222,222) 28%, rgb(235,235,235) 84%);
+	background-image: -ms-linear-gradient(bottom, rgb(222,222,222) 28%, rgb(235,235,235) 84%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.28, rgb(222,222,222)),
+		color-stop(0.84, rgb(235,235,235))
+	);
 }
-.lwp-column-method-desc strong{
-	color:#e4007f;
+.lwp-indicator-progress{
+	display: inline-block;
+	height: 13px;
+	width: 0;
+	background-color: rgb(130,212,63);
+	background-image: linear-gradient(bottom, rgb(130,212,63) 28%, rgb(100,207,58) 67%, rgb(201,230,115) 84%);
+	background-image: -o-linear-gradient(bottom, rgb(130,212,63) 28%, rgb(100,207,58) 67%, rgb(201,230,115) 84%);
+	background-image: -moz-linear-gradient(bottom, rgb(130,212,63) 28%, rgb(100,207,58) 67%, rgb(201,230,115) 84%);
+	background-image: -webkit-linear-gradient(bottom, rgb(130,212,63) 28%, rgb(100,207,58) 67%, rgb(201,230,115) 84%);
+	background-image: -ms-linear-gradient(bottom, rgb(130,212,63) 28%, rgb(100,207,58) 67%, rgb(201,230,115) 84%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.28, rgb(130,212,63)),
+		color-stop(0.67, rgb(100,207,58)),
+		color-stop(0.84, rgb(201,230,115))
+	);
+}
+.lwp-indicator-text{
+	padding-top: 1px;
+	vertical-align: top;
+	font-size: 11px;
+	font-weight: bold;
+	color: #888;
+	strong{
+		vertical-align: top;
+		color: #000;
+	}
 }
 
 /****************************************
@@ -2354,245 +2454,427 @@ div.tmkm-amazon-view {
  * iPhone用テンプレート
  */
 /*全体*/
-.smartphone .margin{
-	 width:640px;
-}
-.smartphone .grid_4{
-	 width:300px;
-}
-/*ヘッダー*/
-.smartphone #navi .mono{
-	font-size:1.8em;
-}
-.smartphone #navi .button{
-	font-size:14px;
-}
-.smartphone #navi .user-name{
-	font-size:18px;
-}
-.smartphone #logo p{
-	font-size:14px;
-}
-.smartphone #navi .grid_4{
-	width:270px;
-}
-.smartphone #navi .grid_4:nth-child(3){
-	clear:left;
-}
-.smartphone #header .button{
-	font-size:24px;
-	padding-left:10px;
-	padding-right:10px;
-}
-.smartphone #search{
-	 width:100px;
-	 top:30px;
-}
-.smartphone #s{
-	 width:70px;
-	 background-position: 80px center;
-}
-.smartphone #navi ul li a:link,
-.smartphone #navi ul li a:visited{
-	background-color: #fff;
-}
-/*サイドバー*/
-.smartphone #sidebar{
-	 width:620px;
-}
-.smartphone .widget{
-	 width:300px;
-	 margin-right:20px;
-	 float:left;
-}
-.smartphone .widget:nth-child(2n){
-	 margin-right: 0;
-}
-.smartphone .widget:nth-child(2n + 1){
-	 clear:left;
-}
-.smartphone #sidebar .widgettitle{
-	font-size:1.8em;
-}
-.smartphone #sidebar .widget_text .widget_bg{
-	font-size:1.6em;
+body.smartphone{
+	.margin{
+		width:320px;
+	}
+	#main{
+		width: 320px;
+	}
+	table.form-table{
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="search"],
+		textarea{
+			width: 150px;
+		}
+		select{
+			max-width: 200px;
+		}
+	}
+	/* ナビゲーション */
+	#navi{
+		/* ぱんくず */
+		.breadcrumb{
+			font-size: 0.8em;
+			text-overflow: text-ellipsis;
+			oveflow: hidden;
+			height: 12px;
+			line-height: 12px;
+			@include ellipsis();
+			i{
+				width: 12px;
+				height: 12px;
+				vertical-align: middle;
+				background-size: 12px 228px;
+				background-position: 0 -48px;
+			}
+		}
+		/* 最新投稿 */
+		ul.recent-posts-top li{
+			font-size: 0.9em;
+			height: 1.2em;
+			line-heihgt: 1.2em;
+			overflow: hidden;
+			@include ellipsis();
+		}
+	}
+	/* タイトル */
+	.title{
+		padding: 20px 70px 20px 10px;
+		font-size: 2em;
+		strong{
+			text-align: left;
+		}
+	}
+	.calendar{
+		width: 60px;
+		height: 50px;
+		@include background-size(60px 50px);
+		.date{
+			font-size: 1.1em;
+			padding-top: 0.25em;
+		}
+		.year{
+			font-size: 1.4em;
+		}
+	}
+	.header  .excerpt{
+		padding: 10px 10px 20px;
+		font-size: 1.4em;
+	}
+	.title-meta{
+		margin: 10px 0 20px;
+		background-image: none;
+		padding: 10px;
+		.google img{
+			margin-bottom: 20px;
+		}
+		table{
+			width: 300px;
+		}
+		.excerpt, p.center{
+			width: 300px;
+			padding: 10px 0;
+		}
+	}
+	
+	/* メインコンテンツ */
+	.entry{
+		width: 300px;
+		padding: 0 10px 20px;
+		overflow: hidden; 
+		font-size: 1.4em;
+		line-height: 1.6;
+		.syntaxhighlighter{
+			width: 320px !important;
+			margin-left: -10px !important;
+			font-size: 0.85em !important;
+		}
+		> p{
+			font-family: $serif;
+		}
+		blockquote{
+			@include background-size(31px 25px);
+			padding: 5px 5px 5px 35px;
+		}
+		.alignright, 
+		.alignleft, 
+		.aligncenter,
+		div.alignnon,
+		img.aligncenter{
+			display: block;
+			float: none;
+			margin: 0 auto 1em;
+		}
+		img{
+			max-width: 300px;
+			height: auto;
+			&.size-full{
+				max-width: 300px;
+				height: auto;
+			}
+		}
+		.wp-capition{
+			max-width: 300px;
+		}
+		.wp-caption-text{
+			font-size:0.75em;
+		}
+	}
+	/* 楽天 */
+	div.rakuten_details{
+		div.rakuten_info{
+			width:300px;
+			font-size:0.85em;
+		}
+	}
+
+	/* コメント欄 */
+	#respond{
+		width: 300px;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	
+	/* 関連投稿 */
+	.related{
+		.grid_4{
+			width: 320px;
+			margin: 0;
+			h3{
+				cursor: pointer;
+			}
+		}
+	}
+	/* 電子書籍 */
+	.ebook .eyecatch{
+		padding: 20px 10px;
+		img{
+			max-width: 300px;
+			height: auto;
+		}
+	}
+	/* 電子書籍リスト */
+	.ebook{
+		.device-list{
+			.device{
+				width: 90px;
+				&:nth-child(3n){
+					margin-right: 0;
+				}
+			}
+			.valid{
+				background-position: -5px bottom;
+			}
+			.invalid{
+				background-position: -105px bottom;
+			}
+		}
+		.file-list{
+			td{
+				.file-meta{
+					small{
+						display: block;
+					}
+				}
+				.desc{
+					p{
+						font-size: 0.85em;
+					}
+				}
+				&.center img{
+					width: 30px;
+					height: 30px;
+				}
+				&.width150{
+					width: 80px;
+					img{
+						display: none;
+					}
+					.download{
+						display: block;
+						margin: 0 auto;
+						background: url('../../img/retina-icon-download.png') left top no-repeat;
+						background-size: 32px 64px;
+						width: 32px;
+						height: 32px;
+						position: relative;
+						overflow: visible;
+						small{
+							display: block;
+							text-align: center;
+							position: absolute;
+							top: -8px;
+							right: -24px;
+							line-height: 1;
+							height: 1em;
+							padding: 5px;
+							color: #fff;
+							background: $deep-blue;
+							text-shadow: 1px 1px 5px #000;
+							@include border-radius(5px);
+							opacity: 0.8;
+						}
+						img{
+							display: none;
+						}
+					}
+					a.download{
+						&:hover,
+						&:active{
+							opacity: 0.7;
+						}
+					}
+					span.download{
+						background-position: left -32px;
+					}
+				}
+			}
+		}
+	}
+	/* 電子書籍 */
+	.ebook-sidebar .widget_fumiki_ebook{
+		padding-left: 5px;
+		li{
+			width: 150px;
+			margin-bottom: 10px;
+			&:nth-child(2n){
+				padding-right: 5px;
+			}
+			&:nth-child(2n+1){
+				clear: left;
+			}
+		}
+	}
+	&.home{
+		#content{
+			background-size: 250px 265px;
+			background-position : 0 200px;
+		}
+	}
+	/* トップページ */
+	.main-menu{
+		padding: 10px;
+		h1 img{
+			width: 240px;
+			height: 25px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.desc-box{
+		padding: 20px 0;
+		.main-box{
+			margin-top: 20px;
+			width: 320px;
+			.grid_2{
+				float: none;
+				padding:0 10px 20px;
+			}
+		}
+	}
+	.desc-parts{
+		h2{
+			font-size: 2em;
+		}
+		.desc{
+			margin: 20px 10px;
+		}
+		.grid_3{
+			margin-bottom: 20px;
+			float: none;
+		}
+	}
+	/* アーカイブページ */
+	.archive{
+		padding: 5px;
+		.archive-box-small{
+			float: left;
+			margin-bottom: 10px;
+			&:nth-child(2n){
+				padding-right: 0;
+			}
+			&:nth-child(2n+1){
+				padding-right: 10px;
+				clear: left;
+			}
+		}
+		> .entry{
+			width: 290px;
+		}
+	}
+	/* ログインフォーム*/
+	.login{
+		#your-profile .form-table th{
+			width: auto;
+		}
+		form{
+			textarea{
+				width: 150px;
+				font-size: 1.2em;
+			}
+		}
+		p input.input{
+			width: 250px;
+		}
+	}
+	/* フォーム */
+	#lwp-invoice{
+		width: 320px;
+		.header h1 img{
+			width: 240px;
+			height: 25px;
+			display: block;
+			margin: 0 auto;
+		}
+		.lwp-column-method img{
+			width: 65px;
+			height: 40px;
+		}
+	}
+	/* フッター */
+	#footer{
+		width: 320px;
+		paddign:0;
+		margin: 0;
+		.inner{
+			margin: 0;
+			width: 300px;
+			padding: 10px;
+		}
+		.grid_4{
+			width: auto;
+		}
+	}
+	#copy-note{
+		p{
+			width: auto;
+			float: none;
+			text-align: center;
+		}
+		.poweredby{
+			float: none;
+			text-align: center;
+		}
+	}
+	/* ナビゲーションバー */
+	#wpadminbar{
+		min-width: 320px;
+		width: 320px;
+		#wp-admin-bar-main-menues > a,
+		#wp-admin-bar-category > .ab-empty-item,
+		#wp-admin-bar-ebook > a,
+		#wp-admin-bar-event > a,
+		#wp-admin-bar-my-account > .ab-empty-item,
+		#wp-admin-bar-my-account > a{
+			width: 20px;
+			height: 20px;
+			text-indent: 40px;
+			overflow: hidden;
+			padding: 4px 10px;
+			background: transparent url('../../img/wpnav-icons.png') 10px 4px no-repeat;
+			background-size: 100px 40px;
+			background-clip: content-box;
+		}
+		#wp-admin-bar-main-menues.hover,
+		#wp-admin-bar-category.hover,
+		#wp-admin-bar-ebook.hover,
+		#wp-admin-bar-event.hover,
+		#wp-admin-bar-my-account.hover{
+			background-color: #fff;
+		}
+		#wp-admin-bar-main-menues.hover > a{
+			background-position: 10px -16px;
+		}
+		#wp-admin-bar-category > .ab-empty-item{
+			background-position: -10px 4px;
+		}
+		#wp-admin-bar-category.hover > .ab-empty-item{
+			background-position: -10px -16px;
+		}
+		#wp-admin-bar-ebook > a{
+			background-position: -30px 4px;
+		}
+		#wp-admin-bar-event > a{
+			background-position: -50px 4px;
+		}
+		#wp-admin-bar-my-account > .ab-empty-item,
+		#wp-admin-bar-my-account > a{
+			background-position: -70px 4px;
+		}
+		#wp-admin-bar-my-account.hover > .ab-empty-item,
+		#wp-admin-bar-my-account.hover > a{
+			background-position: -70px -16px;
+		}
+		#adminbarsearch .adminbar-input:focus{
+			width: 100px;
+		} 
+	}
 }
 
-/*メインタイトル*/
-.smartphone .title{
-	font-size:4em;
-	margin-right:30px;
-	margin-left:30px;
-}
-.smartphone .title-meta li,
-.smartphone .breadcrumb{
-	font-size:1.6em;
-}
-.smartphone .header .post-counts{
-	top:-70px;
-	right:10px;
-}
-/*フッター*/
-.smartphone #footer{
-	font-size:1.4em;
-}
-.smartphone #footer-nav .grid_4{
-	margin-bottom:20px;
-}
-.smartphone #footer-nav .grid_4:nth-child(3),
-.smartphone #footer-post .grid_4:nth-child(3){
-	clear:left;
-}
-.smartphone #footer ul li a:link,
-.smartphone #footer ul li a:visited{
-	background-color:#252E34;
-}
-.smartphone #footer .hatena-bookmark-widget-body .hatena-bookmark-count a:link,
-.smartphone #footer .hatena-bookmark-widget-body .hatena-bookmark-count a:visited{
-	background-color: #fff;
-}
-/*投稿画面*/
-.smartphone .entry .wp-caption-text{
-	font-size:0.9em;
-}
-.smartphone .share{
-	font-size:1.4em;
-}
-.smartphone #yarpp li a.button {
-	font-size:1.4em;
-}
-/*アーカイブ*/
-.smartphone .archive .archive-box-big,
-.smartphone .archive .archive-box-small{
-	width:auto;
-	float:none;
-	padding-right: 0;
-	margin-bottom:30px;
-	padding-bottom:30px;
-	border-bottom: 1px solid #ddd;
-}
-.smartphone .archive .archive-box .cat{
-	height:24px;
-	line-height:24px;
-	font-size:16px;
-	padding-left:5px;
-}
-.smartphone .archive .archive-box small{
-	text-align: left;
-	font-size:1.6em;
-	height:20px;
-	line-height:20px;
-}
-.smartphone .archive .archive-box-big h2{
-	font-size:1.8em;
-	width:280px;
-}
-.smartphone .archive .archive-box{
-	position:relative;
-}
-.smartphone .archive .archive-box-big .desc{
-	height:160px;
-	width:300px;
-	position: absolute;
-	right:0;
-	top:10px;
-	font-size:1.6em;
-}
-.smartphone .archive .archive-box-big .right{
-	position:absolute;
-	right:0;
-	top:170px;
-	font-size:2em;
-}
-.smartphone .archive .archive-box-small h2{
-	position:absolute;
-	font-size:2em;
-	background: none;
-	left: 170px;
-	top:40px;
-	width:320px;
-}
-.smartphone .archive .archive-box-small .photo{
-	overflow: visible;
-}
-.smartphone .archive .archive-box-small .desc{
-	height:auto;
-	font-size:1.1em;
-}
-.smartphone .archive .archive-box-small .desc p:first-letter{
-	font-size:3em;
-}
-.smartphone .archive .archive-box-small .tag{
-	height:auto;
-	font-size:1.4em;
-}
-.smartphone .archive .archive-box-small .right{
-	position:absolute;
-	margin:0;
-	right:0;
-	top:27px;
-	font-size:2em;
-	height:46px;
-	width:48px;
-}
-.smartphone .archive .archive-box-small .right a{
-	display: block;
-	padding:0;
-	width:48px;
-	height:46px;
-	font-size:0;
-	text-indent: 9999px;
-	overflow: hidden;
-	background:transparent url('img/icon-arrow.png') left top no-repeat;
-	border:none;
-	-webkit-box-shadow:none;
-	-moz-box-shadow:none;
-	box-shadow:none;
-}
-.smartphone .archive .archive-box-small .right a:active{
-	background-position: left -46px;
-}
-.smartphone .wp-pagenavi{
-	font-size:2em;
-}
-/*トップページ*/
-.smartphone .main-menu{
-	margin-left:20px;
-	margin-right:20px;
-	font-size:3em;
-}
-.smartphone .home-archive{
-	padding:0 20px;
-}
-.smartphone #sidebar.sidebar-home{
-	margin:30px 0 0 0;
-	padding:20px 0 20px 10px;
-}
-.smartphone #sidebar.sidebar-home .widget{
-	padding-right:10px;
-	float: left;
-	margin-right:0;
-}
-.smartphone #sidebar.sidebar-home .widget:nth-child(3n+1){
-	clear:none;
-}
-.smartphone #sidebar.sidebar-home .widget:nth-child(odd){
-	clear:left;
-}
-/*電子書籍*/
-.smartphone .ebook-detail{
-	font-size: 1.4em;
-}
-.smartphone .ebook-detail dl dd{
-	margin-bottom: 0.5em;
-}
-.smartphone #lwp-invoice tbody td.lwp-column-method-desc{
-	font-size:1.6em;
-}
-/*ログイン*/
-.smartphone .login ul.tml-action-links li{
-	font-size:16px;
-}
+
 
 
 /****************************************

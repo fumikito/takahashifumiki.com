@@ -43,9 +43,9 @@ function _fumiki_head(){
 EOS;
 	}
 	if(is_smartphone()){
-		$dir = get_bloginfo('template_directory');
+		$dir = get_stylesheet_directory_uri();
 		echo <<<EOS
-<meta name="Viewport" content="width=640" />
+<meta name="Viewport" content="width=320" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <link rel="apple-touch-icon" href="{$dir}/img/home.png" />
@@ -157,3 +157,5 @@ function _fumiki_ustream_status(){
 }
 add_action('wp_ajax_ustream_status', '_fumiki_ustream_status');
 add_action('wp_ajax_nopriv_ustream_status', '_fumiki_ustream_status');
+
+

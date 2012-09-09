@@ -1,5 +1,3 @@
-<?php if(!is_smartphone()): ?>
-<div id="sidebar" class="dark_bg">
-	<?php if ( function_exists('dynamic_sidebar')) dynamic_sidebar('通常投稿');  ?>
+<div class="ebook-sidebar">
+	<? dynamic_sidebar('電子書籍詳細下'); ?>
 </div>
-<?php endif; ?>

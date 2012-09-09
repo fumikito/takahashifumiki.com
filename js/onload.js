@@ -35,7 +35,29 @@ jQuery(document).ready(function($){
 	}
 	
 	if($('body').hasClass('smartphone')){
+		//1px スクロール
+		setTimeout(function(){
+			window.scrollTo(0, 1);
+		}, 100);
 		var smartPhoneReadContainer = null;
+		//画像の修正
+		$('.entry .wp-caption').each(function(index, elt){
+			$(elt).css('width', 300);
+		});
+		//iframeの修正
+		$('.entry iframe, .entry object').each(function(index, elt){
+			var curWidth = $(elt).width();
+			if(curWidth > 300){
+				var height = $(elt).height() / $(elt).width() * 300;
+				$(elt).height(height);
+				$(elt).width(300);
+				$(elt).find('embed').each(function(i, e){
+					$(e).width(300);
+					$(e).height(height);
+				});
+			}
+		});
+		//電子書籍立ち読み
 		$('.ebook-read-more a').click(function(e){
 			e.preventDefault();
 			//サイズ情報を作成
@@ -75,6 +97,12 @@ jQuery(document).ready(function($){
 			$('#ebook-more-content').css({
 				height: h - pad - 20
 			}).prependTo(smartPhoneReadContainer);
+		});
+	}
+	//Adminbarの開閉
+	if($('body').hasClass('smartphone') || navigator.userAgent.match(/iPad/)){
+		$('#navi,#content,#footer,.header').bind('touchend', function(e){
+			$('li.menupop').removeClass('hover');
 		});
 	}
 	//Tooltip
@@ -184,3 +212,16 @@ jQuery(document).ready(function($){
 	//タイマー
 	setInterval(setUstreamStatus, 120000);
 });
+
+//ロードイベント
+(function($){
+	$.event.add(window, 'load', function(){
+		//Twitterウィジェットの調整
+		$('.twitter-tweet-rendered').each(function(index, elt){
+			$(elt).css('margin', '7px auto !important');
+			if($('body').hasClass('smartphone')){
+				$(elt).css('width', 'auto !important');
+			}
+		});
+	});
+})(jQuery);
