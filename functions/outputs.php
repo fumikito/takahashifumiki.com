@@ -54,7 +54,7 @@ function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true")
  * @return void
  */
 function fumiki_nakanohito(){
-	if(is_production()){
+	if(is_production() && !is_ssl()){
 		?>
 		<p id="nakanohito"></p>
 		<noscript>

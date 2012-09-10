@@ -2,10 +2,6 @@
 /*
  * Template Name: アカウント
  */
-	if(!is_user_logged_in() && (!is_page("login") && !is_page('inquiry'))){
-		auth_redirect ();
-		die();
-	}
 	get_header('meta');
 	get_header('navi');
 ?>

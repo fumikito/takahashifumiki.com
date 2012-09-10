@@ -17,7 +17,7 @@
 					<br />
 				<?php endif; ?>
 				<span class="old"><?php echo lwp_currency_symbol().number_format(lwp_price()); ?></span>
-				<?php if(!lwp_is_owner() && !lwp_is_free()): ?>
+				<?php if(!lwp_is_owner() && !lwp_is_free(true)): ?>
 					<?php echo lwp_buy_now(null, null); ?>
 				<?php endif; ?>
 				<?php if(lwp_on_sale() && !lwp_is_owner()): ?>
