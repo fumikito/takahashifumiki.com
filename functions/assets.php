@@ -12,6 +12,12 @@ function _fumiki_assets(){
 			'2.0'
 		);
 		wp_enqueue_style(
+			'jquery-ui',
+			get_template_directory_uri()."/css/custom-theme/jquery-ui-1.8.23.custom.css",
+			array(),
+			FUMIKI_VERSION
+		);
+		wp_enqueue_style(
 			'fumiki-style',
 			get_template_directory_uri()."/styles/stylesheets/core.css",
 			array(),
@@ -19,6 +25,7 @@ function _fumiki_assets(){
 			'screen'
 		);
 		//JS
+		
 		wp_enqueue_script(
 			'qtip',
 			get_template_directory_uri().'/js/jquery.qtip.min.js',
@@ -29,7 +36,7 @@ function _fumiki_assets(){
 		wp_enqueue_script(
 			'fumiki-core',
 			get_template_directory_uri()."/js/onload.js",
-			array('jquery'),
+			array('jquery', 'jquery-ui-dialog'),
 			FUMIKI_VERSION,
 			true
 		);

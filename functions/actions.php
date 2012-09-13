@@ -28,6 +28,8 @@ function _fumiki_head(){
 		$desc = is_singular() ? get_the_excerpt() : get_bloginfo('description');
 		$desc = str_replace("\n", "", $desc);
 		echo <<<EOS
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@takahashifumiki">
 <meta property="og:locale" content="ja_jp" />
 <meta property="og:title" content="{$title}"/>
 <meta property="og:url" content="{$url}" />
@@ -45,7 +47,7 @@ EOS;
 	if(is_smartphone()){
 		$dir = get_stylesheet_directory_uri();
 		echo <<<EOS
-<meta name="Viewport" content="width=320" />
+<meta name="Viewport" content="width=320,user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <link rel="apple-touch-icon" href="{$dir}/img/home.png" />

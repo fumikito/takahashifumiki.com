@@ -30,7 +30,7 @@
 						($accessibility == "any") // 誰でもダウンロードできるファイル
 					):
 				?>
-					<a class="download clearfix" href="<?= lwp_file_link($f->ID); ?>"  title="<? echo $f->name; ?>をダウンロード">
+					<a class="download clearfix" href="<?= lwp_file_link($f->ID); ?>" rel="nofollow,noindex" title="<? echo $f->name; ?>をダウンロード">
 						<img src="<? bloginfo('template_directory'); ?>/img/ebook-devices/btn_dlactive.gif" alt="ダウンロード" width="88" height="21" />
 						<small class="mono middle"><?= lwp_get_size($f); ?></small>
 					</a>

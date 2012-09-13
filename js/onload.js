@@ -98,6 +98,30 @@ jQuery(document).ready(function($){
 				height: h - pad - 20
 			}).prependTo(smartPhoneReadContainer);
 		});
+		//本棚
+		var bookShelf = $('#book-shelf .lwp-table');
+		if(bookShelf.length > 0){
+			var modalBox = $('<div class="entry"></div>');
+			modalBox.dialog({
+				autoOpen: false,
+				title: '決済情報詳細',
+				modal: true,
+				position: ['center', 'center'],
+				width: 300,
+				maxHeight: window.innerHeight - 56,
+				resizable: false
+			});
+			bookShelf.find('tbody tr').click(function(e){
+				var html = '<table><tbody>';
+				for(i = 0, l =$(this).find('td').length; i < l; i++){
+					html += '<tr><th>' + $(this).parents('table').find('thead th:eq(' + i + ')').text() + '</th><td>'+
+						    $(this).find('td:eq(' + i + ')').html() + '</td></tr>';
+				}
+				html += '</tbody></table>';
+				modalBox.html(html);
+				modalBox.dialog('open');
+			});
+		}
 	}
 	//Adminbarの開閉
 	if($('body').hasClass('smartphone') || navigator.userAgent.match(/iPad/)){
