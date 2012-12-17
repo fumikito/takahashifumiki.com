@@ -60,36 +60,7 @@ get_header('title');
 						</tr>
 					</thead>
 					<tbody>
-						<?
-							/**
-								* 
-								* @global Literally_WordPress $lwp
-								* @param int $id 
-								*/
-							function _fumiki_tickets($parent_id){
-								global $lwp;
-								?>
-						<tr>
-							<th scope="row"><? the_title(); ?></td>
-							<td><? lwp_the_price();?></td>
-							<td>
-								<? lwp_the_ticket_stock(); ?>
-							</td>
-							<td><? the_content(); ?></td>
-							<td>
-								<? if(lwp_get_ticket_stock() <= 0): ?>
-									売り切れ
-								<? elseif(time() >= lwp_selling_limit('U', $parent_id)): ?>
-									募集終了
-								<? else: ?>
-									<a class="lwp-buynow" href="<? echo esc_url(lwp_buy_url());?>">注文</a>
-								<? endif; ?>
-							</td>
-						</tr>
-								<?
-							}
-							lwp_list_tickets('callback=_fumiki_tickets');
-						?>
+						<? lwp_list_tickets('callback=_fumiki_tickets'); ?>
 					</tbody>
 				</table>
 			<? endif; ?>

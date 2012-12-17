@@ -25,7 +25,6 @@ function _fumiki_assets(){
 			'screen'
 		);
 		//JS
-		
 		wp_enqueue_script(
 			'qtip',
 			get_template_directory_uri().'/js/jquery.qtip.min.js',

@@ -39,9 +39,6 @@ function _fumiki_head(){
 <meta property="og:type" content="{$type}" />
 <meta property="og:site_name" content="高橋文樹.com"/>
 <meta property="fb:admins" content="1034317368" />
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-  {lang: 'ja'}
-</script>
 EOS;
 	}
 	if(is_smartphone()){

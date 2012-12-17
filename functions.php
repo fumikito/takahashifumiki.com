@@ -6,7 +6,7 @@
 /**
  * @var string
  */
-define("FUMIKI_VERSION", "3.0.6");
+define("FUMIKI_VERSION", "3.0.7");
 
 //エディタースタイルを登録
 add_editor_style("editor-style.css");
@@ -21,6 +21,8 @@ get_template_part("functions/utilities");
 get_template_part("functions/outputs");
 get_template_part("functions/wp_die");
 get_template_part("functions/nlp");
+get_template_part("functions/lwp");
+
 //サイドバーの登録
 register_sidebar(array(
 	 'name' => "通常投稿",

@@ -130,37 +130,28 @@ function fumiki_title(){
 function fumiki_share($title, $url){
 	$feed_url = get_bloginfo('rss_url');
 	$feed_src = get_bloginfo('template_directory')."/img/RSS-container.png";
-	$subscribers = 'N/A';
-	$saved_data = get_transient('feedburner_subscribers');
-	if(false === $saved_data){
-		$endpoint = "https://feedburner.google.com/api/awareness/1.0/GetFeedData?id=i25crst2uldga4n0o9ld5pkgpc&dates=".date('Y-m-d', gmmktime() - (60 * 60 * 24 * 2));
-		$ch = curl_init();
-		curl_setopt($ch,CURLOPT_URL,$endpoint);
-		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);  
-		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,5);
-		$response = curl_exec($ch);
-		$res_array = array();
-		preg_match("/circulation=\"(.*)\"/isU", $response, $res_array);
-		if(is_numeric($res_array[1])){
-			$subscribers = $res_array[1];
-			set_transient('feedburner_subscribers', $res_array[1], 60 * 60 * 24);
-		}
-	}else{
-		$subscribers = $saved_data;
-	}
+	$subscribers = '購読';
 	
 	$fb_url = is_front_page() ? urlencode('http://www.facebook.com/pages/高橋文樹/240120469352376') : urlencode($url);
 	
 	echo <<<EOS
 	<div class="like">
 	<!-- Hatena -->
-	<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	<!-- Facebook -->
 	<div class="fb-like" data-href="{$fb_url}" data-send="false" data-layout="box_count" data-width="72" data-show-faces="false"></div>
 	<!-- twitter -->
 	<a href="http://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js" async="async"></script>
 	<!-- Google + -->
-	<g:plusone size="tall" href="{$url}"></g:plusone>
+	<div class="g-plusone" data-href="{$url}" data-size="tall"></div>
+	<script type="text/javascript">
+		window.___gcfg = {lang: 'ja'};
+		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+	</script>
 	<!-- FeedBurner -->
 	<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
 		<span class="mono">{$subscribers}</span>
@@ -392,7 +383,7 @@ function get_hatena_rss(){
 	if($xml){
 		return simplexml_load_string($xml);
 	}else{
-		return $xlm;
+		return $xml;
 	}
 }
 
@@ -435,7 +426,7 @@ function get_twitter_timeline($count = 20, $screen_name = 'takahashifumiki'){
 	$transient_name = "twitter_public_timeline_{$screen_name}_{$count}";
 	$twt_timeline = get_transient($transient_name);
 	if(false === $twt_timeline){
-		$endpoint = 'https://twitter.com/statuses/user_timeline.json?screen_name='.(string)$screen_name.'&count='.intval($count);
+		$endpoint = 'http://api.twitter.com/1/statuses/user_timeline/'.(string)$screen_name.'.json';
 		$context = stream_context_create(array(
 			'http' => array( 'timeout' => 3 )
 		));

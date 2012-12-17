@@ -34,7 +34,7 @@
 								<?php echo date('M jS Y(D) H:i', strtotime($t->created_at)); ?>&nbsp;
 							</a>
 						</small>
-					<?php endforeach; ?>
+					<?php break; endforeach; ?>
 				<?php else: ?>
 					つぶやきを取得できませんでした。
 				<?php endif; ?>
