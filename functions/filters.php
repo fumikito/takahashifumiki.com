@@ -265,8 +265,8 @@ add_filter('script_loader_src', '_fumiki_script_loader_src');
  * @return string
  */
 function _fumiki_style_loader_tag($tag){
-	$home_url = home_url('/', is_ssl() ? 'https' : 'http');
-	if(preg_match('href="'.$home_url, $tag)){
+	$them_dir = home_url('/', is_ssl() ? 'https' : 'http');
+	if(false !== strpos('href="'.$them_dir, $tag)){
 		$tag = preg_replace('/(https?):\/\//', '$1://s.', $tag);
 	}
 	return $tag;

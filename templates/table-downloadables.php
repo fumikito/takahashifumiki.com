@@ -31,7 +31,7 @@
 					):
 				?>
 					<a class="download clearfix" href="<?= lwp_file_link($f->ID); ?>" rel="nofollow,noindex" title="<? echo $f->name; ?>をダウンロード">
-						<img src="<? bloginfo('template_directory'); ?>/img/ebook-devices/btn_dlactive.gif" alt="ダウンロード" width="88" height="21" />
+						<img src="<? echo get_stylesheet_directory_uri(); ?>/img/ebook-devices/btn_dlactive.gif" alt="ダウンロード" width="88" height="21" />
 						<small class="mono middle"><?= lwp_get_size($f); ?></small>
 					</a>
 					<small class="desc">クリックしてダウンロード</small>
