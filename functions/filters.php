@@ -127,7 +127,7 @@ function _fumiki_ssl_content($content){
 	$upload_dir = wp_upload_dir();
 	$upload_dir_url = $upload_dir['baseurl'];
 	if(is_ssl()){
-		$upload_dir_ssl_url = str_replace('http:', 'https:', $upload_dir_url);
+		$upload_dir_ssl_url = str_replace('http://', 'https://s.', $upload_dir_url);
 		$content = str_replace($upload_dir_url, $upload_dir_ssl_url, $content);
 	}else{
 		$upload_dir_cdn_url = str_replace('http://', 'http://s.', $upload_dir_url);
@@ -145,12 +145,12 @@ add_filter('the_content', '_fumiki_ssl_content');
  * @return string
  */
 function _fumiki_home_url($url, $path = '', $orig_scheme = 'http'){
-	if(is_ssl() && strpos($path, 'wp-content') === false){
+	if(is_ssl() && !is_admin() && $orig_scheme != 'http' && strpos($path, 'wp-content') === false){
 		$url = str_replace('https:', 'http:', $url);
 	}
 	return $url;
 }
-add_filter('home_url', '_fumiki_home_url');
+add_filter('home_url', '_fumiki_home_url', 10, 2);
 
 /**
  * SSLが指定されている場合はURLを返す
@@ -229,7 +229,7 @@ add_action('wp_footer', '_fumiki_remove_disqus', 1);
  */
 function _fumiki_simplecaptch_override($dir){
 	if(is_ssl() && isset($dir['url'])){
-		$dir['url'] = str_replace('http:', 'https:', $dir['url']);
+		$dir['url'] = str_replace('http://', 'https://s.', $dir['url']);
 	}
 	return $dir;
 }
@@ -241,13 +241,7 @@ add_filter('wpcf7_upload_dir', '_fumiki_simplecaptch_override');
  * @return string
  */
 function _fumiki_static_url($url){
-	if(!is_ssl()){
-		//SSLじゃなかったらCDN用URLに変える
-		$root_uri = home_url();
-		$static_uri = str_replace('http://', 'http://s.', $root_uri);
-		$url = str_replace($root_uri, $static_uri, $url);
-	}
-	return $url;
+	return preg_replace("/(https?):\/\/({$_SERVER['SERVER_NAME']})/", '$1://s.$2', $url);
 }
 add_filter('template_directory_uri', '_fumiki_static_url');
 
@@ -258,8 +252,8 @@ add_filter('template_directory_uri', '_fumiki_static_url');
  */
 function _fumiki_script_loader_src($src){
 	$home_url = home_url();
-	if(!is_ssl() && false !== strpos($src, $home_url)){
-		$src = str_replace('http://', 'http://s.', $src);
+	if(false !== strpos($src, $home_url)){
+		$src = preg_replace('/(https?):\/\//', '$1://s.', $src);
 	}
 	return $src;
 }
@@ -271,15 +265,50 @@ add_filter('script_loader_src', '_fumiki_script_loader_src');
  * @return string
  */
 function _fumiki_style_loader_tag($tag){
-	$home_url = home_url();
-	if(!is_ssl() && false !== strpos('href="'.$home_url, $tag)){
-		$tag = str_replace('href="http://', 'href="http://s.', $tag);
+	$home_url = home_url('/', is_ssl() ? 'https' : 'http');
+	if(preg_match('href="'.$home_url, $tag)){
+		$tag = preg_replace('/(https?):\/\//', '$1://s.', $tag);
 	}
 	return $tag;
 }
 add_filter('style_loader_tag', '_fumiki_style_loader_tag');
 
+/**
+ * wp_attachment imageのSRCを置換
+ * @param array $atts
+ * @param object $attachment
+ * @return array
+ */
+function _fumiki_attachment_image_atts($atts){
+	$atts['src'] = preg_replace("/(https?):\/\//", '$1://s.', $atts['src']);
+	return $atts;
+}
+//add_filter('wp_get_attachment_image_attributes', '_fumiki_attachment_image_atts');
 
+/**
+ * get_atachment_urlのURLを変更
+ * @param string $url
+ * @return string
+ */
+function _fmiki_attachment_url($url){
+	return preg_replace("/(https?):\/\//", '$1://s.', $url);
+}
+add_filter('wp_get_attachment_url', '_fmiki_attachment_url');
+
+/**
+ * Image Widgetが出す画像をコントロール
+ * @param string $url
+ * @param array $args
+ * @param array $instance
+ * @return string
+ */
+function _fumiki_image_widget_url($url, $args, $instance){
+	if(false !== strpos($url, $_SERVER['SERVER_NAME'])){
+		$url = preg_replace("/(https?):\/\//", '$1://s.', $url);
+	}
+	return $url;
+}
+add_filter('image_widget_image_url', '_fumiki_image_widget_url', 10, 3);
 
 /**
  * リダイレクトループにならないようにする
