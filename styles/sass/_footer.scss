@@ -1,0 +1,208 @@
+/*---------------------
+ * フッター
+ */
+footer{
+	color: #f0f0f0;
+	padding-top: 2em;
+	margin-top: 1.5em;
+	border-top: 1px solid #252e34;
+	@include box-shadow(0 -1px 5px rgba(0,0,0,0.5));
+	#footer-nav{
+		padding-bottom: 63px;
+		background: url('../img/footer-devider.png') center bottom no-repeat;
+	}
+	.inner{
+		margin:0 0.5em;
+	}
+	h4{
+		font-size:1.6em;
+		font-weight: normal;
+		letter-spacing: -1px;
+		padding: 0 0.5em 10px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+		@include box-shadow(rgba(255, 255, 255, 0.2) 0 1px 0);
+		&.second,
+		&.widgettitle{
+			margin-top: 2em;
+		}
+		i{
+			margin-right: 0.25em;
+		}
+	}
+	/*プロフィール*/
+	.avatar{
+		@extend .img-circle;
+		@extend .img-pressed;
+		display: block;
+		margin: 10px auto;
+	}
+	.admin-name{
+		font-size:2em;
+		text-align: center;
+	}
+	blockquote{
+		margin: 1em 0;
+		font-size: 1.2em;
+		line-height: 1.2;
+		p{
+			margin: 0 0.5em;
+			&.tweet{
+				font-size: 1.2em;
+				line-height: 1.2;
+			}
+		}
+		i{
+			display: block;
+			height: 24px;
+			background: url('../img/meta-icons-2.png') left -288px no-repeat;
+			&.last{
+				background-position: right -312px;
+			}
+		}
+		cite{
+			font-family: $mono;
+			display: block;
+			text-align: right;
+			margin: 0.5em 0;
+			font-size: 0.85em;
+			font-style: italic;
+		}
+	}
+	a.button{
+		font-size: 1.2em;
+	}
+	ol{
+		&.inner{
+			li{
+				margin:5px 0;
+				a{
+					display: block;
+					heigth: 32px;
+					line-height: 32px;
+					font-size: 1.2em;
+					background: url('../img/social-icons-2.png') left top no-repeat;
+					padding-left: 38px;
+					&:link,
+					&:visited{
+						text-decoration: none;
+					}
+					&:hover{
+						background-color: #252e34;
+					}
+				}
+				.feed{ background-position: left -32px; }
+				.hametuha{ background-position: left -288px;}
+				.facebook{ background-position: left -96px;}
+				.twitter{ background-position: left -128px;}
+				.google{ background-position: left -160px;}
+				.youtube{ background-position: left -64px;}
+				.github{ background-position: left -192px;}
+				.foursquare{ background-position: left -224px;}
+				.instagram{ background-position: left -256px;}
+				.linkedin{ background-position: left -320px;}
+				.company{ background-position: left -352px;}
+				&.contact{
+					font-size: 1.1em;
+					margin: 0.5em 0;
+					line-height: 1.2;
+					padding: 0.75em 1em;
+					background: $deep-blue;
+					@include border-radius(5px);
+					@include box-shadow(inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5));
+					a{
+						line-height: 1.1;
+						display: inline;
+						font-size: 1em;
+						background: none;
+						padding-left: 0;
+						&:link, &:visited{
+							text-decoration: underline;
+						}
+					}
+					i{
+						font-size: 2em;
+						float: left;
+						margin-right: 0.5em;
+					}
+				}
+			}
+		}
+		&.no-text{
+			li{
+				width: 32px;
+				height: 32px;
+				overflow: hidden;
+				float: left;
+				line-height: 32px;
+				text-indent: 32px;
+				margin-right: 5px;
+			}
+		}
+	}
+	/*リンクの色設定*/
+	ul{
+		padding-left:20px;
+		ul{
+			padding-left:1em;
+		}
+		li{
+			margin:5px 0;
+			font-size:1.2em;
+			li{
+				font-size:1em;
+			}
+			a{
+				display: block;
+				padding: 3px 5px;
+				background: none;
+				@include border-radius(5px);
+				&:link, &:visited{
+					color: #fff;
+					text-decoration: none;
+				}
+				&:hover, &:active{
+					background: #252e34;
+				}
+			}
+		}
+	}
+}
+
+p#nakanohito{
+	text-align: center;
+}
+
+/*コピーライト*/
+#copy-note{
+	font-size:12px;
+	padding-bottom:20px;
+	p{
+		width: 33%;
+		float: left;
+	}
+	.poweredby{
+		float: right;
+		text-align: right;
+		 a{
+			font-style: italic;
+		}
+	}
+}
+
+
+/* Ustream */
+#ustream-badge{
+	display: none;
+	width: 40px;
+	height: 225px;
+	line-height: 225px;
+	position: fixed;
+	top: 28px;
+	right: 0;
+	z-index: 999;
+	text-indent: 40px;
+	overflow: hidden;
+	background: url('../img/icon-ustream.jpg') left top no-repeat;
+	@include box-shadow(0 0 5px #666);
+}

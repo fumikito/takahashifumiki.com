@@ -269,6 +269,10 @@ function _fumiki_style_loader_tag($tag){
 	if(false !== strpos('href="'.$them_dir, $tag)){
 		$tag = preg_replace('/(https?):\/\//', '$1://s.', $tag);
 	}
+	//Font-awesomeの本体だけは同じドメインにする
+	if(false !== strpos($tag, 'font-awesome.css')){
+		$tag = preg_replace('/(https?:\/\/)s\./', '$1', $tag);
+	}
 	return $tag;
 }
 add_filter('style_loader_tag', '_fumiki_style_loader_tag');
@@ -280,10 +284,16 @@ add_filter('style_loader_tag', '_fumiki_style_loader_tag');
  * @return array
  */
 function _fumiki_attachment_image_atts($atts){
-	$atts['src'] = preg_replace("/(https?):\/\//", '$1://s.', $atts['src']);
+	if(is_ssl() && false !== strpos($atts['src'], 'http://')){
+		//SSLに置換
+		$atts['src'] = str_replace('http://', 'https://', $atts['src']);
+	}
+	if(!is_admin()){
+		$atts['src'] = preg_replace("/(https?):\/\//", '$1://s.', $atts['src']);
+	}
 	return $atts;
 }
-//add_filter('wp_get_attachment_image_attributes', '_fumiki_attachment_image_atts');
+add_filter('wp_get_attachment_image_attributes', '_fumiki_attachment_image_atts');
 
 /**
  * get_atachment_urlのURLを変更
@@ -291,9 +301,12 @@ function _fumiki_attachment_image_atts($atts){
  * @return string
  */
 function _fmiki_attachment_url($url){
-	return preg_replace("/(https?):\/\//", '$1://s.', $url);
+	if(!is_admin()){
+		$url = preg_replace("/(https?):\/\//", '$1://s.', $url);
+	}
+	return $url;
 }
-add_filter('wp_get_attachment_url', '_fmiki_attachment_url');
+//add_filter('wp_get_attachment_url', '_fmiki_attachment_url');
 
 /**
  * Image Widgetが出す画像をコントロール
@@ -304,7 +317,12 @@ add_filter('wp_get_attachment_url', '_fmiki_attachment_url');
  */
 function _fumiki_image_widget_url($url, $args, $instance){
 	if(false !== strpos($url, $_SERVER['SERVER_NAME'])){
-		$url = preg_replace("/(https?):\/\//", '$1://s.', $url);
+		$url = preg_replace("/http(s?):\/\//", 'http$1://s.', $url);
+		if(is_ssl()){
+			$url = str_replace('http://', 'https://', $url);
+		}else{
+			$url = str_replace('https://', 'http://', $url);
+		}
 	}
 	return $url;
 }
@@ -335,15 +353,6 @@ $ebook_sidebar_counter = 0;
  */
 function _fumiki_sidebar_container($params){
 	global $normal_sidebar_counter, $ebook_sidebar_counter;
-	if($params[0]['name'] == '通常投稿'){
-		$normal_sidebar_counter++;
-		if($normal_sidebar_counter % 3 == 1){
-			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 clrL"', $params[0]['before_widget']);
-		}
-		if($normal_sidebar_counter % 3 == 0){
-			$params[0]['before_widget'] = preg_replace("/class=\"([^\"]+)\"/", 'class="$1 last"', $params[0]['before_widget']);
-		}
-	}
 	if($params[0]['name'] == '電子書籍'){
 		$ebook_sidebar_counter++;
 		if($ebook_sidebar_counter % 3 == 1){

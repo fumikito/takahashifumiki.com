@@ -110,6 +110,14 @@ function is_production(){
 }
 
 /**
+ * 普通のアーカイブページならtrue
+ * @return boolean
+ */
+function is_normal_archive(){
+	return is_search() || is_archive() || is_home();
+}
+
+/**
  * 投稿を返す（メタ情報を取るときなどにメンドクサイので）
  * @global object $post
  * @param object $post

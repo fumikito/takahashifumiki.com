@@ -4,7 +4,10 @@
  * 色設定
  */
 
+/* 背景色 */
 $body-color: #4D4945;
+
+/* 色 */
 $deep-blue: #252e34;
 $semi-blue: #333F46;
 $pale-green: #8ab29f;
@@ -16,26 +19,25 @@ $thin-grey: #ddd;
 $light-grey: #666;
 $warning-red: #ff4d44;
 
-/*---------------------
- * フォント設定
- */
+/* メッセージ用の色 */
+$error-text-color: #ff4d44;
+$error-bg-color: #ffd4d2;
+$success-text-color: #059119;
+$success-bg-color: #c6f4cd;
+$info-text-color: #05a;
+$info-bg-color: #9fc9f4;
+
+/* フォント設定 */
 $serif: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体","MS P明朝" ,"ヒラギノ明朝体3",serif;
 $old: Georgia, "Times New Roman", Times, serif;
 $sans: "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
 $mono: 'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
+
 .mincho{ font-family: $serif; }
 .old{font-family: $old;}
 .sans{font-family: $sans;}
 .mono{font-family: $mono;}
 strong{font-weight: bold;}
-
-/*---------------------
- * クリア設定
- */
-html,body{margin:0;padding:0;}
-a img{border-style: none;}
-li{list-style: none;}
-p{margin:1em 0}
 
 
 /*フロート解除*/
@@ -92,7 +94,7 @@ a{
  */
 /*背景画像*/
 .dark_bg{
-	background: url('../../img/bg-texture-dark.jpg');
+	background: url('../img/bg-texture-dark.jpg');
 }
 /* テキストシャドウ */
 .shadow{
@@ -114,44 +116,9 @@ a{
 	}
 }
 
-/* border */
-@mixin border-radius($radius: 10px){
-	-webkit-border-radius: $radius;
-	-khtml-border-radius: $radius;
-	-moz-border-radius: $radius;
-	border-radius: $radius;
-}
 
-@mixin divider($px: 1px, $style: solid){
-	border-top: $px $style $thin-grey;
-	border-bottom: $px $style $thin-grey;
-}
 
-/*メッセージボックス*/
-p.message{
-	border-radius:5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	padding:0.5em;
-}
-p.warning{
-	color:#ff4d44;
-	border:1px solid #ff4d44;
-	background: #ffd4d2 url('../../img/icon-warning_32.png') 5px center no-repeat;
-	padding-left:42px;
-}
-p.success{
-	color:#059119;
-	border:1px solid #059119;
-	background: #c6f4cd url('../../img/icon-accepted_32.png') 5px center no-repeat;
-	padding-left:42px;
-}
-p.notice{
-	color:#05a;
-	border:1px solid #06C;
-	background: #9fc9f4 url('../../img/icon-notice_32.png') 5px center no-repeat;
-	padding-left:42px;
-}
+
 .ui-tooltip-dark{
 	font-size: 2em;
 	line-height: 1.1;
@@ -159,4 +126,18 @@ p.notice{
 .ui-tooltip-content{
 	padding: 10px 20px;
 	font-weight: normal;
+}
+
+/*---------------------
+ * テキスト・背景色
+ */
+body{
+	color: $body-color;
+	word-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-ideograph ;
+	font-family: $sans;
+	font-size:10px;
+	background: url('../img/bg-texture-white.jpg');
+	position: relative;
 }

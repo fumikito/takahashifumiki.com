@@ -1,0 +1,313 @@
+@mixin post_style(){
+	//本文
+	font-size:2em;
+	line-height:1.8;
+	position: relative;
+	
+	& > p{
+		margin: 1em 0;
+		&.indent{
+			text-indent: 1em;
+		}
+	}
+	p.attachment{
+		text-align: center;
+		img{
+			max-width: 100%;
+		}
+	}
+
+	/*見出し*/
+	h2,h3,h4,h5{
+		text-shadow:1px 1px 2px #fff;
+		font-weight: bold;
+		padding-top:1.5em;
+		margin-bottom:0.75em;
+	}
+	h2{
+		font-size:1.8em;
+		line-height:1.2;
+		color: $pale-green;
+	}
+	h3{
+		font-size:1.5em;
+		padding-bottom:5px;
+		line-height:1.2;
+		color: $semi-blue;
+		border-bottom:1px dotted $deep-blue;
+	}
+	h4{
+		font-size:1.3em;
+		line-height:1.2;
+		color: #888;
+		text-shadow: 1px 1px 2px #fff;
+	}
+	h5{
+		font-size:1.1em;
+		line-height:1.2;
+	}
+	
+	/* 装飾 */
+	strong, b{
+		color: #000;
+		font-weight: bold;
+	}
+	big{
+		font-weight: bold;
+		font-size: 2em;
+	}
+	em{
+		color: #000;
+		font-style: italic;
+	}
+	/* 略語 */
+	abbr, acronym{
+		cursor: help;
+		color: $semi-blue;
+		border-bottom: 1px dashed $semi-blue;
+	}
+	/* 数式 */
+	sup{
+		font-size: 0.5em;
+		vertical-align: top;
+	}
+	sub{
+		font-size: 0.5em;
+		vertical-align: sub;
+	}
+	var{
+		font-family: $old;
+		font-style: italic;
+	}
+	/*挿入*/
+	ins{
+		text-decoration: none;
+		color: $light-grey;
+		background: $pale-yellow;
+	}
+	/*削除*/
+	del, s{
+		color: #aaa;
+		&:before{ content:" ";}
+		&:after{ content:" "; }
+	}
+	
+	/*リスト共通設定*/
+	ol,ul,dl{
+		margin:1em 0;
+	}
+	ol li,ul li,dl dd{margin: 0.5em 0 0.8em 1em;}
+	ul,ol{padding-left: 1.5em;}
+	ul li{list-style: outside disc;}
+	ol li{list-style: outside decimal;}
+	ul li li, ol li li, dd li{font-size:0.8em;}
+	ul li ul li{list-style-type: circle;}
+	ol li ol li{list-style-type: decimal-leading-zero;}
+	dl dt{
+		font-size:1.2em;
+		font-weight: bold;
+		margin:15px 0 0;
+		text-shadow: 1px 1px 2px #fff;
+		color: $deep-blue;
+	}
+	dl dd{
+		padding-left:1.5em;
+		margin-left:0;
+		&:before{
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			display: inline-block;
+			text-decoration: inherit;
+			content: "\f0a4";
+			text-indent: -1.5em;
+		}
+	}
+	/*引用*/
+	blockquote{
+		margin:1em 0;
+		padding:0.5em 1em 0.5em 80px;
+		background: transparent url('../img/blockquote.gif') 10px 10px no-repeat;
+		color: $semi-blue;
+		border-top: 1px dotted $semi-blue;
+		border-bottom: 1px dotted $semi-blue;
+		p{
+			margin:0.5em 0;
+		}
+		cite {
+			display: block;
+			text-align: right;
+			font-size: 0.8em;
+			font-weight: normal;
+			color: $semi-blue;
+		}
+	}
+	q, cite{
+		font-style: italic;
+		color: $deep-blue;
+	}
+	q{
+		&:before{
+			content: '"';
+		}
+		&:after{
+			content: '"';
+		}
+	}
+	/*コードフォーマット*/
+	code, kbd, tt{
+		background: #fff;
+		border: 1px solid #ddd;
+		@include border-radius(3px);
+		padding: 1px 2px;
+		font-family: $mono;
+		color: #000;
+	}
+	pre{
+		font-family: $mono;
+	}
+	.syntaxhighlighter{
+		width: 960px !important;
+		padding-top:5px !important;
+		padding-bottom:5px !important;
+		margin-left: -100px !important; 
+		@include border-radius(5px);
+		@include box-shadow(1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset);
+		> table{
+			font-size: 0.85em !important;
+		}
+	}
+	.code-format{
+		background: #4D4945;
+		color: #fff;
+		margin: 10px;
+		padding: 10px;
+		border: 2px solid #CCC;
+		@include border-radius(15px);
+		overflow: auto;
+		font-family: $mono;
+		table{width:100%;}
+		tr.even{background:#57534E;}
+		th{
+			color:#938C84;
+			background-color:transparent;
+			font-weight:bold;
+			text-align:right;
+			border-right:#938C84 2px solid;
+			padding:0 5px 0 0;
+			vertical-align:top;
+		}
+		td{
+			padding:0 0 0 15px;
+			border-bottom:none;
+		}
+		.quote{color: #A5EFB8}
+		.notation{color: #BCE3F4}
+	}
+	
+	/*アスキーアート*/
+	pre.aa{
+		font-family: IPAMonaGothic,'ＭＳ ゴシック',monospace;
+		font-size:12px;
+		line-height:1.5;
+		margin:20px 0;
+		color: #999;
+	}
+	
+	/* アドレス */
+	address{
+		font-style: italic;
+		font-size: 0.85em;
+		color: #888;
+		line-height: 1.4;
+		padding: 0.5em 1em;
+	}
+	
+	/*注意書き*/
+	.alert{
+		font-size: 0.8em;
+		font-weight: bold;
+		color: #000;
+		&:before{content:" ※"}
+		&:after{content:" "}
+	}
+
+	/*テーブル*/
+	table{
+		margin: 20px 0;
+		border-spacing: 0;
+		empty-cells: show;
+		border-collapse: collapse;
+		&.form-table{
+			width:100%;
+		}
+		thead{
+			th, td{
+				background:#4D4945;
+				color:#f3f3f3;
+				padding:5px 8px;
+			}
+		}
+		caption{
+			color:#000;
+			text-align:left;
+			font-size:1.5em;
+		}
+		tbody{
+			th,td{
+				text-align:left;
+				padding:5px 8px;
+				font-size:0.85em;
+				border-bottom:1px dotted #999;
+			}
+			th{
+				font-weight: bold;
+				color: #888;
+				white-space: nowrap;
+			}
+			tr:nth-child(2n) td,
+			tr:nth-child(2n) th{
+				background: #f3f3f3;
+			}
+		}
+	}
+
+
+	
+
+	/*画像*/
+	.alignright{float: right; margin-left:1.5em;}
+	.alignleft{float: left;margin-right:1.5em;}
+	.aligncenter,
+	div.alignnon{margin:1.5em auto;}
+	img.aligncenter{display: block;}
+	img{
+		&.size-full{
+			max-width: 100%;
+		}
+	}
+	div.wp-caption{ margin-bottom:1em; }
+
+	/*キャプション*/
+	.wp-caption-text{
+		font-size:0.75em;
+		color: $light-grey;
+		margin:0.25em 0 0;
+	}
+
+	/*パスワード保護されていた場合*/
+	.blocked form{}
+
+
+	/* フォームパーツ */
+	input[type=text],
+	input[type=password],
+	input[type=email],
+	input[type=search],
+	textarea{
+		border:1px solid #ddd;
+		@include border-radius(3px);
+		padding:5px 10px;
+		color: #444;
+	}
+}

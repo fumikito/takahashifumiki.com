@@ -1,7 +1,7 @@
 
 
 
-<div class="margin header">
+<header class="margin header">
 		
 	<? $title = fumiki_title(); ?>
 	<h1 class="title mincho<? if(mb_strlen($title, 'utf-8') <= 20) echo ' center'; ?>">
@@ -19,7 +19,7 @@
 			<span class="year"><?php global $wp_query;  echo number_format($wp_query->found_posts); ?></span>
 		</div>
 	<?php endif; ?>
-	<?php if(is_singular() && !is_page('login')): ?>
+	<?php if(is_singular('post')): ?>
 		<div class="calendar shadow">
 			<?php
 				$date = explode(',', mysql2date('M,jS,D,Y,', $post->post_date, false));
@@ -43,11 +43,13 @@
 		<div class="google">
 			<? if(is_singular('ebook')): ?>
 				<img class="cover" src="<?php echo get_post_meta(get_the_ID(), 'cover', true); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
-				<?php if(lwp_on_sale()): ?>
-					<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
-				<?php endif; ?>
-			<? elseif(!is_smartphone()): ?>
-				<?php google_ads(3); ?>
+				<? if(lwp_on_sale()): ?>
+					<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/styles/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
+				<? endif; ?>
+			<? elseif(is_smartphone()): ?>
+				<?	google_ads(5); ?>
+			<? else: ?>
+				<? google_ads(3); ?>
 			<? endif; ?>
 		</div>
 		<? if(is_page()){
@@ -57,5 +59,4 @@
 		} ?>
 	</div>
 	<?php endif ?>
-		
-</div><!-- .header -->
+</header><!-- header -->

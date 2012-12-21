@@ -1,0 +1,210 @@
+//--------------------------
+//
+// シングルページ
+//
+//--------------------------
+
+/*---------------------
+ * ヘッダーメタ
+ */
+/*タイトル*/
+.title{
+	text-align: left;
+	margin: 0;
+	padding:80px 100px;
+	color: $pale-green;
+	font-size:5em;
+	font-weight: bold;
+	line-height: 1.1;
+	text-shadow:1px 1px 2px #fff;
+	&.center{
+		text-align: center;
+	}
+	strong{
+		display: block;
+		text-align: center;
+		font-size:0.6em;
+		font-weight: bold;
+	}
+}
+/*投稿件数*/
+.header{
+	position: relative;
+	.calendar{
+		position: absolute;
+		top: 0;
+		right: 0px;
+		height: 100px;
+		width: 120px;
+		background: url('../img/icon-calendar.png') left top no-repeat;
+		color: $white;
+		font-family: $old;
+		text-align: center;
+		.date{
+			font-size: 1.2em;
+			display: block;
+			padding-top: 1.5em;
+		}
+		.year{
+			font-size: 2.5em;
+		}
+	}
+}
+/*タイトルメタ*/
+.title-meta{
+	margin:10px 0 40px ;
+	background: $beige;
+	padding: 20px 100px;
+	@include divider;
+	.google{
+		width: 370px;
+		float: left;
+	}
+	table{
+		width: 370px;
+		float: right;
+		border-collapse: collapse;
+		th,td{
+			padding:5px;
+			font-size: 1.2em;
+			border-bottom: 1px dotted $thin-grey;
+			vertical-align: middle;
+		}
+		th{
+			color: $deep-blue;
+			white-space: nowrap;
+		}
+		td{
+			font-weight: bold;
+			strong{
+				color: $warning-red;
+				margin-right: 0.5em;
+			}
+		}
+		i{
+			margin-right: 0.25em;
+			font-size: 2em;
+		}
+	}
+}
+
+
+
+/*投稿スタイル*/
+.entry{
+	min-height: 400px;
+	padding-bottom:20px;
+		
+	/* 継承する */
+	@include post_style();
+	
+	/* Twitter ウィジェット*/
+	div.fumiki-twitter-rendered{
+		margin: 7px auto !important;
+		width: auto !important;
+		max-width: 502px !important;
+	}
+	
+	/* LWPの定期購読 */
+	.lwp-invitation{
+		@extend p.message;
+		@extend p.notice;
+		clear: both;
+	}
+	
+	/* Google Map */
+	div.googlemap iframe,
+	iframe[src*=maps\.google],
+	iframe[src*=maps\.google]{
+		width: 100%;
+	}
+}
+
+
+/* コメント */
+#respond{
+	width: 760px;
+	margin: 0 auto;
+}
+
+/*関連投稿*/
+.related{
+	 padding: 0 0 20px;
+	 margin: 20px 0;
+	/*説明書き*/
+	.meta{
+		width: 233px;
+		float: left;
+		padding: 5px;
+		h4{
+			font-size: 1.6em;
+			color: #4C5A65;
+			text-shadow: 1px 1px 2px #fff;
+		}
+		.meta p{
+			font-size: 1.2em;
+			color: #666;
+			text-shadow: 1px 1px 2px #fff;
+		}
+		.meta p a{
+			font-weight: bold;
+		}
+	}
+}
+ 
+.next-previous{
+	margin-top: 1em;
+	padding-top: 1em;
+	@include box-shadow(0 1px 1px rgba(255, 255, 255, 0.2) );
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	i{
+		font-size: 1.5em;
+		text-decoration: none;
+	}
+	p{
+		width: 300px;
+		float: left;
+		font-size: 0.8em;
+		line-height: 1.2;
+		&.prev{
+			i{
+				float: left;
+				margin-right: 0.5em;
+			}
+		}
+		&.next{
+			text-align: right;
+			float: right;
+			i{
+				margin-left: 0.5em;
+				float: right;
+			}
+		}
+	}
+}
+ 
+.google-share{
+	clear: both;
+	margin-bottom: 20px;
+	padding: 10px 0;
+	text-align: center;
+	background:$beige url('../img/content-footernote.png') center center no-repeat;
+	@include divider();
+	.div_3{
+		width: 300px;
+		min-height: 250px;
+		float: right;
+		margin-left: 20px;
+		table.like{
+			width: 100%;
+			td{
+				text-align: center;
+				padding: 10px;
+				min-height: 60px;
+			}
+		}
+	}
+	.ad_pc{
+		margin-left: 0;
+	}
+}

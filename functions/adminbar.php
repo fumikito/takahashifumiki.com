@@ -15,10 +15,10 @@ add_filter('show_admin_bar', '_fumiki_admin_bar_visible');
  */
 function _fumiki_admin_bar($wp_admin_bar){
 	//ロゴ追加
-	$style = is_admin() ? ' style="width: 190px;height: 20px; margin-top:4px;"' : '';
+	$logo = is_admin() ? get_bloginfo('name') : '<i class="icon-home"></i>'.get_bloginfo('name');
 	$wp_admin_bar->add_menu(array(
 		'id' => 'main-menues',
-		'title' => '<img alt="'.get_bloginfo('name').'" src="'.get_template_directory_uri().'/img/header-logo.png" width="190" height="20"'.$style.' />',
+		'title' => $logo,
 		'href' => home_url('/', 'http')
 	));
 	//ダッシュボード
@@ -29,14 +29,25 @@ function _fumiki_admin_bar($wp_admin_bar){
 			'href' => admin_url()
 		));
 	}
+	//最新投稿
+	$wp_admin_bar->add_menu(array(
+		'parent' => 'main-menues',
+		'title' => '最新投稿一覧',
+		'href' => home_url('latest')
+	));
 	//主要ページのメニューを追加
 	$menu_name = 'main-pages';
+	$wp_admin_bar->add_menu(array(
+		'parent' => 'main-menues',
+		'title' => '高橋文樹.comについて',
+		'id' => 'main-pages'
+	));
 	$location = get_nav_menu_locations();
 	$menu = wp_get_nav_menu_object($location[$menu_name]);
 	$menu_items = wp_get_nav_menu_items($menu->term_id);
 	foreach($menu_items as $key => $item){
 		$wp_admin_bar->add_menu(array(
-			'parent' => 'main-menues',
+			'parent' => 'main-pages',
 			'id' => 'page-menu-'.$key,
 			'title' => $item->title,
 			'href' => $item->url
@@ -44,8 +55,9 @@ function _fumiki_admin_bar($wp_admin_bar){
 	}
 	//カテゴリー追加
 	$wp_admin_bar->add_menu(array(
-		'title' => 'カテゴリー',
-		'id' => 'category'
+		'title' => 'ブログカテゴリー',
+		'id' => 'category',
+		'parent' => 'main-menues'
 	));
 	$categories = get_terms('category', array(
 		'parent' => 0,
@@ -74,12 +86,14 @@ function _fumiki_admin_bar($wp_admin_bar){
 	$wp_admin_bar->add_menu(array(
 		'id' => 'ebook',
 		'title' => '電子書籍',
-		'href' => get_post_type_archive_link('ebook')
+		'href' => get_post_type_archive_link('ebook'),
+		'parent' => 'main-menues'
 	));
 	$wp_admin_bar->add_menu(array(
 		'id' => 'event',
 		'title' => 'イベント',
-		'href' => get_post_type_archive_link('events')
+		'href' => get_post_type_archive_link('events'),
+		'parent' => 'main-menues'
 	));
 }
 add_action( 'admin_bar_menu', '_fumiki_admin_bar', 1);

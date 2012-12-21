@@ -6,7 +6,7 @@
 		<tr class="<? echo ($counter % 2 == 0) ? 'even' : 'odd';?>">
 			<td class="center">
 				<? $ext = lwp_get_ext($f); ?>
-				<img src="<? bloginfo('template_directory'); ?>/img/ebook-filetypes/<?= $ext; ?>.png" alt="<?= $ext; ?>" width="75" height="75" /><br />
+				<img src="<? bloginfo('template_directory'); ?>/styles/img/ebook-filetypes/<?= $ext; ?>.png" alt="<?= $ext; ?>" width="75" height="75" />
 				<em class="mono"><?= strtoupper($ext); ?></em>
 			</td>
 			<td>
@@ -30,16 +30,18 @@
 						($accessibility == "any") // 誰でもダウンロードできるファイル
 					):
 				?>
-					<a class="download clearfix" href="<?= lwp_file_link($f->ID); ?>" rel="nofollow,noindex" title="<? echo $f->name; ?>をダウンロード">
-						<img src="<? echo get_stylesheet_directory_uri(); ?>/img/ebook-devices/btn_dlactive.gif" alt="ダウンロード" width="88" height="21" />
-						<small class="mono middle"><?= lwp_get_size($f); ?></small>
+					<a class="button button-download" href="<?= lwp_file_link($f->ID); ?>" rel="nofollow,noindex">
+						<i class="icon-download-alt"></i>
+						ダウンロード
+						<small><?= lwp_get_size($f); ?></small>
 					</a>
 					<small class="desc">クリックしてダウンロード</small>
 				<? else: ?>
-					<span class="download clearfix" title="ダウンロードできません">
-						<img src="<? bloginfo('template_directory'); ?>/img/ebook-devices/btn_dldeact.gif" alt="ダウンロード不可" width="88" height="21" />
-						<small class="mono middle"><? echo lwp_get_size($f); ?></small>
-					</span>
+					<a class="button button-disabled" title="サイズ：<?= lwp_get_size($f); ?>" href="#" onclick="return false;">
+						<i class="icon-minus-sign"></i>
+						利用不可
+						<small><?= lwp_get_size($f); ?></small>
+					</a>
 					<small class="desc">
 						<?
 							switch($accessibility){

@@ -1,0 +1,120 @@
+/*---------------------
+ * レイアウトパーツ
+ */
+/*全体レイアウト*/
+.margin{
+	width:960px;
+	margin:0 auto;
+}
+#main{
+}
+#sidebar{
+	padding:20px 10px;
+}
+
+.grid_4{
+	float: left;
+	width: 280px;
+	margin-right: 40px;
+	&.last{
+		margin-right: 20px;
+	}
+	&.first{
+		margin-left: 20px;
+	}
+}
+
+.entry{
+	width: 760px;
+	margin: 0 auto;	
+}
+
+//--------------------
+//
+// 大きなデスクトップ
+//
+//--------------------
+@media (min-width: 1280px) {
+	.margin{
+		width: 1280px;
+	}
+	.grid_4{
+		width: 360px;
+		margin-right: 60px;
+		&.last{
+			margin-right: 30px;
+		}
+		&.first{
+			margin-left: 30px;
+		}
+	}
+	$bigGutter: 30px;
+	header .title-meta{
+		padding-left: 260px;
+		padding-right: 260px;
+	}
+	div.archive{
+		padding-left: $bigGutter;
+		.archive-box{
+			margin-right: $bigGutter;
+			margin-bottom: $bigGutter;
+		}
+	}
+	.google-share{
+		width: 960px;
+		padding-left: 160px;
+		padding-right: 160px;
+	}
+}
+
+
+//
+// タブレットからデスクトップ
+// --------------------------------------------------
+
+
+@media (min-width: 760px) and (max-width: 959px) {
+	.margin{
+		width: 760px;
+	}
+	.grid_4{
+		width: 230px;
+		margin-right: 25px;
+		&.last{
+			margin-right: 10px;
+		}
+		&.first{
+			margin-left: 10px;
+		}
+	}
+	$middleGutter: 15px;
+	header .title-meta{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	div.archive{
+		padding-left: $middleGutter;
+		.archive-box{
+			margin-right: $middleGutter;
+			margin-bottom: $middleGutter;
+		}
+	}
+	.google-share{
+		.div_3{
+			&.share{
+				float: none;
+				width: 100%;
+				margin :0 0 10px;
+				table.like{
+					width: 100%;
+				}
+			}
+			&.ad_pc{
+				float: left;
+			}
+		}
+	}
+	.entry .styntaxhighlighter{
+		width: 760px !important;
+	}
+}

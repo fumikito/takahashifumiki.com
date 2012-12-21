@@ -44,7 +44,6 @@ EOS;
 	if(is_smartphone()){
 		$dir = get_stylesheet_directory_uri();
 		echo <<<EOS
-<meta name="Viewport" content="width=320,user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <link rel="apple-touch-icon" href="{$dir}/img/home.png" />
@@ -60,8 +59,8 @@ add_action('wp_head', '_fumiki_head', 0);
 function _fumiki_identity(){
 	$dir = get_template_directory_uri();
 	echo <<<EOS
-<link rel="shortcut icon" href="{$dir}/img/favicon.ico" />
-<meta name="copyright" content="copyright 2008- takahashifumiki.com" />
+<link rel="shortcut icon" href="{$dir}/styles/img/favicon.ico" />
+<meta name="copyright" content="copyright 2008 takahashifumiki.com" />
 EOS;
 }
 add_action('wp_head', '_fumiki_identity');
@@ -99,6 +98,7 @@ function _fumiki_register_widget(){
 	register_widget('Fumiki_Facebook_Like');
 	get_template_part('widgets/ebook');
 	register_widget('Fumiki_eBook');
+	get_template_part('widgets/recent');
 }
 add_action('widgets_init', '_fumiki_register_widget');
 

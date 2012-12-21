@@ -1,0 +1,223 @@
+/****************************************
+ * 7.アーカイブ設定
+ ****************************************/
+$gutter: 16px;
+div.archive{
+	padding-top: 40px;
+	padding-left: $gutter;
+	.meta{
+		margin-bottom:20px;
+		h1{
+			font-size:22px;
+		}
+		span{
+			padding: 3px 5px;
+			background: #00A0E9;
+			color: #fff;
+			@include border-radius(3px);
+		}
+	}
+	/*コンテンツボックス*/
+	.archive-box{
+		width: 200px;
+		padding: ($gutter * 2) 10px $gutter;
+		margin-right: $gutter;
+		margin-bottom: $gutter;
+		float: left;
+		position: relative;
+		@include border-radius(3px);
+		background-color: #fff;
+		&.google{
+			min-height: 200px;
+			background-color: #eee;
+		}
+		
+		/* トップラベル*/
+		.post-type{
+			line-height: ($gutter * 2);
+			height: ($gutter * 2);
+			font-size: $gutter;
+			position: absolute;
+			width: 200px;
+			top: 0;
+			left: 0;
+			padding: 0 10px;
+			background-color: #aaa;
+			color: #fff;
+			text-shadow: 1px 1px 2px #fff, 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+			@include border-top-radius(3px);
+		}
+		.post-type-ebook{
+			background-color: $pale-green;
+		}
+		.post-type-events{
+			background-color: $semi-blue;
+		}
+		.post-type-pr{
+			background-color: #eee;
+			color: #888;
+		}
+		.post-type-label{
+			float: right;
+			font-size: 0.85em;
+			font-weight: bold;
+			i{
+				margin-right: 0.2em;
+			}
+		}
+		.post-counter-label{
+			font-family: $old;
+			letter-spacing: -0.1em;
+		}
+		
+		/* 写真エリア */
+		.photo{
+			display: block;
+			position: relative;
+			text-align: center;
+			overflow: hidden;
+			.cover{
+				max-width: 200px;
+				height: auto;
+			}
+			.on-sale{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.price{
+				background-color: $pale-yellow;
+				position: absolute;
+				padding: 3px 5px;
+				font-size: 1.4em;
+				font-style: italic;
+				font-weight: bold;
+				right: 5px;
+				bottom: 5px;
+				@include border-radius(3px);
+			}
+		}
+		
+		/* タイトル */
+		.archive-title{
+			margin: 0.5em 0;
+			text-align: left;
+			line-height: 1.1;
+			font-size:1.8em;
+			font-weight: bold;
+			a:link{
+				color: #444;
+				text-decoration: none;
+				text-shadow: 1px 1px 2px #fff;
+			}
+			a:visited{
+				color: #999;
+				text-shadow: 1px 1px 2px #fff;
+			}
+			a:hover{
+				color: $orange;
+				text-decoration: underline;
+			}
+			a:active{
+				color: $warning-red;
+			}
+		}
+		
+		/* イベントテーブル */
+		.event-table{
+			font-size: 1.2em;
+			margin: 1em 0;
+			width: 100%;
+			th, td{
+				padding: 5px 8px;
+				border-bottom: 1px solid #ddd;
+			}
+			tr:first-child{
+				th, td{
+					border-top: 1px solid #ddd;
+				}
+			}
+			tr:nth-child(odd){
+				th,td{
+					background-color: #f9f9f9;
+				}
+			}
+			th{
+				color: #888;
+				font-weight: bold;
+				white-space: nowrap;
+				i{
+					margin-right: 0.2em;
+				}
+			}
+			td{
+			}
+		}
+		
+		/* 日付 */
+		small{
+			display: block;
+			text-align: right;
+			color: #999;
+			font-size:1.1em;
+			padding-bottom: 3px;
+		}
+		/* 抜粋 */
+		.desc{
+			font-size: 1.2em;
+			line-height: 1.4;
+			margin: 0.5em 0;
+			p{
+				margin:0;
+			}
+		}
+		
+		/*メタ情報*/
+		.cat{
+		}
+		.tag {
+			font-size:10px;
+			margin:0;
+			img{
+				vertical-align: text-bottom;
+				margin-right:10px;
+			}
+		}
+		.taxonomies{
+			text-align: left;
+			.category, .post_tag{
+				font-size: 1.1em;
+				line-height: 1;
+				text-align: left;
+				a{
+					display: inline-block;
+					padding: 3px 5px;
+					margin-bottom: 5px;
+					color: #fff;
+					text-decoration: none;
+					@include border-radius(5px);
+					i{
+						margin-right: 0.2em;
+					}
+				}
+			}
+			.post_tag a{
+				background-color: $pale-green;
+			}
+			.category a{
+				background-color: $deep-blue;
+			}
+
+		}
+		.score{
+			possition: absolute;
+			left: 0;
+			top: -5px;
+			color: #fff;
+		}
+		.more{
+			text-align: right;
+			margin-top: 0.5em;
+		}
+	}
+}

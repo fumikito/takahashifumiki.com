@@ -1,42 +1,63 @@
 <?php
 /**
  * JSやCSSを読み込む
+ * @global WP_Styles $wp_styles
  */
 function _fumiki_assets(){
+	global $wp_styles;
 	if(!is_admin()){
-		//メインCSS
-		wp_enqueue_style(
-			'qtip',
-			get_template_directory_uri().'/css/jquery.qtip.min.css',
-			array(),
-			'2.0'
-		);
 		wp_enqueue_style(
 			'jquery-ui',
-			get_template_directory_uri()."/css/custom-theme/jquery-ui-1.8.23.custom.css",
+			get_template_directory_uri()."/libs/custom-theme/jquery-ui-1.8.23.custom.css",
 			array(),
-			FUMIKI_VERSION
+			fumiki_theme_version()
+		); 
+		//Font Awesome
+		wp_enqueue_style(
+			'font-awesome',
+			get_template_directory_uri()."/libs/font-awesome/css/font-awesome.css",
+			array(),
+			fumiki_theme_version(),
+			'screen'
 		);
+		wp_enqueue_style(
+			'font-awesome-ie7',
+			get_template_directory_uri()."/libs/font-awesome/css/font-awesome-ie7.css",
+			array(),
+			fumiki_theme_version(),
+			'screen'
+		);
+		$wp_styles->add_data('font-awesome-ie7', 'conditional', 'lt IE 8');
+		//メインCSS
 		wp_enqueue_style(
 			'fumiki-style',
 			get_template_directory_uri()."/styles/stylesheets/core.css",
 			array(),
-			FUMIKI_VERSION,
+			fumiki_theme_version(),
 			'screen'
 		);
+		//fancybox
+		if(!is_smartphone()){
+			wp_enqueue_script(
+				'fancybox',
+				get_template_directory_uri()."/styles/js/jquery.fancybox-ck.js",
+				array('jquery', 'jquery-ui-mouse'),
+				'2.1.3',
+				true
+			);
+			wp_enqueue_style(
+				'fancybox',
+				get_template_directory_uri()."/styles/stylesheets/fancybox.css",
+				array(),
+				'2.1.3'
+			);
+		}
 		//JS
 		wp_enqueue_script(
-			'qtip',
-			get_template_directory_uri().'/js/jquery.qtip.min.js',
-			array('jquery'),
-			'2.0',
-			true
-		);
-		wp_enqueue_script(
 			'fumiki-core',
-			get_template_directory_uri()."/js/onload.js",
+			get_template_directory_uri()."/styles/js/onload-ck.js",
 			array('jquery', 'jquery-ui-dialog'),
-			FUMIKI_VERSION,
+			fumiki_theme_version(),
 			true
 		);
 		//Ajaxの変数を確認
@@ -89,10 +110,6 @@ function _fumiki_dequeue_scripts(){
 	//問い合わせページでなければ削除
 	if(!is_page('inquiry')){
 		wp_dequeue_script('contact-form-7');
-	}
-	//スマートフォンならFancybox削除
-	if(is_smartphone()){
-		wp_deregister_script('instapress');
 	}
 }
 add_action('wp_print_scripts', '_fumiki_dequeue_scripts', 10000);

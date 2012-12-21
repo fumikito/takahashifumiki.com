@@ -13,8 +13,8 @@ class Fumiki_Facebook_Like extends WP_Widget{
 		// Widget output
 		extract($args);
 		extract($instance);
-		if(file_exists(TEMPLATEPATH."/css/facebook.css")){
-			$css = ' css="'.get_bloginfo('template_directory')."/css/facebook.css?".filemtime(TEMPLATEPATH."/css/facebook.css").'"';
+		if(file_exists(get_template_directory()."/styles/stylesheets/facebook.css")){
+			$css = ' css="'.get_template_directory_uri()."/styles/stylesheets/facebook.css?".filemtime(get_template_directory()."/styles/stylesheets/facebook.css").'"';
 		}else{
 			$css = '';
 		}
@@ -22,7 +22,9 @@ class Fumiki_Facebook_Like extends WP_Widget{
 			echo $before_widget;
 			echo $before_title . 'Facebook' . $after_title;
 			echo <<<EOS
+<div style="min-height: {$height}px;">
 <fb:fan profile_id="{$page_id}" stream="false" connections="{$icons}" width="{$width}" height="{$height}"{$css}></fb:fan>
+</div>
 EOS;
 			echo $after_widget;
 		}
