@@ -114,7 +114,16 @@
 			}
 		}
 	}
-	.entry .styntaxhighlighter{
+	.entry .syntaxhighlighter{
 		width: 760px !important;
+		margin-left: 0 !important;
 	}
+}
+
+
+//
+// それ以下（スマートフォン）
+// --------------------------------------------------
+@media (max-width: 767px) {
+	@include smartphone();
 }

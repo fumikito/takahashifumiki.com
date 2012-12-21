@@ -55,24 +55,31 @@ jQuery(document).ready(function($){
 	}else if(winWidth == 760){
 		homeColumn = 2;
 		indexColumn = 3;
+	}else if(winWidth < 760){
+		homeColumn = 1;
+		indexColumn = 1;
 	}
 	$('.desc-box').imagesLoaded(function(){
-		$(this).masonry({
-			itemSelector: '.box',
-			columnWidth: function(containerWidth){
-				return containerWidth / homeColumn;
-			}
-		});
+		if(homeColumn > 1){
+			$(this).masonry({
+				itemSelector: '.box',
+				columnWidth: function(containerWidth){
+					return containerWidth / homeColumn;
+				}
+			});
+		}
 	});
 	
 	if($('div.archive').length > 0){
 		$('div.archive').imagesLoaded(function(){
-			$(this).masonry({
-				itemSelector: '.archive-box',
-				columnWidth: function(containerWidth){
-					return containerWidth / indexColumn;
-				}
-			});
+			if(indexColumn > 1){
+				$(this).masonry({
+					itemSelector: '.archive-box',
+					columnWidth: function(containerWidth){
+						return containerWidth / indexColumn;
+					}
+				});
+			}
 		});
 	}
 	//スクロール

@@ -1,0 +1,108 @@
+@mixin smartphone(){
+	.margin,
+	.entry,
+	#respond{
+		width: auto;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.entry .syntaxhighlighter{
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+	#navi{
+		/* ぱんくず */
+		.breadcrumb{
+			font-size: 0.8em;
+			text-overflow: text-ellipsis;
+			oveflow: hidden;
+			height: 12px;
+			line-height: 12px;
+			@include ellipsis();
+			i{
+				width: 12px;
+				height: 12px;
+				vertical-align: middle;
+				background-size: 12px 228px;
+				background-position: 0 -48px;
+			}
+		}
+	}
+	.header{
+		.title{
+			padding: 50px 0;
+			font-size: 4em;
+		}
+		.title-meta{
+			padding-right: 0;
+			padding-left: 0;
+			.google{
+				float: none;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+			table{
+				float: none;
+				width: 100%;
+			}
+		}
+		.calendar{
+			height: 50px;
+			width: 60px;
+			@include background-size(60px 50px);
+			.date{
+				padding-top: 0.5em;
+				font-size: 1em;
+			}
+			.year{
+				font-size: 1.2em;
+			}
+		}
+	}
+	.google-share{
+		.div_3{
+			float: none;
+			width: 100%;
+			text-align: center;
+			margin: 10px;
+			&.share{
+				width: 100%;
+				table.like{
+					width: 100%;
+				}
+			}
+		}
+	}
+	.desc-box{
+		padding: 1em 0;
+		.grid_1, .grid_2{
+			float: none;
+			width: auto;
+			margin-right: 0;
+		}
+	}
+	.grid_4{
+		width: auto;
+		float: none;
+		margin: 0 20px;
+		&.last{
+			margin-right: 20px;
+		}
+		&.first{
+			margin-left: 20px;
+		}
+		h4{
+			margin-top: 2em;
+		}
+	}
+	#copy-note{
+		p{
+			width: 50%;
+			&.center{
+				width: 100%;
+				padding-top: 1em;
+				clear: both;
+			}
+		}
+	}
+}
