@@ -16,7 +16,7 @@ the_post();
 get_header('navi');
 get_header('title');
 ?>
-<div id="content" class="container clearfix">
+<div id="content" class="margin clearfix">
 	<div id="main"<? if(get_post_type() == 'ebook') echo ' class="ebook"';?>>
 		<? $eye_catch = get_post_meta(get_the_ID(), 'eye-catch', true); if($eye_catch):?>
 		<div class="eyecatch">

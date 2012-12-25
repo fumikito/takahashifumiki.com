@@ -45,32 +45,36 @@ jQuery(document).ready(function($){
 		});
 	}
 	//Masonry
-	var winWidth = $('.margin').width();
-	if(winWidth == 1280){
-		homeColumn = 4;
-		indexColumn = 5;
-	}else if(winWidth == 960){
-		homeColumn = 3;
-		indexColumn = 4;
-	}else if(winWidth == 760){
-		homeColumn = 2;
-		indexColumn = 3;
-	}else if(winWidth < 760){
-		homeColumn = 1;
-		indexColumn = 1;
+	var homeColumn, indexColumn;
+	function getColumn(){
+		var winWidth = $('.margin').width();
+		if(winWidth == 1280){
+			homeColumn = 4;
+			indexColumn = 5;
+		}else if(winWidth == 960){
+			homeColumn = 3;
+			indexColumn = 4;
+		}else if(winWidth == 760){
+			homeColumn = 2;
+			indexColumn = 3;
+		}else if(winWidth < 760){
+			homeColumn = 1;
+			indexColumn = 1;
+		}
 	}
-	$('.desc-box').imagesLoaded(function(){
-		if(homeColumn > 1){
+	getColumn();
+	$(window).resize(getColumn);
+	if(homeColumn > 1 && $('.desc-box').length > 0){
+		$('.desc-box').imagesLoaded(function(){
 			$(this).masonry({
 				itemSelector: '.box',
 				columnWidth: function(containerWidth){
 					return containerWidth / homeColumn;
 				}
 			});
-		}
-	});
-	
-	if($('div.archive').length > 0){
+		});
+	}
+	if($('div.archive').length > 0 && indexColumn > 0){
 		$('div.archive').imagesLoaded(function(){
 			if(indexColumn > 1){
 				$(this).masonry({
@@ -84,7 +88,15 @@ jQuery(document).ready(function($){
 	}
 	//スクロール
 	function setToTop(){
-		$('#to-top').css('top', $(window).height() - 100);
+		var offset;
+		if($('.margin').width() < 760){
+			//スマートフォン
+			offset = window.innerHeight - 50;
+		}else{
+			//それ以外
+			offset = $(window).height() - 100;
+		}
+		$('#to-top').css('top', offset);
 	}
 	setToTop();
 	$(window).resize(setToTop);
@@ -116,23 +128,6 @@ jQuery(document).ready(function($){
 			window.scrollTo(0, 1);
 		}, 100);
 		var smartPhoneReadContainer = null;
-		//画像の修正
-		$('.entry .wp-caption').each(function(index, elt){
-			$(elt).css('width', 300);
-		});
-		//iframeの修正
-		$('.entry iframe, .entry object').each(function(index, elt){
-			var curWidth = $(elt).width();
-			if(curWidth > 300){
-				var height = $(elt).height() / $(elt).width() * 300;
-				$(elt).height(height);
-				$(elt).width(300);
-				$(elt).find('embed').each(function(i, e){
-					$(e).width(300);
-					$(e).height(height);
-				});
-			}
-		});
 		//電子書籍立ち読み
 		$('.ebook-read-more a').click(function(e){
 			e.preventDefault();
@@ -200,38 +195,48 @@ jQuery(document).ready(function($){
 			});
 		}
 	}
-	//Adminbarの開閉
-	if($('body').hasClass('smartphone') || navigator.userAgent.match(/iPad/)){
-		$('#navi,#content,#footer,.header').bind('touchend', function(e){
-			$('li.menupop').removeClass('hover');
-		});
-	}
 	//Tooltip
-	$('.share .prev a, .share .next a, .tip, abbr, acronym').each(function(index, elt){
-		$(elt).hover(function(e){
+	//TODO: タッチでバイスで挙動を変えるべき
+	function toggleTip(e){
+		if($(this).hasClass('tip-toggle')){
+			$(this).removeClass('tip-toggle');
+			$('#tip-container').fadeOut('fast');
+		}else{
 			var str = '';
-			if($(elt).attr('title')){
-				str = $(elt).attr('title').toString();
-			}else if($(elt).attr('alt')){
-				str = $(elt).attr('alt').toString();
+			if($(this).attr('title')){
+				str = $(this).attr('title').toString();
+			}else if($(this).attr('cite')){
+				str = $(this).attr('cite').toString();
+			}else if($(this).attr('alt')){
+				str = $(this).attr('alt').toString();
 			}else{
-				str = $(elt).text().toString();
+				str = $(this).text().toString();
+			}
+			if(!str){
+				return false;
 			}
 			$('#tip-container td').text(str);
 			var offset = $(this).width() / 2,
-			    position = $(this).offset(),
-			    heightBP = ($(window).height() / 2) + $(window).scrollTop(),
-			    widthBP = $(window).width() / 2,
-			    left = position.left + (position.left > widthBP ?  -1 * ($('#tip-container').width() + offset) : offset),
+				position = $(this).offset(),
+				heightBP = ($(window).height() / 2) + $(window).scrollTop(),
+				widthBP = $(window).width() / 2,
+				left = position.left + (position.left > widthBP ?  -1 * ($('#tip-container').width() + offset) : offset),
 				top = position.top + (position.top > heightBP ? -1 * ($('#tip-container').height() + offset) : offset);
 			$('#tip-container').css({
 				left: left,
 				top: top
 			}).fadeIn('fast');
-		}, function(e){
-			$('#tip-container').fadeOut('fast');
-		});
-	});
+			$(this).addClass('tip-toggle');
+			return true;
+		}
+	}
+	if(document.ontouchstart !== undefined){
+		//タッチイベントがあれば、タッチでバイス
+		$('.tip, abbr, acronym, q').click(toggleTip);
+	}else{
+		//違ったらホバー
+		$('.tip, abbr, acronym, q').hover(toggleTip);
+	}
 	
 	//Get Ustream Status
 	//リクエストを発行する関数を定義

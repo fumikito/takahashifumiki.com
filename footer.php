@@ -82,9 +82,9 @@
 				My Web sites
 			</h4>
 			<ol class="inner">
-				<li><a class="hametuha" target="_blank" href="http://hametuha.com/author/takahashi_fumiki/">破滅派 | 文芸誌</a></li>
-				<li><a class="hametuha" target="_blank" href="http://hametuha.co.jp">株式会社破滅派</a></li>
-				<li><a class="hametuha" target="_blank" href="http://minico.me">ミニコme! | ミニコミ誌販売ポータル</a></li>
+				<li><a class="hametuha one-line" target="_blank" href="http://hametuha.com/author/takahashi_fumiki/">破滅派 | 文芸誌</a></li>
+				<li><a class="hametuha-inc one-line" target="_blank" href="http://hametuha.co.jp">株式会社破滅派</a></li>
+				<li><a class="minicome one-line" target="_blank" href="http://minico.me">ミニコme! | ミニコミ誌販売ポータル</a></li>
 			</ol>
 			
 			<h4 class="mono second">

@@ -145,12 +145,12 @@ function fumiki_share($title, $url){
 				<!-- twitter -->
 				<a href="http://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js" async="async"></script>
 			</td>
-		</tr>
-		<tr>
 			<td>
 				<!-- Hatena -->
 				<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 			</td>
+		</tr>
+		<tr>
 			<td>
 				<!-- Google + -->
 				<div class="g-plusone" data-href="{$url}" data-size="tall"></div>
@@ -163,8 +163,6 @@ function fumiki_share($title, $url){
 					})();
 				</script>
 			</td>
-		</tr>
-		<tr>
 			<td>
 				<!-- FeedBurner -->
 				<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
@@ -174,7 +172,7 @@ function fumiki_share($title, $url){
 			</td>
 			<td>
 EOS;
-   if(!is_smartphone()){
+   if(is_smartphone()){
 	   $line_src = get_template_directory_uri().'/styles/img/linebutton_36x60.png';
 	   $line_str = rawurlencode($title.' '.$url);
 	   echo <<<EOS

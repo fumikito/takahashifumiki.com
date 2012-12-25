@@ -49,6 +49,15 @@
 			font-size: 2.5em;
 		}
 	}
+	.excerpt{
+		padding: 1em 0 2em; 
+		width: 60%;
+		margin: 0 auto;
+		font-size: 1.4em;
+		font-weight: normal;
+		text-shadow: 1px 1px 2px #fff;
+		font-style: italic;
+	}
 }
 /*タイトルメタ*/
 .title-meta{
@@ -152,6 +161,7 @@
 	}
 }
  
+/* 投稿ナビゲーション */
 .next-previous{
 	margin-top: 1em;
 	padding-top: 1em;
@@ -182,19 +192,22 @@
 		}
 	}
 }
- 
+
+/* 広告 */
 .google-share{
 	clear: both;
 	margin-bottom: 20px;
 	padding: 10px 0;
 	text-align: center;
 	background:$beige url('../img/content-footernote.png') center center no-repeat;
-	@include divider();
 	.div_3{
 		width: 300px;
-		min-height: 250px;
 		float: right;
 		margin-left: 20px;
+		&.ad,
+		&.ad_pc{
+			min-height: 250px;
+		}
 		table.like{
 			width: 100%;
 			td{
@@ -206,5 +219,43 @@
 	}
 	.ad_pc{
 		margin-left: 0;
+	}
+}
+
+/*ダウンロードリスト*/
+.file-list{
+	margin-bottom: 2em;
+	width:100%;
+	border-collapse: collapse;
+	border: none;
+	td{
+		padding: 15px 5px 5px;
+		border-bottom: 1px dotted #E5E5E5;
+		&.center{
+			text-align: center;
+		}
+		&.width150{
+			width: 150px;
+		}
+		em.mono{
+			display: block;
+		}
+		.file-title{
+			font-size: 1.4em;
+		}
+		.desc{
+			p{
+				margin: 0;
+				font-size: 0.85em;
+			}
+		}
+		small{
+			color: #888;
+			font-size: 0.75em;
+			&.desc{
+				display: block;
+				font-size: 0.6em;
+			}
+		}
 	}
 }

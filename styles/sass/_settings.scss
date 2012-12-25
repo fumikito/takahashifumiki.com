@@ -46,14 +46,9 @@ strong{font-weight: bold;}
 .clrB{clear: both;}
 
 /*clearfix*/
-.clearfix:after {content: ".";display: block;clear: both;height: 0;visibility: hidden;}
-.clearfix { display: inline-block; }
-/* exlude MacIE5 \*/
-* html .clearfix { height: 1% }
-.clearfix {display:block;}
-/* end MacIE5 */
-
-
+.clearfix{
+	@include clearfix();
+}
 /*---------------------
  * アラインメント
  */

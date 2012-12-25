@@ -39,7 +39,7 @@ get_header('navi');
 		<? endif; ?>
 		
 		<? if(is_smartphone()): ?>
-			<? google_ads(5); ?>
+			<p class="center"><? google_ads(4); ?></p>
 		<? endif; ?>
 			
 		<? get_sidebar(); ?>

@@ -9,7 +9,6 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]--><head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="Viewport" content="width=device-width, initial-scale=1.0" />
 <title><?php wp_title(" | ", true, 'right'); bloginfo('name'); if(is_front_page()) echo " | ".get_bloginfo('description'); ?></title>
 <?php wp_head(); ?>
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>

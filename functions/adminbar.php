@@ -15,7 +15,7 @@ add_filter('show_admin_bar', '_fumiki_admin_bar_visible');
  */
 function _fumiki_admin_bar($wp_admin_bar){
 	//ロゴ追加
-	$logo = is_admin() ? get_bloginfo('name') : '<i class="icon-home"></i>'.get_bloginfo('name');
+	$logo = is_admin() ? get_bloginfo('name') : sprintf('<img class="adminbar-logo" src="%s/styles/img/header-logo.png" alt="%s" width="190" height="20" />', get_stylesheet_directory_uri(), get_bloginfo('name'));
 	$wp_admin_bar->add_menu(array(
 		'id' => 'main-menues',
 		'title' => $logo,
@@ -29,58 +29,58 @@ function _fumiki_admin_bar($wp_admin_bar){
 			'href' => admin_url()
 		));
 	}
-	//最新投稿
-	$wp_admin_bar->add_menu(array(
-		'parent' => 'main-menues',
-		'title' => '最新投稿一覧',
-		'href' => home_url('latest')
-	));
 	//主要ページのメニューを追加
 	$menu_name = 'main-pages';
 	$wp_admin_bar->add_menu(array(
 		'parent' => 'main-menues',
 		'title' => '高橋文樹.comについて',
-		'id' => 'main-pages'
+		'id' => 'main-pages',
+		'href' => home_url('/about/', 'http')
 	));
-	$location = get_nav_menu_locations();
-	$menu = wp_get_nav_menu_object($location[$menu_name]);
-	$menu_items = wp_get_nav_menu_items($menu->term_id);
-	foreach($menu_items as $key => $item){
-		$wp_admin_bar->add_menu(array(
-			'parent' => 'main-pages',
-			'id' => 'page-menu-'.$key,
-			'title' => $item->title,
-			'href' => $item->url
-		));
+	if(!wp_is_mobile()){
+		$location = get_nav_menu_locations();
+		$menu = wp_get_nav_menu_object($location[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+		foreach($menu_items as $key => $item){
+			$wp_admin_bar->add_menu(array(
+				'parent' => 'main-pages',
+				'id' => 'page-menu-'.$key,
+				'title' => $item->title,
+				'href' => $item->url
+			));
+		}
 	}
 	//カテゴリー追加
 	$wp_admin_bar->add_menu(array(
-		'title' => 'ブログカテゴリー',
+		'title' => 'ブログ',
 		'id' => 'category',
-		'parent' => 'main-menues'
+		'parent' => 'main-menues',
+		'href' =>  home_url('latest')
 	));
-	$categories = get_terms('category', array(
-		'parent' => 0,
-		'orderby' => 'id'
-	));
-	foreach($categories as $cat){
-		$wp_admin_bar->add_menu(array(
-			'parent' => 'category',
-			'id' => 'cat-'.$cat->term_id,
-			'title' => $cat->name,
-			'href' => get_category_link($cat)
+	if(!wp_is_mobile()){
+		$categories = get_terms('category', array(
+			'parent' => 0,
+			'orderby' => 'id'
 		));
-		$children = get_terms('category', array(
-			'parent' => $cat->term_id,
-			'exclude' => 47
-		));
-		foreach($children as $child){
+		foreach($categories as $cat){
 			$wp_admin_bar->add_menu(array(
-				'parent' => 'cat-'.$cat->term_id,
-				'id' => 'cat-child-'.$child->term_id,
-				'title' => '-- '.$child->name,
-				'href' => get_category_link($child->term_id)
+				'parent' => 'category',
+				'id' => 'cat-'.$cat->term_id,
+				'title' => $cat->name,
+				'href' => get_category_link($cat)
 			));
+			$children = get_terms('category', array(
+				'parent' => $cat->term_id,
+				'exclude' => 47
+			));
+			foreach($children as $child){
+				$wp_admin_bar->add_menu(array(
+					'parent' => 'cat-'.$cat->term_id,
+					'id' => 'cat-child-'.$child->term_id,
+					'title' => '-- '.$child->name,
+					'href' => get_category_link($child->term_id)
+				));
+			}
 		}
 	}
 	$wp_admin_bar->add_menu(array(

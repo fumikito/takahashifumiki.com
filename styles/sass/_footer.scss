@@ -90,9 +90,13 @@ footer{
 					&:hover{
 						background-color: #252e34;
 					}
+					&.one-line{
+						overflow: hidden;
+						@include ellipsis();
+						text-overflow: text-ellipsis;
+					}
 				}
 				.feed{ background-position: left -32px; }
-				.hametuha{ background-position: left -288px;}
 				.facebook{ background-position: left -96px;}
 				.twitter{ background-position: left -128px;}
 				.google{ background-position: left -160px;}
@@ -100,8 +104,9 @@ footer{
 				.github{ background-position: left -192px;}
 				.foursquare{ background-position: left -224px;}
 				.instagram{ background-position: left -256px;}
-				.linkedin{ background-position: left -320px;}
-				.company{ background-position: left -352px;}
+				.hametuha{ background-position: left -288px;}
+				.minicome{background-position: left -320px;}
+				.hametuha-inc{ background-position: left -352px;}
 				&.contact{
 					font-size: 1.1em;
 					margin: 0.5em 0;

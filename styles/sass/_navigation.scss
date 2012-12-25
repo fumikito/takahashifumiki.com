@@ -1,6 +1,11 @@
 /* Admin bar */
 #wpadminbar{
 	background: url('../img/bg-texture-dark.jpg') left top repeat !important;
+	.adminbar-logo {
+		width: 190px;
+		height: 20px;
+		margin-top: 4px;
+	}
 	.ab-top-secondary{
 		background: url('../img/bg-texture-dark.jpg') left top repeat !important;
 	}
@@ -83,10 +88,8 @@
 		font-size:1.1em;
 		text-align: left;
 		i{
-			display: inline-block;
-			width: 24px;
-			height: 24px;
-			background: url('../img/meta-icons-2.png') left -96px no-repeat;
+			font-size: 24px;
+			vertical-align: middle;
 		}
 	}
 	p.center{

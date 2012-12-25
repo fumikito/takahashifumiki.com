@@ -28,8 +28,9 @@ function _fumiki_head(){
 		$desc = is_singular() ? get_the_excerpt() : get_bloginfo('description');
 		$desc = str_replace("\n", "", $desc);
 		echo <<<EOS
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@takahashifumiki">
+<meta name="Viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@takahashifumiki" />
 <meta property="og:locale" content="ja_jp" />
 <meta property="og:title" content="{$title}"/>
 <meta property="og:url" content="{$url}" />

@@ -15,22 +15,14 @@ function _fumiki_lwp_transaction($transaction_id){
 			$transaction_id, LWP_Payment_Status::WAITING_CANCELLATION));
 	if($transaction && ($userdata = get_userdata($transaction->user_id))){
 		$message = <<<EOS
-＠氏名　様
 
-いつもご利用ありがとうございます。街コンジャパンです。
-キャンセル待ちお申し込みありがとうございます。
-※在庫を追加した時にお知らせメールを受け取ることができますが優先的に購入できるものではありません。
+ キャンセル待ち受け付けメッセージ
 
-【キャンセル待ちお申し込みいただいたイベント】
-＠なんとかコン ＠性別2名
-
-【開催詳細ページ】
-＠URL
 EOS;
 		wp_mail($userdata->user_email, '高橋文樹.com::キャンセル待ちを受け付けました', $message, "From: 高橋文樹.com <info@takahashifumiki.com>");
 	}
 }
-add_action('lwp_create_transaction', '_fumiki_lwp_transaction');
+//add_action('lwp_create_transaction', '_fumiki_lwp_transaction');
 
 /**
  * 
@@ -68,3 +60,5 @@ function _fumiki_tickets($parent_id){
 </tr>
 	<?
 }
+
+

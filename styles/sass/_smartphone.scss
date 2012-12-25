@@ -1,15 +1,86 @@
 @mixin smartphone(){
 	.margin,
-	.entry,
 	#respond{
+		width: auto;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.entry{
 		width: auto;
 		padding-right: 10px;
 		padding-left: 10px;
+		overflow: hidden; 
+		font-size: 1.4em;
+		line-height: 1.6;
+		.syntaxhighlighter{
+			width: 100% !important;
+			margin-left: 0 !important;
+		}
+		& > p{
+			font-family: $serif;
+		}
+		blockquote{
+			background-position: 5px 5px;
+			@include background-size(31px 25px);
+			padding: 5px 5px 5px 40px;
+		}
+		.alignright, 
+		.alignleft, 
+		.aligncenter,
+		div.alignnon,
+		img.aligncenter{
+			display: block;
+			float: none;
+			margin: 0 auto 1em;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+			&.size-full{
+				max-width: 100%;
+				height: auto;
+			}
+		}
+		.wp-capition{
+			max-width: 300px;
+		}
+		.wp-caption-text{
+			font-size:0.75em;
+		}
 	}
-	.entry .syntaxhighlighter{
-		width: 100% !important;
-		margin-left: 0 !important;
+	/* ナビゲーションバー */
+	#wpadminbar{
+		min-width: 320px;
+		#wp-admin-bar-top-secondary{
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		#wp-admin-bar-my-account{
+			&.hover{
+				background-color: #fff;
+			}
+			& > .ab-empty-item,
+			& > a{
+				width: 20px;
+				height: 20px;
+				text-indent: 40px;
+				overflow: hidden;
+				padding: 4px 10px;
+				background: transparent url('../img/wpnav-icons.png') -70px 4px no-repeat;
+				background-size: 100px 40px;
+				background-clip: content-box;
+			}
+			&.hover > .ab-empty-item,
+			&.hover > a{
+				background-position: -70px -16px;
+			}
+		}
+		#adminbarsearch .adminbar-input:focus{
+			width: 200px;
+		} 
 	}
+	/* ナビゲーション */
 	#navi{
 		/* ぱんくず */
 		.breadcrumb{
@@ -20,23 +91,32 @@
 			line-height: 12px;
 			@include ellipsis();
 			i{
-				width: 12px;
-				height: 12px;
-				vertical-align: middle;
-				background-size: 12px 228px;
-				background-position: 0 -48px;
+				font-size: 12px;
 			}
 		}
+		#sorter p{
+			height: auto;
+		}
 	}
+	#to-top{
+		a{
+			margin-right: 10px;
+		}
+	}
+	/* トップページヘッダー */
+	
+	/* ヘッダー */
 	.header{
 		.title{
-			padding: 50px 0;
-			font-size: 4em;
+			padding: 50px 10px;
+			font-size: 3em;
+			font-weight: bold;
 		}
 		.title-meta{
 			padding-right: 0;
 			padding-left: 0;
 			.google{
+				width: auto;
 				float: none;
 				margin-bottom: 20px;
 				text-align: center;
@@ -58,13 +138,57 @@
 				font-size: 1.2em;
 			}
 		}
+		.excerpt{
+			padding: 10px 10px 20px;
+			width: auto;
+			font-size: 1.4em;
+		}
+	}
+	.ebook-detail{
+		img.cover{
+			max-width: 120px;
+			height: auto;
+		}
+	}
+	.file-list{
+		td{
+			.file-meta{
+				small{
+					display: block;
+				}
+			}
+			.desc{
+				p{
+					font-size: 0.85em;
+				}
+			}
+			&:first-child{
+				display: none;
+			}
+			&.center img{
+				width: 30px;
+				height: 30px;
+			}
+			&.width150{
+				width: 100px;
+				padding-left: 0;
+				padding-right: 0;
+				a.button{
+					padding: 3px 5px;
+					font-size: 0.85em;
+					small{
+						font-size: 1em;
+					}
+				}
+			}
+		}
 	}
 	.google-share{
 		.div_3{
 			float: none;
 			width: 100%;
 			text-align: center;
-			margin: 10px;
+			margin: 10px 0;
 			&.share{
 				width: 100%;
 				table.like{
@@ -73,14 +197,58 @@
 			}
 		}
 	}
+	/* Masonry */
 	.desc-box{
 		padding: 1em 0;
+		
 		.grid_1, .grid_2{
 			float: none;
 			width: auto;
 			margin-right: 0;
 		}
+		.title_box{
+			h1{
+				margin: 0 10px;
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+			.desc{
+				margin-left: 0;
+				font-size: 1.1em;
+			}
+		}
 	}
+	div.archive{
+		.archive-box{
+			width: auto;
+			float: none;
+			.post-type{
+				width: 100%;
+			}
+			&.google{
+				p{
+					text-align: center;
+				}
+			}
+		}
+	}
+	/* テーブル */
+	table.form-table{
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="search"],
+		textarea{
+			width: 150px;
+		}
+		select{
+			max-width: 200px;
+		}
+	}
+	
+	/* フッター */
 	.grid_4{
 		width: auto;
 		float: none;
@@ -97,11 +265,88 @@
 	}
 	#copy-note{
 		p{
-			width: 50%;
+			width: auto;
+			float: none;
 			&.center{
 				width: 100%;
 				padding-top: 1em;
 				clear: both;
+			}
+		}
+	}
+	/* 領収書ページ */
+	#lwp-invoice{
+		width: auto;
+		padding: 0 10px;
+		.header{
+			padding-left: 0;
+			padding-right: 0;
+			h1{
+				text-align: center;
+				img{
+					width: 240px;
+					height: 25px;
+				}
+				span{
+					text-align: left;
+				}
+			}
+		}
+		.main{
+			p.indicator{
+				background-size: 110px 10px;
+				padding-bottom: 14px;
+			}
+			overflow: auto;
+		}
+		.lwp-column-method img{
+
+		}
+		&.lwp-payment-info{
+			tr{
+				th{
+					display: block;
+					border-bottom: none;
+				}
+				td{
+					@include clearfix();
+					display: block;
+				}
+			}
+		}
+		.lwp-ticket-table{
+			thead{
+				display: none;
+			}
+			tbody{
+				th{
+					display: block;
+					white-space: normal;
+					border-bottom: none;
+				}
+				td{
+					display: block;
+					font-size: 0.85em;
+					color: #888;
+					padding-right: 2px;
+					padding-left: 2px;
+					border-bottom: none;
+					&:nth-child(2):before{
+						content: '購入日: ';
+					}
+					&:nth-child(3):before{
+						content: '価格: ';
+					}
+					&:nth-child(4):before{
+						content: '購入枚数: ';
+					}
+					&:nth-child(5){
+						border-bottom: 1px dotted #ddd;
+						&:before{
+							content: '使用済: ';
+						}
+					}
+				}
 			}
 		}
 	}

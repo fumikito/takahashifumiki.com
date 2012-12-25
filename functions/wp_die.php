@@ -92,13 +92,14 @@ function _fumiki_wp_die( $message, $title = '', $args = array() ) {
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo $title ?>｜高橋文樹.com</title>
+	<meta name="Viewport" content="width=device-width, initial-scale=1.0" />
     <?php wp_head(); ?>
 </head>
 <body>
 	<div id="error404">
 		<div class="logo center">
 			<a rel="home" href="http://takahashifumiki.com">
-				<img src="<?= get_template_directory_uri(); ?>/img/header-logo-big.png" alt="高橋文樹.com" width="380" height="40" />
+				<img src="<?= get_template_directory_uri(); ?>/styles/img/header-logo-big.png" alt="高橋文樹.com" width="380" height="40" />
 			</a>
 			<p class="description">小説家高橋文樹が自ら情報を発信するブログです。</p>
 		</div>

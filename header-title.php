@@ -40,15 +40,13 @@
 	<? endif; ?>
 	
 	<div class="title-meta clearfix<? if(is_singular('ebook')) echo ' ebook-detail'; ?>">
-		<div class="google">
+		<div class="google center">
 			<? if(is_singular('ebook')): ?>
 				<img class="cover" src="<?php echo get_post_meta(get_the_ID(), 'cover', true); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
 				<? if(lwp_on_sale()): ?>
 					<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/styles/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
 				<? endif; ?>
-			<? elseif(is_smartphone()): ?>
-				<?	google_ads(5); ?>
-			<? else: ?>
+			<? elseif(!is_smartphone()): ?>
 				<? google_ads(3); ?>
 			<? endif; ?>
 		</div>
@@ -60,3 +58,10 @@
 	</div>
 	<?php endif ?>
 </header><!-- header -->
+
+
+<? if(!is_ssl() && is_smartphone()): ?>
+<p class="center">
+	<?	google_ads(5); ?>
+</p>
+<? endif; ?>

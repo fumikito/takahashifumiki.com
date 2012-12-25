@@ -394,7 +394,7 @@ add_filter('the_content', '_fumiki_read_more');
  * @return string 
  */
 function _fumiki_lwp_form_title($title){
-	return '<img src="'.get_stylesheet_directory_uri().'/img/header-logo-big.png" width="380" height="40" alt="'.esc_attr($title).'" />'.
+	return '<img src="'.get_stylesheet_directory_uri().'/styles/img/header-logo-big.png" width="380" height="40" alt="'.esc_attr($title).'" />'.
 		   '<span>'.get_bloginfo('description').'</span>';
 }
 add_filter('lwp_form_title', '_fumiki_lwp_form_title');

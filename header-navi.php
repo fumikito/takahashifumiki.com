@@ -15,7 +15,7 @@
 	<? else: ?>
 		<? if(function_exists('bcn_display')): ?>
 			<div class="breadcrumb">
-				<i>&nbsp;</i><?php bcn_display(); ?>
+				<i class="icon-map-marker"></i>&nbsp;<?php bcn_display(); ?>
 			</div>
 		<? endif; ?>
 	<? endif; ?>
@@ -24,3 +24,9 @@
 <div id="to-top">
 	<a href="#" class="tip" title="このページのトップに戻ります"><i class="icon-circle-arrow-up"></i></a>
 </div>
+
+<? if(!is_ssl() && is_smartphone() && (is_archive() || is_search())): ?>
+<p class="center">
+	<?	google_ads(5); ?>
+</p>
+<? endif; ?>
