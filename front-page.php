@@ -158,6 +158,7 @@
 		</div>
 		
 		<? dynamic_sidebar('トップページ'); ?>
+		<? dynamic_sidebar('通常サイドバー'); ?>
 		
 	</div>
 	
