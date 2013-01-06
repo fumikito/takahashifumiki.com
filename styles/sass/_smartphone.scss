@@ -41,11 +41,12 @@
 				height: auto;
 			}
 		}
-		.wp-capition{
+		.wp-caption{
 			max-width: 300px;
 		}
-		.wp-caption-text{
-			font-size:0.75em;
+		iframe{
+			max-width: 100%;
+			height: auto;
 		}
 	}
 	/* ナビゲーションバー */

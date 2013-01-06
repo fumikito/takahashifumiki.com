@@ -87,7 +87,7 @@ add_action("init", "_fumiki_menu");
 function _fumiki_last_login($login) {
     global $user_ID;
     $user = get_userdatabylogin($login);
-    update_usermeta($user->ID, 'last_login', current_time('mysql'));
+    update_user_meta($user->ID, 'last_login', current_time('mysql'));
 }
 add_action('wp_login','_fumiki_last_login');
 

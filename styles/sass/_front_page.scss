@@ -226,6 +226,15 @@
 			}
 		}
 	}
+	ol.wppp_list{
+		li{
+			@include clearfix();
+			font-size: 1.4em;
+			a{
+				font-size: 1.6em;
+			}
+		}
+	}
 	/* 画像ウィジェット */
 	.widget_sp_image-image-link{
 		img.aligncenter{

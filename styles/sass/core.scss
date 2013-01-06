@@ -324,46 +324,7 @@ body.ebook .ebook-meta h1{
 	.eyecatch{
 		text-align: center;
 	}
-	/*対応端末リスト*/
-	.device-list{
-		.device{
-			width: 100px;
-			height: 120px;
-			float: left;
-			margin-bottom:10px;
-			margin-right:10px;
-			small{
-				display: block;
-				font-size:10px;
-			}
-			span{
-				display: block;
-				font-size: 11px;
-				line-height: 1.1;
-				font-weight: bold;
-			}
-			img{
-				display: block;
-				margin: 5px auto;
-			}
-		}
-		.valid{
-			background: url('../img/ebook-devices/bg_device.gif') left bottom no-repeat;
-			color: #8AB29F;
-		}
-		.invalid{
-			background: url('../img/ebook-devices/bg_device.gif') right bottom no-repeat;
-			color: #999;
-		}
-		p{
-			font-size: 12px;
-			color: #666;
-			line-height: 1.4;
-			margin: 10px 0;
-			padding-top: 5px;
-			text-shadow: 1px 1px 2px #fff;
-		}
-	}
+	
 	
 	.entry p.desc a{
 		font-size: 11px;
