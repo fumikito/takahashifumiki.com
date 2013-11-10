@@ -26,7 +26,7 @@ add_action('rss2_ns', '_fumiki_feed_ns');
  * @param string $content
  * @return string
  */
-function _bbt_post_thumbnail_feeds_excerpt($content) {
+function _fumiki_post_thumbnail_feeds_excerpt($content) {
 	switch(get_post_type()){
 		case 'ebook':
 			$eyecatch = ebook_cover_src();
@@ -43,7 +43,7 @@ function _bbt_post_thumbnail_feeds_excerpt($content) {
 	}
 	return $content;
 }
-add_filter('the_excerpt_rss', '_bbt_post_thumbnail_feeds_excerpt');
+add_filter('the_excerpt_rss', '_fumiki_post_thumbnail_feeds_excerpt');
 
 
 /**
@@ -51,7 +51,7 @@ add_filter('the_excerpt_rss', '_bbt_post_thumbnail_feeds_excerpt');
  * @param string $content
  * @return string
  */
-function _bbt_post_thumbnail_feeds_content($content) {
+function _fumiki_post_thumbnail_feeds_content($content) {
 	switch(get_post_type()){
 		case 'ebook':
 			$eyecatch = ebook_cover_src();
@@ -62,7 +62,7 @@ function _bbt_post_thumbnail_feeds_content($content) {
 	}
 	return $content;
 }
-add_filter('the_content_feed', '_bbt_post_thumbnail_feeds_content');
+add_filter('the_content_feed', '_fumiki_post_thumbnail_feeds_content');
 
 /**
  * サムネイルをメディアタグに書き出す
