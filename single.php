@@ -24,11 +24,18 @@ get_header('title');
 		</div>
 		<? endif; ?>
 		<article class="entry clearfix">
+			<? if(is_singular('post') && is_expired_post()): ?>
+			<p class="message warning">
+				この投稿は<?= get_outdate_string(); ?>の記事です。情報が古くなっている可能性があるので、その点ご了承ください。
+			</p>
+			<? endif; ?>
 			<? the_content(); ?>
 			<? wp_link_pages(array(
 				'before' => '<div class="wp-pagenavi clrB"><span class="pages">ページ: </span>',
 				'after' => '</div>'
 			)); ?>
+			
+			<div id="contents-last">&nbsp;</div>
 			
 			<? if(!lwp_is_free(true)):  ?>
 				<? if(lwp_is_owner()): ?>
@@ -101,12 +108,13 @@ get_header('title');
 		
 		<div class="margin google-share clearfix">
 			<div class="div_3 share">
+				<h3>いつシェアするの？　いまでしょ！</h3>
 				<? fumiki_share(get_the_title()." | ".get_bloginfo('name'), get_permalink()); ?>
 			</div>
-			<div class="div_3 ad"><? google_ads(4);?></div>
-			<? if(!is_smartphone()): ?>
-			<div class="div_3 ad_pc"><? google_ads(4);?></div>
-			<? endif; ?>
+			<div class="div_3 ad">
+				<h3>[PR]</h3>
+				<? google_ads(4);?>
+			</div>
 		</div><!-- //.google-share -->
 		
 		<div id="respond"><? comments_template(); ?></div>

@@ -147,12 +147,18 @@
 		color: $deep-blue;
 	}
 	q{
+		&[cite]{
+			cursor: pointer;
+		}
 		&:before{
 			content: '"';
 		}
 		&:after{
 			content: '"';
 		}
+	}
+	s,strike{
+		
 	}
 	/*コードフォーマット*/
 	code, kbd, tt{
@@ -241,15 +247,15 @@
 		}
 		thead{
 			th, td{
-				background:#4D4945;
-				color:#f3f3f3;
-				padding:5px 8px;
+				background: #4D4945;
+				color: #f3f3f3;
+				padding: 5px 8px;
 			}
 		}
 		caption{
-			color:#000;
-			text-align:left;
-			font-size:1.5em;
+			color: #000;
+			text-align: left;
+			font-size: 1.5em;
 		}
 		tbody{
 			th,td{
@@ -277,14 +283,17 @@
 	.alignright{float: right; margin-left:1.5em;}
 	.alignleft{float: left;margin-right:1.5em;}
 	.aligncenter,
-	div.alignnon{margin:1.5em auto;}
+	div.alignnon,
+	figure.alignnon{margin:1.5em auto;}
 	img.aligncenter{display: block;}
 	img{
 		&.size-full{
 			max-width: 100%;
+			height: auto;
 		}
 	}
-	div.wp-caption{ margin-bottom:1em; }
+	div.wp-caption,
+	figure.wp-caption{ margin-bottom:1em; }
 
 	/*キャプション*/
 	.wp-caption-text{

@@ -133,7 +133,7 @@
 /* コメント */
 #respond{
 	width: 760px;
-	margin: 0 auto;
+	margin: 20px auto 0;
 }
 
 /*関連投稿*/
@@ -195,17 +195,27 @@
 
 /* 広告 */
 .google-share{
+	width: 748px;
 	clear: both;
 	margin-bottom: 20px;
-	padding: 10px 0;
+	padding: 10px 10px;
 	text-align: center;
 	background:$beige url('../img/content-footernote.png') center center no-repeat;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	h3{
+		color: #ccc;
+		text-shadow: 1px 1px 2px #fff;
+		margin-bottom: 0.5em;
+		font-size: 1.4em;
+		font-weight: bold;
+		
+	}
 	.div_3{
 		width: 300px;
 		float: right;
-		margin-left: 20px;
-		&.ad,
-		&.ad_pc{
+		&.ad{
+			float: left;
 			min-height: 250px;
 		}
 		table.like{
@@ -216,9 +226,6 @@
 				min-height: 60px;
 			}
 		}
-	}
-	.ad_pc{
-		margin-left: 0;
 	}
 }
 

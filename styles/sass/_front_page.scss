@@ -3,29 +3,25 @@
  ****************************************/
 .desc-box{
 	padding:4em 0 2em 30px;
-	position: realtive;
+	position: relative;
 	
 	/* グリッドシステム */
 	.grid_1, .grid_2{
 		margin-right: 20px;
 		margin-bottom: 20px;
-		@include border-radius(5px);
 		float: left;
-		@include box-shadow(1px 1px 5px rgba(255, 255, 255, 0.4), 1px 1px 5px rgba(0, 0, 0, 0.1) inset);
+		border-top: 3px double $deep-blue;
+		padding:20px 10px;
 	}
 	.grid_1{
 		width: 580px;
-		padding: 10px;
 	}
 	.grid_2{
-		background-color: #efefef;
 		width: 270px;
-		border: 1px solid #ddd;
-		padding: 9px;
 	}
 	.no_shadow{
 		background-color: transparent;
-		@include box-shadow(none);
+		border: none;
 	}
 	
 	.title_box{
@@ -229,7 +225,7 @@
 	ol.wppp_list{
 		li{
 			@include clearfix();
-			font-size: 1.4em;
+			font-size: 1em;
 			a{
 				font-size: 1.6em;
 			}
@@ -254,6 +250,37 @@
 			font-style: italic;
 			font-weight: bold;
 			border-bottom: 1px dashed #888;
+		}
+	}
+	/* ニュースレター */
+	#alo_easymail_widget_feedback{
+		font-size: 1.1em;
+		font-weight: bold;
+		margin: 0.5em 1em;
+		color: grey;
+		&.alo_easymail_widget_ok{
+			color: green;
+		}
+	}
+	#alo_em_widget_loading{
+		margin: 0.5em 1em;
+	}
+	#alo_easymail_widget_form{
+		input[type=text]{
+			@include border-radius(3px);
+			@include box-shadow(rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset);
+		}
+		.alo_easymail_preform_msg{
+			font-size: 1.4em;
+			margin: 0.5em 0;
+			padding-bottom: 0.5em;
+			border-bottom: 1px dotted #ddd;
+			color: #000;
+		}
+		p.message{
+			padding: 0.25em 0.5em;
+			padding-left: 42px;
+			font-size: 1.2em;
 		}
 	}
 	/* クオート */

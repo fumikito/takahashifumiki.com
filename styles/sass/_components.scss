@@ -167,7 +167,10 @@ p.submit{
 /*メッセージボックス*/
 p.message{
 	@include border-radius(5px);
-	padding:0.5em;
+	padding: 1em;
+	strong, em{
+		color: inherit;
+	}
 }
 p.warning{
 	color: $error-text-color;
@@ -200,15 +203,31 @@ p.notice{
 	padding: 10px;
 	@include border-radius(5px);
 	font-size: 1.2em;
-	color: #f9f9f9;
-	text-shadow: 1px 1px 2px #000;
-	background-color: rgba(0, 0, 0, 0.6);
+	max-width: 300px;
+	min-width: 150px;
+	color: #666;
+	background-color: #C4D7ED;
+	border: 1px solid #1B76FF;
 	z-index: 10000;
-	@include box-shadow(0 0 5px rbga(0, 0, 0, 0.2));
+	@include box-shadow(rgba(0, 0, 0, 0.2) 0 0 5px 3px);
 	th{
 		vertical-align: middle;
 		padding-right: 0.5em;
 		font-size: 2em;
+		i{
+			color: #1B76FF;
+		}
+	}
+	td{
+		line-height: 1.2;
+	}
+	.close-button{
+		display: none;
+	}
+	&.touch{
+		.close-button{
+			display: table-row;
+		}
 	}
 }
 

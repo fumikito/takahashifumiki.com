@@ -15,6 +15,8 @@
 @import "_front_page";
 @import "_archive";
 @import "_single";
+@import "_smartphone";
+@import "_layout";
 
 
 
@@ -553,6 +555,7 @@ body.login{
 .form-table .description{
 	display: block;
 	margin: 1em 0;
+	color: #999;
 	clear: both;
 }
 .login p input.input{
@@ -688,15 +691,44 @@ body.login{
 	.required{
 		color: crimson;
 	}
+	
+	/* table common*/
+	table{
+		&.price-table, 
+		&.form-table{
+			width: 100%;
+			table-layout: auto;
+			border-collapse: collapse;
+			empty-cells: show;
+			margin: 1em 0 1.5em;
+			caption{
+				color: #ccc;
+				text-align: left;
+				text-shadow: 1px 2px 2px #fff;
+				font-size: 1.5em;
+				padding-bottom: 0.5em;
+				border-bottom: 3px double #ddd;
+			}
+			th,td{
+				padding: 1em;
+			}
+			tbody{
+				th,td{
+					text-align: left;
+					font-size: 0.85em;
+					border-bottom: 1px dotted #999;
+				}
+				tr:nth-child(odd){
+					th, td{
+						background-color: #f3f3f3;
+					}
+				}
+			}
+		}
+	}
+	
 	/* price table */
 	.price-table{
-		width: 100%;
-		table-layout: auto;
-		border-collapse: collapse;
-		margin: 1em 0;
-		th,td{
-			padding: 10px;
-		}
 		th{
 			border-bottom: 1px solid #ddd;
 		}
@@ -706,14 +738,6 @@ body.login{
 			}
 		}
 		tbody{
-			th, td{
-				border-bottom: 1px dotted #f0f0f0;
-			}
-			tr:nth-child(odd){
-				th, td{
-					background-color: #f3f3f3;
-				}
-			}
 			tr:last-child{
 				th, td{
 					border-bottom: none;
@@ -724,7 +748,13 @@ body.login{
 			white-space: nowrap;
 			text-align: right;	
 		}
-
+		.recalculate{
+			max-width: 40%;
+			span.description{
+				font-size: 0.85em;
+				color: #999;
+			}
+		}
 		tfoot{
 			th{
 				text-align: right;
@@ -737,37 +767,16 @@ body.login{
 		}
 	}
 	.form-table{
-		width:100%;
-		margin:20px 0;
-		border-spacing: 0;
-		empty-cells: show;
-		border-collapse: collapse;
-		caption{
-			color: #000;
-			text-align: left;
-			font-size: 1.5em;
-		}
 		thead{
 			th,td{
 				background: #4D4945;
 				color: #f3f3f3;
-				padding:0.5em 0.75em;
 			}
 		}
 		tbody{
-			th,td{
-				text-align: left;
-				padding:0.5em 0.75em;
-				font-size: 0.85em;
-				border-bottom: 1px dotted #999;
-			}	
 			th{
 				font-weight: bold;
 				white-space: nowrap;
-			}
-			tr:nth-child(2n) td,
-			tr:nth-child(2n) th{
-				background: #f3f3f3;
 			}
 		}
 		th.lwp-column-method{
@@ -1017,39 +1026,62 @@ body.login{
  ****************************************/
 div.tmkm-amazon-view {
 	clear: both;
+	clear: both;
+	margin: 1em auto;
+	padding: 1em;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	font-size: 12px;
+	background-color: #eee;
+	text-shadow: 1px 1px 2px #fff;
+	p a{
+		&:link, &:visited{
+			color: #06c;
+			text-decoration: none;
+		}
+		
+		&:hover{
+			color: orange;
+			text-decoration: underline;;
+		}
+		&:active{
+			color: crimson;
+		}
+	}
+	
+	.tmkm-amazon-title{
+		font-size: 1.2em;
+		line-height: 1.2;
+		font-weight: bold;
+		margin-bottom: 0.5em;
+	}
 	img {
-		float: left;
-		margin: 5px 20px 10px 0px;
+		float: right;
+		margin: 0 0 1em 1em;
+		padding: 0;
 		@include box-shadow(0 0 5px rgba(0,0,0,0.5));
-		padding:0 !important;
+		max-height: 120px;
+		width: auto;
 	}
 	p {
 		margin: 0;
-		font-size:12px;
-		a{
-			font-weight: bold;
-			font-size:1.2em;
-		}
 		em {
 			color: #000;
 			font-style: normal;
 			font-weight: bold;
 		}
-	}
-	&:after {
-		content: ".";
-		display: block;
-		height: 0;
-		clear: both;
-		visibility: hidden;
-	}
-	hr.tmkm-amazon-clear {
-		clear: both;
-		border: none;
-		height: 0;
-		margin: 0;
-		padding: 0;
-		visibility: hidden;
+		&.vendor{
+			clear: both;
+			font-size: 0.85em;
+			text-align: right;
+			a{
+				color: #999;
+			}
+		}
+		&.description{
+			font-size: 0.85em;
+			line-height: 1.2;
+		}
 	}
 }
 
@@ -1313,6 +1345,3 @@ body.fan-gate-body{
 	margin:0;
 }
 
-
-@import "_smartphone";
-@import "_layout";

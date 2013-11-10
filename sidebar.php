@@ -17,8 +17,16 @@
 	<? endif; ?>
 	<? dynamic_sidebar('通常サイドバー'); ?>
 	<div class="box grid_2">
-		<h3><i class="icon-bookmark"></i> はてぶで人気</h3>
-		<? $hatena = get_hatena_rss(); ?>
+		<?
+			$hatebu = array(
+				'hot' => '注目',
+				'eid' => '新着',
+				'count' => '人気',
+			);
+			$key = array_rand($hatebu);
+		?>
+		<h3><i class="icon-bookmark"></i> はてぶで<?= $hatebu[$key]; ?></h3>
+		<? $hatena = get_hatena_rss($key); ?>
 		<ol class="post-list">
 			<? $counter = 0; foreach($hatena->item as $item): $counter++;?>
 			<li>

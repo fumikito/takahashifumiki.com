@@ -48,21 +48,6 @@
 				読者とのコミュニケーションを計ることを目的としています。
 				また、<a href="<?= get_post_type_archive_link('ebook');?>">電子書籍販売</a>や<a href="<?= get_post_type_archive_link('events');?>">イベント開催</a>などを通じて、
 				職業作家として生きるための新しい方法も模索します。
-			</p>
-		</div>
-
-		<div class="box grid_2">
-			<h2>
-				<i class="icon-time"></i>
-				経緯
-			</h2>
-			<p class="center">
-				<img class="avatar" src="<?= get_template_directory_uri(); ?>/styles/img/front-page/history.jpg" width="150" height="150" alt="これまでの経緯" />
-			</p>
-			<p>
-				2001年の大学生だった頃、文学賞を受賞して作家デビューしましたが、
-				長い冬の時代を過ごすことになり、2007年から<a href="http://hametuha.com">破滅派</a>というオンライン文芸誌を立ち上げました。
-				その直後Web業界に転職したのち3年を経て独立、いまに至ります。
 				詳しくは<a href="<?= home_url('/about/history/');?>">著者略歴</a>をご覧下さい。
 			</p>
 		</div>
@@ -93,7 +78,8 @@
 						<td class="mono"><? 
 							$post_counts = fumiki_get_post_count();
 							echo number_format($post_counts);
-							printf(" (月%s本)", absint($post_counts / preg_replace("/[^0-9]/", "", $past) * 30));
+							$past_days = ( current_time('timestamp') - strtotime('2008-4-18') ) / 60 / 60 / 24;
+							printf(" (月%s本)", round($post_counts / $past_days * 30));
 						?></td>
 					</tr>
 					<tr>
@@ -119,28 +105,14 @@
 		</div>
 		
 		
-		
-		<div class=" box grid_2">
-			<h2 class="contact">
-				<i class="icon-envelope"></i>
-				コンタクト
-			</h2>
-			<p>
-				「愛情の対義語は憎しみではなく無関心である」と言ったのはマザー・テレサですが、
-				読者からのフィードバックはどんなものであれ嬉しいものです。
-				各ページのコメント欄や<a href="<?= home_url('/inquiry/', 'https'); ?>">お問い合わせ</a>からご連絡下さい。
-				<a href="https://twitter.com/takahashifumiki" target="_blank">Twitter</a>でもお気軽にリプライを飛ばしてください。
-			</p>
-		</div>
-		
 	
 		<div class="box grid_1 no_shadow">
 			<h2>
 				<i class="icon-heart"></i>
-				<?= post_custom('excerpt_title'); ?>
+				<? the_title(); ?>
 			</h2>
 			<div class="desc">
-				<?= post_custom('excerpt'); ?>
+				<?= the_content(); ?>
 			</div>
 		</div>
 		

@@ -52,14 +52,32 @@ function _fumiki_assets(){
 				'2.1.3'
 			);
 		}
-		//JS
-		wp_enqueue_script(
-			'fumiki-core',
-			get_template_directory_uri()."/styles/js/onload-ck.js",
-			array('jquery', 'jquery-ui-dialog'),
-			fumiki_theme_version(),
-			true
-		);
+		// メインのJS
+		if(defined('WP_DEBUG') && WP_DEBUG){
+			foreach(array(
+				'/includes/ga.js' => 'fumiki-ga',
+				'/includes/imagesloaded.pkgd.js' => 'jquery-imagesloaded',
+				'/includes/masonry.pkgd.js' => 'jquery-masonry' ,
+				'/onload.js' => 'fumiki-core'
+			) as $src => $handle){
+				wp_enqueue_script(
+					$handle,
+					get_template_directory_uri().'/styles/js'.$src,
+					array('jquery-ui-dialog'),
+					fumiki_theme_version(),
+					true
+				);
+			}
+		}else{
+			// 上のものをすべて結合したものを読み込み
+			wp_enqueue_script(
+				'fumiki-core',
+				get_template_directory_uri()."/styles/js/onload-ck.js",
+				array('jquery', 'jquery-ui-dialog'),
+				fumiki_theme_version(),
+				true
+			);
+		}
 		//Ajaxの変数を確認
 		$endpoint = admin_url('admin-ajax.php');
 		if(!is_ssl()){
@@ -83,7 +101,7 @@ add_action("wp_enqueue_scripts", "_fumiki_assets");
 function _fumiki_dequeue_styles(){
 	//wp-pagenaviのCSSを打ち消し
 	wp_dequeue_style("wp-pagenavi");
-	wp_dequeue_style('wp-tmkm-amazon');
+//	wp_dequeue_style('wp-tmkm-amazon');
 	//問い合わせページでなければ削除
 	if(!is_page('inquiry')){
 		wp_dequeue_style('contact-form-7');

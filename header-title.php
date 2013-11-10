@@ -31,31 +31,31 @@
 	
 
 		
-	<?php if(is_singular() && !is_page_template('page-account.php')): ?>
+	<?php if(is_singular() && !is_ssl()): ?>
 	
-	<? if(is_singular('ebook')): ?>
-	<div class="excerpt">
-		<? the_excerpt(); ?>
-	</div>
-	<? endif; ?>
-	
-	<div class="title-meta clearfix<? if(is_singular('ebook')) echo ' ebook-detail'; ?>">
-		<div class="google center">
-			<? if(is_singular('ebook')): ?>
-				<img class="cover" src="<?php echo get_post_meta(get_the_ID(), 'cover', true); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
-				<? if(lwp_on_sale()): ?>
-					<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/styles/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
-				<? endif; ?>
-			<? elseif(!is_smartphone()): ?>
-				<? google_ads(3); ?>
-			<? endif; ?>
+		<? if(is_singular('ebook')): ?>
+		<div class="excerpt">
+			<? the_excerpt(); ?>
 		</div>
-		<? if(is_page()){
-			get_template_part('templates/meta-post');
-		}else{
-			get_template_part('templates/meta-'.  get_post_type());
-		} ?>
-	</div>
+		<? endif; ?>
+
+		<div class="title-meta clearfix<? if(is_singular('ebook')) echo ' ebook-detail'; ?>">
+			<div class="google center">
+				<? if(is_singular('ebook')): ?>
+				<img class="cover" src="<?php echo ebook_cover_src(); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
+					<? if(lwp_on_sale()): ?>
+						<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/styles/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
+					<? endif; ?>
+				<? elseif(!is_smartphone()): ?>
+					<? google_ads(3); ?>
+				<? endif; ?>
+			</div>
+			<? if(is_page()){
+				get_template_part('templates/meta-post');
+			}else{
+				get_template_part('templates/meta-'.  get_post_type());
+			} ?>
+		</div>
 	<?php endif ?>
 </header><!-- header -->
 

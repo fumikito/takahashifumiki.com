@@ -129,10 +129,10 @@ function fumiki_title(){
  */
 function fumiki_share($title, $url){
 	$feed_url = get_bloginfo('rss_url');
-	$feed_src = get_bloginfo('template_directory')."/styles/img/RSS-container.png";
-	$subscribers = '購読';
+	$feed_src = get_bloginfo('template_directory')."/styles/img/container-feedly.png";
+	$subscribers = fumiki_feed_count();
 	
-	$fb_url = is_front_page() ? urlencode('http://www.facebook.com/pages/高橋文樹/240120469352376') : urlencode($url);
+	$fb_url = is_front_page() ? 'https://www.facebook.com/TakahashiFumiki.Page' : $url;
 	
 	echo <<<EOS
 	<table class="like">
@@ -143,7 +143,8 @@ function fumiki_share($title, $url){
 			</td>
 			<td>
 				<!-- twitter -->
-				<a href="http://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js" async="async"></script>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 			</td>
 			<td>
 				<!-- Hatena -->
@@ -164,7 +165,7 @@ function fumiki_share($title, $url){
 				</script>
 			</td>
 			<td>
-				<!-- FeedBurner -->
+				<!-- Feedly -->
 				<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
 					<span class="mono">{$subscribers}</span>
 					<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
@@ -177,12 +178,13 @@ EOS;
 	   $line_str = rawurlencode($title.' '.$url);
 	   echo <<<EOS
 				<!-- LINEに送る -->
-				<a href="http://line.naver.jp/R/msg/text/?{$line_str}"><img src="{$line_src}" width="36" height="60" alt="LINEで送る" /></a>
+				<a href="line://msg/text/?{$line_str}"><img src="{$line_src}" width="36" height="60" alt="LINEで送る" /></a>
 EOS;
    }else{
 	   echo <<<EOS
-				<!-- mixi いいね -->
-				<div data-plugins-type="mixi-favorite" data-service-key="d288247468354a3415683ce1320a8403e84d5351" data-size="large" data-href="{$url}" data-show-faces="false" data-show-count="true" data-show-comment="true" data-width="75" data-height="65"></div><script type="text/javascript">(function(d) {var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//static.mixi.jp/js/plugins.js#lang=ja';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script>
+				<!-- Pocket -->
+				<a data-pocket-label="pocket" data-pocket-count="vertical" class="pocket-btn" data-lang="en"></a>
+				<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
 EOS;
    }
 	echo <<<EOS
@@ -204,20 +206,48 @@ EOS;
  * @param boolean $show_no_photo falseにすると、ない場合は何も表示しない
  * @return void
  */
-function fumiki_archive_photo($size = "medium-thumbnail", $post = null, $show_nophoto = true){
-	$post = _fumiki_get_post($post);
+function fumiki_archive_photo($size = "medium-thumbnail", $post = null, $show_nophoto = true, $echo = true){
+	$post = get_post($post);
 	$images = get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
 	if(!empty($images)){
 		$image = current($images);
-		echo wp_get_attachment_image($image->ID,$size);
+		if($echo){
+			echo wp_get_attachment_image($image->ID,$size);
+		}else{
+			return wp_get_attachment_image($image->ID,$size);
+		}
 	}elseif($show_nophoto){
 		$width = ($size == "medium-thumbnail") ? 280 : 150;
 		$height = ($size == "medium-thumbnail") ? 200 : 100;
 		$src = ($size == "medium-thumbnail") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
-		echo '<img class="attachment-medium" src="'.get_bloginfo('template_directory').'/styles/img/'.$src.'" width="'.$width.'" height="'.$height.'" alt="写真なし" />';
+		if($echo){
+			echo '<img class="attachment-medium" src="'.get_bloginfo('template_directory').'/styles/img/'.$src.'" width="'.$width.'" height="'.$height.'" alt="写真なし" />';
+		}
 	}
 }
 
+/**
+ * カバー画像のURLを返す
+ * @param int|object $post
+ * @return string
+ */
+function ebook_cover_src($post = null){
+	$post = get_post($post);
+	$attachment_id = get_post_meta($post->ID, 'cover', true);
+	if(!$attachment_id){
+		return '';
+	}
+	if(is_numeric($attachment_id)){
+		$attachment = wp_get_attachment_image_src($attachment_id, 'large');
+		if($attachment){
+			return $attachment[0];
+		}else{
+			return '';
+		}
+	}else{
+		return $attachment_id;
+	}
+}
 
 /**
  * アーカイブページでループを出力する
@@ -255,7 +285,7 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 			
 		<a class="photo" href="<? the_permalink(); ?>">
 			<? if(get_post_type() == 'ebook'): ?>
-				<img class="cover" src="<? echo get_post_meta(get_the_ID(), 'cover', true); ?>" alt="<? the_title(); ?>" width="240" height="320" />
+				<img class="cover" src="<? echo ebook_cover_src(); ?>" alt="<? the_title(); ?>" width="240" height="320" />
 				<? if(!lwp_on_sale()): ?>
 					<img class="on-sale" src="<? bloginfo('template_directory'); ?>/styles/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
 				<? endif; ?>
@@ -441,16 +471,45 @@ EOS;
  * @return void
  */
 function the_expiration_info($post = null){
-	$post = _fumiki_get_post($post);
-	$date_diff = floor((time() - strtotime($post->post_date)) / 60 / 60 / 24);
+	$date_diff = get_outdated_days($post);
 	if($date_diff > 365 && !is_page()){
-		$year = "<strong><span class=\"mono\">".floor($date_diff / 365)."</span>年";
-		if(($date_diff / 365) - $year > 0.5){
-			$year .= "半";
-		}
-		echo $year.'前</strong>';
+		echo get_outdate_string($post).'前</strong>';
 	}
 	echo '<span class="mono">'.number_format($date_diff).'</span>日経過';
+}
+
+/**
+ * 投稿が指定した日数を過ぎているか
+ * @param int|object $post
+ * @return boolean
+ */
+function is_expired_post($post = null){
+	return get_outdated_days($post) > 365;
+}
+
+/**
+ * 経過した日数を返す
+ * @param int|object $post
+ * @return int
+ */
+function get_outdated_days($post){
+	$post = get_post($post);
+	return floor((current_time('timestamp') - strtotime($post->post_date)) / 60 / 60 / 24);
+}
+
+/**
+ * 過ぎている日数を返す
+ * @param int|object $post
+ * @return string
+ */
+function get_outdate_string($post = null){
+	$post = _fumiki_get_post($post);
+	$date_diff = floor((current_time('timestamp') - strtotime($post->post_date)) / 60 / 60 / 24);
+	$year = "<strong><span class=\"mono\">".floor($date_diff / 365)."</span>年";
+	if(($date_diff / 365) - $year > 0.5){
+		$year .= "半";
+	}
+	return $year.'前</strong>';
 }
 
 /**
@@ -476,23 +535,21 @@ function is_on_air(){
 
 /**
  * はてなブックマークのXMLを返す
+ * 
+ * @param string $sort 'count' 'eid', または 'hot'のいずれか
  *  
  */
-function get_hatena_rss(){
-	$hatena_transient_name = 'hatena_hotentry';
+function get_hatena_rss($sort = 'count'){
+	$hatena_transient_name = 'hatena_hotentry_'.$sort;
 	$xml = get_transient($hatena_transient_name) ;
 	if(false === $xml){
-		$endpoint = 'http://b.hatena.ne.jp/entrylist?sort=count&url=http://takahashifumiki.com&mode=rss';
+		$endpoint = 'http://b.hatena.ne.jp/entrylist?sort='.$sort.'&url=http://takahashifumiki.com&mode=rss';
 		$context = stream_context_create(array(
 			'http' => array( 'timeout' => 3 )
 		));
 		$response = file_get_contents($endpoint, 0, $context);
-		if(count($http_response_header) == 0 || $http_response_header[0] != 'HTTP/1.0 200 OK'){
-			$xml = null;
-		}else{
-			set_transient($hatena_transient_name, $response, 60 * 60 * 2);
-			$xml = $response;
-		}
+		set_transient($hatena_transient_name, $response, 60 * 60 * 2);
+		$xml = $response;
 	}
 	if($xml){
 		return simplexml_load_string($xml);
@@ -537,20 +594,18 @@ function get_hatena_count($item){
  * @return array
  */
 function get_twitter_timeline($count = 20, $screen_name = 'takahashifumiki'){
+	if(!function_exists('twitter_get_timeline')){
+		return false;
+	}
 	$transient_name = "twitter_public_timeline_{$screen_name}_{$count}";
 	$twt_timeline = get_transient($transient_name);
 	if(false === $twt_timeline){
-		$endpoint = 'http://api.twitter.com/1/statuses/user_timeline/'.(string)$screen_name.'.json';
-		$context = stream_context_create(array(
-			'http' => array( 'timeout' => 3 )
+		$twt_timeline = twitter_get_timeline($screen_name, array(
+			'count' => $count,
 		));
-		$response = file_get_contents($endpoint, 0, $context);
-		if(count($http_response_header) == 0 || $http_response_header[0] != 'HTTP/1.0 200 OK'){
-			$twt_timeline = null;
-		}else{
-			$twt_timeline = json_decode($response);
+		if($twt_timeline){
+			set_transient($transient_name, $twt_timeline, 60 * 30);
 		}
-		set_transient($transient_name, $twt_timeline, 60 * 30);
 	}
 	return $twt_timeline;
 }
@@ -681,3 +736,32 @@ function get_cat_tag($category_name){
 		return '';
 	}
 }
+
+
+
+/**
+ * キャプションを上書き
+ *
+ * @param array $attr
+ * @param string $string HTMLマークアップ
+ * @param string $content
+ * @return string
+ */
+function _fumiki_caption_shortcode($string, $attr, $content = null) {
+	extract(shortcode_atts(array(
+		'id'	=> '',
+		'align'	=> 'alignnone',
+		'width'	=> '',
+		'caption' => ''
+	), $attr));
+	if ( 1 > (int) $width || empty($caption) ){
+		return $content;
+	}
+
+	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+
+	return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px">'
+	. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
+}
+add_filter('img_caption_shortcode', '_fumiki_caption_shortcode', 10, 3);
+

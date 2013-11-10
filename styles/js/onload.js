@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+	
 	//なかのひと
 	if($('#nakanohito').length > 0){
 		var tag = "<a href='http://nakanohito.jp/'>";
@@ -113,11 +114,11 @@ jQuery(document).ready(function($){
 	});
 	$(window).scroll(function(){
 		if($(this).scrollTop() <= 28 + $('#navi').height()){
-			if($('#to-top').css('display') != 'none'){
+			if($('#to-top').css('display') !== 'none'){
 				$('#to-top').fadeOut();
 			}
 		}else{
-			if($('#to-top').css('display') == 'none'){
+			if($('#to-top').css('display') === 'none'){
 				$('#to-top').fadeIn();
 			}
 		}
@@ -139,7 +140,7 @@ jQuery(document).ready(function($){
 			t = $(window).scrollTop();
 			pad = 40;
 			//コンテナ作成
-			if(smartPhoneReadContainer == null){
+			if(smartPhoneReadContainer === null){
 				smartPhoneReadContainer = $(document.createElement('div')).addClass('ebook-more-modal').css({
 					top: b + t,
 					left: 0,
@@ -197,45 +198,88 @@ jQuery(document).ready(function($){
 	}
 	//Tooltip
 	//TODO: タッチでバイスで挙動を変えるべき
+	var toolTip = $('#tip-container');
 	function toggleTip(e){
 		if($(this).hasClass('tip-toggle')){
 			$(this).removeClass('tip-toggle');
-			$('#tip-container').fadeOut('fast');
+			toolTip.fadeOut('fast');
 		}else{
+			if($(this).parents('.quotescollection_randomquote').length > 0){
+				return;
+			}
 			var str = '';
-			if($(this).attr('title')){
-				str = $(this).attr('title').toString();
-			}else if($(this).attr('cite')){
+			if($(this).attr('cite')){
 				str = $(this).attr('cite').toString();
+			}else if($(this).attr('title')){
+				str = $(this).attr('title').toString();
 			}else if($(this).attr('alt')){
 				str = $(this).attr('alt').toString();
-			}else{
+			}else if($(this).hasClass('tip')){
 				str = $(this).text().toString();
 			}
-			if(!str){
+			if(str.length < 1){
 				return false;
+			}else{
+				switch(this.nodeName.toLowerCase()){
+					case 'q':
+						str = '<strong>引用元</strong><br />' + str; 
+						break;
+					case 'abbr':
+						str = '<strong>略語</strong><br />' + str; 
+						break;
+					case 'acronym':
+						str = '<strong>頭字語</strong><br />' + str; 
+						break;
+				}
 			}
-			$('#tip-container td').text(str);
-			var offset = $(this).width() / 2,
-				position = $(this).offset(),
-				heightBP = ($(window).height() / 2) + $(window).scrollTop(),
-				widthBP = $(window).width() / 2,
-				left = position.left + (position.left > widthBP ?  -1 * ($('#tip-container').width() + offset) : offset),
-				top = position.top + (position.top > heightBP ? -1 * ($('#tip-container').height() + offset) : offset);
-			$('#tip-container').css({
-				left: left,
-				top: top
-			}).fadeIn('fast');
+			$('#tip-container td.content').html(str);
+			if(document.ontouchstart !== undefined){
+				var offset = $(this).width() / 2,
+					position = $(this).offset(),
+					heightBP = ($(window).height() / 2) + $(window).scrollTop(),
+					widthBP = $(window).width() / 2,
+					left = position.left + (position.left > widthBP ?  -1 * ($('#tip-container').width() + offset) : offset),
+					top = position.top + (position.top > heightBP ? -1 * ($('#tip-container').height() + offset) : offset);
+				$('#tip-container').css({
+					top: top,
+					left: left
+				});
+			}
+			toolTip.fadeIn('fast');
 			$(this).addClass('tip-toggle');
 			return true;
 		}
 	}
 	if(document.ontouchstart !== undefined){
-		//タッチイベントがあれば、タッチでバイス
+		//タッチイベントがあれば、タッチデバイス
 		$('.tip, abbr, acronym, q').click(toggleTip);
+		toolTip.find('button').click(function(){
+			toolTip.fadeOut('fast');
+			$(this).removeClass('tip-toggle');
+		});
+		toolTip.addClass('touch');
 	}else{
 		//違ったらホバー
-		$('.tip, abbr, acronym, q').hover(toggleTip);
+		$('.tip, abbr, acronym, q')
+				.hover(toggleTip)
+				.mousemove(function(e){
+					var offsetY = offsetX = 10,
+						posY = posX = 0;
+					if(window.innerHeight - e.screenY < 200){
+						posY = e.pageY - offsetY * 8 - toolTip.height();
+					}else{
+						posY = e.pageY - offsetY;
+					}
+					if(window.innerWidth - e.screenX < 300){
+						posX = e.pageX - offsetX * 3 - toolTip.width();
+					}else{
+						posX = e.pageX + offsetX;
+					}
+					toolTip.css({
+						top: posY,
+						left: posX
+					});
+				});
 	}
 	
 	//Get Ustream Status

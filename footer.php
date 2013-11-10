@@ -23,11 +23,9 @@
 						<i class="icon-question-sign"></i>Want to know more?
 					</a>
 				</p>
-			</div>
-		</div>
-
-		<div class="grid_4">
-			<h4 class="mono">
+			</div><!-- //.inner -->
+			
+			<h4 class="mono second">
 				<i class="icon-twitter"></i>
 				Recent tweet
 			</h4>
@@ -57,21 +55,17 @@
 					Follow me on Twitter!
 				</a>
 			</p>
+		</div>
+
+		<div class="grid_4">
 			
-			<h4 class="mono second">
-				<i class="icon-search"></i>
-				Find me at
+			<h4 class="mono next">
+				<i class="icon-facebook"></i>
+				My Facebook Page
 			</h4>
-			<ol class="inner no-text clearfix">
-				<li><a target="_blank" class="facebook" href="https://www.facebook.com/TakahashiFumiki.Page">Facebook</a></li>
-				<li><a target="_blank" class="twitter" href="https://twitter.com/#!/takahashifumiki">twitter</a></li>
-				<li><a target="_blank" class="google" href="https://plus.google.com/u/0/108058172987021898722/posts">Google+</a></li>
-				<li><a target="_blank" class="youtube" href="http://www.youtube.com/user/takahashifumiki">Youtube</a></li>
-				<li><a target="_blank" class="github" href="https://github.com/fumikito">Github</a></li>
-				<li><a target="_blank" class="foursquare" href="https://ja.foursquare.com/takahashifumiki">foursquare</a></li>
-				<li><a target="_blank" class="instagram" href="http://listagr.am/n/takahashifumiki">Instagram</a></li>
-			</ol>
-			
+			<div class="like-box-container">
+				<div class="fb-like-box" data-href="http://www.facebook.com/takahashifumiki.page" data-width="292" data-height="420" data-show-faces="true" data-colorscheme="dark" data-stream="false" data-border-color="#3F464D" data-header="false"></div>
+			</div>
 		</div>
 
 
@@ -88,16 +82,31 @@
 			</ol>
 			
 			<h4 class="mono second">
+				<i class="icon-search"></i>
+				Find me at
+			</h4>
+			<ol class="inner no-text clearfix">
+				<li><a target="_blank" class="facebook" href="https://www.facebook.com/TakahashiFumiki.Page">Facebook</a></li>
+				<li><a target="_blank" class="twitter" href="https://twitter.com/#!/takahashifumiki">twitter</a></li>
+				<li><a target="_blank" class="google" href="https://plus.google.com/u/0/108058172987021898722/posts">Google+</a></li>
+				<li><a target="_blank" class="youtube" href="http://www.youtube.com/user/takahashifumiki">Youtube</a></li>
+				<li><a target="_blank" class="github" href="https://github.com/fumikito">Github</a></li>
+				<li><a target="_blank" class="foursquare" href="https://ja.foursquare.com/takahashifumiki">foursquare</a></li>
+				<li><a target="_blank" class="instagram" href="http://listagr.am/n/takahashifumiki">Instagram</a></li>
+			</ol>
+			
+			<h4 class="mono second">
 				<i class="icon-envelope"></i>
 				Contact
 			</h4>
 			<ol class="inner">
-				<li><a class="mail" href="<?php echo home_url('/inquiry/', 'https'); ?>">お問い合わせ</a></li>
-				<li><a class="feed" href="<?php bloginfo('rss_url'); ?>">RSSフィード</a></li>
 				<li class="contact clearfix">
 					<i class="icon-warning-sign icon-large"></i>
 					執筆・Web制作のお仕事については<a href="<?php echo home_url('/inquiry/', 'https'); ?>">お問い合わせフォーム</a>よりご連絡下さい。
+					なるべく早くお返事します。
 				</li>
+				<li><a class="mail" href="<?php echo home_url('/inquiry/', 'https'); ?>">お問い合わせ</a></li>
+				<li><a class="feed" href="<?php bloginfo('rss_url'); ?>">RSSフィード</a></li>
 			</ol>
 			<?php fumiki_nakanohito(); ?>
 		</div>
@@ -126,8 +135,11 @@
 			<th>
 				<i class="icon-info-sign"></i>
 			</th>
-			<td>
+			<td class="content">
 			</td>
+		</tr>
+		<tr class="close-button">
+			<td colspan="2" class="right"><button>X</button></td>
 		</tr>
 	</table>
 </div>

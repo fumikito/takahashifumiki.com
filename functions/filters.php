@@ -3,6 +3,13 @@
  * @package takahashifumiki
  */
 
+/**
+ * タイトルを変更する
+ * @param string $title
+ * @param string $sep
+ * @param string $seplocation
+ * @return string
+ */
 function _fumiki_meta_title($title, $sep = '|', $seplocation = 'right'){
 	if(is_singular('ebook')){
 		$title .= '電子書籍 '.$sep." ";
@@ -111,6 +118,10 @@ function _fumiki_tinymce($initArray) {
 			'title' => '注釈',
 			'inline' => 'span',
 			'classes' => 'alert'
+		),
+		array(
+			'title' => 'コード',
+			'inline' => 'code'
 		)
 	);
 	$initArray['style_formats'] = json_encode($style_formats);
@@ -241,9 +252,13 @@ add_filter('wpcf7_upload_dir', '_fumiki_simplecaptch_override');
  * @return string
  */
 function _fumiki_static_url($url){
-	return preg_replace("/(https?):\/\/({$_SERVER['SERVER_NAME']})/", '$1://s.$2', $url);
+	if(!is_admin()){
+		$url = preg_replace("/:\/\//", '://s.', $url);
+	}
+	return $url;
 }
 add_filter('template_directory_uri', '_fumiki_static_url');
+add_filter('stylesheet_directory_uri', '_fumiki_static_url');
 
 /**
  * wp_enqueue_scriptで読み込まれたJavascriptのSRC属性をCDN対応
@@ -316,8 +331,8 @@ function _fmiki_attachment_url($url){
  * @return string
  */
 function _fumiki_image_widget_url($url, $args, $instance){
-	if(false !== strpos($url, $_SERVER['SERVER_NAME'])){
-		$url = preg_replace("/http(s?):\/\//", 'http$1://s.', $url);
+	if(false !== strpos($url, 'wp-content')){
+		$url = preg_replace("/:\/\//", '://s.', $url);
 		if(is_ssl()){
 			$url = str_replace('http://', 'https://', $url);
 		}else{
@@ -337,6 +352,23 @@ function _fumiki_wp_redirect(){
 	}
 }
 add_action('template_redirect', '_fumiki_wp_redirect', 1);
+
+/**
+ * AjaxのURLを現在のスキームにあわせる
+ * @param string $url
+ * @return string
+ */
+function _fumiki_ajax_url($url, $path = ''){
+	if(false !== strpos($path, 'admin-ajax')){
+		if(is_ssl()){
+			$url = str_replace('http://', 'https://', $url);
+		}else{
+			$url = str_replace('https://', 'http://', $url);
+		}
+	}
+	return $url;
+}
+add_filter('admin_url', '_fumiki_ajax_url', 10, 2);
 
 
 global $normal_sidebar_counter;

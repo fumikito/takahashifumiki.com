@@ -72,6 +72,11 @@ footer{
 	a.button{
 		font-size: 1.2em;
 	}
+	div.like-box-container{
+		text-align: center;
+		overflow: hidden;
+		width: 100%;
+	}
 	ol{
 		&.inner{
 			li{
