@@ -5,8 +5,6 @@
  * 
  */
 
-console.log(window);
-
 jQuery(window).load(function(){
     // 全体の読み込みにかかった時間を出力
     try{
@@ -15,7 +13,7 @@ jQuery(window).load(function(){
             eventCategory: 'documentLoaded',
             eventAction: GAM.pageAction,
             eventLabel: GAM.pageLabel,
-            eventValue: GAM.timer,
+            eventValue: GAM.getTime(),
             nonInteraction: true
         });
     }catch (e){}
@@ -33,10 +31,10 @@ jQuery(document).ready(function($){
             eventCategory: 'domReady',
             eventAction: GAM.pageAction,
             eventLabel: GAM.pageLabel,
-            eventValue: GAM.timer,
+            eventValue: GAM.getTime(),
             nonInteraction: true
         });
-    }catch(e){console.log(e);}
+    }catch(e){}
 
 	// 初期値を登録しておく
 	var targets = ['#contents-last'],
@@ -99,7 +97,7 @@ jQuery(document).ready(function($){
 	
 	// アウトバウンドリンクを計測
 	$('a[href^=http]').click(function(e){
-		if( !( /^(#|https?:\/\/takahashifumiki\.(com|local|info))/.test($(this).attr('href')) ) ){
+		if( !( /^(#|https?:\/\/(s\.)?takahashifumiki\.(com|local|info))/.test($(this).attr('href')) ) ){
 			try{
 				var url = $(this).attr('href'),
 					target = ($(this).attr('target') && $(this).attr('target').length)

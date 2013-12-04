@@ -96,10 +96,10 @@ class Analytics extends Pattern\Singleton
 		?>
 		<script type="text/javascript">
 			GAM = window.GAM || {};
-			GAM.timer = 0;
-			setInterval(function(){
-				GAM.timer += 0.01;
-			}, 10);
+			GAM.start = new Date();
+			GAM.getTime = function(){
+				return Math.round(new Date() - this.start);
+			}
 		</script>
 		<?php
 	}
@@ -128,6 +128,7 @@ class Analytics extends Pattern\Singleton
 				<? endif; ?>
 			);
 			ga('set', 'dimension1', '<?= esc_js($this->user_role()) ?>');
+			ga('require', 'linkid', 'linkid.js');
 			ga('send', 'pageview');
 		</script>
 	<?php
@@ -146,7 +147,7 @@ class Analytics extends Pattern\Singleton
 					eventCategory: 'performance',
 					eventAction: GAM.pageAction,
 					eventLabel: GAM.pageLabel,
-					eventValue: <?= $this->passed_time(); ?>,
+					eventValue: <?= round(1000 * $this->passed_time()); ?>,
 					nonInteraction: true
 				});
 			}catch(e){};

@@ -128,7 +128,7 @@ function fumiki_title(){
  * @return void
  */
 function fumiki_share($title, $url){
-	$feed_url = get_bloginfo('rss_url');
+	$feed_url = 'http://cloud.feedly.com/#subscription%2Ffeed%2F'.rawurlencode(get_bloginfo('rss_url'));
 	$feed_src = get_bloginfo('template_directory')."/styles/img/container-feedly.png";
 	$subscribers = fumiki_feed_count();
 	

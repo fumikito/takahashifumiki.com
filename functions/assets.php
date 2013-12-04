@@ -38,18 +38,19 @@ function _fumiki_assets(){
 		);
 		//fancybox
 		if(!is_smartphone()){
+			$src = WP_DEBUG ? 'fancybox' : 'fancybox.pack';
 			wp_enqueue_script(
 				'fancybox',
-				get_template_directory_uri()."/styles/js/jquery.fancybox-ck.js",
+				get_template_directory_uri()."/libs/fancybox/jquery.{$src}.js",
 				array('jquery', 'jquery-ui-mouse'),
-				'2.1.3',
+				'2.1.5',
 				true
 			);
 			wp_enqueue_style(
 				'fancybox',
-				get_template_directory_uri()."/styles/stylesheets/fancybox.css",
+				get_template_directory_uri()."/libs/fancybox/jquery.fancybox.css",
 				array(),
-				'2.1.3'
+				'2.1.5'
 			);
 		}
 		// メインのJS

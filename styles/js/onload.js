@@ -66,40 +66,46 @@ jQuery(document).ready(function($){
 	getColumn();
 	$(window).resize(getColumn);
 	if(homeColumn > 1 && $('.desc-box').length > 0){
-		$('.desc-box').imagesLoaded(function(){
-			$(this).masonry({
-				itemSelector: '.box',
-				columnWidth: function(containerWidth){
-					return containerWidth / homeColumn;
-				}
-			});
-		});
+        var descContainer = $('.desc-box');
+        descContainer.masonry({
+            itemSelector: '.box',
+            columnWidth: function(containerWidth){
+                return containerWidth / homeColumn;
+            }
+        });
+        descContainer.find('img').imagesLoaded(function(){
+           descContainer.masonry();
+        }).fail(function(){
+            });
+
 	}
 	if($('div.archive').length > 0 && indexColumn > 0){
-		$('div.archive').imagesLoaded(function(){
-			if(indexColumn > 1){
-				$(this).masonry({
-					itemSelector: '.archive-box',
-					columnWidth: function(containerWidth){
-						return containerWidth / indexColumn;
-					}
-				});
-			}
-		});
-	}
-	//スクロール
-	function setToTop(){
-		var offset;
-		if($('.margin').width() < 760){
-			//スマートフォン
+        if(indexColumn > 1){
+            var archiveContainer = $('div.archive');
+            archiveContainer.masonry({
+                itemSelector: '.archive-box',
+                columnWidth: function(containerWidth){
+                    return containerWidth / indexColumn;
+                }
+            });
+            archiveContainer.find('.img').imagesLoaded(function(){
+               archiveContainer.masonry();
+            });
+        }
+    }
+    //スクロール
+    function setToTop(){
+        var offset;
+        if($('.margin').width() < 760){
+            //スマートフォン
 			offset = window.innerHeight - 50;
-		}else{
-			//それ以外
+        }else{
+            //それ以外
 			offset = $(window).height() - 100;
-		}
-		$('#to-top').css('top', offset);
-	}
-	setToTop();
+        }
+        $('#to-top').css('top', offset);
+    }
+    setToTop();
 	$(window).resize(setToTop);
 	$('#to-top a').click(function(e){
 		e.preventDefault();
@@ -132,7 +138,6 @@ jQuery(document).ready(function($){
 		//電子書籍立ち読み
 		$('.ebook-read-more a').click(function(e){
 			e.preventDefault();
-			alert('yea');
 			//サイズ情報を作成
 			var t,b,w,h,pad;
 			w = $(window).width();

@@ -1,0 +1,101 @@
+@imoprt 'compass';
+
+/****************************************
+ * 8.div.tmkm-amazon-view
+ ****************************************/
+
+$hamazon-bg-color:  #fff;
+$hamazon-price-color: #ffb645;
+$hamazon-link-color: #06c;
+$hamazon-description-bg-color: cyan;
+
+div.tmkm-amazon-view {
+    @include clearfix();
+    clear: both;
+    margin: 1em auto;
+    padding: 1em 1.5em;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    background-color: $hamazon-bg-color;
+    text-shadow: 1px 1px 2px #fff;
+    p a{
+        &:link, &:visited{
+            color: $hamazon-link-color;
+            text-decoration: none;
+        }
+
+        &:hover{
+            color: orange;
+            text-decoration: underline;;
+        }
+        &:active{
+            color: crimson;
+        }
+    }
+
+    .tmkm-amazon-title{
+        font-size: 1.4em;
+        line-height: 1.2;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
+    .tmkm-amazon-img img {
+        float: right;
+        margin: 0 0 1em 1em;
+        padding: 0;
+        @include box-shadow(0 0 5px rgba(0,0,0,0.5));
+        max-width: 200px;
+        height: auto;
+    }
+    p {
+        margin: 0.5em 0;
+        em {
+            color: #000;
+            font-style: normal;
+            font-weight: bold;
+        }
+        &.vendor{
+            clear: both;
+            font-size: 0.85em;
+            text-align: right;
+            a{
+                color: #999;
+            }
+        }
+        &.additional-description{
+            @include clearfix();
+            font-size: 1.2em;
+            line-height: 1.2;
+            margin: 1em 220px 1em 0;
+            padding: 1em;
+            background: $hamazon-description-bg-color;
+            @include border-radius(3px);
+            &:before{
+                content: '!';
+                font-family: Georgia, serif;
+                color: $hamazon-bg-color;
+                font-size: 2em;
+                display: block;
+                width: 0.5xem;
+                height: 1em;
+                float: left;
+                margin: 0 0.5em 0.5em 0;
+            }
+        }
+        &.review{
+            clear: both;
+            iframe{
+                width: 100%;
+                height: 180px;
+            }
+        }
+        span.label{
+            @include inline-block();
+            width: 8em;
+        }
+        &.price em{
+            color: $hamazon-price-color;
+        }
+    }
+}

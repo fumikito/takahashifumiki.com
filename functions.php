@@ -43,8 +43,6 @@ spl_autoload_register(function($class_name){
 ));
 
 
-//エディタースタイルを登録
-add_editor_style("styles/stylesheets/editor-style.css");
 
 //テーマサポートを追加
 add_theme_support('menus');
@@ -59,6 +57,7 @@ get_template_part("functions/outputs");
 get_template_part("functions/wp_die");
 get_template_part("functions/nlp");
 get_template_part("functions/lwp");
+get_template_part("functions/tinymce");
 get_template_part("functions/feed");
 
 /*
