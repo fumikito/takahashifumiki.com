@@ -8,6 +8,7 @@ a.lwp-action{
 	padding: 5px 7px;
 	border: 1px solid #273138;
 	color: #fff;
+    font-family: $sans;
 	@include border-radius(3px);
 	@include box-shadow(1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset);
 	background: #3d4850; /* Old browsers */
@@ -168,24 +169,43 @@ p.submit{
 p.message{
 	@include border-radius(5px);
 	padding: 1em;
+    position: relative;
+    font-family: $sans;
 	strong, em{
 		color: inherit;
 	}
+    i{
+        position: absolute;
+        font-size: 26px;
+        top: 50%;
+        margin-top: -13px;
+        left: 8px;
+    }
+    a:link,
+    a:visited{
+        color: inherit;
+        text-decoration: underline;
+    }
+    a:hover, a:active{
+        color: inherit;
+        text-decoration: none;
+        @include opacity(0.8);
+    }
 }
 p.warning{
 	color: $error-text-color;
-	background: $error-bg-color url('../img/icon-warning_32.png') 5px center no-repeat;
-	padding-left:42px;
+	background: $error-bg-color;
+	padding-left: 42px;
 }
 p.success{
 	color: $success-text-color;
-	background: $success-bg-color url('../img/icon-accepted_32.png') 5px center no-repeat;
-	padding-left:42px;
+	background: $success-bg-color;
+	padding-left: 42px;
 }
 p.notice{
 	color: $info-text-color;
-	background: $info-bg-color url('../img/icon-notice_32.png') 5px center no-repeat;
-	padding-left:42px;
+	background: $info-bg-color;
+	padding-left: 42px;
 }
 
 /* 分割線 */
@@ -201,7 +221,7 @@ p.notice{
 	top: 100px/*%*/;
 	left: 0;
 	padding: 10px;
-	@include border-radius(5px);
+	@include border-radius(3px);
 	font-size: 1.2em;
 	max-width: 300px;
 	min-width: 150px;
@@ -305,3 +325,8 @@ table.form-table{
 		}
 	}
 }
+
+/* Google Responsive ads */
+ .my_adslot { width: 320px; height: 50px; }
+@media(min-width: 500px) { .my_adslot { width: 468px; height: 60px; } }
+@media(min-width: 800px) { .my_adslot { width: 728px; height: 90px; } }

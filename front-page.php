@@ -25,7 +25,7 @@
 		
 		<div class="box grid_2">
 			<h2>
-				<i class="icon-user"></i>
+				<i class="fa-user"></i>
 				運営者について
 			</h2>
 			<p class="center">
@@ -40,7 +40,7 @@
 
 		<div class="box grid_2">
 			<h2>
-				<i class="icon-flag"></i>
+				<i class="fa-flag"></i>
 				サイトの目的
 			</h2>
 			<p>
@@ -55,7 +55,7 @@
 		<div class="box grid_2">
 			<table>
 				<caption>
-					<i class="icon-signal"></i>統計情報
+					<i class="fa-signal"></i>統計情報
 				</caption>
 				<tbody>
 					<tr>
@@ -108,7 +108,7 @@
 	
 		<div class="box grid_1 no_shadow">
 			<h2>
-				<i class="icon-heart"></i>
+				<i class="fa-heart"></i>
 				<? the_title(); ?>
 			</h2>
 			<div class="desc">
@@ -118,7 +118,7 @@
 		
 		<div class="box grid_2">
 			<h2>
-				<i class="icon-calendar"></i>
+				<i class="fa-calendar"></i>
 				最新の投稿
 			</h2>
 			<ol class="post-list">

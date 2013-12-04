@@ -13,7 +13,7 @@ get_header('navi');
 					<? if(!is_smartphone() && $counter <= 15  && false !== array_search($counter, array(5, 10, 15))): ?>
 						<div class="archive-box google">
 							<div class="post-type post-type-pr">
-								<span class="post-type-label"><i class="icon-pushpin"></i>PR</span>
+								<span class="post-type-label"><i class="fa-pushpin"></i>PR</span>
 							</div>
 							<p>
 							<? google_ads(6);?>

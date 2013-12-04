@@ -4,20 +4,33 @@
  * 色設定
  */
 
-/* 背景色 */
+/* 本文文字色 */
 $body-color: #4D4945;
+
+/* 背景色 */
+$body-bg-color: #fff;
+$section-bg-color: #f7f7f7;
+
 
 /* 色 */
 $deep-blue: #252e34;
 $semi-blue: #333F46;
-$pale-green: #8ab29f;
+$title-font-color: #000;
 $pale-yellow: #FBEE88;
 $orange: #ED8600;
 $white: #fcfcfc;
 $beige: #eeeeee;
+$zebra-white: #f7f7f7;
 $thin-grey: #ddd;
+$emphasized-text-color: #000;
 $light-grey: #666;
+$semi-light-grey: #888;
 $warning-red: #ff4d44;
+$link-blue: #06c;
+$link-purple: #7756bc;
+$link-red: #ff4130;
+$link-crimson: #ff0000;
+
 
 /* メッセージ用の色 */
 $error-text-color: #ff4d44;
@@ -32,6 +45,8 @@ $serif: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明�
 $old: Georgia, "Times New Roman", Times, serif;
 $sans: "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
 $mono: 'Consolas', 'Courrier', 'andale mono', 'lucida console', 'Osaka-mono', 'Osaka－等幅', 'Meiryo UI', monospace;
+$body-font: 'Garamond', 'A1 Mincho', "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体","MS P明朝" ,"ヒラギノ明朝体3",serif;
+$title-font: Georgia, 'Akashi', sans-serif;
 
 .mincho{ font-family: $serif; }
 .old{font-family: $old;}
@@ -69,17 +84,20 @@ strong{font-weight: bold;}
 /*リンク装飾*/
 a{
 	overflow: hidden;
-	&:link,
+	&:link{
+        color: $link-blue;
+        text-decoration: underline;
+    }
 	&:visited{
-		color: inherit;
+		color: $link-purple;
 		text-decoration: underline;
 	}
 	&:hover{
-		color: inherit;
+		color: $link-red;
 		text-decoration: none;
 	}
 	&:active{
-		color: inherit;
+		color: $link-crimson;
 		text-decoration: underline;
 	}
 }
@@ -133,6 +151,6 @@ body{
 	text-justify: inter-ideograph ;
 	font-family: $sans;
 	font-size:10px;
-	background: url('../img/bg-texture-white.jpg');
+	background: $body-bg-color;
 	position: relative;
 }

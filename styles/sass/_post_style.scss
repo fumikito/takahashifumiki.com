@@ -3,7 +3,8 @@
 	font-size:2em;
 	line-height:1.8;
 	position: relative;
-	
+	font-family: $body-font;
+
 	& > p{
 		margin: 1em 0;
 		&.indent{
@@ -27,7 +28,7 @@
 	h2{
 		font-size:1.8em;
 		line-height:1.2;
-		color: $pale-green;
+		color: $title-font-color;
 	}
 	h3{
 		font-size:1.5em;
@@ -119,18 +120,34 @@
 			font-style: normal;
 			display: inline-block;
 			text-decoration: inherit;
-			content: "\f0a4";
+			content: "\f054";
 			text-indent: -1.5em;
 		}
 	}
 	/*引用*/
 	blockquote{
-		margin:1em 0;
-		padding:0.5em 1em 0.5em 80px;
-		background: transparent url('../img/blockquote.gif') 10px 10px no-repeat;
+		margin:0.5em 0;
+		padding:32px;
 		color: $semi-blue;
-		border-top: 1px dotted $semi-blue;
-		border-bottom: 1px dotted $semi-blue;
+        position: relative;
+        &:before,
+        &:after{
+            color: lightgrey;
+            display: block;
+            position: absolute;
+            font-size: 24px;
+            font-family: FontAwesome;
+        }
+        &:before{
+            top: 0;
+            left: 10px;
+            content: "\f10d";
+        }
+        &:after{
+            bottom: 0;
+            right: 10px;
+            content: "\f10e";
+        }
 		p{
 			margin:0.5em 0;
 		}
@@ -169,8 +186,12 @@
 		font-family: $mono;
 		color: #000;
 	}
+    var{
+        font-family: $mono;
+    }
 	pre{
 		font-family: $mono;
+        line-height: 1.2;
 	}
 	.syntaxhighlighter{
 		padding-top:5px !important;
@@ -242,36 +263,38 @@
 		border-spacing: 0;
 		empty-cells: show;
 		border-collapse: collapse;
-		&.form-table{
-			width:100%;
-		}
+        width: 100%;
 		thead{
 			th, td{
-				background: #4D4945;
-				color: #f3f3f3;
+				color: $emphasized-text-color;
 				padding: 5px 8px;
+                border-bottom: 3px double $thin-grey;
+                font-weight: bold;
 			}
 		}
 		caption{
-			color: #000;
-			text-align: left;
-			font-size: 1.5em;
+			color: $light-grey;
+			text-align: right;
+			font-size: 1em;
 		}
 		tbody{
 			th,td{
 				text-align:left;
 				padding:5px 8px;
 				font-size:0.85em;
-				border-bottom:1px dotted #999;
+				border-bottom:1px solid $thin-grey;
 			}
 			th{
 				font-weight: bold;
-				color: #888;
+				color: $emphasized-text-color;
 				white-space: nowrap;
 			}
+            td{
+                color: $semi-light-grey;
+            }
 			tr:nth-child(2n) td,
 			tr:nth-child(2n) th{
-				background: #f3f3f3;
+				background: $zebra-white;
 			}
 		}
 	}

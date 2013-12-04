@@ -19,49 +19,23 @@
 			<span class="year"><?php global $wp_query;  echo number_format($wp_query->found_posts); ?></span>
 		</div>
 	<?php endif; ?>
+
+
 	<?php if(is_singular('post')): ?>
-		<div class="calendar shadow">
+		<div class="calendar">
 			<?php
 				$date = explode(',', mysql2date('M,jS,D,Y,', $post->post_date, false));
 				printf('<span class="date">%1$s %2$s (%3$s)</span><span class="year">%4$s</span>', $date[0], $date[1], $date[2], $date[3]); 
 			?>
 		</div>
+		<?php get_template_part('templates/meta-'.  get_post_type()); ?>
 	<?php endif; ?>
-	
-	
 
-		
-	<?php if(is_singular() && !is_ssl()): ?>
-	
-		<? if(is_singular('ebook')): ?>
-		<div class="excerpt">
-			<? the_excerpt(); ?>
-		</div>
-		<? endif; ?>
-
-		<div class="title-meta clearfix<? if(is_singular('ebook')) echo ' ebook-detail'; ?>">
-			<div class="google center">
-				<? if(is_singular('ebook')): ?>
-				<img class="cover" src="<?php echo ebook_cover_src(); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
-					<? if(lwp_on_sale()): ?>
-						<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/styles/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
-					<? endif; ?>
-				<? elseif(!is_smartphone()): ?>
-					<? google_ads(3); ?>
-				<? endif; ?>
-			</div>
-			<? if(is_page()){
-				get_template_part('templates/meta-post');
-			}else{
-				get_template_part('templates/meta-'.  get_post_type());
-			} ?>
-		</div>
-	<?php endif ?>
 </header><!-- header -->
 
 
 <? if(!is_ssl() && is_smartphone()): ?>
 <p class="center">
-	<?	google_ads(5); ?>
+	<?	google_ads(7); ?>
 </p>
 <? endif; ?>

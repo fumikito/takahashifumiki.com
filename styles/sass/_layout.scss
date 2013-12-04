@@ -7,9 +7,12 @@
 	margin:0 auto;
 }
 #main{
+    width: 630px;
+    float: left;
 }
 #sidebar{
-	padding:20px 10px;
+	width: 330px;
+    float: right;
 }
 
 .grid_4{
@@ -25,11 +28,6 @@
 }
 
 .entry{
-	width: 768px;
-	margin: 0 auto;	
-}
-.google-share{
-	width: 748px;
 }
 
 //--------------------
@@ -41,6 +39,11 @@
 	.margin{
 		width: 1280px;
 	}
+    #main{
+        width: 900px;
+        padding-left: 30px;
+        padding-right: 20px;
+    }
 	.grid_4{
 		width: 360px;
 		margin-right: 60px;
@@ -52,19 +55,12 @@
 		}
 	}
 	$bigGutter: 30px;
-	header .title-meta{
-		padding-left: 260px;
-		padding-right: 260px;
-	}
 	div.archive{
 		padding-left: $bigGutter;
 		.archive-box{
 			margin-right: $bigGutter;
 			margin-bottom: $bigGutter;
 		}
-	}
-	.google-share{
-		width: 748px;
 	}
 }
 

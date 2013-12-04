@@ -150,8 +150,6 @@ function fumiki_share($title, $url){
 				<!-- Hatena -->
 				<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 			</td>
-		</tr>
-		<tr>
 			<td>
 				<!-- Google + -->
 				<div class="g-plusone" data-href="{$url}" data-size="tall"></div>
@@ -264,11 +262,11 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 		<div class="post-type post-type-<?= get_post_type(); ?> clearfix">
 			<span class="post-type-label label-<?= get_post_type(); ?>">
 				<? switch(get_post_type()): case 'ebook': ?>
-					<i class="icon-book"></i>
+					<i class="fa-book"></i>
 				<? break; case 'events': ?>
-					<i class="icon-bullhorn"></i>
+					<i class="fa-bullhorn"></i>
 				<? break; default: ?>
-					<i class="icon-pencil"></i>
+					<i class="fa-pencil"></i>
 				<? endswitch; ?>
 				<?= get_post_type_object(get_post_type())->labels->name; ?>
 			</span>
@@ -287,7 +285,7 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 			<? if(get_post_type() == 'ebook'): ?>
 				<img class="cover" src="<? echo ebook_cover_src(); ?>" alt="<? the_title(); ?>" width="240" height="320" />
 				<? if(!lwp_on_sale()): ?>
-					<img class="on-sale" src="<? bloginfo('template_directory'); ?>/styles/img/icon-sale-48.png" width="48" height="48" alt="On Sale" />
+					<img class="on-sale" src="<? bloginfo('template_directory'); ?>/styles/img/fa-sale-48.png" width="48" height="48" alt="On Sale" />
 				<? endif; ?>
 				<p class="price old">
 					<? lwp_the_price() ?>
@@ -300,7 +298,7 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 		<? if(get_post_type() == 'events'): ?>
 		<table class="event-table">
 			<tr>
-				<th><i class="icon-calendar"></i>開催日時</th>
+				<th><i class="fa-calendar"></i>開催日時</th>
 				<td>
 					<? if(lwp_is_oneday_event()): ?>
 						<?= lwp_event_starts('Y.n.j (D) <\b\r />H:i').'〜'.lwp_event_ends('H:i'); ?>
@@ -310,7 +308,7 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 				</td>
 			</tr>
 			<tr>
-				<th><i class="icon-time"></i>〆切</th>
+				<th><i class="fa-time"></i>〆切</th>
 				<td>
 					<? if(lwp_is_event_available()): ?>
 						<?= lwp_selling_limit('Y.n.j (D)'); ?>
@@ -320,7 +318,7 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 				</td>
 			</tr>
 			<tr>
-				<th><i class="icon-group"></i>参加人数</th>
+				<th><i class="fa-group"></i>参加人数</th>
 				<td>
 					<?= number_format(lwp_participants_number()); ?>名
 				</td>
@@ -336,8 +334,8 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 		<? switch(get_post_type()){
 			case 'post':
 				$tax = array(
-					'category' => 'icon-folder-open',
-					'post_tag' => 'icon-tags'
+					'category' => 'fa-folder-open',
+					'post_tag' => 'fa-tags'
 				);
 				break;
 			default:
@@ -396,43 +394,41 @@ EOS;
 			break;
 		case 2:
 			echo <<<EOS
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-0087037684083564";
-/* 高橋文樹 投稿内広告 */
-google_ad_slot = "5844658673";
-google_ad_width = 468;
-google_ad_height = 60;
-//-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 高橋文樹投稿下 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-0087037684083564"
+     data-ad-slot="2946163640"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 EOS;
 			break;
 		case 3:
 			echo <<<EOS
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-0087037684083564";
-/* 高橋文樹.com2011関連投稿 */
-google_ad_slot = "0384965250";
-google_ad_width = 336;
-google_ad_height = 280;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 高橋文樹.com2011関連投稿 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-0087037684083564"
+     data-ad-slot="0384965250"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 EOS;
 			break;
 		case 4:
 			echo <<<EOS
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-0087037684083564";
-/* 高橋文樹サイドバー2011 */
-google_ad_slot = "6378073345";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 高橋文樹サイドバー2011 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-0087037684083564"
+     data-ad-slot="6378073345"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 EOS;
 			break;
 		case 5:
@@ -460,6 +456,20 @@ google_ad_height = 200;
 </script>
 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 EOS;
+			break;
+		case 7:
+			echo <<<EOS
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 高橋文樹スマートフォン上 -->
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-0087037684083564"
+     data-ad-slot="9969902841"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+EOS;
+
 			break;
 	}
 }

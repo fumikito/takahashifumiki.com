@@ -11,15 +11,12 @@
 .title{
 	text-align: left;
 	margin: 0;
-	padding:80px 100px;
-	color: $pale-green;
-	font-size:5em;
-	font-weight: bold;
+	padding:80px 80px 120px;
+	color: $title-font-color;
+	font-size: 7em;
+    font-family: $title-font;
+	font-weight: normal;
 	line-height: 1.1;
-	text-shadow:1px 1px 2px #fff;
-	&.center{
-		text-align: center;
-	}
 	strong{
 		display: block;
 		text-align: center;
@@ -32,11 +29,13 @@
 	position: relative;
 	.calendar{
 		position: absolute;
-		top: 0;
+		top: -20px;
 		right: 0px;
+        padding-top: 20px;
 		height: 100px;
 		width: 120px;
-		background: url('../img/icon-calendar.png') left top no-repeat;
+		background: $body-color;
+        @include border-radius(50%);
 		color: $white;
 		font-family: $old;
 		text-align: center;
@@ -61,43 +60,34 @@
 }
 /*タイトルメタ*/
 .title-meta{
-	margin:10px 0 40px ;
-	background: $beige;
-	padding: 20px 100px;
-	@include divider;
-	.google{
-		width: 370px;
-		float: left;
-	}
-	table{
-		width: 370px;
-		float: right;
-		border-collapse: collapse;
-		th,td{
-			padding:5px;
-			font-size: 1.2em;
-			border-bottom: 1px dotted $thin-grey;
-			vertical-align: middle;
-		}
-		th{
-			color: $deep-blue;
-			white-space: nowrap;
-		}
-		td{
-			font-weight: bold;
-			strong{
-				color: $warning-red;
-				margin-right: 0.5em;
-			}
-		}
-		i{
-			margin-right: 0.25em;
-			font-size: 2em;
-		}
-	}
+    width: 100%;
+    margin-bottom: 40px;
+    color: $semi-light-grey;
+    th, td{
+        font-size: 1.4em;
+        padding: 0.5em;
+    }
+    th{
+        text-align: right;
+        border-right: 1px solid $beige;
+        i{
+            margin-right: 0.5em;
+            color: $emphasized-text-color;
+        }
+    }
+    tr:first-child{
+        th, td{
+            border-bottom: 1px solid $beige;
+        }
+    }
+    td{
+    }
 }
 
-
+#outdated-post{
+    font-size: 1.4em;
+    margin-bottom: 2em;
+}
 
 /*投稿スタイル*/
 .entry{
@@ -128,6 +118,12 @@
 		width: 100%;
 	}
 }
+// さらに大きい場合はフォントサイズを倍に
+@media (min-width: 1280px) {
+    .entry{
+        font-size: 2.5em;
+    }
+}
 
 
 /* コメント */
@@ -138,8 +134,13 @@
 
 /*関連投稿*/
 .related{
-	 padding: 0 0 20px;
-	 margin: 20px 0;
+	 margin: 40px 0;
+    h3{
+        font-size: 2em;
+        font-weight: bold;
+        color: $semi-blue;
+        margin-bottom: 20px;
+    }
 	/*説明書き*/
 	.meta{
 		width: 233px;
@@ -163,10 +164,11 @@
  
 /* 投稿ナビゲーション */
 .next-previous{
-	margin-top: 1em;
-	padding-top: 1em;
+	margin-top: 40px;
+	padding-top: 40px;
 	@include box-shadow(0 1px 1px rgba(255, 255, 255, 0.2) );
-	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: 3px double $semi-light-grey;
+    font-size: 2em;
 	i{
 		font-size: 1.5em;
 		text-decoration: none;
@@ -195,14 +197,26 @@
 
 /* 広告 */
 .google-share{
-	width: 748px;
 	clear: both;
 	margin-bottom: 20px;
-	padding: 10px 10px;
+	padding: 20px 10px;
 	text-align: center;
-	background:$beige url('../img/content-footernote.png') center center no-repeat;
-	border-top: 1px solid rgba(0, 0, 0, 0.2);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 3px double $semi-light-grey;
+    .like{
+        width: 100%;
+        margin-bottom: 20px;
+        td{
+            text-align: center;
+        }
+    }
+    .ad, .ad2{
+        float: left;
+        width: 336px;
+        height: 280px;
+    }
+    .ad2{
+        float: right;
+    }
 	h3{
 		color: #ccc;
 		text-shadow: 1px 1px 2px #fff;

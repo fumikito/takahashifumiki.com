@@ -1,13 +1,13 @@
 /* Admin bar */
 #wpadminbar{
-	background: url('../img/bg-texture-dark.jpg') left top repeat !important;
+	background: $body-color;
 	.adminbar-logo {
 		width: 190px;
 		height: 20px;
 		margin-top: 4px;
 	}
 	.ab-top-secondary{
-		background: url('../img/bg-texture-dark.jpg') left top repeat !important;
+		background: $body-color;
 	}
 	#wp-admin-bar-main-menues i{
 		margin-right: 0.5em
@@ -16,12 +16,10 @@
 
 /*ナビゲーション*/
 #navi{
-	border-bottom:1px solid #777c7f;
-	background: url('../img/bg-texture-gray.jpg') left top repeat;
-	color: $deep-blue;
-	text-shadow:1px 1px 1px rgba(255,255,255,0.4);
+	border-bottom:3px double $body-color;
+	color: $semi-light-grey;
 	overflow: hidden;
-	@include box-shadow(inset 0 -1px 5px rgba(0,0,0,0.3), inset 0 1px 5px rgba(0,0,0,0.3));
+    background: $section-bg-color;
 	&.archive{
 		header{
 			padding: 10px;
@@ -84,13 +82,20 @@
 	.breadcrumb{
 		height:24px;
 		line-height:24px;
-		margin:10px;
+		margin:10px auto;
 		font-size:1.1em;
 		text-align: left;
 		i{
 			font-size: 24px;
 			vertical-align: middle;
 		}
+        a:link, a:visited{
+            color: inherit;
+        }
+        a:hover, a:active{
+            color: $light-grey;
+        }
+
 	}
 	p.center{
 		font-size: 1.6em;

@@ -71,7 +71,7 @@ register_sidebar(array(
 	 'id' => 'normal-sidebar',
 	 'before_widget' => '<div id="%1$s" class="box widget grid_2 %2$s">',
 	 'after_widget' => "</div>",
-	 'before_title' => '<h2><i class="icon-ok-sign"></i> ',
+	 'before_title' => '<h2><i class="fa-ok-sign"></i> ',
 	 'after_title' => "</h2>"
 ));
 register_sidebar(array(
@@ -79,7 +79,7 @@ register_sidebar(array(
 	 'id' => 'ebook-sidebar',
 	 'before_widget' => '<div id="%1$s" class="box widget grid_2  %2$s">',
 	 'after_widget' => "</div>",
-	 'before_title' => '<h3><i class="icon-book"></i> ',
+	 'before_title' => '<h3><i class="fa-book"></i> ',
 	 'after_title' => "</h3>"
 ));
 register_sidebar(array(
@@ -87,7 +87,7 @@ register_sidebar(array(
 	 'id' => 'ebook-related',
 	 'before_widget' => '<div id="%1$s" class="box widget grid_2 no-shadow %2$s">',
 	 'after_widget' => "</div>",
-	 'before_title' => '<h3 class="entry-widget-title"><i class="icon-ok-sign"></i> ',
+	 'before_title' => '<h3 class="entry-widget-title">',
 	 'after_title' => "</h3>"
 ));
 /**

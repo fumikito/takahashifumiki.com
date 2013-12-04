@@ -1,20 +1,10 @@
 <div class="desc-box clearfix">
 	<? if(is_singular('ebook') || is_post_type_archive('ebook')) dynamic_sidebar('電子書籍');  ?>
 
-	<? if(is_singular()): ?> 
-	<?
-	//関連投稿
-	switch(get_post_type()):
-		case 'post':
-		case 'page':
-			$obj = get_post_type_object(get_post_type());
-	?>
+
 	<div class="box grid_2">
-		<h3><i class="icon-link"></i> 関連<?= $obj->labels->name; ?></h3>
-		<? if(function_exists('related_posts')) related_posts(); ?>
+		<?php google_ads(4); ?>
 	</div>
-	<? break; endswitch; ?>
-	<? endif; ?>
 	<? dynamic_sidebar('通常サイドバー'); ?>
 	<div class="box grid_2">
 		<?
@@ -25,7 +15,7 @@
 			);
 			$key = array_rand($hatebu);
 		?>
-		<h3><i class="icon-bookmark"></i> はてぶで<?= $hatebu[$key]; ?></h3>
+		<h3><i class="fa-bookmark"></i> はてぶで<?= $hatebu[$key]; ?></h3>
 		<? $hatena = get_hatena_rss($key); ?>
 		<ol class="post-list">
 			<? $counter = 0; foreach($hatena->item as $item): $counter++;?>

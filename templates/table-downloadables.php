@@ -31,14 +31,14 @@
 					):
 				?>
 					<a class="button button-download" href="<?= lwp_file_link($f->ID); ?>" rel="nofollow,noindex">
-						<i class="icon-download-alt"></i>
+						<i class="fa-download-alt"></i>
 						ダウンロード
 						<small><?= lwp_get_size($f); ?></small>
 					</a>
 					<small class="desc">クリックしてダウンロード</small>
 				<? else: ?>
 					<a class="button button-disabled" title="サイズ：<?= lwp_get_size($f); ?>" href="#" onclick="return false;">
-						<i class="icon-minus-sign"></i>
+						<i class="fa-minus-sign"></i>
 						利用不可
 						<small><?= lwp_get_size($f); ?></small>
 					</a>

@@ -6,7 +6,7 @@
 			<?php $admin = get_userdata(1); ?>
 			<div class="inner">
 				<h4 class="mono">
-					<i class="icon-user"></i>
+					<i class="fa-user"></i>
 					About me
 				</h4>
 				<div class="admin-name sans">
@@ -20,13 +20,13 @@
 				</blockquote>
 				<p class="center">
 					<a class="button mono" href="<?php echo home_url('/about/'); ?>">
-						<i class="icon-question-sign"></i>Want to know more?
+						<i class="fa-question-sign"></i>Want to know more?
 					</a>
 				</p>
 			</div><!-- //.inner -->
 			
 			<h4 class="mono second">
-				<i class="icon-twitter"></i>
+				<i class="fa-twitter"></i>
 				Recent tweet
 			</h4>
 			<blockquote class="clearfix left">
@@ -51,7 +51,7 @@
 			</blockquote>
 			<p class="center">
 				<a href="https://twitter.com/takahashifumiki" class="button mono" target="_blank">
-					<i class="icon-twitter"></i>
+					<i class="fa-twitter"></i>
 					Follow me on Twitter!
 				</a>
 			</p>
@@ -60,7 +60,7 @@
 		<div class="grid_4">
 			
 			<h4 class="mono next">
-				<i class="icon-facebook"></i>
+				<i class="fa-facebook"></i>
 				My Facebook Page
 			</h4>
 			<div class="like-box-container">
@@ -72,7 +72,7 @@
 		<div class="grid_4 last">
 			
 			<h4 class="mono next">
-				<i class="icon-globe"></i>
+				<i class="fa-globe"></i>
 				My Web sites
 			</h4>
 			<ol class="inner">
@@ -82,7 +82,7 @@
 			</ol>
 			
 			<h4 class="mono second">
-				<i class="icon-search"></i>
+				<i class="fa-search"></i>
 				Find me at
 			</h4>
 			<ol class="inner no-text clearfix">
@@ -96,12 +96,12 @@
 			</ol>
 			
 			<h4 class="mono second">
-				<i class="icon-envelope"></i>
+				<i class="fa-envelope"></i>
 				Contact
 			</h4>
 			<ol class="inner">
 				<li class="contact clearfix">
-					<i class="icon-warning-sign icon-large"></i>
+					<i class="fa-warning-sign fa-large"></i>
 					執筆・Web制作のお仕事については<a href="<?php echo home_url('/inquiry/', 'https'); ?>">お問い合わせフォーム</a>よりご連絡下さい。
 					なるべく早くお返事します。
 				</li>
@@ -133,7 +133,7 @@
 	<table>
 		<tr>
 			<th>
-				<i class="icon-info-sign"></i>
+				<i class="fa-info-sign"></i>
 			</th>
 			<td class="content">
 			</td>

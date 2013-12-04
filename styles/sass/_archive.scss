@@ -48,7 +48,7 @@ div.archive{
 			@include border-top-radius(3px);
 		}
 		.post-type-ebook{
-			background-color: $pale-green;
+			background-color: $title-font-color;
 		}
 		.post-type-events{
 			background-color: $semi-blue;
@@ -204,7 +204,7 @@ div.archive{
 				}
 			}
 			.post_tag a{
-				background-color: $pale-green;
+				background-color: $title-font-color;
 			}
 			.category a{
 				background-color: $deep-blue;
@@ -222,4 +222,41 @@ div.archive{
 			margin-top: 0.5em;
 		}
 	}
+}
+
+.post-list{
+    .loop{
+        position: relative;
+        border-top: 1px solid $beige;
+        padding: 10px;
+        font-size: 1.4em;
+        @include clearfix();
+        &:first-child{
+            border-top: none;
+        }
+        img{
+            float: left;
+            margin-right: 1em;
+        }
+        .post-title{
+            font-size: 2em;
+        }
+        .score{
+            position: absolute;
+            right: 0;
+            top: 10px;
+            padding: 5px;
+            @include border-radius(3px);
+            background: $emphasized-text-color;
+            color: $white;
+        }
+        .date{
+            color: $light-grey;
+            display: block;
+            margin: 0.5em 0;
+        }
+        .desc{
+            font-size: 1.2em;
+        }
+    }
 }

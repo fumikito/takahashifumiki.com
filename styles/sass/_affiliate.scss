@@ -17,22 +17,10 @@ div.tmkm-amazon-view {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     font-size: 12px;
-    background-color: $hamazon-bg-color;
+    font-family: $sans;
+    background-color: $body-bg-color;
     text-shadow: 1px 1px 2px #fff;
-    p a{
-        &:link, &:visited{
-            color: $hamazon-link-color;
-            text-decoration: none;
-        }
 
-        &:hover{
-            color: orange;
-            text-decoration: underline;;
-        }
-        &:active{
-            color: crimson;
-        }
-    }
 
     .tmkm-amazon-title{
         font-size: 1.4em;
@@ -69,12 +57,12 @@ div.tmkm-amazon-view {
             line-height: 1.2;
             margin: 1em 220px 1em 0;
             padding: 1em;
-            background: $hamazon-description-bg-color;
+            background: $section-bg-color;
             @include border-radius(3px);
             &:before{
                 content: '!';
                 font-family: Georgia, serif;
-                color: $hamazon-bg-color;
+                color: $body-bg-color;
                 font-size: 2em;
                 display: block;
                 width: 0.5xem;
@@ -99,3 +87,21 @@ div.tmkm-amazon-view {
         }
     }
 }
+
+@media (max-width: 560px) {
+    div.tmkm-amazon-view {
+        .tmkm-amazon-img{
+            text-align: center;
+            img {
+                float: none;
+                margin-right: 0;
+            }
+        }
+        p{
+            &.additional-description{
+                margin-right: 0;
+            }
+        }
+    }
+}
+

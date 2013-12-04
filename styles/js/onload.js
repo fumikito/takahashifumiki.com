@@ -1,12 +1,50 @@
 jQuery(document).ready(function($){
-	
-	//なかのひと
-	if($('#nakanohito').length > 0){
-		var tag = "<a href='http://nakanohito.jp/'>";
-		tag += "<img src='http://nakanohito.jp/an/?u=201672&h=893199&w=96&guid=ON&t=&version=js&refer="+escape(document.referrer)+"&url="+escape(document.URL)+"' border='0' width='96' height='96' />";
-		tag += "</a>";
-		$('#nakanohito').html(tag);
-	}
+
+    // ブラーフィルターがないブラウザ
+    if(/Firefox/.test(navigator.userAgent) || (/MSIE/.test(navigator.userAgent) && !(/MSIE (5|6|7|8|9)\.0/.test(navigator.userAgent))) ){
+        $('body').addClass('non-filter-blur');
+    }
+
+    // メッセージ
+    $('p.message').each(function(index, elt){
+        var iconClass = false;
+        if($(elt).hasClass('warning')){
+            iconClass = 'fa-warning';
+        }else if($(elt).hasClass('success')){
+            iconClass = 'fa-check-circle';
+        }else if($(elt).hasClass('notice')){
+            iconClass = 'fa-lightbulb-o';
+        }
+        if(iconClass){
+            $(elt).prepend('<i class="' + iconClass + '"></i>');
+        }
+    });
+
+
+    $('.netabare').each(function(index, elt){
+        var button = $('<a class="netabare-opener button" href="#" data-index="' + (index + 1) + '"><i class="fa-folder-open"></i>ネタバレ表示</a>'),
+            top = $(elt). height() / 2 * -1;
+        $(elt).after(button);
+        button.click(function(e){
+            e.preventDefault();
+            if(confirm('この部分はネタバレを含みます。表示してよろしいですか？')){
+                $(this).prev('.netabare').removeClass('netabare');
+                try{
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'netabare',
+                        eventAction: window.location.pathname,
+                        eventLabel: $(this).attr('data-index'),
+                        eventValue: 1
+                    });
+                }catch (e){}
+                $(this).remove();
+            }
+        }).css({
+            top: top + 'px'
+        });
+    });
+
 	//Fancybox
 	if($.fancybox && !$('body').hasClass('smartphone')){
 		$('.entry a').each(function(index, elt){
@@ -45,54 +83,7 @@ jQuery(document).ready(function($){
 			titlePosition: 'inside'
 		});
 	}
-	//Masonry
-	var homeColumn, indexColumn;
-	function getColumn(){
-		var winWidth = $('.margin').width();
-		if(winWidth == 1280){
-			homeColumn = 4;
-			indexColumn = 5;
-		}else if(winWidth == 960){
-			homeColumn = 3;
-			indexColumn = 4;
-		}else if(winWidth == 760){
-			homeColumn = 2;
-			indexColumn = 3;
-		}else if(winWidth < 760){
-			homeColumn = 1;
-			indexColumn = 1;
-		}
-	}
-	getColumn();
-	$(window).resize(getColumn);
-	if(homeColumn > 1 && $('.desc-box').length > 0){
-        var descContainer = $('.desc-box');
-        descContainer.masonry({
-            itemSelector: '.box',
-            columnWidth: function(containerWidth){
-                return containerWidth / homeColumn;
-            }
-        });
-        descContainer.find('img').imagesLoaded(function(){
-           descContainer.masonry();
-        }).fail(function(){
-            });
 
-	}
-	if($('div.archive').length > 0 && indexColumn > 0){
-        if(indexColumn > 1){
-            var archiveContainer = $('div.archive');
-            archiveContainer.masonry({
-                itemSelector: '.archive-box',
-                columnWidth: function(containerWidth){
-                    return containerWidth / indexColumn;
-                }
-            });
-            archiveContainer.find('.img').imagesLoaded(function(){
-               archiveContainer.masonry();
-            });
-        }
-    }
     //スクロール
     function setToTop(){
         var offset;

@@ -13,7 +13,7 @@ class Recent_Widget extends WP_Widget{
 		if($query->have_posts()){
 			echo $before_widget;
 			if(!empty($title)){
-				printf('<h3><i class="icon-star"></i> %s</h3>', $title);
+				printf('<h3><i class="fa-star"></i> %s</h3>', $title);
 			}
 			echo '<ol class="post-list">';
 			while($query->have_posts()){

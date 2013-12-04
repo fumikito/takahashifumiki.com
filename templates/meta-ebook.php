@@ -1,15 +1,15 @@
 <table>
 	<tbody>
 		<tr>
-			<th><i class="icon-book"></i>書名</th>
+			<th><i class="fa-book"></i>書名</th>
 			<td class="book-title"><? the_title(); ?></td>
 		</tr>
 		<tr>
-			<th><i class="icon-user"></i>著者</th>
+			<th><i class="fa-user"></i>著者</th>
 			<td><? the_author(); ?></td>
 		</tr>
 		<tr>
-			<th><i class="icon-money"></i>価格</th>
+			<th><i class="fa-money"></i>価格</th>
 			<td class="price">
 				<? if(lwp_on_sale() && !lwp_is_owner()): ?>
 					<del class="old"><? echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
@@ -27,20 +27,20 @@
 			</td>
 		</tr>
 		<tr>
-			<th><i class="icon-inbox"></i>分量</th>
+			<th><i class="fa-inbox"></i>分量</th>
 			<td>400字詰め原稿用紙<? echo intval(get_post_meta(get_the_ID(), 'lwp_number', true)); ?>枚分</td>
 		</tr>
 		<tr>
-			<th><i class="icon-qrcode"></i>ISBN</th>
+			<th><i class="fa-qrcode"></i>ISBN</th>
 			<td class="mono"><? echo ($isbn = get_post_meta(get_the_ID(), 'lwp_isbn', true)) ? $isbn : 'なし'; ?></td>
 		</tr>
 		<tr>
-			<th><i class="icon-calendar"></i>公開日</th>
+			<th><i class="fa-calendar"></i>公開日</th>
 			<td class="mono"><? the_date('Y.m.d'); ?></td>
 		</tr>
 		<? if(is_singular()): ?>
 		<tr>
-			<th><i class="icon-download"></i>ダウンロード</th>
+			<th><i class="fa-download"></i>ダウンロード</th>
 			<td>
 				<? if(lwp_is_owner()): ?>
 					<p class="message success">お買い上げありがとうございます。<a href="#download-list">ダウンロード</a>からファイルをダウンロードして下さい。感想お待ちしています。</p>
@@ -53,7 +53,7 @@
 		</tr>
 		<? if(!lwp_is_free()): ?>
 		<tr>
-			<th><i class="icon-thumbs-up"></i>宣伝URL</th>
+			<th><i class="fa-thumbs-up"></i>宣伝URL</th>
 			<td>
 				<? if(is_user_logged_in()): ?>
 					以下のURLを使って宣伝すると、<strong><? the_lwp_reward(); ?></strong>の報酬が入ります。

@@ -1,7 +1,7 @@
 <table>
 	<tbody>
 		<tr>
-			<th><i class="icon-calendar"></i>開催日時</th>
+			<th><i class="fa-calendar"></i>開催日時</th>
 			<td class="mono">
 				<? if(lwp_is_oneday_event()): ?>
 					<?= lwp_event_starts('Y.n.j (D) H:i').'〜'.lwp_event_ends('H:i'); ?>
@@ -14,13 +14,13 @@
 			</td>
 		</tr>
 		<tr>
-			<th><i class="icon-time"></i>申込〆切</th>
+			<th><i class="fa-time"></i>申込〆切</th>
 			<td class="mono">
 				<?= lwp_selling_limit('Y.n.j (D)'); ?>
 			</td>
 		</tr>
 		<tr>
-			<th><i class="icon-remove-circle"></i>キャンセル条件</th>
+			<th><i class="fa-remove-circle"></i>キャンセル条件</th>
 			<td>
 				<? if(lwp_is_cancelable()): ?>
 					<?
@@ -36,7 +36,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th><i class="icon-check"></i>申込状況</th>
+			<th><i class="fa-check"></i>申込状況</th>
 			<td>
 				<? if(lwp_is_participating()): ?>
 					あなたはすでに申し込み済みです。キャンセルする場合は<a href="<?= lwp_cancel_url();?>">こちら</a>から。
@@ -49,7 +49,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th><i class="icon-group"></i>参加人数</th>
+			<th><i class="fa-group"></i>参加人数</th>
 			<td>
 				<? if(($number = lwp_participants_number())): ?>
 					<?= number_format($number); ?>名参加
@@ -60,7 +60,7 @@
 		</tr>
 		<? if(user_can_edit_post(get_current_user_id(), get_the_ID())): ?>
 		<tr>
-			<th><i class="icon-key"></i>主催者管理</th>
+			<th><i class="fa-key"></i>主催者管理</th>
 			<td>
 				<p><? lwp_token_chekcer();?></p>
 			</td>

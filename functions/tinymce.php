@@ -20,8 +20,8 @@ function _fumiki_tinymce($initArray) {
 	$style_formats = array(
 		array(
 			'title' => 'ネタバレ',
-			'block' => 'div',
-			'classes' => 'netabre'
+			'block' => 'p',
+			'classes' => 'netabare'
 		),
 		array(
 			'title' => 'サクセス',
