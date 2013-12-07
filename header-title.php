@@ -5,11 +5,6 @@
 		
 	<? $title = fumiki_title(); ?>
 	<h1 class="title mincho<? if(mb_strlen($title, 'utf-8') <= 20) echo ' center'; ?>">
-		<? if(is_singular('ebook')): ?>
-			<strong class="sans">【高橋文樹の電子書籍】</strong>
-		<? elseif(is_singular('events')): ?>
-			<strong class="sans">［イベント］</strong>
-		<? endif; ?>
 		<?= $title; ?>
 	</h1>
 	

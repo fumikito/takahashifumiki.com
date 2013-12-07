@@ -10,7 +10,7 @@ a.lwp-action{
 	color: #fff;
     font-family: $sans;
 	@include border-radius(3px);
-	@include box-shadow(1px 1px 1px rgba(255,255,255,0.5), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset);
+	@include box-shadow(1px 1px 1px rgba(255,255,255,0.2), -1px -1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(0,0,0,0.5) inset);
 	background: #3d4850; /* Old browsers */
 	background: -moz-linear-gradient(top, #3d4850 0%, #1c252b 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d4850), color-stop(100%,#1c252b)); /* Chrome,Safari4+ */
@@ -87,6 +87,11 @@ p.submit{
 	background: linear-gradient(top,  #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
 	text-shadow:1px 1px 3px #aaa;
+    &:before{
+        content: '\f07a';
+        margin-right: 0.5em;
+        font-family: FontAwesome;
+    }
 	&:link,
 	&:visited{
 		text-decoration: none;
@@ -162,7 +167,7 @@ p.submit{
 	@include border-radius(50%);
 }
 .img-pressed{
-	@include box-shadow(1px 1px 2px rgba(255, 255, 255, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset);
+	@include box-shadow(1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset);
 }
 
 /*メッセージボックス*/
@@ -222,24 +227,26 @@ p.notice{
 	left: 0;
 	padding: 10px;
 	@include border-radius(3px);
-	font-size: 1.2em;
+	font-size: 1.4em;
 	max-width: 300px;
 	min-width: 150px;
-	color: #666;
-	background-color: #C4D7ED;
-	border: 1px solid #1B76FF;
+	color: $white;
+	background-color: $emphasized-text-color;
 	z-index: 10000;
-	@include box-shadow(rgba(0, 0, 0, 0.2) 0 0 5px 3px);
+	@include box-shadow(rgba(0, 0, 0, 0.4) 2px 2px 2px 3px);
 	th{
 		vertical-align: middle;
 		padding-right: 0.5em;
 		font-size: 2em;
 		i{
-			color: #1B76FF;
+			color: $light-grey;
 		}
 	}
 	td{
 		line-height: 1.2;
+        strong{
+            color: $semi-light-grey;
+        }
 	}
 	.close-button{
 		display: none;
@@ -283,6 +290,9 @@ table.form-table{
 
 /* ページナビ */
 .wp-pagenavi{
+    font-size: 2em;
+    font-family: $sans;
+    margin: 20px 0;
 	a, span.current, span.extend{
 		padding: 3px 8px;
 		font-family: $mono;

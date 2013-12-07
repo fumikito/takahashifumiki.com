@@ -8,21 +8,13 @@ get_header('navi');
 		<? global $wp_query; 
 		$counter = (max(1, intval($wp_query->get('paged'))) - 1) * $wp_query->get('posts_per_page');
 		if(have_posts()): ?>
-			<div class="archive clearfix">
+			<? if(function_exists('wp_pagenavi')) wp_pagenavi() ?>
+			<ol class="post-list post-list-large">
 				<? while(have_posts()): the_post(); $counter++;?>
-					<? if(!is_smartphone() && $counter <= 15  && false !== array_search($counter, array(5, 10, 15))): ?>
-						<div class="archive-box google">
-							<div class="post-type post-type-pr">
-								<span class="post-type-label"><i class="fa-pushpin"></i>PR</span>
-							</div>
-							<p>
-							<? google_ads(6);?>
-							</p>
-						</div>
-					<? endif; ?>
-					<? fumiki_loop_container(($counter % 6 == 0) ? 'forth' : '', false, 2, $counter); ?>
+					<? get_template_part('templates/loop', get_post_type()); ?>
 				<? endwhile; ?>
-			</div><!-- .entry ends-->
+			</ol><!-- .entry ends-->
+			<? if(function_exists('wp_pagenavi')) wp_pagenavi() ?>
 		<? else: ?>
 			<!-- 404 Not Found -->
 			<article class="entry">
@@ -42,11 +34,12 @@ get_header('navi');
 			<p class="center"><? google_ads(4); ?></p>
 		<? endif; ?>
 			
-		<? get_sidebar(); ?>
-		
+
 	</div>
 	<!-- #main ends -->
-	
+	<div id="sidebar">
+		<? get_sidebar(); ?>
+	</div>
 </div>
 
 <?

@@ -18,9 +18,9 @@ class Recent_Widget extends WP_Widget{
 			echo '<ol class="post-list">';
 			while($query->have_posts()){
 				$query->the_post();
-				get_template_part('templates/loop-post-list');
+				get_template_part('templates/loop', get_post_type());
 			}
-			wp_reset_query();
+			wp_reset_postdata();
 			echo '</ol>';
 			echo $after_widget;
 		}

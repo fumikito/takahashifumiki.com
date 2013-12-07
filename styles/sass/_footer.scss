@@ -1,16 +1,77 @@
 /*---------------------
+ * フッター直前のナビ
+ */
+.pre-footer-navigation{
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    li{
+        @include inline-block();
+        margin: 1em;
+        a{
+            font-size: 1.4em;
+            padding: 0.5em;
+            background: $section-bg-color;
+            border: 1px solid $thin-grey;
+            @include border-radius(3px);
+            &:link,
+            &:visited{
+                color: $semi-light-grey;
+                text-decoration: none;
+            }
+            &:hover{
+                color: $link-red;
+            }
+            &:active{
+                color: $link-crimson;
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop - 1) {
+    footer{
+        .grid_4{
+            width: 345px;
+            margin-right:26px;
+            &.first{
+                margin-left: 26px;
+            }
+            &.last{
+                clear: both;
+                width: auto;
+                float: none;
+                margin: 0;
+                padding: 26px;
+            }
+        }
+    }
+}
+
+/*---------------------
  * フッター
  */
 footer{
-	color: #f0f0f0;
+	color: $thin-grey;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
 	padding-top: 2em;
 	margin-top: 1.5em;
 	border-top: 1px solid #252e34;
+    a{
+        &:link, &:visited{
+            color: inherit;
+            text-decoration: underline;
+        }
+        &:hover{
+            color: $link-red;
+            text-decoration: none;
+        }
+        &:active{
+            color: $link-crimson;
+            text-decoration: none;
+        }
+    }
 	@include box-shadow(0 -1px 5px rgba(0,0,0,0.5));
-	#footer-nav{
-		padding-bottom: 63px;
-		background: url('../img/footer-devider.png') center bottom no-repeat;
-	}
 	.inner{
 		margin:0 0.5em;
 	}
@@ -35,29 +96,45 @@ footer{
 		@extend .img-circle;
 		@extend .img-pressed;
 		display: block;
-		margin: 10px auto;
+		margin: 10px 20px;
+        float: left;
 	}
 	.admin-name{
-		font-size:2em;
-		text-align: center;
+        p{
+            margin: 1em 0 1em 140px ;
+
+            font-size: 1.4em;
+            strong{
+                display: block;
+                margin: 1em 0 0.5em;
+        		font-size: 1.6em;
+                font-family: $title-font;
+            }
+        }
 	}
 	blockquote{
-		margin: 1em 0;
+		padding: 24px;
 		font-size: 1.2em;
 		line-height: 1.2;
+        position: relative;
 		p{
-			margin: 0 0.5em;
+			margin: 0;
 			&.tweet{
 				font-size: 1.2em;
 				line-height: 1.2;
 			}
 		}
 		i{
-			display: block;
-			height: 24px;
-			background: url('../img/meta-icons-2.png') left -288px no-repeat;
-			&.last{
-				background-position: right -312px;
+			position: absolute;
+			font-size: 18px;
+            color: $deep-blue;
+            &.fa-quote-left{
+                left: 0;
+                top: 0;
+            }
+			&.fa-quote-right{
+				right: 0;
+                bottom: 0;
 			}
 		}
 		cite{
@@ -68,9 +145,6 @@ footer{
 			font-size: 0.85em;
 			font-style: italic;
 		}
-	}
-	a.button{
-		font-size: 1.2em;
 	}
 	div.like-box-container{
 		text-align: center;
@@ -83,17 +157,15 @@ footer{
 				margin:5px 0;
 				a{
 					display: block;
-					heigth: 32px;
+					height: 32px;
 					line-height: 32px;
 					font-size: 1.2em;
-					background: url('../img/social-icons-2.png') left top no-repeat;
-					padding-left: 38px;
 					&:link,
 					&:visited{
 						text-decoration: none;
 					}
 					&:hover{
-						background-color: #252e34;
+						background-color: $deep-blue;
 					}
 					&.one-line{
 						overflow: hidden;
@@ -101,17 +173,21 @@ footer{
 						text-overflow: text-ellipsis;
 					}
 				}
-				.feed{ background-position: left -32px; }
-				.facebook{ background-position: left -96px;}
-				.twitter{ background-position: left -128px;}
-				.google{ background-position: left -160px;}
-				.youtube{ background-position: left -64px;}
-				.github{ background-position: left -192px;}
-				.foursquare{ background-position: left -224px;}
-				.instagram{ background-position: left -256px;}
+                .hametuha, .minicome, .hametuha-inc{
+                    background: url('../img/social-icons-2.png') left top no-repeat;
+                    padding-left: 38px;
+                }
 				.hametuha{ background-position: left -288px;}
 				.minicome{background-position: left -320px;}
 				.hametuha-inc{ background-position: left -352px;}
+                .mail, .feed{
+                    line-height: 32px;
+
+                    i{
+                        font-size: 24px;
+                        margin-right: 0.5em;
+                    }
+                }
 				&.contact{
 					font-size: 1.1em;
 					margin: 0.5em 0;
@@ -140,13 +216,16 @@ footer{
 		}
 		&.no-text{
 			li{
-				width: 32px;
-				height: 32px;
-				overflow: hidden;
+                font-size: 22px;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+                padding: 5px;
+                @include border-radius(50%);
+                background: $deep-blue;
 				float: left;
 				line-height: 32px;
-				text-indent: 32px;
-				margin-right: 5px;
+				margin-right: 10px;
 			}
 		}
 	}
@@ -177,10 +256,10 @@ footer{
 			}
 		}
 	}
-}
-
-p#nakanohito{
-	text-align: center;
+    /* 区切り線 */
+    .divider{
+        margin: 20px 0;
+    }
 }
 
 /*コピーライト*/
@@ -198,6 +277,21 @@ p#nakanohito{
 			font-style: italic;
 		}
 	}
+}
+
+@media (max-width: $tablet - 1) {
+    #copy-note{
+        p{
+            width: auto;
+            float: none;
+            text-align: center;
+            margin: 0.5em 0;
+            &.poweredby{
+                float: none;
+                text-align: center;
+            }
+        }
+    }
 }
 
 

@@ -1,0 +1,258 @@
+
+
+/*書籍詳細*/
+// サイズ
+.ebook-meta{
+    position: relative;
+    .img-container{
+        position: relative;
+        float: left;
+        width: 140px;
+        .cover{
+            width: 120px;
+            height: 160px;
+            height: auto;
+        }
+    }
+    table{
+        width: 490px;
+        font-size: 1.2em;
+        float: right;
+    }
+}
+@media (min-width: $large-desktop){
+    .ebook-meta{
+        .img-container{
+            width: 360px;
+            .cover{
+                width: 240px;
+                height: 320px;
+            }
+        }
+        table{
+            font-size: 1.4em;
+            width: 540px;
+        }
+    }
+}
+@media (min-width: $tablet) and (max-width: $desktop - 1) {
+    .ebook-meta{
+        .img-container{
+            width: 280px;
+            text-align: left;
+            .cover{
+                width: 240px;
+                height: 320px;
+            }
+        }
+        table{
+            width: 488px;
+        }
+    }
+}
+@media (max-width: $tablet - 1){
+
+}
+// 詳細
+.ebook-meta{
+    .img-container{
+        text-align: center;
+        img.cover{
+            @include box-shadow(1px 1px 5px #000);
+        }
+        img.on-sale{
+            position: absolute;
+            left: 110px;
+            top: 0px;
+        }
+    }
+    table{
+        th, td{
+            padding: 5px;
+        }
+        th{
+            width: 8em;
+            color: $semi-blue;
+            i{
+                margin-right: 0.5em;
+            }
+        }
+        td{
+            text-shadow:1px 1px 2px #fff;
+            line-height: 1.2;
+            color: $deep-blue;
+        }
+        .book-title{
+            font-size: 2em;
+            font-weight: bold;
+            font-family: $title-font;
+        }
+        .book-author{
+            font-size: 1.6em;
+            font-family: $title-font;
+        }
+        .price{
+            font-size:2em;
+            color: $orange;
+            .lwp-buynow{
+                font-size:0.8em;
+            }
+            .lwp-rest,
+            .lwp-timer{
+                font-size: 0.6em;
+                color: #06c;
+            }
+            .lwp-timer .day,
+            .lwp-timer .hour,
+            .lwp-timer .minutes,
+            .lwp-timer .seconds{
+                font-weight: bold;
+                font-family: $mono;
+            }
+        }
+        small{
+            font-size: 0.85em;
+            color: #666;
+        }
+        del{
+            color: #999;
+            text-shadow: none;
+        }
+        /*プロモーションリンク*/
+        input.promotion-link{
+            border: none;
+            background: transparent;
+            display: block;
+            padding: 0;
+            width: 100%;
+            font-size: 0.85em;
+            font-style: italic;
+        }
+    }
+}
+
+/* コンテナ共通 */
+.lwp-container{
+    font-size: 1.4em;
+    margin: 2em 0;
+    h2{
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        i{
+            margin-right: 0.5em;
+        }
+    }
+}
+
+// いますぐ購入
+.lwp-message{
+    p.center{
+        padding-top: 2em;
+        .lwp-buynow{
+            font-size: 2em;
+        }
+    }
+
+}
+
+/*ダウンロードリスト*/
+.lwp-file-list{
+    padding: 1em;
+    background: $section-bg-color;
+    @include border-radius(3px);
+    /*対応端末リスト*/
+    .device{
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin-bottom:10px;
+        margin-right:10px;
+        small{
+            display: block;
+            font-size:10px;
+        }
+        span{
+            display: block;
+            font-size: 11px;
+            line-height: 1.1;
+            font-weight: bold;
+        }
+        img{
+            display: block;
+            margin: 5px auto;
+        }
+    }
+    .valid{
+        color: $pale-green;
+    }
+    p{
+        font-size: 12px;
+        color: $light-grey;
+        line-height: 1.4;
+        margin: 10px 0;
+        padding-top: 5px;
+        text-shadow: 1px 1px 2px #fff;
+        &.device-desc{
+            background: $white;
+            padding: 1em;
+            @include border-radius(3px);
+        }
+    }
+    #download-list{
+        margin-top: 1em;
+    }
+    .file-list{
+        margin-bottom: 2em;
+        width:100%;
+        border-collapse: collapse;
+        border: none;
+        td{
+            padding: 15px 5px 5px;
+            border-bottom: 1px dotted #E5E5E5;
+            &.center{
+                text-align: center;
+            }
+            &.width150{
+                width: 150px;
+            }
+            em.mono{
+                display: block;
+            }
+            .file-title{
+                font-size: 1.4em;
+            }
+            .desc{
+                p{
+                    margin: 0;
+                }
+            }
+            small{
+                color: #888;
+                font-size: 0.75em;
+                &.desc{
+                    display: block;
+                    padding-top: 5px;
+                    font-size: 0.85em;
+                }
+            }
+        }
+    }
+}
+
+.lwp-ticket-list{
+    padding: 0 10px;
+    table{
+        width: 100%;
+        font-size: 1.2em;
+        border-collapse: collapse;
+        th, td{
+            padding: 1em;
+        }
+        thead{
+            th{
+                border-bottom: 3px double $thin-grey;
+                color: $light-grey;
+            }
+        }
+    }
+}

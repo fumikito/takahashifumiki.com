@@ -1,4 +1,33 @@
 <?php
+
+// カスタムヘッダーを有効化
+add_theme_support('custom-header', array(
+	'width' => 1280,
+	'height' => 640,
+	'uploads' => true,
+));
+
+// アイキャッチを有効化
+add_theme_support('post-thumbnails');
+
+
+/**
+ * トップページの画像ウィジェットを取得する
+ *
+ * @return bool|null|WP_Post
+ */
+function fumiki_header_image(){
+	$option = get_option('theme_mods_takahashifumiki', false);
+	if(isset($option['header_image_data']) && is_object($option['header_image_data'])){
+		$attachment_id = intval($option['header_image_data']->attachment_id);
+		if($attachment_id && ($attachment = get_post($attachment_id))){
+			return $attachment;
+		}
+	}
+	return false;
+}
+
+
 /**
  * JSやCSSを読み込む
  * @global WP_Styles $wp_styles
@@ -64,14 +93,12 @@ function _fumiki_assets(){
 		if(defined('WP_DEBUG') && WP_DEBUG){
 			foreach(array(
 				'/includes/ga.js' => 'fumiki-ga',
-				'/includes/imagesloaded.pkgd.js' => 'jquery-imagesloaded',
-				'/includes/masonry.pkgd.js' => 'jquery-masonry' ,
 				'/onload.js' => 'fumiki-core'
 			) as $src => $handle){
 				wp_enqueue_script(
 					$handle,
 					get_template_directory_uri().'/styles/js'.$src,
-					array('jquery-ui-dialog'),
+					array('jquery-ui-dialog', 'jquery-masonry'),
 					fumiki_theme_version(),
 					true
 				);

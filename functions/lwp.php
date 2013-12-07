@@ -33,7 +33,7 @@ function _fumiki_tickets($parent_id){
 	global $lwp;
 	?>
 <tr>
-<th scope="row"><? the_title(); ?></td>
+<th scope="row"><? the_title(); ?></th>
 <td><? lwp_the_price();?></td>
 <td>
 	<? lwp_the_ticket_stock(); ?>

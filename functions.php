@@ -71,7 +71,7 @@ register_sidebar(array(
 	 'id' => 'normal-sidebar',
 	 'before_widget' => '<div id="%1$s" class="box widget grid_2 %2$s">',
 	 'after_widget' => "</div>",
-	 'before_title' => '<h2><i class="fa-ok-sign"></i> ',
+	 'before_title' => '<h2><i class="fa-check-circle"></i> ',
 	 'after_title' => "</h2>"
 ));
 register_sidebar(array(

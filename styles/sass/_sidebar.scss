@@ -1,0 +1,318 @@
+.desc-box{
+
+    /* グリッドシステム */
+    .grid_1, .grid_2{
+        padding: 30px 0;
+    }
+
+    .no_shadow{
+        border: none;
+    }
+
+
+    .grid_2{
+        h2, h3, caption{
+            line-height: 30px;
+            height: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: $deep-blue;
+            text-shadow: 1px 1px 2px #fff;
+            margin-bottom: 0.5em;
+            i{
+                margin-right: 0.5em;
+            }
+        }
+        h4{
+            font-size: 1.4em;
+        }
+
+        .avatar{
+            @extend .img-circle;
+            @extend .img-pressed;
+        }
+        p{
+            margin:  10px 0;
+            line-height: 1.4;
+            font-size: 1.4em;
+        }
+        .st-tag-cloud{
+            line-height: 1.1;
+            margin-top: 10px;
+            a{
+                &:link,&:visited{
+                    text-decoration: none;
+                }
+                &:hover{
+                    text-decoration: none;
+                    color: $orange !important;
+                }
+                &:active{
+                    text-decoration: none;
+                    color: $warning-red !important;
+                }
+            }
+        }
+        caption{
+            margin-bottom: 10px;
+        }
+    }
+    // テーブル
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        caption{
+            padding-top: 20px;
+            margin-top: 0;
+            border-top: 1px solid #fff;
+        }
+        th,td{
+            padding: 5px 10px;
+            font-size: 1.2em;
+        }
+        tr:nth-child(2n){
+            th, td{
+                background-color: $white;
+            }
+        }
+        th{
+            font-weight: bold;
+            text-align: right;
+            border-right:1px solid $thin-grey;
+        }
+        td{
+
+        }
+    }
+
+    /* 投稿リスト */
+    ol.post-list,
+    ol.wppp_list{
+        li{
+            padding-top: 1em;
+            margin-top: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            @include box-shadow(0 -1px 0 rgba(0, 0, 0, 0.1));
+            &:first-child{
+                border-top: none;
+                @include box-shadow(none);
+                margin-top: 0;
+            }
+            .post-title{
+                text-align: left;
+            }
+            img{
+                float: left;
+                margin: 0 0.5em 0.5em 0;
+                max-width: 80px;
+                height: auto;
+            }
+            .date{
+                clear: right;
+                display: block;
+                text-align: right;
+                font-size: 1.1em;
+                padding-top: 0.5em;
+            }
+            .desc{
+                clear: left;
+                font-size: 0.9em;
+                line-height: 1.2;
+            }
+            .score{
+                font-family: $old;
+                position: relative;
+                font-size: 1.8em;
+                float: right;
+                padding: 0 0 0.5em 0.5em;
+                color: #ccc;
+                text-shadow: 1px 1px 2px #fff, 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+                @include border-radius(3px);
+            }
+        }
+    }
+    ol.wppp_list{
+        li{
+            @include clearfix();
+            font-size: 1em;
+            a{
+                font-size: 1.6em;
+            }
+        }
+    }
+    /* 画像ウィジェット */
+    .widget_sp_image-image-link{
+        img.aligncenter{
+            display: block;
+            margin: 10px auto;
+        }
+    }
+    .widget_sp_image-description{
+        font-size: 1.1em;
+    }
+    .textwidget{
+        margin: 1em 0 2em;
+        line-height: 1.4;
+        font-size: 1.4em;
+        text-shadow: 1px 1px 2px #fff;
+        abbr{
+            font-style: italic;
+            font-weight: bold;
+            border-bottom: 1px dashed #888;
+        }
+    }
+    /* ニュースレター */
+    #alo_easymail_widget_feedback{
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 0.5em 1em;
+        color: grey;
+        &.alo_easymail_widget_ok{
+            color: green;
+        }
+    }
+    #alo_em_widget_loading{
+        margin: 0.5em 1em;
+    }
+    #alo_easymail_widget_form{
+        input[type=text]{
+            @include border-radius(3px);
+            @include box-shadow(rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset);
+        }
+        .alo_easymail_preform_msg{
+            font-size: 1.4em;
+            margin: 0.5em 0;
+            padding-bottom: 0.5em;
+            border-bottom: 1px dotted #ddd;
+            color: #000;
+        }
+        p.message{
+            padding: 0.5em;
+            padding-left: 42px;
+            font-size: 1.2em;
+        }
+    }
+    /* クオート */
+    .quotescollection_randomquote{
+        p:first-child{
+            position: relative;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 0.5em;
+            margin-bottom: 20px;
+            font-family: $body-font;
+            &:after, &:before {
+                top: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+            }
+            &:after {
+                border-color: rgba(255, 255, 255, 0);
+                border-top-color: #ffffff;
+                border-width: 14px;
+                left: 50%;
+                margin-left: -14px;
+            }
+            &:before {
+                border-color: rgba(204, 204, 204, 0);
+                border-top-color: #cccccc;
+                border-width: 15px;
+                left: 50%;
+                margin-left: -15px;
+            }
+        }
+        q{
+        }
+        cite{
+            font-size: 0.9em;
+            margin-top: 0.5em;
+        }
+    }
+    /* 電子書籍ウィジェット */
+    .widgets-ebook-content{
+        border-top: 1px dashed $thin-grey;
+        padding-top: 10px;
+        margin-top: 10px;
+        position: relative;
+        &:first-child{
+            border-top: none;
+        }
+        .attachment-pinky-cover{
+            float: left;
+            margin-right:  10px;
+            @include box-shadow(1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5));
+        }
+        h4{
+            position: relative;
+            padding-right:3em;
+            a{
+                text-decoration: none;
+            }
+            .price{
+                position: absolute;
+                right: 0;
+                top: 0;
+                background-color: #FFDE20;
+                color: #000;
+                font-weight: normal;
+                font-style: italic;
+                padding: 3px;
+                line-height: 1;
+                @include border-radius(3px);
+            }
+        }
+        .excerpt{
+            font-size: 1.2em;
+            text-shadow:1px 1px 2px #fff;
+            margin:0.75em;
+        }
+        .sale-icon{
+            position: absolute;
+            left: 60px;
+            top: -1px;
+        }
+        a.button{
+            font-size: 0.8em;
+        }
+    }
+}
+
+.widget_categories{
+    & > ul{
+        font-size: 1.4em;
+        li{
+            a{
+                display: block;
+                padding: 1em;
+                border: 1px solid $thin-grey;
+                border-left-width: 2px;
+                border-right-width: 2px;
+                background: $section-bg-color;
+                &:link, &:visited{
+                    text-decoration: none;
+                }
+            }
+            li{
+                font-size: 0.85em;
+                a{
+                    padding-left: 2em;
+                    &:before{
+                        content: '\f138';
+                        font-family: 'FontAwesome';
+                        margin-right: 0.5em;
+                    }
+                }
+                li a{
+                    padding-left: 3em;
+                    &:before{
+                        content: '\f054';
+                    }
+                }
+            }
+        }
+    }
+}

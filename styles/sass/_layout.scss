@@ -3,7 +3,7 @@
  */
 /*全体レイアウト*/
 .margin{
-	width:960px;
+	width:$desktop;
 	margin:0 auto;
 }
 #main{
@@ -13,6 +13,33 @@
 #sidebar{
 	width: 330px;
     float: right;
+}
+@media (max-width: $desktop - 1) {
+    #main{
+        width: auto;
+        float: none;
+    }
+    #sidebar{
+        display: none;
+    }
+    .no-if-touch{
+        display: none;
+    }
+};
+
+
+#sidebar .grid_2{
+    width: auto;
+    float: none;
+    margin-right: 5px;
+    margin-left: 25px;
+    border-bottom: 3px double $thin-grey;
+    &:first-child{
+        border-top: none;
+    }
+    &:last-child{
+        border-bottom: none;
+    }
 }
 
 .grid_4{
@@ -35,12 +62,12 @@
 // 大きなデスクトップ
 //
 //--------------------
-@media (min-width: 1280px) {
+@media (min-width: $large-desktop) {
 	.margin{
-		width: 1280px;
+		width: $large-desktop;
 	}
     #main{
-        width: 900px;
+        width: ($desktop - (60));
         padding-left: 30px;
         padding-right: 20px;
     }
@@ -65,12 +92,13 @@
 }
 
 
+
 //
 // タブレットからデスクトップ
 // --------------------------------------------------
-@media (min-width: 768px) and (max-width: 959px) {
+@media (min-width: $tablet) and (max-width: ($desktop - 1px)) {
 	.margin{
-		width: 768px;
+		width: $tablet;
 	}
 	.grid_4{
 		width: 230px;
@@ -119,7 +147,15 @@
 //
 // それ以下（スマートフォン）
 // --------------------------------------------------
-@media (max-width: 767px) {
-	
+@media (max-width: ($tablet - 1px)) {
+
+    .grid_1,
+    .grid_2,
+    .grid_4{
+        width: auto;
+        margin-right: 0;
+        float: none;
+    }
+
 	@include smartphone();
 }

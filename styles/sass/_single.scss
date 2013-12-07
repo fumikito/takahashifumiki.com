@@ -84,16 +84,37 @@
     }
 }
 
+
+/* アイキャッチ */
+.eyecatch{
+    text-align: center;
+    img{
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+
+
 #outdated-post{
     font-size: 1.4em;
     margin-bottom: 2em;
+}
+
+// 抜粋文
+#main .post-excerpt{
+    magin: 1em 0;
+    padding: 1em;
+    font-size: 3em;
+    font-family: $title-font;
+    color: $semi-blue;
 }
 
 /*投稿スタイル*/
 .entry{
 	min-height: 400px;
 	padding-bottom:20px;
-		
+
 	/* 継承する */
 	@include post_style();
 	
@@ -128,16 +149,18 @@
 
 /* コメント */
 #respond{
-	width: 760px;
-	margin: 20px auto 0;
+	margin: 40px auto 0;
 }
 
 /*関連投稿*/
 .related{
-	 margin: 40px 0;
+	 margin: 20px 0;
+    padding-top: 20px;
+    border-top: 3px double $deep-blue;
     h3{
         font-size: 2em;
         font-weight: bold;
+        font-family: $title-font;
         color: $semi-blue;
         margin-bottom: 20px;
     }
@@ -203,10 +226,13 @@
 	text-align: center;
     border-top: 3px double $semi-light-grey;
     .like{
-        width: 100%;
         margin-bottom: 20px;
-        td{
+        @include clearfix();
+        li{
+            float: left;
+            width: 16%;
             text-align: center;
+            height: 80px;
         }
     }
     .ad, .ad2{
@@ -217,107 +243,47 @@
     .ad2{
         float: right;
     }
-	h3{
-		color: #ccc;
-		text-shadow: 1px 1px 2px #fff;
-		margin-bottom: 0.5em;
-		font-size: 1.4em;
-		font-weight: bold;
-		
-	}
-	.div_3{
-		width: 300px;
-		float: right;
-		&.ad{
-			float: left;
-			min-height: 250px;
-		}
-		table.like{
-			width: 100%;
-			td{
-				text-align: center;
-				padding: 10px;
-				min-height: 60px;
-			}
-		}
-	}
 }
 
-/*ダウンロードリスト*/
-.file-list{
-	margin-bottom: 2em;
-	width:100%;
-	border-collapse: collapse;
-	border: none;
-	td{
-		padding: 15px 5px 5px;
-		border-bottom: 1px dotted #E5E5E5;
-		&.center{
-			text-align: center;
-		}
-		&.width150{
-			width: 150px;
-		}
-		em.mono{
-			display: block;
-		}
-		.file-title{
-			font-size: 1.4em;
-		}
-		.desc{
-			p{
-				margin: 0;
-				font-size: 0.85em;
-			}
-		}
-		small{
-			color: #888;
-			font-size: 0.75em;
-			&.desc{
-				display: block;
-				font-size: 0.6em;
-			}
-		}
-	}
+@media (min-width: $desktop) and (max-width: $large-desktop - 1) {
+    .google-share{
+        .share{
+            width: 200px;
+            float: left;
+            .like{
+                li{
+                    width: 100%;
+                    float: none;
+                }
+            }
+        }
+        .ad, .ad2{
+            float: right;
+            margin-bottom: 20px;
+        }
+    }
 }
 
-/*対応端末リスト*/
-.device-list{
-	.device{
-		width: 100px;
-		height: 120px;
-		float: left;
-		margin-bottom:10px;
-		margin-right:10px;
-		small{
-			display: block;
-			font-size:10px;
-		}
-		span{
-			display: block;
-			font-size: 11px;
-			line-height: 1.1;
-			font-weight: bold;
-		}
-		img{
-			display: block;
-			margin: 5px auto;
-		}
-	}
-	.valid{
-		background: url('../img/ebook-devices/bg_device.gif') left bottom no-repeat;
-		color: #8AB29F;
-	}
-	.invalid{
-		background: url('../img/ebook-devices/bg_device.gif') right bottom no-repeat;
-		color: #999;
-	}
-	p{
-		font-size: 12px;
-		color: #666;
-		line-height: 1.4;
-		margin: 10px 0;
-		padding-top: 5px;
-		text-shadow: 1px 1px 2px #fff;
-	}
+@media (max-width: $tablet - 1) {
+    .google-share{
+        padding-left: 0;
+        padding-right: 0;
+        .like{
+            li{
+                width: 33%;
+                &:nth-child(4){
+                    cleaf: left;
+                }
+            }
+        }
+        .ad{
+            width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+            float: none;
+        }
+        .ad2{
+            display: none;
+        }
+    }
 }

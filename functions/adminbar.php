@@ -15,7 +15,7 @@ add_filter('show_admin_bar', '_fumiki_admin_bar_visible');
  */
 function _fumiki_admin_bar($wp_admin_bar){
 	//ロゴ追加
-	$logo = is_admin() ? get_bloginfo('name') : sprintf('<img class="adminbar-logo" src="%s/styles/img/header-logo.png" alt="%s" width="190" height="20" />', get_stylesheet_directory_uri(), get_bloginfo('name'));
+	$logo = is_admin() ? get_bloginfo('name') : sprintf('<img class="adminbar-logo" src="%s/styles/img/logo-adminbar.png" alt="%s" width="20" height="20" />', get_stylesheet_directory_uri(), get_bloginfo('name'));
 	$wp_admin_bar->add_menu(array(
 		'id' => 'main-menues',
 		'title' => $logo,

@@ -10,21 +10,13 @@
 		padding-right: 10px;
 		padding-left: 10px;
 		overflow: hidden; 
-		font-size: 1.4em;
+		font-size: 1.2em;
 		line-height: 1.6;
 		.syntaxhighlighter{
 			width: 100% !important;
 			margin-left: 0 !important;
 		}
-		& > p{
-			font-family: $serif;
-		}
-		blockquote{
-			background-position: 5px 5px;
-			@include background-size(31px 25px);
-			padding: 5px 5px 5px 40px;
-		}
-		.alignright, 
+		.alignright,
 		.alignleft, 
 		.aligncenter,
 		div.alignnon,
@@ -52,41 +44,21 @@
 	}
 	/* ナビゲーションバー */
 	#wpadminbar{
-		min-width: 320px;
-		#wp-admin-bar-top-secondary{
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-		#wp-admin-bar-my-account{
-			&.hover{
-				background-color: #fff;
-			}
-			& > .ab-empty-item,
-			& > a{
-				width: 20px;
-				height: 20px;
-				text-indent: 40px;
-				overflow: hidden;
-				padding: 4px 10px;
-				background: transparent url('../img/wpnav-icons.png') -70px 4px no-repeat;
-				background-size: 100px 40px;
-				background-clip: content-box;
-			}
-			&.hover > .ab-empty-item,
-			&.hover > a{
-				background-position: -70px -16px;
-			}
-		}
-		#adminbarsearch .adminbar-input:focus{
-			width: 200px;
-		} 
-	}
+        position: absolute;
+        position: fixed;
+        top: 0;
+        #wp-admin-bar-top-secondary{
+            position: absolute;
+            right: 0;
+            width: 50%;
+        }
+    }
 	/* ナビゲーション */
 	#navi{
 		/* ぱんくず */
 		.breadcrumb{
 			font-size: 0.8em;
+            padding-left: 1em;
 			text-overflow: text-ellipsis;
 			oveflow: hidden;
 			height: 12px;

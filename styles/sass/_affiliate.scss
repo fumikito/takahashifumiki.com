@@ -28,13 +28,17 @@ div.tmkm-amazon-view {
         font-weight: bold;
         margin-bottom: 0.5em;
     }
-    .tmkm-amazon-img img {
+    .tmkm-amazon-img{
         float: right;
         margin: 0 0 1em 1em;
         padding: 0;
-        @include box-shadow(0 0 5px rgba(0,0,0,0.5));
-        max-width: 200px;
-        height: auto;
+        width: 200px;
+        text-align: center;
+        img {
+            @include box-shadow(0 0 5px rgba(0,0,0,0.5));
+            width: 100%;
+            height: auto;
+        }
     }
     p {
         margin: 0.5em 0;
@@ -91,10 +95,11 @@ div.tmkm-amazon-view {
 @media (max-width: 560px) {
     div.tmkm-amazon-view {
         .tmkm-amazon-img{
-            text-align: center;
-            img {
-                float: none;
-                margin-right: 0;
+            float: none;
+            margin-left: 0;
+            width: auto;
+            img{
+                width: 300px;
             }
         }
         p{

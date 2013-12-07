@@ -1,386 +1,188 @@
 /****************************************
  * 3.トップページ設定
  ****************************************/
-.desc-box{
-	padding:0 0 2em 30px;
-	position: relative;
-	
-	/* グリッドシステム */
-	.grid_1, .grid_2{
-		border-top: 3px double $deep-blue;
-		padding:20px 0;
-	}
-	.grid_1{
-	}
-	.grid_2{
-	}
-	.no_shadow{
-		background-color: transparent;
-		border: none;
-	}
-	
-	.title_box{
-		h1{
-			color: $deep-blue;
-			font-weight: bold;
-			font-size: 4em;
-			font-family: $sans;
-			text-shadow: 2px 2px 3px #fff;
-			font-weight: bold;
-			margin-left: 24px;
-		}
-		.desc{
-			font-size: 1.2em;
-			color: #999;
-			text-shadow: 1px 1px 2px #fff;
-			margin: 0.5em 0 2em 24px;
-		}
-		.quote{
-			color: $deep-blue;
-			text-shadow: 1px 1px 2px #fff;
-			position: relative;
-			blockquote{
-				font-size: 1.4em;
-				font-style: italic;
-				margin: 0 24px;
-				p{
-					margin: 0;
-				}
-				cite{
-					margin: 0.5em 0 0;
-					display: block;
-					font-size: 0.85em;
-					font-style: normal;
-					height: 24px;
-					line-height: 24px;
-					text-align: right;
-				}
-			}
-			i{
-				display: block;
-				height: 24px;
-				background: url('../img/meta-icons-2.png') left -288px no-repeat;
-				&.after{
-					background-position: right -312px;
-					width: 24px;
-					position: absolute;
-					right:0;
-					bottom: 0;
-				}
-			}
-		}
-	}
-	.grid_1{
-		
-		h2{
-			line-height: 30px;
-			height: 30px;
-			font-size: 24px;
-			font-weight: bold;
-			color: $title-font-color;
-			text-shadow: 1px 1px 2px #fff;
-			margin-bottom: 20px;
-		}
-		.desc{
-			font-size: 1.4em;
-			text-shadow: 1px 1px 2px #fff;
-			font-weight: bold;
-			line-height: 1.5;
-		}
-	}
-	.grid_2{
-		h2, h3, caption{
-			line-height: 30px;
-			height: 30px;
-			font-size: 24px;
-			font-weight: bold;
-			color: $deep-blue;
-			text-shadow: 1px 1px 2px #fff;
-			margin-bottom: 0.5em;
-			i{
-				margin-right: 0.5em;
-			}
-		}
-		h4{
-			font-size: 1.4em;
-		}
-		table{
-			width: 100%;
-			border-collapse: collapse;
-			th,td{
-				padding: 5px 10px;
-				font-size: 1.2em;
-			}
-			tr:nth-child(2n){
-				th, td{
-					background-color: #f9f9f9;
-				}
-			}
-			th{
-				font-weight: bold;
-				text-align: right;
-				border-right:1px solid $thin-grey;
-			}
-			td{
-				
-			}
-		}
-		.avatar{
-			@extend .img-circle;
-			@extend .img-pressed;
-		}
-		p{
-			color: #666;
-			text-shadow: 1px 1px 2px #fff;
-			margin:  10px 0;
-			line-height: 1.4;
-			font-size: 1.4em;
-		}
-		.st-tag-cloud{
-			line-height: 1.1;
-			margin-top: 10px;
-			a{
-				&:link,&:visited{
-					text-decoration: none;
-				}
-				&:hover{
-					text-decoration: none;
-					color: $orange !important;
-				}
-				&:active{
-					text-decoration: none;
-					color: $warning-red !important;
-				}
-			}
-		}
-		caption{
-			margin-bottom: 10px;
-		}
-	}
-	/* 投稿リスト */
-	ol.post-list,
-	ol.wppp_list{
-		li{
-			padding-top: 1em;
-			margin-top: 1em;
-			border-top: 1px solid rgba(255, 255, 255, 0.2);
-			@include box-shadow(0 -1px 0 rgba(0, 0, 0, 0.1));
-			&:first-child{
-				border-top: none;
-				@include box-shadow(none);
-				margin-top: 0;
-			}
 
-			img{
-				float: left;
-				margin: 0 0.5em 0.5em 0;
-				max-width: 80px;
-				height: auto;
-			}
-			.date{
-				clear: right;
-				display: block;
-				text-align: right;
-				font-size: 1.1em;
-				padding-top: 0.5em;
-			}
-			.desc{
-				clear: left;
-				font-size: 0.9em;
-				line-height: 1.2;
-			}
-			.score{
-				font-family: $old;
-				position: relative;
-				font-size: 1.8em;
-				float: right;
-				padding: 0 0 0.5em 0.5em;
-				color: #ccc;
-				text-shadow: 1px 1px 2px #fff, 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-				@include border-radius(3px);
-			}
-		}
-	}
-	ol.wppp_list{
-		li{
-			@include clearfix();
-			font-size: 1em;
-			a{
-				font-size: 1.6em;
-			}
-		}
-	}
-	/* 画像ウィジェット */
-	.widget_sp_image-image-link{
-		img.aligncenter{
-			display: block;
-			margin: 10px auto;
-		}
-	}
-	.widget_sp_image-description{
-		font-size: 1.1em;
-	}
-	.textwidget{
-		margin: 1em 0 2em;
-		line-height: 1.4;
-		font-size: 1.4em;
-		text-shadow: 1px 1px 2px #fff;
-		abbr{
-			font-style: italic;
-			font-weight: bold;
-			border-bottom: 1px dashed #888;
-		}
-	}
-	/* ニュースレター */
-	#alo_easymail_widget_feedback{
-		font-size: 1.1em;
-		font-weight: bold;
-		margin: 0.5em 1em;
-		color: grey;
-		&.alo_easymail_widget_ok{
-			color: green;
-		}
-	}
-	#alo_em_widget_loading{
-		margin: 0.5em 1em;
-	}
-	#alo_easymail_widget_form{
-		input[type=text]{
-			@include border-radius(3px);
-			@include box-shadow(rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset);
-		}
-		.alo_easymail_preform_msg{
-			font-size: 1.4em;
-			margin: 0.5em 0;
-			padding-bottom: 0.5em;
-			border-bottom: 1px dotted #ddd;
-			color: #000;
-		}
-		p.message{
-			padding: 0.25em 0.5em;
-			padding-left: 42px;
-			font-size: 1.2em;
-		}
-	}
-	/* クオート */
-	.quotescollection_randomquote{
-		p:first-child{
-			position: relative;
-			background: #fff;
-			border: 1px solid #ccc;
-			padding: 0.5em;
-			margin-bottom: 20px;
-            font-family: $body-font;
-			&:after, &:before {
-				top: 100%;
-				border: solid transparent;
-				content: " ";
-				height: 0;
-				width: 0;
-				position: absolute;
-				pointer-events: none;
-			}
-			&:after {
-				border-color: rgba(255, 255, 255, 0);
-				border-top-color: #ffffff;
-				border-width: 14px;
-				left: 50%;
-				margin-left: -14px;
-			}
-			&:before {
-				border-color: rgba(204, 204, 204, 0);
-				border-top-color: #cccccc;
-				border-width: 15px;
-				left: 50%;
-				margin-left: -15px;
-			}
-		}
-		q{
-		}
-		cite{
-			font-size: 0.9em;
-			margin-top: 0.5em;
-		}
-	}
-	/* 電子書籍ウィジェット */
-	.widgets-ebook-content{
-		border-top: 1px dashed $thin-grey;
-		padding-top: 10px;
-		margin-top: 10px;
-		position: relative;
-		&:first-child{
-			border-top: none;
-		}
-		.attachment-pinky-cover{
-			float: left;
-			margin-right:  10px;
-			@include box-shadow(1px 1px 2px rgba(255,255,255,0.5), -1px -1px 3px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.5));
-		}
-		h4{
-			position: relative;
-			padding-right:3em;
-			a{
-				text-decoration: none;
-			}
-			.price{
-				position: absolute;
-				right: 0;
-				top: 0;
-				background-color: #FFDE20;
-				color: #000;
-				font-weight: normal;
-				font-style: italic;
-				padding: 3px;
-				line-height: 1;
-				@include border-radius(3px);
-			}
-		}
-		.excerpt{
-			font-size: 1.2em;
-			text-shadow:1px 1px 2px #fff;
-			margin:0.75em;
-		}
-		.sale-icon{
-			position: absolute;
-			left: 60px;
-			top: -1px;
-		}
-		a.button{
-			font-size: 0.8em;
-		}
-	}
+// ロゴのサイズ
+$logo-size: 256px;
+
+
+/* ヘッダー */
+.title_box{
+    position: relative;
+    min-height: $logo-size;
+    margin-bottom: 20px;
+    h1{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: ($logo-size / 2 * -1);
+        margin-top: ($logo-size / 2 * -1);
+    }
+    .header-image{
+        width: 100%;
+        height: auto;
+    }
+    .photo-credit{
+        position: absolute;
+        font-size: 1.2em;
+        right: 1em;
+        bottom: 1em;
+        color: $white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        a{
+            &:link,
+            &:visited{
+                color: $white;
+                text-decoration: underline;
+            }
+            &:hover,
+            &:active{
+                color: $link-crimson;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// タブレットのときはそのまま
+// スマホの時は画像サイズ半分
+@media (max-width:  ($tablet - 1) ){
+    .title_box{
+        min-height: $logo-size / 2;
+        h1{
+            margin-left: $logo-size / 4 * -1;
+            margin-top: $logo-size / 4 * -1;
+            img{
+                width: $logo-size / 2;
+                height: $logo-size / 2;
+            }
+        }
+        .photo-credit{
+            font-size: 1em;
+        }
+    }
 }
 
 
 
-/* トップページサイドバー */
-.desc-parts{
-	.nav-menu{
-		margin: 30px 0;
-		text-align: center;
-		font-size: 1.2em;
-		li{
-			display: inline;
-			margin-right: 0.5em;
-			padding-left: 0.5em;
-			border-left: 1px solid $deep-blue;
-			&:first-child{
-				border-left: none;
-			}
-		}
-	}
-	h2{
-		font-size: 3em;
-		color: $title-font-color;
-		text-shadow: 1px 1px 2px #fff;
-		text-align: center;
-	}
-	div.desc{
-		text-align: center;
-		color: #888;
-		margin: 1em 100px 80px;
-		text-shadow: 1px 1px 2px #fff;
-		font-size: 1.4em;
-		line-height: 1.4;
-	}
+
+
+/* メインエリア */
+.desc-box-front{
+    padding:0 0 2em;
+    position: relative;
+
+    // コンテナ調整
+    .grid_2,
+    .grid_1{
+        float: left;
+    }
+}
+// トップページmasonry
+@mixin masonry($width, $gutter){
+    margin-left: $gutter;
+    .grid_2{
+        width: $width;
+        margin-right: $gutter;
+    }
+    .grid_1{
+        width: $width * 2 + $gutter;
+        margin-right: $gutter;
+    }
+}
+// 通常は3列
+.desc-box-front{
+    @include masonry(280px, 30px);
+}
+// 巨大な場合は4列
+@media (min-width: $large-desktop){
+    .desc-box-front{
+        @include masonry(280px, 24px);
+    }
+}
+// タブレットは2列
+@media (min-width: $tablet) and (max-width: $desktop) {
+    .desc-box-front{
+        @include masonry(330px, 36px);
+    }
+}
+// スマホは1列
+@media (max-width: $tablet - 1) {
+    .desc-box-front{
+        padding: 0 10px;
+        width: auto;
+        margin-right: 0;
+        margin-left: 0;
+        .grid_1,
+        .grid_2{
+            float: none;
+            width: auto;
+            margin-right: 0;
+        }
+    }
+}
+
+
+
+
+
+// 中の調整
+.desc-box-front{
+    // トップページ投稿エリア
+    .main-content{
+        h2{
+            line-height: 30px;
+            height: 30px;
+            font-size: 2.4em;
+            font-family: $title-font;
+            font-weight: bold;
+            color: $title-font-color;
+            margin-bottom: 20px;
+            color: $semi-blue;
+        }
+        .desc{
+            color: $semi-blue;
+            font-size: 2em;
+            line-height: 1.5;
+            font-family: $body-font;
+        }
+    }
+
+    // その他
+    .grid_2{
+        border-bottom: 3px double $thin-grey;
+        .about{
+            padding: 20px;
+            background: $section-bg-color;
+            p{
+                margin-bottom: 0;
+                padding-bottom: 20px;
+                border-bottom: 1px solid $semi-light-grey;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet - 1) {
+    .desc-box-front{
+        // トップページ投稿エリア
+        .main-content{
+            h2{
+                line-height: 20px;
+                height: 20px;
+                font-size: 1.8em;
+                font-family: $title-font;
+                font-weight: bold;
+                color: $title-font-color;
+                margin-bottom: 10px;
+                color: $semi-blue;
+            }
+            .desc{
+                color: $semi-blue;
+                font-size: 1.4em;
+                line-height: 1.5;
+                font-family: $body-font;
+            }
+        }
+    }
 }

@@ -12,11 +12,13 @@
 @import "_post_style";
 @import "_navigation";
 @import "_footer";
-@import "_front_page";
 @import "_archive";
 @import "_single";
+@import '_lwp';
+@import "_sidebar";
 @import "_smartphone";
 @import "_layout";
+@import "_front_page";
 @import '_affiliate';
 @import '_netabare';
 
@@ -161,81 +163,7 @@
 	margin:10px 0;
 }
 
-/*書籍メタ情報*/
-body.ebook .ebook-meta{
-	padding:0;
-}
-body.ebook .ebook-meta h1{
-	float: none;
-	padding-bottom: 10px;
-	border-bottom: 1px dotted #ddd;
-}
 
-/*書籍詳細*/
-.ebook-detail{
-	position: relative;
-	img.cover{
-		@include box-shadow(1px 1px 5px #000);
-	}
-	 img.on-sale{
-		position: absolute;
-		left: 110px;
-		top: 0px;
-	}
-	table{
-		fons-size: 1.2em;
-		td{
-			text-shadow:1px 1px 2px #fff;
-			line-height: 1.2;
-		}
-		.book-title{
-			font-size: 2em;
-			font-weight: bold;
-		}
-		.price{
-			font-size:2em;
-			color: $orange;
-			.lwp-buynow{
-				font-size:0.8em;
-			}
-			.lwp-rest,
-			.lwp-timer{
-				font-size: 0.6em;
-				color: #06c;
-			}
-			.lwp-timer .day,
-			.lwp-timer .hour,
-			.lwp-timer .minutes,
-			.lwp-timer .seconds{
-				font-weight: bold;
-				font-family: $mono;
-			}
-		}
-		small{
-			font-size: 0.85em;
-			color: #666;
-		}
-		del{
-			color: #999;
-			text-shadow: none;
-		}
-		/*プロモーションリンク*/
-		input.promotion-link{
-			border: none;
-			background: transparent;
-			display: block;
-			padding: 0;
-			width: 100%;
-			font-size: 0.85em;
-			font-style: italic;
-		}
-	}
-	div.excerpt,
-	p.center{
-		clear: right;
-		float: right;
-	}
-}
 /*立ち読みエリア*/
 .ebook-more{
 	position: relative;
@@ -321,27 +249,7 @@ body.ebook .ebook-meta h1{
 		font-size:15px;
 	}
 }
-.ebook{
-	/* アイキャッチ */
-	.eyecatch{
-		text-align: center;
-	}
-	
-	
-	.entry p.desc a{
-		font-size: 11px;
-		color: #fff;
-		padding: 3px 5px;
-		background: #E4007F;
-		@include border-radius(5px);
-	}
-}
 
-/* 電子書籍ページ用設定上書き */
-body.single-ebook h1.title{
-	text-align: center;
-	padding-bottom: 0;
-}
 
 /* 電子書籍サイドバー */
 .ebook-sidebar{

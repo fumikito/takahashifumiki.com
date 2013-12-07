@@ -1,4 +1,4 @@
-<table>
+<table id="meta-ebook">
 	<tbody>
 		<tr>
 			<th><i class="fa-book"></i>書名</th>
@@ -6,7 +6,7 @@
 		</tr>
 		<tr>
 			<th><i class="fa-user"></i>著者</th>
-			<td><? the_author(); ?></td>
+			<td class="book-author"><? the_author(); ?></td>
 		</tr>
 		<tr>
 			<th><i class="fa-money"></i>価格</th>

@@ -229,7 +229,9 @@ div.archive{
         position: relative;
         border-top: 1px solid $beige;
         padding: 10px;
-        font-size: 1.4em;
+        &.post-list-large{
+            font-size: 1.4em;
+        }
         @include clearfix();
         &:first-child{
             border-top: none;
@@ -240,6 +242,8 @@ div.archive{
         }
         .post-title{
             font-size: 2em;
+            font-family: $title-font;
+            text-align: left;
         }
         .score{
             position: absolute;
@@ -256,7 +260,21 @@ div.archive{
             margin: 0.5em 0;
         }
         .desc{
-            font-size: 1.2em;
+            font-size: 1.4em;
+        }
+    }
+}
+
+@media (max-width: $tablet - 1) {
+    .post-list{
+        .loop{
+            &.post-list-large{
+                font-size: 1.2em;
+            }
+            img{
+                max-width: 75px;
+                height: 50px;
+            }
         }
     }
 }

@@ -10,8 +10,7 @@
  * @param integer|string $width 初期値はauto
  * @return void
  */
-function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true")
-{
+function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true"){
 ?>
 	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
 	<script type="text/javascript">
@@ -135,41 +134,40 @@ function fumiki_share($title, $url){
 	$fb_url = is_front_page() ? 'https://www.facebook.com/TakahashiFumiki.Page' : $url;
 	
 	echo <<<EOS
-	<table class="like">
-		<tr>
-			<td>
-				<!-- Facebook -->
-				<div class="fb-like" data-href="{$fb_url}" data-send="false" data-layout="box_count" data-width="72" data-show-faces="false"></div>
-			</td>
-			<td>
-				<!-- twitter -->
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</td>
-			<td>
-				<!-- Hatena -->
-				<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-			</td>
-			<td>
-				<!-- Google + -->
-				<div class="g-plusone" data-href="{$url}" data-size="tall"></div>
-				<script type="text/javascript">
-					window.___gcfg = {lang: 'ja'};
-					(function() {
-						var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-						po.src = 'https://apis.google.com/js/plusone.js';
-						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-					})();
-				</script>
-			</td>
-			<td>
-				<!-- Feedly -->
-				<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
-					<span class="mono">{$subscribers}</span>
-					<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
-				</a>
-			</td>
-			<td>
+	<ul class="like">
+		<li>
+			<!-- Facebook -->
+			<div class="fb-like" data-href="{$fb_url}" data-send="false" data-layout="box_count" data-width="72" data-show-faces="false"></div>
+		</li>
+		<li>
+			<!-- twitter -->
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</li>
+		<li>
+			<!-- Hatena -->
+			<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+		</li>
+		<li>
+			<!-- Google + -->
+			<div class="g-plusone" data-href="{$url}" data-size="tall"></div>
+			<script type="text/javascript">
+				window.___gcfg = {lang: 'ja'};
+				(function() {
+					var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+					po.src = 'https://apis.google.com/js/plusone.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				})();
+			</script>
+		</li>
+		<li>
+			<!-- Feedly -->
+			<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
+				<span class="mono">{$subscribers}</span>
+				<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
+			</a>
+		</li>
+		<li>
 EOS;
    if(is_smartphone()){
 	   $line_src = get_template_directory_uri().'/styles/img/linebutton_36x60.png';
@@ -186,9 +184,8 @@ EOS;
 EOS;
    }
 	echo <<<EOS
-			</td>
-		</tr>
-	</table>
+		</li>
+	</ul>
 EOS;
 	/*
 	<!-- linkedin -->
@@ -406,7 +403,10 @@ EOS;
 EOS;
 			break;
 		case 3:
-			echo <<<EOS
+			if(wp_is_mobile()){
+				google_ads(4);
+			}else{
+				echo <<<EOS
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- 高橋文樹.com2011関連投稿 -->
 <ins class="adsbygoogle"
@@ -417,6 +417,7 @@ EOS;
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 EOS;
+			}
 			break;
 		case 4:
 			echo <<<EOS

@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
         }
     });
 
-
+    // ネタバレ
     $('.netabare').each(function(index, elt){
         var button = $('<a class="netabare-opener button" href="#" data-index="' + (index + 1) + '"><i class="fa-folder-open"></i>ネタバレ表示</a>'),
             top = $(elt). height() / 2 * -1;
@@ -44,6 +44,50 @@ jQuery(document).ready(function($){
             top: top + 'px'
         });
     });
+
+    // トップページ Masonry
+    var homeContainer = $('.desc-box-front'),
+        homeColumn,
+        columnWidth,
+        gutter,
+        getColumn = function(){
+            var winWidth = $('.margin').width();
+            if(winWidth == 1280){
+                homeColumn = 4;
+                columnWidth = 280;
+                gutter =  24;
+            }else if(winWidth >= 960){
+                homeColumn = 3;
+                columnWidth = 280;
+                gutter = 30;
+            }else if(winWidth < 768){
+                homeColumn = 1;
+            }else{
+                homeColumn = 2;
+                columnWidth = 330;
+                gutter = 36;
+            }
+        };
+    if(homeContainer.length){
+        getColumn();
+        if( homeColumn > 1 ){
+            $(window).resize(function(){
+                getColumn();
+                homeContainer.masonry({
+                    itemSelector: '.box',
+                    columnWidth: columnWidth,
+                    gutterWidth: gutter
+                });
+            });
+            homeContainer.masonry({
+                itemSelector: '.box',
+                columnWidth: columnWidth,
+                gutterWidth: gutter
+            });
+
+        }
+
+    }
 
 	//Fancybox
 	if($.fancybox && !$('body').hasClass('smartphone')){
