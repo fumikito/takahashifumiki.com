@@ -36,7 +36,8 @@ div.tmkm-amazon-view {
         text-align: center;
         img {
             @include box-shadow(0 0 5px rgba(0,0,0,0.5));
-            width: 100%;
+            max-width: 200px;
+            width: auto;
             height: auto;
         }
     }
@@ -98,9 +99,6 @@ div.tmkm-amazon-view {
             float: none;
             margin-left: 0;
             width: auto;
-            img{
-                width: 300px;
-            }
         }
         p{
             &.additional-description{

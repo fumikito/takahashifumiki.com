@@ -58,6 +58,7 @@ function _fumiki_assets(){
 		);
 		$wp_styles->add_data('font-awesome-ie7', 'conditional', 'lt IE 8');
 
+
 		// TypeSquare
 		wp_enqueue_script('type-square', '//typesquare.com/accessor/script/typesquare.js?115ai03FLeQ%3D', array(), null, false);
 
@@ -107,8 +108,8 @@ function _fumiki_assets(){
 			// 上のものをすべて結合したものを読み込み
 			wp_enqueue_script(
 				'fumiki-core',
-				get_template_directory_uri()."/styles/js/onload-ck.js",
-				array('jquery', 'jquery-ui-dialog'),
+				get_template_directory_uri()."/styles/js/onload.min.js",
+				array('jquery-masonry', 'jquery-ui-dialog'),
 				fumiki_theme_version(),
 				true
 			);
@@ -169,7 +170,7 @@ add_action('wp_print_scripts', '_fumiki_dequeue_scripts', 10000);
 
 // なかのひとを出力
 add_action('wp_footer', function(){
-	if( 'takahashifumiki.com'  == $_SERVER['SERVER_NAME']){
+	if( !WP_DEBUG ){
 		$login_id = is_user_logged_in() ? get_current_user_id() : '0';
 		echo <<<EOS
 <script type='text/javascript'>
@@ -194,3 +195,13 @@ add_action('wp_footer', function(){
 EOS;
 	}
 }, 100001);
+
+// メディアクエリを読み込む
+add_action('wp_head', function(){
+	$url = get_template_directory_uri().'/libs/css3-mediaqueries.js';
+	echo <<<EOS
+<!--[if lt IE 9]>
+<script src="{$url}"></script>
+<![endif]-->
+EOS;
+}, 11);

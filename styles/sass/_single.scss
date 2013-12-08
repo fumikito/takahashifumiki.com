@@ -83,6 +83,11 @@
     td{
     }
 }
+@media (max-width: $tablet - 1) {
+    .title-meta{
+        display: none;
+    }
+}
 
 
 /* アイキャッチ */
@@ -150,6 +155,7 @@
 /* コメント */
 #respond{
 	margin: 40px auto 0;
+    overflow: auto;
 }
 
 /*関連投稿*/
