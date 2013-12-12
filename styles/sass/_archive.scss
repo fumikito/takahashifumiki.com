@@ -265,7 +265,7 @@ div.archive{
     }
 }
 
-@media (max-width: $tablet - 1) {
+@media screen and (max-width: $tablet - 1) {
     .post-list{
         .loop{
             &.post-list-large{

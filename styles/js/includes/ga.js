@@ -80,7 +80,7 @@ jQuery(document).ready(function($){
 	
 	
 	
-	// イベントを計測
+	// 読了イベントを計測
 	$('#contents-last').bind('displayed', function(e, vars){
 		try{
 			ga('send', {
@@ -110,11 +110,7 @@ jQuery(document).ready(function($){
 					eventLabel: url,
 					eventValue: methods.getDuration(),
 					hitCallback: function(){
-						if(target){
-							window.open(url, target);
-						}else{
-							window.location.href = url;
-						}
+						window.location.href = url;
 					}
 				});
 				e.preventDefault();
@@ -147,26 +143,36 @@ jQuery(document).ready(function($){
 	});
 	
 	// いいねを集計
-	try{
-		FB.Event.subscribe('edge.create', function(url) {
-		    ga('send', {
-                hitType: 'social',
-                socialNetwork: 'facebook',
-                socialAction: 'like',
-                socialTarget: url
-            });
-		});
-	}catch(e){}
- 
+    var fbTimer = setInterval(function(){
+        if(window.FB && window.FB.Event){
+            clearInterval(fbTimer);
+            try{
+                FB.Event.subscribe('edge.create', function(url) {
+                    ga('send', {
+                        hitType: 'social',
+                        socialNetwork: 'facebook',
+                        socialAction: 'like',
+                        socialTarget: url
+                    });
+                });
+            }catch(e){ }
+        }
+    }, 100);
+
 	// tweetを集計
-	try{
-        twttr.events.bind('tweet', function (e) {
-            ga('send', {
-                hitType:'social',
-                socialNetwork: 'twitter',
-                socialAction: 'tweet',
-                socialTarget: document.location.pathname
+    var twTimer = setInterval(function(){
+        if(window.twttr && window.twttr.events){
+            clearInterval(twTimer);
+            twttr.events.bind('tweet', function (e) {
+                try{
+                    ga('send', {
+                        hitType:'social',
+                        socialNetwork: 'twitter',
+                        socialAction: 'tweet',
+                        socialTarget: document.location.pathname
+                    });
+                }catch (e){}
             });
-        });
-	}catch(e){}
+        }
+    }, 100);
 });

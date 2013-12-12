@@ -33,9 +33,9 @@ function _fumiki_admin_bar($wp_admin_bar){
 	$menu_name = 'main-pages';
 	$wp_admin_bar->add_menu(array(
 		'parent' => 'main-menues',
-		'title' => '高橋文樹.comについて',
+		'title' => '高橋文樹.com',
 		'id' => 'main-pages',
-		'href' => home_url('/about/', 'http')
+		'href' => home_url('/', 'http')
 	));
 	if(!wp_is_mobile()){
 		$location = get_nav_menu_locations();

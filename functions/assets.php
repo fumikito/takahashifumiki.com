@@ -11,6 +11,20 @@ add_theme_support('custom-header', array(
 add_theme_support('post-thumbnails');
 
 
+
+// faviconなどを書き出す
+function _fumiki_identity(){
+	$dir = get_template_directory_uri();
+	echo <<<EOS
+<link rel="shortcut icon" href="{$dir}/styles/img/favicon/favicon.ico" />
+<!-- Mobile Device -->
+<link rel="apple-touch-icon" href="{$dir}/styles/img/favicon/faviconx144.png" />
+EOS;
+}
+add_action('wp_head', '_fumiki_identity');
+add_action('admin_head', '_fumiki_identity');
+
+
 /**
  * トップページの画像ウィジェットを取得する
  *
@@ -198,10 +212,11 @@ EOS;
 
 // メディアクエリを読み込む
 add_action('wp_head', function(){
-	$url = get_template_directory_uri().'/libs/css3-mediaqueries.js';
+	$url = get_template_directory_uri();
 	echo <<<EOS
 <!--[if lt IE 9]>
-<script src="{$url}"></script>
+<script src="{$url}/libs/html5.js" type="text/javascript"></script>
+<script src="{$url}/libs/css3-mediaqueries.js" type="text/javascript"></script>
 <![endif]-->
 EOS;
 }, 11);

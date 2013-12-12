@@ -8,13 +8,10 @@
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <? language_attributes(); ?>>
 <!--<![endif]--><head>
-<meta charset="<? bloginfo( 'charset' ); ?>" />
-<title><? wp_title(" | ", true, 'right'); bloginfo('name'); if(is_front_page()) echo " | ".get_bloginfo('description'); ?></title>
+	<meta charset="<? bloginfo( 'charset' ); ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title><? wp_title(" | ", true, 'right'); bloginfo('name'); if(is_front_page()) echo " | ".get_bloginfo('description'); ?></title>
 <? wp_head(); ?>
-<? // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
-<!--[if lt IE 9]>
-<script src="<? echo get_template_directory_uri(); ?>/style/js/html5.js" type="text/javascript"></script>
-<![endif]-->
 <link rel="alternate" type="application/rss+xml" href="<? bloginfo('rss2_url'); ?>" title="高橋文樹.com 最新の投稿" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<? bloginfo( 'pingback_url' ); ?>" />

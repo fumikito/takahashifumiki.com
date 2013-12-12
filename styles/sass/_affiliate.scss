@@ -93,7 +93,7 @@ div.tmkm-amazon-view {
     }
 }
 
-@media (max-width: 560px) {
+@media screen and (max-width: 560px) {
     div.tmkm-amazon-view {
         .tmkm-amazon-img{
             float: none;

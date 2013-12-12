@@ -49,31 +49,16 @@ EOS;
 	echo <<<EOS
 <!-- ViewPort -->
 <meta name="Viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Mobile Device -->
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<link rel="apple-touch-icon" href="{$dir}/styles/img/home.png" />
-<link rel="apple-touch-startup-image" href="{$dir}/styles/img/start-up.png" />
+<!-- copyright -->
+<meta name="copyright" content="copyright 2008 takahashifumiki.com" />
 EOS;
 }
 
 
 add_action('wp_head', '_fumiki_head', 0);
+
 //JetpackのOGPをオフにする
 remove_action( 'wp_head' , 'jetpack_og_tags' );
-
-/**
- * faviconなどを書き出す 
- */
-function _fumiki_identity(){
-	$dir = get_template_directory_uri();
-	echo <<<EOS
-<link rel="shortcut icon" href="{$dir}/styles/img/favicon.ico" />
-<meta name="copyright" content="copyright 2008 takahashifumiki.com" />
-EOS;
-}
-add_action('wp_head', '_fumiki_identity');
-
 
 
 /**

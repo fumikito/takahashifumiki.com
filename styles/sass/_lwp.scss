@@ -20,7 +20,7 @@
         float: right;
     }
 }
-@media (min-width: $large-desktop){
+@media screen and (min-width: $large-desktop){
     .ebook-meta{
         .img-container{
             width: 360px;
@@ -35,7 +35,7 @@
         }
     }
 }
-@media (min-width: $tablet) and (max-width: $desktop - 1) {
+@media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
     .ebook-meta{
         .img-container{
             width: 280px;
@@ -50,9 +50,7 @@
         }
     }
 }
-@media (max-width: $tablet - 1){
 
-}
 // 詳細
 .ebook-meta{
     .img-container{

@@ -337,6 +337,19 @@ table.form-table{
 }
 
 /* Google Responsive ads */
- .my_adslot { width: 320px; height: 50px; }
-@media(min-width: 500px) { .my_adslot { width: 468px; height: 60px; } }
-@media(min-width: 800px) { .my_adslot { width: 728px; height: 90px; } }
+.my_adslot {
+    width: 320px;
+    height: 50px;
+}
+@media screen and (min-width: 500px) {
+    .my_adslot {
+        width: 468px;
+        height: 60px;
+    }
+}
+@media screen and (min-width: 800px) {
+    .my_adslot {
+        width: 728px;
+        height: 90px;
+    }
+}

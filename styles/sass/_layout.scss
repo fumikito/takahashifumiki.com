@@ -14,7 +14,7 @@
 	width: 330px;
     float: right;
 }
-@media (max-width: $desktop - 1) {
+@media screen and (max-width: $desktop - 1) {
     #main{
         width: auto;
         float: none;
@@ -62,7 +62,7 @@
 // 大きなデスクトップ
 //
 //--------------------
-@media (min-width: $large-desktop) {
+@media screen and (min-width: $large-desktop) {
 	.margin{
 		width: $large-desktop;
 	}
@@ -96,7 +96,7 @@
 //
 // タブレットからデスクトップ
 // --------------------------------------------------
-@media (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+@media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
 	.margin{
 		width: $tablet;
 	}
@@ -147,7 +147,7 @@
 //
 // それ以下（スマートフォン）
 // --------------------------------------------------
-@media (max-width: ($tablet - 1px)) {
+@media screen and (max-width: ($tablet - 1px)) {
 
     .grid_1,
     .grid_2,

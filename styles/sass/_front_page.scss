@@ -46,7 +46,7 @@ $logo-size: 256px;
 
 // タブレットのときはそのまま
 // スマホの時は画像サイズ半分
-@media (max-width:  ($tablet - 1) ){
+@media screen and (max-width:  ($tablet - 1) ){
     .title_box{
         min-height: $logo-size / 2;
         h1{
@@ -95,19 +95,19 @@ $logo-size: 256px;
     @include masonry(280px, 30px);
 }
 // 巨大な場合は4列
-@media (min-width: $large-desktop){
+@media screen and (min-width: $large-desktop){
     .desc-box-front{
         @include masonry(280px, 24px);
     }
 }
 // タブレットは2列
-@media (min-width: $tablet) and (max-width: $desktop) {
+@media screen and (min-width: $tablet) and (max-width: $desktop) {
     .desc-box-front{
         @include masonry(330px, 36px);
     }
 }
 // スマホは1列
-@media (max-width: $tablet - 1) {
+@media screen and (max-width: $tablet - 1) {
     .desc-box-front{
         padding: 0 10px;
         width: auto;
@@ -163,7 +163,7 @@ $logo-size: 256px;
     }
 }
 
-@media (max-width: $tablet - 1) {
+@media screen and (max-width: $tablet - 1) {
     .desc-box-front{
         // トップページ投稿エリア
         .main-content{

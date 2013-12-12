@@ -14,7 +14,7 @@
 	}
 }
 
-@media (max-width: 780px) {
+@media screen and (max-width: $tablet - 1) {
     #wpadminbar{
         .adminbar-logo{
             width: 36px;

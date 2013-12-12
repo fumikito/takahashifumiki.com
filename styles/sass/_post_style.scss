@@ -226,6 +226,9 @@
 		& > table{
 			font-size: 0.85em !important;
 		}
+        code{
+            -webkit-text-size-adjust: 100%;
+        }
 	}
 	.code-format{
 		background: #4D4945;
@@ -281,6 +284,17 @@
 		&:before{content:" ※"}
 		&:after{content:" "}
 	}
+
+    /* 余談 */
+    aside{
+        margin: 1em 0;
+        line-height: 1.4;
+        padding: 1em;
+        font-size: 0.8em;
+        -webkit-text-size-adjust: 100%;
+        background: $section-bg-color;
+        color: $light-grey;
+    }
 
 	/*テーブル*/
 	table{

@@ -83,7 +83,7 @@
     td{
     }
 }
-@media (max-width: $tablet - 1) {
+@media screen and (max-width: $tablet - 1) {
     .title-meta{
         display: none;
     }
@@ -145,7 +145,7 @@
 	}
 }
 // さらに大きい場合はフォントサイズを倍に
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
     .entry{
         font-size: 2.5em;
     }
@@ -251,7 +251,7 @@
     }
 }
 
-@media (min-width: $desktop) and (max-width: $large-desktop - 1) {
+@media screen and (min-width: $desktop) and (max-width: $large-desktop - 1) {
     .google-share{
         .share{
             width: 200px;
@@ -270,7 +270,7 @@
     }
 }
 
-@media (max-width: $tablet - 1) {
+@media screen and (max-width: $tablet - 1) {
     .google-share{
         padding-left: 0;
         padding-right: 0;
