@@ -19,6 +19,10 @@
                 font-weight: bold;
             }
         }
+        &.samurai{
+            font-size: 2em;
+            font-family: $samurai;
+        }
 	}
 	p.attachment{
 		text-align: center;

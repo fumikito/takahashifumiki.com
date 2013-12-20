@@ -74,10 +74,10 @@ function _fumiki_assets(){
 
 
 		// TypeSquare
-		wp_enqueue_script('type-square', '//typesquare.com/accessor/script/typesquare.js?115ai03FLeQ%3D', array(), null, false);
+		//wp_enqueue_script('type-square', '//typesquare.com/accessor/script/typesquare.js?115ai03FLeQ%3D', array(), null, false);
 
 		// font plus
-		//wp_enqueue_script('font-plus', '//webfont.fontplus.jp/accessor/script/fontplus.js?v71w5NbEhVk%3D&box=8pL3Swmt0xo%3D&aa=1', array(), null, false);
+		wp_enqueue_script('font-plus', 'http'.(is_ssl() ? 's' : '').'://webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D&aa=1', null, null, false);
 
 		//メインCSS
 		wp_enqueue_style(
@@ -113,7 +113,7 @@ function _fumiki_assets(){
 				wp_enqueue_script(
 					$handle,
 					get_template_directory_uri().'/styles/js'.$src,
-					array('jquery-ui-dialog', 'jquery-masonry'),
+					array('jquery-ui-dialog', 'jquery-masonry', 'jquery-effects-highlight'),
 					fumiki_theme_version(),
 					true
 				);
@@ -123,7 +123,7 @@ function _fumiki_assets(){
 			wp_enqueue_script(
 				'fumiki-core',
 				get_template_directory_uri()."/styles/js/onload.min.js",
-				array('jquery-masonry', 'jquery-ui-dialog'),
+				array('jquery-masonry', 'jquery-ui-dialog', 'jquery-effects-highlight'),
 				fumiki_theme_version(),
 				true
 			);

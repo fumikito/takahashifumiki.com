@@ -28,7 +28,11 @@ jQuery(document).ready(function($){
         button.click(function(e){
             e.preventDefault();
             if(confirm('この部分はネタバレを含みます。表示してよろしいですか？')){
-                $(this).prev('.netabare').removeClass('netabare');
+                var container = $(this).prev('.netabare');
+                container.removeClass('netabare');
+                if(container.effect){
+                    container.effect('highlight', {}, 1000);
+                }
                 try{
                     ga('send', {
                         hitType: 'event',

@@ -66,41 +66,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* 色 */
 /* メッセージ用の色 */
 /* フォント設定 */
-/* line 62, ../sass/_settings.scss */
-.mincho {
-  font-family: "Times New Roman", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
-
-/* line 63, ../sass/_settings.scss */
-.old {
-  font-family: Georgia, "Times New Roman", Times, serif; }
-
 /* line 64, ../sass/_settings.scss */
+.mincho {
+  font-family: "Times New Roman", Times, "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
+
+/* line 65, ../sass/_settings.scss */
+.old {
+  font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
+
+/* line 66, ../sass/_settings.scss */
 .sans {
   font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif; }
 
-/* line 65, ../sass/_settings.scss */
+/* line 67, ../sass/_settings.scss */
 .mono {
-  font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
+  font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
 
-/* line 66, ../sass/_settings.scss */
+/* line 68, ../sass/_settings.scss */
 strong {
   font-weight: bold; }
 
 /*フロート解除*/
-/* line 70, ../sass/_settings.scss */
+/* line 72, ../sass/_settings.scss */
 .clrL {
   clear: left; }
 
-/* line 71, ../sass/_settings.scss */
+/* line 73, ../sass/_settings.scss */
 .clrR {
   clear: right; }
 
-/* line 72, ../sass/_settings.scss */
+/* line 74, ../sass/_settings.scss */
 .clrB {
   clear: both; }
 
 /*clearfix*/
-/* line 75, ../sass/_settings.scss */
+/* line 77, ../sass/_settings.scss */
 .clearfix {
   overflow: hidden;
   *zoom: 1; }
@@ -108,52 +108,52 @@ strong {
 /*---------------------
  * アラインメント
  */
-/* line 81, ../sass/_settings.scss */
+/* line 83, ../sass/_settings.scss */
 .center {
   text-align: center; }
 
-/* line 82, ../sass/_settings.scss */
+/* line 84, ../sass/_settings.scss */
 .left {
   text-align: left; }
 
-/* line 83, ../sass/_settings.scss */
+/* line 85, ../sass/_settings.scss */
 .right {
   text-align: right; }
 
-/* line 84, ../sass/_settings.scss */
+/* line 86, ../sass/_settings.scss */
 .top {
   vertical-align: top; }
 
-/* line 85, ../sass/_settings.scss */
+/* line 87, ../sass/_settings.scss */
 .middle {
   vertical-align: middle; }
 
-/* line 86, ../sass/_settings.scss */
+/* line 88, ../sass/_settings.scss */
 .bottom {
   vertical-align: bottom; }
 
 /*インラインブロック*/
-/* line 91, ../sass/_settings.scss */
+/* line 93, ../sass/_settings.scss */
 .inline-block {
   display: inline-block; }
 
 /*リンク装飾*/
-/* line 96, ../sass/_settings.scss */
+/* line 98, ../sass/_settings.scss */
 a {
   overflow: hidden; }
-  /* line 98, ../sass/_settings.scss */
+  /* line 100, ../sass/_settings.scss */
   a:link {
     color: #0066cc;
     text-decoration: underline; }
-  /* line 102, ../sass/_settings.scss */
+  /* line 104, ../sass/_settings.scss */
   a:visited {
     color: #7756bc;
     text-decoration: underline; }
-  /* line 106, ../sass/_settings.scss */
+  /* line 108, ../sass/_settings.scss */
   a:hover {
     color: #ff4130;
     text-decoration: none; }
-  /* line 110, ../sass/_settings.scss */
+  /* line 112, ../sass/_settings.scss */
   a:active {
     color: red;
     text-decoration: underline; }
@@ -162,33 +162,33 @@ a {
  * 装飾
  */
 /*背景画像*/
-/* line 120, ../sass/_settings.scss */
+/* line 122, ../sass/_settings.scss */
 .dark_bg {
   background: #45474d; }
 
 /* テキストシャドウ */
-/* line 124, ../sass/_settings.scss */
+/* line 126, ../sass/_settings.scss */
 .shadow {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
 
-/* line 128, ../sass/_settings.scss */
+/* line 130, ../sass/_settings.scss */
 .hilight {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8); }
 
 /* ルビ非対応ブラウザ */
-/* line 135, ../sass/_settings.scss */
+/* line 137, ../sass/_settings.scss */
 .no-ruby rt:before {
   content: '（'; }
-/* line 138, ../sass/_settings.scss */
+/* line 140, ../sass/_settings.scss */
 .no-ruby rt:after {
   content: '）'; }
 
-/* line 146, ../sass/_settings.scss */
+/* line 148, ../sass/_settings.scss */
 .ui-tooltip-dark {
   font-size: 2em;
   line-height: 1.1; }
 
-/* line 150, ../sass/_settings.scss */
+/* line 152, ../sass/_settings.scss */
 .ui-tooltip-content {
   padding: 10px 20px;
   font-weight: normal; }
@@ -196,7 +196,7 @@ a {
 /*---------------------
  * テキスト・背景色
  */
-/* line 158, ../sass/_settings.scss */
+/* line 160, ../sass/_settings.scss */
 body {
   color: #45474d;
   word-wrap: break-word;
@@ -300,7 +300,7 @@ a.lwp-action {
   line-height: 1;
   height: 1em;
   font-size: 0.75em;
-  font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+  font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
   color: #fff; }
 
 /* line 57, ../sass/_components.scss */
@@ -597,7 +597,7 @@ table.form-table input[type=search] {
   /* line 296, ../sass/_components.scss */
   .wp-pagenavi a, .wp-pagenavi span.current, .wp-pagenavi span.extend {
     padding: 3px 8px;
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -675,7 +675,7 @@ body.mceContentBody {
   font-size: 2em;
   line-height: 1.8;
   position: relative;
-  font-family: "Garamond", "A1 Mincho", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif;
+  font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatissePro-L", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif;
   /*見出し*/
   /* 装飾 */
   /* 略語 */
@@ -695,7 +695,7 @@ body.mceContentBody {
   /*パスワード保護されていた場合*/
   /* フォームパーツ */
   padding: 10px 20px;
-  font-family: "Times New Roman", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif;
+  font-family: "Times New Roman", Times, "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif;
   font-size: 1em; }
   /* line 8, ../sass/_post_style.scss */
   body.mceContentBody > p {
@@ -712,128 +712,132 @@ body.mceContentBody {
         float: left;
         margin-right: 0.2em;
         font-weight: bold; }
-  /* line 23, ../sass/_post_style.scss */
+    /* line 22, ../sass/_post_style.scss */
+    body.mceContentBody > p.samurai {
+      font-size: 2em;
+      font-family: "SamuraiStd-R", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
+  /* line 27, ../sass/_post_style.scss */
   body.mceContentBody p.attachment {
     text-align: center; }
-    /* line 25, ../sass/_post_style.scss */
+    /* line 29, ../sass/_post_style.scss */
     body.mceContentBody p.attachment img {
       max-width: 100%; }
-  /* line 31, ../sass/_post_style.scss */
+  /* line 35, ../sass/_post_style.scss */
   body.mceContentBody h1, body.mceContentBody h2, body.mceContentBody h3, body.mceContentBody h4, body.mceContentBody h5 {
     font-weight: bold;
     padding-top: 1.5em;
     margin-bottom: 0.75em;
-    font-family: Georgia, "Akashi", sans-serif; }
-  /* line 37, ../sass/_post_style.scss */
+    font-family: "Palatino Linotype", "Book Antiqua3", Palatino, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
+  /* line 41, ../sass/_post_style.scss */
   body.mceContentBody h1 {
     font-size: 2.5em;
     color: #fbee88;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; }
-  /* line 47, ../sass/_post_style.scss */
+  /* line 51, ../sass/_post_style.scss */
   body.mceContentBody h2 {
     font-size: 1.8em;
     line-height: 1.2;
     color: black; }
-  /* line 53, ../sass/_post_style.scss */
+  /* line 57, ../sass/_post_style.scss */
   body.mceContentBody h3 {
     font-size: 1.5em;
     padding-bottom: 5px;
     line-height: 1.2;
     color: #333f46;
     border-bottom: 1px dotted #252e34; }
-  /* line 60, ../sass/_post_style.scss */
+  /* line 64, ../sass/_post_style.scss */
   body.mceContentBody h4 {
     font-size: 1.3em;
     line-height: 1.2;
     color: #888;
     text-shadow: 1px 1px 2px #fff; }
-  /* line 66, ../sass/_post_style.scss */
+  /* line 70, ../sass/_post_style.scss */
   body.mceContentBody h5 {
     font-size: 1.1em;
     line-height: 1.2; }
-  /* line 71, ../sass/_post_style.scss */
+  /* line 75, ../sass/_post_style.scss */
   body.mceContentBody h6 {
     font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif; }
-  /* line 76, ../sass/_post_style.scss */
+  /* line 80, ../sass/_post_style.scss */
   body.mceContentBody strong, body.mceContentBody b {
     color: #000;
     font-weight: bold; }
-  /* line 81, ../sass/_post_style.scss */
+  /* line 85, ../sass/_post_style.scss */
   body.mceContentBody big,
   body.mceContentBody strong.big {
     font-weight: bold;
     font-size: 2em; }
-  /* line 85, ../sass/_post_style.scss */
+  /* line 89, ../sass/_post_style.scss */
   body.mceContentBody em {
     color: #000;
     font-style: italic; }
-  /* line 90, ../sass/_post_style.scss */
+  /* line 94, ../sass/_post_style.scss */
   body.mceContentBody abbr, body.mceContentBody acronym {
     cursor: help;
     color: #333f46;
     border-bottom: 1px dashed #333f46; }
-  /* line 96, ../sass/_post_style.scss */
+  /* line 100, ../sass/_post_style.scss */
   body.mceContentBody sup {
     font-size: 0.75em;
     vertical-align: top; }
-  /* line 100, ../sass/_post_style.scss */
+  /* line 104, ../sass/_post_style.scss */
   body.mceContentBody sub {
     font-size: 0.75em;
     vertical-align: sub; }
-  /* line 104, ../sass/_post_style.scss */
+  /* line 108, ../sass/_post_style.scss */
   body.mceContentBody var {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
     font-style: italic; }
-  /* line 109, ../sass/_post_style.scss */
+  /* line 113, ../sass/_post_style.scss */
   body.mceContentBody ins {
     text-decoration: none;
     color: #666666;
     background: #fbee88; }
-  /* line 115, ../sass/_post_style.scss */
+  /* line 119, ../sass/_post_style.scss */
   body.mceContentBody del, body.mceContentBody s {
     color: #aaa; }
-    /* line 117, ../sass/_post_style.scss */
+    /* line 121, ../sass/_post_style.scss */
     body.mceContentBody del:before, body.mceContentBody s:before {
       content: " "; }
-    /* line 118, ../sass/_post_style.scss */
+    /* line 122, ../sass/_post_style.scss */
     body.mceContentBody del:after, body.mceContentBody s:after {
       content: " "; }
-  /* line 122, ../sass/_post_style.scss */
+  /* line 126, ../sass/_post_style.scss */
   body.mceContentBody ol, body.mceContentBody ul, body.mceContentBody dl {
     margin: 1em 0; }
-  /* line 125, ../sass/_post_style.scss */
+  /* line 129, ../sass/_post_style.scss */
   body.mceContentBody ol li, body.mceContentBody ul li, body.mceContentBody dl dd {
     margin: 0.5em 0 0.8em 1em; }
-  /* line 126, ../sass/_post_style.scss */
+  /* line 130, ../sass/_post_style.scss */
   body.mceContentBody ul, body.mceContentBody ol {
     padding-left: 1.5em; }
-  /* line 127, ../sass/_post_style.scss */
+  /* line 131, ../sass/_post_style.scss */
   body.mceContentBody ul li {
     list-style: outside disc; }
-  /* line 128, ../sass/_post_style.scss */
+  /* line 132, ../sass/_post_style.scss */
   body.mceContentBody ol li {
     list-style: outside decimal; }
-  /* line 129, ../sass/_post_style.scss */
+  /* line 133, ../sass/_post_style.scss */
   body.mceContentBody ul li li, body.mceContentBody ol li li, body.mceContentBody dd li {
     font-size: 0.8em; }
-  /* line 130, ../sass/_post_style.scss */
+  /* line 134, ../sass/_post_style.scss */
   body.mceContentBody ul li ul li {
     list-style-type: circle; }
-  /* line 131, ../sass/_post_style.scss */
+  /* line 135, ../sass/_post_style.scss */
   body.mceContentBody ol li ol li {
     list-style-type: decimal-leading-zero; }
-  /* line 132, ../sass/_post_style.scss */
+  /* line 136, ../sass/_post_style.scss */
   body.mceContentBody dl dt {
     font-size: 1.2em;
     font-weight: bold;
     margin: 15px 0 0;
     text-shadow: 1px 1px 2px #fff;
     color: #252e34; }
-  /* line 139, ../sass/_post_style.scss */
+  /* line 143, ../sass/_post_style.scss */
   body.mceContentBody dl dd {
     padding-left: 1.5em;
     margin-left: 0; }
-    /* line 142, ../sass/_post_style.scss */
+    /* line 146, ../sass/_post_style.scss */
     body.mceContentBody dl dd:before {
       font-family: FontAwesome;
       font-weight: normal;
@@ -842,53 +846,53 @@ body.mceContentBody {
       text-decoration: inherit;
       content: "\f054";
       text-indent: -1.5em; }
-  /* line 153, ../sass/_post_style.scss */
+  /* line 157, ../sass/_post_style.scss */
   body.mceContentBody blockquote {
     margin: 0.5em 0;
     padding: 32px;
     color: #333f46;
     position: relative; }
-    /* line 159, ../sass/_post_style.scss */
+    /* line 163, ../sass/_post_style.scss */
     body.mceContentBody blockquote:before, body.mceContentBody blockquote:after {
       color: lightgrey;
       display: block;
       position: absolute;
       font-size: 24px;
       font-family: FontAwesome; }
-    /* line 166, ../sass/_post_style.scss */
+    /* line 170, ../sass/_post_style.scss */
     body.mceContentBody blockquote:before {
       top: 0;
       left: 10px;
       content: "\f10d"; }
-    /* line 171, ../sass/_post_style.scss */
+    /* line 175, ../sass/_post_style.scss */
     body.mceContentBody blockquote:after {
       bottom: 0;
       right: 10px;
       content: "\f10e"; }
-    /* line 176, ../sass/_post_style.scss */
+    /* line 180, ../sass/_post_style.scss */
     body.mceContentBody blockquote p {
       margin: 0.5em 0; }
-    /* line 179, ../sass/_post_style.scss */
+    /* line 183, ../sass/_post_style.scss */
     body.mceContentBody blockquote cite {
       display: block;
       text-align: right;
       font-size: 0.8em;
       font-weight: normal;
       color: #333f46; }
-  /* line 187, ../sass/_post_style.scss */
+  /* line 191, ../sass/_post_style.scss */
   body.mceContentBody q, body.mceContentBody cite {
     font-style: italic;
     color: #252e34; }
-  /* line 192, ../sass/_post_style.scss */
+  /* line 196, ../sass/_post_style.scss */
   body.mceContentBody q[cite] {
     cursor: pointer; }
-  /* line 195, ../sass/_post_style.scss */
+  /* line 199, ../sass/_post_style.scss */
   body.mceContentBody q:before {
     content: '"'; }
-  /* line 198, ../sass/_post_style.scss */
+  /* line 202, ../sass/_post_style.scss */
   body.mceContentBody q:after {
     content: '"'; }
-  /* line 206, ../sass/_post_style.scss */
+  /* line 210, ../sass/_post_style.scss */
   body.mceContentBody code, body.mceContentBody kbd, body.mceContentBody tt {
     background: #f7f7f7;
     border: 1px solid #ddd;
@@ -898,16 +902,16 @@ body.mceContentBody {
     -o-border-radius: 3px;
     border-radius: 3px;
     padding: 1px 2px;
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     color: #000; }
-  /* line 214, ../sass/_post_style.scss */
+  /* line 218, ../sass/_post_style.scss */
   body.mceContentBody var {
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-  /* line 217, ../sass/_post_style.scss */
-  body.mceContentBody pre {
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
-    line-height: 1.2; }
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
   /* line 221, ../sass/_post_style.scss */
+  body.mceContentBody pre {
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+    line-height: 1.2; }
+  /* line 225, ../sass/_post_style.scss */
   body.mceContentBody .syntaxhighlighter {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
@@ -919,13 +923,13 @@ body.mceContentBody {
     -webkit-box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset;
     box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset; }
-    /* line 226, ../sass/_post_style.scss */
+    /* line 230, ../sass/_post_style.scss */
     body.mceContentBody .syntaxhighlighter > table {
       font-size: 0.85em !important; }
-    /* line 229, ../sass/_post_style.scss */
+    /* line 233, ../sass/_post_style.scss */
     body.mceContentBody .syntaxhighlighter code {
       -webkit-text-size-adjust: 100%; }
-  /* line 233, ../sass/_post_style.scss */
+  /* line 237, ../sass/_post_style.scss */
   body.mceContentBody .code-format {
     background: #4D4945;
     color: #fff;
@@ -938,14 +942,14 @@ body.mceContentBody {
     -o-border-radius: 15px;
     border-radius: 15px;
     overflow: auto;
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-    /* line 242, ../sass/_post_style.scss */
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
+    /* line 246, ../sass/_post_style.scss */
     body.mceContentBody .code-format table {
       width: 100%; }
-    /* line 243, ../sass/_post_style.scss */
+    /* line 247, ../sass/_post_style.scss */
     body.mceContentBody .code-format tr.even {
       background: #57534E; }
-    /* line 244, ../sass/_post_style.scss */
+    /* line 248, ../sass/_post_style.scss */
     body.mceContentBody .code-format th {
       color: #938C84;
       background-color: transparent;
@@ -954,42 +958,42 @@ body.mceContentBody {
       border-right: #938C84 2px solid;
       padding: 0 5px 0 0;
       vertical-align: top; }
-    /* line 253, ../sass/_post_style.scss */
+    /* line 257, ../sass/_post_style.scss */
     body.mceContentBody .code-format td {
       padding: 0 0 0 15px;
       border-bottom: none; }
-    /* line 257, ../sass/_post_style.scss */
+    /* line 261, ../sass/_post_style.scss */
     body.mceContentBody .code-format .quote {
       color: #A5EFB8; }
-    /* line 258, ../sass/_post_style.scss */
+    /* line 262, ../sass/_post_style.scss */
     body.mceContentBody .code-format .notation {
       color: #BCE3F4; }
-  /* line 262, ../sass/_post_style.scss */
+  /* line 266, ../sass/_post_style.scss */
   body.mceContentBody pre.aa {
     font-family: IPAMonaGothic,'ＭＳ ゴシック',monospace;
     font-size: 12px;
     line-height: 1.5;
     margin: 20px 0;
     color: #999; }
-  /* line 271, ../sass/_post_style.scss */
+  /* line 275, ../sass/_post_style.scss */
   body.mceContentBody address {
     font-style: italic;
     font-size: 0.85em;
     color: #888;
     line-height: 1.4;
     padding: 0.5em 1em; }
-  /* line 280, ../sass/_post_style.scss */
+  /* line 284, ../sass/_post_style.scss */
   body.mceContentBody .alert {
     font-size: 0.8em;
     font-weight: bold;
     color: #000; }
-    /* line 284, ../sass/_post_style.scss */
+    /* line 288, ../sass/_post_style.scss */
     body.mceContentBody .alert:before {
       content: " ※"; }
-    /* line 285, ../sass/_post_style.scss */
+    /* line 289, ../sass/_post_style.scss */
     body.mceContentBody .alert:after {
       content: " "; }
-  /* line 289, ../sass/_post_style.scss */
+  /* line 293, ../sass/_post_style.scss */
   body.mceContentBody aside {
     margin: 1em 0;
     line-height: 1.4;
@@ -998,72 +1002,72 @@ body.mceContentBody {
     -webkit-text-size-adjust: 100%;
     background: #f7f7f7;
     color: #666666; }
-  /* line 300, ../sass/_post_style.scss */
+  /* line 304, ../sass/_post_style.scss */
   body.mceContentBody table {
     margin: 20px 0;
     border-spacing: 0;
     empty-cells: show;
     border-collapse: collapse;
     width: 100%; }
-    /* line 307, ../sass/_post_style.scss */
+    /* line 311, ../sass/_post_style.scss */
     body.mceContentBody table thead th, body.mceContentBody table thead td {
       color: black;
       padding: 5px 8px;
       border-bottom: 3px double #dddddd;
       font-weight: bold; }
-    /* line 314, ../sass/_post_style.scss */
+    /* line 318, ../sass/_post_style.scss */
     body.mceContentBody table caption {
       color: #666666;
       text-align: right;
       font-size: 1em; }
-    /* line 320, ../sass/_post_style.scss */
+    /* line 324, ../sass/_post_style.scss */
     body.mceContentBody table tbody th, body.mceContentBody table tbody td {
       text-align: left;
       padding: 5px 8px;
       font-size: 0.85em;
       border-bottom: 1px solid #dddddd; }
-    /* line 326, ../sass/_post_style.scss */
+    /* line 330, ../sass/_post_style.scss */
     body.mceContentBody table tbody th {
       font-weight: bold;
       color: black;
       white-space: nowrap; }
-    /* line 331, ../sass/_post_style.scss */
+    /* line 335, ../sass/_post_style.scss */
     body.mceContentBody table tbody td {
       color: #888888; }
-    /* line 335, ../sass/_post_style.scss */
+    /* line 339, ../sass/_post_style.scss */
     body.mceContentBody table tbody tr:nth-child(2n) td,
     body.mceContentBody table tbody tr:nth-child(2n) th {
       background: #f7f7f7; }
-  /* line 345, ../sass/_post_style.scss */
+  /* line 349, ../sass/_post_style.scss */
   body.mceContentBody .alignright {
     float: right;
     margin-left: 1.5em; }
-  /* line 346, ../sass/_post_style.scss */
+  /* line 350, ../sass/_post_style.scss */
   body.mceContentBody .alignleft {
     float: left;
     margin-right: 1.5em; }
-  /* line 349, ../sass/_post_style.scss */
+  /* line 353, ../sass/_post_style.scss */
   body.mceContentBody .aligncenter,
   body.mceContentBody div.alignnon,
   body.mceContentBody figure.alignnon {
     margin: 1.5em auto; }
-  /* line 350, ../sass/_post_style.scss */
+  /* line 354, ../sass/_post_style.scss */
   body.mceContentBody img.aligncenter {
     display: block; }
-  /* line 352, ../sass/_post_style.scss */
+  /* line 356, ../sass/_post_style.scss */
   body.mceContentBody img.size-full {
     max-width: 100%;
     height: auto; }
-  /* line 358, ../sass/_post_style.scss */
+  /* line 362, ../sass/_post_style.scss */
   body.mceContentBody div.wp-caption,
   body.mceContentBody figure.wp-caption {
     margin-bottom: 1em; }
-  /* line 361, ../sass/_post_style.scss */
+  /* line 365, ../sass/_post_style.scss */
   body.mceContentBody .wp-caption-text {
     font-size: 0.75em;
     color: #666666;
     margin: 0.25em 0 0; }
-  /* line 376, ../sass/_post_style.scss */
+  /* line 380, ../sass/_post_style.scss */
   body.mceContentBody input[type=text],
   body.mceContentBody input[type=password],
   body.mceContentBody input[type=email],
