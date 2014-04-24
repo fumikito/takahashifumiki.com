@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "16844",
+"creatorBuild": "16903",
 "files": {
 	"\/config.rb": {
 		"fileType": 131072,
@@ -8,6 +8,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/config.rb",
 		"outputAbbreviatedPath": "\/config.rb",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/img\/archive-icons.png": {
@@ -17,6 +18,7 @@
 		"initialSize": 584,
 		"inputAbbreviatedPath": "\/img\/archive-icons.png",
 		"outputAbbreviatedPath": "\/img\/archive-icons.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -27,6 +29,7 @@
 		"initialSize": 105,
 		"inputAbbreviatedPath": "\/img\/archive_box_bg.png",
 		"outputAbbreviatedPath": "\/img\/archive_box_bg.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -37,6 +40,7 @@
 		"initialSize": 559,
 		"inputAbbreviatedPath": "\/img\/archive_icon_tag.png",
 		"outputAbbreviatedPath": "\/img\/archive_icon_tag.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -47,6 +51,7 @@
 		"initialSize": 2437,
 		"inputAbbreviatedPath": "\/img\/archive_nophoto_ebook.png",
 		"outputAbbreviatedPath": "\/img\/archive_nophoto_ebook.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -57,6 +62,7 @@
 		"initialSize": 12027,
 		"inputAbbreviatedPath": "\/img\/bg-texture-dark.jpg",
 		"outputAbbreviatedPath": "\/img\/bg-texture-dark.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -67,6 +73,7 @@
 		"initialSize": 11508,
 		"inputAbbreviatedPath": "\/img\/bg-texture-gray.jpg",
 		"outputAbbreviatedPath": "\/img\/bg-texture-gray.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -77,6 +84,7 @@
 		"initialSize": 19411,
 		"inputAbbreviatedPath": "\/img\/bg-texture-white.jpg",
 		"outputAbbreviatedPath": "\/img\/bg-texture-white.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -87,6 +95,7 @@
 		"initialSize": 5713,
 		"inputAbbreviatedPath": "\/img\/btn-buynow.png",
 		"outputAbbreviatedPath": "\/img\/btn-buynow.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -97,6 +106,7 @@
 		"initialSize": 2646,
 		"inputAbbreviatedPath": "\/img\/container-feedly.png",
 		"outputAbbreviatedPath": "\/img\/container-feedly.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -107,6 +117,7 @@
 		"initialSize": 2145,
 		"inputAbbreviatedPath": "\/img\/content-footernote.png",
 		"outputAbbreviatedPath": "\/img\/content-footernote.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -117,6 +128,7 @@
 		"initialSize": 3816,
 		"inputAbbreviatedPath": "\/img\/divider.png",
 		"outputAbbreviatedPath": "\/img\/divider.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -127,6 +139,7 @@
 		"initialSize": 3132,
 		"inputAbbreviatedPath": "\/img\/ebook-devices\/android.png",
 		"outputAbbreviatedPath": "\/img\/ebook-devices\/android.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -137,6 +150,7 @@
 		"initialSize": 3930,
 		"inputAbbreviatedPath": "\/img\/ebook-devices\/ipad.png",
 		"outputAbbreviatedPath": "\/img\/ebook-devices\/ipad.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -147,6 +161,7 @@
 		"initialSize": 5107,
 		"inputAbbreviatedPath": "\/img\/ebook-devices\/iphone.png",
 		"outputAbbreviatedPath": "\/img\/ebook-devices\/iphone.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -157,6 +172,7 @@
 		"initialSize": 2846,
 		"inputAbbreviatedPath": "\/img\/ebook-devices\/kindle2.png",
 		"outputAbbreviatedPath": "\/img\/ebook-devices\/kindle2.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -167,6 +183,7 @@
 		"initialSize": 2483,
 		"inputAbbreviatedPath": "\/img\/ebook-devices\/kindle3.png",
 		"outputAbbreviatedPath": "\/img\/ebook-devices\/kindle3.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -177,6 +194,7 @@
 		"initialSize": 4724,
 		"inputAbbreviatedPath": "\/img\/ebook-devices\/kobo.png",
 		"outputAbbreviatedPath": "\/img\/ebook-devices\/kobo.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -187,6 +205,7 @@
 		"initialSize": 6216,
 		"inputAbbreviatedPath": "\/img\/ebook-devices\/pc.png",
 		"outputAbbreviatedPath": "\/img\/ebook-devices\/pc.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -197,6 +216,7 @@
 		"initialSize": 10940,
 		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/epub.png",
 		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/epub.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -207,6 +227,7 @@
 		"initialSize": 7661,
 		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/mov.png",
 		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/mov.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -217,6 +238,7 @@
 		"initialSize": 6844,
 		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/pdf.png",
 		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/pdf.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -227,6 +249,7 @@
 		"initialSize": 5657,
 		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/zip.png",
 		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/zip.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -237,6 +260,7 @@
 		"initialSize": 75048,
 		"inputAbbreviatedPath": "\/img\/facebook-top.jpg",
 		"outputAbbreviatedPath": "\/img\/facebook-top.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -247,6 +271,7 @@
 		"initialSize": 1080,
 		"inputAbbreviatedPath": "\/img\/fancybox\/fancybox_buttons.png",
 		"outputAbbreviatedPath": "\/img\/fancybox\/fancybox_buttons.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -257,6 +282,7 @@
 		"initialSize": 1003,
 		"inputAbbreviatedPath": "\/img\/fancybox\/fancybox_overlay.png",
 		"outputAbbreviatedPath": "\/img\/fancybox\/fancybox_overlay.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -267,6 +293,7 @@
 		"initialSize": 1362,
 		"inputAbbreviatedPath": "\/img\/fancybox\/fancybox_sprite.png",
 		"outputAbbreviatedPath": "\/img\/fancybox\/fancybox_sprite.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -277,6 +304,7 @@
 		"initialSize": 3965,
 		"inputAbbreviatedPath": "\/img\/favicon\/favicon.png",
 		"outputAbbreviatedPath": "\/img\/favicon\/favicon.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -287,6 +315,7 @@
 		"initialSize": 12085,
 		"inputAbbreviatedPath": "\/img\/favicon\/faviconx120.png",
 		"outputAbbreviatedPath": "\/img\/favicon\/faviconx120.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -297,6 +326,7 @@
 		"initialSize": 2650,
 		"inputAbbreviatedPath": "\/img\/favicon\/faviconx144.png",
 		"outputAbbreviatedPath": "\/img\/favicon\/faviconx144.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -307,6 +337,7 @@
 		"initialSize": 26218,
 		"inputAbbreviatedPath": "\/img\/favicon\/faviconx512.jpg",
 		"outputAbbreviatedPath": "\/img\/favicon\/faviconx512.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -317,6 +348,7 @@
 		"initialSize": 12546,
 		"inputAbbreviatedPath": "\/img\/favicon\/faviconx512.png",
 		"outputAbbreviatedPath": "\/img\/favicon\/faviconx512.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -327,6 +359,7 @@
 		"initialSize": 42916,
 		"inputAbbreviatedPath": "\/img\/favicon\/logox1024.png",
 		"outputAbbreviatedPath": "\/img\/favicon\/logox1024.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -337,6 +370,7 @@
 		"initialSize": 3814,
 		"inputAbbreviatedPath": "\/img\/footer-devider.png",
 		"outputAbbreviatedPath": "\/img\/footer-devider.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -347,6 +381,7 @@
 		"initialSize": 370,
 		"inputAbbreviatedPath": "\/img\/footer-hariline.png",
 		"outputAbbreviatedPath": "\/img\/footer-hariline.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -357,6 +392,7 @@
 		"initialSize": 37445,
 		"inputAbbreviatedPath": "\/img\/front-page\/history.jpg",
 		"outputAbbreviatedPath": "\/img\/front-page\/history.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -367,6 +403,7 @@
 		"initialSize": 131378,
 		"inputAbbreviatedPath": "\/img\/front-page\/history@2x.jpg",
 		"outputAbbreviatedPath": "\/img\/front-page\/history@2x.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -377,6 +414,7 @@
 		"initialSize": 8651,
 		"inputAbbreviatedPath": "\/img\/google-oauth.png",
 		"outputAbbreviatedPath": "\/img\/google-oauth.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -387,6 +425,7 @@
 		"initialSize": 7477,
 		"inputAbbreviatedPath": "\/img\/header-logo-big.png",
 		"outputAbbreviatedPath": "\/img\/header-logo-big.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -397,6 +436,7 @@
 		"initialSize": 6552,
 		"inputAbbreviatedPath": "\/img\/header-logo.png",
 		"outputAbbreviatedPath": "\/img\/header-logo.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -407,6 +447,7 @@
 		"initialSize": 2612,
 		"inputAbbreviatedPath": "\/img\/home.png",
 		"outputAbbreviatedPath": "\/img\/home.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -417,6 +458,7 @@
 		"initialSize": 3572,
 		"inputAbbreviatedPath": "\/img\/icon-accepted.png",
 		"outputAbbreviatedPath": "\/img\/icon-accepted.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -427,6 +469,7 @@
 		"initialSize": 4453,
 		"inputAbbreviatedPath": "\/img\/icon-accepted_32.png",
 		"outputAbbreviatedPath": "\/img\/icon-accepted_32.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -437,6 +480,7 @@
 		"initialSize": 656,
 		"inputAbbreviatedPath": "\/img\/icon-arrow-right.png",
 		"outputAbbreviatedPath": "\/img\/icon-arrow-right.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -447,6 +491,7 @@
 		"initialSize": 3202,
 		"inputAbbreviatedPath": "\/img\/icon-arrow.png",
 		"outputAbbreviatedPath": "\/img\/icon-arrow.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -457,6 +502,7 @@
 		"initialSize": 5581,
 		"inputAbbreviatedPath": "\/img\/icon-calendar.png",
 		"outputAbbreviatedPath": "\/img\/icon-calendar.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -467,6 +513,7 @@
 		"initialSize": 7201,
 		"inputAbbreviatedPath": "\/img\/icon-facebook.png",
 		"outputAbbreviatedPath": "\/img\/icon-facebook.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -477,6 +524,7 @@
 		"initialSize": 1883,
 		"inputAbbreviatedPath": "\/img\/icon-free-32.png",
 		"outputAbbreviatedPath": "\/img\/icon-free-32.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -487,6 +535,7 @@
 		"initialSize": 3325,
 		"inputAbbreviatedPath": "\/img\/icon-notice.png",
 		"outputAbbreviatedPath": "\/img\/icon-notice.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -497,6 +546,7 @@
 		"initialSize": 3854,
 		"inputAbbreviatedPath": "\/img\/icon-notice_32.png",
 		"outputAbbreviatedPath": "\/img\/icon-notice_32.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -507,6 +557,7 @@
 		"initialSize": 1930,
 		"inputAbbreviatedPath": "\/img\/icon-sale-32.png",
 		"outputAbbreviatedPath": "\/img\/icon-sale-32.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -517,6 +568,7 @@
 		"initialSize": 3606,
 		"inputAbbreviatedPath": "\/img\/icon-sale-48.png",
 		"outputAbbreviatedPath": "\/img\/icon-sale-48.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -527,6 +579,7 @@
 		"initialSize": 647,
 		"inputAbbreviatedPath": "\/img\/icon-search.png",
 		"outputAbbreviatedPath": "\/img\/icon-search.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -537,6 +590,7 @@
 		"initialSize": 850,
 		"inputAbbreviatedPath": "\/img\/icon-trackback.png",
 		"outputAbbreviatedPath": "\/img\/icon-trackback.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -547,6 +601,7 @@
 		"initialSize": 56223,
 		"inputAbbreviatedPath": "\/img\/icon-ustream.jpg",
 		"outputAbbreviatedPath": "\/img\/icon-ustream.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -557,6 +612,7 @@
 		"initialSize": 3386,
 		"inputAbbreviatedPath": "\/img\/icon-warning.png",
 		"outputAbbreviatedPath": "\/img\/icon-warning.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -567,6 +623,7 @@
 		"initialSize": 4126,
 		"inputAbbreviatedPath": "\/img\/icon-warning_32.png",
 		"outputAbbreviatedPath": "\/img\/icon-warning_32.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -577,6 +634,7 @@
 		"initialSize": 9223,
 		"inputAbbreviatedPath": "\/img\/linebutton_36x60.png",
 		"outputAbbreviatedPath": "\/img\/linebutton_36x60.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -587,6 +645,7 @@
 		"initialSize": 2151,
 		"inputAbbreviatedPath": "\/img\/logo-adminbar.png",
 		"outputAbbreviatedPath": "\/img\/logo-adminbar.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -597,6 +656,7 @@
 		"initialSize": 64608,
 		"inputAbbreviatedPath": "\/img\/logo-front-page.png",
 		"outputAbbreviatedPath": "\/img\/logo-front-page.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -607,6 +667,7 @@
 		"initialSize": 9328,
 		"inputAbbreviatedPath": "\/img\/meta-icons-2.png",
 		"outputAbbreviatedPath": "\/img\/meta-icons-2.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -617,6 +678,7 @@
 		"initialSize": 11554,
 		"inputAbbreviatedPath": "\/img\/meta-icons.png",
 		"outputAbbreviatedPath": "\/img\/meta-icons.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -627,6 +689,7 @@
 		"initialSize": 3630,
 		"inputAbbreviatedPath": "\/img\/mxi-top.jpg",
 		"outputAbbreviatedPath": "\/img\/mxi-top.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -637,6 +700,7 @@
 		"initialSize": 4457,
 		"inputAbbreviatedPath": "\/img\/mxi-top.png",
 		"outputAbbreviatedPath": "\/img\/mxi-top.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -647,6 +711,7 @@
 		"initialSize": 3755,
 		"inputAbbreviatedPath": "\/img\/retina-icon-download.png",
 		"outputAbbreviatedPath": "\/img\/retina-icon-download.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -657,6 +722,7 @@
 		"initialSize": 2037,
 		"inputAbbreviatedPath": "\/img\/RSS-container.png",
 		"outputAbbreviatedPath": "\/img\/RSS-container.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -667,6 +733,7 @@
 		"initialSize": 15167,
 		"inputAbbreviatedPath": "\/img\/social-icons-2.png",
 		"outputAbbreviatedPath": "\/img\/social-icons-2.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -677,6 +744,7 @@
 		"initialSize": 6820,
 		"inputAbbreviatedPath": "\/img\/social-icons.png",
 		"outputAbbreviatedPath": "\/img\/social-icons.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -687,6 +755,7 @@
 		"initialSize": 3405,
 		"inputAbbreviatedPath": "\/img\/start-up.png",
 		"outputAbbreviatedPath": "\/img\/start-up.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -697,6 +766,7 @@
 		"initialSize": 17893,
 		"inputAbbreviatedPath": "\/img\/top-bg-face.png",
 		"outputAbbreviatedPath": "\/img\/top-bg-face.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -707,6 +777,7 @@
 		"initialSize": 5017,
 		"inputAbbreviatedPath": "\/img\/wpnav-icons.png",
 		"outputAbbreviatedPath": "\/img\/wpnav-icons.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -716,6 +787,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/includes\/ga.js",
 		"outputAbbreviatedPath": "\/js\/includes\/min\/ga-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -726,6 +798,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/jquery.fancybox-buttons.js",
 		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-buttons-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -736,6 +809,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/jquery.fancybox-ck.js",
 		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-ck-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -746,6 +820,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/jquery.fancybox-thumbs.js",
 		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-thumbs-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -756,6 +831,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/jquery.fancybox.js",
 		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -766,6 +842,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/onload-ck.js",
 		"outputAbbreviatedPath": "\/js\/min\/onload-ck-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -776,6 +853,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/onload.js",
 		"outputAbbreviatedPath": "\/js\/min\/onload-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -786,6 +864,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/onload.min.js",
 		"outputAbbreviatedPath": "\/js\/min\/onload.min-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -799,6 +878,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_account.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_account.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -814,6 +894,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_affiliate.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_affiliate.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -829,6 +910,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_archive.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_archive.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -844,6 +926,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_components.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_components.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -859,6 +942,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_footer.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_footer.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -874,6 +958,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_front_page.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_front_page.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -889,6 +974,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_layout.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_layout.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -904,6 +990,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_lwp.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_lwp.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -919,6 +1006,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_navigation.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_navigation.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -934,6 +1022,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_netabare.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_netabare.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -949,6 +1038,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_post_style.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_post_style.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -964,6 +1054,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_quotes.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_quotes.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -979,6 +1070,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_settings.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_settings.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -994,6 +1086,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_sidebar.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_sidebar.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1009,6 +1102,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_single.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_single.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1024,19 +1118,12 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/_smartphone.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/_smartphone.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
-		},
-	"\/sass\/core.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/sass\/core.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
 		},
 	"\/sass\/core.scss": {
 		"createSourceMap": 0,
@@ -1047,6 +1134,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/core.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/core.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1062,6 +1150,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/editor-style.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/editor-style.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1077,6 +1166,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/facebook.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/facebook.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1092,6 +1182,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/fancybox.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/fancybox.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1107,6 +1198,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/ie.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/ie.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1122,6 +1214,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/print.scss",
 		"outputAbbreviatedPath": "\/stylesheets\/print.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1134,6 +1227,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/stylesheets\/core.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/stylesheets\/editor-style.css": {
@@ -1142,6 +1236,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/stylesheets\/editor-style.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/stylesheets\/facebook.css": {
@@ -1150,6 +1245,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/stylesheets\/facebook.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/stylesheets\/fancybox.css": {
@@ -1158,6 +1254,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/stylesheets\/fancybox.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/stylesheets\/ie.css": {
@@ -1166,6 +1263,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/stylesheets\/ie.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/stylesheets\/print.css": {
@@ -1174,6 +1272,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/stylesheets\/print.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		}
 	},
@@ -1181,14 +1280,6 @@
 	],
 "lastSavedByUser": "高橋 文樹",
 "manualImportLinks": {
-	"\/js\/onload.js": [
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/includes\/ga.js",
-			"position": 0,
-			"type": 0
-			}
-		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",

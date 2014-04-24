@@ -29,7 +29,7 @@
 		<div class="box grid_2 no_shadow">
 			<div class="about">
 				<h2>
-					<i class="fa-flag"></i>About
+					<i class="fa-flag"></i>About me
 				</h2>
 				<p>
 					<? bloginfo('description'); ?><br />
