@@ -1,5 +1,3 @@
-<? if(wp_is_mobile()) return ?>
-
 <div class="desc-box clearfix">
 	<? if(is_singular('ebook') || is_post_type_archive('ebook')) dynamic_sidebar('電子書籍');  ?>
 

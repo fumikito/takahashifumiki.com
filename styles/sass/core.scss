@@ -3,12 +3,14 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+
 @import "compass/reset";
 @import "compass/utilities/general/clearfix";
 @import "compass/css3";
 @import "compass/typography/text/ellipsis";
 @import "_settings";
 @import "_components";
+@import 'quotes';
 @import "_post_style";
 @import "_navigation";
 @import "_archive";
@@ -21,9 +23,6 @@
 @import "_front_page";
 @import '_affiliate';
 @import '_netabare';
-
-
-
 
 
 /****************************************
@@ -414,100 +413,7 @@ body.single-events{
  ****************************************/
 
 
-/****************************************
- * 7.アカウント設定
- ****************************************/
-/*プラグインのCSSを打ち消し*/
-body.login{
-	padding:0;
-	#submit{margin:0;}
-}
-
-
-/*メイン*/
-.login form p.submit input.button,
-#nlmg-resign-form p.submit input{
-	font-size: 20px;
-	cursor: pointer;
-}
-/*フォームパーツ*/
-.login form{
-	textarea{
-		resize: vertical;
-		width: 90%;
-		display: block;
-		padding: 5px 10px;
-		font-size: 20px;
-	}
-	select{
-		font-size: 20px;
-	}
-	select option{
-		font-size: 20px;
-	}
-	p{
-		clear: left;
-		label{
-			padding: 3px 0 5px;
-			font-weight: bold;
-			display: block;
-			width: 250px;
-			float: left;
-		}
-		&.forgetmenot label{
-			float: none;
-			width: auto;
-		}
-	}
-}
-.form-table .description{
-	display: block;
-	margin: 1em 0;
-	color: #999;
-	clear: both;
-}
-.login p input.input{
-	font-size:20px;
-	padding:5px 10px;
-	width:300px;
-}
-/* OAuth */
-#wpg-login,
-#wpg-register,
-#wpg-regsiter{
-	text-align: center;
-}
-.login p.notice {
-	color: #05A;
-	border: 1px solid #06C;
-	background-color: #9FC9F4;
-	padding-left: 42px;
-}
-/* リンク */
-.login .tml-action-links{
-	padding-left:0;
-	li{
-		color: #252e34;
-		display: inline-table;
-		font-size:12px;
-		line-height: 24px;
-		height:24px;
-		margin:0 5px 0 10px;
-		background: url('../img/meta-icons-2.png') left -192px no-repeat;
-		padding-left:28px;
-		&:first-child{
-			background-position: left -168px;
-		}
-	}
-}
-
-
-/****************************************
- * アカウント設定終わり
- ****************************************/
- 
-
-
+@import "account";
 
 
 

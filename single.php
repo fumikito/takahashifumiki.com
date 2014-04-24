@@ -49,7 +49,7 @@ get_header('title');
 
 		<? if(is_singular('post') && is_expired_post()): ?>
 			<p id="outdated-post" class="message warning">
-				この投稿は<?= get_outdate_string(); ?>の記事です。情報が<a href="#">古く</a>なっている可能性があるので、その点ご了承ください。
+				この投稿は<?= get_outdate_string(); ?>の記事です。情報が古くなっている可能性があるので、その点ご了承ください。
 			</p>
 		<? endif; ?>
 		<article class="entry clearfix">

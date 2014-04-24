@@ -93,14 +93,27 @@ class Analytics extends Pattern\Singleton
  	 * Print timer for GA time tracking
 	 */
 	public function print_timer(){
+        $hit = false;
+        // Webフォントの読み込みを次のページだけランダムにする
+        foreach( ( false === strpos(home_url('/', 'http'), '.com') ? array(2173, 2864, 2876) : array(1266, 1403, 2173)) as $post_id){
+            if( is_single($post_id) ){
+                $hit = true;
+            }
+        }
 		?>
-		<script type="text/javascript">
+
+		<script>
 			GAM = window.GAM || {};
 			GAM.start = new Date();
 			GAM.getTime = function(){
 				return Math.round(new Date() - this.start);
-			}
-		</script>
+			};
+            <?php if($hit): ?>
+            GAM.webFont =  (Math.random() <= 0.5);
+            <?php else: ?>
+            GAM.webFont = true;
+            <?php endif; ?>
+        </script>
 		<?php
 	}
 
@@ -127,6 +140,37 @@ class Analytics extends Pattern\Singleton
 				}
 				<? endif; ?>
 			);
+            <?php
+                // ページ種別を出力
+                if( is_front_page() ){
+                    $page_type = 'front';
+                }else if( is_home() ){
+                    $page_type = 'home';
+                }else if( is_post_type_archive() ){
+                    $page_type = get_post_type().'-archive';
+                }else if( is_singular() ){
+                    $page_type = get_post_type();
+                }else if( is_category() ){
+                    $page_type = 'category';
+                }else if( is_tag() ){
+                    $page_type = 'tag';
+                }else if( is_tax() ){
+                    $taxonomies = get_taxonomies();
+                    $page_type = 'taxonomy';
+                    foreach( $taxonomies as $tax ){
+                        if( is_tax($tax) ){
+                            $page_type = $tax;
+                            break;
+                        }
+                    }
+                }else if( is_search() ){
+                    $page_type = 'search';
+                }else{
+                    $page_type = 'undefined';
+                }
+            ?>
+            ga('set', 'dimension3', '<?= esc_js($page_type) ?>');
+            ga('set', 'dimension2', (GAM.webFont ? 'With Web Font' : 'No Web Font'));
 			ga('set', 'dimension1', '<?= esc_js($this->user_role()) ?>');
 			ga('require', 'linkid', 'linkid.js');
 			ga('send', 'pageview');
@@ -140,6 +184,7 @@ class Analytics extends Pattern\Singleton
 	 */
 	public function print_footer(){
 		?>
+
 		<script type="text/javascript">
 			try{
 				ga('send', {
@@ -150,7 +195,7 @@ class Analytics extends Pattern\Singleton
 					eventValue: <?= round(1000 * $this->passed_time()); ?>,
 					nonInteraction: true
 				});
-			}catch(e){};
+			}catch(err){}
 		</script>
 		<?php
 	}
@@ -206,7 +251,10 @@ class Analytics extends Pattern\Singleton
 		}elseif($wp_query->is_404()){
 			$action = '404';
 			$label = '';
-		}
+		}else{
+            $action = 'undefined';
+            $label = '';
+        }
 		$this->page_action = $action;
 		$this->page_label = $label;
 	}

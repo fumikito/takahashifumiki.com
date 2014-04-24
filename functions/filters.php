@@ -21,9 +21,31 @@ function _fumiki_meta_title($title, $sep = '|', $seplocation = 'right'){
 	}elseif(is_post_type_archive('events')){
 		$title = 'イベント一覧 '.$sep." ";
 	}
+    global $wp_query;
+    if( ($quote = $wp_query->get('quote')) ){
+        if( 'all' == $quote ){
+            $title = '好きな言葉 '.$sep." ";
+        }else{
+            $title .= '引用 '.$sep." ";
+        }
+    }
 	return $title;
 }
 add_filter('wp_title', '_fumiki_meta_title');
+
+/**
+ * Nginx Cache ControllerのURLを変更
+ *
+ * @filter nginxchampuru_get_reverse_proxy_key
+ * @param string $url
+ * @return string
+ */
+add_filter('nginxchampuru_get_reverse_proxy_key', function($url){
+    $mobile =  (int)wp_is_mobile();
+    $url_key = preg_replace('/(https?:)\/\//u', '$1//'.$mobile.'.', $url);
+    return md5($url_key);
+});
+
 
 /**
  * プロフィール編集画面にコンタクトフィールドを追加する
@@ -50,8 +72,9 @@ add_filter('user_contactmethods','_fumiki_profile_fields',11,1);
 
 /**
  * スマートフォンの場合、クラスを付加する
+ *
  * @param array $classes
- * @return arrary
+ * @return array
  */
 function _fumiki_smartphone($classes){
 	if(is_smartphone()){
@@ -89,6 +112,7 @@ function _fumiki_rewrite($wp_rewrite){
 
 /**
  * SSLのコンテンツが表示されているときにsrcなどを修正する
+ *
  * @param string $content
  * @return string 
  */
@@ -108,6 +132,7 @@ add_filter('the_content', '_fumiki_ssl_content');
 
 /**
  * SSLページですべてのリンクがHTTPSになってしまうのを修正する
+ *
  * @param string $url
  * @param string $path
  * @param string $orig_scheme
@@ -123,6 +148,7 @@ add_filter('home_url', '_fumiki_home_url', 10, 2);
 
 /**
  * SSLが指定されている場合はURLを返す
+ *
  * @param string $url
  * @return string
  */
@@ -139,6 +165,7 @@ add_filter('logout_redirect', '_fumiki_login_ssl');
 
 /**
  * Theme My Loginが出力する管理画面へのURLをSSLにする
+ *
  * @param string $url
  * @param string $action
  * @param int|string $instance
@@ -168,6 +195,7 @@ add_filter('tml_action_url', '_fumiki_admin_ssl');
 
 /**
  * Theme My LoginがSSLにリダイレクトしてくれないのをなんとかする
+ *
  * @param string $link
  * @param string $query
  * @return string
@@ -182,6 +210,7 @@ add_filter('tml_page_link', '_fumiki_login_link');
 
 /**
  * Disqusのスクリプトが関係ないところにも読み込まれるのを防止
+ *
  * @return void
  */
 function _fumiki_remove_disqus(){
@@ -193,6 +222,7 @@ add_action('wp_footer', '_fumiki_remove_disqus', 1);
 
 /**
  * キャプチャがSSL対応になっていないので直す
+ *
  * @param array $dir
  * @return array 
  */
@@ -206,6 +236,7 @@ add_filter('wpcf7_upload_dir', '_fumiki_simplecaptch_override');
 
 /**
  * テーマディレクトリのURLをCDN対応にする
+ *
  * @param string $url
  * @return string
  */
@@ -220,8 +251,9 @@ add_filter('stylesheet_directory_uri', '_fumiki_static_url');
 
 /**
  * wp_enqueue_scriptで読み込まれたJavascriptのSRC属性をCDN対応
- * @param type $src
- * @return type 
+ *
+ * @param string $src
+ * @return string
  */
 function _fumiki_script_loader_src($src){
 	$home_url = home_url();
@@ -234,6 +266,7 @@ add_filter('script_loader_src', '_fumiki_script_loader_src');
 
 /**
  * CSSのURLを書き換える
+ *
  * @param string $tag
  * @return string
  */
@@ -252,8 +285,8 @@ add_filter('style_loader_tag', '_fumiki_style_loader_tag');
 
 /**
  * wp_attachment imageのSRCを置換
+ *
  * @param array $atts
- * @param object $attachment
  * @return array
  */
 function _fumiki_attachment_image_atts($atts){
@@ -270,6 +303,7 @@ add_filter('wp_get_attachment_image_attributes', '_fumiki_attachment_image_atts'
 
 /**
  * get_atachment_urlのURLを変更
+ *
  * @param string $url
  * @return string
  */
@@ -283,6 +317,7 @@ function _fmiki_attachment_url($url){
 
 /**
  * Image Widgetが出す画像をコントロール
+ *
  * @param string $url
  * @param array $args
  * @param array $instance
@@ -313,7 +348,9 @@ add_action('template_redirect', '_fumiki_wp_redirect', 1);
 
 /**
  * AjaxのURLを現在のスキームにあわせる
+ *
  * @param string $url
+ * @param string $path
  * @return string
  */
 function _fumiki_ajax_url($url, $path = ''){

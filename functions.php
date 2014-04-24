@@ -8,7 +8,6 @@
  */
 define("FUMIKI_VERSION", "4.0.10");
 
-
 /**
  * テーマのバージョンを返す
  * @return string
@@ -59,6 +58,7 @@ get_template_part("functions/nlp");
 get_template_part("functions/lwp");
 get_template_part("functions/tinymce");
 get_template_part("functions/feed");
+get_template_part("functions/quotes");
 
 /*
 get_template_part('functions/wp-fulltext-search');

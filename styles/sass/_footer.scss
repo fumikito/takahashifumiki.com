@@ -322,3 +322,9 @@ footer{
 	background: url('../img/icon-ustream.jpg') left top no-repeat;
 	@include box-shadow(0 0 5px #666);
 }
+
+// ユーザーローカルが謎の余白を有無
+body > a{
+  display: block;
+  height: 0;
+}

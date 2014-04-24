@@ -82,15 +82,12 @@
 	/* ヘッダー */
 	.header{
 		.title{
-			padding: 50px 10px;
+			padding: 30px 10px 30px;
 			font-size: 3em;
-			font-weight: bold;
 		}
 		.title-meta{
 			padding-right: 0;
 			padding-left: 0;
-			padding-bottom: 0;
-			margin-bottom: 0;
 			.google{
 				width: auto;
 				float: none;
@@ -103,16 +100,16 @@
 			}
 		}
 		.calendar{
-			height: 50px;
-			width: 60px;
-			@include background-size(60px 50px);
-			.date{
-				padding-top: 0.5em;
-				font-size: 1em;
-			}
-			.year{
-				font-size: 1.2em;
-			}
+          height: 60px;
+          width: 80px;
+          padding-top: 20px;
+          .date{
+              padding-top: 0.5em;
+              font-size: 1em;
+          }
+          .year{
+              font-size: 1.2em;
+          }
 		}
 		.excerpt{
 			padding: 10px 10px 20px;

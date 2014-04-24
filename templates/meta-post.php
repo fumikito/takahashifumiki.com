@@ -1,27 +1,35 @@
-<table class="title-meta">
-	<tbody>
-		<tr>
-			<th><i class="fa-font"></i>文字数</th>
-			<td>
-				<?php $length = fumiki_content_length(); ?>
-				<span class="mono"><?php echo number_format($length); ?></span>文字
-			</td>
-			<th><i class="fa-tachometer"></i>所要時間</th>
-			<td>
-				およそ<span class="mono"><?php echo floor($length / 400); ?></span>分
-			</td>
-			<th><i class="fa-calendar"></i>経過時間</th>
-			<td><?php the_expiration_info(); ?></td>
-			<th><i class="fa-edit"></i>最終更新日時</th>
-			<td><?php the_modified_date();?></td>
-		</tr>
-		<tr>
-			<th><i class="fa-comments"></i>フィードバック</th>
-			<td><span class="mono"><?php echo comments_number('0件', "1件", '%件'); ?></span></td>
-			<th><i class="fa-folder-open"></i>カテゴリー</th>
-			<td><?php the_category(', '); ?></td>
-			<th><i class="fa-tags"></i>タグ</th>
-			<td colspan="3"><?php the_tags('', ', '); ?></td>
-		</tr>
-	</tbody>
-</table>
+<?
+    $length = fumiki_content_length();
+    $tag_list = 'なし';
+    if( ($tags = get_the_tags()) ){
+        $terms = array();
+        foreach($tags as $tag){
+            $terms[] = sprintf('<a rel="tag" href="%s">%s</a>', get_tag_link($tag), esc_html($tag->name));
+        }
+        $tag_list = implode(', ', $terms);
+    }
+?>
+<ul class="title-meta">
+    <li>
+        <span class="label"><i class="fa-calendar"></i></span>
+        <?php the_date() ?>
+        <?php the_expiration_info(); ?>
+    </li>
+    <li>
+        <span class="label"><i class="fa-tachometer"></i></span>
+        <span class="mono"><?= number_format($length); ?></span>文字
+        （所要時間<?= floor($length / 400); ?>分）
+    </li>
+    <li>
+        <span class="label"><i class="fa-comments"></i></span>
+        <span class="mono"><?php comments_number('0件', "1件", '%件'); ?></span>
+    </li>
+    <li>
+        <span class="label"><i class="fa-folder-open"></i></span>
+        <?php the_category(', '); ?>
+    </li>
+    <li>
+        <span class="label"><i class="fa-tags"></i></span>
+        <?= $tag_list ?>
+    </li>
+</ul>

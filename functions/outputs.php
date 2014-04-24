@@ -483,10 +483,7 @@ EOS;
  */
 function the_expiration_info($post = null){
 	$date_diff = get_outdated_days($post);
-	if($date_diff > 365 && !is_page()){
-		echo get_outdate_string($post).'前</strong>';
-	}
-	echo '<span class="mono">'.number_format($date_diff).'</span>日経過';
+	echo '（<span class="mono">'.number_format($date_diff).'</span>日前）';
 }
 
 /**
@@ -605,7 +602,7 @@ function get_hatena_count($item){
  * @return array
  */
 function get_twitter_timeline($count = 20, $screen_name = 'takahashifumiki'){
-	if(!function_exists('twitter_get_timeline')){
+    if(!function_exists('twitter_get_timeline')){
 		return false;
 	}
 	$transient_name = "twitter_public_timeline_{$screen_name}_{$count}";

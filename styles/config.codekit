@@ -1,0 +1,1941 @@
+{
+"CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
+"creatorBuild": "16844",
+"files": {
+	"\/config.rb": {
+		"fileType": 131072,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/config.rb",
+		"outputAbbreviatedPath": "\/config.rb",
+		"outputPathIsSetByUser": 0
+		},
+	"\/img\/archive-icons.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 584,
+		"inputAbbreviatedPath": "\/img\/archive-icons.png",
+		"outputAbbreviatedPath": "\/img\/archive-icons.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/archive_box_bg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 105,
+		"inputAbbreviatedPath": "\/img\/archive_box_bg.png",
+		"outputAbbreviatedPath": "\/img\/archive_box_bg.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/archive_icon_tag.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 559,
+		"inputAbbreviatedPath": "\/img\/archive_icon_tag.png",
+		"outputAbbreviatedPath": "\/img\/archive_icon_tag.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/archive_nophoto_ebook.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2437,
+		"inputAbbreviatedPath": "\/img\/archive_nophoto_ebook.png",
+		"outputAbbreviatedPath": "\/img\/archive_nophoto_ebook.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/bg-texture-dark.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12027,
+		"inputAbbreviatedPath": "\/img\/bg-texture-dark.jpg",
+		"outputAbbreviatedPath": "\/img\/bg-texture-dark.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/bg-texture-gray.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11508,
+		"inputAbbreviatedPath": "\/img\/bg-texture-gray.jpg",
+		"outputAbbreviatedPath": "\/img\/bg-texture-gray.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/bg-texture-white.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19411,
+		"inputAbbreviatedPath": "\/img\/bg-texture-white.jpg",
+		"outputAbbreviatedPath": "\/img\/bg-texture-white.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/btn-buynow.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5713,
+		"inputAbbreviatedPath": "\/img\/btn-buynow.png",
+		"outputAbbreviatedPath": "\/img\/btn-buynow.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/container-feedly.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2646,
+		"inputAbbreviatedPath": "\/img\/container-feedly.png",
+		"outputAbbreviatedPath": "\/img\/container-feedly.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/content-footernote.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2145,
+		"inputAbbreviatedPath": "\/img\/content-footernote.png",
+		"outputAbbreviatedPath": "\/img\/content-footernote.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/divider.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3816,
+		"inputAbbreviatedPath": "\/img\/divider.png",
+		"outputAbbreviatedPath": "\/img\/divider.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-devices\/android.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3132,
+		"inputAbbreviatedPath": "\/img\/ebook-devices\/android.png",
+		"outputAbbreviatedPath": "\/img\/ebook-devices\/android.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-devices\/ipad.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3930,
+		"inputAbbreviatedPath": "\/img\/ebook-devices\/ipad.png",
+		"outputAbbreviatedPath": "\/img\/ebook-devices\/ipad.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-devices\/iphone.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5107,
+		"inputAbbreviatedPath": "\/img\/ebook-devices\/iphone.png",
+		"outputAbbreviatedPath": "\/img\/ebook-devices\/iphone.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-devices\/kindle2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2846,
+		"inputAbbreviatedPath": "\/img\/ebook-devices\/kindle2.png",
+		"outputAbbreviatedPath": "\/img\/ebook-devices\/kindle2.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-devices\/kindle3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2483,
+		"inputAbbreviatedPath": "\/img\/ebook-devices\/kindle3.png",
+		"outputAbbreviatedPath": "\/img\/ebook-devices\/kindle3.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-devices\/kobo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4724,
+		"inputAbbreviatedPath": "\/img\/ebook-devices\/kobo.png",
+		"outputAbbreviatedPath": "\/img\/ebook-devices\/kobo.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-devices\/pc.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6216,
+		"inputAbbreviatedPath": "\/img\/ebook-devices\/pc.png",
+		"outputAbbreviatedPath": "\/img\/ebook-devices\/pc.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-filetypes\/epub.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10940,
+		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/epub.png",
+		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/epub.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-filetypes\/mov.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7661,
+		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/mov.png",
+		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/mov.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-filetypes\/pdf.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6844,
+		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/pdf.png",
+		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/pdf.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ebook-filetypes\/zip.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5657,
+		"inputAbbreviatedPath": "\/img\/ebook-filetypes\/zip.png",
+		"outputAbbreviatedPath": "\/img\/ebook-filetypes\/zip.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/facebook-top.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 75048,
+		"inputAbbreviatedPath": "\/img\/facebook-top.jpg",
+		"outputAbbreviatedPath": "\/img\/facebook-top.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/fancybox\/fancybox_buttons.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1080,
+		"inputAbbreviatedPath": "\/img\/fancybox\/fancybox_buttons.png",
+		"outputAbbreviatedPath": "\/img\/fancybox\/fancybox_buttons.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/fancybox\/fancybox_overlay.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1003,
+		"inputAbbreviatedPath": "\/img\/fancybox\/fancybox_overlay.png",
+		"outputAbbreviatedPath": "\/img\/fancybox\/fancybox_overlay.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/fancybox\/fancybox_sprite.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1362,
+		"inputAbbreviatedPath": "\/img\/fancybox\/fancybox_sprite.png",
+		"outputAbbreviatedPath": "\/img\/fancybox\/fancybox_sprite.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/favicon\/favicon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3965,
+		"inputAbbreviatedPath": "\/img\/favicon\/favicon.png",
+		"outputAbbreviatedPath": "\/img\/favicon\/favicon.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/favicon\/faviconx120.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12085,
+		"inputAbbreviatedPath": "\/img\/favicon\/faviconx120.png",
+		"outputAbbreviatedPath": "\/img\/favicon\/faviconx120.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/favicon\/faviconx144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2650,
+		"inputAbbreviatedPath": "\/img\/favicon\/faviconx144.png",
+		"outputAbbreviatedPath": "\/img\/favicon\/faviconx144.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/favicon\/faviconx512.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26218,
+		"inputAbbreviatedPath": "\/img\/favicon\/faviconx512.jpg",
+		"outputAbbreviatedPath": "\/img\/favicon\/faviconx512.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/favicon\/faviconx512.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12546,
+		"inputAbbreviatedPath": "\/img\/favicon\/faviconx512.png",
+		"outputAbbreviatedPath": "\/img\/favicon\/faviconx512.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/favicon\/logox1024.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42916,
+		"inputAbbreviatedPath": "\/img\/favicon\/logox1024.png",
+		"outputAbbreviatedPath": "\/img\/favicon\/logox1024.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/footer-devider.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3814,
+		"inputAbbreviatedPath": "\/img\/footer-devider.png",
+		"outputAbbreviatedPath": "\/img\/footer-devider.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/footer-hariline.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 370,
+		"inputAbbreviatedPath": "\/img\/footer-hariline.png",
+		"outputAbbreviatedPath": "\/img\/footer-hariline.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/front-page\/history.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37445,
+		"inputAbbreviatedPath": "\/img\/front-page\/history.jpg",
+		"outputAbbreviatedPath": "\/img\/front-page\/history.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/front-page\/history@2x.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 131378,
+		"inputAbbreviatedPath": "\/img\/front-page\/history@2x.jpg",
+		"outputAbbreviatedPath": "\/img\/front-page\/history@2x.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/google-oauth.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8651,
+		"inputAbbreviatedPath": "\/img\/google-oauth.png",
+		"outputAbbreviatedPath": "\/img\/google-oauth.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/header-logo-big.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7477,
+		"inputAbbreviatedPath": "\/img\/header-logo-big.png",
+		"outputAbbreviatedPath": "\/img\/header-logo-big.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/header-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6552,
+		"inputAbbreviatedPath": "\/img\/header-logo.png",
+		"outputAbbreviatedPath": "\/img\/header-logo.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/home.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2612,
+		"inputAbbreviatedPath": "\/img\/home.png",
+		"outputAbbreviatedPath": "\/img\/home.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-accepted.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3572,
+		"inputAbbreviatedPath": "\/img\/icon-accepted.png",
+		"outputAbbreviatedPath": "\/img\/icon-accepted.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-accepted_32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4453,
+		"inputAbbreviatedPath": "\/img\/icon-accepted_32.png",
+		"outputAbbreviatedPath": "\/img\/icon-accepted_32.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-arrow-right.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 656,
+		"inputAbbreviatedPath": "\/img\/icon-arrow-right.png",
+		"outputAbbreviatedPath": "\/img\/icon-arrow-right.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-arrow.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3202,
+		"inputAbbreviatedPath": "\/img\/icon-arrow.png",
+		"outputAbbreviatedPath": "\/img\/icon-arrow.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-calendar.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5581,
+		"inputAbbreviatedPath": "\/img\/icon-calendar.png",
+		"outputAbbreviatedPath": "\/img\/icon-calendar.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-facebook.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7201,
+		"inputAbbreviatedPath": "\/img\/icon-facebook.png",
+		"outputAbbreviatedPath": "\/img\/icon-facebook.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-free-32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1883,
+		"inputAbbreviatedPath": "\/img\/icon-free-32.png",
+		"outputAbbreviatedPath": "\/img\/icon-free-32.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-notice.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3325,
+		"inputAbbreviatedPath": "\/img\/icon-notice.png",
+		"outputAbbreviatedPath": "\/img\/icon-notice.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-notice_32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3854,
+		"inputAbbreviatedPath": "\/img\/icon-notice_32.png",
+		"outputAbbreviatedPath": "\/img\/icon-notice_32.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-sale-32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1930,
+		"inputAbbreviatedPath": "\/img\/icon-sale-32.png",
+		"outputAbbreviatedPath": "\/img\/icon-sale-32.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-sale-48.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3606,
+		"inputAbbreviatedPath": "\/img\/icon-sale-48.png",
+		"outputAbbreviatedPath": "\/img\/icon-sale-48.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-search.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 647,
+		"inputAbbreviatedPath": "\/img\/icon-search.png",
+		"outputAbbreviatedPath": "\/img\/icon-search.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-trackback.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 850,
+		"inputAbbreviatedPath": "\/img\/icon-trackback.png",
+		"outputAbbreviatedPath": "\/img\/icon-trackback.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-ustream.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56223,
+		"inputAbbreviatedPath": "\/img\/icon-ustream.jpg",
+		"outputAbbreviatedPath": "\/img\/icon-ustream.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-warning.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3386,
+		"inputAbbreviatedPath": "\/img\/icon-warning.png",
+		"outputAbbreviatedPath": "\/img\/icon-warning.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-warning_32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4126,
+		"inputAbbreviatedPath": "\/img\/icon-warning_32.png",
+		"outputAbbreviatedPath": "\/img\/icon-warning_32.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/linebutton_36x60.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9223,
+		"inputAbbreviatedPath": "\/img\/linebutton_36x60.png",
+		"outputAbbreviatedPath": "\/img\/linebutton_36x60.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/logo-adminbar.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2151,
+		"inputAbbreviatedPath": "\/img\/logo-adminbar.png",
+		"outputAbbreviatedPath": "\/img\/logo-adminbar.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/logo-front-page.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 64608,
+		"inputAbbreviatedPath": "\/img\/logo-front-page.png",
+		"outputAbbreviatedPath": "\/img\/logo-front-page.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/meta-icons-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9328,
+		"inputAbbreviatedPath": "\/img\/meta-icons-2.png",
+		"outputAbbreviatedPath": "\/img\/meta-icons-2.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/meta-icons.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11554,
+		"inputAbbreviatedPath": "\/img\/meta-icons.png",
+		"outputAbbreviatedPath": "\/img\/meta-icons.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mxi-top.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3630,
+		"inputAbbreviatedPath": "\/img\/mxi-top.jpg",
+		"outputAbbreviatedPath": "\/img\/mxi-top.jpg",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mxi-top.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4457,
+		"inputAbbreviatedPath": "\/img\/mxi-top.png",
+		"outputAbbreviatedPath": "\/img\/mxi-top.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/retina-icon-download.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3755,
+		"inputAbbreviatedPath": "\/img\/retina-icon-download.png",
+		"outputAbbreviatedPath": "\/img\/retina-icon-download.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/RSS-container.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2037,
+		"inputAbbreviatedPath": "\/img\/RSS-container.png",
+		"outputAbbreviatedPath": "\/img\/RSS-container.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/social-icons-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15167,
+		"inputAbbreviatedPath": "\/img\/social-icons-2.png",
+		"outputAbbreviatedPath": "\/img\/social-icons-2.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/social-icons.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6820,
+		"inputAbbreviatedPath": "\/img\/social-icons.png",
+		"outputAbbreviatedPath": "\/img\/social-icons.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/start-up.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3405,
+		"inputAbbreviatedPath": "\/img\/start-up.png",
+		"outputAbbreviatedPath": "\/img\/start-up.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/top-bg-face.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17893,
+		"inputAbbreviatedPath": "\/img\/top-bg-face.png",
+		"outputAbbreviatedPath": "\/img\/top-bg-face.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/wpnav-icons.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5017,
+		"inputAbbreviatedPath": "\/img\/wpnav-icons.png",
+		"outputAbbreviatedPath": "\/img\/wpnav-icons.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/js\/includes\/ga.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/includes\/ga.js",
+		"outputAbbreviatedPath": "\/js\/includes\/min\/ga-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/jquery.fancybox-buttons.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/jquery.fancybox-buttons.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-buttons-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/jquery.fancybox-ck.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/jquery.fancybox-ck.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-ck-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/jquery.fancybox-thumbs.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/jquery.fancybox-thumbs.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-thumbs-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/jquery.fancybox.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/jquery.fancybox.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery.fancybox-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/onload-ck.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/onload-ck.js",
+		"outputAbbreviatedPath": "\/js\/min\/onload-ck-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/onload.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/onload.js",
+		"outputAbbreviatedPath": "\/js\/min\/onload-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/onload.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/onload.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/onload.min-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/sass\/_account.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_account.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_account.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_affiliate.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_affiliate.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_affiliate.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_archive.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_archive.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_archive.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_components.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_components.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_components.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_footer.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_footer.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_footer.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_front_page.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_front_page.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_front_page.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_layout.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_layout.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_layout.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_lwp.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_lwp.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_lwp.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_navigation.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_navigation.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_navigation.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_netabare.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_netabare.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_netabare.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_post_style.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_post_style.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_post_style.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_quotes.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_quotes.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_quotes.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_settings.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_settings.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_settings.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_sidebar.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_sidebar.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_sidebar.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_single.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_single.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_single.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_smartphone.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_smartphone.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_smartphone.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/core.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/sass\/core.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/sass\/core.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/core.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/core.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/editor-style.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/editor-style.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/editor-style.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/facebook.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/facebook.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/facebook.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/fancybox.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/fancybox.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/fancybox.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/ie.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/ie.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/ie.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/print.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/print.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/print.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/stylesheets\/core.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/stylesheets\/core.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/stylesheets\/editor-style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/stylesheets\/editor-style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/stylesheets\/facebook.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/stylesheets\/facebook.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/stylesheets\/fancybox.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/stylesheets\/fancybox.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/stylesheets\/ie.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/stylesheets\/ie.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/stylesheets\/print.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/stylesheets\/print.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		}
+	},
+"hooks": [
+	],
+"lastSavedByUser": "高橋 文樹",
+"manualImportLinks": {
+	"\/js\/onload.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/includes\/ga.js",
+			"position": 0,
+			"type": 0
+			}
+		]
+	},
+"projectAttributes": {
+	"bowerAbbreviatedPath": "",
+	"displayValue": "Takahashi Fumiki",
+	"displayValueWasSetByUser": 1,
+	"iconImageName": "meme-cocaine"
+	},
+"projectSettings": {
+	"alwaysUseExternalServer": 0,
+	"animateCSSInjections": 1,
+	"autoApplyPSLanguageSettingsStyle": 0,
+	"autoprefixerBrowserString": "> 1%, last 2 versions, ff 17, opera 12.1",
+	"autoSyncProjectSettingsFile": 1,
+	"browserRefreshDelay": 0,
+	"coffeeAutoOutputPathRelativePath": "",
+	"coffeeAutoOutputPathReplace1": "",
+	"coffeeAutoOutputPathReplace2": "",
+	"coffeeAutoOutputPathStyle": 0,
+	"coffeeCreateSourceMap": 0,
+	"coffeeLintFlags2": {
+		"arrow_spacing": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"camel_case_classes": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"colon_assignment_spacing": {
+			"active": 0,
+			"flagValue": 1
+			},
+		"cyclomatic_complexity": {
+			"active": 0,
+			"flagValue": 10
+			},
+		"duplicate_key": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"empty_constructor_needs_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"indentation": {
+			"active": 1,
+			"flagValue": 2
+			},
+		"line_endings": {
+			"active": 0,
+			"flagValue": 0
+			},
+		"max_line_length": {
+			"active": 0,
+			"flagValue": 150
+			},
+		"missing_fat_arrows": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"newlines_after_classes": {
+			"active": 0,
+			"flagValue": 3
+			},
+		"no-unnecessary_fat_arrows": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_backticks": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_empty_param_list": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_implicit_braces": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_implicit_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_plusplus": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_stand_alone_at": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_tabs": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_throwing_strings": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_trailing_semicolons": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_trailing_whitespace": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"non_empty_constructor_needs_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"space_operators": {
+			"active": 0,
+			"flagValue": -1
+			}
+		},
+	"coffeeMinifyOutput": 1,
+	"coffeeOutputStyle": 0,
+	"coffeeSyntaxCheckerStyle": 1,
+	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerPreviewPathAddition": "",
+	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
+	"hamlAutoOutputPathRelativePath": "",
+	"hamlAutoOutputPathReplace1": "",
+	"hamlAutoOutputPathReplace2": "",
+	"hamlAutoOutputPathStyle": 0,
+	"hamlEscapeHTMLCharacters": 0,
+	"hamlNoEscapeInAttributes": 0,
+	"hamlOutputFormat": 2,
+	"hamlOutputStyle": 0,
+	"hamlUseCDATA": 0,
+	"hamlUseDoubleQuotes": 0,
+	"hamlUseUnixNewlines": 0,
+	"jadeAutoOutputPathRelativePath": "",
+	"jadeAutoOutputPathReplace1": "",
+	"jadeAutoOutputPathReplace2": "",
+	"jadeAutoOutputPathStyle": 0,
+	"jadeCompileDebug": 1,
+	"jadeOutputStyle": 0,
+	"javascriptAutoOutputPathRelativePath": "\/min",
+	"javascriptAutoOutputPathReplace1": "",
+	"javascriptAutoOutputPathReplace2": "",
+	"javascriptAutoOutputPathStyle": 0,
+	"javascriptCreateSourceMap": 1,
+	"javascriptOutputStyle": 1,
+	"javascriptOutputSuffix": ".min",
+	"javascriptSyntaxCheckerStyle": 1,
+	"jsCheckerReservedNamesString": "",
+	"jsHintFlags2": {
+		"asi": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"bitwise": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"boss": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"browser": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"camelcase": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"couch": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"curly": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"debug": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"devel": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"dojo": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"eqeqeq": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"eqnull": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"es3": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"esnext": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"evil": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"expr": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"forin": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"freeze": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"funcscope": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"gcl": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"globalstrict": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"immed": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"indent": {
+			"active": 0,
+			"flagValue": 4
+			},
+		"iterator": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"jquery": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"lastsemic": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"latedef": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"laxbreak": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"laxcomma": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"loopfunc": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"maxcomplexity": {
+			"active": 0,
+			"flagValue": 10
+			},
+		"maxdepth": {
+			"active": 0,
+			"flagValue": 3
+			},
+		"maxlen": {
+			"active": 0,
+			"flagValue": 150
+			},
+		"maxparams": {
+			"active": 0,
+			"flagValue": 3
+			},
+		"maxstatements": {
+			"active": 0,
+			"flagValue": 4
+			},
+		"mootools": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"moz": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"multistr": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"newcap": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"noarg": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"node": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"noempty": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"nonbsp": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"nonew": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"nonstandard": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"notypeof": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"noyield": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"onecase": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"onevar": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"phantom": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"plusplus": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"proto": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"prototypejs": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"regexp": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"rhino": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"scripturl": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"shadow": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"shelljs": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"smarttabs": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"strict": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"sub": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"supernew": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"trailing": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"typed": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"undef": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"unused": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"white": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"withstmt": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"worker": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"wsh": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"yui": {
+			"active": 0,
+			"flagValue": -1
+			}
+		},
+	"jsLintFlags2": {
+		"ass": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"bitwise": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"browser": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"closure": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"continue": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"debug": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"devel": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"eqeq": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"evil": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"forin": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"indent": {
+			"active": 0,
+			"flagValue": 4
+			},
+		"maxlen": {
+			"active": 0,
+			"flagValue": 150
+			},
+		"newcap": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"node": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"nomen": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"plusplus": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"properties": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"regexp": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"rhino": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"sloppy": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"stupid": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"sub": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"todo": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unparam": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"vars": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"white": {
+			"active": 0,
+			"flagValue": -1
+			}
+		},
+	"kitAutoOutputPathRelativePath": "",
+	"kitAutoOutputPathReplace1": "",
+	"kitAutoOutputPathReplace2": "",
+	"kitAutoOutputPathStyle": 0,
+	"lessAllowInsecureImports": 0,
+	"lessAutoOutputPathRelativePath": "..\/css",
+	"lessAutoOutputPathReplace1": "less",
+	"lessAutoOutputPathReplace2": "css",
+	"lessAutoOutputPathStyle": 2,
+	"lessCreateSourceMap": 0,
+	"lessDisableJavascript": 0,
+	"lessIeCompatibility": 1,
+	"lessOutputStyle": 0,
+	"lessRelativeURLS": 0,
+	"lessStrictImports": 0,
+	"lessStrictMath": 0,
+	"lessStrictUnits": 0,
+	"markdownAutoOutputPathRelativePath": "",
+	"markdownAutoOutputPathReplace1": "",
+	"markdownAutoOutputPathReplace2": "",
+	"markdownAutoOutputPathStyle": 0,
+	"markdownEnableFootnotes": 0,
+	"markdownEnableSmartyPants": 1,
+	"markdownExpandTabs": 1,
+	"reloadFileURLs": 0,
+	"sassAutoOutputPathRelativePath": "..\/css",
+	"sassAutoOutputPathReplace1": "sass",
+	"sassAutoOutputPathReplace2": "css",
+	"sassAutoOutputPathStyle": 2,
+	"sassCreateSourceMap": 0,
+	"sassDebugStyle": 0,
+	"sassDecimalPrecision": 5,
+	"sassOutputStyle": 0,
+	"sassUseLibsass": 0,
+	"shouldRunAutoprefixer": 0,
+	"shouldRunBless": 0,
+	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs",
+	"slimAutoOutputPathRelativePath": "",
+	"slimAutoOutputPathReplace1": "",
+	"slimAutoOutputPathReplace2": "",
+	"slimAutoOutputPathStyle": 0,
+	"slimCompileOnly": 0,
+	"slimLogicless": 0,
+	"slimOutputStyle": 1,
+	"slimRailsCompatible": 0,
+	"stylusAutoOutputPathRelativePath": "..\/css",
+	"stylusAutoOutputPathReplace1": "stylus",
+	"stylusAutoOutputPathReplace2": "css",
+	"stylusAutoOutputPathStyle": 2,
+	"stylusDebugStyle": 0,
+	"stylusImportCSS": 0,
+	"stylusOutputStyle": 0,
+	"stylusResolveRelativeURLS": 0,
+	"typescriptAutoOutputPathRelativePath": "\/js",
+	"typescriptAutoOutputPathReplace1": "",
+	"typescriptAutoOutputPathReplace2": "",
+	"typescriptAutoOutputPathStyle": 2,
+	"typescriptCreateDeclarationFile": 0,
+	"typescriptCreateSourceMap": 0,
+	"typescriptMinifyOutput": 0,
+	"typescriptModuleType": 0,
+	"typescriptNoImplicitAny": 0,
+	"typescriptNoResolve": 0,
+	"typescriptRemoveComments": 0,
+	"typescriptTargetECMAVersion": 0,
+	"uglifyDefinesString": "",
+	"uglifyFlags2": {
+		"ascii-only": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"booleans": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"bracketize": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"cascade": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"comments": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"comparisons": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"compress": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"conditionals": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"dead_code": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"drop_debugger": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"eval": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"evaluate": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"hoist_funs": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"hoist_vars": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"if_return": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"indent-level": {
+			"active": 0,
+			"flagValue": 4
+			},
+		"indent-start": {
+			"active": 0,
+			"flagValue": 0
+			},
+		"inline-script": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"join_vars": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"loops": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"mangle": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"max-line-len": {
+			"active": 1,
+			"flagValue": 32000
+			},
+		"properties": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"quote-keys": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"screw-ie8": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"semicolons": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"sequences": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"sort": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"space-colon": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"toplevel": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unused": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"warnings": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"width": {
+			"active": 1,
+			"flagValue": 80
+			}
+		},
+	"uglifyReservedNamesString": "$",
+	"websiteRelativeRoot": ""
+	},
+"settingsFileVersion": "2"
+}

@@ -72,12 +72,7 @@ function _fumiki_assets(){
 		);
 		$wp_styles->add_data('font-awesome-ie7', 'conditional', 'lt IE 8');
 
-
-		// TypeSquare
-		//wp_enqueue_script('type-square', '//typesquare.com/accessor/script/typesquare.js?115ai03FLeQ%3D', array(), null, false);
-
-		// font plus
-		wp_enqueue_script('font-plus', 'http'.(is_ssl() ? 's' : '').'://webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D&aa=1', null, null, false);
+        wp_enqueue_script('font-plus', '//webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D&aa=1', array(), null, true);
 
 		//メインCSS
 		wp_enqueue_style(
@@ -169,6 +164,16 @@ function _fumiki_dequeue_styles(){
 }
 add_action('wp_print_styles', '_fumiki_dequeue_styles', 10000);
 
+// Webfontの読み込み
+add_action('wp_footer', function(){
+?>
+<script type="text/javascript">
+if( !window.GAM.webFont && FONTPLUS){
+        FONTPLUS.async();
+}
+</script>
+<?php
+}, 1000);
 
 /**
  * Javascriptを削除する
@@ -181,6 +186,8 @@ function _fumiki_dequeue_scripts(){
 	}
 }
 add_action('wp_print_scripts', '_fumiki_dequeue_scripts', 10000);
+
+
 
 // なかのひとを出力
 add_action('wp_footer', function(){
@@ -210,6 +217,8 @@ EOS;
 	}
 }, 100001);
 
+
+
 // メディアクエリを読み込む
 add_action('wp_head', function(){
 	$url = get_template_directory_uri();
@@ -220,3 +229,14 @@ add_action('wp_head', function(){
 <![endif]-->
 EOS;
 }, 11);
+
+// フィルター用スタイルを書き出す
+add_action('wp_head', function(){
+	echo '
+<style type="text/css">
+	.non-filter-blur .netabare{
+		filter: url(#blurFilter);
+	}
+</style>
+';
+}, 10000);
