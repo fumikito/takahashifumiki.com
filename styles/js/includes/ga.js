@@ -5,6 +5,14 @@
  * 
  */
 
+/*global ga: true*/
+/*global GAM: true*/
+/*global FB: false*/
+/*global twttr: false*/
+/*jshint jquery: true*/
+/*jshint browser: true*/
+/*jshint devel: true*/
+
 jQuery(window).load(function(){
     // 全体の読み込みにかかった時間を出力
     try{
@@ -16,15 +24,14 @@ jQuery(window).load(function(){
             eventValue: GAM.getTime(),
             nonInteraction: true
         });
-    }catch (e){}
+    }catch ( err ){}
 });
 
 
 
 
 jQuery(document).ready(function($){
-
-    // DOMREADYにかかった時間を出力
+    // DOM Readyにかかった時間を出力
     try{
         ga('send', {
             hitType: 'event',
@@ -34,7 +41,7 @@ jQuery(document).ready(function($){
             eventValue: GAM.getTime(),
             nonInteraction: true
         });
-    }catch(e){}
+    }catch( err ){}
 
 	// 初期値を登録しておく
 	var targets = ['#contents-last'],
@@ -52,7 +59,7 @@ jQuery(document).ready(function($){
 				return Math.round((current.getTime() - startTime.getTime()) / 100 ) / 10;
 			}
 		};
-	for(i = 0, l = targets.length; i < l; i++){
+	for(var i = 0, l = targets.length; i < l; i++){
 		occurred.push(false);
 		if($(targets[i]).length){
 			offsets.push($(targets[i]).offset().top + $(targets[i]).height() + pad);
@@ -90,33 +97,53 @@ jQuery(document).ready(function($){
 				eventLabel: document.title,
 				eventValue: vars.passed
 			});
-		}catch(e){}
+		}catch( err ){}
 	});
 	
 	
 	
 	// アウトバウンドリンクを計測
-	$('a[href^=http]').click(function(e){
+	$(document).on('click', 'a[href^=http]', function(e){
 		if( !( /^(#|https?:\/\/(s\.)?takahashifumiki\.(com|local|info))/.test($(this).attr('href')) ) ){
-			try{
-				var url = $(this).attr('href'),
-					target = ($(this).attr('target') && $(this).attr('target').length)
-						? $(this).attr('target')
-						: false;
-				ga('send', {
-					hitType: 'event',
-					eventCategory: 'outbound',
-					eventAction: url.split('/')[2],
-					eventLabel: url,
-					eventValue: methods.getDuration(),
-					hitCallback: function(){
-						window.location.href = url;
-					}
-				});
-				e.preventDefault();
-			}catch(e){}
+            try{
+                var button = $(this),
+                    url = button.attr('href'),
+                    target = button.attr('target');
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'outbound',
+                    eventAction: url.split('/')[2],
+                    eventLabel: url,
+                    eventValue: methods.getDuration(),
+                    hitCallback: function(){
+                        window.location.href = url;
+                    }
+                });
+                e.preventDefault();
+            }catch( err ){}
 		}
 	});
+
+    // ソーシャルログインを計測
+    $('a.wpg-button').click(function(e){
+        try{
+            var url = $(this).attr('href'),
+                category = $(this).attr('data-gianism-ga-category'),
+                action = $(this).attr('data-gianism-ga-action'),
+                label = $(this).attr('data-gianism-ga-label');
+            ga('send', {
+                hitType: 'event',
+                eventCategory: category,
+                eventAction: action,
+                eventLabel: label,
+                eventValue: 1,
+                hitCallback: function(){
+                    window.location.href = url;
+                }
+            });
+            e.preventDefault();
+        }catch ( err ){}
+    });
 	
 	// ダウンロードを計測
 	$('a.button-download').click(function(e){
@@ -139,7 +166,7 @@ jQuery(document).ready(function($){
 				}
 			});
 			e.preventDefault();
-		}catch(e){}
+		}catch( err ){}
 	});
 	
 	// いいねを集計
@@ -155,7 +182,7 @@ jQuery(document).ready(function($){
                         socialTarget: url
                     });
                 });
-            }catch(e){ }
+            }catch( err ){ }
         }
     }, 100);
 
@@ -163,7 +190,7 @@ jQuery(document).ready(function($){
     var twTimer = setInterval(function(){
         if(window.twttr && window.twttr.events){
             clearInterval(twTimer);
-            twttr.events.bind('tweet', function (e) {
+            twttr.events.bind('tweet', function () {
                 try{
                     ga('send', {
                         hitType:'social',
@@ -171,7 +198,7 @@ jQuery(document).ready(function($){
                         socialAction: 'tweet',
                         socialTarget: document.location.pathname
                     });
-                }catch (e){}
+                } catch ( err ){}
             });
         }
     }, 100);

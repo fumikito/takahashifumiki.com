@@ -1,3 +1,122 @@
+
+.mincho{ font-family: $serif; }
+.old{font-family: $old;}
+.sans{font-family: $sans;}
+.mono{font-family: $mono;}
+strong{font-weight: bold;}
+
+
+/*フロート解除*/
+.clrL{clear: left;}
+.clrR{clear: right;}
+.clrB{clear: both;}
+
+/*clearfix*/
+.clearfix{
+  @include clearfix();
+}
+/*---------------------
+ * アラインメント
+ */
+.center{text-align: center;}
+.left{text-align: left}
+.right{text-align: right}
+.top{vertical-align: top}
+.middle{vertical-align: middle}
+.bottom{vertical-align: bottom}
+
+
+
+/*インラインブロック*/
+.inline-block{
+  display: inline-block;
+}
+
+/*リンク装飾*/
+a{
+  overflow: hidden;
+  &:link{
+    color: $link-blue;
+    text-decoration: underline;
+  }
+  &:visited{
+    color: $link-purple;
+    text-decoration: underline;
+  }
+  &:hover{
+    color: $link-red;
+    text-decoration: none;
+  }
+  &:active{
+    color: $link-crimson;
+    text-decoration: underline;
+  }
+}
+
+/*---------------------
+ * 装飾
+ */
+/*背景画像*/
+.dark_bg{
+  background: $body-color;
+}
+/* テキストシャドウ */
+.shadow{
+  text-shadow:1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.hilight{
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ルビ非対応ブラウザ */
+.no-ruby{
+  rt:before{
+    content: '（';
+  }
+  rt:after{
+    content: '）';
+  }
+}
+
+
+
+
+.ui-tooltip-dark{
+  font-size: 2em;
+  line-height: 1.1;
+}
+.ui-tooltip-content{
+  padding: 10px 20px;
+  font-weight: normal;
+}
+
+/*---------------------
+ * テキスト・背景色
+ */
+body{
+  color: $body-color;
+  word-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-ideograph ;
+  font-family: $sans;
+  font-size:10px;
+  background: $body-bg-color;
+  position: relative;
+}
+
+/* FontAwesome */
+i[class^=fa-] {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /*ボタン*/
 a.button,
 input.button,

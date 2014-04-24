@@ -4,7 +4,7 @@
 <header class="margin header">
 		
 	<? $title = fumiki_title(); ?>
-	<h1 class="title mincho<? if(mb_strlen($title, 'utf-8') <= 20) echo ' center'; ?>">
+	<h1 class="title">
 		<?= $title; ?>
 	</h1>
 	
@@ -17,12 +17,6 @@
 
 
 	<?php if(is_singular('post')): ?>
-		<div class="calendar">
-			<?php
-				$date = explode(',', mysql2date('M,jS,D,Y,', $post->post_date, false));
-				printf('<span class="date">%1$s %2$s (%3$s)</span><span class="year">%4$s</span>', $date[0], $date[1], $date[2], $date[3]); 
-			?>
-		</div>
 		<?php get_template_part('templates/meta-'.  get_post_type()); ?>
 	<?php endif; ?>
 

@@ -2,6 +2,17 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8403",
   "files" : {
+    "\/img\/favicon\/favicon.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/favicon\/favicon.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/favicon\/favicon.png",
+      "initialSize" : 3965,
+      "fileType" : 8192
+    },
     "\/img\/bg-texture-gray.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -103,17 +114,6 @@
       "initialSize" : 9223,
       "fileType" : 8192
     },
-    "\/img\/google-oauth.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/google-oauth.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/google-oauth.png",
-      "initialSize" : 8651,
-      "fileType" : 8192
-    },
     "\/sass\/_footer.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -125,6 +125,17 @@
       "outputAbbreviatedPath" : "\/stylesheets\/_footer.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/img\/google-oauth.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/google-oauth.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/google-oauth.png",
+      "initialSize" : 8651,
+      "fileType" : 8192
     },
     "\/sass\/ie.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -149,15 +160,15 @@
       "initialSize" : 6820,
       "fileType" : 8192
     },
-    "\/img\/content-footernote.png" : {
+    "\/img\/home.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/content-footernote.png",
+      "inputAbbreviatedPath" : "\/img\/home.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/content-footernote.png",
-      "initialSize" : 2145,
+      "outputAbbreviatedPath" : "\/img\/home.png",
+      "initialSize" : 2612,
       "fileType" : 8192
     },
     "\/img\/icon-sale-48.png" : {
@@ -171,17 +182,6 @@
       "initialSize" : 3606,
       "fileType" : 8192
     },
-    "\/img\/ebook-filetypes\/epub.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/ebook-filetypes\/epub.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/ebook-filetypes\/epub.png",
-      "initialSize" : 10940,
-      "fileType" : 8192
-    },
     "\/img\/icon-notice.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -193,16 +193,36 @@
       "initialSize" : 3325,
       "fileType" : 8192
     },
-    "\/img\/home.png" : {
+    "\/img\/content-footernote.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/home.png",
+      "inputAbbreviatedPath" : "\/img\/content-footernote.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/home.png",
-      "initialSize" : 2612,
+      "outputAbbreviatedPath" : "\/img\/content-footernote.png",
+      "initialSize" : 2145,
       "fileType" : 8192
+    },
+    "\/img\/ebook-filetypes\/epub.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/ebook-filetypes\/epub.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/ebook-filetypes\/epub.png",
+      "initialSize" : 10940,
+      "fileType" : 8192
+    },
+    "\/sass\/core.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/core.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/img\/facebook-top.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -329,16 +349,25 @@
       "initialSize" : 15019,
       "fileType" : 8192
     },
-    "\/img\/header-logo-big.png" : {
+    "\/img\/favicon\/faviconx120.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/header-logo-big.png",
+      "inputAbbreviatedPath" : "\/img\/favicon\/faviconx120.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/header-logo-big.png",
-      "initialSize" : 7477,
+      "outputAbbreviatedPath" : "\/img\/favicon\/faviconx120.png",
+      "initialSize" : 12085,
       "fileType" : 8192
+    },
+    "\/stylesheets\/print.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/stylesheets\/print.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/js\/jquery.fancybox-buttons.js" : {
       "ignoreWasSetByUser" : 1,
@@ -362,15 +391,15 @@
       "initialSize" : 11554,
       "fileType" : 8192
     },
-    "\/img\/retina-icon-download.png" : {
+    "\/img\/header-logo-big.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/retina-icon-download.png",
+      "inputAbbreviatedPath" : "\/img\/header-logo-big.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/retina-icon-download.png",
-      "initialSize" : 3755,
+      "outputAbbreviatedPath" : "\/img\/header-logo-big.png",
+      "initialSize" : 7477,
       "fileType" : 8192
     },
     "\/img\/start-up.png" : {
@@ -384,6 +413,17 @@
       "initialSize" : 3405,
       "fileType" : 8192
     },
+    "\/img\/retina-icon-download.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/retina-icon-download.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/retina-icon-download.png",
+      "initialSize" : 3755,
+      "fileType" : 8192
+    },
     "\/img\/footer-hariline.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -394,15 +434,6 @@
       "outputAbbreviatedPath" : "\/img\/footer-hariline.png",
       "initialSize" : 370,
       "fileType" : 8192
-    },
-    "\/stylesheets\/print.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/stylesheets\/print.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/img\/icon-sale-32.png" : {
       "ignoreWasSetByUser" : 0,
@@ -548,6 +579,17 @@
       "initialSize" : 19411,
       "fileType" : 4096
     },
+    "\/img\/fancybox\/fancybox_sprite.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/fancybox\/fancybox_sprite.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/fancybox\/fancybox_sprite.png",
+      "initialSize" : 1362,
+      "fileType" : 8192
+    },
     "\/sass\/_affiliate.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -559,17 +601,6 @@
       "outputAbbreviatedPath" : "\/stylesheets\/_affiliate.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/img\/fancybox\/fancybox_sprite.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/fancybox\/fancybox_sprite.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/fancybox\/fancybox_sprite.png",
-      "initialSize" : 1362,
-      "fileType" : 8192
     },
     "\/js\/jquery.fancybox.js" : {
       "ignoreWasSetByUser" : 0,
@@ -601,6 +632,17 @@
       "inputAbbreviatedPath" : "\/stylesheets\/fancybox.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
+    },
+    "\/img\/favicon\/logox1024.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/favicon\/logox1024.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/favicon\/logox1024.png",
+      "initialSize" : 42916,
+      "fileType" : 8192
     },
     "\/img\/icon-notice_32.png" : {
       "ignoreWasSetByUser" : 0,
@@ -723,16 +765,17 @@
       "initialSize" : 850,
       "fileType" : 8192
     },
-    "\/img\/favicon\/faviconx512.png" : {
+    "\/sass\/fancybox.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/favicon\/faviconx512.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/favicon\/faviconx512.png",
-      "initialSize" : 12546,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/sass\/fancybox.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/stylesheets\/fancybox.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/js\/onload-ck.js" : {
       "ignoreWasSetByUser" : 0,
@@ -745,17 +788,16 @@
       "outputAbbreviatedPath" : "\/js\/onload-ck.min.js",
       "fileType" : 64
     },
-    "\/sass\/fancybox.scss" : {
+    "\/img\/favicon\/faviconx512.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/fancybox.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/stylesheets\/fancybox.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/img\/favicon\/faviconx512.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/favicon\/faviconx512.png",
+      "initialSize" : 12546,
+      "fileType" : 8192
     },
     "\/img\/archive_icon_tag.png" : {
       "ignoreWasSetByUser" : 0,
@@ -929,17 +971,6 @@
       "initialSize" : 2037,
       "fileType" : 8192
     },
-    "\/img\/ebook-devices\/ipad.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/ebook-devices\/ipad.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/ebook-devices\/ipad.png",
-      "initialSize" : 3930,
-      "fileType" : 8192
-    },
     "\/img\/ebook-devices\/kindle2.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -949,6 +980,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/ebook-devices\/kindle2.png",
       "initialSize" : 2846,
+      "fileType" : 8192
+    },
+    "\/img\/ebook-devices\/ipad.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/ebook-devices\/ipad.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/ebook-devices\/ipad.png",
+      "initialSize" : 3930,
       "fileType" : 8192
     },
     "\/sass\/editor-style.scss" : {
@@ -985,6 +1027,17 @@
       "initialSize" : 2437,
       "fileType" : 8192
     },
+    "\/img\/favicon\/faviconx512.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/favicon\/faviconx512.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/favicon\/faviconx512.jpg",
+      "initialSize" : 26218,
+      "fileType" : 4096
+    },
     "\/img\/logo-front-page.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1019,27 +1072,16 @@
       "initialSize" : 4724,
       "fileType" : 8192
     },
-    "\/img\/ebook-filetypes\/zip.png" : {
+    "\/js\/jquery.fancybox-ck.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/ebook-filetypes\/zip.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/ebook-filetypes\/zip.png",
-      "initialSize" : 5657,
-      "fileType" : 8192
-    },
-    "\/img\/icon-accepted.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/icon-accepted.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/icon-accepted.png",
-      "initialSize" : 3572,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/js\/jquery.fancybox-ck.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery.fancybox-ck.min.js",
+      "fileType" : 64
     },
     "\/img\/btn-buynow.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1052,6 +1094,28 @@
       "initialSize" : 5713,
       "fileType" : 8192
     },
+    "\/img\/ebook-filetypes\/zip.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/ebook-filetypes\/zip.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/ebook-filetypes\/zip.png",
+      "initialSize" : 5657,
+      "fileType" : 8192
+    },
+    "\/img\/divider.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/divider.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/divider.png",
+      "initialSize" : 3816,
+      "fileType" : 8192
+    },
     "\/img\/icon-warning.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1062,17 +1126,6 @@
       "outputAbbreviatedPath" : "\/img\/icon-warning.png",
       "initialSize" : 3386,
       "fileType" : 8192
-    },
-    "\/js\/jquery.fancybox-ck.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery.fancybox-ck.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/jquery.fancybox-ck.min.js",
-      "fileType" : 64
     },
     "\/img\/container-feedly.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1096,16 +1149,28 @@
       "initialSize" : 4126,
       "fileType" : 8192
     },
-    "\/img\/divider.png" : {
+    "\/img\/icon-accepted.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/divider.png",
+      "inputAbbreviatedPath" : "\/img\/icon-accepted.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/divider.png",
-      "initialSize" : 3816,
+      "outputAbbreviatedPath" : "\/img\/icon-accepted.png",
+      "initialSize" : 3572,
       "fileType" : 8192
+    },
+    "\/sass\/_account.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/_account.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/stylesheets\/_account.css",
+      "fileType" : 4,
+      "debugStyle" : 1
     },
     "\/sass\/_layout.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1122,6 +1187,13 @@
   },
   "manualImportLinks" : [
     {
+      "type" : 0,
+      "position" : 0,
+      "linkedFileAbbreviatedPath" : "\/js\/includes\/ga.js",
+      "baseFileAbbreviatedPath" : "\/js\/onload.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
       "type" : 1,
       "position" : 0,
       "linkedFileAbbreviatedPath" : "\/js\/jquery.fancybox-buttons.js",
@@ -1133,13 +1205,6 @@
       "position" : 1,
       "linkedFileAbbreviatedPath" : "\/js\/jquery.fancybox-thumbs.js",
       "baseFileAbbreviatedPath" : "\/js\/jquery.fancybox.js",
-      "followForSyntaxChecking" : 1
-    },
-    {
-      "type" : 0,
-      "position" : 0,
-      "linkedFileAbbreviatedPath" : "\/js\/includes\/ga.js",
-      "baseFileAbbreviatedPath" : "\/js\/onload.js",
       "followForSyntaxChecking" : 1
     }
   ],

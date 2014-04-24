@@ -28,6 +28,8 @@
 				</div>
 			</div><!-- //.inner -->
 
+            <?php if( !wp_is_mobile() ): ?>
+
 			<h4 class="mono second">
 				<i class="fa-twitter"></i>
 				Recent tweet
@@ -52,31 +54,35 @@
 					つぶやきを取得できませんでした。
 				<?php endif; ?>
 			</blockquote>
-		</div>
 
-		<div class="grid_4">
-			
-			<h4 class="mono next">
-				<i class="fa-facebook"></i>
-				My Facebook Page
-			</h4>
-			<div class="like-box-container">
-				<div class="fb-like-box" data-href="http://www.facebook.com/takahashifumiki.page" data-width="292" data-height="420" data-show-faces="true" data-colorscheme="dark" data-stream="false" data-border-color="#3F464D" data-header="false"></div>
-			</div>
-		</div>
+            <?php endif; ?>
+		</div><!-- //.grid_4 -->
+
+        <?php if(!wp_is_mobile()): ?>
+            <div class="grid_4">
+
+                <h4 class="mono next">
+                    <i class="fa-facebook"></i>
+                    My Facebook Page
+                </h4>
+                <div class="like-box-container">
+                    <div class="fb-like-box" data-href="http://www.facebook.com/takahashifumiki.page" data-width="292" data-height="420" data-show-faces="true" data-colorscheme="dark" data-stream="false" data-border-color="#3F464D" data-header="false"></div>
+                </div>
+            </div>
+        <?php endif; ?>
 
 		<div class="grid_4 last">
 
-			<? if(!wp_is_mobile()): ?>
-			<h4 class="mono next no-if-touch">
-				<i class="fa-globe"></i>
-				My Web sites
-			</h4>
-			<ol class="inner sites no-if-touch">
-				<li><a class="hametuha one-line" target="_blank" href="http://hametuha.com/author/takahashi_fumiki/">破滅派 | 文芸誌</a></li>
-				<li><a class="hametuha-inc one-line" target="_blank" href="http://hametuha.co.jp">株式会社破滅派</a></li>
-				<li><a class="minicome one-line" target="_blank" href="http://minico.me">ミニコme! | ミニコミ誌販売ポータル</a></li>
-			</ol>
+			<? if( !wp_is_mobile() ): ?>
+                <h4 class="mono next no-if-touch">
+                    <i class="fa-globe"></i>
+                    My Web sites
+                </h4>
+                <ol class="inner sites no-if-touch">
+                    <li><a class="hametuha one-line" target="_blank" href="http://hametuha.com/author/takahashi_fumiki/">破滅派 | 文芸誌</a></li>
+                    <li><a class="hametuha-inc one-line" target="_blank" href="http://hametuha.co.jp">株式会社破滅派</a></li>
+                    <li><a class="minicome one-line" target="_blank" href="http://minico.me">ミニコme! | ミニコミ誌販売ポータル</a></li>
+                </ol>
 			<? endif; ?>
 			
 			<h4 class="mono second">
@@ -95,7 +101,7 @@
 					</a>
 				</li>
 				<li>
-					<a target="_blank" class="google" href="https://plus.google.com/u/0/108058172987021898722/posts">
+					<a target="_blank" class="google" href="https://plus.google.com/108058172987021898722?rel=author">
 						<i class="fa-google-plus-square"></i>
 					</a>
 				</li>
@@ -136,8 +142,10 @@
 					執筆・Web制作のお仕事については<a href="<?php echo home_url('/inquiry/', 'https'); ?>">お問い合わせフォーム</a>よりご連絡下さい。
 					なるべく早くお返事します。
 				</li>
-				<li><a class="mail" href="<?php echo home_url('/inquiry/', 'https'); ?>"><i class="fa-envelope-o"></i>お問い合わせ</a></li>
-				<li><a class="feed" href="<?php bloginfo('rss_url'); ?>"><i class="fa-rss-square"></i>RSSフィード</a></li>
+                <?php if( !wp_is_mobile()): ?>
+                    <li><a class="mail" href="<?php echo home_url('/inquiry/', 'https'); ?>"><i class="fa-envelope-o"></i>お問い合わせ</a></li>
+                    <li><a class="feed" href="<?php bloginfo('rss_url'); ?>"><i class="fa-rss-square"></i>RSSフィード</a></li>
+                <?php endif; ?>
 			</ol>
 		</div><!-- //.grid_4 -->
 	</div>
@@ -158,7 +166,13 @@
 			&copy; 2008-<?php echo date_i18n('Y'); ?> Takahashi Fumiki
 		</p>
 	</div><!-- .copy ends-->
-	
+
+    <!-- フィルター用SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="height: 0;">
+        <filter id="blurFilter">
+            <feGaussianBlur stdDeviation="7" />
+        </filter>
+    </svg>
 </footer>
 <!-- #footer ends -->
 

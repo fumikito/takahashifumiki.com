@@ -4,12 +4,11 @@
 	line-height:1.8;
 	position: relative;
 	font-family: $body-font;
-
+    .indent{
+        text-indent: 1em;
+    }
 	& > p{
 		margin: 1em 0;
-		&.indent{
-			text-indent: 1em;
-		}
         &.dropcap{
             text-indent: 0;
             &:first-letter{
@@ -18,6 +17,10 @@
                 margin-right: 0.2em;
                 font-weight: bold;
             }
+        }
+        &.samurai{
+            font-size: 2em;
+            font-family: $samurai;
         }
 	}
 	p.attachment{
@@ -29,7 +32,6 @@
 
 	/*見出し*/
 	h1, h2,h3,h4,h5{
-		font-weight: bold;
 		padding-top: 1.5em;
 		margin-bottom: 0.75em;
         font-family: $title-font;
@@ -70,6 +72,7 @@
 
     h6{
         font-family: $sans;
+      font-weight: bold;
     }
 	
 	/* 装飾 */
@@ -153,7 +156,7 @@
 	blockquote{
 		margin:0.5em 0;
 		padding:32px;
-		color: $semi-blue;
+		color: #808080;
         position: relative;
         &:before,
         &:after{

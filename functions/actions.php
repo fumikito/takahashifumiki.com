@@ -12,11 +12,11 @@ function _fumiki_head(){
 	if(is_front_page() || is_singular()){
 		$title = is_front_page() ? get_bloginfo('name') : wp_title('|', false, "right").get_bloginfo('name') ;
 		$url = is_front_page() ?  trailingslashit(home_url('/', 'http')) : get_permalink();
-		$image = get_template_directory_uri()."/styles/img/facebook-top.jpg";
+		$image = get_template_directory_uri()."/styles/img/favicon/faviconx512.png";
 		if(!is_front_page()){
 			$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
 			if(!empty($images)){
-				$image = wp_get_attachment_image_src(current($images)->ID, 'medium');
+				$image = wp_get_attachment_image_src(current($images)->ID, 'large');
 				$image = $image[0];
 			}
 		}
@@ -24,7 +24,13 @@ function _fumiki_head(){
 		if(get_post_type() == 'ebook'){
 			$type = 'book';
 		}
-		$desc = str_replace("\n", "", is_front_page() ? get_bloginfo('description') : get_the_excerpt());
+        if( is_front_page() ){
+            $desc = get_bloginfo('description');
+        }else{
+            global $post;
+            $desc = $post->post_excerpt ?: wp_trim_words(strip_tags(strip_shortcodes($post->post_content)), 120, '...');
+        }
+		$desc = esc_attr(str_replace("\n", "",  $desc));
 		$dir = get_stylesheet_directory_uri();
 		echo <<<EOS
 <!-- Open Graph -->
@@ -53,8 +59,6 @@ EOS;
 <meta name="copyright" content="copyright 2008 takahashifumiki.com" />
 EOS;
 }
-
-
 add_action('wp_head', '_fumiki_head', 0);
 
 //JetpackのOGPをオフにする
@@ -76,13 +80,12 @@ add_action("init", "_fumiki_menu");
 /**
  * ログイン時間を記録する
  * @param string $login
+ * @param \WP_User $user
  */
-function _fumiki_last_login($login) {
-    global $user_ID;
-    $user = get_userdatabylogin($login);
+function _fumiki_last_login($login, \WP_user $user) {
     update_user_meta($user->ID, 'last_login', current_time('mysql'));
 }
-add_action('wp_login','_fumiki_last_login');
+add_action('wp_login','_fumiki_last_login', 10, 2);
 
 /**
  * ウィジェットを登録する
@@ -99,9 +102,12 @@ add_action('widgets_init', '_fumiki_register_widget');
 
 /**
  * flashプラグインの後方互換
- * @return str
+ *
+ * @param array $attr
+ * @param string $content
+ * @return string
  */
-function flash_converter($atts,$content = null){
+function flash_converter($atts, $content = null){
         $arr = shortcode_atts(array(
                 0 => null,
                 'w' => null,
@@ -151,4 +157,21 @@ function _fumiki_ustream_status(){
 add_action('wp_ajax_ustream_status', '_fumiki_ustream_status');
 add_action('wp_ajax_nopriv_ustream_status', '_fumiki_ustream_status');
 
+// JetpackのOGPを消す
+add_action('wp_head', function(){
+    remove_action('wp_head','jetpack_og_tags');
+}, 1);
 
+
+// Cache ヘッダーを追加する
+add_filter( 'nocache_headers' , function( $headers ){
+    $headers['X-Accel-Expires'] = 0;
+    return $headers;
+}, 1);
+
+// ヘッダーテスト
+add_action('template_redirect', function(){
+    if( is_page('about') ){
+        nocache_headers();
+    }
+});

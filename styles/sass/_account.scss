@@ -1,0 +1,117 @@
+@import '../../libs/font-awesome/scss/variables';
+@import "settings";
+
+/*プラグインのCSSを打ち消し*/
+body.login{
+  padding:0;
+  #submit{margin:0;}
+}
+
+.account .entry{
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*メイン*/
+.login form p.submit input.button,
+#nlmg-resign-form p.submit input{
+  font-size: 20px;
+  cursor: pointer;
+}
+/*フォームパーツ*/
+.login form{
+  textarea{
+    resize: vertical;
+    width: 90%;
+    display: block;
+    padding: 5px 10px;
+    font-size: 20px;
+  }
+  select{
+    font-size: 20px;
+  }
+  select option{
+    font-size: 20px;
+  }
+  p{
+    clear: left;
+    label{
+      padding: 3px 0 5px;
+      font-weight: bold;
+      display: block;
+      width: 250px;
+      float: left;
+    }
+    &.forgetmenot label{
+      float: none;
+      width: auto;
+      @include inline-block();
+    }
+  }
+}
+.form-table .description{
+  display: block;
+  margin: 1em 0;
+  color: #999;
+  clear: both;
+}
+.login p input.input{
+  font-size:20px;
+  padding:5px 10px;
+  width:300px;
+}
+/* OAuth */
+#wpg-login,
+#wpg-register,
+#wpg-regsiter{
+  text-align: center;
+}
+.login p.notice {
+  color: #05A;
+  border: 1px solid #06C;
+  background-color: #9FC9F4;
+  padding-left: 42px;
+}
+#wpg-login{
+  max-width: 320px;
+  margin: 10px auto;
+  a{
+    text-align: left;
+    font-family: $sans;
+  }
+}
+/* リンク */
+.login .tml-action-links{
+  padding-left:0;
+  li{
+    @include inline-block();
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    @include border-radius(3px);
+    padding: 2px 0.5em;
+    font-size: 16px;
+    color: $deep-blue;
+    line-height: 24px;
+    height:24px;
+    margin:0 5px 0 10px;
+    a{
+      color: #252e34;
+      text-decoration: none;
+    }
+    a:hover{
+      color: $link-red;
+      text-decoration: underline;
+    }
+    &:before{
+      margin-right: 0.5em;
+      font-family: FontAwesome;
+      content: $fa-var-question-circle;
+    }
+    &:first-child{
+      &:before{
+        content: $fa-var-sign-in;
+      }
+    }
+  }
+}

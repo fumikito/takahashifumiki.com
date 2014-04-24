@@ -3,7 +3,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,39 +24,39 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* line 22, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
 
-/* line 24, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 26, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 28, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 103, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  /* line 103, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 32, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 116, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
 /*---------------------
@@ -70,41 +70,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* 色 */
 /* メッセージ用の色 */
 /* フォント設定 */
-/* line 62, ../sass/_settings.scss */
+/* line 2, ../sass/_components.scss */
 .mincho {
-  font-family: "Times New Roman", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
+  font-family: "Times New Roman", Times, "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
 
-/* line 63, ../sass/_settings.scss */
+/* line 3, ../sass/_components.scss */
 .old {
-  font-family: Georgia, "Times New Roman", Times, serif; }
+  font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
 
-/* line 64, ../sass/_settings.scss */
+/* line 4, ../sass/_components.scss */
 .sans {
   font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif; }
 
-/* line 65, ../sass/_settings.scss */
+/* line 5, ../sass/_components.scss */
 .mono {
-  font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
+  font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
 
-/* line 66, ../sass/_settings.scss */
+/* line 6, ../sass/_components.scss */
 strong {
   font-weight: bold; }
 
 /*フロート解除*/
-/* line 70, ../sass/_settings.scss */
+/* line 10, ../sass/_components.scss */
 .clrL {
   clear: left; }
 
-/* line 71, ../sass/_settings.scss */
+/* line 11, ../sass/_components.scss */
 .clrR {
   clear: right; }
 
-/* line 72, ../sass/_settings.scss */
+/* line 12, ../sass/_components.scss */
 .clrB {
   clear: both; }
 
 /*clearfix*/
-/* line 75, ../sass/_settings.scss */
+/* line 15, ../sass/_components.scss */
 .clearfix {
   overflow: hidden;
   *zoom: 1; }
@@ -112,52 +112,52 @@ strong {
 /*---------------------
  * アラインメント
  */
-/* line 81, ../sass/_settings.scss */
+/* line 21, ../sass/_components.scss */
 .center {
   text-align: center; }
 
-/* line 82, ../sass/_settings.scss */
+/* line 22, ../sass/_components.scss */
 .left {
   text-align: left; }
 
-/* line 83, ../sass/_settings.scss */
+/* line 23, ../sass/_components.scss */
 .right {
   text-align: right; }
 
-/* line 84, ../sass/_settings.scss */
+/* line 24, ../sass/_components.scss */
 .top {
   vertical-align: top; }
 
-/* line 85, ../sass/_settings.scss */
+/* line 25, ../sass/_components.scss */
 .middle {
   vertical-align: middle; }
 
-/* line 86, ../sass/_settings.scss */
+/* line 26, ../sass/_components.scss */
 .bottom {
   vertical-align: bottom; }
 
 /*インラインブロック*/
-/* line 91, ../sass/_settings.scss */
+/* line 31, ../sass/_components.scss */
 .inline-block {
   display: inline-block; }
 
 /*リンク装飾*/
-/* line 96, ../sass/_settings.scss */
+/* line 36, ../sass/_components.scss */
 a {
   overflow: hidden; }
-  /* line 98, ../sass/_settings.scss */
+  /* line 38, ../sass/_components.scss */
   a:link {
     color: #0066cc;
     text-decoration: underline; }
-  /* line 102, ../sass/_settings.scss */
+  /* line 42, ../sass/_components.scss */
   a:visited {
     color: #7756bc;
     text-decoration: underline; }
-  /* line 106, ../sass/_settings.scss */
+  /* line 46, ../sass/_components.scss */
   a:hover {
     color: #ff4130;
     text-decoration: none; }
-  /* line 110, ../sass/_settings.scss */
+  /* line 50, ../sass/_components.scss */
   a:active {
     color: red;
     text-decoration: underline; }
@@ -166,33 +166,33 @@ a {
  * 装飾
  */
 /*背景画像*/
-/* line 120, ../sass/_settings.scss */
+/* line 60, ../sass/_components.scss */
 .dark_bg {
   background: #45474d; }
 
 /* テキストシャドウ */
-/* line 124, ../sass/_settings.scss */
+/* line 64, ../sass/_components.scss */
 .shadow {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
 
-/* line 128, ../sass/_settings.scss */
+/* line 68, ../sass/_components.scss */
 .hilight {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8); }
 
 /* ルビ非対応ブラウザ */
-/* line 135, ../sass/_settings.scss */
+/* line 75, ../sass/_components.scss */
 .no-ruby rt:before {
   content: '（'; }
-/* line 138, ../sass/_settings.scss */
+/* line 78, ../sass/_components.scss */
 .no-ruby rt:after {
   content: '）'; }
 
-/* line 146, ../sass/_settings.scss */
+/* line 86, ../sass/_components.scss */
 .ui-tooltip-dark {
   font-size: 2em;
   line-height: 1.1; }
 
-/* line 150, ../sass/_settings.scss */
+/* line 90, ../sass/_components.scss */
 .ui-tooltip-content {
   padding: 10px 20px;
   font-weight: normal; }
@@ -200,7 +200,7 @@ a {
 /*---------------------
  * テキスト・背景色
  */
-/* line 158, ../sass/_settings.scss */
+/* line 98, ../sass/_components.scss */
 body {
   color: #45474d;
   word-wrap: break-word;
@@ -211,8 +211,19 @@ body {
   background: white;
   position: relative; }
 
+/* FontAwesome */
+/* line 110, ../sass/_components.scss */
+i[class^=fa-] {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 /*ボタン*/
-/* line 6, ../sass/_components.scss */
+/* line 121, ../sass/_components.scss */
 a.button, .button-download,
 input.button,
 #nlmg-resign-form p.submit input,
@@ -223,13 +234,11 @@ a.lwp-action {
   border: 1px solid #273138;
   color: #fff;
   font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.5) inset;
   -moz-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.5) inset;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.5) inset;
   background: #3d4850;
   /* Old browsers */
@@ -245,9 +254,9 @@ a.lwp-action {
   /* IE10+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d4850', endColorstr='#1c252b',GradientType=0 );
   /* IE6-9 */
-  background: linear-gradient(top, #3d4850 0%, #1c252b 100%);
+  background: linear-gradient(to bottom, #3d4850 0%, #1c252b 100%);
   /* W3C */ }
-  /* line 23, ../sass/_components.scss */
+  /* line 141, ../sass/_components.scss */
   a.button:link, .button-download:link, a.button:visited, .button-download:visited,
   input.button:link,
   input.button:visited,
@@ -258,7 +267,7 @@ a.lwp-action {
   a.lwp-action:link,
   a.lwp-action:visited {
     text-decoration: none; }
-  /* line 26, ../sass/_components.scss */
+  /* line 145, ../sass/_components.scss */
   a.button:hover, .button-download:hover,
   input.button:hover,
   #nlmg-resign-form p.submit input:hover,
@@ -278,17 +287,17 @@ a.lwp-action {
     /* IE10+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c5a65', endColorstr='#2e3940',GradientType=0 );
     /* IE6-9 */
-    background: linear-gradient(top, #4c5a65 0%, #2e3940 100%);
+    background: linear-gradient(to bottom, #4c5a65 0%, #2e3940 100%);
     /* W3C */
     cursor: pointer; }
-  /* line 37, ../sass/_components.scss */
+  /* line 156, ../sass/_components.scss */
   a.button:active, .button-download:active,
   input.button:active,
   #nlmg-resign-form p.submit input:active,
   .button-secondary:active,
   a.lwp-action:active {
     background: #252e34; }
-  /* line 40, ../sass/_components.scss */
+  /* line 159, ../sass/_components.scss */
   a.button i, .button-download i,
   input.button i,
   #nlmg-resign-form p.submit input i,
@@ -296,7 +305,7 @@ a.lwp-action {
   a.lwp-action i {
     margin-right: 0.5em; }
 
-/* line 46, ../sass/_components.scss */
+/* line 165, ../sass/_components.scss */
 .button-download small,
 .button-disabled small {
   display: block;
@@ -304,28 +313,28 @@ a.lwp-action {
   line-height: 1;
   height: 1em;
   font-size: 0.75em;
-  font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+  font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
   color: #fff; }
 
-/* line 57, ../sass/_components.scss */
+/* line 175, ../sass/_components.scss */
 a.button-disabled,
 input.button-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6; }
 
-/* line 60, ../sass/_components.scss */
+/* line 179, ../sass/_components.scss */
 a.lwp-action {
   font-size: 0.8em;
   padding: 1px 5px;
   margin-left: 0.5em; }
 
 /* プライマリーボタン */
-/* line 66, ../sass/_components.scss */
+/* line 185, ../sass/_components.scss */
 p.submit {
   float: right;
   margin: 0 0 10px; }
 
-/* line 71, ../sass/_components.scss */
+/* line 189, ../sass/_components.scss */
 .button-primary,
 .lwp-buynow {
   display: inline-block;
@@ -335,13 +344,11 @@ p.submit {
   padding: 5px 7px;
   border: 1px solid #9B4C03;
   color: #fff;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5), 0 0 3px rgba(255, 255, 255, 0.5) inset;
   -moz-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5), 0 0 3px rgba(255, 255, 255, 0.5) inset;
+  -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5), 0 0 3px rgba(255, 255, 255, 0.5) inset;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5), 0 0 3px rgba(255, 255, 255, 0.5) inset;
   background: #ffb76b;
   /* Old browsers */
@@ -355,24 +362,24 @@ p.submit {
   /* Opera 11.10+ */
   background: -ms-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
   /* IE10+ */
-  background: linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+  background: linear-gradient(to bottom, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 );
   /* IE6-9 */
   text-shadow: 1px 1px 3px #aaa; }
-  /* line 90, ../sass/_components.scss */
+  /* line 209, ../sass/_components.scss */
   .button-primary:before,
   .lwp-buynow:before {
     content: '\f07a';
     margin-right: 0.5em;
     font-family: FontAwesome; }
-  /* line 96, ../sass/_components.scss */
+  /* line 214, ../sass/_components.scss */
   .button-primary:link, .button-primary:visited,
   .lwp-buynow:link,
   .lwp-buynow:visited {
     text-decoration: none;
     color: #fff; }
-  /* line 100, ../sass/_components.scss */
+  /* line 219, ../sass/_components.scss */
   .button-primary:hover,
   .lwp-buynow:hover {
     color: #fff;
@@ -388,11 +395,11 @@ p.submit {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #ffc387 0%, #ffa73d 52%, #ffa551 52%, #ff7f04 100%);
     /* IE10+ */
-    background: linear-gradient(top, #ffc387 0%, #ffa73d 52%, #ffa551 52%, #ff7f04 100%);
+    background: linear-gradient(to bottom, #ffc387 0%, #ffa73d 52%, #ffa551 52%, #ff7f04 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc387', endColorstr='#ff7f04',GradientType=0 );
     /* IE6-9 */ }
-  /* line 111, ../sass/_components.scss */
+  /* line 230, ../sass/_components.scss */
   .button-primary:active,
   .lwp-buynow:active {
     color: #fff; }
@@ -401,7 +408,7 @@ p.submit {
 /* 青いボタン */
 /* blue pill (inspired by iTunes)
 *******************************************************************************/
-/* line 123, ../sass/_components.scss */
+/* line 242, ../sass/_components.scss */
 .button-blue {
   background-color: #a5b8da;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b8da), color-stop(100%, #7089b3));
@@ -409,29 +416,27 @@ p.submit {
   background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
   background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
   background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
-  background-image: linear-gradient(top, #a5b8da, #7089b3);
+  background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
   border-top: 1px solid #758fba;
   border-right: 1px solid #6c84ab;
   border-bottom: 1px solid #5c6f91;
   border-left: 1px solid #6c84ab;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
   -moz-box-shadow: inset 0 1px 0 0 #aec3e5;
+  -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
   box-shadow: inset 0 1px 0 0 #aec3e5;
   font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   padding: 0.5em 1em;
   text-shadow: 0 -1px 1px #64799e;
   color: #fff;
   cursor: pointer; }
-  /* line 142, ../sass/_components.scss */
+  /* line 261, ../sass/_components.scss */
   .button-blue:link, .button-blue:visited {
     color: #fff;
     text-decoration: none; }
-  /* line 146, ../sass/_components.scss */
+  /* line 265, ../sass/_components.scss */
   .button-blue:hover {
     background-color: #9badcc;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9badcc), color-stop(100%, #687fa6));
@@ -439,83 +444,79 @@ p.submit {
     background-image: -moz-linear-gradient(top, #9badcc, #687fa6);
     background-image: -ms-linear-gradient(top, #9badcc, #687fa6);
     background-image: -o-linear-gradient(top, #9badcc, #687fa6);
-    background-image: linear-gradient(top, #9badcc, #687fa6);
+    background-image: linear-gradient(to bottom, #9badcc, #687fa6);
     border-top: 1px solid #6d86ad;
     border-right: 1px solid #647a9e;
     border-bottom: 1px solid #546685;
     border-left: 1px solid #647a9e;
-    -webkit-box-shadow: inset 0 1px 0 0 #a5b9d9;
     -moz-box-shadow: inset 0 1px 0 0 #a5b9d9;
+    -webkit-box-shadow: inset 0 1px 0 0 #a5b9d9;
     box-shadow: inset 0 1px 0 0 #a5b9d9; }
-  /* line 160, ../sass/_components.scss */
+  /* line 279, ../sass/_components.scss */
   .button-blue:active {
     border: 1px solid #546685;
-    -webkit-box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee;
     -moz-box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee;
+    -webkit-box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee;
     box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee; }
 
 /* 画像 */
-/* line 166, ../sass/_components.scss */
+/* line 285, ../sass/_components.scss */
 .img-circle, footer .avatar, .desc-box .grid_2 .avatar {
-  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%; }
 
-/* line 169, ../sass/_components.scss */
+/* line 288, ../sass/_components.scss */
 .img-pressed, footer .avatar, .desc-box .grid_2 .avatar {
-  -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   -moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
+  -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset; }
 
 /*メッセージボックス*/
-/* line 174, ../sass/_components.scss */
+/* line 293, ../sass/_components.scss */
 p.message, .entry .lwp-invitation {
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 1em;
   position: relative;
   font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif; }
-  /* line 179, ../sass/_components.scss */
+  /* line 298, ../sass/_components.scss */
   p.message strong, .entry .lwp-invitation strong, p.message em, .entry .lwp-invitation em {
     color: inherit; }
-  /* line 182, ../sass/_components.scss */
+  /* line 301, ../sass/_components.scss */
   p.message i, .entry .lwp-invitation i {
     position: absolute;
     font-size: 26px;
     top: 50%;
     margin-top: -13px;
     left: 8px; }
-  /* line 190, ../sass/_components.scss */
+  /* line 308, ../sass/_components.scss */
   p.message a:link, .entry .lwp-invitation a:link,
   p.message a:visited,
   .entry .lwp-invitation a:visited {
     color: inherit;
     text-decoration: underline; }
-  /* line 194, ../sass/_components.scss */
+  /* line 313, ../sass/_components.scss */
   p.message a:hover, .entry .lwp-invitation a:hover, p.message a:active, .entry .lwp-invitation a:active {
     color: inherit;
     text-decoration: none;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
     opacity: 0.8; }
 
-/* line 200, ../sass/_components.scss */
+/* line 319, ../sass/_components.scss */
 p.warning {
   color: #ff4d44;
   background: #ffd4d2;
   padding-left: 42px; }
 
-/* line 205, ../sass/_components.scss */
+/* line 324, ../sass/_components.scss */
 p.success {
   color: #059119;
   background: #c6f4cd;
   padding-left: 42px; }
 
-/* line 210, ../sass/_components.scss */
+/* line 329, ../sass/_components.scss */
 p.notice, .entry .lwp-invitation {
   color: #0055aa;
   background: #9fc9f4;
@@ -523,17 +524,15 @@ p.notice, .entry .lwp-invitation {
 
 /* 分割線 */
 /* ツールチップ */
-/* line 223, ../sass/_components.scss */
+/* line 342, ../sass/_components.scss */
 #tip-container {
   display: none;
   position: absolute;
   top: 100px;
   left: 0;
   padding: 10px;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
   font-size: 1.4em;
   max-width: 300px;
@@ -541,32 +540,32 @@ p.notice, .entry .lwp-invitation {
   color: #fcfcfc;
   background-color: black;
   z-index: 10000;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px; }
-  /* line 237, ../sass/_components.scss */
+  /* line 356, ../sass/_components.scss */
   #tip-container th {
     vertical-align: middle;
     padding-right: 0.5em;
     font-size: 2em; }
-    /* line 241, ../sass/_components.scss */
+    /* line 360, ../sass/_components.scss */
     #tip-container th i {
       color: #666666; }
-  /* line 245, ../sass/_components.scss */
+  /* line 364, ../sass/_components.scss */
   #tip-container td {
     line-height: 1.2; }
-    /* line 247, ../sass/_components.scss */
+    /* line 366, ../sass/_components.scss */
     #tip-container td strong {
       color: #888888; }
-  /* line 251, ../sass/_components.scss */
+  /* line 370, ../sass/_components.scss */
   #tip-container .close-button {
     display: none; }
-  /* line 255, ../sass/_components.scss */
+  /* line 374, ../sass/_components.scss */
   #tip-container.touch .close-button {
     display: table-row; }
 
 /* フォームテーブル */
-/* line 266, ../sass/_components.scss */
+/* line 382, ../sass/_components.scss */
 table.form-table input[type=text],
 table.form-table input[type=password],
 table.form-table input[type=email],
@@ -576,14 +575,14 @@ table.form-table input[type=search] {
   padding: 3px 5px; }
 
 /* FeedBurner */
-/* line 274, ../sass/_components.scss */
+/* line 393, ../sass/_components.scss */
 #feedburner-count {
   width: 52px;
   height: 62px;
   position: relative;
   overflow: hidden;
   text-decoration: none; }
-  /* line 280, ../sass/_components.scss */
+  /* line 399, ../sass/_components.scss */
   #feedburner-count span {
     position: absolute;
     display: block;
@@ -594,23 +593,23 @@ table.form-table input[type=search] {
     line-height: 35px; }
 
 /* ページナビ */
-/* line 292, ../sass/_components.scss */
+/* line 411, ../sass/_components.scss */
 .wp-pagenavi {
   font-size: 2em;
   font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   margin: 20px 0; }
-  /* line 296, ../sass/_components.scss */
+  /* line 415, ../sass/_components.scss */
   .wp-pagenavi a, .wp-pagenavi span.current, .wp-pagenavi span.extend {
     padding: 3px 8px;
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
-    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     border: 1px solid #252e34;
     border-left: none;
     letter-spacing: 0;
     margin: 0; }
-    /* line 304, ../sass/_components.scss */
+    /* line 423, ../sass/_components.scss */
     .wp-pagenavi a:last-child, .wp-pagenavi span.current:last-child, .wp-pagenavi span.extend:last-child {
       -moz-border-radius-topright: 3px;
       -webkit-border-top-right-radius: 3px;
@@ -618,38 +617,34 @@ table.form-table input[type=search] {
       -moz-border-radius-bottomright: 3px;
       -webkit-border-bottom-right-radius: 3px;
       border-bottom-right-radius: 3px; }
-  /* line 308, ../sass/_components.scss */
+  /* line 427, ../sass/_components.scss */
   .wp-pagenavi a {
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     background-color: #252e34;
-    background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #333f46), color-stop(100%, #252e34));
-    background-image: -webkit-linear-gradient(left top, #333f46, #252e34);
     background-image: -moz-linear-gradient(left top, #333f46, #252e34);
-    background-image: -o-linear-gradient(left top, #333f46, #252e34);
-    background-image: linear-gradient(left top, #333f46, #252e34); }
-    /* line 314, ../sass/_components.scss */
+    background-image: -webkit-linear-gradient(left top, #333f46, #252e34);
+    background-image: linear-gradient(to right bottom, #333f46, #252e34); }
+    /* line 432, ../sass/_components.scss */
     .wp-pagenavi a:link, .wp-pagenavi a:visited {
       text-decoration: none; }
-    /* line 318, ../sass/_components.scss */
+    /* line 436, ../sass/_components.scss */
     .wp-pagenavi a:hover, .wp-pagenavi a:active {
       background: #4C5A65; }
-  /* line 323, ../sass/_components.scss */
+  /* line 441, ../sass/_components.scss */
   .wp-pagenavi span.current,
   .wp-pagenavi span.extend {
     color: #252e34;
     background-color: #ddd;
-    background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #dddddd), color-stop(100%, #cccccc));
-    background-image: -webkit-linear-gradient(left top, #dddddd, #cccccc);
     background-image: -moz-linear-gradient(left top, #dddddd, #cccccc);
-    background-image: -o-linear-gradient(left top, #dddddd, #cccccc);
-    background-image: linear-gradient(left top, #dddddd, #cccccc); }
-  /* line 328, ../sass/_components.scss */
+    background-image: -webkit-linear-gradient(left top, #dddddd, #cccccc);
+    background-image: linear-gradient(to right bottom, #dddddd, #cccccc); }
+  /* line 447, ../sass/_components.scss */
   .wp-pagenavi span.pages {
     padding: 3px 8px;
     margin-right: 1em;
     border: none; }
-    /* line 332, ../sass/_components.scss */
+    /* line 451, ../sass/_components.scss */
     .wp-pagenavi span.pages + * {
       border-left: 1px solid #252e34;
       -moz-border-radius-topleft: 3px;
@@ -660,21 +655,192 @@ table.form-table input[type=search] {
       border-bottom-left-radius: 3px; }
 
 /* Google Responsive ads */
-/* line 340, ../sass/_components.scss */
+/* line 459, ../sass/_components.scss */
 .my_adslot {
   width: 320px;
   height: 50px; }
 
 @media screen and (min-width: 500px) {
-  /* line 345, ../sass/_components.scss */
+  /* line 464, ../sass/_components.scss */
   .my_adslot {
     width: 468px;
     height: 60px; } }
 @media screen and (min-width: 800px) {
-  /* line 351, ../sass/_components.scss */
+  /* line 470, ../sass/_components.scss */
   .my_adslot {
     width: 728px;
     height: 90px; } }
+/* line 7, ../sass/_quotes.scss */
+.quotes-content {
+  font-family: TsukuOldMinPro-R sans-serif; }
+
+/* line 10, ../sass/_quotes.scss */
+.quotes-cite {
+  font-family: TsukuAMDMinStd-E sans-serif; }
+
+/* line 14, ../sass/_quotes.scss */
+.quotes-container {
+  max-width: 720px;
+  width: auto;
+  margin: 0 auto;
+  padding: 80px 20px;
+  min-height: 450px; }
+  /* line 20, ../sass/_quotes.scss */
+  .quotes-container h1 {
+    font-size: 3em;
+    font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 80px;
+    text-align: center; }
+  /* line 28, ../sass/_quotes.scss */
+  .quotes-container .quotes-loop {
+    position: relative;
+    margin-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 80px; }
+    /* line 34, ../sass/_quotes.scss */
+    .quotes-container .quotes-loop i {
+      position: absolute;
+      left: 0;
+      top: -0.3em;
+      font-size: 6em;
+      color: #f1f1f1;
+      z-index: 1; }
+    /* line 42, ../sass/_quotes.scss */
+    .quotes-container .quotes-loop blockquote {
+      position: relative;
+      font-size: 3em;
+      z-index: 2; }
+      /* line 46, ../sass/_quotes.scss */
+      .quotes-container .quotes-loop blockquote p {
+        line-height: 1.8;
+        margin: 0.5em 0.5em 0.5em 40px;
+        text-align: justify;
+        text-justify: inter-ideograph;
+        word-wrap: break-word;
+        letter-spacing: -0.1em; }
+      /* line 54, ../sass/_quotes.scss */
+      .quotes-container .quotes-loop blockquote cite {
+        margin-top: 1.5em;
+        display: block;
+        text-align: right;
+        font-size: 0.5em;
+        color: #666; }
+    /* line 62, ../sass/_quotes.scss */
+    .quotes-container .quotes-loop .date {
+      text-align: right;
+      font-size: 1.4em;
+      font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
+      margin-top: 1em; }
+      /* line 68, ../sass/_quotes.scss */
+      .quotes-container .quotes-loop .date a:link, .quotes-container .quotes-loop .date a:visited {
+        color: #999;
+        text-decoration: none; }
+      /* line 73, ../sass/_quotes.scss */
+      .quotes-container .quotes-loop .date a:hover {
+        color: #000;
+        text-decoration: underline; }
+      /* line 77, ../sass/_quotes.scss */
+      .quotes-container .quotes-loop .date a:active {
+        color: orange;
+        text-decoration: none; }
+      /* line 82, ../sass/_quotes.scss */
+      .quotes-container .quotes-loop .date span {
+        color: #999; }
+  /* line 88, ../sass/_quotes.scss */
+  .quotes-container .more-quotes {
+    text-align: center;
+    margin: 80px 0 0; }
+    /* line 91, ../sass/_quotes.scss */
+    .quotes-container .more-quotes a {
+      display: inline-block;
+      vertical-align: middle;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      padding: 0.5em 1em;
+      background: #f1f1f1;
+      font-size: 2em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+      /* line 98, ../sass/_quotes.scss */
+      .quotes-container .more-quotes a:link, .quotes-container .more-quotes a:visited {
+        color: #ccc;
+        text-decoration: none; }
+      /* line 102, ../sass/_quotes.scss */
+      .quotes-container .more-quotes a:hover {
+        color: #000;
+        background: #ccc; }
+      /* line 106, ../sass/_quotes.scss */
+      .quotes-container .more-quotes a:active {
+        color: red;
+        -moz-box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1); }
+  /* line 113, ../sass/_quotes.scss */
+  .quotes-container ul.like {
+    overflow: hidden;
+    *zoom: 1;
+    margin: 80px 0; }
+    /* line 116, ../sass/_quotes.scss */
+    .quotes-container ul.like li {
+      width: 15%;
+      text-align: center;
+      float: left; }
+  /* line 123, ../sass/_quotes.scss */
+  .quotes-container .wp-pagenavi {
+    font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
+    text-align: right; }
+  /* line 128, ../sass/_quotes.scss */
+  .quotes-container address {
+    margin-top: 80px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
+    /* line 132, ../sass/_quotes.scss */
+    .quotes-container address span {
+      display: block;
+      font-size: 3em;
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 1em;
+      color: #888;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+    /* line 141, ../sass/_quotes.scss */
+    .quotes-container address img {
+      width: 160px;
+      height: 160px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%; }
+    /* line 146, ../sass/_quotes.scss */
+    .quotes-container address p {
+      margin-top: 0.5em; }
+    /* line 149, ../sass/_quotes.scss */
+    .quotes-container address a {
+      font-size: 1.8em; }
+      /* line 151, ../sass/_quotes.scss */
+      .quotes-container address a:link, .quotes-container address a:visited {
+        text-decoration: none;
+        color: #888; }
+      /* line 155, ../sass/_quotes.scss */
+      .quotes-container address a:hover {
+        text-decoration: underline;
+        color: #000; }
+      /* line 159, ../sass/_quotes.scss */
+      .quotes-container address a:active {
+        color: #06c; }
+
+@media screen and (max-width: 767px) {
+  /* line 169, ../sass/_quotes.scss */
+  .quotes-container .quotes-loop blockquote {
+    font-size: 2em; }
+    /* line 171, ../sass/_quotes.scss */
+    .quotes-container .quotes-loop blockquote p {
+      margin-left: 20px; } }
 /* Admin bar */
 /* line 2, ../sass/_navigation.scss */
 #wpadminbar {
@@ -691,104 +857,102 @@ table.form-table input[type=search] {
   #wpadminbar #wp-admin-bar-main-menues i {
     margin-right: 0.5em; }
 
-@media screen and (max-width: 767px) {
-  /* line 19, ../sass/_navigation.scss */
+@media screen and (max-width: 782px) {
+  /* line 22, ../sass/_navigation.scss */
+  #wpadminbar #wp-admin-bar-main-menues {
+    display: block; }
+  /* line 25, ../sass/_navigation.scss */
   #wpadminbar .adminbar-logo {
-    width: 36px;
-    height: 36px;
-    margin-top: 5px;
+    width: 32px;
+    height: 32px;
     margin: 5px 10px; } }
 /*ナビゲーション*/
-/* line 29, ../sass/_navigation.scss */
+/* line 34, ../sass/_navigation.scss */
 #navi {
   border-bottom: 3px double #45474d;
   color: #888888;
   overflow: hidden;
   background: #f7f7f7;
   /* ソーター */ }
-  /* line 35, ../sass/_navigation.scss */
+  /* line 40, ../sass/_navigation.scss */
   #navi.archive header {
     padding: 10px;
     position: relative; }
-  /* line 39, ../sass/_navigation.scss */
+  /* line 44, ../sass/_navigation.scss */
   #navi.archive h1 {
     font-size: 2em;
     margin: 0.5em 0; }
-    /* line 42, ../sass/_navigation.scss */
+    /* line 47, ../sass/_navigation.scss */
     #navi.archive h1 small {
       font-size: 0.8em;
       padding: 0.1em;
       margin-right: 0.2em;
       padding: 5px 10px;
-      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
+      -webkit-border-radius: 3px;
       border-radius: 3px;
       color: #fff;
       background-color: #252e34; }
-      /* line 50, ../sass/_navigation.scss */
+      /* line 55, ../sass/_navigation.scss */
       #navi.archive h1 small i {
         margin-right: 5px; }
-  /* line 55, ../sass/_navigation.scss */
+  /* line 60, ../sass/_navigation.scss */
   #navi.archive .location {
     font-size: 1.2em;
     line-height: 2em;
     height: 2em; }
-    /* line 59, ../sass/_navigation.scss */
+    /* line 64, ../sass/_navigation.scss */
     #navi.archive .location i {
       margin-right: 0.25em; }
-  /* line 63, ../sass/_navigation.scss */
+  /* line 68, ../sass/_navigation.scss */
   #navi.archive .count {
     backgrond-color: #252e34; }
-  /* line 66, ../sass/_navigation.scss */
+  /* line 71, ../sass/_navigation.scss */
   #navi.archive .wp-pagenavi {
     font-size: 1.2em;
     text-align: right; }
-  /* line 74, ../sass/_navigation.scss */
+  /* line 79, ../sass/_navigation.scss */
   #navi #sorter label {
     color: #fff;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     font-size: 1.2em; }
-  /* line 79, ../sass/_navigation.scss */
+  /* line 84, ../sass/_navigation.scss */
   #navi #sorter p {
     margin: 0;
     height: 40px;
     line-height: 40px; }
-  /* line 84, ../sass/_navigation.scss */
+  /* line 89, ../sass/_navigation.scss */
   #navi #sorter input[type=text] {
     border: 1px solid #ccc;
     color: #666;
     font-size: 14px;
     margin-left: 0.5em;
     paddign: 2px 5px;
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px; }
-  /* line 93, ../sass/_navigation.scss */
+  /* line 98, ../sass/_navigation.scss */
   #navi .breadcrumb {
     height: 24px;
     line-height: 24px;
     margin: 10px auto;
     font-size: 1.1em;
     text-align: left; }
-    /* line 99, ../sass/_navigation.scss */
+    /* line 104, ../sass/_navigation.scss */
     #navi .breadcrumb i {
       font-size: 24px;
       vertical-align: middle; }
-    /* line 103, ../sass/_navigation.scss */
+    /* line 108, ../sass/_navigation.scss */
     #navi .breadcrumb a:link, #navi .breadcrumb a:visited {
       color: inherit; }
-    /* line 106, ../sass/_navigation.scss */
+    /* line 111, ../sass/_navigation.scss */
     #navi .breadcrumb a:hover, #navi .breadcrumb a:active {
       color: #666666; }
-  /* line 111, ../sass/_navigation.scss */
+  /* line 116, ../sass/_navigation.scss */
   #navi p.center {
     font-size: 1.6em; }
 
-/* line 116, ../sass/_navigation.scss */
+/* line 121, ../sass/_navigation.scss */
 #to-top {
   width: 100%;
   position: fixed;
@@ -797,15 +961,15 @@ table.form-table input[type=search] {
   z-index: 80;
   top: 40px;
   display: none; }
-  /* line 124, ../sass/_navigation.scss */
+  /* line 129, ../sass/_navigation.scss */
   #to-top a {
     margin-right: 40px;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -webkit-transition-delay: 0;
     -moz-transition: opacity 0.2s ease-in-out 0;
     -o-transition: opacity 0.2s ease-in-out 0;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -webkit-transition-delay: 0;
     transition: opacity 0.2s ease-in-out 0; }
-    /* line 127, ../sass/_navigation.scss */
+    /* line 132, ../sass/_navigation.scss */
     #to-top a:link, #to-top a:visited {
       color: #252e34;
       text-decoration: none; }
@@ -829,10 +993,8 @@ div.archive {
       padding: 3px 5px;
       background: #00A0E9;
       color: #fff;
-      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
+      -webkit-border-radius: 3px;
       border-radius: 3px; }
   /* line 21, ../sass/_archive.scss */
   div.archive .archive-box {
@@ -842,10 +1004,8 @@ div.archive {
     margin-bottom: 16px;
     float: left;
     position: relative;
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     background-color: #fff;
     /* トップラベル*/
@@ -900,7 +1060,7 @@ div.archive {
     /* line 69, ../sass/_archive.scss */
     div.archive .archive-box .post-counter-label {
       margin-left: 10px;
-      font-family: Georgia, "Times New Roman", Times, serif;
+      font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
       letter-spacing: -0.1em; }
     /* line 76, ../sass/_archive.scss */
     div.archive .archive-box .photo {
@@ -927,10 +1087,8 @@ div.archive {
         font-weight: bold;
         right: 5px;
         bottom: 5px;
-        -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
+        -webkit-border-radius: 3px;
         border-radius: 3px; }
     /* line 104, ../sass/_archive.scss */
     div.archive .archive-box .archive-title {
@@ -1016,10 +1174,8 @@ div.archive {
           margin-bottom: 5px;
           color: #fff;
           text-decoration: none;
-          -webkit-border-radius: 5px;
           -moz-border-radius: 5px;
-          -ms-border-radius: 5px;
-          -o-border-radius: 5px;
+          -webkit-border-radius: 5px;
           border-radius: 5px; }
           /* line 201, ../sass/_archive.scss */
           div.archive .archive-box .taxonomies .category a i, div.archive .archive-box .taxonomies .post_tag a i {
@@ -1061,7 +1217,7 @@ div.archive {
   /* line 243, ../sass/_archive.scss */
   .post-list .loop .post-title {
     font-size: 2em;
-    font-family: Georgia, "Akashi", sans-serif;
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
     text-align: left; }
   /* line 248, ../sass/_archive.scss */
   .post-list .loop .score {
@@ -1069,10 +1225,8 @@ div.archive {
     right: 0;
     top: 10px;
     padding: 5px;
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     background: black;
     color: #fcfcfc; }
@@ -1099,15 +1253,18 @@ div.archive {
 /*タイトル*/
 /* line 11, ../sass/_single.scss */
 .title {
-  text-align: left;
+  position: relative;
+  z-index: 2;
+  text-align: center;
   margin: 0;
-  padding: 80px 80px 120px;
+  padding: 80px 80px 40px;
   color: black;
   font-size: 7em;
-  font-family: Georgia, "Akashi", sans-serif;
+  font-family: "PearlStd-L", serif;
   font-weight: normal;
-  line-height: 1.1; }
-  /* line 20, ../sass/_single.scss */
+  line-height: 1.1;
+  letter-spacing: -1px; }
+  /* line 23, ../sass/_single.scss */
   .title strong {
     display: block;
     text-align: center;
@@ -1115,35 +1272,10 @@ div.archive {
     font-weight: bold; }
 
 /*投稿件数*/
-/* line 28, ../sass/_single.scss */
+/* line 31, ../sass/_single.scss */
 .header {
   position: relative; }
-  /* line 30, ../sass/_single.scss */
-  .header .calendar {
-    position: absolute;
-    top: -20px;
-    right: 0px;
-    padding-top: 20px;
-    height: 100px;
-    width: 120px;
-    background: #45474d;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    color: #fcfcfc;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    text-align: center; }
-    /* line 42, ../sass/_single.scss */
-    .header .calendar .date {
-      font-size: 1.2em;
-      display: block;
-      padding-top: 1.5em; }
-    /* line 47, ../sass/_single.scss */
-    .header .calendar .year {
-      font-size: 2.5em; }
-  /* line 51, ../sass/_single.scss */
+  /* line 33, ../sass/_single.scss */
   .header .excerpt {
     padding: 1em 0 2em;
     width: 60%;
@@ -1154,56 +1286,62 @@ div.archive {
     font-style: italic; }
 
 /*タイトルメタ*/
-/* line 62, ../sass/_single.scss */
+/* line 44, ../sass/_single.scss */
 .title-meta {
-  width: 100%;
-  margin-bottom: 40px;
-  color: #888888; }
-  /* line 66, ../sass/_single.scss */
-  .title-meta th, .title-meta td {
-    font-size: 1.4em;
-    padding: 0.5em; }
-  /* line 70, ../sass/_single.scss */
-  .title-meta th {
-    text-align: right;
-    border-right: 1px solid #eeeeee; }
-    /* line 73, ../sass/_single.scss */
-    .title-meta th i {
-      margin-right: 0.5em;
-      color: black; }
-  /* line 79, ../sass/_single.scss */
-  .title-meta tr:first-child th, .title-meta tr:first-child td {
-    border-bottom: 1px solid #eeeeee; }
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px double #f1f1f1;
+  font-size: 1.4em;
+  text-align: left; }
+  /* line 52, ../sass/_single.scss */
+  .title-meta li {
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+    margin-right: 1em; }
+    /* line 55, ../sass/_single.scss */
+    .title-meta li .label {
+      color: #888888;
+      margin-right: 0.25em;
+      font-weight: bold; }
+      /* line 59, ../sass/_single.scss */
+      .title-meta li .label i {
+        font-weight: normal; }
 
-@media screen and (max-width: 767px) {
-  /* line 87, ../sass/_single.scss */
+@media screen and (max-width: 959px) {
+  /* line 67, ../sass/_single.scss */
   .title-meta {
-    display: none; } }
+    margin: 0 10px 10px;
+    font-size: 1.2em; } }
 /* アイキャッチ */
-/* line 94, ../sass/_single.scss */
+/* line 75, ../sass/_single.scss */
 .eyecatch {
   text-align: center; }
-  /* line 96, ../sass/_single.scss */
+  /* line 77, ../sass/_single.scss */
   .eyecatch img {
     max-width: 100%;
     width: auto;
     height: auto; }
 
-/* line 104, ../sass/_single.scss */
+/* line 85, ../sass/_single.scss */
 #outdated-post {
   font-size: 1.4em;
   margin-bottom: 2em; }
 
-/* line 110, ../sass/_single.scss */
+/* line 91, ../sass/_single.scss */
 #main .post-excerpt {
   magin: 1em 0;
   padding: 1em;
   font-size: 3em;
-  font-family: Georgia, "Akashi", sans-serif;
+  font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
   color: #333f46; }
 
 /*投稿スタイル*/
-/* line 119, ../sass/_single.scss */
+/* line 100, ../sass/_single.scss */
 .entry {
   min-height: 400px;
   padding-bottom: 20px;
@@ -1211,7 +1349,7 @@ div.archive {
   font-size: 2em;
   line-height: 1.8;
   position: relative;
-  font-family: "Garamond", "A1 Mincho", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif;
+  font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatissePro-L", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif;
   /*見出し*/
   /* 装飾 */
   /* 略語 */
@@ -1233,143 +1371,147 @@ div.archive {
   /* Twitter ウィジェット*/
   /* LWPの定期購読 */
   /* Google Map */ }
-  /* line 8, ../sass/_post_style.scss */
+  /* line 7, ../sass/_post_style.scss */
+  .entry .indent {
+    text-indent: 1em; }
+  /* line 10, ../sass/_post_style.scss */
   .entry > p {
     margin: 1em 0; }
-    /* line 10, ../sass/_post_style.scss */
-    .entry > p.indent {
-      text-indent: 1em; }
-    /* line 13, ../sass/_post_style.scss */
+    /* line 12, ../sass/_post_style.scss */
     .entry > p.dropcap {
       text-indent: 0; }
-      /* line 15, ../sass/_post_style.scss */
+      /* line 14, ../sass/_post_style.scss */
       .entry > p.dropcap:first-letter {
         font-size: 2em;
         float: left;
         margin-right: 0.2em;
         font-weight: bold; }
-  /* line 23, ../sass/_post_style.scss */
+    /* line 21, ../sass/_post_style.scss */
+    .entry > p.samurai {
+      font-size: 2em;
+      font-family: "SamuraiStd-R", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
+  /* line 26, ../sass/_post_style.scss */
   .entry p.attachment {
     text-align: center; }
-    /* line 25, ../sass/_post_style.scss */
+    /* line 28, ../sass/_post_style.scss */
     .entry p.attachment img {
       max-width: 100%; }
-  /* line 31, ../sass/_post_style.scss */
+  /* line 34, ../sass/_post_style.scss */
   .entry h1, .entry h2, .entry h3, .entry h4, .entry h5 {
-    font-weight: bold;
     padding-top: 1.5em;
     margin-bottom: 0.75em;
-    font-family: Georgia, "Akashi", sans-serif; }
-  /* line 37, ../sass/_post_style.scss */
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
+  /* line 39, ../sass/_post_style.scss */
   .entry h1 {
     font-size: 2.5em;
     color: #fbee88;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; }
-  /* line 47, ../sass/_post_style.scss */
+  /* line 49, ../sass/_post_style.scss */
   .entry h2 {
     font-size: 1.8em;
     line-height: 1.2;
     color: black; }
-  /* line 53, ../sass/_post_style.scss */
+  /* line 55, ../sass/_post_style.scss */
   .entry h3 {
     font-size: 1.5em;
     padding-bottom: 5px;
     line-height: 1.2;
     color: #333f46;
     border-bottom: 1px dotted #252e34; }
-  /* line 60, ../sass/_post_style.scss */
+  /* line 62, ../sass/_post_style.scss */
   .entry h4 {
     font-size: 1.3em;
     line-height: 1.2;
     color: #888;
     text-shadow: 1px 1px 2px #fff; }
-  /* line 66, ../sass/_post_style.scss */
+  /* line 68, ../sass/_post_style.scss */
   .entry h5 {
     font-size: 1.1em;
     line-height: 1.2; }
-  /* line 71, ../sass/_post_style.scss */
+  /* line 73, ../sass/_post_style.scss */
   .entry h6 {
-    font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif; }
-  /* line 76, ../sass/_post_style.scss */
+    font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+    font-weight: bold; }
+  /* line 79, ../sass/_post_style.scss */
   .entry strong, .entry b {
     color: #000;
     font-weight: bold; }
-  /* line 81, ../sass/_post_style.scss */
+  /* line 83, ../sass/_post_style.scss */
   .entry big,
   .entry strong.big {
     font-weight: bold;
     font-size: 2em; }
-  /* line 85, ../sass/_post_style.scss */
+  /* line 88, ../sass/_post_style.scss */
   .entry em {
     color: #000;
     font-style: italic; }
-  /* line 90, ../sass/_post_style.scss */
+  /* line 93, ../sass/_post_style.scss */
   .entry abbr, .entry acronym {
     cursor: help;
     color: #333f46;
     border-bottom: 1px dashed #333f46; }
-  /* line 96, ../sass/_post_style.scss */
+  /* line 99, ../sass/_post_style.scss */
   .entry sup {
     font-size: 0.75em;
     vertical-align: top; }
-  /* line 100, ../sass/_post_style.scss */
+  /* line 103, ../sass/_post_style.scss */
   .entry sub {
     font-size: 0.75em;
     vertical-align: sub; }
-  /* line 104, ../sass/_post_style.scss */
+  /* line 107, ../sass/_post_style.scss */
   .entry var {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
     font-style: italic; }
-  /* line 109, ../sass/_post_style.scss */
+  /* line 112, ../sass/_post_style.scss */
   .entry ins {
     text-decoration: none;
     color: #666666;
     background: #fbee88; }
-  /* line 115, ../sass/_post_style.scss */
+  /* line 118, ../sass/_post_style.scss */
   .entry del, .entry s {
     color: #aaa; }
-    /* line 117, ../sass/_post_style.scss */
+    /* line 120, ../sass/_post_style.scss */
     .entry del:before, .entry s:before {
       content: " "; }
-    /* line 118, ../sass/_post_style.scss */
+    /* line 121, ../sass/_post_style.scss */
     .entry del:after, .entry s:after {
       content: " "; }
-  /* line 122, ../sass/_post_style.scss */
+  /* line 125, ../sass/_post_style.scss */
   .entry ol, .entry ul, .entry dl {
     margin: 1em 0; }
-  /* line 125, ../sass/_post_style.scss */
+  /* line 128, ../sass/_post_style.scss */
   .entry ol li, .entry ul li, .entry dl dd {
     margin: 0.5em 0 0.8em 1em; }
-  /* line 126, ../sass/_post_style.scss */
+  /* line 129, ../sass/_post_style.scss */
   .entry ul, .entry ol {
     padding-left: 1.5em; }
-  /* line 127, ../sass/_post_style.scss */
+  /* line 130, ../sass/_post_style.scss */
   .entry ul li {
     list-style: outside disc; }
-  /* line 128, ../sass/_post_style.scss */
+  /* line 131, ../sass/_post_style.scss */
   .entry ol li {
     list-style: outside decimal; }
-  /* line 129, ../sass/_post_style.scss */
+  /* line 132, ../sass/_post_style.scss */
   .entry ul li li, .entry ol li li, .entry dd li {
     font-size: 0.8em; }
-  /* line 130, ../sass/_post_style.scss */
+  /* line 133, ../sass/_post_style.scss */
   .entry ul li ul li {
     list-style-type: circle; }
-  /* line 131, ../sass/_post_style.scss */
+  /* line 134, ../sass/_post_style.scss */
   .entry ol li ol li {
     list-style-type: decimal-leading-zero; }
-  /* line 132, ../sass/_post_style.scss */
+  /* line 135, ../sass/_post_style.scss */
   .entry dl dt {
     font-size: 1.2em;
     font-weight: bold;
     margin: 15px 0 0;
     text-shadow: 1px 1px 2px #fff;
     color: #252e34; }
-  /* line 139, ../sass/_post_style.scss */
+  /* line 142, ../sass/_post_style.scss */
   .entry dl dd {
     padding-left: 1.5em;
     margin-left: 0; }
-    /* line 142, ../sass/_post_style.scss */
+    /* line 145, ../sass/_post_style.scss */
     .entry dl dd:before {
       font-family: FontAwesome;
       font-weight: normal;
@@ -1378,110 +1520,104 @@ div.archive {
       text-decoration: inherit;
       content: "\f054";
       text-indent: -1.5em; }
-  /* line 153, ../sass/_post_style.scss */
+  /* line 156, ../sass/_post_style.scss */
   .entry blockquote {
     margin: 0.5em 0;
     padding: 32px;
-    color: #333f46;
+    color: #808080;
     position: relative; }
-    /* line 159, ../sass/_post_style.scss */
+    /* line 161, ../sass/_post_style.scss */
     .entry blockquote:before, .entry blockquote:after {
       color: lightgrey;
       display: block;
       position: absolute;
       font-size: 24px;
       font-family: FontAwesome; }
-    /* line 166, ../sass/_post_style.scss */
+    /* line 169, ../sass/_post_style.scss */
     .entry blockquote:before {
       top: 0;
       left: 10px;
       content: "\f10d"; }
-    /* line 171, ../sass/_post_style.scss */
+    /* line 174, ../sass/_post_style.scss */
     .entry blockquote:after {
       bottom: 0;
       right: 10px;
       content: "\f10e"; }
-    /* line 176, ../sass/_post_style.scss */
+    /* line 179, ../sass/_post_style.scss */
     .entry blockquote p {
       margin: 0.5em 0; }
-    /* line 179, ../sass/_post_style.scss */
+    /* line 182, ../sass/_post_style.scss */
     .entry blockquote cite {
       display: block;
       text-align: right;
       font-size: 0.8em;
       font-weight: normal;
       color: #333f46; }
-  /* line 187, ../sass/_post_style.scss */
+  /* line 190, ../sass/_post_style.scss */
   .entry q, .entry cite {
     font-style: italic;
     color: #252e34; }
-  /* line 192, ../sass/_post_style.scss */
+  /* line 195, ../sass/_post_style.scss */
   .entry q[cite] {
     cursor: pointer; }
-  /* line 195, ../sass/_post_style.scss */
+  /* line 198, ../sass/_post_style.scss */
   .entry q:before {
     content: '"'; }
-  /* line 198, ../sass/_post_style.scss */
+  /* line 201, ../sass/_post_style.scss */
   .entry q:after {
     content: '"'; }
-  /* line 206, ../sass/_post_style.scss */
+  /* line 209, ../sass/_post_style.scss */
   .entry code, .entry kbd, .entry tt {
     background: #f7f7f7;
     border: 1px solid #ddd;
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     padding: 1px 2px;
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     color: #000; }
-  /* line 214, ../sass/_post_style.scss */
-  .entry var {
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
   /* line 217, ../sass/_post_style.scss */
+  .entry var {
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
+  /* line 220, ../sass/_post_style.scss */
   .entry pre {
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     line-height: 1.2; }
-  /* line 221, ../sass/_post_style.scss */
+  /* line 224, ../sass/_post_style.scss */
   .entry .syntaxhighlighter {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
-    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset;
     box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset; }
-    /* line 226, ../sass/_post_style.scss */
+    /* line 229, ../sass/_post_style.scss */
     .entry .syntaxhighlighter > table {
       font-size: 0.85em !important; }
-    /* line 229, ../sass/_post_style.scss */
+    /* line 232, ../sass/_post_style.scss */
     .entry .syntaxhighlighter code {
       -webkit-text-size-adjust: 100%; }
-  /* line 233, ../sass/_post_style.scss */
+  /* line 236, ../sass/_post_style.scss */
   .entry .code-format {
     background: #4D4945;
     color: #fff;
     margin: 10px;
     padding: 10px;
     border: 2px solid #CCC;
-    -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+    -webkit-border-radius: 15px;
     border-radius: 15px;
     overflow: auto;
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-    /* line 242, ../sass/_post_style.scss */
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
+    /* line 245, ../sass/_post_style.scss */
     .entry .code-format table {
       width: 100%; }
-    /* line 243, ../sass/_post_style.scss */
+    /* line 246, ../sass/_post_style.scss */
     .entry .code-format tr.even {
       background: #57534E; }
-    /* line 244, ../sass/_post_style.scss */
+    /* line 247, ../sass/_post_style.scss */
     .entry .code-format th {
       color: #938C84;
       background-color: transparent;
@@ -1490,42 +1626,42 @@ div.archive {
       border-right: #938C84 2px solid;
       padding: 0 5px 0 0;
       vertical-align: top; }
-    /* line 253, ../sass/_post_style.scss */
+    /* line 256, ../sass/_post_style.scss */
     .entry .code-format td {
       padding: 0 0 0 15px;
       border-bottom: none; }
-    /* line 257, ../sass/_post_style.scss */
+    /* line 260, ../sass/_post_style.scss */
     .entry .code-format .quote {
       color: #A5EFB8; }
-    /* line 258, ../sass/_post_style.scss */
+    /* line 261, ../sass/_post_style.scss */
     .entry .code-format .notation {
       color: #BCE3F4; }
-  /* line 262, ../sass/_post_style.scss */
+  /* line 265, ../sass/_post_style.scss */
   .entry pre.aa {
     font-family: IPAMonaGothic,'ＭＳ ゴシック',monospace;
     font-size: 12px;
     line-height: 1.5;
     margin: 20px 0;
     color: #999; }
-  /* line 271, ../sass/_post_style.scss */
+  /* line 274, ../sass/_post_style.scss */
   .entry address {
     font-style: italic;
     font-size: 0.85em;
     color: #888;
     line-height: 1.4;
     padding: 0.5em 1em; }
-  /* line 280, ../sass/_post_style.scss */
+  /* line 283, ../sass/_post_style.scss */
   .entry .alert {
     font-size: 0.8em;
     font-weight: bold;
     color: #000; }
-    /* line 284, ../sass/_post_style.scss */
+    /* line 287, ../sass/_post_style.scss */
     .entry .alert:before {
       content: " ※"; }
-    /* line 285, ../sass/_post_style.scss */
+    /* line 288, ../sass/_post_style.scss */
     .entry .alert:after {
       content: " "; }
-  /* line 289, ../sass/_post_style.scss */
+  /* line 292, ../sass/_post_style.scss */
   .entry aside {
     margin: 1em 0;
     line-height: 1.4;
@@ -1534,234 +1670,237 @@ div.archive {
     -webkit-text-size-adjust: 100%;
     background: #f7f7f7;
     color: #666666; }
-  /* line 300, ../sass/_post_style.scss */
+  /* line 303, ../sass/_post_style.scss */
   .entry table {
     margin: 20px 0;
     border-spacing: 0;
     empty-cells: show;
     border-collapse: collapse;
     width: 100%; }
-    /* line 307, ../sass/_post_style.scss */
+    /* line 310, ../sass/_post_style.scss */
     .entry table thead th, .entry table thead td {
       color: black;
       padding: 5px 8px;
       border-bottom: 3px double #dddddd;
       font-weight: bold; }
-    /* line 314, ../sass/_post_style.scss */
+    /* line 317, ../sass/_post_style.scss */
     .entry table caption {
       color: #666666;
       text-align: right;
       font-size: 1em; }
-    /* line 320, ../sass/_post_style.scss */
+    /* line 323, ../sass/_post_style.scss */
     .entry table tbody th, .entry table tbody td {
       text-align: left;
       padding: 5px 8px;
       font-size: 0.85em;
       border-bottom: 1px solid #dddddd; }
-    /* line 326, ../sass/_post_style.scss */
+    /* line 329, ../sass/_post_style.scss */
     .entry table tbody th {
       font-weight: bold;
       color: black;
       white-space: nowrap; }
-    /* line 331, ../sass/_post_style.scss */
+    /* line 334, ../sass/_post_style.scss */
     .entry table tbody td {
       color: #888888; }
-    /* line 335, ../sass/_post_style.scss */
+    /* line 337, ../sass/_post_style.scss */
     .entry table tbody tr:nth-child(2n) td,
     .entry table tbody tr:nth-child(2n) th {
       background: #f7f7f7; }
-  /* line 345, ../sass/_post_style.scss */
+  /* line 348, ../sass/_post_style.scss */
   .entry .alignright {
     float: right;
     margin-left: 1.5em; }
-  /* line 346, ../sass/_post_style.scss */
+  /* line 349, ../sass/_post_style.scss */
   .entry .alignleft {
     float: left;
     margin-right: 1.5em; }
-  /* line 349, ../sass/_post_style.scss */
+  /* line 350, ../sass/_post_style.scss */
   .entry .aligncenter,
   .entry div.alignnon,
   .entry figure.alignnon {
     margin: 1.5em auto; }
-  /* line 350, ../sass/_post_style.scss */
+  /* line 353, ../sass/_post_style.scss */
   .entry img.aligncenter {
     display: block; }
-  /* line 352, ../sass/_post_style.scss */
+  /* line 355, ../sass/_post_style.scss */
   .entry img.size-full {
     max-width: 100%;
     height: auto; }
-  /* line 358, ../sass/_post_style.scss */
+  /* line 360, ../sass/_post_style.scss */
   .entry div.wp-caption,
   .entry figure.wp-caption {
     margin-bottom: 1em; }
-  /* line 361, ../sass/_post_style.scss */
+  /* line 364, ../sass/_post_style.scss */
   .entry .wp-caption-text {
     font-size: 0.75em;
     color: #666666;
     margin: 0.25em 0 0; }
-  /* line 376, ../sass/_post_style.scss */
+  /* line 375, ../sass/_post_style.scss */
   .entry input[type=text],
   .entry input[type=password],
   .entry input[type=email],
   .entry input[type=search],
   .entry textarea {
     border: 1px solid #ddd;
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     padding: 5px 10px;
     color: #444; }
-  /* line 127, ../sass/_single.scss */
+  /* line 108, ../sass/_single.scss */
   .entry div.fumiki-twitter-rendered {
     margin: 7px auto !important;
     width: auto !important;
     max-width: 502px !important; }
-  /* line 134, ../sass/_single.scss */
+  /* line 115, ../sass/_single.scss */
   .entry .lwp-invitation {
     clear: both; }
-  /* line 143, ../sass/_single.scss */
+  /* line 122, ../sass/_single.scss */
   .entry div.googlemap iframe,
   .entry iframe[src*=maps\.google],
   .entry iframe[src*=maps\.google] {
     width: 100%; }
 
 @media screen and (min-width: 1280px) {
-  /* line 149, ../sass/_single.scss */
+  /* line 130, ../sass/_single.scss */
   .entry {
     font-size: 2.5em; } }
 /* コメント */
-/* line 156, ../sass/_single.scss */
+/* line 137, ../sass/_single.scss */
 #respond {
   margin: 40px auto 0;
   overflow: auto; }
 
 /*関連投稿*/
-/* line 162, ../sass/_single.scss */
+/* line 143, ../sass/_single.scss */
 .related {
   margin: 20px 0;
   padding-top: 20px;
   border-top: 3px double #252e34;
   /*説明書き*/ }
-  /* line 166, ../sass/_single.scss */
+  /* line 147, ../sass/_single.scss */
   .related h3 {
     font-size: 2em;
     font-weight: bold;
-    font-family: Georgia, "Akashi", sans-serif;
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
     color: #333f46;
     margin-bottom: 20px; }
-  /* line 174, ../sass/_single.scss */
+  /* line 155, ../sass/_single.scss */
   .related .meta {
     width: 233px;
     float: left;
     padding: 5px; }
-    /* line 178, ../sass/_single.scss */
+    /* line 159, ../sass/_single.scss */
     .related .meta h4 {
       font-size: 1.6em;
       color: #4C5A65;
       text-shadow: 1px 1px 2px #fff; }
-    /* line 183, ../sass/_single.scss */
+    /* line 164, ../sass/_single.scss */
     .related .meta .meta p {
       font-size: 1.2em;
       color: #666;
       text-shadow: 1px 1px 2px #fff; }
-    /* line 188, ../sass/_single.scss */
+    /* line 169, ../sass/_single.scss */
     .related .meta .meta p a {
       font-weight: bold; }
 
 /* 投稿ナビゲーション */
-/* line 195, ../sass/_single.scss */
+/* line 176, ../sass/_single.scss */
 .next-previous {
   margin-top: 40px;
   padding-top: 40px;
-  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   border-top: 3px double #888888;
   font-size: 2em; }
-  /* line 201, ../sass/_single.scss */
+  /* line 182, ../sass/_single.scss */
   .next-previous i {
     font-size: 1.5em;
     text-decoration: none; }
-  /* line 205, ../sass/_single.scss */
+  /* line 186, ../sass/_single.scss */
   .next-previous p {
     width: 300px;
     float: left;
     font-size: 0.8em;
     line-height: 1.2; }
-    /* line 211, ../sass/_single.scss */
+    /* line 192, ../sass/_single.scss */
     .next-previous p.prev i {
       float: left;
       margin-right: 0.5em; }
-    /* line 216, ../sass/_single.scss */
+    /* line 197, ../sass/_single.scss */
     .next-previous p.next {
       text-align: right;
       float: right; }
-      /* line 219, ../sass/_single.scss */
+      /* line 200, ../sass/_single.scss */
       .next-previous p.next i {
         margin-left: 0.5em;
         float: right; }
 
+@media screen and (max-width: 959px) {
+  /* line 208, ../sass/_single.scss */
+  .next-previous {
+    padding-right: 10px;
+    padding-left: 10px; } }
 /* 広告 */
-/* line 228, ../sass/_single.scss */
+/* line 216, ../sass/_single.scss */
 .google-share {
   clear: both;
   margin-bottom: 20px;
   padding: 20px 10px;
   text-align: center;
   border-top: 3px double #888888; }
-  /* line 234, ../sass/_single.scss */
+  /* line 222, ../sass/_single.scss */
   .google-share .like {
     margin-bottom: 20px;
     overflow: hidden;
     *zoom: 1; }
-    /* line 237, ../sass/_single.scss */
+    /* line 225, ../sass/_single.scss */
     .google-share .like li {
       float: left;
       width: 16%;
       text-align: center;
       height: 80px; }
-  /* line 244, ../sass/_single.scss */
+  /* line 232, ../sass/_single.scss */
   .google-share .ad, .google-share .ad2 {
     float: left;
     width: 336px;
     height: 280px; }
-  /* line 249, ../sass/_single.scss */
+  /* line 237, ../sass/_single.scss */
   .google-share .ad2 {
     float: right; }
 
 @media screen and (min-width: 960px) and (max-width: 1279px) {
-  /* line 256, ../sass/_single.scss */
+  /* line 244, ../sass/_single.scss */
   .google-share .share {
     width: 200px;
     float: left; }
-    /* line 260, ../sass/_single.scss */
+    /* line 248, ../sass/_single.scss */
     .google-share .share .like li {
       width: 100%;
       float: none; }
-  /* line 266, ../sass/_single.scss */
+  /* line 254, ../sass/_single.scss */
   .google-share .ad, .google-share .ad2 {
     float: right;
     margin-bottom: 20px; } }
 @media screen and (max-width: 767px) {
-  /* line 274, ../sass/_single.scss */
+  /* line 262, ../sass/_single.scss */
   .google-share {
     padding-left: 0;
     padding-right: 0; }
-    /* line 278, ../sass/_single.scss */
+    /* line 266, ../sass/_single.scss */
     .google-share .like li {
       width: 33%; }
-      /* line 280, ../sass/_single.scss */
+      /* line 268, ../sass/_single.scss */
       .google-share .like li:nth-child(4) {
         cleaf: left; }
-    /* line 285, ../sass/_single.scss */
+    /* line 273, ../sass/_single.scss */
     .google-share .ad {
       width: 300px;
       margin-right: auto;
       margin-left: auto;
       float: none; }
-    /* line 291, ../sass/_single.scss */
+    /* line 279, ../sass/_single.scss */
     .google-share .ad2 {
       display: none; } }
 /*---------------------
@@ -1774,11 +1913,10 @@ div.archive {
   padding-bottom: 1em; }
   /* line 8, ../sass/_footer.scss */
   .pre-footer-navigation li {
-    display: -moz-inline-stack;
     display: inline-block;
     vertical-align: middle;
     *vertical-align: auto;
-    zoom: 1;
+    *zoom: 1;
     *display: inline;
     margin: 1em; }
     /* line 11, ../sass/_footer.scss */
@@ -1787,12 +1925,10 @@ div.archive {
       padding: 0.5em;
       background: #f7f7f7;
       border: 1px solid #dddddd;
-      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
+      -webkit-border-radius: 3px;
       border-radius: 3px; }
-      /* line 18, ../sass/_footer.scss */
+      /* line 17, ../sass/_footer.scss */
       .pre-footer-navigation li a:link, .pre-footer-navigation li a:visited {
         color: #888888;
         text-decoration: none; }
@@ -1828,8 +1964,8 @@ footer {
   padding-top: 2em;
   margin-top: 1.5em;
   border-top: 1px solid #252e34;
-  -webkit-box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
   /*プロフィール*/
   /*リンクの色設定*/
@@ -1857,10 +1993,10 @@ footer {
     padding: 0 0.5em 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
     box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0; }
-    /* line 87, ../sass/_footer.scss */
+    /* line 86, ../sass/_footer.scss */
     footer h4.second, footer h4.widgettitle {
       margin-top: 2em; }
     /* line 90, ../sass/_footer.scss */
@@ -1880,7 +2016,7 @@ footer {
       display: block;
       margin: 1em 0 0.5em;
       font-size: 1.6em;
-      font-family: Georgia, "Akashi", sans-serif; }
+      font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
   /* line 115, ../sass/_footer.scss */
   footer blockquote {
     padding: 24px;
@@ -1909,7 +2045,7 @@ footer {
         bottom: 0; }
     /* line 140, ../sass/_footer.scss */
     footer blockquote cite {
-      font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+      font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
       display: block;
       text-align: right;
       margin: 0.5em 0;
@@ -1929,7 +2065,7 @@ footer {
       height: 32px;
       line-height: 32px;
       font-size: 1.2em; }
-      /* line 164, ../sass/_footer.scss */
+      /* line 163, ../sass/_footer.scss */
       footer ol.inner li a:link, footer ol.inner li a:visited {
         text-decoration: none; }
       /* line 167, ../sass/_footer.scss */
@@ -1971,13 +2107,11 @@ footer {
       line-height: 1.2;
       padding: 0.75em 1em;
       background: #252e34;
-      -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
-      -ms-border-radius: 5px;
-      -o-border-radius: 5px;
+      -webkit-border-radius: 5px;
       border-radius: 5px;
-      -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5);
       -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5);
+      -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5);
       box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5); }
       /* line 199, ../sass/_footer.scss */
       footer ol.inner li.contact a {
@@ -2001,10 +2135,8 @@ footer {
     height: 32px;
     text-align: center;
     padding: 5px;
-    -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    -webkit-border-radius: 50%;
     border-radius: 50%;
     background: #252e34;
     float: left;
@@ -2028,10 +2160,8 @@ footer {
         display: block;
         padding: 3px 5px;
         background: none;
-        -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
+        -webkit-border-radius: 5px;
         border-radius: 5px; }
         /* line 249, ../sass/_footer.scss */
         footer ul li a:link, footer ul li a:visited {
@@ -2091,9 +2221,14 @@ footer {
   text-indent: 40px;
   overflow: hidden;
   background: url("../img/icon-ustream.jpg") left top no-repeat;
-  -webkit-box-shadow: 0 0 5px #666666;
   -moz-box-shadow: 0 0 5px #666666;
+  -webkit-box-shadow: 0 0 5px #666666;
   box-shadow: 0 0 5px #666666; }
+
+/* line 327, ../sass/_footer.scss */
+body > a {
+  display: block;
+  height: 0; }
 
 /*書籍詳細*/
 /* line 5, ../sass/_lwp.scss */
@@ -2144,8 +2279,8 @@ footer {
   text-align: center; }
   /* line 58, ../sass/_lwp.scss */
   .ebook-meta .img-container img.cover {
-    -webkit-box-shadow: 1px 1px 5px black;
     -moz-box-shadow: 1px 1px 5px black;
+    -webkit-box-shadow: 1px 1px 5px black;
     box-shadow: 1px 1px 5px black; }
   /* line 61, ../sass/_lwp.scss */
   .ebook-meta .img-container img.on-sale {
@@ -2174,11 +2309,11 @@ footer {
   .ebook-meta table .book-title {
     font-size: 2em;
     font-weight: bold;
-    font-family: Georgia, "Akashi", sans-serif; }
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
   /* line 88, ../sass/_lwp.scss */
   .ebook-meta table .book-author {
     font-size: 1.6em;
-    font-family: Georgia, "Akashi", sans-serif; }
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
   /* line 92, ../sass/_lwp.scss */
   .ebook-meta table .price {
     font-size: 2em;
@@ -2186,18 +2321,18 @@ footer {
     /* line 95, ../sass/_lwp.scss */
     .ebook-meta table .price .lwp-buynow {
       font-size: 0.8em; }
-    /* line 99, ../sass/_lwp.scss */
+    /* line 98, ../sass/_lwp.scss */
     .ebook-meta table .price .lwp-rest,
     .ebook-meta table .price .lwp-timer {
       font-size: 0.6em;
       color: #06c; }
-    /* line 106, ../sass/_lwp.scss */
+    /* line 103, ../sass/_lwp.scss */
     .ebook-meta table .price .lwp-timer .day,
     .ebook-meta table .price .lwp-timer .hour,
     .ebook-meta table .price .lwp-timer .minutes,
     .ebook-meta table .price .lwp-timer .seconds {
       font-weight: bold;
-      font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
+      font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
   /* line 111, ../sass/_lwp.scss */
   .ebook-meta table small {
     font-size: 0.85em;
@@ -2241,10 +2376,8 @@ footer {
 .lwp-file-list {
   padding: 1em;
   background: #f7f7f7;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
   /*対応端末リスト*/ }
   /* line 162, ../sass/_lwp.scss */
@@ -2283,10 +2416,8 @@ footer {
     .lwp-file-list p.device-desc {
       background: #fcfcfc;
       padding: 1em;
-      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
+      -webkit-border-radius: 3px;
       border-radius: 3px; }
   /* line 199, ../sass/_lwp.scss */
   .lwp-file-list #download-list {
@@ -2421,15 +2552,15 @@ footer {
     padding-top: 1em;
     margin-top: 1em;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1); }
     /* line 96, ../sass/_sidebar.scss */
     .desc-box ol.post-list li:first-child,
     .desc-box ol.wppp_list li:first-child {
       border-top: none;
-      -webkit-box-shadow: none;
       -moz-box-shadow: none;
+      -webkit-box-shadow: none;
       box-shadow: none;
       margin-top: 0; }
     /* line 101, ../sass/_sidebar.scss */
@@ -2460,17 +2591,15 @@ footer {
     /* line 122, ../sass/_sidebar.scss */
     .desc-box ol.post-list li .score,
     .desc-box ol.wppp_list li .score {
-      font-family: Georgia, "Times New Roman", Times, serif;
+      font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
       position: relative;
       font-size: 1.8em;
       float: right;
       padding: 0 0 0.5em 0.5em;
       color: #ccc;
       text-shadow: 1px 1px 2px white, 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
+      -webkit-border-radius: 3px;
       border-radius: 3px; }
   /* line 135, ../sass/_sidebar.scss */
   .desc-box ol.wppp_list li {
@@ -2512,13 +2641,11 @@ footer {
     margin: 0.5em 1em; }
   /* line 178, ../sass/_sidebar.scss */
   .desc-box #alo_easymail_widget_form input[type=text] {
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
-    -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset;
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset;
     box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset; }
   /* line 182, ../sass/_sidebar.scss */
   .desc-box #alo_easymail_widget_form .alo_easymail_preform_msg {
@@ -2539,7 +2666,7 @@ footer {
     border: 1px solid #ccc;
     padding: 0.5em;
     margin-bottom: 20px;
-    font-family: "Garamond", "A1 Mincho", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatissePro-L", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
     /* line 204, ../sass/_sidebar.scss */
     .desc-box .quotescollection_randomquote p:first-child:after, .desc-box .quotescollection_randomquote p:first-child:before {
       top: 100%;
@@ -2580,8 +2707,8 @@ footer {
     .desc-box .widgets-ebook-content .attachment-pinky-cover {
       float: left;
       margin-right: 10px;
-      -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.5);
       box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.5); }
     /* line 249, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content h4 {
@@ -2601,10 +2728,8 @@ footer {
         font-style: italic;
         padding: 3px;
         line-height: 1;
-        -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
+        -webkit-border-radius: 3px;
         border-radius: 3px; }
     /* line 268, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content .excerpt {
@@ -2789,7 +2914,7 @@ footer {
         max-width: 748px;
         height: auto; } }
 @media screen and (max-width: 767px) {
-  /* line 154, ../sass/_layout.scss */
+  /* line 152, ../sass/_layout.scss */
   .grid_1,
   .grid_2,
   .grid_4 {
@@ -2797,7 +2922,7 @@ footer {
     margin-right: 0;
     float: none; }
 
-  /* line 3, ../sass/_smartphone.scss */
+  /* line 2, ../sass/_smartphone.scss */
   .margin,
   #respond {
     width: auto;
@@ -2816,7 +2941,7 @@ footer {
     .entry .syntaxhighlighter {
       width: 100% !important;
       margin-left: 0 !important; }
-    /* line 24, ../sass/_smartphone.scss */
+    /* line 19, ../sass/_smartphone.scss */
     .entry .alignright,
     .entry .alignleft,
     .entry .aligncenter,
@@ -2886,209 +3011,203 @@ footer {
   /* ヘッダー */
   /* line 84, ../sass/_smartphone.scss */
   .header .title {
-    padding: 50px 10px;
-    font-size: 3em;
-    font-weight: bold; }
-  /* line 89, ../sass/_smartphone.scss */
+    padding: 30px 10px 30px;
+    font-size: 3em; }
+  /* line 88, ../sass/_smartphone.scss */
   .header .title-meta {
     padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-    margin-bottom: 0; }
-    /* line 94, ../sass/_smartphone.scss */
+    padding-left: 0; }
+    /* line 91, ../sass/_smartphone.scss */
     .header .title-meta .google {
       width: auto;
       float: none;
       margin-bottom: 20px;
       text-align: center; }
-    /* line 100, ../sass/_smartphone.scss */
+    /* line 97, ../sass/_smartphone.scss */
     .header .title-meta table {
       float: none;
       width: 100%; }
-  /* line 105, ../sass/_smartphone.scss */
+  /* line 102, ../sass/_smartphone.scss */
   .header .calendar {
-    height: 50px;
-    width: 60px;
-    -webkit-background-size: 60px 50px;
-    -moz-background-size: 60px 50px;
-    -o-background-size: 60px 50px;
-    background-size: 60px 50px; }
-    /* line 109, ../sass/_smartphone.scss */
+    height: 60px;
+    width: 80px;
+    padding-top: 20px; }
+    /* line 106, ../sass/_smartphone.scss */
     .header .calendar .date {
       padding-top: 0.5em;
       font-size: 1em; }
-    /* line 113, ../sass/_smartphone.scss */
+    /* line 110, ../sass/_smartphone.scss */
     .header .calendar .year {
       font-size: 1.2em; }
-  /* line 117, ../sass/_smartphone.scss */
+  /* line 114, ../sass/_smartphone.scss */
   .header .excerpt {
     padding: 10px 10px 20px;
     width: auto;
     font-size: 1.4em; }
 
-  /* line 124, ../sass/_smartphone.scss */
+  /* line 121, ../sass/_smartphone.scss */
   .ebook-detail img.cover {
     max-width: 120px;
     height: auto; }
 
-  /* line 132, ../sass/_smartphone.scss */
+  /* line 129, ../sass/_smartphone.scss */
   .file-list td .file-meta small {
     display: block; }
-  /* line 137, ../sass/_smartphone.scss */
+  /* line 134, ../sass/_smartphone.scss */
   .file-list td .desc p {
     font-size: 0.85em; }
-  /* line 141, ../sass/_smartphone.scss */
+  /* line 138, ../sass/_smartphone.scss */
   .file-list td:first-child {
     display: none; }
-  /* line 144, ../sass/_smartphone.scss */
+  /* line 141, ../sass/_smartphone.scss */
   .file-list td.center img {
     width: 30px;
     height: 30px; }
-  /* line 148, ../sass/_smartphone.scss */
+  /* line 145, ../sass/_smartphone.scss */
   .file-list td.width150 {
     width: 100px;
     padding-left: 0;
     padding-right: 0; }
-    /* line 152, ../sass/_smartphone.scss */
+    /* line 149, ../sass/_smartphone.scss */
     .file-list td.width150 a.button, .file-list td.width150 .button-download {
       padding: 3px 5px;
       font-size: 0.85em; }
-      /* line 155, ../sass/_smartphone.scss */
+      /* line 152, ../sass/_smartphone.scss */
       .file-list td.width150 a.button small, .file-list td.width150 .button-download small {
         font-size: 1em; }
 
-  /* line 162, ../sass/_smartphone.scss */
+  /* line 159, ../sass/_smartphone.scss */
   .google-share {
     width: 100%;
     paddign: 10px 0;
     background-image: none !important; }
-    /* line 166, ../sass/_smartphone.scss */
+    /* line 163, ../sass/_smartphone.scss */
     .google-share .div_3 {
       float: none;
       width: 100%;
       text-align: center;
       margin: 10px 0; }
-      /* line 171, ../sass/_smartphone.scss */
+      /* line 168, ../sass/_smartphone.scss */
       .google-share .div_3.share {
         width: 100%; }
-        /* line 173, ../sass/_smartphone.scss */
+        /* line 170, ../sass/_smartphone.scss */
         .google-share .div_3.share table.like {
           width: 100%; }
 
   /* Masonry */
-  /* line 180, ../sass/_smartphone.scss */
+  /* line 177, ../sass/_smartphone.scss */
   .desc-box {
     padding: 1em 0; }
-    /* line 183, ../sass/_smartphone.scss */
+    /* line 180, ../sass/_smartphone.scss */
     .desc-box .grid_1, .desc-box .grid_2 {
       float: none;
       width: auto;
       margin-right: 0; }
-    /* line 189, ../sass/_smartphone.scss */
+    /* line 186, ../sass/_smartphone.scss */
     .desc-box .title_box h1 {
       margin: 0 10px; }
-      /* line 191, ../sass/_smartphone.scss */
+      /* line 188, ../sass/_smartphone.scss */
       .desc-box .title_box h1 img {
         max-width: 100%;
         height: auto; }
-    /* line 196, ../sass/_smartphone.scss */
+    /* line 193, ../sass/_smartphone.scss */
     .desc-box .title_box .desc {
       margin-left: 0;
       font-size: 1.1em; }
 
-  /* line 203, ../sass/_smartphone.scss */
+  /* line 200, ../sass/_smartphone.scss */
   div.archive .archive-box {
     width: auto;
     float: none; }
-    /* line 206, ../sass/_smartphone.scss */
+    /* line 203, ../sass/_smartphone.scss */
     div.archive .archive-box .post-type {
       width: 100%; }
-    /* line 210, ../sass/_smartphone.scss */
+    /* line 207, ../sass/_smartphone.scss */
     div.archive .archive-box.google p {
       text-align: center; }
 
   /* テーブル */
-  /* line 222, ../sass/_smartphone.scss */
+  /* line 215, ../sass/_smartphone.scss */
   table.form-table input[type="text"],
   table.form-table input[type="password"],
   table.form-table input[type="email"],
   table.form-table input[type="search"],
   table.form-table textarea {
     width: 150px; }
-  /* line 225, ../sass/_smartphone.scss */
+  /* line 222, ../sass/_smartphone.scss */
   table.form-table select {
     max-width: 200px; }
 
   /* フッター */
-  /* line 231, ../sass/_smartphone.scss */
+  /* line 228, ../sass/_smartphone.scss */
   .grid_4 {
     width: auto;
     float: none;
     margin: 0 20px; }
-    /* line 235, ../sass/_smartphone.scss */
+    /* line 232, ../sass/_smartphone.scss */
     .grid_4.last {
       margin-right: 20px; }
-    /* line 238, ../sass/_smartphone.scss */
+    /* line 235, ../sass/_smartphone.scss */
     .grid_4.first {
       margin-left: 20px; }
-    /* line 241, ../sass/_smartphone.scss */
+    /* line 238, ../sass/_smartphone.scss */
     .grid_4 h4 {
       margin-top: 2em; }
 
-  /* line 246, ../sass/_smartphone.scss */
+  /* line 243, ../sass/_smartphone.scss */
   #copy-note p {
     width: auto;
     float: none; }
-    /* line 249, ../sass/_smartphone.scss */
+    /* line 246, ../sass/_smartphone.scss */
     #copy-note p.center {
       width: 100%;
       padding-top: 1em;
       clear: both; }
 
   /* 領収書ページ */
-  /* line 257, ../sass/_smartphone.scss */
+  /* line 254, ../sass/_smartphone.scss */
   #lwp-invoice {
     width: auto;
     padding: 0 10px; }
-    /* line 260, ../sass/_smartphone.scss */
+    /* line 257, ../sass/_smartphone.scss */
     #lwp-invoice .header {
       padding-left: 0;
       padding-right: 0; }
-      /* line 263, ../sass/_smartphone.scss */
+      /* line 260, ../sass/_smartphone.scss */
       #lwp-invoice .header h1 {
         text-align: center; }
-        /* line 265, ../sass/_smartphone.scss */
+        /* line 262, ../sass/_smartphone.scss */
         #lwp-invoice .header h1 img {
           width: 240px;
           height: 25px; }
-        /* line 269, ../sass/_smartphone.scss */
+        /* line 266, ../sass/_smartphone.scss */
         #lwp-invoice .header h1 span {
           text-align: left; }
-    /* line 274, ../sass/_smartphone.scss */
+    /* line 271, ../sass/_smartphone.scss */
     #lwp-invoice .main {
       overflow: auto; }
-      /* line 275, ../sass/_smartphone.scss */
+      /* line 272, ../sass/_smartphone.scss */
       #lwp-invoice .main p.indicator {
         background-size: 110px 10px;
         padding-bottom: 14px; }
-    /* line 286, ../sass/_smartphone.scss */
+    /* line 283, ../sass/_smartphone.scss */
     #lwp-invoice.lwp-payment-info tr th {
       display: block;
       border-bottom: none; }
-    /* line 290, ../sass/_smartphone.scss */
+    /* line 287, ../sass/_smartphone.scss */
     #lwp-invoice.lwp-payment-info tr td {
       overflow: hidden;
       *zoom: 1;
       display: block; }
-    /* line 297, ../sass/_smartphone.scss */
+    /* line 294, ../sass/_smartphone.scss */
     #lwp-invoice .lwp-ticket-table thead {
       display: none; }
-    /* line 301, ../sass/_smartphone.scss */
+    /* line 298, ../sass/_smartphone.scss */
     #lwp-invoice .lwp-ticket-table tbody th {
       display: block;
       white-space: normal;
       border-bottom: none; }
-    /* line 306, ../sass/_smartphone.scss */
+    /* line 303, ../sass/_smartphone.scss */
     #lwp-invoice .lwp-ticket-table tbody td {
       display: block;
       font-size: 0.85em;
@@ -3096,19 +3215,19 @@ footer {
       padding-right: 2px;
       padding-left: 2px;
       border-bottom: none; }
-      /* line 313, ../sass/_smartphone.scss */
+      /* line 310, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(2):before {
         content: '購入日: '; }
-      /* line 316, ../sass/_smartphone.scss */
+      /* line 313, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(3):before {
         content: '価格: '; }
-      /* line 319, ../sass/_smartphone.scss */
+      /* line 316, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(4):before {
         content: '購入枚数: '; }
-      /* line 322, ../sass/_smartphone.scss */
+      /* line 319, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(5) {
         border-bottom: 1px dotted #ddd; }
-        /* line 324, ../sass/_smartphone.scss */
+        /* line 321, ../sass/_smartphone.scss */
         #lwp-invoice .lwp-ticket-table tbody td:nth-child(5):before {
           content: '使用済: '; } }
 /****************************************
@@ -3139,11 +3258,11 @@ footer {
     bottom: 1em;
     color: #fcfcfc;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
-    /* line 34, ../sass/_front_page.scss */
+    /* line 33, ../sass/_front_page.scss */
     .title_box .photo-credit a:link, .title_box .photo-credit a:visited {
       color: #fcfcfc;
       text-decoration: underline; }
-    /* line 39, ../sass/_front_page.scss */
+    /* line 38, ../sass/_front_page.scss */
     .title_box .photo-credit a:hover, .title_box .photo-credit a:active {
       color: red;
       text-decoration: none; }
@@ -3168,7 +3287,7 @@ footer {
 .desc-box-front {
   padding: 0 0 2em;
   position: relative; }
-  /* line 77, ../sass/_front_page.scss */
+  /* line 76, ../sass/_front_page.scss */
   .desc-box-front .grid_2,
   .desc-box-front .grid_1 {
     float: left; }
@@ -3216,7 +3335,7 @@ footer {
     width: auto;
     margin-right: 0;
     margin-left: 0; }
-    /* line 117, ../sass/_front_page.scss */
+    /* line 116, ../sass/_front_page.scss */
     .desc-box-front .grid_1,
     .desc-box-front .grid_2 {
       float: none;
@@ -3227,7 +3346,7 @@ footer {
   line-height: 30px;
   height: 30px;
   font-size: 2.4em;
-  font-family: Georgia, "Akashi", sans-serif;
+  font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
   font-weight: bold;
   color: black;
   margin-bottom: 20px;
@@ -3237,7 +3356,7 @@ footer {
   color: #333f46;
   font-size: 2em;
   line-height: 1.5;
-  font-family: "Garamond", "A1 Mincho", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
+  font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatissePro-L", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
 /* line 152, ../sass/_front_page.scss */
 .desc-box-front .grid_2 {
   border-bottom: 3px double #dddddd; }
@@ -3257,7 +3376,7 @@ footer {
     line-height: 20px;
     height: 20px;
     font-size: 1.8em;
-    font-family: Georgia, "Akashi", sans-serif;
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
     font-weight: bold;
     color: black;
     margin-bottom: 10px;
@@ -3267,7 +3386,7 @@ footer {
     color: #333f46;
     font-size: 1.4em;
     line-height: 1.5;
-    font-family: "Garamond", "A1 Mincho", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; } }
+    font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatissePro-L", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; } }
 @imoprt 'compass';
 /****************************************
  * 8.div.tmkm-amazon-view
@@ -3300,8 +3419,8 @@ div.tmkm-amazon-view {
     text-align: center; }
     /* line 37, ../sass/_affiliate.scss */
     div.tmkm-amazon-view .tmkm-amazon-img img {
-      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       max-width: 200px;
       width: auto;
@@ -3331,10 +3450,8 @@ div.tmkm-amazon-view {
       margin: 1em 220px 1em 0;
       padding: 1em;
       background: #f7f7f7;
-      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
+      -webkit-border-radius: 3px;
       border-radius: 3px; }
       /* line 67, ../sass/_affiliate.scss */
       div.tmkm-amazon-view p.additional-description:before {
@@ -3356,11 +3473,10 @@ div.tmkm-amazon-view {
         height: 180px; }
     /* line 86, ../sass/_affiliate.scss */
     div.tmkm-amazon-view p span.label {
-      display: -moz-inline-stack;
       display: inline-block;
       vertical-align: middle;
       *vertical-align: auto;
-      zoom: 1;
+      *zoom: 1;
       *display: inline;
       width: 8em; }
     /* line 90, ../sass/_affiliate.scss */
@@ -3376,14 +3492,17 @@ div.tmkm-amazon-view {
   /* line 104, ../sass/_affiliate.scss */
   div.tmkm-amazon-view p.additional-description {
     margin-right: 0; } }
-/* line 3, ../sass/_netabare.scss */
+/*
+ * Notice: Firefox対応のため、インラインスタイルなどを書き出し
+ * @see assets.php
+ */
+/* line 8, ../sass/_netabare.scss */
 .netabare {
   position: relative;
   -webkit-filter: blur(7px);
-  -moz-filter: blur(7px);
   filter: blur(7px); }
 
-/* line 8, ../sass/_netabare.scss */
+/* line 13, ../sass/_netabare.scss */
 a.netabare-opener {
   position: relative;
   left: 50%;
@@ -3391,30 +3510,32 @@ a.netabare-opener {
   margin-top: -25px;
   width: 200px;
   text-align: center;
-  -webkit-box-shadow: 1px 1px 2px 5px rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 1px 1px 2px 5px rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 1px 1px 2px 5px rgba(255, 255, 255, 0.8);
   box-shadow: 1px 1px 2px 5px rgba(255, 255, 255, 0.8); }
 
-/* line 19, ../sass/_netabare.scss */
-.non-filter-blur .netabare:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.97); }
-/* line 29, ../sass/_netabare.scss */
-.non-filter-blur .netabare-inline {
+/* line 23, ../sass/_netabare.scss */
+.netabare-inline {
+  color: rgba(255, 255, 255, 0);
+  text-shadow: 0 0 1em black;
+  zoom: 1;
+  cursor: help; }
+
+/* line 31, ../sass/_netabare.scss */
+.non-ms-filter .netabare {
   background: #888888;
   color: #888888; }
+/* line 35, ../sass/_netabare.scss */
+.non-ms-filter .netabare-inline {
+  color: #888888;
+  background: #888888;
+  text-shadow: none; }
 
 /****************************************
  * 5.5.電子書籍用設定
  ****************************************/
 /*サイドバー共通*/
-/* line 34, ../sass/core.scss */
+/* line 33, ../sass/core.scss */
 #right .rectangle {
   margin: 0 0 20px;
   background: #eee;
@@ -3423,16 +3544,16 @@ a.netabare-opener {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px; }
 
-/* line 42, ../sass/core.scss */
+/* line 41, ../sass/core.scss */
 #right .green {
   color: #ABCD03; }
 
-/* line 45, ../sass/core.scss */
+/* line 44, ../sass/core.scss */
 #right .orange {
   color: #FA8404; }
 
 /*一覧ページサイドバー*/
-/* line 50, ../sass/core.scss */
+/* line 49, ../sass/core.scss */
 #right dl.about-ebook dt {
   font-size: 22px;
   font-weight: bold;
@@ -3440,27 +3561,27 @@ a.netabare-opener {
   margin-bottom: 5px;
   border-bottom: 1px dotted #ccc; }
 
-/* line 57, ../sass/core.scss */
+/* line 56, ../sass/core.scss */
 #right dl.about-ebook dt span {
   display: block;
   font-size: 14px;
   font-weight: normal;
   font-style: italic; }
 
-/* line 63, ../sass/core.scss */
+/* line 62, ../sass/core.scss */
 #right dl.about-ebook dd {
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 20px;
   color: #666; }
 
-/* line 69, ../sass/core.scss */
+/* line 68, ../sass/core.scss */
 #right dl.about-ebook dd small {
   margin-top: 10px;
   display: block;
   text-align: right; }
 
-/* line 74, ../sass/core.scss */
+/* line 73, ../sass/core.scss */
 #right dl.about-ebook dd small a {
   padding: 3px 5px;
   font-size: 10px;
@@ -3471,30 +3592,30 @@ a.netabare-opener {
   -moz-border-radius: 3px; }
 
 /*サイドバー購入ページ*/
-/* line 86, ../sass/core.scss */
+/* line 84, ../sass/core.scss */
 #right .conversion,
 #right .price {
   margin: 20px 0; }
 
-/* line 89, ../sass/core.scss */
+/* line 88, ../sass/core.scss */
 #right .price {
   padding-bottom: 20px;
   border-bottom: 1px dotted #ccc;
   position: relative; }
 
-/* line 94, ../sass/core.scss */
+/* line 93, ../sass/core.scss */
 #right .how-to-buy {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px dotted #ccc; }
 
 /*セール中*/
-/* line 100, ../sass/core.scss */
+/* line 99, ../sass/core.scss */
 #right .price del {
   color: #999;
   font-size: 18px; }
 
-/* line 104, ../sass/core.scss */
+/* line 103, ../sass/core.scss */
 #right .price .discount {
   font-size: 14px;
   color: #fff;
@@ -3502,26 +3623,26 @@ a.netabare-opener {
   padding: 5px;
   border-radius: 10px; }
 
-/* line 111, ../sass/core.scss */
+/* line 110, ../sass/core.scss */
 #right .price .discount span {
   font-size: 18px;
   font-weight: bold; }
 
-/* line 115, ../sass/core.scss */
+/* line 114, ../sass/core.scss */
 #right .price .onsale {
   position: absolute;
   right: 0;
   top: 0; }
 
-/* line 120, ../sass/core.scss */
+/* line 119, ../sass/core.scss */
 #right .price .limit {
   font-size: 12px; }
 
-/* line 123, ../sass/core.scss */
+/* line 122, ../sass/core.scss */
 #right .price .limit strong {
   font-size: 14px; }
 
-/* line 126, ../sass/core.scss */
+/* line 125, ../sass/core.scss */
 #sale-timer {
   background: white url(img/ebook_clock.png) 10px center no-repeat;
   height: 50px;
@@ -3534,21 +3655,21 @@ a.netabare-opener {
   border-radius: 15px;
   font-size: 27px; }
 
-/* line 138, ../sass/core.scss */
+/* line 137, ../sass/core.scss */
 #sale-timer small {
   font-size: 14px; }
 
-/* line 142, ../sass/core.scss */
+/* line 141, ../sass/core.scss */
 #right .thank-you {
   font-size: 14px; }
 
-/* line 146, ../sass/core.scss */
+/* line 144, ../sass/core.scss */
 #right .price h3,
 #right .conversion h3 {
   font-size: 22px;
   font-weight: bold; }
 
-/* line 151, ../sass/core.scss */
+/* line 149, ../sass/core.scss */
 #right .price h3 span,
 #right .conversion h3 span {
   font-size: 11px;
@@ -3556,25 +3677,25 @@ a.netabare-opener {
   font-style: italic;
   display: block; }
 
-/* line 157, ../sass/core.scss */
+/* line 156, ../sass/core.scss */
 #right .price .real-price {
   font-size: 34px; }
 
-/* line 160, ../sass/core.scss */
+/* line 159, ../sass/core.scss */
 #right .conversion h4 {
   font-size: 14px;
   font-weight: bold;
   margin: 10px 0; }
 
 /*立ち読みエリア*/
-/* line 168, ../sass/core.scss */
+/* line 167, ../sass/core.scss */
 .ebook-more {
   position: relative;
   max-height: 200px;
   overflow: hidden;
   font-size: 0.7em; }
 
-/* line 174, ../sass/core.scss */
+/* line 173, ../sass/core.scss */
 .ebook-more-cover {
   position: absolute;
   height: 198px;
@@ -3587,7 +3708,7 @@ a.netabare-opener {
   border-right: none;
   opacity: 0.6; }
 
-/* line 186, ../sass/core.scss */
+/* line 185, ../sass/core.scss */
 .ebook-read-more {
   position: absolute;
   display: block;
@@ -3596,20 +3717,20 @@ a.netabare-opener {
   margin: -20px 0 0 !important;
   font-size: 2em; }
 
-/* line 194, ../sass/core.scss */
+/* line 193, ../sass/core.scss */
 .ebook-more-body {
   padding: 1em 2em; }
 
-/* line 197, ../sass/core.scss */
+/* line 196, ../sass/core.scss */
 .fancybox-inner .ebook-more-body {
   font-size: 2em; }
-  /* line 199, ../sass/core.scss */
+  /* line 198, ../sass/core.scss */
   .fancybox-inner .ebook-more-body p {
     text-indent: 1em;
     line-height: 2; }
 
 /* スマートフォン用立ち読み */
-/* line 205, ../sass/core.scss */
+/* line 204, ../sass/core.scss */
 .ebook-more-modal {
   position: absolute;
   background: #fff;
@@ -3617,7 +3738,7 @@ a.netabare-opener {
   overflow: hidden;
   padding: 0;
   margin: 0; }
-  /* line 212, ../sass/core.scss */
+  /* line 211, ../sass/core.scss */
   .ebook-more-modal .ebook-more-body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -3625,28 +3746,24 @@ a.netabare-opener {
     font-size: 1.2em;
     padding-top: 0;
     padding-bottom: 0; }
-    /* line 219, ../sass/core.scss */
+    /* line 218, ../sass/core.scss */
     .ebook-more-modal .ebook-more-body::-webkit-scrollbar {
       background: #eee;
       overflow: visible;
       width: 10px;
-      -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
-      -ms-border-radius: 5px;
-      -o-border-radius: 5px;
+      -webkit-border-radius: 5px;
       border-radius: 5px; }
-    /* line 225, ../sass/core.scss */
+    /* line 224, ../sass/core.scss */
     .ebook-more-modal .ebook-more-body::-webkit-scrollbar-thumb {
-      -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
-      -ms-border-radius: 5px;
-      -o-border-radius: 5px;
+      -webkit-border-radius: 5px;
       border-radius: 5px;
       background: #333; }
-    /* line 229, ../sass/core.scss */
+    /* line 228, ../sass/core.scss */
     .ebook-more-modal .ebook-more-body::-webkit-scrollbar-corner {
       background: transparent; }
-  /* line 233, ../sass/core.scss */
+  /* line 232, ../sass/core.scss */
   .ebook-more-modal .ebook-more-title {
     position: absolute;
     left: 0;
@@ -3658,7 +3775,7 @@ a.netabare-opener {
     text-indent: 1em;
     color: #999;
     font-style: italic; }
-  /* line 245, ../sass/core.scss */
+  /* line 244, ../sass/core.scss */
   .ebook-more-modal .ebook-more-close {
     position: absolute;
     top: 10px;
@@ -3666,11 +3783,11 @@ a.netabare-opener {
     font-size: 15px; }
 
 /* 電子書籍サイドバー */
-/* line 256, ../sass/core.scss */
+/* line 255, ../sass/core.scss */
 .ebook-sidebar .widget_fumiki_ebook {
   padding-left: 10px;
   margin-bottom: 40px; }
-  /* line 259, ../sass/core.scss */
+  /* line 258, ../sass/core.scss */
   .ebook-sidebar .widget_fumiki_ebook h3 {
     font-size: 2em;
     color: #252e34;
@@ -3679,30 +3796,30 @@ a.netabare-opener {
     font-weight: bold;
     text-shadow: 1px 1px 2px #fff;
     margin: 2em 0 1em; }
-  /* line 268, ../sass/core.scss */
+  /* line 267, ../sass/core.scss */
   .ebook-sidebar .widget_fumiki_ebook li {
     width: 180px;
     padding-right: 10px;
     float: left;
     position: relative; }
-    /* line 273, ../sass/core.scss */
+    /* line 272, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li .attachment-pinky-cover {
       display: block;
       margin: 0 auto 10px;
-      -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
-    /* line 278, ../sass/core.scss */
+    /* line 277, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li h4 {
       position: relative;
       text-align: center; }
-      /* line 281, ../sass/core.scss */
+      /* line 280, ../sass/core.scss */
       .ebook-sidebar .widget_fumiki_ebook li h4 a {
         font-size: 1.5em;
         color: black;
         text-shadow: 1px 1px 2px #fff;
         text-decoration: none; }
-      /* line 287, ../sass/core.scss */
+      /* line 286, ../sass/core.scss */
       .ebook-sidebar .widget_fumiki_ebook li h4 .price {
         position: absolute;
         background-color: #ed8600;
@@ -3711,87 +3828,85 @@ a.netabare-opener {
         right: -5px;
         font-size: 2em;
         color: #fff; }
-    /* line 297, ../sass/core.scss */
+    /* line 296, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li .excerpt {
       margin: 0.5em;
       font-size: 1.1em;
       line-height: 1.1; }
-    /* line 302, ../sass/core.scss */
+    /* line 301, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li .sale-icon {
       position: absolute;
       top: -17px;
       left: 30px; }
 
 /*一覧ページ見出し*/
-/* line 312, ../sass/core.scss */
+/* line 311, ../sass/core.scss */
 body.ebooks .catch {
   padding: 20px 0;
   margin-bottom: 20px;
   border-bottom: 1px dotted #eee; }
 
 /*リボン*/
-/* line 319, ../sass/core.scss */
+/* line 318, ../sass/core.scss */
 .entry .book-list img.campaign {
   position: absolute;
   left: -9px;
   top: -11px; }
 
 /*商品詳細*/
-/* line 326, ../sass/core.scss */
+/* line 325, ../sass/core.scss */
 .entry .book-list {
   position: relative;
   padding-bottom: 20px;
   border-bottom: 1px dotted #E5E5E5;
   /*ボタン*/ }
-  /* line 330, ../sass/core.scss */
+  /* line 329, ../sass/core.scss */
   .entry .book-list dl {
     width: 310px;
     margin-top: 0;
     float: left; }
-    /* line 334, ../sass/core.scss */
+    /* line 333, ../sass/core.scss */
     .entry .book-list dl dd {
       margin-left: 0;
       padding-left: 0; }
-      /* line 337, ../sass/core.scss */
+      /* line 336, ../sass/core.scss */
       .entry .book-list dl dd.orange {
         color: #ed8600; }
-  /* line 343, ../sass/core.scss */
+  /* line 342, ../sass/core.scss */
   .entry .book-list p.more {
     margin: 0;
     padding: 15px 0 10px; }
-    /* line 346, ../sass/core.scss */
+    /* line 345, ../sass/core.scss */
     .entry .book-list p.more a {
       background: #E4007F;
       padding: 8px 12px;
       font-size: 16px;
       color: #fff;
       text-decoration: none;
-      -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
-      -ms-border-radius: 10px;
-      -o-border-radius: 10px;
+      -webkit-border-radius: 10px;
       border-radius: 10px;
-      -webkit-box-shadow: 0 0 5px #888888;
       -moz-box-shadow: 0 0 5px #888888;
+      -webkit-box-shadow: 0 0 5px #888888;
       box-shadow: 0 0 5px #888888;
       text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.7); }
-      /* line 355, ../sass/core.scss */
+      /* line 354, ../sass/core.scss */
       .entry .book-list p.more a:hover {
         text-shadow: none; }
-      /* line 358, ../sass/core.scss */
+      /* line 357, ../sass/core.scss */
       .entry .book-list p.more a:active {
-        -webkit-box-shadow: none;
         -moz-box-shadow: none;
+        -webkit-box-shadow: none;
         box-shadow: none; }
 
 /* 購入履歴 */
-/* line 368, ../sass/core.scss */
+/* line 367, ../sass/core.scss */
 .entry .wp-list-table {
   width: 99%;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #262c30; }
-  /* line 375, ../sass/core.scss */
+  /* line 374, ../sass/core.scss */
   .entry .wp-list-table thead th,
   .entry .wp-list-table tfoot th {
     padding: 3px 5px;
@@ -3799,18 +3914,18 @@ body.ebooks .catch {
     font-size: 0.8em;
     text-shadow: 1px 1px 3px #000;
     background: url("../img/bg-texture-dark.jpg") left top repeat; }
-    /* line 382, ../sass/core.scss */
+    /* line 380, ../sass/core.scss */
     .entry .wp-list-table thead th a:link,
     .entry .wp-list-table thead th a:visited,
     .entry .wp-list-table tfoot th a:link,
     .entry .wp-list-table tfoot th a:visited {
       text-decoration: none; }
-  /* line 387, ../sass/core.scss */
+  /* line 386, ../sass/core.scss */
   .entry .wp-list-table tbody td {
     padding: 3px 5px;
     font-size: 0.75em; }
 
-/* line 393, ../sass/core.scss */
+/* line 392, ../sass/core.scss */
 .tablenav-pages {
   font-size: 0.75em;
   text-align: right;
@@ -3824,131 +3939,177 @@ body.ebooks .catch {
 /****************************************
  * 8.イベント設定
  ****************************************/
-/* line 408, ../sass/core.scss */
+/* line 407, ../sass/core.scss */
 body.single-events .title {
   text-align: center; }
 
 /****************************************
  * 8.イベント設定
  ****************************************/
-/****************************************
- * 7.アカウント設定
- ****************************************/
+/*---------------------
+ * サイズ設定
+ */
+/*---------------------
+ * 色設定
+ */
+/* 本文文字色 */
+/* 背景色 */
+/* 色 */
+/* メッセージ用の色 */
+/* フォント設定 */
 /*プラグインのCSSを打ち消し*/
-/* line 421, ../sass/core.scss */
+/* line 5, ../sass/_account.scss */
 body.login {
   padding: 0; }
-  /* line 423, ../sass/core.scss */
+  /* line 7, ../sass/_account.scss */
   body.login #submit {
     margin: 0; }
 
+/* line 10, ../sass/_account.scss */
+.account .entry {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto; }
+
 /*メイン*/
-/* line 429, ../sass/core.scss */
+/* line 17, ../sass/_account.scss */
 .login form p.submit input.button,
 #nlmg-resign-form p.submit input {
   font-size: 20px;
   cursor: pointer; }
 
 /*フォームパーツ*/
-/* line 435, ../sass/core.scss */
+/* line 24, ../sass/_account.scss */
 .login form textarea {
   resize: vertical;
   width: 90%;
   display: block;
   padding: 5px 10px;
   font-size: 20px; }
-/* line 442, ../sass/core.scss */
+/* line 31, ../sass/_account.scss */
 .login form select {
   font-size: 20px; }
-/* line 445, ../sass/core.scss */
+/* line 34, ../sass/_account.scss */
 .login form select option {
   font-size: 20px; }
-/* line 448, ../sass/core.scss */
+/* line 37, ../sass/_account.scss */
 .login form p {
   clear: left; }
-  /* line 450, ../sass/core.scss */
+  /* line 39, ../sass/_account.scss */
   .login form p label {
     padding: 3px 0 5px;
     font-weight: bold;
     display: block;
     width: 250px;
     float: left; }
-  /* line 457, ../sass/core.scss */
+  /* line 46, ../sass/_account.scss */
   .login form p.forgetmenot label {
     float: none;
-    width: auto; }
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline; }
 
-/* line 463, ../sass/core.scss */
+/* line 53, ../sass/_account.scss */
 .form-table .description {
   display: block;
   margin: 1em 0;
   color: #999;
   clear: both; }
 
-/* line 469, ../sass/core.scss */
+/* line 59, ../sass/_account.scss */
 .login p input.input {
   font-size: 20px;
   padding: 5px 10px;
   width: 300px; }
 
 /* OAuth */
-/* line 477, ../sass/core.scss */
+/* line 65, ../sass/_account.scss */
 #wpg-login,
 #wpg-register,
 #wpg-regsiter {
   text-align: center; }
 
-/* line 480, ../sass/core.scss */
+/* line 70, ../sass/_account.scss */
 .login p.notice, .login .entry .lwp-invitation, .entry .login .lwp-invitation {
   color: #05A;
   border: 1px solid #06C;
   background-color: #9FC9F4;
   padding-left: 42px; }
 
+/* line 76, ../sass/_account.scss */
+#wpg-login {
+  max-width: 320px;
+  margin: 10px auto; }
+  /* line 79, ../sass/_account.scss */
+  #wpg-login a {
+    text-align: left;
+    font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif; }
+
 /* リンク */
-/* line 487, ../sass/core.scss */
+/* line 85, ../sass/_account.scss */
 .login .tml-action-links {
   padding-left: 0; }
-  /* line 489, ../sass/core.scss */
+  /* line 87, ../sass/_account.scss */
   .login .tml-action-links li {
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px 0.5em;
+    font-size: 16px;
     color: #252e34;
-    display: inline-table;
-    font-size: 12px;
     line-height: 24px;
     height: 24px;
-    margin: 0 5px 0 10px;
-    background: url("../img/meta-icons-2.png") left -192px no-repeat;
-    padding-left: 28px; }
-    /* line 498, ../sass/core.scss */
-    .login .tml-action-links li:first-child {
-      background-position: left -168px; }
+    margin: 0 5px 0 10px; }
+    /* line 98, ../sass/_account.scss */
+    .login .tml-action-links li a {
+      color: #252e34;
+      text-decoration: none; }
+    /* line 102, ../sass/_account.scss */
+    .login .tml-action-links li a:hover {
+      color: #ff4130;
+      text-decoration: underline; }
+    /* line 106, ../sass/_account.scss */
+    .login .tml-action-links li:before {
+      margin-right: 0.5em;
+      font-family: FontAwesome;
+      content: "\f059"; }
+    /* line 112, ../sass/_account.scss */
+    .login .tml-action-links li:first-child:before {
+      content: "\f090"; }
 
-/****************************************
- * アカウント設定終わり
- ****************************************/
 /****************************************
 * 8.404設定
 ****************************************/
-/* line 520, ../sass/core.scss */
+/* line 426, ../sass/core.scss */
 #error404 {
   width: 320px;
   margin: 0 auto;
   height: 480px;
   position: relative;
   overflow: hidden; }
-  /* line 526, ../sass/core.scss */
+  /* line 432, ../sass/core.scss */
   #error404 .logo {
     margin-top: 40px; }
-    /* line 528, ../sass/core.scss */
+    /* line 434, ../sass/core.scss */
     #error404 .logo img {
       width: 300px;
       height: 31px; }
-    /* line 532, ../sass/core.scss */
+    /* line 438, ../sass/core.scss */
     #error404 .logo .description {
       font-size: 1.2em;
       color: #888;
       text-shadow: 1px 1px 2px #fff; }
-  /* line 538, ../sass/core.scss */
+  /* line 444, ../sass/core.scss */
   #error404 h1 {
     text-align: center;
     font-size: 30px;
@@ -3956,13 +4117,13 @@ body.login {
     text-shadow: 1px 1px 2px #fff;
     font-weight: bold;
     margin: 30px 0; }
-  /* line 546, ../sass/core.scss */
+  /* line 452, ../sass/core.scss */
   #error404 p.message, #error404 .entry .lwp-invitation, .entry #error404 .lwp-invitation {
     font-size: 1.4em;
     margin: 1em 10px; }
-  /* line 550, ../sass/core.scss */
+  /* line 456, ../sass/core.scss */
   #error404 #copy-note {
-    font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
+    font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     font-size: 10px;
     color: #888;
     text-shadow: 1px 1px 2px #fff;
@@ -3972,7 +4133,7 @@ body.login {
     bottom: 2em;
     height: 2em;
     padding: 0; }
-    /* line 561, ../sass/core.scss */
+    /* line 467, ../sass/core.scss */
     #error404 #copy-note p {
       width: 100%;
       float: none;
@@ -3983,7 +4144,7 @@ body.login {
 /****************************************
  * 7.決済フォーム
  ****************************************/
-/* line 574, ../sass/core.scss */
+/* line 480, ../sass/core.scss */
 #lwp-invoice {
   width: 640px;
   margin: 0 auto;
@@ -3991,34 +4152,34 @@ body.login {
   /* table common*/
   /* price table */
   /* CC Icon */ }
-  /* line 577, ../sass/core.scss */
+  /* line 483, ../sass/core.scss */
   #lwp-invoice .header {
     padding: 20px 40px;
     border-bottom: 1px dotted #252e34; }
-    /* line 581, ../sass/core.scss */
+    /* line 487, ../sass/core.scss */
     #lwp-invoice .header h1 span {
       font-size: 1.2em;
       color: #888;
       display: block;
       margin: 0.5em 0;
       text-shadow: 1px 1px 2px #fff; }
-  /* line 590, ../sass/core.scss */
+  /* line 496, ../sass/core.scss */
   #lwp-invoice p.message, #lwp-invoice .entry .lwp-invitation, .entry #lwp-invoice .lwp-invitation {
     margin: 1em 0; }
-  /* line 596, ../sass/core.scss */
+  /* line 502, ../sass/core.scss */
   #lwp-invoice p.required {
     text-align: right; }
-  /* line 599, ../sass/core.scss */
+  /* line 505, ../sass/core.scss */
   #lwp-invoice .required {
     color: crimson; }
-  /* line 606, ../sass/core.scss */
+  /* line 511, ../sass/core.scss */
   #lwp-invoice table.price-table, #lwp-invoice table.form-table {
     width: 100%;
     table-layout: auto;
     border-collapse: collapse;
     empty-cells: show;
     margin: 1em 0 1.5em; }
-    /* line 612, ../sass/core.scss */
+    /* line 518, ../sass/core.scss */
     #lwp-invoice table.price-table caption, #lwp-invoice table.form-table caption {
       color: #ccc;
       text-align: left;
@@ -4026,107 +4187,107 @@ body.login {
       font-size: 1.5em;
       padding-bottom: 0.5em;
       border-bottom: 3px double #ddd; }
-    /* line 620, ../sass/core.scss */
+    /* line 526, ../sass/core.scss */
     #lwp-invoice table.price-table th, #lwp-invoice table.price-table td, #lwp-invoice table.form-table th, #lwp-invoice table.form-table td {
       padding: 1em; }
-    /* line 624, ../sass/core.scss */
+    /* line 530, ../sass/core.scss */
     #lwp-invoice table.price-table tbody th, #lwp-invoice table.price-table tbody td, #lwp-invoice table.form-table tbody th, #lwp-invoice table.form-table tbody td {
       text-align: left;
       font-size: 0.85em;
       border-bottom: 1px dotted #999; }
-    /* line 630, ../sass/core.scss */
+    /* line 536, ../sass/core.scss */
     #lwp-invoice table.price-table tbody tr:nth-child(odd) th, #lwp-invoice table.price-table tbody tr:nth-child(odd) td, #lwp-invoice table.form-table tbody tr:nth-child(odd) th, #lwp-invoice table.form-table tbody tr:nth-child(odd) td {
       background-color: #f3f3f3; }
-  /* line 640, ../sass/core.scss */
+  /* line 546, ../sass/core.scss */
   #lwp-invoice .price-table th {
     border-bottom: 1px solid #ddd; }
-  /* line 644, ../sass/core.scss */
+  /* line 550, ../sass/core.scss */
   #lwp-invoice .price-table thead th {
     font-weight: bold; }
-  /* line 650, ../sass/core.scss */
+  /* line 556, ../sass/core.scss */
   #lwp-invoice .price-table tbody tr:last-child th, #lwp-invoice .price-table tbody tr:last-child td {
     border-bottom: none; }
-  /* line 655, ../sass/core.scss */
+  /* line 561, ../sass/core.scss */
   #lwp-invoice .price-table .price {
     white-space: nowrap;
     text-align: right; }
-  /* line 659, ../sass/core.scss */
+  /* line 565, ../sass/core.scss */
   #lwp-invoice .price-table .recalculate {
     max-width: 40%; }
-    /* line 661, ../sass/core.scss */
+    /* line 567, ../sass/core.scss */
     #lwp-invoice .price-table .recalculate span.description {
       font-size: 0.85em;
       color: #999; }
-  /* line 667, ../sass/core.scss */
+  /* line 573, ../sass/core.scss */
   #lwp-invoice .price-table tfoot th {
     text-align: right;
     font-weight: bold; }
-  /* line 671, ../sass/core.scss */
+  /* line 577, ../sass/core.scss */
   #lwp-invoice .price-table tfoot th, #lwp-invoice .price-table tfoot td {
     border-top: 3px double #ddd;
     border-bottom: 3px double #ddd; }
-  /* line 679, ../sass/core.scss */
+  /* line 585, ../sass/core.scss */
   #lwp-invoice .form-table thead th, #lwp-invoice .form-table thead td {
     background: #4D4945;
     color: #f3f3f3; }
-  /* line 685, ../sass/core.scss */
+  /* line 591, ../sass/core.scss */
   #lwp-invoice .form-table tbody th {
     font-weight: bold;
     white-space: nowrap; }
-  /* line 690, ../sass/core.scss */
+  /* line 596, ../sass/core.scss */
   #lwp-invoice .form-table th.lwp-column-method {
     text-align: center; }
-  /* line 694, ../sass/core.scss */
+  /* line 600, ../sass/core.scss */
   #lwp-invoice .form-table .lwp-column-method-desc small {
     display: block;
     padding-top: 0.5em;
     margin-top: 1em;
     border-top: 1px solid #ddd;
     color: #666; }
-  /* line 701, ../sass/core.scss */
+  /* line 607, ../sass/core.scss */
   #lwp-invoice .form-table .lwp-column-method-desc strong {
     color: #e4007f; }
-  /* line 707, ../sass/core.scss */
+  /* line 613, ../sass/core.scss */
   #lwp-invoice p.check-url-image {
     text-align: center;
     margin: 1em; }
-    /* line 710, ../sass/core.scss */
+    /* line 616, ../sass/core.scss */
     #lwp-invoice p.check-url-image strong {
       font-size: 1.6em;
       letter-spacing: 0.25em;
       margin: 0.5em 0;
-      font-family: "Consolas", "Courrier", "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-  /* line 717, ../sass/core.scss */
+      font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
+  /* line 623, ../sass/core.scss */
   #lwp-invoice .ticket-footer-note {
     margin: 1em 0;
     padding: 1em;
     border-top: 1px dotted #ddd;
     border-bottom: 1px dotted #ddd; }
-  /* line 724, ../sass/core.scss */
+  /* line 629, ../sass/core.scss */
   #lwp-invoice input[type=text],
   #lwp-invoice textarea {
     border: 1px solid #ddd;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px; }
-  /* line 730, ../sass/core.scss */
+  /* line 636, ../sass/core.scss */
   #lwp-invoice textarea {
     width: 90%; }
-  /* line 733, ../sass/core.scss */
+  /* line 639, ../sass/core.scss */
   #lwp-invoice .footer {
     margin: 20px;
     font-size: 1.4em;
     text-align: center;
     text-shadow: 1px 1px 2px #fff;
     color: #252e35; }
-  /* line 740, ../sass/core.scss */
+  /* line 646, ../sass/core.scss */
   #lwp-invoice .main {
     font-size: 1.6em;
     margin: 30px 10px; }
-    /* line 743, ../sass/core.scss */
+    /* line 649, ../sass/core.scss */
     #lwp-invoice .main p a.button, #lwp-invoice .main p .button-download {
       display: inline-block; }
-    /* line 746, ../sass/core.scss */
+    /* line 652, ../sass/core.scss */
     #lwp-invoice .main p.indicator {
       text-align: center;
       background: url("../img/ajax-loader.gif") center bottom no-repeat;
@@ -4134,62 +4295,62 @@ body.login {
       padding-bottom: 20px;
       color: #888;
       text-shadow: 1px 1px 2px white, 1px 1px 2px rgba(0, 0, 0, 0.2) inset; }
-      /* line 753, ../sass/core.scss */
+      /* line 659, ../sass/core.scss */
       #lwp-invoice .main p.indicator span {
         margin: 0 0.2em;
         font-size: 2em;
         font-weight: bold; }
-  /* line 762, ../sass/core.scss */
+  /* line 668, ../sass/core.scss */
   #lwp-invoice .lwp-cc-icon {
     display: inline-block;
     width: 130px;
     height: 80px;
     background: url("../../../../plugins/literally-wordpress/assets/icon-payment-method@2x.png") left top no-repeat; }
-  /* line 768, ../sass/core.scss */
+  /* line 674, ../sass/core.scss */
   #lwp-invoice .icon-paypal {
     background-position: 0 bottom; }
-  /* line 771, ../sass/core.scss */
+  /* line 677, ../sass/core.scss */
   #lwp-invoice .icon-creditcard {
     background-position: 0 0; }
-  /* line 774, ../sass/core.scss */
+  /* line 680, ../sass/core.scss */
   #lwp-invoice .icon-transfer {
     background-position: right bottom; }
-  /* line 777, ../sass/core.scss */
+  /* line 683, ../sass/core.scss */
   #lwp-invoice .icon-cvs {
     background-position: -130px 0; }
-  /* line 780, ../sass/core.scss */
+  /* line 686, ../sass/core.scss */
   #lwp-invoice .icon-payeasy {
     background-position: -130px bottom; }
-  /* line 783, ../sass/core.scss */
+  /* line 689, ../sass/core.scss */
   #lwp-invoice .lwp-cc-small-icon {
     display: inline-block;
     margin-right: 0.5em;
     width: 52px;
     height: 32px;
     background: url("../../../../plugins/literally-wordpress/assets/icons-creditcards.png") left top no-repeat; }
-  /* line 790, ../sass/core.scss */
+  /* line 696, ../sass/core.scss */
   #lwp-invoice .small-icon-jcb {
     background-position: left bottom; }
-  /* line 793, ../sass/core.scss */
+  /* line 699, ../sass/core.scss */
   #lwp-invoice .small-icon-amex {
     background-position: -52px bottom; }
-  /* line 796, ../sass/core.scss */
+  /* line 702, ../sass/core.scss */
   #lwp-invoice .small-icon-visa {
     background-position: -52px 0; }
-  /* line 799, ../sass/core.scss */
+  /* line 705, ../sass/core.scss */
   #lwp-invoice .small-icon-master {
     background-position: -104px 0; }
-  /* line 802, ../sass/core.scss */
+  /* line 708, ../sass/core.scss */
   #lwp-invoice .small-icon-diners {
     background-position: right bottom; }
-  /* line 805, ../sass/core.scss */
+  /* line 711, ../sass/core.scss */
   #lwp-invoice .cvs-container {
     display: block;
     width: 8em;
     float: left;
     margin: 0 1em 1em 0;
     text-align: center; }
-  /* line 812, ../sass/core.scss */
+  /* line 718, ../sass/core.scss */
   #lwp-invoice .lwp-cvs-small-icon {
     display: inline-block;
     margin-right: 0.5em;
@@ -4197,60 +4358,58 @@ body.login {
     height: 32px;
     background: white url("../../../../plugins/literally-wordpress/assets/icons-cvs.png") left top no-repeat;
     border: 1px solid #ccc; }
-  /* line 820, ../sass/core.scss */
+  /* line 726, ../sass/core.scss */
   #lwp-invoice .cvs-container .lwp-cvs-small-icon {
     margin-right: 0; }
-  /* line 823, ../sass/core.scss */
+  /* line 729, ../sass/core.scss */
   #lwp-invoice .small-icon-seven-eleven {
     background-position: left top; }
-  /* line 826, ../sass/core.scss */
+  /* line 732, ../sass/core.scss */
   #lwp-invoice .small-icon-lawson {
     background-position: -32px -32px; }
-  /* line 829, ../sass/core.scss */
+  /* line 735, ../sass/core.scss */
   #lwp-invoice .small-icon-ministop {
     background-position: 0 -32px; }
-  /* line 832, ../sass/core.scss */
+  /* line 738, ../sass/core.scss */
   #lwp-invoice .small-icon-circle-k {
     background-position: -32px 0; }
-  /* line 835, ../sass/core.scss */
+  /* line 741, ../sass/core.scss */
   #lwp-invoice .small-icon-sunkus {
     background-position: -64px 0; }
-  /* line 838, ../sass/core.scss */
+  /* line 744, ../sass/core.scss */
   #lwp-invoice .small-icon-seicomart {
     background-position: -64px -32px; }
-  /* line 841, ../sass/core.scss */
+  /* line 747, ../sass/core.scss */
   #lwp-invoice .small-icon-familymart {
     width: 64px;
     background-position: left bottom; }
-  /* line 845, ../sass/core.scss */
+  /* line 751, ../sass/core.scss */
   #lwp-invoice .small-icon-daily-yamazaki {
     background-position: right bottom; }
-  /* line 848, ../sass/core.scss */
+  /* line 754, ../sass/core.scss */
   #lwp-invoice p.sandbox {
     font-size: 0.9em;
     line-height: 1;
     display: inline-block;
     float: right;
     padding: 0.5em;
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
-    -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6), 1px 1px 2px rgba(0, 0, 0, 0.2) inset;
     -moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6), 1px 1px 2px rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6), 1px 1px 2px rgba(0, 0, 0, 0.2) inset;
     box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6), 1px 1px 2px rgba(0, 0, 0, 0.2) inset;
     background-color: #ddd;
     color: #888;
     margin-top: 0;
     text-shadow: 1px 1px 2px #fff; }
 
-/* line 863, ../sass/core.scss */
+/* line 769, ../sass/core.scss */
 #lwp-submit {
   cursor: pointer; }
 
 /* Indicator */
-/* line 867, ../sass/core.scss */
+/* line 773, ../sass/core.scss */
 .lwp-indicator {
   text-align: right;
   font-size: small;
@@ -4258,7 +4417,7 @@ body.login {
   line-height: 15px;
   margin: 10px 0; }
 
-/* line 874, ../sass/core.scss */
+/* line 780, ../sass/core.scss */
 .lwp-indicator-progress-bg {
   display: inline-block;
   width: 100px;
@@ -4267,34 +4426,34 @@ body.login {
   margin-right: 5px;
   text-align: left;
   background-color: #222;
-  background-image: linear-gradient(bottom, #dedede 28%, #ebebeb 84%);
+  background-image: linear-gradient(to top, #dedede 28%, #ebebeb 84%);
   background-image: -o-linear-gradient(bottom, #dedede 28%, #ebebeb 84%);
   background-image: -moz-linear-gradient(bottom, #dedede 28%, #ebebeb 84%);
   background-image: -webkit-linear-gradient(bottom, #dedede 28%, #ebebeb 84%);
   background-image: -ms-linear-gradient(bottom, #dedede 28%, #ebebeb 84%);
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.28, #dedede), color-stop(0.84, #ebebeb)); }
 
-/* line 895, ../sass/core.scss */
+/* line 801, ../sass/core.scss */
 .lwp-indicator-progress {
   display: inline-block;
   height: 13px;
   width: 0;
   background-color: #82d43f;
-  background-image: linear-gradient(bottom, #82d43f 28%, #64cf3a 67%, #c9e673 84%);
+  background-image: linear-gradient(to top, #82d43f 28%, #64cf3a 67%, #c9e673 84%);
   background-image: -o-linear-gradient(bottom, #82d43f 28%, #64cf3a 67%, #c9e673 84%);
   background-image: -moz-linear-gradient(bottom, #82d43f 28%, #64cf3a 67%, #c9e673 84%);
   background-image: -webkit-linear-gradient(bottom, #82d43f 28%, #64cf3a 67%, #c9e673 84%);
   background-image: -ms-linear-gradient(bottom, #82d43f 28%, #64cf3a 67%, #c9e673 84%);
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.28, #82d43f), color-stop(0.67, #64cf3a), color-stop(0.84, #c9e673)); }
 
-/* line 914, ../sass/core.scss */
+/* line 820, ../sass/core.scss */
 .lwp-indicator-text {
   padding-top: 1px;
   vertical-align: top;
   font-size: 11px;
   font-weight: bold;
   color: #888; }
-  /* line 920, ../sass/core.scss */
+  /* line 826, ../sass/core.scss */
   .lwp-indicator-text strong {
     vertical-align: top;
     color: #000; }
@@ -4306,7 +4465,7 @@ body.login {
  * iPhone用テンプレート
  */
 /*全体*/
-/* line 939, ../sass/core.scss */
+/* line 845, ../sass/core.scss */
 body.smartphone {
   /* 楽天 */
   /* コメント欄 */
@@ -4314,58 +4473,58 @@ body.smartphone {
   /* 電子書籍 */
   /* ログインフォーム*/
   /* 本棚 */ }
-  /* line 944, ../sass/core.scss */
+  /* line 850, ../sass/core.scss */
   body.smartphone div.rakuten_details div.rakuten_info {
     width: 300px;
     font-size: 0.85em; }
-  /* line 951, ../sass/core.scss */
+  /* line 857, ../sass/core.scss */
   body.smartphone #respond {
     width: auto;
     padding-right: 10px;
     padding-left: 10px; }
-  /* line 960, ../sass/core.scss */
+  /* line 866, ../sass/core.scss */
   body.smartphone .ebook .eyecatch {
     padding: 20px 10px; }
-    /* line 962, ../sass/core.scss */
+    /* line 868, ../sass/core.scss */
     body.smartphone .ebook .eyecatch img {
       max-width: 100%;
       height: auto; }
-  /* line 968, ../sass/core.scss */
+  /* line 874, ../sass/core.scss */
   body.smartphone .ebook .device-list .device {
     width: 90px; }
-    /* line 970, ../sass/core.scss */
+    /* line 876, ../sass/core.scss */
     body.smartphone .ebook .device-list .device:nth-child(3n) {
       margin-right: 0; }
-  /* line 974, ../sass/core.scss */
+  /* line 880, ../sass/core.scss */
   body.smartphone .ebook .device-list .valid {
     background-position: -5px bottom; }
-  /* line 977, ../sass/core.scss */
+  /* line 883, ../sass/core.scss */
   body.smartphone .ebook .device-list .invalid {
     background-position: -105px bottom; }
-  /* line 983, ../sass/core.scss */
+  /* line 889, ../sass/core.scss */
   body.smartphone .ebook-sidebar .widget_fumiki_ebook {
     padding-left: 5px; }
-    /* line 985, ../sass/core.scss */
+    /* line 891, ../sass/core.scss */
     body.smartphone .ebook-sidebar .widget_fumiki_ebook li {
       width: 150px;
       margin-bottom: 10px; }
-      /* line 988, ../sass/core.scss */
+      /* line 894, ../sass/core.scss */
       body.smartphone .ebook-sidebar .widget_fumiki_ebook li:nth-child(2n) {
         padding-right: 5px; }
-      /* line 991, ../sass/core.scss */
+      /* line 897, ../sass/core.scss */
       body.smartphone .ebook-sidebar .widget_fumiki_ebook li:nth-child(2n+1) {
         clear: left; }
-  /* line 998, ../sass/core.scss */
+  /* line 904, ../sass/core.scss */
   body.smartphone .login #your-profile .form-table th {
     width: auto; }
-  /* line 1002, ../sass/core.scss */
+  /* line 908, ../sass/core.scss */
   body.smartphone .login form textarea {
     width: 150px;
     font-size: 1.2em; }
-  /* line 1007, ../sass/core.scss */
+  /* line 913, ../sass/core.scss */
   body.smartphone .login p input.input {
     width: 250px; }
-  /* line 1028, ../sass/core.scss */
+  /* line 919, ../sass/core.scss */
   body.smartphone #book-shelf .lwp-table thead th:nth-child(2),
   body.smartphone #book-shelf .lwp-table thead th:nth-child(3),
   body.smartphone #book-shelf .lwp-table thead th:nth-child(4),
@@ -4382,18 +4541,18 @@ body.smartphone {
   body.smartphone #book-shelf .lwp-table tbody tr td:nth-child(5),
   body.smartphone #book-shelf .lwp-table tbody tr td:nth-child(7) {
     display: none; }
-  /* line 1032, ../sass/core.scss */
+  /* line 937, ../sass/core.scss */
   body.smartphone #book-shelf .lwp-table thead th:nth-child(6),
   body.smartphone #book-shelf .lwp-table tbody td:nth-child(6) {
     white-space: nowrap;
     padding-right: 24px; }
-  /* line 1036, ../sass/core.scss */
+  /* line 942, ../sass/core.scss */
   body.smartphone #book-shelf .lwp-table tbody td:nth-child(6) {
     background-image: url("../img/icon-arrow-right.png");
     background-position: right center;
     background-repeat: no-repeat;
     background-size: 20px 16px; }
-  /* line 1043, ../sass/core.scss */
+  /* line 949, ../sass/core.scss */
   body.smartphone .ui-dialog-content table {
     margin: 5px 0 0; }
 
@@ -4402,87 +4561,85 @@ body.smartphone {
 Purchase History
 ------------------------
 */
-/* line 1056, ../sass/core.scss */
+/* line 962, ../sass/core.scss */
 #book-shelf .tablenav .alignleft {
   float: left; }
-/* line 1059, ../sass/core.scss */
+/* line 965, ../sass/core.scss */
 #book-shelf .tablenav .tablenav-pages {
   text-align: right; }
-/* line 1062, ../sass/core.scss */
+/* line 968, ../sass/core.scss */
 #book-shelf .tablenav .clear {
   clear: left; }
-/* line 1065, ../sass/core.scss */
+/* line 971, ../sass/core.scss */
 #book-shelf .tablenav .displaying-num {
   font-weight: bold;
   font-size: 0.9em;
   margin-right: 0.5em; }
-/* line 1071, ../sass/core.scss */
+/* line 977, ../sass/core.scss */
 #book-shelf .lwp-table {
   font-size: 0.8em; }
-/* line 1078, ../sass/core.scss */
+/* line 984, ../sass/core.scss */
 #book-shelf thead .column-price.desc:after,
 #book-shelf thead .column-expires.desc:after,
 #book-shelf thead .column-registered.desc:after, #book-shelf tfoot .column-price.desc:after,
 #book-shelf tfoot .column-expires.desc:after,
 #book-shelf tfoot .column-registered.desc:after {
   content: ' ▼'; }
-/* line 1081, ../sass/core.scss */
+/* line 987, ../sass/core.scss */
 #book-shelf thead .column-price.asc:after,
 #book-shelf thead .column-expires.asc:after,
 #book-shelf thead .column-registered.asc:after, #book-shelf tfoot .column-price.asc:after,
 #book-shelf tfoot .column-expires.asc:after,
 #book-shelf tfoot .column-registered.asc:after {
   content: ' ▲'; }
-/* line 1085, ../sass/core.scss */
+/* line 991, ../sass/core.scss */
 #book-shelf thead .column-quantity, #book-shelf tfoot .column-quantity {
   white-space: nowrap; }
-/* line 1089, ../sass/core.scss */
+/* line 995, ../sass/core.scss */
 #book-shelf .column-price {
   white-space: nowrap; }
-/* line 1092, ../sass/core.scss */
+/* line 998, ../sass/core.scss */
 #book-shelf .column-status {
   white-space: nowrap; }
-  /* line 1095, ../sass/core.scss */
+  /* line 1000, ../sass/core.scss */
   #book-shelf .column-status .lwp-auth,
   #book-shelf .column-status .lwp-success {
     color: green;
     font-weight: bold; }
-    /* line 1098, ../sass/core.scss */
+    /* line 1004, ../sass/core.scss */
     #book-shelf .column-status .lwp-auth i,
     #book-shelf .column-status .lwp-success i {
       background-color: green; }
-  /* line 1103, ../sass/core.scss */
+  /* line 1008, ../sass/core.scss */
   #book-shelf .column-status .lwp-cancel,
   #book-shelf .column-status .lwp-refund {
     color: #aaa; }
-  /* line 1106, ../sass/core.scss */
+  /* line 1012, ../sass/core.scss */
   #book-shelf .column-status .lwp-start {
     color: crimson;
     font-weight: bold; }
-  /* line 1111, ../sass/core.scss */
+  /* line 1016, ../sass/core.scss */
   #book-shelf .column-status .lwp-refund_requesting,
   #book-shelf .column-status .lwp-waiting_cancellation {
     color: orange; }
-  /* line 1114, ../sass/core.scss */
+  /* line 1020, ../sass/core.scss */
   #book-shelf .column-status small {
     font-size: 0.8em;
     font-weight: bold;
     color: #aaa; }
 
-/* line 1121, ../sass/core.scss */
+/* line 1027, ../sass/core.scss */
 p.lwp-error-message {
   padding: 1em;
   margin: 5px 0 15px;
   color: #666;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
   line-height: 1.2;
   background-color: #ffebe8; }
 
-/* line 1131, ../sass/core.scss */
+/* line 1037, ../sass/core.scss */
 .lwp-ticket-table th {
   font-weight: bold;
   white-space: nowrap; }
@@ -4490,33 +4647,33 @@ p.lwp-error-message {
 /****************************************
  * 11. Facebook ページ
  ****************************************/
-/* line 1141, ../sass/core.scss */
+/* line 1047, ../sass/core.scss */
 body.fan-gate-body {
   margin: 0 auto;
   overflow: hidden; }
 
-/* line 1145, ../sass/core.scss */
+/* line 1051, ../sass/core.scss */
 .fan-gate-body .margin {
   width: auto;
   padding: 20px;
   border: 1px solid #ddd; }
 
-/* line 1150, ../sass/core.scss */
+/* line 1056, ../sass/core.scss */
 .fan-gate-body .meta {
   text-align: left;
   padding: 30px 0; }
 
-/* line 1154, ../sass/core.scss */
+/* line 1060, ../sass/core.scss */
 .fan-gate-body .meta p {
   font-size: 1.6em;
   text-shadow: 1px 1px 2px #fff;
   height: 30px;
   line-height: 30px; }
 
-/* line 1160, ../sass/core.scss */
+/* line 1066, ../sass/core.scss */
 .fan-gate-body .meta p img {
   vertical-align: middle; }
 
-/* line 1163, ../sass/core.scss */
+/* line 1069, ../sass/core.scss */
 .fan-gate-body .title {
   margin: 0; }

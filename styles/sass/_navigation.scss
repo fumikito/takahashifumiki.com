@@ -14,12 +14,17 @@
 	}
 }
 
-@media screen and (max-width: $tablet - 1) {
+
+
+// スマートフォンの場合の見映え
+@media screen and (max-width: $admin-bar-break-point) {
     #wpadminbar{
+        #wp-admin-bar-main-menues{
+          display: block;
+        }
         .adminbar-logo{
-            width: 36px;
-            height: 36px;
-            margin-top: 5px;
+            width: 32px;
+            height: 32px;
             margin: 5px 10px;
         }
     }

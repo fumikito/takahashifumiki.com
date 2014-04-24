@@ -40,6 +40,11 @@ function _fumiki_tinymce($initArray) {
 			'classes' => 'dropcap'
 		),
 		array(
+			'title' => '侍',
+			'block' => 'p',
+			'classes' => 'samurai'
+		),
+		array(
 			'title' => '成功',
 			'block' => 'p',
 			'classes' => 'message success'
