@@ -198,20 +198,28 @@ EOS;
  * アーカイブページのサムネイルを表示する
  * @param string $size thumbnail か medium 
  * @param object $post (optional) 指定しないばあいは現在の投稿
- * @param boolean $show_no_photo falseにすると、ない場合は何も表示しない
- * @return void
+ * @param bool $show_nophoto falseにすると、ない場合は何も表示しない
+ * @param bool $echo
+ * @return string
  */
 function fumiki_archive_photo($size = "medium-thumbnail", $post = null, $show_nophoto = true, $echo = true){
 	$post = get_post($post);
-	$images = get_children("post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
-	if(!empty($images)){
-		$image = current($images);
+    $image_id = false;
+    if( has_post_thumbnail($post->ID) ){
+        $image_id = get_post_thumbnail_id();
+    }else{
+        $images = get_children("post_parent=".$post->ID."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
+        if(!empty($images)){
+            $image_id = current($images)->ID;
+        }
+    }
+    if( $image_id ){
 		if($echo){
-			echo wp_get_attachment_image($image->ID,$size);
+			echo wp_get_attachment_image($image_id,$size);
 		}else{
-			return wp_get_attachment_image($image->ID,$size);
+			return wp_get_attachment_image($image_id,$size);
 		}
-	}elseif($show_nophoto){
+	}elseif( $show_nophoto ){
 		$width = ($size == "medium-thumbnail") ? 280 : 150;
 		$height = ($size == "medium-thumbnail") ? 200 : 100;
 		$src = ($size == "medium-thumbnail") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
