@@ -13,12 +13,20 @@ function _fumiki_head(){
 		$title = is_front_page() ? get_bloginfo('name') : wp_title('|', false, "right").get_bloginfo('name') ;
 		$url = is_front_page() ?  trailingslashit(home_url('/', 'http')) : get_permalink();
 		$image = get_template_directory_uri()."/styles/img/favicon/faviconx512.png";
-		if(!is_front_page()){
-			$images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
-			if(!empty($images)){
-				$image = wp_get_attachment_image_src(current($images)->ID, 'large');
-				$image = $image[0];
-			}
+		if( !is_front_page() ){
+            $image_id = false;
+            if( has_post_thumbnail() ){
+                $image_id = get_post_thumbnail_id();
+            }else{
+                $images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
+                if(!empty($images)){
+                    $image_id = current($images)->ID;
+                }
+            }
+            if( $image_id ){
+                $image = wp_get_attachment_image_src($image_id, 'large');
+                $image = $image[0];
+            }
 		}
 		$type = is_front_page() ? "website" : 'article';
 		if(get_post_type() == 'ebook'){

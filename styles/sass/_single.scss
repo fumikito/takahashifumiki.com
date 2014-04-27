@@ -73,12 +73,18 @@
 
 /* アイキャッチ */
 .eyecatch{
-    text-align: center;
-    img{
-        max-width: 100%;
-        width: auto;
-        height: auto;
-    }
+  text-align: center;
+  margin-bottom: 2em;
+  img{
+      max-width: 100%;
+      width: auto;
+      height: auto;
+  }
+  figcaption{
+    color: #888;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+  }
 }
 
 

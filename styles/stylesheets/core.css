@@ -1320,19 +1320,25 @@ div.archive {
 /* アイキャッチ */
 /* line 75, ../sass/_single.scss */
 .eyecatch {
-  text-align: center; }
-  /* line 77, ../sass/_single.scss */
+  text-align: center;
+  margin-bottom: 2em; }
+  /* line 78, ../sass/_single.scss */
   .eyecatch img {
     max-width: 100%;
     width: auto;
     height: auto; }
+  /* line 83, ../sass/_single.scss */
+  .eyecatch figcaption {
+    color: #888;
+    font-size: 1.2em;
+    margin-top: 0.5em; }
 
-/* line 85, ../sass/_single.scss */
+/* line 91, ../sass/_single.scss */
 #outdated-post {
   font-size: 1.4em;
   margin-bottom: 2em; }
 
-/* line 91, ../sass/_single.scss */
+/* line 97, ../sass/_single.scss */
 #main .post-excerpt {
   magin: 1em 0;
   padding: 1em;
@@ -1341,7 +1347,7 @@ div.archive {
   color: #333f46; }
 
 /*投稿スタイル*/
-/* line 100, ../sass/_single.scss */
+/* line 106, ../sass/_single.scss */
 .entry {
   min-height: 400px;
   padding-bottom: 20px;
@@ -1747,65 +1753,65 @@ div.archive {
     border-radius: 3px;
     padding: 5px 10px;
     color: #444; }
-  /* line 108, ../sass/_single.scss */
+  /* line 114, ../sass/_single.scss */
   .entry div.fumiki-twitter-rendered {
     margin: 7px auto !important;
     width: auto !important;
     max-width: 502px !important; }
-  /* line 115, ../sass/_single.scss */
+  /* line 121, ../sass/_single.scss */
   .entry .lwp-invitation {
     clear: both; }
-  /* line 122, ../sass/_single.scss */
+  /* line 128, ../sass/_single.scss */
   .entry div.googlemap iframe,
   .entry iframe[src*=maps\.google],
   .entry iframe[src*=maps\.google] {
     width: 100%; }
 
 @media screen and (min-width: 1280px) {
-  /* line 130, ../sass/_single.scss */
+  /* line 136, ../sass/_single.scss */
   .entry {
     font-size: 2.5em; } }
 /* コメント */
-/* line 137, ../sass/_single.scss */
+/* line 143, ../sass/_single.scss */
 #respond {
   margin: 40px auto 0;
   overflow: auto; }
 
 /*関連投稿*/
-/* line 143, ../sass/_single.scss */
+/* line 149, ../sass/_single.scss */
 .related {
   margin: 20px 0;
   padding-top: 20px;
   border-top: 3px double #252e34;
   /*説明書き*/ }
-  /* line 147, ../sass/_single.scss */
+  /* line 153, ../sass/_single.scss */
   .related h3 {
     font-size: 2em;
     font-weight: bold;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
     color: #333f46;
     margin-bottom: 20px; }
-  /* line 155, ../sass/_single.scss */
+  /* line 161, ../sass/_single.scss */
   .related .meta {
     width: 233px;
     float: left;
     padding: 5px; }
-    /* line 159, ../sass/_single.scss */
+    /* line 165, ../sass/_single.scss */
     .related .meta h4 {
       font-size: 1.6em;
       color: #4C5A65;
       text-shadow: 1px 1px 2px #fff; }
-    /* line 164, ../sass/_single.scss */
+    /* line 170, ../sass/_single.scss */
     .related .meta .meta p {
       font-size: 1.2em;
       color: #666;
       text-shadow: 1px 1px 2px #fff; }
-    /* line 169, ../sass/_single.scss */
+    /* line 175, ../sass/_single.scss */
     .related .meta .meta p a {
       font-weight: bold; }
 
 /* 投稿ナビゲーション */
-/* line 176, ../sass/_single.scss */
+/* line 182, ../sass/_single.scss */
 .next-previous {
   margin-top: 40px;
   padding-top: 40px;
@@ -1814,93 +1820,93 @@ div.archive {
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   border-top: 3px double #888888;
   font-size: 2em; }
-  /* line 182, ../sass/_single.scss */
+  /* line 188, ../sass/_single.scss */
   .next-previous i {
     font-size: 1.5em;
     text-decoration: none; }
-  /* line 186, ../sass/_single.scss */
+  /* line 192, ../sass/_single.scss */
   .next-previous p {
     width: 300px;
     float: left;
     font-size: 0.8em;
     line-height: 1.2; }
-    /* line 192, ../sass/_single.scss */
+    /* line 198, ../sass/_single.scss */
     .next-previous p.prev i {
       float: left;
       margin-right: 0.5em; }
-    /* line 197, ../sass/_single.scss */
+    /* line 203, ../sass/_single.scss */
     .next-previous p.next {
       text-align: right;
       float: right; }
-      /* line 200, ../sass/_single.scss */
+      /* line 206, ../sass/_single.scss */
       .next-previous p.next i {
         margin-left: 0.5em;
         float: right; }
 
 @media screen and (max-width: 959px) {
-  /* line 208, ../sass/_single.scss */
+  /* line 214, ../sass/_single.scss */
   .next-previous {
     padding-right: 10px;
     padding-left: 10px; } }
 /* 広告 */
-/* line 216, ../sass/_single.scss */
+/* line 222, ../sass/_single.scss */
 .google-share {
   clear: both;
   margin-bottom: 20px;
   padding: 20px 10px;
   text-align: center;
   border-top: 3px double #888888; }
-  /* line 222, ../sass/_single.scss */
+  /* line 228, ../sass/_single.scss */
   .google-share .like {
     margin-bottom: 20px;
     overflow: hidden;
     *zoom: 1; }
-    /* line 225, ../sass/_single.scss */
+    /* line 231, ../sass/_single.scss */
     .google-share .like li {
       float: left;
       width: 16%;
       text-align: center;
       height: 80px; }
-  /* line 232, ../sass/_single.scss */
+  /* line 238, ../sass/_single.scss */
   .google-share .ad, .google-share .ad2 {
     float: left;
     width: 336px;
     height: 280px; }
-  /* line 237, ../sass/_single.scss */
+  /* line 243, ../sass/_single.scss */
   .google-share .ad2 {
     float: right; }
 
 @media screen and (min-width: 960px) and (max-width: 1279px) {
-  /* line 244, ../sass/_single.scss */
+  /* line 250, ../sass/_single.scss */
   .google-share .share {
     width: 200px;
     float: left; }
-    /* line 248, ../sass/_single.scss */
+    /* line 254, ../sass/_single.scss */
     .google-share .share .like li {
       width: 100%;
       float: none; }
-  /* line 254, ../sass/_single.scss */
+  /* line 260, ../sass/_single.scss */
   .google-share .ad, .google-share .ad2 {
     float: right;
     margin-bottom: 20px; } }
 @media screen and (max-width: 767px) {
-  /* line 262, ../sass/_single.scss */
+  /* line 268, ../sass/_single.scss */
   .google-share {
     padding-left: 0;
     padding-right: 0; }
-    /* line 266, ../sass/_single.scss */
+    /* line 272, ../sass/_single.scss */
     .google-share .like li {
       width: 33%; }
-      /* line 268, ../sass/_single.scss */
+      /* line 274, ../sass/_single.scss */
       .google-share .like li:nth-child(4) {
         cleaf: left; }
-    /* line 273, ../sass/_single.scss */
+    /* line 279, ../sass/_single.scss */
     .google-share .ad {
       width: 300px;
       margin-right: auto;
       margin-left: auto;
       float: none; }
-    /* line 279, ../sass/_single.scss */
+    /* line 285, ../sass/_single.scss */
     .google-share .ad2 {
       display: none; } }
 /*---------------------

@@ -19,9 +19,20 @@ get_header('title');
 	<div id="main" class="<?= get_post_type(); ?>">
 
 		<? if(has_post_thumbnail()):?>
-			<div class="eyecatch">
-				<? the_post_thumbnail('large'); ?>
-			</div>
+			<figure class="eyecatch">
+				<?
+                    $attachment = get_post(get_post_thumbnail_id());
+                    the_post_thumbnail('large', array(
+                        'alt' => $attachment->post_title,
+                        'title' => $attachment->post_title,
+                    ));
+                ?>
+                <?php if( $attachment->post_excerpt ): ?>
+                    <figcaption>
+                        <?= $attachment->post_excerpt ?>
+                    </figcaption>
+                <?php endif ?>
+			</figure>
 		<? endif; ?>
 
 		<? if( !empty($post->post_excerpt) ): ?>
