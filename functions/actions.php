@@ -165,21 +165,56 @@ function _fumiki_ustream_status(){
 add_action('wp_ajax_ustream_status', '_fumiki_ustream_status');
 add_action('wp_ajax_nopriv_ustream_status', '_fumiki_ustream_status');
 
-// JetpackのOGPを消す
+
+/**
+ * 記事のシングルページでSSLだったらリダイレクト
+ *
+ * @action template_redirect
+ */
+add_action('template_redirect', function(){
+    if( is_ssl() && ( is_singular('post') || is_front_page() ) ){
+        $url = str_replace('https://', 'http://', get_permalink());
+        wp_safe_redirect($url, 301);
+        exit;
+    }
+});
+
+
+/**
+ * JetpackのOGPを消す
+ *
+ * @action wp_head
+ */
 add_action('wp_head', function(){
     remove_action('wp_head','jetpack_og_tags');
 }, 1);
 
 
-// Cache ヘッダーを追加する
+/**
+ * Cache ヘッダーを追加する
+ *
+ * @filter nocache_headers
+ * @param array $headers
+ * @return array
+ */
 add_filter( 'nocache_headers' , function( $headers ){
     $headers['X-Accel-Expires'] = 0;
     return $headers;
 }, 1);
 
-// ヘッダーテスト
+
+/**
+ * ヘッダーテスト
+ *
+ * cloudflareでキャッシュされないかのテスト
+ *
+ * @action template_redirect
+ */
 add_action('template_redirect', function(){
     if( is_page('about') ){
         nocache_headers();
     }
 });
+
+
+

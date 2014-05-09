@@ -55,7 +55,7 @@ function _fumiki_post_thumbnail_feeds_content($content) {
 	switch(get_post_type()){
 		case 'ebook':
 			$eyecatch = ebook_cover_src();
-			if(!empty($eyecatch) && preg_match('/^https?:\/\//', $eyecatch)){
+			if( !empty($eyecatch) && preg_match('/^https?:\/\//', $eyecatch) ){
 				$content = sprintf('<div><img src="%s" alt="%s" /></div>', $eyecatch, get_the_title()). $content;
 			}
 			break;
