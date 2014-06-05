@@ -205,11 +205,10 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 10px;
   background: white;
-  position: relative;
-  -webkit-text-size-adjust: 100%; }
+  position: relative; }
 
 /* FontAwesome */
-/* line 111, ../sass/_components.scss */
+/* line 110, ../sass/_components.scss */
 i[class^=fa-] {
   display: inline-block;
   font-family: FontAwesome;
@@ -220,7 +219,7 @@ i[class^=fa-] {
   -moz-osx-font-smoothing: grayscale; }
 
 /*ボタン*/
-/* line 122, ../sass/_components.scss */
+/* line 121, ../sass/_components.scss */
 a.button, .button-download,
 input.button,
 #nlmg-resign-form p.submit input,
@@ -253,7 +252,7 @@ a.lwp-action {
   /* IE6-9 */
   background: linear-gradient(to bottom, #3d4850 0%, #1c252b 100%);
   /* W3C */ }
-  /* line 142, ../sass/_components.scss */
+  /* line 141, ../sass/_components.scss */
   a.button:link, .button-download:link, a.button:visited, .button-download:visited,
   input.button:link,
   input.button:visited,
@@ -264,7 +263,7 @@ a.lwp-action {
   a.lwp-action:link,
   a.lwp-action:visited {
     text-decoration: none; }
-  /* line 146, ../sass/_components.scss */
+  /* line 145, ../sass/_components.scss */
   a.button:hover, .button-download:hover,
   input.button:hover,
   #nlmg-resign-form p.submit input:hover,
@@ -287,14 +286,14 @@ a.lwp-action {
     background: linear-gradient(to bottom, #4c5a65 0%, #2e3940 100%);
     /* W3C */
     cursor: pointer; }
-  /* line 157, ../sass/_components.scss */
+  /* line 156, ../sass/_components.scss */
   a.button:active, .button-download:active,
   input.button:active,
   #nlmg-resign-form p.submit input:active,
   .button-secondary:active,
   a.lwp-action:active {
     background: #252e34; }
-  /* line 160, ../sass/_components.scss */
+  /* line 159, ../sass/_components.scss */
   a.button i, .button-download i,
   input.button i,
   #nlmg-resign-form p.submit input i,
@@ -302,7 +301,7 @@ a.lwp-action {
   a.lwp-action i {
     margin-right: 0.5em; }
 
-/* line 166, ../sass/_components.scss */
+/* line 165, ../sass/_components.scss */
 .button-download small,
 .button-disabled small {
   display: block;
@@ -313,25 +312,25 @@ a.lwp-action {
   font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
   color: #fff; }
 
-/* line 176, ../sass/_components.scss */
+/* line 175, ../sass/_components.scss */
 a.button-disabled,
 input.button-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6; }
 
-/* line 180, ../sass/_components.scss */
+/* line 179, ../sass/_components.scss */
 a.lwp-action {
   font-size: 0.8em;
   padding: 1px 5px;
   margin-left: 0.5em; }
 
 /* プライマリーボタン */
-/* line 186, ../sass/_components.scss */
+/* line 185, ../sass/_components.scss */
 p.submit {
   float: right;
   margin: 0 0 10px; }
 
-/* line 190, ../sass/_components.scss */
+/* line 189, ../sass/_components.scss */
 .button-primary,
 .lwp-buynow {
   display: inline-block;
@@ -364,19 +363,19 @@ p.submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 );
   /* IE6-9 */
   text-shadow: 1px 1px 3px #aaa; }
-  /* line 210, ../sass/_components.scss */
+  /* line 209, ../sass/_components.scss */
   .button-primary:before,
   .lwp-buynow:before {
     content: '\f07a';
     margin-right: 0.5em;
     font-family: FontAwesome; }
-  /* line 215, ../sass/_components.scss */
+  /* line 214, ../sass/_components.scss */
   .button-primary:link, .button-primary:visited,
   .lwp-buynow:link,
   .lwp-buynow:visited {
     text-decoration: none;
     color: #fff; }
-  /* line 220, ../sass/_components.scss */
+  /* line 219, ../sass/_components.scss */
   .button-primary:hover,
   .lwp-buynow:hover {
     color: #fff;
@@ -396,7 +395,7 @@ p.submit {
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc387', endColorstr='#ff7f04',GradientType=0 );
     /* IE6-9 */ }
-  /* line 231, ../sass/_components.scss */
+  /* line 230, ../sass/_components.scss */
   .button-primary:active,
   .lwp-buynow:active {
     color: #fff; }
@@ -405,7 +404,7 @@ p.submit {
 /* 青いボタン */
 /* blue pill (inspired by iTunes)
 *******************************************************************************/
-/* line 243, ../sass/_components.scss */
+/* line 242, ../sass/_components.scss */
 .button-blue {
   background-color: #a5b8da;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b8da), color-stop(100%, #7089b3));
@@ -429,11 +428,11 @@ p.submit {
   text-shadow: 0 -1px 1px #64799e;
   color: #fff;
   cursor: pointer; }
-  /* line 262, ../sass/_components.scss */
+  /* line 261, ../sass/_components.scss */
   .button-blue:link, .button-blue:visited {
     color: #fff;
     text-decoration: none; }
-  /* line 266, ../sass/_components.scss */
+  /* line 265, ../sass/_components.scss */
   .button-blue:hover {
     background-color: #9badcc;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9badcc), color-stop(100%, #687fa6));
@@ -449,7 +448,7 @@ p.submit {
     -moz-box-shadow: inset 0 1px 0 0 #a5b9d9;
     -webkit-box-shadow: inset 0 1px 0 0 #a5b9d9;
     box-shadow: inset 0 1px 0 0 #a5b9d9; }
-  /* line 280, ../sass/_components.scss */
+  /* line 279, ../sass/_components.scss */
   .button-blue:active {
     border: 1px solid #546685;
     -moz-box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee;
@@ -457,20 +456,20 @@ p.submit {
     box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee; }
 
 /* 画像 */
-/* line 286, ../sass/_components.scss */
+/* line 285, ../sass/_components.scss */
 .img-circle {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
 
-/* line 289, ../sass/_components.scss */
+/* line 288, ../sass/_components.scss */
 .img-pressed {
   -moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset; }
 
 /*メッセージボックス*/
-/* line 294, ../sass/_components.scss */
+/* line 293, ../sass/_components.scss */
 p.message {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -478,41 +477,41 @@ p.message {
   padding: 1em;
   position: relative;
   font-family: Helvetica, Arial, sans-serif; }
-  /* line 299, ../sass/_components.scss */
+  /* line 298, ../sass/_components.scss */
   p.message strong, p.message em {
     color: inherit; }
-  /* line 302, ../sass/_components.scss */
+  /* line 301, ../sass/_components.scss */
   p.message i {
     position: absolute;
     font-size: 26px;
     top: 50%;
     margin-top: -13px;
     left: 8px; }
-  /* line 309, ../sass/_components.scss */
+  /* line 308, ../sass/_components.scss */
   p.message a:link,
   p.message a:visited {
     color: inherit;
     text-decoration: underline; }
-  /* line 314, ../sass/_components.scss */
+  /* line 313, ../sass/_components.scss */
   p.message a:hover, p.message a:active {
     color: inherit;
     text-decoration: none;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
     opacity: 0.8; }
 
-/* line 320, ../sass/_components.scss */
+/* line 319, ../sass/_components.scss */
 p.warning {
   color: #ff4d44;
   background: #ffd4d2;
   padding-left: 42px; }
 
-/* line 325, ../sass/_components.scss */
+/* line 324, ../sass/_components.scss */
 p.success {
   color: #059119;
   background: #c6f4cd;
   padding-left: 42px; }
 
-/* line 330, ../sass/_components.scss */
+/* line 329, ../sass/_components.scss */
 p.notice {
   color: #0055aa;
   background: #9fc9f4;
@@ -520,7 +519,7 @@ p.notice {
 
 /* 分割線 */
 /* ツールチップ */
-/* line 343, ../sass/_components.scss */
+/* line 342, ../sass/_components.scss */
 #tip-container {
   display: none;
   position: absolute;
@@ -539,29 +538,29 @@ p.notice {
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px; }
-  /* line 357, ../sass/_components.scss */
+  /* line 356, ../sass/_components.scss */
   #tip-container th {
     vertical-align: middle;
     padding-right: 0.5em;
     font-size: 2em; }
-    /* line 361, ../sass/_components.scss */
+    /* line 360, ../sass/_components.scss */
     #tip-container th i {
       color: #666666; }
-  /* line 365, ../sass/_components.scss */
+  /* line 364, ../sass/_components.scss */
   #tip-container td {
     line-height: 1.2; }
-    /* line 367, ../sass/_components.scss */
+    /* line 366, ../sass/_components.scss */
     #tip-container td strong {
       color: #888888; }
-  /* line 371, ../sass/_components.scss */
+  /* line 370, ../sass/_components.scss */
   #tip-container .close-button {
     display: none; }
-  /* line 375, ../sass/_components.scss */
+  /* line 374, ../sass/_components.scss */
   #tip-container.touch .close-button {
     display: table-row; }
 
 /* フォームテーブル */
-/* line 383, ../sass/_components.scss */
+/* line 382, ../sass/_components.scss */
 table.form-table input[type=text],
 table.form-table input[type=password],
 table.form-table input[type=email],
@@ -571,14 +570,14 @@ table.form-table input[type=search] {
   padding: 3px 5px; }
 
 /* FeedBurner */
-/* line 394, ../sass/_components.scss */
+/* line 393, ../sass/_components.scss */
 #feedburner-count {
   width: 52px;
   height: 62px;
   position: relative;
   overflow: hidden;
   text-decoration: none; }
-  /* line 400, ../sass/_components.scss */
+  /* line 399, ../sass/_components.scss */
   #feedburner-count span {
     position: absolute;
     display: block;
@@ -589,12 +588,12 @@ table.form-table input[type=search] {
     line-height: 35px; }
 
 /* ページナビ */
-/* line 412, ../sass/_components.scss */
+/* line 411, ../sass/_components.scss */
 .wp-pagenavi {
   font-size: 2em;
   font-family: Helvetica, Arial, sans-serif;
   margin: 20px 0; }
-  /* line 416, ../sass/_components.scss */
+  /* line 415, ../sass/_components.scss */
   .wp-pagenavi a, .wp-pagenavi span.current, .wp-pagenavi span.extend {
     padding: 3px 8px;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
@@ -605,7 +604,7 @@ table.form-table input[type=search] {
     border-left: none;
     letter-spacing: 0;
     margin: 0; }
-    /* line 424, ../sass/_components.scss */
+    /* line 423, ../sass/_components.scss */
     .wp-pagenavi a:last-child, .wp-pagenavi span.current:last-child, .wp-pagenavi span.extend:last-child {
       -moz-border-radius-topright: 3px;
       -webkit-border-top-right-radius: 3px;
@@ -613,7 +612,7 @@ table.form-table input[type=search] {
       -moz-border-radius-bottomright: 3px;
       -webkit-border-bottom-right-radius: 3px;
       border-bottom-right-radius: 3px; }
-  /* line 428, ../sass/_components.scss */
+  /* line 427, ../sass/_components.scss */
   .wp-pagenavi a {
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -621,13 +620,13 @@ table.form-table input[type=search] {
     background-image: -moz-linear-gradient(left top, #333f46, #252e34);
     background-image: -webkit-linear-gradient(left top, #333f46, #252e34);
     background-image: linear-gradient(to right bottom, #333f46, #252e34); }
-    /* line 433, ../sass/_components.scss */
+    /* line 432, ../sass/_components.scss */
     .wp-pagenavi a:link, .wp-pagenavi a:visited {
       text-decoration: none; }
-    /* line 437, ../sass/_components.scss */
+    /* line 436, ../sass/_components.scss */
     .wp-pagenavi a:hover, .wp-pagenavi a:active {
       background: #4C5A65; }
-  /* line 442, ../sass/_components.scss */
+  /* line 441, ../sass/_components.scss */
   .wp-pagenavi span.current,
   .wp-pagenavi span.extend {
     color: #252e34;
@@ -635,12 +634,12 @@ table.form-table input[type=search] {
     background-image: -moz-linear-gradient(left top, #dddddd, #cccccc);
     background-image: -webkit-linear-gradient(left top, #dddddd, #cccccc);
     background-image: linear-gradient(to right bottom, #dddddd, #cccccc); }
-  /* line 448, ../sass/_components.scss */
+  /* line 447, ../sass/_components.scss */
   .wp-pagenavi span.pages {
     padding: 3px 8px;
     margin-right: 1em;
     border: none; }
-    /* line 452, ../sass/_components.scss */
+    /* line 451, ../sass/_components.scss */
     .wp-pagenavi span.pages + * {
       border-left: 1px solid #252e34;
       -moz-border-radius-topleft: 3px;
@@ -651,18 +650,18 @@ table.form-table input[type=search] {
       border-bottom-left-radius: 3px; }
 
 /* Google Responsive ads */
-/* line 460, ../sass/_components.scss */
+/* line 459, ../sass/_components.scss */
 .my_adslot {
   width: 320px;
   height: 50px; }
 
 @media screen and (min-width: 500px) {
-  /* line 465, ../sass/_components.scss */
+  /* line 464, ../sass/_components.scss */
   .my_adslot {
     width: 468px;
     height: 60px; } }
 @media screen and (min-width: 800px) {
-  /* line 471, ../sass/_components.scss */
+  /* line 470, ../sass/_components.scss */
   .my_adslot {
     width: 728px;
     height: 90px; } }
