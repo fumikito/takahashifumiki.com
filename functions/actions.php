@@ -61,8 +61,6 @@ function _fumiki_head(){
 EOS;
 	}
 	echo <<<EOS
-<!-- ViewPort -->
-<meta name="Viewport" content="width=device-width, initial-scale=1.0" />
 <!-- copyright -->
 <meta name="copyright" content="copyright 2008 takahashifumiki.com" />
 EOS;
