@@ -133,13 +133,10 @@ class Analytics extends Pattern\Singleton
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			window.google_analytics_uacct = "<?= esc_js($this->profile_id) ?>";
-			ga('create', '<?= esc_js($this->profile_id) ?>', '<?= esc_js($this->domain) ?>'
-				<? if(is_user_logged_in()): ?>
-				,{
-					clientId: <?= get_current_user_id() ?>
-				}
-				<? endif; ?>
-			);
+			ga('create', '<?= esc_js($this->profile_id) ?>', '<?= esc_js($this->domain) ?>');
+            <? if(is_user_logged_in()): ?>
+            ga('set', '&uid', '<?= get_current_user_id() ?>');
+            <? endif; ?>
             <?php
                 // ページ種別を出力
                 if( is_front_page() ){
