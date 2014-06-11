@@ -172,6 +172,7 @@ class Analytics extends Pattern\Singleton
             ga('set', 'dimension3', '<?= esc_js($page_type) ?>');
             ga('set', 'dimension2', (GAM.webFont ? 'With Web Font' : 'No Web Font'));
 			ga('set', 'dimension1', '<?= esc_js($this->user_role()) ?>');
+            ga('require', 'displayfeatures');
 			ga('require', 'linkid', 'linkid.js');
 			ga('send', 'pageview');
 		</script>
