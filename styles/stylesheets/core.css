@@ -1592,20 +1592,14 @@ div.archive {
   /* line 224, ../sass/_post_style.scss */
   .entry .syntaxhighlighter {
     padding-top: 5px !important;
-    padding-bottom: 5px !important;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset;
-    -webkit-box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 1px 1px 2px white, -1px -1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1) inset; }
-    /* line 229, ../sass/_post_style.scss */
+    padding-bottom: 5px !important; }
+    /* line 227, ../sass/_post_style.scss */
     .entry .syntaxhighlighter > table {
       font-size: 0.85em !important; }
-    /* line 232, ../sass/_post_style.scss */
+    /* line 230, ../sass/_post_style.scss */
     .entry .syntaxhighlighter code {
       -webkit-text-size-adjust: 100%; }
-  /* line 236, ../sass/_post_style.scss */
+  /* line 234, ../sass/_post_style.scss */
   .entry .code-format {
     background: #4D4945;
     color: #fff;
@@ -1617,13 +1611,13 @@ div.archive {
     border-radius: 15px;
     overflow: auto;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-    /* line 245, ../sass/_post_style.scss */
+    /* line 243, ../sass/_post_style.scss */
     .entry .code-format table {
       width: 100%; }
-    /* line 246, ../sass/_post_style.scss */
+    /* line 244, ../sass/_post_style.scss */
     .entry .code-format tr.even {
       background: #57534E; }
-    /* line 247, ../sass/_post_style.scss */
+    /* line 245, ../sass/_post_style.scss */
     .entry .code-format th {
       color: #938C84;
       background-color: transparent;
@@ -1632,42 +1626,42 @@ div.archive {
       border-right: #938C84 2px solid;
       padding: 0 5px 0 0;
       vertical-align: top; }
-    /* line 256, ../sass/_post_style.scss */
+    /* line 254, ../sass/_post_style.scss */
     .entry .code-format td {
       padding: 0 0 0 15px;
       border-bottom: none; }
-    /* line 260, ../sass/_post_style.scss */
+    /* line 258, ../sass/_post_style.scss */
     .entry .code-format .quote {
       color: #A5EFB8; }
-    /* line 261, ../sass/_post_style.scss */
+    /* line 259, ../sass/_post_style.scss */
     .entry .code-format .notation {
       color: #BCE3F4; }
-  /* line 265, ../sass/_post_style.scss */
+  /* line 263, ../sass/_post_style.scss */
   .entry pre.aa {
     font-family: IPAMonaGothic,'ＭＳ ゴシック',monospace;
     font-size: 12px;
     line-height: 1.5;
     margin: 20px 0;
     color: #999; }
-  /* line 274, ../sass/_post_style.scss */
+  /* line 272, ../sass/_post_style.scss */
   .entry address {
     font-style: italic;
     font-size: 0.85em;
     color: #888;
     line-height: 1.4;
     padding: 0.5em 1em; }
-  /* line 283, ../sass/_post_style.scss */
+  /* line 281, ../sass/_post_style.scss */
   .entry .alert {
     font-size: 0.8em;
     font-weight: bold;
     color: #000; }
-    /* line 287, ../sass/_post_style.scss */
+    /* line 285, ../sass/_post_style.scss */
     .entry .alert:before {
       content: " ※"; }
-    /* line 288, ../sass/_post_style.scss */
+    /* line 286, ../sass/_post_style.scss */
     .entry .alert:after {
       content: " "; }
-  /* line 292, ../sass/_post_style.scss */
+  /* line 290, ../sass/_post_style.scss */
   .entry aside {
     margin: 1em 0;
     line-height: 1.4;
@@ -1676,72 +1670,72 @@ div.archive {
     -webkit-text-size-adjust: 100%;
     background: #f7f7f7;
     color: #666666; }
-  /* line 303, ../sass/_post_style.scss */
+  /* line 301, ../sass/_post_style.scss */
   .entry table {
     margin: 20px 0;
     border-spacing: 0;
     empty-cells: show;
     border-collapse: collapse;
     width: 100%; }
-    /* line 310, ../sass/_post_style.scss */
+    /* line 308, ../sass/_post_style.scss */
     .entry table thead th, .entry table thead td {
       color: black;
       padding: 5px 8px;
       border-bottom: 3px double #dddddd;
       font-weight: bold; }
-    /* line 317, ../sass/_post_style.scss */
+    /* line 315, ../sass/_post_style.scss */
     .entry table caption {
       color: #666666;
       text-align: right;
       font-size: 1em; }
-    /* line 323, ../sass/_post_style.scss */
+    /* line 321, ../sass/_post_style.scss */
     .entry table tbody th, .entry table tbody td {
       text-align: left;
       padding: 5px 8px;
       font-size: 0.85em;
       border-bottom: 1px solid #dddddd; }
-    /* line 329, ../sass/_post_style.scss */
+    /* line 327, ../sass/_post_style.scss */
     .entry table tbody th {
       font-weight: bold;
       color: black;
       white-space: nowrap; }
-    /* line 334, ../sass/_post_style.scss */
+    /* line 332, ../sass/_post_style.scss */
     .entry table tbody td {
       color: #888888; }
-    /* line 337, ../sass/_post_style.scss */
+    /* line 335, ../sass/_post_style.scss */
     .entry table tbody tr:nth-child(2n) td,
     .entry table tbody tr:nth-child(2n) th {
       background: #f7f7f7; }
-  /* line 348, ../sass/_post_style.scss */
+  /* line 346, ../sass/_post_style.scss */
   .entry .alignright {
     float: right;
     margin-left: 1.5em; }
-  /* line 349, ../sass/_post_style.scss */
+  /* line 347, ../sass/_post_style.scss */
   .entry .alignleft {
     float: left;
     margin-right: 1.5em; }
-  /* line 350, ../sass/_post_style.scss */
+  /* line 348, ../sass/_post_style.scss */
   .entry .aligncenter,
   .entry div.alignnon,
   .entry figure.alignnon {
     margin: 1.5em auto; }
-  /* line 353, ../sass/_post_style.scss */
+  /* line 351, ../sass/_post_style.scss */
   .entry img.aligncenter {
     display: block; }
-  /* line 355, ../sass/_post_style.scss */
+  /* line 353, ../sass/_post_style.scss */
   .entry img.size-full {
     max-width: 100%;
     height: auto; }
-  /* line 360, ../sass/_post_style.scss */
+  /* line 358, ../sass/_post_style.scss */
   .entry div.wp-caption,
   .entry figure.wp-caption {
     margin-bottom: 1em; }
-  /* line 364, ../sass/_post_style.scss */
+  /* line 362, ../sass/_post_style.scss */
   .entry .wp-caption-text {
     font-size: 0.75em;
     color: #666666;
     margin: 0.25em 0 0; }
-  /* line 375, ../sass/_post_style.scss */
+  /* line 373, ../sass/_post_style.scss */
   .entry input[type=text],
   .entry input[type=password],
   .entry input[type=email],

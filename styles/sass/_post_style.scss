@@ -224,8 +224,6 @@
 	.syntaxhighlighter{
 		padding-top:5px !important;
 		padding-bottom:5px !important;
-		@include border-radius(5px);
-		@include box-shadow(1px  1px 2px #fff, -1px -1px 3px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1) inset);
 		& > table{
 			font-size: 0.85em !important;
 		}

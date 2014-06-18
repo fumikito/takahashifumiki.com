@@ -8,6 +8,35 @@
  */
 define("FUMIKI_VERSION", "4.0.10");
 
+
+function fumiki_greeting(){
+    global $wpdb;
+    // 名前を毎回取得する
+    $name = $wpdb->get_var("SELECT option_value FROM {$wpdb->options} WHERE option_name = 'blogname'");
+    // クエリを空にして、次も取得されるようにする
+    $wpdb->last_query = '';
+    // HTMLを生成
+    $html = <<<EOS
+<html>
+<head>
+<title>Performance Test</title>
+</head>
+<body>
+<h1>Hello, this site is %s</h1>
+</body>
+</html>
+EOS;
+    return sprintf($html, $name);
+}
+
+/*
+add_action('wp_ajax_nopriv_greeting', function(){
+    echo fumiki_greeting();
+    exit;
+});
+*/
+
+
 /**
  * テーマのバージョンを返す
  * @return string

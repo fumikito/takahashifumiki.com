@@ -1,0 +1,184 @@
+/**
+ * SyntaxHighlighter
+
+ * Based on eclipse.
+ */
+
+
+// コード
+$main-color: #2d2d2d;
+$comment-color: #cccccc;
+$string-color: rgb(83, 129, 146);;
+$keyword-color: rgb(255, 0, 85);
+$function-color: $keyword-color;
+$variable-color: #aa7700;
+$literal-color: rgb(115, 146, 0);
+$decorator-color: #60c0d8;
+$constant-color: #3d90cc;
+$preprocessor-color: #646464;
+$script-color: #ea3144;
+
+$color1: #939393; // htmlの属性名とか
+$color2: #fff; // 不明
+$color3: $decorator-color; // !importantとか
+
+
+// 行ハイライト背景色
+$highlighted-bg: #fdfee0;
+
+// 左端
+$gutter-color: $comment-color;
+$gutter-bg: #d4d0c8;
+$gutter-highlighted: #9f9f9f;
+
+.syntaxhighlighter {
+  background-color: white !important;
+  .line{
+    &.alt1 {
+      background-color: white !important;
+    }
+    &.alt2 {
+      background-color: white !important;
+    }
+    &.highlighted{
+      &.alt1,
+      &.alt2 {
+        background-color: $highlighted-bg !important;
+      }
+    }
+    &.highlighted.number {
+      color: white !important;
+    }
+  }
+
+  table caption {
+    color: black !important;
+  }
+
+  .gutter {
+    color: $gutter-color !important;
+    .line {
+      border-right: 3px solid $gutter-bg !important;
+      &.highlighted {
+        border-right-color: $highlighted-bg !important;
+        background-color: $highlighted-bg !important;
+        color: $gutter-highlighted !important;
+      }
+    }
+  }
+
+
+  &.printing .line .content {
+    border: none !important;
+  }
+
+
+  &.collapsed {
+    overflow: visible !important;
+    .toolbar {
+      color: #3f5fbf !important;
+      background: white !important;
+      border: 1px solid #d4d0c8 !important;
+      a {
+        color: #3f5fbf !important;
+        &:hover {
+          color: #aa7700 !important;
+        }
+      }
+    }
+  }
+
+
+  .toolbar {
+    color: #a0a0a0 !important;
+    background: #d4d0c8 !important;
+    border: none !important;
+    a {
+      color: #a0a0a0 !important;
+      &:hover {
+        color: red !important;
+      }
+    }
+  }
+
+  .plain{
+    &, a{
+      color: $main-color !important;
+    }
+  }
+
+  .comments{
+    &, A{
+      color: $comment-color !important;
+    }
+  }
+  .string{
+    &, {
+      color: $string-color !important;
+    }
+  }
+  .keyword {
+    color: $keyword-color !important;
+  }
+  .decorator{
+    color: $decorator-color !important;
+  }
+  .preprocessor {
+    color: $preprocessor-color !important;
+  }
+  .variable {
+    color: $variable-color !important;
+  }
+  .value {
+    color: $literal-color !important;
+  }
+  .functions {
+    color: $function-color !important;
+  }
+  .constants {
+    color: $constant-color !important;
+  }
+  .script {
+    font-weight: bold !important;
+    color: $script-color !important;
+    background-color: none !important;
+  }
+
+  .color1{
+    &, a{
+      color: $color1 !important;
+    }
+  }
+  .color2{
+    &, a{
+      color: $color2 !important;
+    }
+  }
+  .color3{
+    &, a{
+      color: $color3 !important;
+    }
+  }
+
+  .keyword {
+ //   font-weight: normal !important;
+  }
+
+  // XML
+  .xml, .htmlscript{
+    &.keyword {
+      color: $string-color !important;
+      font-weight: normal !important;
+    }
+    &.color1{
+      &, a {
+        color: $color1 !important;
+      }
+    }
+    &.string {
+      font-style: italic !important;
+      color: $decorator-color !important;
+    }
+  }
+
+}
