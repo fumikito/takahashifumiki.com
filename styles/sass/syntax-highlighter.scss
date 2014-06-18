@@ -24,7 +24,24 @@ $color3: $decorator-color; // !importantとか
 
 
 // 行ハイライト背景色
-$highlighted-bg: #fdfee0;
+$highlighted-bg: #fdfeb3;
+@-webkit-keyframes blink {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: $highlighted-bg;
+  }
+}
+.blinking{
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 0.2s;
+}
+
 
 // 左端
 $gutter-color: $comment-color;
@@ -44,6 +61,7 @@ $gutter-highlighted: #9f9f9f;
       &.alt1,
       &.alt2 {
         background-color: $highlighted-bg !important;
+        @extend .blinking;
       }
     }
     &.highlighted.number {
@@ -60,7 +78,6 @@ $gutter-highlighted: #9f9f9f;
     .line {
       border-right: 3px solid $gutter-bg !important;
       &.highlighted {
-        border-right-color: $highlighted-bg !important;
         background-color: $highlighted-bg !important;
         color: $gutter-highlighted !important;
       }

@@ -3,115 +3,131 @@
 
  * Based on eclipse.
  */
-/* line 34, ../sass/syntax-highlighter.scss */
+@-webkit-keyframes blink {
+  /* line 29, ../sass/syntax-highlighter.scss */
+  from {
+    background-color: #fff; }
+
+  /* line 32, ../sass/syntax-highlighter.scss */
+  to {
+    background-color: #fdfeb3; } }
+/* line 36, ../sass/syntax-highlighter.scss */
+.blinking, .syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 0.2s; }
+
+/* line 51, ../sass/syntax-highlighter.scss */
 .syntaxhighlighter {
   background-color: white !important; }
-  /* line 37, ../sass/syntax-highlighter.scss */
+  /* line 54, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .line.alt1 {
     background-color: white !important; }
-  /* line 40, ../sass/syntax-highlighter.scss */
+  /* line 57, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .line.alt2 {
     background-color: white !important; }
-  /* line 44, ../sass/syntax-highlighter.scss */
+  /* line 61, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
-    background-color: #fdfee0 !important; }
-  /* line 49, ../sass/syntax-highlighter.scss */
+    background-color: #fdfeb3 !important; }
+  /* line 67, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .line.highlighted.number {
     color: white !important; }
-  /* line 54, ../sass/syntax-highlighter.scss */
+  /* line 72, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter table caption {
     color: black !important; }
-  /* line 58, ../sass/syntax-highlighter.scss */
+  /* line 76, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .gutter {
     color: #cccccc !important; }
-    /* line 60, ../sass/syntax-highlighter.scss */
+    /* line 78, ../sass/syntax-highlighter.scss */
     .syntaxhighlighter .gutter .line {
       border-right: 3px solid #d4d0c8 !important; }
-      /* line 62, ../sass/syntax-highlighter.scss */
+      /* line 80, ../sass/syntax-highlighter.scss */
       .syntaxhighlighter .gutter .line.highlighted {
-        border-right-color: #fdfee0 !important;
-        background-color: #fdfee0 !important;
+        background-color: #fdfeb3 !important;
         color: #9f9f9f !important; }
-  /* line 71, ../sass/syntax-highlighter.scss */
+  /* line 88, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter.printing .line .content {
     border: none !important; }
-  /* line 76, ../sass/syntax-highlighter.scss */
+  /* line 93, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter.collapsed {
     overflow: visible !important; }
-    /* line 78, ../sass/syntax-highlighter.scss */
+    /* line 95, ../sass/syntax-highlighter.scss */
     .syntaxhighlighter.collapsed .toolbar {
       color: #3f5fbf !important;
       background: white !important;
       border: 1px solid #d4d0c8 !important; }
-      /* line 82, ../sass/syntax-highlighter.scss */
+      /* line 99, ../sass/syntax-highlighter.scss */
       .syntaxhighlighter.collapsed .toolbar a {
         color: #3f5fbf !important; }
-        /* line 84, ../sass/syntax-highlighter.scss */
+        /* line 101, ../sass/syntax-highlighter.scss */
         .syntaxhighlighter.collapsed .toolbar a:hover {
           color: #aa7700 !important; }
-  /* line 92, ../sass/syntax-highlighter.scss */
+  /* line 109, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .toolbar {
     color: #a0a0a0 !important;
     background: #d4d0c8 !important;
     border: none !important; }
-    /* line 96, ../sass/syntax-highlighter.scss */
+    /* line 113, ../sass/syntax-highlighter.scss */
     .syntaxhighlighter .toolbar a {
       color: #a0a0a0 !important; }
-      /* line 98, ../sass/syntax-highlighter.scss */
+      /* line 115, ../sass/syntax-highlighter.scss */
       .syntaxhighlighter .toolbar a:hover {
         color: red !important; }
-  /* line 105, ../sass/syntax-highlighter.scss */
+  /* line 122, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
     color: #2d2d2d !important; }
-  /* line 111, ../sass/syntax-highlighter.scss */
+  /* line 128, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .comments, .syntaxhighlighter .comments A {
     color: #cccccc !important; }
-  /* line 116, ../sass/syntax-highlighter.scss */
+  /* line 133, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .string {
     color: #538192 !important; }
-  /* line 120, ../sass/syntax-highlighter.scss */
+  /* line 137, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .keyword {
     color: #ff0055 !important; }
-  /* line 123, ../sass/syntax-highlighter.scss */
+  /* line 140, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .decorator {
     color: #60c0d8 !important; }
-  /* line 126, ../sass/syntax-highlighter.scss */
+  /* line 143, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .preprocessor {
     color: #646464 !important; }
-  /* line 129, ../sass/syntax-highlighter.scss */
+  /* line 146, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .variable {
     color: #aa7700 !important; }
-  /* line 132, ../sass/syntax-highlighter.scss */
+  /* line 149, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .value {
     color: #739200 !important; }
-  /* line 135, ../sass/syntax-highlighter.scss */
+  /* line 152, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .functions {
     color: #ff0055 !important; }
-  /* line 138, ../sass/syntax-highlighter.scss */
+  /* line 155, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .constants {
     color: #3d90cc !important; }
-  /* line 141, ../sass/syntax-highlighter.scss */
+  /* line 158, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .script {
     font-weight: bold !important;
     color: #ea3144 !important;
     background-color: none !important; }
-  /* line 148, ../sass/syntax-highlighter.scss */
+  /* line 165, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
     color: #939393 !important; }
-  /* line 153, ../sass/syntax-highlighter.scss */
+  /* line 170, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
     color: white !important; }
-  /* line 158, ../sass/syntax-highlighter.scss */
+  /* line 175, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
     color: #60c0d8 !important; }
-  /* line 169, ../sass/syntax-highlighter.scss */
+  /* line 186, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .xml.keyword, .syntaxhighlighter .htmlscript.keyword {
     color: #538192 !important;
     font-weight: normal !important; }
-  /* line 174, ../sass/syntax-highlighter.scss */
+  /* line 191, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .xml.color1, .syntaxhighlighter .xml.color1 a, .syntaxhighlighter .htmlscript.color1, .syntaxhighlighter .htmlscript.color1 a {
     color: #939393 !important; }
-  /* line 178, ../sass/syntax-highlighter.scss */
+  /* line 195, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .xml.string, .syntaxhighlighter .htmlscript.string {
     font-style: italic !important;
     color: #60c0d8 !important; }
