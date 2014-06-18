@@ -17,9 +17,15 @@ wp_register_style(
     array('syntaxhighlighter-core'),
     fumiki_theme_version()
 );
+// テーマを登録
 add_filter('syntaxhighlighter_themes', function( $themes ){
     $themes['fumiki'] = '高橋文樹オリジナル';
     return $themes;
+});
+// htmlscriptを常にオン
+add_filter('syntaxhighlighter_defaultsettings', function($setting){
+    $setting['htmlscript'] = 1;
+    return $setting;
 });
 
 // faviconなどを書き出す
