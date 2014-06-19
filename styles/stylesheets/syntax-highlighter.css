@@ -78,7 +78,7 @@
         color: red !important; }
   /* line 122, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
-    color: #2d2d2d !important; }
+    color: #2f1d1e !important; }
   /* line 128, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .comments, .syntaxhighlighter .comments A {
     color: #cccccc !important; }
@@ -116,7 +116,7 @@
     color: #939393 !important; }
   /* line 170, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
-    color: white !important; }
+    color: #ff0055 !important; }
   /* line 175, ../sass/syntax-highlighter.scss */
   .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
     color: #60c0d8 !important; }

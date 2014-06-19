@@ -6,7 +6,7 @@
 
 
 // コード
-$main-color: #2d2d2d;
+$main-color: #2f1d1e;
 $comment-color: #cccccc;
 $string-color: rgb(83, 129, 146);;
 $keyword-color: rgb(255, 0, 85);
@@ -19,7 +19,7 @@ $preprocessor-color: #646464;
 $script-color: #ea3144;
 
 $color1: #939393; // htmlの属性名とか
-$color2: #fff; // 不明
+$color2: $keyword-color; // 不明
 $color3: $decorator-color; // !importantとか
 
 
