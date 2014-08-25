@@ -102,7 +102,7 @@ class Analytics extends Pattern\Singleton
         }
 		?>
 
-		<script>
+		<script type="text/javascript">
 			GAM = window.GAM || {};
 			GAM.start = new Date();
 			GAM.getTime = function(){

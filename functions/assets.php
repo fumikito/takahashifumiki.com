@@ -11,12 +11,15 @@ add_theme_support('custom-header', array(
 add_theme_support('post-thumbnails');
 
 // シンタックスハイライターを登録
-wp_register_style(
-    'syntaxhighlighter-theme-fumiki',
-    get_stylesheet_directory_uri().'/styles/stylesheets/syntax-highlighter.css',
-    array('syntaxhighlighter-core'),
-    fumiki_theme_version()
-);
+add_action('init', function(){
+    wp_register_style(
+        'syntaxhighlighter-theme-fumiki',
+        get_stylesheet_directory_uri().'/styles/stylesheets/syntax-highlighter.css',
+        array('syntaxhighlighter-core'),
+        fumiki_theme_version()
+    );
+});
+
 // テーマを登録
 add_filter('syntaxhighlighter_themes', function( $themes ){
     $themes['fumiki'] = '高橋文樹オリジナル';
