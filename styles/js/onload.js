@@ -1,3 +1,9 @@
+/*!
+ * すべてのページで読み込まれるJS
+ */
+
+/*global Modernizr:true*/
+
 jQuery(document).ready(function($){
 
     // ブラーフィルターがないブラウザ
@@ -12,17 +18,58 @@ jQuery(document).ready(function($){
     $('p.message').each(function(index, elt){
         var iconClass = false;
         if($(elt).hasClass('warning')){
-            iconClass = 'fa-warning';
+            iconClass = 'fa fa-warning';
         }else if($(elt).hasClass('success')){
-            iconClass = 'fa-check-circle';
+            iconClass = 'fa fa-check-circle';
         }else if($(elt).hasClass('notice')){
-            iconClass = 'fa-lightbulb-o';
+            iconClass = 'fa fa-lightbulb-o';
         }
-        if(iconClass){
+        if( iconClass ){
             $(elt).prepend('<i class="' + iconClass + '"></i>');
         }
     });
 
+    // メニューのトグル
+    if( Modernizr.touch ){
+        // メニューのトグルボタン
+        $('#footer-menu-toggle').click(function(e){
+            e.preventDefault();
+            $(this).toggleClass('toggle');
+        });
+        // トップの階層メニューはダブルクリックにしか反応しない
+        $('.menu > li > a').click(function(e){
+            var link = $(this);
+            if( 'go' !== link.attr('data-double-tap') ){
+                e.preventDefault();
+                link.attr('data-double-tap', 'go');
+                setTimeout(function(){
+                    link.attr('data-double-tap', null);
+                }, 500);
+            }
+        });
+    }
+
+    // 検索フォーム
+    $('#sorter').submit(function(e){
+        var s       = $(this).find('input[name=s]'),
+            cat     = $(this).find('select[name=cat]'),
+            tag     = $(this).find('input[name=tag]'),
+            order   = $(this).find('select[name=order]'),
+            orderBy = $(this).find('select[name=orderby]');
+        if( cat.val() === '-1' ){
+            cat.prop('disabled', true);
+        }
+        if( tag.val() === '' ){
+            tag.prop('disabled', true);
+        }
+        if( orderBy.val() === 'date' ){
+            orderBy.prop('disabled', true);
+        }
+    });
+    $('#sorter-toggle').click(function( e ){
+        e.preventDefault();
+        $('#sorter').toggleClass('toggle');
+    });
 
     // ネタバレ
     var netabareMsg = 'この部分はネタバレなどの「筆者が表示しない方が良いと判断した内容」を含みます。表示してよろしいですか？';
@@ -352,78 +399,6 @@ jQuery(document).ready(function($){
 	}
 	
 	//Get Ustream Status
-	//リクエストを発行する関数を定義
-	var setUstreamStatus = function(){
-		$.post(
-			FumikiAjax.endpoint,
-			{
-				action: 'ustream_status',
-				nonce: FumikiAjax.nonce
-			},
-			function(data){
-				if(data.status == 1){
-					if($('#ustream-badge').length < 1){
-						$('body').append('<a id="ustream-badge" href="http://ustre.am/oqqL">Ustream 一人バーベキュー配信中</a>');
-						var topBadgeShouldBe = function(){
-							return ($(window).scrollTop() + ($(window).height() - 225) / 2);
-						};
-						$('#ustream-badge').css({
-							top: topBadgeShouldBe() + "px"
-						}).fadeIn('slow');
-						setInterval(function(){
-							$('#ustream-badge').fadeTo(1000, 0.4, function(){
-								$('#ustream-badge').fadeTo(1000, 1);
-							});
-						}, 3000);
-						//バッジの追従
-						var scrolleTimer = null;
-						var scrolleBadge = function(e){
-							//これまでのタイマーを初期化してリセット
-							clearTimeout(scrolleTimer);
-							scrolleTimer = setTimeout(function(){
-								$('#ustream-badge').animate({
-									top: topBadgeShouldBe() + "px"
-								}, {
-									duration: 'slow'
-								});
-								clearTimeout(scrolleTimer);
-							}, 1000);
-						};
-						//スクロールイベント
-						$(window).scroll(scrolleBadge);
-						//リサイズイベント
-						$(window).resize(scrolleBadge);
-						//バッジのマウスオーバー
-						$('#ustream-badge').hover(
-							function(e){
-								$('#ustream-badge').animate({
-									width: '320px'
-								},{
-									duration: 'fast'
-								});
-							},
-							function(e){
-								$('#ustream-badge').animate({
-									width: "40px"
-								},{
-									duration: 'fast'
-								});
-							}	
-						);
-					}
-				}else{
-					if($('#ustream-badge').length > 0){
-						$('#ustream-badge').remove();
-					}
-				}
-			}
-		);
-	};
-	
-	//初回実行
-	setUstreamStatus();
-	//タイマー
-	setInterval(setUstreamStatus, 120000);
 });
 
 //ロードイベントでTwitterウィジェットを調整する

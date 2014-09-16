@@ -1,9 +1,15 @@
 <?php get_header('meta') ?>
 
 
+<header class="margin header">
+    <a class="single-logo" href="<?= home_url('/', 'http') ?>">
+        <img alt="<? bloginfo('name'); ?>" src="<?= get_template_directory_uri(); ?>/styles/img/logo-front-page.png" width="256" height="256" />
+    </a>
+</header>
+
 <div class="quotes-container">
     <?php if( is_archive() ): ?>
-    <h1>Quotes Collection</h1>
+        <h1>名言コレクション</h1>
     <?php endif; ?>
 
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
@@ -40,10 +46,10 @@
         echo str_replace('ページ', ' Pages', $content);
     }  ?>
     <address>
-        <span>Who collect <?= is_archive() ? 'these' : 'this' ?>?</span>
+        <span>集めた人</span>
         <?= get_avatar(1, 320) ?>
         <p>
-            <a rel="home" href="<?= home_url('/', 'http') ?>">Me.</a>
+            <a rel="home" href="<?= home_url('/', 'http') ?>">僕です。</a>
         </p>
     </address>
 </div><!-- //.quotes-conainer -->

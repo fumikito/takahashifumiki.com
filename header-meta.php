@@ -9,7 +9,7 @@
 <html <? language_attributes(); ?>>
 <!--<![endif]--><head>
 	<meta charset="<? bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><? wp_title(" | ", true, 'right'); bloginfo('name'); if(is_front_page()) echo " | ".get_bloginfo('description'); ?></title>
 <? wp_head(); ?>
 <link rel="alternate" type="application/rss+xml" href="<? bloginfo('rss2_url'); ?>" title="高橋文樹.com 最新の投稿" />

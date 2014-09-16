@@ -88,6 +88,7 @@ get_template_part("functions/lwp");
 get_template_part("functions/tinymce");
 get_template_part("functions/feed");
 get_template_part("functions/quotes");
+get_template_part("functions/hametuha");
 
 /*
 get_template_part('functions/wp-fulltext-search');

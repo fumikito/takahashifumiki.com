@@ -25,6 +25,7 @@ add_filter('syntaxhighlighter_themes', function( $themes ){
     $themes['fumiki'] = '高橋文樹オリジナル';
     return $themes;
 });
+
 // htmlscriptを常にオン
 add_filter('syntaxhighlighter_defaultsettings', function($setting){
     $setting['htmlscript'] = 1;
@@ -67,30 +68,28 @@ function fumiki_header_image(){
  */
 function _fumiki_assets(){
 	global $wp_styles;
-	if(!is_admin()){
-		wp_enqueue_style(
+	if( !is_admin() ){
+        // Modernizr
+        wp_enqueue_script('modernizr', get_template_directory_uri().'/libs/modernizr.js', array(), '2.8.3', false);
+
+		// jQuery UI Theme
+        wp_enqueue_style(
 			'jquery-ui',
 			get_template_directory_uri()."/libs/custom-theme/jquery-ui-1.8.23.custom.css",
 			array(),
 			fumiki_theme_version()
-		); 
-		//Font Awesome
+		);
+
+		// Font Awesome
 		wp_enqueue_style(
 			'font-awesome',
-			get_template_directory_uri()."/libs/font-awesome/css/font-awesome.css",
+			get_template_directory_uri()."/libs/font-awesome/css/font-awesome.min.css",
 			array(),
-			fumiki_theme_version(),
+			'4.2.0',
 			'screen'
 		);
-		wp_enqueue_style(
-			'font-awesome-ie7',
-			get_template_directory_uri()."/libs/font-awesome/css/font-awesome-ie7.css",
-			array(),
-			fumiki_theme_version(),
-			'screen'
-		);
-		$wp_styles->add_data('font-awesome-ie7', 'conditional', 'lt IE 8');
 
+        // Font Plus
         wp_enqueue_script('font-plus', '//webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D&aa=1', array(), null, true);
 
 		//メインCSS
@@ -101,6 +100,7 @@ function _fumiki_assets(){
 			fumiki_theme_version(),
 			'screen'
 		);
+
 		//fancybox
 		if(!is_smartphone()){
 			$src = WP_DEBUG ? 'fancybox' : 'fancybox.pack';
@@ -119,32 +119,16 @@ function _fumiki_assets(){
 			);
 		}
 		// メインのJS
-		if(defined('WP_DEBUG') && WP_DEBUG){
-			foreach(array(
-				'/includes/ga.js' => 'fumiki-ga',
-				'/onload.js' => 'fumiki-core'
-			) as $src => $handle){
-				wp_enqueue_script(
-					$handle,
-					get_template_directory_uri().'/styles/js'.$src,
-					array('jquery-ui-dialog', 'jquery-masonry', 'jquery-effects-highlight'),
-					fumiki_theme_version(),
-					true
-				);
-			}
-		}else{
-			// 上のものをすべて結合したものを読み込み
-			wp_enqueue_script(
-				'fumiki-core',
-				get_template_directory_uri()."/styles/js/onload.min.js",
-				array('jquery-masonry', 'jquery-ui-dialog', 'jquery-effects-highlight'),
-				fumiki_theme_version(),
-				true
-			);
-		}
+        wp_enqueue_script(
+            'fumiki-core',
+            get_template_directory_uri()."/styles/js/onload.min.js",
+            array('jquery-masonry', 'jquery-ui-dialog', 'jquery-effects-highlight'),
+            fumiki_theme_version(),
+            true
+        );
 		//Ajaxの変数を確認
 		$endpoint = admin_url('admin-ajax.php');
-		if(!is_ssl()){
+		if( !is_ssl() ){
 			$endpoint = str_replace('https://', 'http://', $endpoint);
 		}
 		wp_localize_script('fumiki-core', 'FumikiAjax', array(
@@ -153,6 +137,7 @@ function _fumiki_assets(){
 		));
 		////tmkm-amazonのCSSを打ち消し
 		remove_action("wp_head", "add_tmkmamazon_stylesheet");
+
 	}
 }
 add_action("wp_enqueue_scripts", "_fumiki_assets");
@@ -160,28 +145,29 @@ add_action("wp_enqueue_scripts", "_fumiki_assets");
 
 /**
  * CSSを削除する
+ *
  * @return void
  */
-function _fumiki_dequeue_styles(){
+add_action('wp_enqueue_scripts', function(){
 	//wp-pagenaviのCSSを打ち消し
 	wp_dequeue_style("wp-pagenavi");
-//	wp_dequeue_style('wp-tmkm-amazon');
 	//問い合わせページでなければ削除
-	if(!is_page('inquiry')){
+	if( !is_page('inquiry') ){
 		wp_dequeue_style('contact-form-7');
 	}
 	//ログインページでなければ削除
-	if(!is_page('login')){
+	if( !is_page('login') ){
 		wp_dequeue_style('theme-my-login');
-	}
-	//電子書籍ページでなければfancybox削除
-	if(is_smartphone()){
-		wp_dequeue_style('fancybox');
 	}
 	//LWP FORMはいらない
 	wp_dequeue_style('lwp-form');
-}
-add_action('wp_print_styles', '_fumiki_dequeue_styles', 10000);
+}, 10000);
+
+
+add_action('wp_footer', function(){
+    // YarppのCSSを打ち消し
+    wp_dequeue_style('yarppRelatedCss');
+}, 1);
 
 // Webfontの読み込み
 add_action('wp_footer', function(){

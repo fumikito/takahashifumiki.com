@@ -1,280 +1,507 @@
+
+
+
+
+/* ソーター */
+#sorter {
+  padding: 1em 1em;
+  margin: 1em 0;
+  border-top: 3px double #f1f1f1;
+  border-bottom: 3px double #f1f1f1;
+  .sort-title{
+    font-size: 1.4em;
+    display: block;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  #sorter-toggle{
+    display: none;
+  }
+  #sort-fields{
+    @include clearfix();
+  }
+  label {
+    display: block;
+    box-sizing: border-box;
+    width: 20%;
+    padding-right: 10px;
+    float: left;
+    font-size: 1.2em;
+    span{
+      display: block;
+      margin-bottom: 0.5em;
+      color: #888;
+
+    }
+  }
+  #sort-fields{
+    input, select{
+      width: 90%;
+    }
+  }
+  input[type=text] {
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 14px;
+    margin-left: 0.5em;
+    padding: 2px 5px;
+    @include border-radius(3px);
+  }
+  .sort-submit{
+    margin-top: 1em;
+  }
+  .submit{
+    display: block;
+    width: 98%;
+    cursor: pointer;
+    padding: 5px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: $white;
+    @include border-radius(3px);
+    border: 1px solid $thin-grey;
+    color: #888;
+    &:hover{
+      color: $link-red;
+      background-color: $thin-grey;
+    }
+  }
+}
+
+
+@media only screen and (max-width: $tablet - 1){
+  #sorter{
+    #sorter-toggle{
+      display: inline-block;
+      margin-left: 1em;
+    }
+    #sort-fields, .sort-submit{
+      display: none;
+    }
+    &.toggle{
+      #sort-fields, .sort-submit{
+        display: block;
+      }
+      #sorter-toggle{
+        opacity: .6;
+      }
+    }
+    #sort-fields{
+      label{
+        width: 100%;
+        float: none;
+        padding: 10px;
+        border-bottom: 1px dashed #ddd;
+      }
+    }
+  }
+}
+
+
+
 /****************************************
  * 7.アーカイブ設定
  ****************************************/
-$gutter: 16px;
-div.archive{
-	padding-top: 40px;
-	padding-left: $gutter;
-	.meta{
-		margin-bottom:20px;
-		h1{
-			font-size:22px;
-		}
-		span{
-			padding: 3px 5px;
-			background: #00A0E9;
-			color: #fff;
-			@include border-radius(3px);
-		}
-	}
-	/*コンテンツボックス*/
-	.archive-box{
-		width: 200px;
-		padding: ($gutter * 2) 10px $gutter;
-		margin-right: $gutter;
-		margin-bottom: $gutter;
-		float: left;
-		position: relative;
-		@include border-radius(3px);
-		background-color: #fff;
-		&.google{
-			min-height: 200px;
-			background-color: #eee;
-		}
-		
-		/* トップラベル*/
-		.post-type{
-			line-height: ($gutter * 2);
-			height: ($gutter * 2);
-			font-size: $gutter;
-			position: absolute;
-			width: 100%;
-			top: 0;
-			left: 0;
-			padding: 0x;
-			background-color: #aaa;
-			color: #fff;
-			text-shadow: 1px 1px 2px #fff, 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-			@include border-top-radius(3px);
-		}
-		.post-type-ebook{
-			background-color: $title-font-color;
-		}
-		.post-type-events{
-			background-color: $semi-blue;
-		}
-		.post-type-pr{
-			background-color: #eee;
-			color: #888;
-		}
-		.post-type-label{
-			float: right;
-			margin-right: 10px;
-			font-size: 0.85em;
-			font-weight: bold;
-			i{
-				margin-right: 0.2em;
-			}
-		}
-		.post-counter-label{
-			margin-left: 10px;
-			font-family: $old;
-			letter-spacing: -0.1em;
-		}
-		
-		/* 写真エリア */
-		.photo{
-			display: block;
-			position: relative;
-			text-align: center;
-			overflow: hidden;
-			.cover{
-				max-width: 200px;
-				height: auto;
-			}
-			.on-sale{
-				position: absolute;
-				left: 0;
-				top: 0;
-			}
-			.price{
-				background-color: $pale-yellow;
-				position: absolute;
-				padding: 3px 5px;
-				font-size: 1.4em;
-				font-style: italic;
-				font-weight: bold;
-				right: 5px;
-				bottom: 5px;
-				@include border-radius(3px);
-			}
-		}
-		
-		/* タイトル */
-		.archive-title{
-			margin: 0.5em 0;
-			text-align: left;
-			line-height: 1.1;
-			font-size:1.8em;
-			font-weight: bold;
-			a:link{
-				color: #444;
-				text-decoration: none;
-				text-shadow: 1px 1px 2px #fff;
-			}
-			a:visited{
-				color: #999;
-				text-shadow: 1px 1px 2px #fff;
-			}
-			a:hover{
-				color: $orange;
-				text-decoration: underline;
-			}
-			a:active{
-				color: $warning-red;
-			}
-		}
-		
-		/* イベントテーブル */
-		.event-table{
-			font-size: 1.2em;
-			margin: 1em 0;
-			width: 100%;
-			th, td{
-				padding: 5px 8px;
-				border-bottom: 1px solid #ddd;
-			}
-			tr:first-child{
-				th, td{
-					border-top: 1px solid #ddd;
-				}
-			}
-			tr:nth-child(odd){
-				th,td{
-					background-color: #f9f9f9;
-				}
-			}
-			th{
-				color: #888;
-				font-weight: bold;
-				white-space: nowrap;
-				i{
-					margin-right: 0.2em;
-				}
-			}
-			td{
-			}
-		}
-		
-		/* 日付 */
-		small{
-			display: block;
-			text-align: right;
-			color: #999;
-			font-size:1.1em;
-			padding-bottom: 3px;
-		}
-		/* 抜粋 */
-		.desc{
-			font-size: 1.2em;
-			line-height: 1.4;
-			margin: 0.5em 0;
-			p{
-				margin:0;
-			}
-		}
-		
-		/*メタ情報*/
-		.cat{
-		}
-		.tag {
-			font-size:10px;
-			margin:0;
-			img{
-				vertical-align: text-bottom;
-				margin-right:10px;
-			}
-		}
-		.taxonomies{
-			text-align: left;
-			.category, .post_tag{
-				font-size: 1.1em;
-				line-height: 1;
-				text-align: left;
-				a{
-					display: inline-block;
-					padding: 3px 5px;
-					margin-bottom: 5px;
-					color: #fff;
-					text-decoration: none;
-					@include border-radius(5px);
-					i{
-						margin-right: 0.2em;
-					}
-				}
-			}
-			.post_tag a{
-				background-color: $title-font-color;
-			}
-			.category a{
-				background-color: $deep-blue;
-			}
 
-		}
-		.score{
-			possition: absolute;
-			left: 0;
-			top: -5px;
-			color: #fff;
-		}
-		.more{
-			text-align: right;
-			margin-top: 0.5em;
-		}
-	}
+$gutter: 16px;
+
+
+
+
+div.archive {
+  padding-top: 40px;
+  padding-left: $gutter;
+  .meta {
+    margin-bottom: 20px;
+    h1 {
+      font-size: 22px;
+    }
+    span {
+      padding: 3px 5px;
+      background: #00A0E9;
+      color: #fff;
+      @include border-radius(3px);
+    }
+  }
+  /*コンテンツボックス*/
+  .archive-box {
+    width: 200px;
+    padding: ($gutter * 2) 10px $gutter;
+    margin-right: $gutter;
+    margin-bottom: $gutter;
+    float: left;
+    position: relative;
+    @include border-radius(3px);
+    background-color: #fff;
+    &.google {
+      min-height: 200px;
+      background-color: #eee;
+    }
+
+    /* トップラベル*/
+    .post-type {
+      line-height: ($gutter * 2);
+      height: ($gutter * 2);
+      font-size: $gutter;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 0x;
+      background-color: #aaa;
+      color: #fff;
+      text-shadow: 1px 1px 2px #fff, 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+      @include border-top-radius(3px);
+    }
+    .post-type-ebook {
+      background-color: $title-font-color;
+    }
+    .post-type-events {
+      background-color: $semi-blue;
+    }
+    .post-type-pr {
+      background-color: #eee;
+      color: #888;
+    }
+    .post-type-label {
+      float: right;
+      margin-right: 10px;
+      font-size: 0.85em;
+      font-weight: bold;
+      i {
+        margin-right: 0.2em;
+      }
+    }
+    .post-counter-label {
+      margin-left: 10px;
+      font-family: $old;
+      letter-spacing: -0.1em;
+    }
+
+    /* 写真エリア */
+    .photo {
+      display: block;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      .cover {
+        max-width: 200px;
+        height: auto;
+      }
+      .on-sale {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .price {
+        background-color: $pale-yellow;
+        position: absolute;
+        padding: 3px 5px;
+        font-size: 1.4em;
+        font-style: italic;
+        font-weight: bold;
+        right: 5px;
+        bottom: 5px;
+        @include border-radius(3px);
+      }
+    }
+
+    /* タイトル */
+    .archive-title {
+      margin: 0.5em 0;
+      text-align: left;
+      line-height: 1.1;
+      font-size: 1.8em;
+      font-weight: bold;
+      a:link {
+        color: #444;
+        text-decoration: none;
+        text-shadow: 1px 1px 2px #fff;
+      }
+      a:visited {
+        color: #999;
+        text-shadow: 1px 1px 2px #fff;
+      }
+      a:hover {
+        color: $orange;
+        text-decoration: underline;
+      }
+      a:active {
+        color: $warning-red;
+      }
+    }
+
+    /* イベントテーブル */
+    .event-table {
+      font-size: 1.2em;
+      margin: 1em 0;
+      width: 100%;
+      th, td {
+        padding: 5px 8px;
+        border-bottom: 1px solid #ddd;
+      }
+      tr:first-child {
+        th, td {
+          border-top: 1px solid #ddd;
+        }
+      }
+      tr:nth-child(odd) {
+        th, td {
+          background-color: #f9f9f9;
+        }
+      }
+      th {
+        color: #888;
+        font-weight: bold;
+        white-space: nowrap;
+        i {
+          margin-right: 0.2em;
+        }
+      }
+      td {
+      }
+    }
+
+    /* 日付 */
+    small {
+      display: block;
+      text-align: right;
+      color: #999;
+      font-size: 1.1em;
+      padding-bottom: 3px;
+    }
+    /* 抜粋 */
+    .desc {
+      font-size: 1.2em;
+      line-height: 1.4;
+      margin: 0.5em 0;
+      p {
+        margin: 0;
+      }
+    }
+
+    /*メタ情報*/
+    .cat {
+    }
+    .tag {
+      font-size: 10px;
+      margin: 0;
+      img {
+        vertical-align: text-bottom;
+        margin-right: 10px;
+      }
+    }
+    .taxonomies {
+      text-align: left;
+      .category, .post_tag {
+        font-size: 1.1em;
+        line-height: 1;
+        text-align: left;
+        a {
+          display: inline-block;
+          padding: 3px 5px;
+          margin-bottom: 5px;
+          color: #fff;
+          text-decoration: none;
+          @include border-radius(5px);
+          i {
+            margin-right: 0.2em;
+          }
+        }
+      }
+      .post_tag a {
+        background-color: $title-font-color;
+      }
+      .category a {
+        background-color: $deep-blue;
+      }
+
+    }
+    .score {
+      possition: absolute;
+      left: 0;
+      top: -5px;
+      color: #fff;
+    }
+    .more {
+      text-align: right;
+      margin-top: 0.5em;
+    }
+  }
 }
 
-.post-list{
-    .loop{
-        position: relative;
-        border-top: 1px solid $beige;
-        padding: 10px;
-        &.post-list-large{
-            font-size: 1.4em;
-        }
-        @include clearfix();
-        &:first-child{
-            border-top: none;
-        }
-        img{
-            float: left;
-            margin-right: 1em;
-        }
-        .post-title{
-            font-size: 2em;
-            font-family: $title-font;
-            text-align: left;
-        }
-        .score{
-            position: absolute;
-            right: 0;
-            top: 10px;
-            padding: 5px;
-            @include border-radius(3px);
-            background: $emphasized-text-color;
-            color: $white;
-        }
-        .date{
-            color: $light-grey;
-            display: block;
-            margin: 0.5em 0;
-        }
-        .desc{
-            font-size: 1.4em;
-        }
+.post-list {
+  .loop {
+    position: relative;
+    border-top: 1px solid $beige;
+    padding: 10px;
+    &:last-child {
+      border-bottom: 1px solid $beige;
     }
+    &.post-list-large {
+      font-size: 1.4em;
+    }
+    @include clearfix();
+    &:first-child {
+      border-top: none;
+    }
+    img {
+      float: left;
+      margin-right: 1em;
+    }
+    .post-title {
+      font-size: 2em;
+      font-family: $title-font;
+      text-align: left;
+    }
+    .score {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      bottom: 10px;
+      padding: 5px;
+      @include border-radius(3px);
+      background: #ccc;
+      color: $white;
+    }
+    .date {
+      color: $light-grey;
+      display: block;
+      margin: 0.5em 0;
+      font-size: 1.2em;
+      line-height: 1.4
+    }
+    .desc {
+      position: relative;
+      z-index: 2;
+      font-size: 1.4em;
+      line-height: 1.4
+    }
+    .book-price{
+      color: $link-red;
+      font-size: 1.4em;
+    }
+  }
 }
 
 @media screen and (max-width: $tablet - 1) {
-    .post-list{
-        .loop{
-            &.post-list-large{
-                font-size: 1.2em;
-            }
-            img{
-                max-width: 75px;
-                height: 50px;
-            }
-        }
+  .post-list {
+    .loop {
+      &.post-list-large {
+        font-size: 1.2em;
+      }
+      img {
+        max-width: 75px;
+        height: 50px;
+      }
     }
+  }
+}
+
+/**========================
+ * 破滅派リンク
+ */
+.hametuha-links {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  .hametuha-title {
+    font-family: $title-font;
+    font-size: 2em;
+    color: $title-font-color;
+    margin: 15px 1em;
+    position: relative;
+    .button {
+      position: absolute;
+      font-size: 14px;
+      right: 0;
+      top: 50%;
+      margin-top: -10px;
+    }
+  }
+  .hametuha-list {
+    li {
+      border-top: 1px solid $thin-grey;
+      font-size: 1.4em;
+      position: relative;
+      &:last-child {
+        border-bottom: 1px solid $thin-grey;
+      }
+      & > .fa {
+        position: absolute;
+        z-indez: 1;
+        right: 0.5em;
+        font-size: 4em;
+        color: #ddd;
+        top: 50%;
+        margin-top: -0.5em;
+      }
+      a {
+        position: relative;
+        z-index: 2;
+        display: block;
+        padding: 1em 3em 1em 2em;
+        &:link, &:visited {
+          text-decoration: none;
+          color: #999;
+        }
+        &:hover {
+          text-decoration: none;
+          background-color: lighten($link-red, 30);
+        }
+        &:active {
+          background-color: $link-red;
+          * {
+            color: $white !important;
+          }
+        }
+      }
+      h3 {
+        font-size: 2em;
+        font-family: $single-title-font;
+        color: $title-font-color;
+        margin-bottom: 0.5em;
+      }
+      .description {
+        p {
+          margin: 0.5em 0;
+          color: #666;
+          line-height: 1.4;
+        }
+      }
+      .category {
+        .fa {
+          margin-left: 0.5em;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+      .new {
+        @include border-radius(2px);
+        padding: 1px 3px;
+        background-color: $link-red;
+        color: $white;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet - 1) {
+
+  .hametuha-links {
+    .hametuha-title {
+      font-size: 1.4em;
+    }
+    .hametuha-list li {
+      h3 {
+        font-size: 1.8em;
+      }
+      .category span {
+        display: block;
+        &.new {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }

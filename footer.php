@@ -1,7 +1,63 @@
 
+
+<div class="hametuha-links margin">
+    <h2 class="hametuha-title">
+        <i class="fa fa-share-alt"></i> 破滅派に投稿しているもの
+        <a class="button" href="http://hametuha.com/author/takahashi_fumiki/">全部見る</a>
+    </h2>
+    <?php if( $hametuha_posts = hametuha_posts() ): ?>
+        <ol class="hametuha-list">
+            <?php $counter = 0; foreach($hametuha_posts as $hametu): $counter++; ?>
+                <li>
+                    <i class="fa fa-chevron-circle-right"></i>
+                    <a href="<?= esc_url($hametu['url']) ?>">
+                        <h3><?= esc_html($hametu['title']) ?></h3>
+                        <p class="category">
+                            <span><i class="fa fa-tags"></i> <?= implode(', ', $hametu['category']) ?></span>
+                            <span><i class="fa fa-calendar"></i> <?= mysql2date('Y年n月j日 H:i', $hametu['post_date']) ?></span>
+                            <?php if( current_time('timestamp') - strtotime($hametu['post_date']) < 60 * 60 * 24 * 7 ): ?>
+                            <span class="new"><i class="fa fa-star"></i>NEW!</span>
+                            <?php endif ?>
+                        </p>
+                        <div class="description">
+                            <?= wpautop($hametu['excerpt']) ?>
+                        </div>
+                    </a>
+                </li>
+                <?php if( $counter >= 3 ) break; ?>
+            <?php endforeach; ?>
+        </ol>
+    <?php else: ?>
+        <p class="message warning">データを取得できませんでした.....</p>
+    <?php endif; ?>
+</div><!-- //.hametuha-links -->
+
+
+
+
 <div class="margin pre-footer-navigation">
-	<? wp_nav_menu(array('theme_location' => 'top-page','container_class' => 'nav-menu')); ?>
-</div>
+
+
+    <a id="footer-menu-toggle" href="#">
+        <i class="fa fa-navicon"></i> メニュー
+    </a>
+
+
+    <? wp_nav_menu(array('theme_location' => 'top-page','container_class' => 'nav-menu', 'container' => 'nav')); ?>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 高橋文樹レスポンシブフッター上 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-0087037684083564"
+         data-ad-slot="9343442847"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div><!-- //.pre-footer-navigation -->
+
 
 <footer class="dark_bg">
 	
@@ -157,13 +213,11 @@
 
 	<div id="copy-note" class="margin mono clearfix">
 		<p>
-			Proudly powered by <a href="http://wordpress.org">WordPress</a>.
+			&copy; 2008 Takahashi Fumiki
 		</p>
 		<p class="poweredby">
-			My theme v<?php echo fumiki_theme_version(); ?> is DIYed :)
-		</p>
-		<p class="center">
-			&copy; 2008-<?php echo date_i18n('Y'); ?> Takahashi Fumiki
+			Proudly powered by <a href="http://wordpress.org">WordPress</a>.
+			My theme Ver. <?php echo fumiki_theme_version(); ?> is DIYed :)
 		</p>
 	</div><!-- .copy ends-->
 

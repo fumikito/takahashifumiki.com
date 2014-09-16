@@ -168,22 +168,9 @@ function fumiki_share($title, $url){
 			</a>
 		</li>
 		<li>
-EOS;
-   if(is_smartphone()){
-	   $line_src = get_template_directory_uri().'/styles/img/linebutton_36x60.png';
-	   $line_str = rawurlencode($title.' '.$url);
-	   echo <<<EOS
-				<!-- LINEに送る -->
-				<a href="line://msg/text/?{$line_str}"><img src="{$line_src}" width="36" height="60" alt="LINEで送る" /></a>
-EOS;
-   }else{
-	   echo <<<EOS
-				<!-- Pocket -->
-				<a data-pocket-label="pocket" data-pocket-count="vertical" class="pocket-btn" data-lang="en"></a>
-				<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
-EOS;
-   }
-	echo <<<EOS
+            <!-- Pocket -->
+            <a data-pocket-label="pocket" data-pocket-count="vertical" class="pocket-btn" data-lang="en"></a>
+            <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
 		</li>
 	</ul>
 EOS;

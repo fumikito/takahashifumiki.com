@@ -15,14 +15,13 @@ add_filter('show_admin_bar', '_fumiki_admin_bar_visible');
  */
 function _fumiki_admin_bar($wp_admin_bar){
 	//ロゴ追加
-	$logo = is_admin() ? get_bloginfo('name') : sprintf('<img class="adminbar-logo" src="%s/styles/img/logo-adminbar.png" alt="%s" width="20" height="20" />', get_stylesheet_directory_uri(), get_bloginfo('name'));
+	$logo = '<i class="fa fa-navicon ab-icon"></i><span class="ab-label">メニュー</span>';
 	$wp_admin_bar->add_menu(array(
 		'id' => 'main-menues',
 		'title' => $logo,
-		'href' => home_url('/', 'http')
 	));
 	//ダッシュボード
-	if(current_user_can('edit_posts') && !is_admin()){
+	if( current_user_can('edit_posts') && !is_admin() ){
 		$wp_admin_bar->add_menu(array(
 			'parent' => 'main-menues',
 			'title' => 'ダッシュボード',
@@ -33,31 +32,18 @@ function _fumiki_admin_bar($wp_admin_bar){
 	$menu_name = 'main-pages';
 	$wp_admin_bar->add_menu(array(
 		'parent' => 'main-menues',
-		'title' => '高橋文樹.com',
+		'title' => '<i class="fa fa-home ab-icon"></i><span class="ab-label">ホーム</span>',
 		'id' => 'main-pages',
-		'href' => home_url('/', 'http')
+        'href' => home_url('', 'http'),
 	));
-	if(!wp_is_mobile()){
-		$location = get_nav_menu_locations();
-		$menu = wp_get_nav_menu_object($location[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-		foreach($menu_items as $key => $item){
-			$wp_admin_bar->add_menu(array(
-				'parent' => 'main-pages',
-				'id' => 'page-menu-'.$key,
-				'title' => $item->title,
-				'href' => $item->url
-			));
-		}
-	}
 	//カテゴリー追加
 	$wp_admin_bar->add_menu(array(
-		'title' => 'ブログ',
+        'title' => '<i class="fa fa-pencil-square-o ab-icon"></i><span class="ab-label">ブログ記事</span>',
 		'id' => 'category',
 		'parent' => 'main-menues',
-		'href' =>  home_url('latest')
+		'href' =>  get_permalink(get_option('page_for_posts'))
 	));
-	if(!wp_is_mobile()){
+	if( !wp_is_mobile() ){
 		$categories = get_terms('category', array(
 			'parent' => 0,
 			'orderby' => 'id'
@@ -77,21 +63,23 @@ function _fumiki_admin_bar($wp_admin_bar){
 				$wp_admin_bar->add_menu(array(
 					'parent' => 'cat-'.$cat->term_id,
 					'id' => 'cat-child-'.$child->term_id,
-					'title' => '-- '.$child->name,
+					'title' => $child->name,
 					'href' => get_category_link($child->term_id)
 				));
 			}
 		}
 	}
-	$wp_admin_bar->add_menu(array(
-		'id' => 'ebook',
-		'title' => '電子書籍',
-		'href' => get_post_type_archive_link('ebook'),
-		'parent' => 'main-menues'
-	));
+    // 電子書籍
+    $wp_admin_bar->add_menu(array(
+        'id' => 'ebook',
+        'title' => '<i class="fa fa-book ab-icon"></i><span class="ab-label">電子書籍</span>',
+        'href' => get_post_type_archive_link('ebook'),
+        'parent' => 'main-menues'
+    ));
+    // イベント
 	$wp_admin_bar->add_menu(array(
 		'id' => 'event',
-		'title' => 'イベント',
+        'title' => '<i class="fa fa-ticket ab-icon"></i><span class="ab-label">イベント</span>',
 		'href' => get_post_type_archive_link('events'),
 		'parent' => 'main-menues'
 	));

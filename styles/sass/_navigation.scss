@@ -1,138 +1,277 @@
 /* Admin bar */
-#wpadminbar{
-	background: $body-color;
-	.adminbar-logo {
-		width: 24px;
-		height: 24px;
-		margin-top: 4px;
-	}
-	.ab-top-secondary{
-		background: $body-color;
-	}
-	#wp-admin-bar-main-menues i{
-		margin-right: 0.5em
-	}
+#wpadminbar {
+  background: $body-color;
+  .fa {
+    font-family: "FontAwesome" !important;
+  }
+  .ab-top-secondary {
+    background: $body-color;
+  }
+  #wp-admin-bar-main-menues i {
+    margin-right: 0.5em
+  }
 }
-
-
 
 // スマートフォンの場合の見映え
 @media screen and (max-width: $admin-bar-break-point) {
-    #wpadminbar{
-        #wp-admin-bar-main-menues{
-          display: block;
+  #wpadminbar {
+    #wp-admin-bar-main-menues {
+      .fa-navicon{
+        padding-top: 8px !important;
+        font-size: 32px !important;
+      }
+      display: block;
+      .ab-sub-wrapper{
+        .ab-icon{
+          font-size: 32px !important;
         }
-        .adminbar-logo{
-            width: 32px;
-            height: 32px;
-            margin: 5px 10px;
+        .ab-label{
+          display: inline-block;
         }
+      }
     }
+    // 検索フォーム
+    #wp-admin-bar-search{
+      display: block;
+      &:before{
+        top: 4px;
+        font-size: 32px;
+      }
+      #adminbarsearch::before{
+        font-size: 32px !important;
+        left: 0 !important;
+      }
+      #adminbar-search{
+        height: 32px !important;
+        margin-top: 6px !important;
+      }
+    }
+  }
 }
 
 /*ナビゲーション*/
-#navi{
-	border-bottom:3px double $body-color;
-	color: $semi-light-grey;
-	overflow: hidden;
-    background: $section-bg-color;
-	&.archive{
-		header{
-			padding: 10px;
-			position: relative;
-		}
-		h1{
-			font-size: 2em;
-			margin: 0.5em 0;
-			small{
-				font-size: 0.8em;
-				padding: 0.1em;
-				margin-right: 0.2em;
-				padding: 5px 10px;
-				@include border-radius(3px);
-				color: #fff;
-				background-color: $deep-blue;
-				i{
-					margin-right: 5px;
-				}
-			}
-		}
-		.location{
-			font-size: 1.2em;
-			line-height: 2em;
-			height: 2em;
-			i{
-				margin-right: 0.25em;
-			}
-		}
-		.count{
-			backgrond-color: $deep-blue;
-		}
-		.wp-pagenavi{
-			font-size:1.2em;
-			text-align: right;
-		}
-	}
-	
-	/* ソーター */
-	#sorter{
-		label{
-			color: #fff;
-			text-shadow:0 0 3px rgba(0,0,0,0.5);
-			font-size:1.2em;
-		}
-		p{
-			margin: 0;
-			height: 40px; 
-			line-height: 40px;
-		}
-		input[type=text]{
-			border: 1px solid #ccc;
-			color: #666;
-			font-size: 14px;
-			margin-left:0.5em;
-			paddign: 2px 5px;
-			@include border-radius(3px);
-		}
-	}
-	.breadcrumb{
-		height:24px;
-		line-height:24px;
-		margin:10px auto;
-		font-size:1.1em;
-		text-align: left;
-		i{
-			font-size: 24px;
-			vertical-align: middle;
-		}
-        a:link, a:visited{
-            color: inherit;
+#navi {
+  border-bottom: 3px double $body-color;
+  color: $semi-light-grey;
+  overflow: hidden;
+  background: $section-bg-color;
+  &.archive {
+    header {
+      padding: 10px;
+      position: relative;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 0.5em 0;
+      small {
+        font-size: 0.8em;
+        padding: 0.1em;
+        margin-right: 0.2em;
+        padding: 5px 10px;
+        @include border-radius(3px);
+        color: #fff;
+        background-color: $deep-blue;
+        i {
+          margin-right: 5px;
         }
-        a:hover, a:active{
-            color: $light-grey;
-        }
+      }
+    }
+    .location {
+      font-size: 1.2em;
+      line-height: 2em;
+      height: 2em;
+      i {
+        margin-right: 0.25em;
+      }
+    }
+    .count {
+      backgrond-color: $deep-blue;
+    }
+    .wp-pagenavi {
+      font-size: 1.2em;
+      text-align: right;
+    }
+  }
 
-	}
-	p.center{
-		font-size: 1.6em;
-	}
+
+
+
+  .breadcrumb {
+    height: 24px;
+    line-height: 24px;
+    margin: 10px auto;
+    padding-left: 20px;
+    font-size: 1.1em;
+    text-align: left;
+    i {
+      font-size: 24px;
+      vertical-align: middle;
+    }
+    a:link, a:visited {
+      color: inherit;
+    }
+    a:hover, a:active {
+      color: $light-grey;
+    }
+  }
+  p.center {
+    font-size: 1.6em;
+  }
 }
 
-#to-top{
-	width: 100%;
-	position: fixed;
-	text-align: right;
-	font-size: 40px;
-	z-index: 80;
-	top: 40px;
-	display: none;
-	a{
-		margin-right: 40px;
-		@include single-transition(opacity, 0.2s, ease-in-out, 0);
-		&:link, &:visited{
-			color: $deep-blue;
-			text-decoration: none;
-			
-		}
-	}
+
+/*---------------------
+ * フッター直前のナビ
+ */
+.pre-footer-navigation {
+  padding: 1em 0;
+  .nav-menu{
+    padding-bottom: 1em;
+    position: relative;
+    z-index: 2;
+    a {
+      text-align: center;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      @include ellipsis();
+      font-size: 1.4em;
+      padding: 1em 0.5em;
+      &:link,
+      &:visited {
+        color: $semi-light-grey;
+        text-decoration: none;
+      }
+      &:hover {
+        color: $link-red;
+      }
+      &:active {
+        color: $link-crimson;
+      }
+    }
+  }
+  // 1階層目のメニュー
+  .menu {
+    margin: 0;
+    padding: 0;
+    & > li{
+      width: 20%;
+      float: left;
+      position: relative;
+      overflow: hidden;
+      &:hover, &:active{
+        overflow: visible;
+      }
+      a {
+        background: $section-bg-color;
+        border-top: 3px double $thin-grey;
+        border-bottom: 3px double $thin-grey;
+      }
+    }
+  }
+  // 2層目のメニュー
+  .sub-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    & > li a{
+      border: 3px double $section-bg-color;
+      background-color: #ffffff;
+    }
+  }
+
+  .adsbygoogle{
+    clear: both;
+    padding-top: 2.5em;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+}
+// タッチスクリーンのとき
+#footer-menu-toggle{
+  display: none;
+  border: 1px solid $section-bg-color;
+  font-size: 1.4em;
+  padding: 1.5em 0;
+  text-align: center;
+  background-color: $white;
+  &:link, &:visited{
+    text-decoration: none;
+    color: $thin-grey;
+  }
+  &:hover, &:active{
+    color: $link-red;
+  }
+  &.toggle{
+    background-color: $link-red;
+    color: $white;
+  }
+}
+@media only screen and (max-width: $tablet - 1){
+  .pre-footer-navigation .nav-menu{
+    display: none;
+    a{
+      text-align: left;
+      position: relative;
+      &:after{
+        position: absolute;
+        font-family: "FontAwesome";
+        content: "\f138";
+        right: 5px;
+        top: 50%;
+        margin-top: -10px;
+        font-size: 20px;
+      }
+    }
+    .menu > li{
+      float: none;
+      width: auto;
+      .sub-menu{
+        position: relative;
+        top: 0;
+      }
+    }
+  }
+  #footer-menu-toggle{
+    display: block;
+    &.toggle{
+      .fa-navicon:before{
+        content: '\f057';
+      }
+      & + .nav-menu{
+        display: block;
+        & > li a{
+          padding-left: 2em;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+/*---------------------
+ * トップに戻る
+ */
+#to-top {
+  width: 100%;
+  position: fixed;
+  text-align: right;
+  font-size: 40px;
+  z-index: 80;
+  top: 40px;
+  display: none;
+  a {
+    margin-right: 40px;
+    @include single-transition(opacity, 0.2s, ease-in-out, 0);
+    &:link, &:visited {
+      color: $deep-blue;
+      text-decoration: none;
+
+    }
+  }
 }

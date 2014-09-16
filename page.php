@@ -13,14 +13,11 @@ get_header('title');
 			'before' => '<div class="wp-pagenavi clrB"><span class="pages">ページ: </span>',
 			'after' => '</div>'
 		)); ?>
-		<? get_template_part('templates/single-share'); ?>
+		<? get_template_part('templates/single', 'share'); ?>
 		<? endwhile; endif; ?>
 		<? if(function_exists('related_posts')) related_posts(); ?>
 	</div>
 	<!-- #main ends -->
-	<div id="sidebar">
-		<? get_sidebar(); ?>
-	</div>
 </div>
 
 <?php

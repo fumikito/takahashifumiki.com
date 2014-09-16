@@ -3,29 +3,18 @@
  */
 /*全体レイアウト*/
 .margin{
-	width:$desktop;
+	max-width: $desktop;
 	margin:0 auto;
 }
 #main{
-    width: 630px;
-    float: left;
+  margin: 0 20px;
 }
+
 #sidebar{
 	width: 330px;
     float: right;
 }
-@media screen and (max-width: $desktop - 1) {
-    #main{
-        width: auto;
-        float: none;
-    }
-    #sidebar{
-        display: none;
-    }
-    .no-if-touch{
-        display: none;
-    }
-};
+
 
 
 #sidebar .grid_2{
@@ -54,6 +43,26 @@
 	}
 }
 
+// フッター
+@media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+  footer{
+    .grid_4{
+      width: 42%;
+      margin: 0 4%;
+      &.first{
+        margin-left: 4%;
+      }
+      &.last{
+        clear: both;
+        width: auto;
+        float: none;
+        margin: 0;
+        padding: 26px;
+      }
+    }
+  }
+}
+
 .entry{
 }
 
@@ -63,24 +72,6 @@
 //
 //--------------------
 @media screen and (min-width: $large-desktop) {
-	.margin{
-		width: $large-desktop;
-	}
-    #main{
-        width: ($desktop - (60));
-        padding-left: 30px;
-        padding-right: 20px;
-    }
-	.grid_4{
-		width: 360px;
-		margin-right: 60px;
-		&.last{
-			margin-right: 30px;
-		}
-		&.first{
-			margin-left: 30px;
-		}
-	}
 	$bigGutter: 30px;
 	div.archive{
 		padding-left: $bigGutter;
@@ -97,9 +88,14 @@
 // タブレットからデスクトップ
 // --------------------------------------------------
 @media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
-	.margin{
-		width: $tablet;
-	}
+
+  #main{
+    margin: 0 40px;
+  }
+
+  .no-if-touch{
+    display: none;
+  }
 	.grid_4{
 		width: 230px;
 		margin-right: 25px;
@@ -110,35 +106,19 @@
 			margin-left: 10px;
 		}
 	}
+
 	$middleGutter: 15px;
+
 	header .title-meta{
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.google-share{
-		width: 748px;
-	}
+
 	div.archive{
 		padding-left: $middleGutter;
 		.archive-box{
 			margin-right: $middleGutter;
 			margin-bottom: $middleGutter;
-		}
-	}
-	.entry{
-		width:748px;
-		padding-right: 10px;
-		padding-left: 10px;
-		.syntaxhighlighter{
-			width: 748px !important;
-			margin-left: 0 !important;
-		}
-		.wp-caption{
-			max-width: 748px;
-			img{
-				max-width: 748px;
-				height: auto;
-			}
 		}
 	}
 }
@@ -149,13 +129,17 @@
 // --------------------------------------------------
 @media screen and (max-width: ($tablet - 1px)) {
 
-    .grid_1,
-    .grid_2,
-    .grid_4{
-        width: auto;
-        margin-right: 0;
-        float: none;
-    }
+  #main{
+    margin: 0 10px;
+  }
 
-	@include smartphone();
+  .grid_1,
+  .grid_2,
+  .grid_4{
+      width: auto;
+      margin-right: 0;
+      float: none;
+  }
+
+  @include smartphone();
 }

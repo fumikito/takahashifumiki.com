@@ -18,7 +18,7 @@ get_header('title');
 <div id="content" class="margin clearfix">
 	<div id="main" class="<?= get_post_type(); ?>">
 
-		<? if(has_post_thumbnail()):?>
+		<? if( has_post_thumbnail() ):?>
 			<figure class="eyecatch">
 				<?
                     $attachment = get_post(get_post_thumbnail_id());
@@ -58,11 +58,13 @@ get_header('title');
 		<? endif; ?>
 
 
-		<? if(is_singular('post') && is_expired_post()): ?>
+		<? if( is_singular('post') && is_expired_post() ): ?>
 			<p id="outdated-post" class="message warning">
 				この投稿は<?= get_outdate_string(); ?>の記事です。情報が古くなっている可能性があるので、その点ご了承ください。
 			</p>
 		<? endif; ?>
+
+
 		<article class="entry clearfix">
 			<? the_content(); ?>
 		</article><!-- //.entry -->
@@ -76,7 +78,7 @@ get_header('title');
 		<div id="contents-last">&nbsp;</div>
 
 		<!-- // Buy message -->
-		<? if(!lwp_is_free(true)):  ?>
+		<? if( !lwp_is_free(true) ):  ?>
 			<div class="lwp-message lwp-container">
 				<? if(lwp_is_owner()): ?>
 					<p class="message success">
@@ -99,7 +101,7 @@ get_header('title');
 
 
 		<!-- // file lists -->
-		<? if(lwp_has_files()): ?>
+		<? if( lwp_has_files() ): ?>
 			<div class="lwp-file-list lwp-container">
 				<h2><i class="fa-laptop"></i> 対応端末</h2>
 				<? $devices = lwp_get_devices(); ?>
@@ -118,12 +120,12 @@ get_header('title');
 					</p>
 				</div>
 				<h2 id="download-list"><i class="fa-download"></i>ダウンロード</h2>
-				<?	get_template_part('templates/table-downloadables'); ?>
+				<?php	get_template_part('templates/table', 'downloadables'); ?>
 			</div><!-- //.lwp-file-list -->
 		<? endif; ?>
 
 		<!-- // ticket list -->
-		<? if(lwp_has_ticket()): ?>
+		<? if( lwp_has_ticket() ): ?>
 			<div class="lwp-ticket-list lwp-container">
 				<h2><i class="fa-ticket"></i><? the_title(); ?>のチケット</h2>
 				<table id="ticket-list" class="form-table">
@@ -143,7 +145,7 @@ get_header('title');
 			</div><!-- //.lwp-ticket-list -->
 		<? endif; ?>
 
-		<? get_template_part('templates/single', 'share'); ?>
+        <? get_template_part('templates/single', 'share'); ?>
 
 		<div class="next-previous clearfix clrB">
 			<p class="prev">
@@ -156,15 +158,13 @@ get_header('title');
 		
 		<div id="respond"><? comments_template(); ?></div>
 
-		<? if(function_exists('related_posts')) related_posts(); ?>
+
+		<? if( function_exists('related_posts') ) related_posts() ?>
+
+        <?php get_template_part('templates/single', 'ebook'); ?>
 
 	</div>
 	<!-- #main ends -->
-
-	<div id="sidebar">
-		<? get_sidebar(); ?>
-	</div><!-- //#sidebar -->
-
 
 </div><!-- //.margin -->
 
