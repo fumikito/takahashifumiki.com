@@ -257,7 +257,7 @@ add_filter('stylesheet_directory_uri', '_fumiki_static_url');
  */
 function _fumiki_script_loader_src($src){
 	$home_url = home_url();
-	if(false !== strpos($src, $home_url)){
+	if( false !== strpos($src, $home_url) ){
 		$src = preg_replace('/(https?):\/\//', '$1://s.', $src);
 	}
 	return $src;
@@ -270,18 +270,21 @@ add_filter('script_loader_src', '_fumiki_script_loader_src');
  * @param string $tag
  * @return string
  */
-function _fumiki_style_loader_tag($tag){
-	$them_dir = home_url('/', is_ssl() ? 'https' : 'http');
-	if(false !== strpos('href="'.$them_dir, $tag)){
-		$tag = preg_replace('/(https?):\/\//', '$1://s.', $tag);
-	}
-	//Font-awesomeの本体だけは同じドメインにする
-	if(false !== strpos($tag, 'font-awesome.css')){
-		$tag = preg_replace('/(https?:\/\/)s\./', '$1', $tag);
+add_filter('style_loader_tag', function ($tag, $handle){
+	switch( $handle ){
+		case 'dashicons':
+		case 'font-awesome':
+			// フォントファイルは同一ドメインでないとダメ
+			$tag = preg_replace('/(https?:\/\/)s\.takahashifumiki/u', '$1takahashifumiki', $tag);
+			break;
+		default:
+			$home_url = home_url('/', is_ssl() ? 'https' : 'http');
+			// 同一ドメインの静的リソースはstaticドメインより配信
+			$tag = preg_replace('/(https?):\/\/takahashifumiki/u', '$1://s.takahashifumiki', $tag);
+			break;
 	}
 	return $tag;
-}
-add_filter('style_loader_tag', '_fumiki_style_loader_tag');
+}, 10, 2);
 
 /**
  * wp_attachment imageのSRCを置換
