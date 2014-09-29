@@ -787,7 +787,7 @@ add_shortcode('nanji_han', function($atts = array()){
 				break;
 			}
 			$time_str = '';
-			$hour_str = array('ゼロ', 'イチ', 'ニ', 'サン', 'ヨ', 'ゴ', 'ロク', 'シチ', 'ハチ', 'キュウ', 'ジュウ', 'ジュウイチ', 'ジュウニ');
+			$hour_str = array('ゼロ', 'イチ', 'ニ', 'サン', 'ヨ', 'ゴ', 'ロク', 'シチ', 'ハチ', 'ク', 'ジュウ', 'ジュウイチ', 'ジュウニ');
 			if( isset($hour_str[$hour]) ){
 				$time_str = $hour_str[$hour];
 			}elseif( isset($hour_str[$hour - 12]) ){
