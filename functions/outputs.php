@@ -768,3 +768,36 @@ function _fumiki_caption_shortcode($string, $attr, $content = null) {
 }
 add_filter('img_caption_shortcode', '_fumiki_caption_shortcode', 10, 3);
 
+
+add_shortcode('nanji_han', function($atts = array()){
+	$now = current_time('mysql');
+	$date = mysql2date('m-d', $now);
+	$hour = intval(mysql2date('H', $now));
+	switch( $hour ){
+		case 15:
+			return 'オヤツ・アーン';
+			break;
+		default:
+			if( '12-24' == $date && 16 > $hour ){
+				return 'アンアン・アーン';
+				break;
+			}
+			if( '12-31' == $date && 22 > $hour ){
+				return 'ジョヤノカネ・ゴーン';
+				break;
+			}
+			$time_str = '';
+			$hour_str = array('ゼロ', 'イチ', 'ニ', 'サン', 'ヨ', 'ゴ', 'ロク', 'シチ', 'ハチ', 'キュウ', 'ジュウ', 'ジュウイチ', 'ジュウニ');
+			if( isset($hour_str[$hour]) ){
+				$time_str = $hour_str[$hour];
+			}elseif( isset($hour_str[$hour - 12]) ){
+				$time_str = $hour_str[$hour - 12];
+			}
+			if( $time_str ){
+				return $time_str.'ジ・ハーン';
+			}else{
+				return $time_str;
+			}
+			break;
+	}
+});
