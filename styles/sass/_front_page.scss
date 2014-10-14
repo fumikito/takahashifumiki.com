@@ -77,6 +77,9 @@ $logo-size: 256px;
     .grid_1{
         float: left;
     }
+  .post-list h3{
+    height: auto;
+  }
 }
 // トップページmasonry
 @mixin masonry($width, $gutter){

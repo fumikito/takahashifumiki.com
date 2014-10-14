@@ -9,6 +9,7 @@
 define("FUMIKI_VERSION", "4.0.10");
 
 
+
 function fumiki_greeting(){
     global $wpdb;
     // 名前を毎回取得する
