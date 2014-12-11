@@ -71,22 +71,31 @@ function _fumiki_profile_fields( $contactmethods ) {
 add_filter('user_contactmethods','_fumiki_profile_fields',11,1);
 
 /**
- * スマートフォンの場合、クラスを付加する
+ * bodyクラスを付加する
  *
  * @param array $classes
  * @return array
  */
-function _fumiki_smartphone($classes){
-	if(is_smartphone()){
-		$classes[] = 'smartphone';
-	}
-	if(is_page('facebook')){
+add_filter('body_class', function($classes){
+	if( is_page('facebook') ){
 		$classes[] = 'facebook';
 	}
 	return $classes;
-}
-add_filter('body_class', '_fumiki_smartphone');
+});
 
+
+/**
+ * 自分のサイトにpingが飛ばないようにする
+ *
+ * @param array $links
+ */
+add_action( 'pre_ping', function( &$links ) {
+	foreach ( $links as $index => $link ){
+		if ( preg_match('/https?:\/\/takahashifumiki\.(com|info)/u', $link) ){
+			unset($links[$index]);
+		}
+	}
+});
 
 /**
  * リライトルールを変更する
@@ -153,7 +162,7 @@ add_filter('home_url', '_fumiki_home_url', 10, 2);
  * @return string
  */
 function _fumiki_login_ssl($url){
-	if(FORCE_SSL_LOGIN || FORCE_SSL_ADMIN){
+	if( force_ssl_admin() ){
 		$url = str_replace('http:', 'https:', $url);
 	}
 	return $url;
@@ -179,12 +188,12 @@ function _fumiki_admin_ssl($url, $action = 'login', $instance = ''){
 		case 'retrievepassword':
 		case 'resetpass':
 		case 'rp':
-			if(FORCE_SSL_LOGIN || FORCE_SSL_ADMIN){
+			if( force_ssl_admin() ){
 				$url = str_replace('http:', 'https:', $url);
 			}
 			break;
 		default:
-			if(FORCE_SSL_ADMIN){
+			if( force_ssl_admin() ){
 				$url = str_replace('http:', 'https:', $url);
 			}
 			break;
@@ -201,7 +210,7 @@ add_filter('tml_action_url', '_fumiki_admin_ssl');
  * @return string
  */
 function _fumiki_login_link($link, $query = ''){
-	if(FORCE_SSL_LOGIN || FORCE_SSL_ADMIN){
+	if( force_ssl_admin() ){
 		$link = str_replace('http:', 'https:', $link);
 	}
 	return $link;
@@ -343,7 +352,7 @@ add_filter('image_widget_image_url', '_fumiki_image_widget_url', 10, 3);
  * リダイレクトループにならないようにする
  */
 function _fumiki_wp_redirect(){
-	if(is_singular('ebook')){
+	if( is_singular('ebook') ){
 		remove_action('template_redirect', 'redirect_canonical');
 	}
 }
@@ -377,6 +386,7 @@ $ebook_sidebar_counter = 0;
 
 /**
  * サイドバーのウィジェットを
+ *
  * @global int $normal_sidebar_counter
  * @param array $params 
  * @return array
@@ -399,6 +409,7 @@ add_filter('dynamic_sidebar_params', '_fumiki_sidebar_container');
 
 /**
  * 電子書籍の立ち読みを表示する
+ *
  * @param string $content
  * @return string
  */
@@ -420,6 +431,7 @@ add_filter('the_content', '_fumiki_read_more');
 
 /**
  * LWPフォームのヘッダーを変更
+ *
  * @param string $title
  * @return string 
  */

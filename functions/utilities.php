@@ -76,7 +76,7 @@ function is_ipad(){
  * @return string
  */
 function get_last_login($user_id = false) {
-	if(!$user_id){
+	if( !$user_id ){
 		global $user_ID;
 		$user_id = $user_ID;
 	}
@@ -105,7 +105,7 @@ function fumiki_content_length($post = null){
  * @return boolean
  */
 function is_production(){
-	//NginxのリバースプロキシでSever Nameが変更してる
+	// NginxのリバースプロキシでSever Nameが変更してる
 	return (boolean)($_SERVER['SERVER_NAME'] == 'takahashifumiki.com' || $_SERVER['SERVER_NAME'] == '_');
 }
 
@@ -246,6 +246,7 @@ EOS;
 
 /**
  * ログインできているかどうかを試す
+ *
  * @global wp_xmlrpc_server $wp_xmlrpc_server
  * @param array $args
  * @reuturn boolean

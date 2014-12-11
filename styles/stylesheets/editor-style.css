@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* line 5, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,38 +19,30 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* line 22, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
 
-/* line 24, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 26, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 28, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 103, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 32, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 116, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -66,41 +57,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* 色 */
 /* メッセージ用の色 */
 /* フォント設定 */
-/* line 2, ../sass/_components.scss */
 .mincho {
   font-family: "Times New Roman", Times, "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
 
-/* line 6, ../sass/_components.scss */
 .old {
   font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
 
-/* line 10, ../sass/_components.scss */
 .sans {
   font-family: Helvetica, Arial, sans-serif; }
 
-/* line 14, ../sass/_components.scss */
 .mono {
   font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
 
-/* line 18, ../sass/_components.scss */
 strong {
   font-weight: bold; }
 
 /*フロート解除*/
-/* line 23, ../sass/_components.scss */
 .clrL {
   clear: left; }
 
-/* line 27, ../sass/_components.scss */
 .clrR {
   clear: right; }
 
-/* line 31, ../sass/_components.scss */
 .clrB {
   clear: both; }
 
 /*clearfix*/
-/* line 36, ../sass/_components.scss */
 .clearfix {
   overflow: hidden;
   *zoom: 1; }
@@ -108,56 +90,44 @@ strong {
 /*---------------------
  * アラインメント
  */
-/* line 43, ../sass/_components.scss */
 .center {
   text-align: center; }
 
-/* line 47, ../sass/_components.scss */
 .left {
   text-align: left; }
 
-/* line 51, ../sass/_components.scss */
 .right {
   text-align: right; }
 
-/* line 55, ../sass/_components.scss */
 .top {
   vertical-align: top; }
 
-/* line 59, ../sass/_components.scss */
 .middle {
   vertical-align: middle; }
 
-/* line 63, ../sass/_components.scss */
 .bottom {
   vertical-align: bottom; }
 
 /*インラインブロック*/
-/* line 68, ../sass/_components.scss */
 .inline-block {
   display: inline-block; }
 
 /*リンク装飾*/
-/* line 73, ../sass/_components.scss */
 a {
   overflow: hidden;
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in; }
-  /* line 76, ../sass/_components.scss */
   a:link {
     color: #06c;
     text-decoration: underline; }
-  /* line 80, ../sass/_components.scss */
   a:visited {
     color: #7756bc;
     text-decoration: underline; }
-  /* line 84, ../sass/_components.scss */
   a:hover {
     color: #ff4130;
     text-decoration: none; }
-  /* line 88, ../sass/_components.scss */
   a:active {
     color: #ff0000;
     text-decoration: underline; }
@@ -166,33 +136,26 @@ a {
  * 装飾
  */
 /*背景画像*/
-/* line 98, ../sass/_components.scss */
 .dark_bg {
   background: #45474d; }
 
 /* テキストシャドウ */
-/* line 103, ../sass/_components.scss */
 .shadow {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
 
-/* line 107, ../sass/_components.scss */
 .hilight {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8); }
 
 /* ルビ非対応ブラウザ */
-/* line 113, ../sass/_components.scss */
 .no-ruby rt:before {
   content: '（'; }
-/* line 116, ../sass/_components.scss */
 .no-ruby rt:after {
   content: '）'; }
 
-/* line 121, ../sass/_components.scss */
 .ui-tooltip-dark {
   font-size: 2em;
   line-height: 1.1; }
 
-/* line 126, ../sass/_components.scss */
 .ui-tooltip-content {
   padding: 10px 20px;
   font-weight: normal; }
@@ -200,7 +163,6 @@ a {
 /*---------------------
  * テキスト・背景色
  */
-/* line 134, ../sass/_components.scss */
 body {
   color: #45474d;
   word-wrap: break-word;
@@ -212,7 +174,6 @@ body {
   position: relative; }
 
 /* FontAwesome */
-/* line 146, ../sass/_components.scss */
 i[class^=fa-] {
   display: inline-block;
   font-family: FontAwesome;
@@ -223,7 +184,6 @@ i[class^=fa-] {
   -moz-osx-font-smoothing: grayscale; }
 
 /*ボタン*/
-/* line 157, ../sass/_components.scss */
 a.button, .button-download,
 input.button,
 #nlmg-resign-form p.submit input,
@@ -256,7 +216,6 @@ a.lwp-action {
   /* IE6-9 */
   background: linear-gradient(to bottom, #3d4850 0%, #1c252b 100%);
   /* W3C */ }
-  /* line 177, ../sass/_components.scss */
   a.button:link, .button-download:link, a.button:visited, .button-download:visited,
   input.button:link,
   input.button:visited,
@@ -267,7 +226,6 @@ a.lwp-action {
   a.lwp-action:link,
   a.lwp-action:visited {
     text-decoration: none; }
-  /* line 181, ../sass/_components.scss */
   a.button:hover, .button-download:hover,
   input.button:hover,
   #nlmg-resign-form p.submit input:hover,
@@ -290,14 +248,12 @@ a.lwp-action {
     background: linear-gradient(to bottom, #4c5a65 0%, #2e3940 100%);
     /* W3C */
     cursor: pointer; }
-  /* line 192, ../sass/_components.scss */
   a.button:active, .button-download:active,
   input.button:active,
   #nlmg-resign-form p.submit input:active,
   .button-secondary:active,
   a.lwp-action:active {
     background: #252e34; }
-  /* line 195, ../sass/_components.scss */
   a.button i, .button-download i,
   input.button i,
   #nlmg-resign-form p.submit input i,
@@ -305,7 +261,6 @@ a.lwp-action {
   a.lwp-action i {
     margin-right: 0.5em; }
 
-/* line 202, ../sass/_components.scss */
 .button-download small,
 .button-disabled small {
   display: block;
@@ -316,25 +271,21 @@ a.lwp-action {
   font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
   color: #fff; }
 
-/* line 213, ../sass/_components.scss */
 a.button-disabled,
 input.button-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6; }
 
-/* line 218, ../sass/_components.scss */
 a.lwp-action {
   font-size: 0.8em;
   padding: 1px 5px;
   margin-left: 0.5em; }
 
 /* プライマリーボタン */
-/* line 225, ../sass/_components.scss */
 p.submit {
   float: right;
   margin: 0 0 10px; }
 
-/* line 230, ../sass/_components.scss */
 .button-primary,
 .lwp-buynow {
   display: inline-block;
@@ -367,19 +318,16 @@ p.submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb76b', endColorstr='#ff7f04', GradientType=0);
   /* IE6-9 */
   text-shadow: 1px 1px 3px #aaa; }
-  /* line 250, ../sass/_components.scss */
   .button-primary:before,
   .lwp-buynow:before {
     content: '\f07a';
     margin-right: 0.5em;
     font-family: FontAwesome; }
-  /* line 255, ../sass/_components.scss */
   .button-primary:link, .button-primary:visited,
   .lwp-buynow:link,
   .lwp-buynow:visited {
     text-decoration: none;
     color: #fff; }
-  /* line 260, ../sass/_components.scss */
   .button-primary:hover,
   .lwp-buynow:hover {
     color: #fff;
@@ -399,7 +347,6 @@ p.submit {
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc387', endColorstr='#ff7f04', GradientType=0);
     /* IE6-9 */ }
-  /* line 271, ../sass/_components.scss */
   .button-primary:active,
   .lwp-buynow:active {
     color: #fff; }
@@ -408,7 +355,6 @@ p.submit {
 /* 青いボタン */
 /* blue pill (inspired by iTunes)
 *******************************************************************************/
-/* line 285, ../sass/_components.scss */
 .button-blue {
   background-color: #a5b8da;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b8da), color-stop(100%, #7089b3));
@@ -432,11 +378,9 @@ p.submit {
   text-shadow: 0 -1px 1px #64799e;
   color: #fff;
   cursor: pointer; }
-  /* line 304, ../sass/_components.scss */
   .button-blue:link, .button-blue:visited {
     color: #fff;
     text-decoration: none; }
-  /* line 308, ../sass/_components.scss */
   .button-blue:hover {
     background-color: #9badcc;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9badcc), color-stop(100%, #687fa6));
@@ -452,7 +396,6 @@ p.submit {
     -moz-box-shadow: inset 0 1px 0 0 #a5b9d9;
     -webkit-box-shadow: inset 0 1px 0 0 #a5b9d9;
     box-shadow: inset 0 1px 0 0 #a5b9d9; }
-  /* line 322, ../sass/_components.scss */
   .button-blue:active {
     border: 1px solid #546685;
     -moz-box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee;
@@ -460,20 +403,17 @@ p.submit {
     box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee; }
 
 /* 画像 */
-/* line 329, ../sass/_components.scss */
 .img-circle {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
 
-/* line 333, ../sass/_components.scss */
 .img-pressed {
   -moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset; }
 
 /*メッセージボックス*/
-/* line 338, ../sass/_components.scss */
 p.message {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -481,41 +421,34 @@ p.message {
   padding: 1em;
   position: relative;
   font-family: Helvetica, Arial, sans-serif; }
-  /* line 343, ../sass/_components.scss */
   p.message strong, p.message em {
     color: inherit; }
-  /* line 346, ../sass/_components.scss */
   p.message i {
     position: absolute;
     font-size: 26px;
     top: 50%;
     margin-top: -13px;
     left: 8px; }
-  /* line 353, ../sass/_components.scss */
   p.message a:link,
   p.message a:visited {
     color: inherit;
     text-decoration: underline; }
-  /* line 358, ../sass/_components.scss */
   p.message a:hover, p.message a:active {
     color: inherit;
     text-decoration: none;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
     opacity: 0.8; }
 
-/* line 365, ../sass/_components.scss */
 p.warning {
   color: #ff4d44;
   background: #ffd4d2;
   padding-left: 42px; }
 
-/* line 371, ../sass/_components.scss */
 p.success {
   color: #059119;
   background: #c6f4cd;
   padding-left: 42px; }
 
-/* line 377, ../sass/_components.scss */
 p.notice {
   color: #05a;
   background: #9fc9f4;
@@ -523,7 +456,6 @@ p.notice {
 
 /* 分割線 */
 /* ツールチップ */
-/* line 390, ../sass/_components.scss */
 #tip-container {
   display: none;
   position: absolute;
@@ -542,29 +474,22 @@ p.notice {
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px; }
-  /* line 404, ../sass/_components.scss */
   #tip-container th {
     vertical-align: middle;
     padding-right: 0.5em;
     font-size: 2em; }
-    /* line 408, ../sass/_components.scss */
     #tip-container th i {
       color: #666; }
-  /* line 412, ../sass/_components.scss */
   #tip-container td {
     line-height: 1.2; }
-    /* line 414, ../sass/_components.scss */
     #tip-container td strong {
       color: #888; }
-  /* line 418, ../sass/_components.scss */
   #tip-container .close-button {
     display: none; }
-  /* line 422, ../sass/_components.scss */
   #tip-container.touch .close-button {
     display: table-row; }
 
 /* フォームテーブル */
-/* line 430, ../sass/_components.scss */
 table.form-table input[type=text],
 table.form-table input[type=password],
 table.form-table input[type=email],
@@ -574,14 +499,12 @@ table.form-table input[type=search] {
   padding: 3px 5px; }
 
 /* FeedBurner */
-/* line 441, ../sass/_components.scss */
 #feedburner-count {
   width: 52px;
   height: 62px;
   position: relative;
   overflow: hidden;
   text-decoration: none; }
-  /* line 447, ../sass/_components.scss */
   #feedburner-count span {
     position: absolute;
     display: block;
@@ -592,13 +515,11 @@ table.form-table input[type=search] {
     line-height: 35px; }
 
 /* ページナビ */
-/* line 459, ../sass/_components.scss */
 .wp-pagenavi {
   font-size: 1.4em;
   font-family: Helvetica, Arial, sans-serif;
   margin: 20px 0;
   text-align: center; }
-  /* line 464, ../sass/_components.scss */
   .wp-pagenavi a, .wp-pagenavi span.current, .wp-pagenavi span.extend {
     padding: 3px 8px;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
@@ -609,7 +530,6 @@ table.form-table input[type=search] {
     border-left: none;
     letter-spacing: 0;
     margin: 0; }
-    /* line 472, ../sass/_components.scss */
     .wp-pagenavi a:last-child, .wp-pagenavi span.current:last-child, .wp-pagenavi span.extend:last-child {
       -moz-border-radius-topright: 3px;
       -webkit-border-top-right-radius: 3px;
@@ -617,27 +537,22 @@ table.form-table input[type=search] {
       -moz-border-radius-bottomright: 3px;
       -webkit-border-bottom-right-radius: 3px;
       border-bottom-right-radius: 3px; }
-  /* line 476, ../sass/_components.scss */
   .wp-pagenavi a {
     color: #fcfcfc;
     background-color: #06c; }
-    /* line 479, ../sass/_components.scss */
     .wp-pagenavi a:link, .wp-pagenavi a:visited {
       text-decoration: none; }
-    /* line 483, ../sass/_components.scss */
     .wp-pagenavi a:hover, .wp-pagenavi a:active {
       background: #ff4130; }
-  /* line 488, ../sass/_components.scss */
   .wp-pagenavi span.current,
   .wp-pagenavi span.extend {
     color: #fcfcfc;
     background-color: #ddd; }
-  /* line 493, ../sass/_components.scss */
   .wp-pagenavi span.pages {
     padding: 3px 8px;
     margin-right: 1em;
-    border: none; }
-    /* line 497, ../sass/_components.scss */
+    border: none;
+    color: #ccc; }
     .wp-pagenavi span.pages + * {
       border-left: 1px solid #252e34;
       -moz-border-radius-topleft: 3px;
@@ -648,23 +563,19 @@ table.form-table input[type=search] {
       border-bottom-left-radius: 3px; }
 
 /* Google Responsive ads */
-/* line 505, ../sass/_components.scss */
 .my_adslot {
   width: 320px;
   height: 50px; }
 
 @media screen and (min-width: 500px) {
-  /* line 511, ../sass/_components.scss */
   .my_adslot {
     width: 468px;
     height: 60px; } }
 @media screen and (min-width: 800px) {
-  /* line 518, ../sass/_components.scss */
   .my_adslot {
     width: 728px;
     height: 90px; } }
-/* line 12, ../sass/editor-style.scss */
-body.mceContentBody {
+body {
   font-size: 2em;
   line-height: 1.8;
   position: relative;
@@ -687,151 +598,115 @@ body.mceContentBody {
   /*キャプション*/
   /*パスワード保護されていた場合*/
   /* フォームパーツ */
-  padding: 10px 20px;
+  margin: 2em 1.5em;
   font-family: "Times New Roman", Times, "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif;
   font-size: 1em; }
-  /* line 7, ../sass/_post_style.scss */
-  body.mceContentBody .indent {
+  body .indent {
     text-indent: 1em; }
-  /* line 10, ../sass/_post_style.scss */
-  body.mceContentBody > p {
+  body > p {
     margin: 1em 0; }
-    /* line 12, ../sass/_post_style.scss */
-    body.mceContentBody > p.dropcap {
+    body > p.dropcap {
       text-indent: 0; }
-      /* line 14, ../sass/_post_style.scss */
-      body.mceContentBody > p.dropcap:first-letter {
+      body > p.dropcap:first-letter {
         font-size: 2em;
         float: left;
         margin-right: 0.2em;
         font-weight: bold; }
-    /* line 21, ../sass/_post_style.scss */
-    body.mceContentBody > p.samurai {
+    body > p.samurai {
       font-size: 2em;
       font-family: "SamuraiStd-R", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
-  /* line 26, ../sass/_post_style.scss */
-  body.mceContentBody p.attachment {
+  body p.attachment {
     text-align: center; }
-    /* line 28, ../sass/_post_style.scss */
-    body.mceContentBody p.attachment img {
+    body p.attachment img {
       max-width: 100%; }
-  /* line 34, ../sass/_post_style.scss */
-  body.mceContentBody h1, body.mceContentBody h2, body.mceContentBody h3, body.mceContentBody h4, body.mceContentBody h5 {
+  body h1, body h2, body h3, body h4, body h5 {
     padding-top: 1.5em;
     margin-bottom: 0.75em;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
-  /* line 39, ../sass/_post_style.scss */
-  body.mceContentBody h1 {
+  body h1 {
     font-size: 2.5em;
     color: #FBEE88;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
-  /* line 49, ../sass/_post_style.scss */
-  body.mceContentBody h2 {
+  body h2 {
     font-size: 1.8em;
     line-height: 1.2;
     color: #000; }
-  /* line 55, ../sass/_post_style.scss */
-  body.mceContentBody h3 {
+  body h3 {
     font-size: 1.5em;
     padding-bottom: 5px;
     line-height: 1.2;
     color: #333F46;
     border-bottom: 1px dotted #252e34; }
-  /* line 62, ../sass/_post_style.scss */
-  body.mceContentBody h4 {
+  body h4 {
     font-size: 1.3em;
     line-height: 1.2;
     color: #888;
     text-shadow: 1px 1px 2px #fff; }
-  /* line 68, ../sass/_post_style.scss */
-  body.mceContentBody h5 {
+  body h5 {
     font-size: 1.1em;
     line-height: 1.2; }
-  /* line 73, ../sass/_post_style.scss */
-  body.mceContentBody h6 {
+  body h6 {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold; }
-  /* line 79, ../sass/_post_style.scss */
-  body.mceContentBody strong, body.mceContentBody b {
+  body strong, body b {
     color: #000;
     font-weight: bold; }
-  /* line 83, ../sass/_post_style.scss */
-  body.mceContentBody big,
-  body.mceContentBody strong.big {
+  body big,
+  body strong.big {
     font-weight: bold;
     font-size: 2em; }
-  /* line 88, ../sass/_post_style.scss */
-  body.mceContentBody em {
+  body em {
     color: #000;
     font-style: italic; }
-  /* line 93, ../sass/_post_style.scss */
-  body.mceContentBody abbr, body.mceContentBody acronym {
+  body abbr, body acronym {
     cursor: help;
     color: #333F46;
     border-bottom: 1px dashed #333F46; }
-  /* line 99, ../sass/_post_style.scss */
-  body.mceContentBody sup {
+  body sup {
     font-size: 0.75em;
     vertical-align: top; }
-  /* line 103, ../sass/_post_style.scss */
-  body.mceContentBody sub {
+  body sub {
     font-size: 0.75em;
     vertical-align: sub; }
-  /* line 107, ../sass/_post_style.scss */
-  body.mceContentBody var {
+  body var {
     font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
     font-style: italic; }
-  /* line 112, ../sass/_post_style.scss */
-  body.mceContentBody ins {
+  body ins {
     text-decoration: none;
     color: #666;
     background: #FBEE88; }
-  /* line 118, ../sass/_post_style.scss */
-  body.mceContentBody del, body.mceContentBody s {
+  body del, body s {
     color: #aaa; }
-    /* line 120, ../sass/_post_style.scss */
-    body.mceContentBody del:before, body.mceContentBody s:before {
+    body del:before, body s:before {
       content: " "; }
-    /* line 121, ../sass/_post_style.scss */
-    body.mceContentBody del:after, body.mceContentBody s:after {
+    body del:after, body s:after {
       content: " "; }
-  /* line 125, ../sass/_post_style.scss */
-  body.mceContentBody ol, body.mceContentBody ul, body.mceContentBody dl {
+  body ol, body ul, body dl {
     margin: 1em 0; }
-  /* line 128, ../sass/_post_style.scss */
-  body.mceContentBody ol li, body.mceContentBody ul li, body.mceContentBody dl dd {
+  body ol li, body ul li, body dl dd {
     margin: 0.5em 0 0.8em 1em; }
-  /* line 129, ../sass/_post_style.scss */
-  body.mceContentBody ul, body.mceContentBody ol {
+  body ul, body ol {
     padding-left: 1.5em; }
-  /* line 130, ../sass/_post_style.scss */
-  body.mceContentBody ul li {
+  body ul li {
     list-style: outside disc; }
-  /* line 131, ../sass/_post_style.scss */
-  body.mceContentBody ol li {
+  body ol li {
     list-style: outside decimal; }
-  /* line 132, ../sass/_post_style.scss */
-  body.mceContentBody ul li li, body.mceContentBody ol li li, body.mceContentBody dd li {
+  body ul li li, body ol li li, body dd li {
     font-size: 0.8em; }
-  /* line 133, ../sass/_post_style.scss */
-  body.mceContentBody ul li ul li {
+  body ul li ul li {
     list-style-type: circle; }
-  /* line 134, ../sass/_post_style.scss */
-  body.mceContentBody ol li ol li {
+  body ol li ol li {
     list-style-type: decimal-leading-zero; }
-  /* line 135, ../sass/_post_style.scss */
-  body.mceContentBody dl dt {
+  body dl dt {
     font-size: 1.2em;
     font-weight: bold;
     margin: 15px 0 0;
     text-shadow: 1px 1px 2px #fff;
     color: #252e34; }
-  /* line 142, ../sass/_post_style.scss */
-  body.mceContentBody dl dd {
+  body dl dd {
     padding-left: 1.5em;
     margin-left: 0; }
-    /* line 145, ../sass/_post_style.scss */
-    body.mceContentBody dl dd:before {
+    body dl dd:before {
       font-family: FontAwesome;
       font-weight: normal;
       font-style: normal;
@@ -839,54 +714,43 @@ body.mceContentBody {
       text-decoration: inherit;
       content: "\f054";
       text-indent: -1.5em; }
-  /* line 156, ../sass/_post_style.scss */
-  body.mceContentBody blockquote {
+  body blockquote {
     margin: 0.5em 0;
     padding: 32px;
     color: #808080;
     position: relative; }
-    /* line 161, ../sass/_post_style.scss */
-    body.mceContentBody blockquote:before, body.mceContentBody blockquote:after {
+    body blockquote:before, body blockquote:after {
       color: lightgrey;
       display: block;
       position: absolute;
       font-size: 24px;
       font-family: FontAwesome; }
-    /* line 169, ../sass/_post_style.scss */
-    body.mceContentBody blockquote:before {
+    body blockquote:before {
       top: 0;
       left: 10px;
       content: "\f10d"; }
-    /* line 174, ../sass/_post_style.scss */
-    body.mceContentBody blockquote:after {
+    body blockquote:after {
       bottom: 0;
       right: 10px;
       content: "\f10e"; }
-    /* line 179, ../sass/_post_style.scss */
-    body.mceContentBody blockquote p {
+    body blockquote p {
       margin: 0.5em 0; }
-    /* line 182, ../sass/_post_style.scss */
-    body.mceContentBody blockquote cite {
+    body blockquote cite {
       display: block;
       text-align: right;
       font-size: 0.8em;
       font-weight: normal;
       color: #333F46; }
-  /* line 190, ../sass/_post_style.scss */
-  body.mceContentBody q, body.mceContentBody cite {
+  body q, body cite {
     font-style: italic;
     color: #252e34; }
-  /* line 195, ../sass/_post_style.scss */
-  body.mceContentBody q[cite] {
+  body q[cite] {
     cursor: pointer; }
-  /* line 198, ../sass/_post_style.scss */
-  body.mceContentBody q:before {
+  body q:before {
     content: '"'; }
-  /* line 201, ../sass/_post_style.scss */
-  body.mceContentBody q:after {
+  body q:after {
     content: '"'; }
-  /* line 209, ../sass/_post_style.scss */
-  body.mceContentBody code, body.mceContentBody kbd, body.mceContentBody tt {
+  body code, body kbd, body tt {
     background: #f7f7f7;
     border: 1px solid #ddd;
     -moz-border-radius: 3px;
@@ -895,25 +759,19 @@ body.mceContentBody {
     padding: 1px 2px;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     color: #000; }
-  /* line 217, ../sass/_post_style.scss */
-  body.mceContentBody var {
+  body var {
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-  /* line 220, ../sass/_post_style.scss */
-  body.mceContentBody pre {
+  body pre {
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     line-height: 1.2; }
-  /* line 224, ../sass/_post_style.scss */
-  body.mceContentBody .syntaxhighlighter {
+  body .syntaxhighlighter {
     padding-top: 5px !important;
     padding-bottom: 5px !important; }
-    /* line 227, ../sass/_post_style.scss */
-    body.mceContentBody .syntaxhighlighter > table {
+    body .syntaxhighlighter > table {
       font-size: 0.85em !important; }
-    /* line 230, ../sass/_post_style.scss */
-    body.mceContentBody .syntaxhighlighter code {
+    body .syntaxhighlighter code {
       -webkit-text-size-adjust: 100%; }
-  /* line 234, ../sass/_post_style.scss */
-  body.mceContentBody .code-format {
+  body .code-format {
     background: #4D4945;
     color: #fff;
     margin: 10px;
@@ -924,14 +782,11 @@ body.mceContentBody {
     border-radius: 15px;
     overflow: auto;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-    /* line 243, ../sass/_post_style.scss */
-    body.mceContentBody .code-format table {
+    body .code-format table {
       width: 100%; }
-    /* line 244, ../sass/_post_style.scss */
-    body.mceContentBody .code-format tr.even {
+    body .code-format tr.even {
       background: #57534E; }
-    /* line 245, ../sass/_post_style.scss */
-    body.mceContentBody .code-format th {
+    body .code-format th {
       color: #938C84;
       background-color: transparent;
       font-weight: bold;
@@ -939,43 +794,34 @@ body.mceContentBody {
       border-right: #938C84 2px solid;
       padding: 0 5px 0 0;
       vertical-align: top; }
-    /* line 254, ../sass/_post_style.scss */
-    body.mceContentBody .code-format td {
+    body .code-format td {
       padding: 0 0 0 15px;
       border-bottom: none; }
-    /* line 258, ../sass/_post_style.scss */
-    body.mceContentBody .code-format .quote {
+    body .code-format .quote {
       color: #A5EFB8; }
-    /* line 259, ../sass/_post_style.scss */
-    body.mceContentBody .code-format .notation {
+    body .code-format .notation {
       color: #BCE3F4; }
-  /* line 263, ../sass/_post_style.scss */
-  body.mceContentBody pre.aa {
+  body pre.aa {
     font-family: IPAMonaGothic,'ＭＳ ゴシック',monospace;
     font-size: 12px;
     line-height: 1.5;
     margin: 20px 0;
     color: #999; }
-  /* line 272, ../sass/_post_style.scss */
-  body.mceContentBody address {
+  body address {
     font-style: italic;
     font-size: 0.85em;
     color: #888;
     line-height: 1.4;
     padding: 0.5em 1em; }
-  /* line 281, ../sass/_post_style.scss */
-  body.mceContentBody .alert {
+  body .alert {
     font-size: 0.8em;
     font-weight: bold;
     color: #000; }
-    /* line 285, ../sass/_post_style.scss */
-    body.mceContentBody .alert:before {
+    body .alert:before {
       content: " ※"; }
-    /* line 286, ../sass/_post_style.scss */
-    body.mceContentBody .alert:after {
+    body .alert:after {
       content: " "; }
-  /* line 290, ../sass/_post_style.scss */
-  body.mceContentBody aside {
+  body aside {
     margin: 1em 0;
     line-height: 1.4;
     padding: 1em;
@@ -983,93 +829,76 @@ body.mceContentBody {
     -webkit-text-size-adjust: 100%;
     background: #f7f7f7;
     color: #666; }
-  /* line 301, ../sass/_post_style.scss */
-  body.mceContentBody table {
+  body table {
     margin: 20px 0;
     border-spacing: 0;
     empty-cells: show;
     border-collapse: collapse;
     width: 100%; }
-    /* line 308, ../sass/_post_style.scss */
-    body.mceContentBody table thead th, body.mceContentBody table thead td {
+    body table thead th, body table thead td {
       color: #000;
       padding: 5px 8px;
       border-bottom: 3px double #ddd;
       font-weight: bold; }
-    /* line 315, ../sass/_post_style.scss */
-    body.mceContentBody table caption {
+    body table caption {
       color: #666;
       text-align: right;
       font-size: 1em; }
-    /* line 321, ../sass/_post_style.scss */
-    body.mceContentBody table tbody th, body.mceContentBody table tbody td {
+    body table tbody th, body table tbody td {
       text-align: left;
       padding: 5px 8px;
       font-size: 0.85em;
       border-bottom: 1px solid #ddd; }
-    /* line 327, ../sass/_post_style.scss */
-    body.mceContentBody table tbody th {
+    body table tbody th {
       font-weight: bold;
       color: #000;
       white-space: nowrap; }
-    /* line 332, ../sass/_post_style.scss */
-    body.mceContentBody table tbody td {
+    body table tbody td {
       color: #888; }
-    /* line 335, ../sass/_post_style.scss */
-    body.mceContentBody table tbody tr:nth-child(2n) td,
-    body.mceContentBody table tbody tr:nth-child(2n) th {
+    body table tbody tr:nth-child(2n) td,
+    body table tbody tr:nth-child(2n) th {
       background: #f7f7f7; }
-  /* line 346, ../sass/_post_style.scss */
-  body.mceContentBody .alignright {
+  body .alignright {
     float: right;
     margin-left: 1.5em; }
-  /* line 347, ../sass/_post_style.scss */
-  body.mceContentBody .alignleft {
+  body .alignleft {
     float: left;
     margin-right: 1.5em; }
-  /* line 348, ../sass/_post_style.scss */
-  body.mceContentBody .aligncenter,
-  body.mceContentBody div.alignnon,
-  body.mceContentBody figure.alignnon {
+  body .aligncenter,
+  body div.alignnon,
+  body figure.alignnon {
     margin: 1.5em auto; }
-  /* line 351, ../sass/_post_style.scss */
-  body.mceContentBody img.aligncenter {
+  body img.aligncenter {
     display: block; }
-  /* line 353, ../sass/_post_style.scss */
-  body.mceContentBody img.size-full {
+  body img.size-full {
     max-width: 100%;
     height: auto; }
-  /* line 358, ../sass/_post_style.scss */
-  body.mceContentBody div.wp-caption,
-  body.mceContentBody figure.wp-caption {
+  body div.wp-caption,
+  body figure.wp-caption {
     margin-bottom: 1em; }
-  /* line 362, ../sass/_post_style.scss */
-  body.mceContentBody .wp-caption-text {
+  body .wp-caption-text {
     font-size: 0.75em;
     color: #666;
     margin: 0.25em 0 0; }
-  /* line 373, ../sass/_post_style.scss */
-  body.mceContentBody input[type=text],
-  body.mceContentBody input[type=password],
-  body.mceContentBody input[type=email],
-  body.mceContentBody input[type=search],
-  body.mceContentBody textarea {
+  body input[type=text],
+  body input[type=password],
+  body input[type=email],
+  body input[type=search],
+  body textarea {
     border: 1px solid #ddd;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     padding: 5px 10px;
     color: #444; }
-  /* line 24, ../sass/editor-style.scss */
-  body.mceContentBody .netabare {
+  body .netabare {
     margin-top: 32px;
     position: relative;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
     opacity: 0.7;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000; }
-    /* line 30, ../sass/editor-style.scss */
-    body.mceContentBody .netabare:after {
+    body .netabare:after {
       position: absolute;
       content: 'ネタバレ';
       display: block;
