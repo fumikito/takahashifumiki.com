@@ -650,10 +650,12 @@ body {
     font-weight: bold; }
   body strong, body b {
     color: #000;
-    font-weight: bold; }
+    font-weight: bold;
+    font-family: sans-serif; }
   body big,
   body strong.big {
     font-weight: bold;
+    font-family: sans-serif;
     font-size: 2em; }
   body em {
     color: #000;
@@ -802,7 +804,7 @@ body {
     body .code-format .notation {
       color: #BCE3F4; }
   body pre.aa {
-    font-family: IPAMonaGothic,'ＭＳ ゴシック',monospace;
+    font-family: IPAMonaGothic, 'ＭＳ ゴシック', monospace;
     font-size: 12px;
     line-height: 1.5;
     margin: 20px 0;

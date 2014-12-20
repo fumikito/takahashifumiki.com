@@ -3,7 +3,6 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,38 +23,30 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* line 22, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
 
-/* line 24, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 26, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 28, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 103, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 32, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 116, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -70,41 +61,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* 色 */
 /* メッセージ用の色 */
 /* フォント設定 */
-/* line 2, ../sass/_components.scss */
 .mincho {
   font-family: "Times New Roman", Times, "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
 
-/* line 6, ../sass/_components.scss */
 .old {
   font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
 
-/* line 10, ../sass/_components.scss */
 .sans {
   font-family: Helvetica, Arial, sans-serif; }
 
-/* line 14, ../sass/_components.scss */
 .mono {
   font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
 
-/* line 18, ../sass/_components.scss */
 strong {
   font-weight: bold; }
 
 /*フロート解除*/
-/* line 23, ../sass/_components.scss */
 .clrL {
   clear: left; }
 
-/* line 27, ../sass/_components.scss */
 .clrR {
   clear: right; }
 
-/* line 31, ../sass/_components.scss */
 .clrB {
   clear: both; }
 
 /*clearfix*/
-/* line 36, ../sass/_components.scss */
 .clearfix {
   overflow: hidden;
   *zoom: 1; }
@@ -112,56 +94,44 @@ strong {
 /*---------------------
  * アラインメント
  */
-/* line 43, ../sass/_components.scss */
 .center {
   text-align: center; }
 
-/* line 47, ../sass/_components.scss */
 .left {
   text-align: left; }
 
-/* line 51, ../sass/_components.scss */
 .right {
   text-align: right; }
 
-/* line 55, ../sass/_components.scss */
 .top {
   vertical-align: top; }
 
-/* line 59, ../sass/_components.scss */
 .middle {
   vertical-align: middle; }
 
-/* line 63, ../sass/_components.scss */
 .bottom {
   vertical-align: bottom; }
 
 /*インラインブロック*/
-/* line 68, ../sass/_components.scss */
 .inline-block {
   display: inline-block; }
 
 /*リンク装飾*/
-/* line 73, ../sass/_components.scss */
 a {
   overflow: hidden;
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in; }
-  /* line 76, ../sass/_components.scss */
   a:link {
     color: #06c;
     text-decoration: underline; }
-  /* line 80, ../sass/_components.scss */
   a:visited {
     color: #7756bc;
     text-decoration: underline; }
-  /* line 84, ../sass/_components.scss */
   a:hover {
     color: #ff4130;
     text-decoration: none; }
-  /* line 88, ../sass/_components.scss */
   a:active {
     color: #ff0000;
     text-decoration: underline; }
@@ -170,33 +140,26 @@ a {
  * 装飾
  */
 /*背景画像*/
-/* line 98, ../sass/_components.scss */
 .dark_bg {
   background: #45474d; }
 
 /* テキストシャドウ */
-/* line 103, ../sass/_components.scss */
 .shadow {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
 
-/* line 107, ../sass/_components.scss */
 .hilight {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8); }
 
 /* ルビ非対応ブラウザ */
-/* line 113, ../sass/_components.scss */
 .no-ruby rt:before {
   content: '（'; }
-/* line 116, ../sass/_components.scss */
 .no-ruby rt:after {
   content: '）'; }
 
-/* line 121, ../sass/_components.scss */
 .ui-tooltip-dark {
   font-size: 2em;
   line-height: 1.1; }
 
-/* line 126, ../sass/_components.scss */
 .ui-tooltip-content {
   padding: 10px 20px;
   font-weight: normal; }
@@ -204,7 +167,6 @@ a {
 /*---------------------
  * テキスト・背景色
  */
-/* line 134, ../sass/_components.scss */
 body {
   color: #45474d;
   word-wrap: break-word;
@@ -216,7 +178,6 @@ body {
   position: relative; }
 
 /* FontAwesome */
-/* line 146, ../sass/_components.scss */
 i[class^=fa-] {
   display: inline-block;
   font-family: FontAwesome;
@@ -227,7 +188,6 @@ i[class^=fa-] {
   -moz-osx-font-smoothing: grayscale; }
 
 /*ボタン*/
-/* line 157, ../sass/_components.scss */
 a.button, .button-download,
 input.button,
 #nlmg-resign-form p.submit input,
@@ -260,7 +220,6 @@ a.lwp-action {
   /* IE6-9 */
   background: linear-gradient(to bottom, #3d4850 0%, #1c252b 100%);
   /* W3C */ }
-  /* line 177, ../sass/_components.scss */
   a.button:link, .button-download:link, a.button:visited, .button-download:visited,
   input.button:link,
   input.button:visited,
@@ -271,7 +230,6 @@ a.lwp-action {
   a.lwp-action:link,
   a.lwp-action:visited {
     text-decoration: none; }
-  /* line 181, ../sass/_components.scss */
   a.button:hover, .button-download:hover,
   input.button:hover,
   #nlmg-resign-form p.submit input:hover,
@@ -294,14 +252,12 @@ a.lwp-action {
     background: linear-gradient(to bottom, #4c5a65 0%, #2e3940 100%);
     /* W3C */
     cursor: pointer; }
-  /* line 192, ../sass/_components.scss */
   a.button:active, .button-download:active,
   input.button:active,
   #nlmg-resign-form p.submit input:active,
   .button-secondary:active,
   a.lwp-action:active {
     background: #252e34; }
-  /* line 195, ../sass/_components.scss */
   a.button i, .button-download i,
   input.button i,
   #nlmg-resign-form p.submit input i,
@@ -309,7 +265,6 @@ a.lwp-action {
   a.lwp-action i {
     margin-right: 0.5em; }
 
-/* line 202, ../sass/_components.scss */
 .button-download small,
 .button-disabled small {
   display: block;
@@ -320,25 +275,21 @@ a.lwp-action {
   font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
   color: #fff; }
 
-/* line 213, ../sass/_components.scss */
 a.button-disabled,
 input.button-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6; }
 
-/* line 218, ../sass/_components.scss */
 a.lwp-action {
   font-size: 0.8em;
   padding: 1px 5px;
   margin-left: 0.5em; }
 
 /* プライマリーボタン */
-/* line 225, ../sass/_components.scss */
 p.submit {
   float: right;
   margin: 0 0 10px; }
 
-/* line 230, ../sass/_components.scss */
 .button-primary,
 .lwp-buynow {
   display: inline-block;
@@ -371,19 +322,16 @@ p.submit {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb76b', endColorstr='#ff7f04', GradientType=0);
   /* IE6-9 */
   text-shadow: 1px 1px 3px #aaa; }
-  /* line 250, ../sass/_components.scss */
   .button-primary:before,
   .lwp-buynow:before {
     content: '\f07a';
     margin-right: 0.5em;
     font-family: FontAwesome; }
-  /* line 255, ../sass/_components.scss */
   .button-primary:link, .button-primary:visited,
   .lwp-buynow:link,
   .lwp-buynow:visited {
     text-decoration: none;
     color: #fff; }
-  /* line 260, ../sass/_components.scss */
   .button-primary:hover,
   .lwp-buynow:hover {
     color: #fff;
@@ -403,7 +351,6 @@ p.submit {
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc387', endColorstr='#ff7f04', GradientType=0);
     /* IE6-9 */ }
-  /* line 271, ../sass/_components.scss */
   .button-primary:active,
   .lwp-buynow:active {
     color: #fff; }
@@ -412,7 +359,6 @@ p.submit {
 /* 青いボタン */
 /* blue pill (inspired by iTunes)
 *******************************************************************************/
-/* line 285, ../sass/_components.scss */
 .button-blue {
   background-color: #a5b8da;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b8da), color-stop(100%, #7089b3));
@@ -436,11 +382,9 @@ p.submit {
   text-shadow: 0 -1px 1px #64799e;
   color: #fff;
   cursor: pointer; }
-  /* line 304, ../sass/_components.scss */
   .button-blue:link, .button-blue:visited {
     color: #fff;
     text-decoration: none; }
-  /* line 308, ../sass/_components.scss */
   .button-blue:hover {
     background-color: #9badcc;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9badcc), color-stop(100%, #687fa6));
@@ -456,7 +400,6 @@ p.submit {
     -moz-box-shadow: inset 0 1px 0 0 #a5b9d9;
     -webkit-box-shadow: inset 0 1px 0 0 #a5b9d9;
     box-shadow: inset 0 1px 0 0 #a5b9d9; }
-  /* line 322, ../sass/_components.scss */
   .button-blue:active {
     border: 1px solid #546685;
     -moz-box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee;
@@ -464,20 +407,17 @@ p.submit {
     box-shadow: inset 0 0 8px 2px #7e8da6, 0 1px 0 0 #eeeeee; }
 
 /* 画像 */
-/* line 329, ../sass/_components.scss */
 .img-circle, footer .avatar, .desc-box .grid_2 .avatar {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
 
-/* line 333, ../sass/_components.scss */
 .img-pressed, footer .avatar, .desc-box .grid_2 .avatar {
   -moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset;
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.6) inset; }
 
 /*メッセージボックス*/
-/* line 338, ../sass/_components.scss */
 p.message, .entry .lwp-invitation {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -485,42 +425,35 @@ p.message, .entry .lwp-invitation {
   padding: 1em;
   position: relative;
   font-family: Helvetica, Arial, sans-serif; }
-  /* line 343, ../sass/_components.scss */
   p.message strong, .entry .lwp-invitation strong, p.message em, .entry .lwp-invitation em {
     color: inherit; }
-  /* line 346, ../sass/_components.scss */
   p.message i, .entry .lwp-invitation i {
     position: absolute;
     font-size: 26px;
     top: 50%;
     margin-top: -13px;
     left: 8px; }
-  /* line 353, ../sass/_components.scss */
   p.message a:link, .entry .lwp-invitation a:link,
   p.message a:visited,
   .entry .lwp-invitation a:visited {
     color: inherit;
     text-decoration: underline; }
-  /* line 358, ../sass/_components.scss */
   p.message a:hover, .entry .lwp-invitation a:hover, p.message a:active, .entry .lwp-invitation a:active {
     color: inherit;
     text-decoration: none;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
     opacity: 0.8; }
 
-/* line 365, ../sass/_components.scss */
 p.warning {
   color: #ff4d44;
   background: #ffd4d2;
   padding-left: 42px; }
 
-/* line 371, ../sass/_components.scss */
 p.success {
   color: #059119;
   background: #c6f4cd;
   padding-left: 42px; }
 
-/* line 377, ../sass/_components.scss */
 p.notice, .entry .lwp-invitation {
   color: #05a;
   background: #9fc9f4;
@@ -528,7 +461,6 @@ p.notice, .entry .lwp-invitation {
 
 /* 分割線 */
 /* ツールチップ */
-/* line 390, ../sass/_components.scss */
 #tip-container {
   display: none;
   position: absolute;
@@ -547,29 +479,22 @@ p.notice, .entry .lwp-invitation {
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px;
   box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px 3px; }
-  /* line 404, ../sass/_components.scss */
   #tip-container th {
     vertical-align: middle;
     padding-right: 0.5em;
     font-size: 2em; }
-    /* line 408, ../sass/_components.scss */
     #tip-container th i {
       color: #666; }
-  /* line 412, ../sass/_components.scss */
   #tip-container td {
     line-height: 1.2; }
-    /* line 414, ../sass/_components.scss */
     #tip-container td strong {
       color: #888; }
-  /* line 418, ../sass/_components.scss */
   #tip-container .close-button {
     display: none; }
-  /* line 422, ../sass/_components.scss */
   #tip-container.touch .close-button {
     display: table-row; }
 
 /* フォームテーブル */
-/* line 430, ../sass/_components.scss */
 table.form-table input[type=text],
 table.form-table input[type=password],
 table.form-table input[type=email],
@@ -579,14 +504,12 @@ table.form-table input[type=search] {
   padding: 3px 5px; }
 
 /* FeedBurner */
-/* line 441, ../sass/_components.scss */
 #feedburner-count {
   width: 52px;
   height: 62px;
   position: relative;
   overflow: hidden;
   text-decoration: none; }
-  /* line 447, ../sass/_components.scss */
   #feedburner-count span {
     position: absolute;
     display: block;
@@ -597,13 +520,11 @@ table.form-table input[type=search] {
     line-height: 35px; }
 
 /* ページナビ */
-/* line 459, ../sass/_components.scss */
 .wp-pagenavi {
   font-size: 1.4em;
   font-family: Helvetica, Arial, sans-serif;
   margin: 20px 0;
   text-align: center; }
-  /* line 464, ../sass/_components.scss */
   .wp-pagenavi a, .wp-pagenavi span.current, .wp-pagenavi span.extend {
     padding: 3px 8px;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
@@ -614,7 +535,6 @@ table.form-table input[type=search] {
     border-left: none;
     letter-spacing: 0;
     margin: 0; }
-    /* line 472, ../sass/_components.scss */
     .wp-pagenavi a:last-child, .wp-pagenavi span.current:last-child, .wp-pagenavi span.extend:last-child {
       -moz-border-radius-topright: 3px;
       -webkit-border-top-right-radius: 3px;
@@ -622,28 +542,22 @@ table.form-table input[type=search] {
       -moz-border-radius-bottomright: 3px;
       -webkit-border-bottom-right-radius: 3px;
       border-bottom-right-radius: 3px; }
-  /* line 476, ../sass/_components.scss */
   .wp-pagenavi a {
     color: #fcfcfc;
     background-color: #06c; }
-    /* line 479, ../sass/_components.scss */
     .wp-pagenavi a:link, .wp-pagenavi a:visited {
       text-decoration: none; }
-    /* line 483, ../sass/_components.scss */
     .wp-pagenavi a:hover, .wp-pagenavi a:active {
       background: #ff4130; }
-  /* line 488, ../sass/_components.scss */
   .wp-pagenavi span.current,
   .wp-pagenavi span.extend {
     color: #fcfcfc;
     background-color: #ddd; }
-  /* line 493, ../sass/_components.scss */
   .wp-pagenavi span.pages {
     padding: 3px 8px;
     margin-right: 1em;
     border: none;
     color: #ccc; }
-    /* line 498, ../sass/_components.scss */
     .wp-pagenavi span.pages + * {
       border-left: 1px solid #252e34;
       -moz-border-radius-topleft: 3px;
@@ -654,37 +568,30 @@ table.form-table input[type=search] {
       border-bottom-left-radius: 3px; }
 
 /* Google Responsive ads */
-/* line 506, ../sass/_components.scss */
 .my_adslot {
   width: 320px;
   height: 50px; }
 
 @media screen and (min-width: 500px) {
-  /* line 512, ../sass/_components.scss */
   .my_adslot {
     width: 468px;
     height: 60px; } }
 @media screen and (min-width: 800px) {
-  /* line 519, ../sass/_components.scss */
   .my_adslot {
     width: 728px;
     height: 90px; } }
-/* line 7, ../sass/_quotes.scss */
 .quotes-content {
   font-family: TsukuOldMinPro-R sans-serif; }
 
-/* line 10, ../sass/_quotes.scss */
 .quotes-cite {
   font-family: TsukuAMDMinStd-E sans-serif; }
 
-/* line 14, ../sass/_quotes.scss */
 .quotes-container {
   max-width: 720px;
   width: auto;
   margin: 0 auto;
   padding: 0 20px 80px;
   min-height: 450px; }
-  /* line 20, ../sass/_quotes.scss */
   .quotes-container h1 {
     font-size: 3em;
     font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
@@ -692,14 +599,12 @@ table.form-table input[type=search] {
     color: #aaa;
     margin-bottom: 80px;
     text-align: center; }
-  /* line 28, ../sass/_quotes.scss */
   .quotes-container .quotes-loop {
     position: relative;
     margin-top: 80px;
     padding-bottom: 80px;
     border-bottom: 1px solid #e0e0e0;
     margin-bottom: 80px; }
-    /* line 34, ../sass/_quotes.scss */
     .quotes-container .quotes-loop i {
       position: absolute;
       left: 0;
@@ -707,12 +612,10 @@ table.form-table input[type=search] {
       font-size: 6em;
       color: #f1f1f1;
       z-index: 1; }
-    /* line 42, ../sass/_quotes.scss */
     .quotes-container .quotes-loop blockquote {
       position: relative;
       font-size: 3em;
       z-index: 2; }
-      /* line 46, ../sass/_quotes.scss */
       .quotes-container .quotes-loop blockquote p {
         line-height: 1.8;
         margin: 0.5em 0.5em 0.5em 40px;
@@ -720,39 +623,31 @@ table.form-table input[type=search] {
         text-justify: inter-ideograph;
         word-wrap: break-word;
         letter-spacing: -0.1em; }
-      /* line 54, ../sass/_quotes.scss */
       .quotes-container .quotes-loop blockquote cite {
         margin-top: 1.5em;
         display: block;
         text-align: right;
         font-size: 0.5em;
         color: #666; }
-    /* line 62, ../sass/_quotes.scss */
     .quotes-container .quotes-loop .date {
       text-align: right;
       font-size: 1.4em;
       font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
       margin-top: 1em; }
-      /* line 68, ../sass/_quotes.scss */
       .quotes-container .quotes-loop .date a:link, .quotes-container .quotes-loop .date a:visited {
         color: #999;
         text-decoration: none; }
-      /* line 73, ../sass/_quotes.scss */
       .quotes-container .quotes-loop .date a:hover {
         color: #000;
         text-decoration: underline; }
-      /* line 77, ../sass/_quotes.scss */
       .quotes-container .quotes-loop .date a:active {
         color: orange;
         text-decoration: none; }
-      /* line 82, ../sass/_quotes.scss */
       .quotes-container .quotes-loop .date span {
         color: #999; }
-  /* line 88, ../sass/_quotes.scss */
   .quotes-container .more-quotes {
     text-align: center;
     margin: 80px 0 0; }
-    /* line 91, ../sass/_quotes.scss */
     .quotes-container .more-quotes a {
       display: inline-block;
       vertical-align: middle;
@@ -766,40 +661,32 @@ table.form-table input[type=search] {
       background: #f1f1f1;
       font-size: 2em;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
-      /* line 98, ../sass/_quotes.scss */
       .quotes-container .more-quotes a:link, .quotes-container .more-quotes a:visited {
         color: #ccc;
         text-decoration: none; }
-      /* line 102, ../sass/_quotes.scss */
       .quotes-container .more-quotes a:hover {
         color: #000;
         background: #ccc; }
-      /* line 106, ../sass/_quotes.scss */
       .quotes-container .more-quotes a:active {
         color: red;
         -moz-box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);
         -webkit-box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);
         box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1); }
-  /* line 113, ../sass/_quotes.scss */
   .quotes-container ul.like {
     overflow: hidden;
     *zoom: 1;
     margin: 80px 0; }
-    /* line 116, ../sass/_quotes.scss */
     .quotes-container ul.like li {
       width: 15%;
       text-align: center;
       float: left; }
-  /* line 123, ../sass/_quotes.scss */
   .quotes-container .wp-pagenavi {
     font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
     text-align: right; }
-  /* line 128, ../sass/_quotes.scss */
   .quotes-container address {
     margin-top: 80px;
     text-align: center;
     font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
-    /* line 132, ../sass/_quotes.scss */
     .quotes-container address span {
       display: block;
       font-size: 3em;
@@ -808,97 +695,73 @@ table.form-table input[type=search] {
       margin-bottom: 1em;
       color: #888;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
-    /* line 141, ../sass/_quotes.scss */
     .quotes-container address img {
       width: 160px;
       height: 160px;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%; }
-    /* line 146, ../sass/_quotes.scss */
     .quotes-container address p {
       margin-top: 0.5em; }
-    /* line 149, ../sass/_quotes.scss */
     .quotes-container address a {
       font-size: 1.8em; }
-      /* line 151, ../sass/_quotes.scss */
       .quotes-container address a:link, .quotes-container address a:visited {
         text-decoration: none;
         color: #888; }
-      /* line 155, ../sass/_quotes.scss */
       .quotes-container address a:hover {
         text-decoration: underline;
         color: #000; }
-      /* line 159, ../sass/_quotes.scss */
       .quotes-container address a:active {
         color: #06c; }
 
 @media screen and (max-width: 767px) {
-  /* line 169, ../sass/_quotes.scss */
   .quotes-container .quotes-loop blockquote {
     font-size: 2em; }
-    /* line 171, ../sass/_quotes.scss */
     .quotes-container .quotes-loop blockquote p {
       margin-left: 20px; } }
 /* Admin bar */
-/* line 2, ../sass/_navigation.scss */
 #wpadminbar {
   background: #45474d; }
-  /* line 4, ../sass/_navigation.scss */
   #wpadminbar .fa {
     font-family: "FontAwesome" !important; }
-  /* line 7, ../sass/_navigation.scss */
   #wpadminbar .ab-top-secondary {
     background: #45474d; }
-  /* line 10, ../sass/_navigation.scss */
   #wpadminbar #wp-admin-bar-main-menues i {
     margin-right: 0.5em; }
 
 @media screen and (max-width: 782px) {
-  /* line 18, ../sass/_navigation.scss */
   #wpadminbar #wp-admin-bar-main-menues {
     display: block; }
-    /* line 19, ../sass/_navigation.scss */
     #wpadminbar #wp-admin-bar-main-menues .fa-navicon {
       padding-top: 8px !important;
       font-size: 32px !important; }
-    /* line 25, ../sass/_navigation.scss */
     #wpadminbar #wp-admin-bar-main-menues .ab-sub-wrapper .ab-icon {
       font-size: 32px !important; }
-    /* line 28, ../sass/_navigation.scss */
     #wpadminbar #wp-admin-bar-main-menues .ab-sub-wrapper .ab-label {
       display: inline-block; }
-  /* line 34, ../sass/_navigation.scss */
   #wpadminbar #wp-admin-bar-search {
     display: block; }
-    /* line 36, ../sass/_navigation.scss */
     #wpadminbar #wp-admin-bar-search:before {
       top: 4px;
       font-size: 32px; }
-    /* line 40, ../sass/_navigation.scss */
     #wpadminbar #wp-admin-bar-search #adminbarsearch::before {
       font-size: 32px !important;
       left: 0 !important; }
-    /* line 44, ../sass/_navigation.scss */
     #wpadminbar #wp-admin-bar-search #adminbar-search {
       height: 32px !important;
       margin-top: 6px !important; } }
 /*ナビゲーション*/
-/* line 53, ../sass/_navigation.scss */
 #navi {
   border-bottom: 3px double #45474d;
   color: #888;
   overflow: hidden;
   background: #f7f7f7; }
-  /* line 59, ../sass/_navigation.scss */
   #navi.archive header {
     padding: 10px;
     position: relative; }
-  /* line 63, ../sass/_navigation.scss */
   #navi.archive h1 {
     font-size: 2em;
     margin: 0.5em 0; }
-    /* line 66, ../sass/_navigation.scss */
     #navi.archive h1 small {
       font-size: 0.8em;
       padding: 0.1em;
@@ -909,25 +772,19 @@ table.form-table input[type=search] {
       border-radius: 3px;
       color: #fff;
       background-color: #252e34; }
-      /* line 74, ../sass/_navigation.scss */
       #navi.archive h1 small i {
         margin-right: 5px; }
-  /* line 79, ../sass/_navigation.scss */
   #navi.archive .location {
     font-size: 1.2em;
     line-height: 2em;
     height: 2em; }
-    /* line 83, ../sass/_navigation.scss */
     #navi.archive .location i {
       margin-right: 0.25em; }
-  /* line 87, ../sass/_navigation.scss */
   #navi.archive .count {
     backgrond-color: #252e34; }
-  /* line 90, ../sass/_navigation.scss */
   #navi.archive .wp-pagenavi {
     font-size: 1.2em;
     text-align: right; }
-  /* line 99, ../sass/_navigation.scss */
   #navi .breadcrumb {
     height: 24px;
     line-height: 24px;
@@ -935,32 +792,25 @@ table.form-table input[type=search] {
     padding-left: 20px;
     font-size: 1.1em;
     text-align: left; }
-    /* line 106, ../sass/_navigation.scss */
     #navi .breadcrumb i {
       font-size: 24px;
       vertical-align: middle; }
-    /* line 110, ../sass/_navigation.scss */
     #navi .breadcrumb a:link, #navi .breadcrumb a:visited {
       color: inherit; }
-    /* line 113, ../sass/_navigation.scss */
     #navi .breadcrumb a:hover, #navi .breadcrumb a:active {
       color: #666; }
-  /* line 117, ../sass/_navigation.scss */
   #navi p.center {
     font-size: 1.6em; }
 
 /*---------------------
  * フッター直前のナビ
  */
-/* line 126, ../sass/_navigation.scss */
 .pre-footer-navigation {
   padding: 1em 0; }
-  /* line 128, ../sass/_navigation.scss */
   .pre-footer-navigation .nav-menu {
     padding-bottom: 1em;
     position: relative;
     z-index: 2; }
-    /* line 132, ../sass/_navigation.scss */
     .pre-footer-navigation .nav-menu a {
       text-align: center;
       display: block;
@@ -973,45 +823,35 @@ table.form-table input[type=search] {
       text-overflow: ellipsis;
       font-size: 1.4em;
       padding: 1em 0.5em; }
-      /* line 140, ../sass/_navigation.scss */
       .pre-footer-navigation .nav-menu a:link, .pre-footer-navigation .nav-menu a:visited {
         color: #888;
         text-decoration: none; }
-      /* line 145, ../sass/_navigation.scss */
       .pre-footer-navigation .nav-menu a:hover {
         color: #ff4130; }
-      /* line 148, ../sass/_navigation.scss */
       .pre-footer-navigation .nav-menu a:active {
         color: #ff0000; }
-  /* line 154, ../sass/_navigation.scss */
   .pre-footer-navigation .menu {
     margin: 0;
     padding: 0; }
-    /* line 157, ../sass/_navigation.scss */
     .pre-footer-navigation .menu > li {
       width: 20%;
       float: left;
       position: relative;
       overflow: hidden; }
-      /* line 162, ../sass/_navigation.scss */
       .pre-footer-navigation .menu > li:hover, .pre-footer-navigation .menu > li:active {
         overflow: visible; }
-      /* line 165, ../sass/_navigation.scss */
       .pre-footer-navigation .menu > li a {
         background: #f7f7f7;
         border-top: 3px double #ddd;
         border-bottom: 3px double #ddd; }
-  /* line 173, ../sass/_navigation.scss */
   .pre-footer-navigation .sub-menu {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%; }
-    /* line 178, ../sass/_navigation.scss */
     .pre-footer-navigation .sub-menu > li a {
       border: 3px double #f7f7f7;
       background-color: #ffffff; }
-  /* line 184, ../sass/_navigation.scss */
   .pre-footer-navigation .adsbygoogle {
     clear: both;
     padding-top: 2.5em;
@@ -1019,7 +859,6 @@ table.form-table input[type=search] {
     position: relative;
     z-index: 1; }
 
-/* line 193, ../sass/_navigation.scss */
 #footer-menu-toggle {
   display: none;
   border: 1px solid #f7f7f7;
@@ -1027,27 +866,21 @@ table.form-table input[type=search] {
   padding: 1.5em 0;
   text-align: center;
   background-color: #fcfcfc; }
-  /* line 200, ../sass/_navigation.scss */
   #footer-menu-toggle:link, #footer-menu-toggle:visited {
     text-decoration: none;
     color: #ddd; }
-  /* line 204, ../sass/_navigation.scss */
   #footer-menu-toggle:hover, #footer-menu-toggle:active {
     color: #ff4130; }
-  /* line 207, ../sass/_navigation.scss */
   #footer-menu-toggle.toggle {
     background-color: #ff4130;
     color: #fcfcfc; }
 
 @media only screen and (max-width: 767px) {
-  /* line 213, ../sass/_navigation.scss */
   .pre-footer-navigation .nav-menu {
     display: none; }
-    /* line 215, ../sass/_navigation.scss */
     .pre-footer-navigation .nav-menu a {
       text-align: left;
       position: relative; }
-      /* line 218, ../sass/_navigation.scss */
       .pre-footer-navigation .nav-menu a:after {
         position: absolute;
         font-family: "FontAwesome";
@@ -1056,31 +889,24 @@ table.form-table input[type=search] {
         top: 50%;
         margin-top: -10px;
         font-size: 20px; }
-    /* line 228, ../sass/_navigation.scss */
     .pre-footer-navigation .nav-menu .menu > li {
       float: none;
       width: auto; }
-      /* line 231, ../sass/_navigation.scss */
       .pre-footer-navigation .nav-menu .menu > li .sub-menu {
         position: relative;
         top: 0; }
 
-  /* line 237, ../sass/_navigation.scss */
   #footer-menu-toggle {
     display: block; }
-    /* line 240, ../sass/_navigation.scss */
     #footer-menu-toggle.toggle .fa-navicon:before {
       content: '\f057'; }
-    /* line 243, ../sass/_navigation.scss */
     #footer-menu-toggle.toggle + .nav-menu {
       display: block; }
-      /* line 245, ../sass/_navigation.scss */
       #footer-menu-toggle.toggle + .nav-menu > li a {
         padding-left: 2em; } }
 /*---------------------
  * トップに戻る
  */
-/* line 260, ../sass/_navigation.scss */
 #to-top {
   width: 100%;
   position: fixed;
@@ -1089,39 +915,32 @@ table.form-table input[type=search] {
   z-index: 80;
   top: 40px;
   display: none; }
-  /* line 268, ../sass/_navigation.scss */
   #to-top a {
     margin-right: 40px;
     -moz-transition: opacity 0.2s 0;
     -o-transition: opacity 0.2s 0;
     -webkit-transition: opacity 0.2s 0;
     transition: opacity 0.2s 0; }
-    /* line 271, ../sass/_navigation.scss */
     #to-top a:link, #to-top a:visited {
       color: #252e34;
       text-decoration: none; }
 
 /* ソーター */
-/* line 6, ../sass/_archive.scss */
 #sorter {
   padding: 1em 1em;
   margin: 1em 0;
   border-top: 3px double #f1f1f1;
   border-bottom: 3px double #f1f1f1; }
-  /* line 11, ../sass/_archive.scss */
   #sorter .sort-title {
     font-size: 1.4em;
     display: block;
     text-align: center;
     margin-bottom: 1em; }
-  /* line 17, ../sass/_archive.scss */
   #sorter #sorter-toggle {
     display: none; }
-  /* line 20, ../sass/_archive.scss */
   #sorter #sort-fields {
     overflow: hidden;
     *zoom: 1; }
-  /* line 23, ../sass/_archive.scss */
   #sorter label {
     display: block;
     box-sizing: border-box;
@@ -1129,15 +948,12 @@ table.form-table input[type=search] {
     padding-right: 10px;
     float: left;
     font-size: 1.2em; }
-    /* line 30, ../sass/_archive.scss */
     #sorter label span {
       display: block;
       margin-bottom: 0.5em;
       color: #888; }
-  /* line 38, ../sass/_archive.scss */
   #sorter #sort-fields input, #sorter #sort-fields select {
     width: 90%; }
-  /* line 42, ../sass/_archive.scss */
   #sorter input[type=text] {
     border: 1px solid #ccc;
     color: #666;
@@ -1147,10 +963,8 @@ table.form-table input[type=search] {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px; }
-  /* line 50, ../sass/_archive.scss */
   #sorter .sort-submit {
     margin-top: 1em; }
-  /* line 53, ../sass/_archive.scss */
   #sorter .submit {
     display: block;
     width: 98%;
@@ -1164,26 +978,20 @@ table.form-table input[type=search] {
     border-radius: 3px;
     border: 1px solid #ddd;
     color: #888; }
-    /* line 64, ../sass/_archive.scss */
     #sorter .submit:hover {
       color: #ff4130;
       background-color: #ddd; }
 
 @media only screen and (max-width: 767px) {
-  /* line 74, ../sass/_archive.scss */
   #sorter #sorter-toggle {
     display: inline-block;
     margin-left: 1em; }
-  /* line 78, ../sass/_archive.scss */
   #sorter #sort-fields, #sorter .sort-submit {
     display: none; }
-  /* line 82, ../sass/_archive.scss */
   #sorter.toggle #sort-fields, #sorter.toggle .sort-submit {
     display: block; }
-  /* line 85, ../sass/_archive.scss */
   #sorter.toggle #sorter-toggle {
     opacity: .6; }
-  /* line 90, ../sass/_archive.scss */
   #sorter #sort-fields label {
     width: 100%;
     float: none;
@@ -1192,18 +1000,14 @@ table.form-table input[type=search] {
 /****************************************
  * 7.アーカイブ設定
  ****************************************/
-/* line 111, ../sass/_archive.scss */
 div.archive {
   padding-top: 40px;
   padding-left: 16px;
   /*コンテンツボックス*/ }
-  /* line 114, ../sass/_archive.scss */
   div.archive .meta {
     margin-bottom: 20px; }
-    /* line 116, ../sass/_archive.scss */
     div.archive .meta h1 {
       font-size: 22px; }
-    /* line 119, ../sass/_archive.scss */
     div.archive .meta span {
       padding: 3px 5px;
       background: #00A0E9;
@@ -1211,7 +1015,6 @@ div.archive {
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       border-radius: 3px; }
-  /* line 127, ../sass/_archive.scss */
   div.archive .archive-box {
     width: 200px;
     padding: 32px 10px 16px;
@@ -1230,11 +1033,9 @@ div.archive {
     /* 日付 */
     /* 抜粋 */
     /*メタ情報*/ }
-    /* line 136, ../sass/_archive.scss */
     div.archive .archive-box.google {
       min-height: 200px;
       background-color: #eee; }
-    /* line 142, ../sass/_archive.scss */
     div.archive .archive-box .post-type {
       line-height: 32px;
       height: 32px;
@@ -1253,46 +1054,36 @@ div.archive {
       -moz-border-radius-topright: 3px;
       -webkit-border-top-right-radius: 3px;
       border-top-right-radius: 3px; }
-    /* line 156, ../sass/_archive.scss */
     div.archive .archive-box .post-type-ebook {
       background-color: #000; }
-    /* line 159, ../sass/_archive.scss */
     div.archive .archive-box .post-type-events {
       background-color: #333F46; }
-    /* line 162, ../sass/_archive.scss */
     div.archive .archive-box .post-type-pr {
       background-color: #eee;
       color: #888; }
-    /* line 166, ../sass/_archive.scss */
     div.archive .archive-box .post-type-label {
       float: right;
       margin-right: 10px;
       font-size: 0.85em;
       font-weight: bold; }
-      /* line 171, ../sass/_archive.scss */
       div.archive .archive-box .post-type-label i {
         margin-right: 0.2em; }
-    /* line 175, ../sass/_archive.scss */
     div.archive .archive-box .post-counter-label {
       margin-left: 10px;
       font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
       letter-spacing: -0.1em; }
-    /* line 182, ../sass/_archive.scss */
     div.archive .archive-box .photo {
       display: block;
       position: relative;
       text-align: center;
       overflow: hidden; }
-      /* line 187, ../sass/_archive.scss */
       div.archive .archive-box .photo .cover {
         max-width: 200px;
         height: auto; }
-      /* line 191, ../sass/_archive.scss */
       div.archive .archive-box .photo .on-sale {
         position: absolute;
         left: 0;
         top: 0; }
-      /* line 196, ../sass/_archive.scss */
       div.archive .archive-box .photo .price {
         background-color: #FBEE88;
         position: absolute;
@@ -1305,84 +1096,65 @@ div.archive {
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         border-radius: 3px; }
-    /* line 210, ../sass/_archive.scss */
     div.archive .archive-box .archive-title {
       margin: 0.5em 0;
       text-align: left;
       line-height: 1.1;
       font-size: 1.8em;
       font-weight: bold; }
-      /* line 216, ../sass/_archive.scss */
       div.archive .archive-box .archive-title a:link {
         color: #444;
         text-decoration: none;
         text-shadow: 1px 1px 2px #fff; }
-      /* line 221, ../sass/_archive.scss */
       div.archive .archive-box .archive-title a:visited {
         color: #999;
         text-shadow: 1px 1px 2px #fff; }
-      /* line 225, ../sass/_archive.scss */
       div.archive .archive-box .archive-title a:hover {
         color: #ED8600;
         text-decoration: underline; }
-      /* line 229, ../sass/_archive.scss */
       div.archive .archive-box .archive-title a:active {
         color: #ff4d44; }
-    /* line 235, ../sass/_archive.scss */
     div.archive .archive-box .event-table {
       font-size: 1.2em;
       margin: 1em 0;
       width: 100%; }
-      /* line 239, ../sass/_archive.scss */
       div.archive .archive-box .event-table th, div.archive .archive-box .event-table td {
         padding: 5px 8px;
         border-bottom: 1px solid #ddd; }
-      /* line 244, ../sass/_archive.scss */
       div.archive .archive-box .event-table tr:first-child th, div.archive .archive-box .event-table tr:first-child td {
         border-top: 1px solid #ddd; }
-      /* line 249, ../sass/_archive.scss */
       div.archive .archive-box .event-table tr:nth-child(odd) th, div.archive .archive-box .event-table tr:nth-child(odd) td {
         background-color: #f9f9f9; }
-      /* line 253, ../sass/_archive.scss */
       div.archive .archive-box .event-table th {
         color: #888;
         font-weight: bold;
         white-space: nowrap; }
-        /* line 257, ../sass/_archive.scss */
         div.archive .archive-box .event-table th i {
           margin-right: 0.2em; }
-    /* line 266, ../sass/_archive.scss */
     div.archive .archive-box small {
       display: block;
       text-align: right;
       color: #999;
       font-size: 1.1em;
       padding-bottom: 3px; }
-    /* line 274, ../sass/_archive.scss */
     div.archive .archive-box .desc {
       font-size: 1.2em;
       line-height: 1.4;
       margin: 0.5em 0; }
-      /* line 278, ../sass/_archive.scss */
       div.archive .archive-box .desc p {
         margin: 0; }
-    /* line 286, ../sass/_archive.scss */
     div.archive .archive-box .tag {
       font-size: 10px;
       margin: 0; }
-      /* line 289, ../sass/_archive.scss */
       div.archive .archive-box .tag img {
         vertical-align: text-bottom;
         margin-right: 10px; }
-    /* line 294, ../sass/_archive.scss */
     div.archive .archive-box .taxonomies {
       text-align: left; }
-      /* line 296, ../sass/_archive.scss */
       div.archive .archive-box .taxonomies .category, div.archive .archive-box .taxonomies .post_tag {
         font-size: 1.1em;
         line-height: 1;
         text-align: left; }
-        /* line 300, ../sass/_archive.scss */
         div.archive .archive-box .taxonomies .category a, div.archive .archive-box .taxonomies .post_tag a {
           display: inline-block;
           padding: 3px 5px;
@@ -1392,52 +1164,40 @@ div.archive {
           -moz-border-radius: 5px;
           -webkit-border-radius: 5px;
           border-radius: 5px; }
-          /* line 307, ../sass/_archive.scss */
           div.archive .archive-box .taxonomies .category a i, div.archive .archive-box .taxonomies .post_tag a i {
             margin-right: 0.2em; }
-      /* line 312, ../sass/_archive.scss */
       div.archive .archive-box .taxonomies .post_tag a {
         background-color: #000; }
-      /* line 315, ../sass/_archive.scss */
       div.archive .archive-box .taxonomies .category a {
         background-color: #252e34; }
-    /* line 320, ../sass/_archive.scss */
     div.archive .archive-box .score {
       possition: absolute;
       left: 0;
       top: -5px;
       color: #fff; }
-    /* line 326, ../sass/_archive.scss */
     div.archive .archive-box .more {
       text-align: right;
       margin-top: 0.5em; }
 
-/* line 334, ../sass/_archive.scss */
 .post-list .loop {
   position: relative;
   border-top: 1px solid #eeeeee;
   padding: 10px;
   overflow: hidden;
   *zoom: 1; }
-  /* line 338, ../sass/_archive.scss */
   .post-list .loop:last-child {
     border-bottom: 1px solid #eeeeee; }
-  /* line 341, ../sass/_archive.scss */
   .post-list .loop.post-list-large {
     font-size: 1.4em; }
-  /* line 345, ../sass/_archive.scss */
   .post-list .loop:first-child {
     border-top: none; }
-  /* line 348, ../sass/_archive.scss */
   .post-list .loop img {
     float: left;
     margin-right: 1em; }
-  /* line 352, ../sass/_archive.scss */
   .post-list .loop .post-title {
     font-size: 2em;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
     text-align: left; }
-  /* line 357, ../sass/_archive.scss */
   .post-list .loop .score {
     position: absolute;
     z-index: 1;
@@ -1449,62 +1209,51 @@ div.archive {
     border-radius: 3px;
     background: #ccc;
     color: #fcfcfc; }
-  /* line 367, ../sass/_archive.scss */
   .post-list .loop .date {
     color: #666;
     display: block;
     margin: 0.5em 0;
     font-size: 1.2em;
     line-height: 1.4; }
-  /* line 374, ../sass/_archive.scss */
   .post-list .loop .desc {
     position: relative;
     z-index: 2;
     font-size: 1.4em;
     line-height: 1.4; }
-  /* line 380, ../sass/_archive.scss */
   .post-list .loop .book-price {
     color: #ff4130;
     font-size: 1.4em; }
 
 @media screen and (max-width: 767px) {
-  /* line 390, ../sass/_archive.scss */
   .post-list .loop.post-list-large {
     font-size: 1.2em; }
-  /* line 393, ../sass/_archive.scss */
   .post-list .loop img {
     max-width: 75px;
     height: 50px; } }
 /**========================
  * 破滅派リンク
  */
-/* line 404, ../sass/_archive.scss */
 .hametuha-links {
   padding-top: 2em;
   padding-bottom: 2em; }
-  /* line 407, ../sass/_archive.scss */
   .hametuha-links .hametuha-title {
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
     font-size: 2em;
     color: #000;
     margin: 15px 1em;
     position: relative; }
-    /* line 413, ../sass/_archive.scss */
     .hametuha-links .hametuha-title .button {
       position: absolute;
       font-size: 14px;
       right: 0;
       top: 50%;
       margin-top: -10px; }
-  /* line 422, ../sass/_archive.scss */
   .hametuha-links .hametuha-list li {
     border-top: 1px solid #ddd;
     font-size: 1.4em;
     position: relative; }
-    /* line 426, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li:last-child {
       border-bottom: 1px solid #ddd; }
-    /* line 429, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li > .fa {
       position: absolute;
       z-indez: 1;
@@ -1513,44 +1262,34 @@ div.archive {
       color: #ddd;
       top: 50%;
       margin-top: -0.5em; }
-    /* line 438, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li a {
       position: relative;
       z-index: 2;
       display: block;
       padding: 1em 3em 1em 2em; }
-      /* line 443, ../sass/_archive.scss */
       .hametuha-links .hametuha-list li a:link, .hametuha-links .hametuha-list li a:visited {
         text-decoration: none;
         color: #999; }
-      /* line 447, ../sass/_archive.scss */
       .hametuha-links .hametuha-list li a:hover {
         text-decoration: none;
         background-color: #ffcdc9; }
-      /* line 451, ../sass/_archive.scss */
       .hametuha-links .hametuha-list li a:active {
         background-color: #ff4130; }
-        /* line 453, ../sass/_archive.scss */
         .hametuha-links .hametuha-list li a:active * {
           color: #fcfcfc !important; }
-    /* line 458, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li h3 {
       font-size: 2em;
       font-family: "PearlStd-L", serif;
       color: #000;
       margin-bottom: 0.5em; }
-    /* line 465, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li .description p {
       margin: 0.5em 0;
       color: #666;
       line-height: 1.4; }
-    /* line 472, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li .category .fa {
       margin-left: 0.5em; }
-      /* line 474, ../sass/_archive.scss */
       .hametuha-links .hametuha-list li .category .fa:first-child {
         margin-left: 0; }
-    /* line 479, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li .new {
       -moz-border-radius: 2px;
       -webkit-border-radius: 2px;
@@ -1560,22 +1299,17 @@ div.archive {
       color: #fcfcfc; }
 
 @media only screen and (max-width: 767px) {
-  /* line 492, ../sass/_archive.scss */
   .hametuha-links .hametuha-title {
     font-size: 1.4em; }
-  /* line 496, ../sass/_archive.scss */
   .hametuha-links .hametuha-list li h3 {
     font-size: 1.8em; }
-  /* line 499, ../sass/_archive.scss */
   .hametuha-links .hametuha-list li .category span {
     display: block; }
-    /* line 501, ../sass/_archive.scss */
     .hametuha-links .hametuha-list li .category span.new {
       display: inline-block; } }
 /*---------------------
  * ヘッダーメタ
  */
-/* line 12, ../sass/_single.scss */
 .single-logo {
   display: block;
   margin: 40px auto;
@@ -1585,23 +1319,19 @@ div.archive {
   -o-transition: opacity 1s ease-in;
   -webkit-transition: opacity 1s ease-in;
   transition: opacity 1s ease-in; }
-  /* line 18, ../sass/_single.scss */
   .single-logo:hover {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
     opacity: 0.4; }
 
 @media only screen and (max-width: 767px) {
-  /* line 24, ../sass/_single.scss */
   .single-logo {
     width: 128px;
     height: 128px;
     margin: 20px auto; }
-    /* line 28, ../sass/_single.scss */
     .single-logo img {
       width: 128px;
       height: 128px; } }
 /*タイトル*/
-/* line 36, ../sass/_single.scss */
 .title {
   position: relative;
   z-index: 2;
@@ -1615,7 +1345,6 @@ div.archive {
   line-height: 1.1;
   letter-spacing: -1px;
   border-top: 3px double #f1f1f1; }
-  /* line 49, ../sass/_single.scss */
   .title strong {
     display: block;
     text-align: center;
@@ -1623,10 +1352,8 @@ div.archive {
     font-weight: bold; }
 
 /*投稿件数*/
-/* line 58, ../sass/_single.scss */
 .header {
   position: relative; }
-  /* line 60, ../sass/_single.scss */
   .header .excerpt {
     padding: 1em 0 2em;
     width: 60%;
@@ -1637,7 +1364,6 @@ div.archive {
     font-style: italic; }
 
 /*タイトルメタ*/
-/* line 72, ../sass/_single.scss */
 .title-meta {
   position: relative;
   z-index: 2;
@@ -1646,7 +1372,6 @@ div.archive {
   border-bottom: 3px double #f1f1f1;
   font-size: 1.4em;
   text-align: center; }
-  /* line 80, ../sass/_single.scss */
   .title-meta li {
     display: inline-block;
     vertical-align: middle;
@@ -1654,43 +1379,35 @@ div.archive {
     *zoom: 1;
     *display: inline;
     margin-right: 1em; }
-    /* line 83, ../sass/_single.scss */
     .title-meta li .label {
       color: #888;
       margin-right: 0.25em;
       font-weight: bold; }
-      /* line 87, ../sass/_single.scss */
       .title-meta li .label i {
         font-weight: normal; }
 
 @media screen and (max-width: 768px) {
-  /* line 95, ../sass/_single.scss */
   .title-meta {
     margin: 0 10px 10px;
     font-size: 1.2em;
     text-align: left; } }
 /* アイキャッチ */
-/* line 103, ../sass/_single.scss */
 .eyecatch {
   text-align: center;
   margin-bottom: 2em; }
-  /* line 106, ../sass/_single.scss */
   .eyecatch img {
     max-width: 100%;
     width: auto;
     height: auto; }
-  /* line 111, ../sass/_single.scss */
   .eyecatch figcaption {
     color: #888;
     font-size: 1.2em;
     margin-top: 0.5em; }
 
-/* line 118, ../sass/_single.scss */
 #outdated-post {
   font-size: 1.4em;
   margin-bottom: 2em; }
 
-/* line 124, ../sass/_single.scss */
 #main .post-excerpt {
   magin: 1em 0;
   padding: 1em;
@@ -1699,7 +1416,6 @@ div.archive {
   color: #333F46; }
 
 /*投稿スタイル*/
-/* line 133, ../sass/_single.scss */
 .entry {
   min-height: 400px;
   padding-bottom: 20px;
@@ -1729,147 +1445,113 @@ div.archive {
   /* Twitter ウィジェット*/
   /* LWPの定期購読 */
   /* Google Map */ }
-  /* line 7, ../sass/_post_style.scss */
   .entry .indent {
     text-indent: 1em; }
-  /* line 10, ../sass/_post_style.scss */
   .entry > p {
     margin: 1em 0; }
-    /* line 12, ../sass/_post_style.scss */
     .entry > p.dropcap {
       text-indent: 0; }
-      /* line 14, ../sass/_post_style.scss */
       .entry > p.dropcap:first-letter {
         font-size: 2em;
         float: left;
         margin-right: 0.2em;
         font-weight: bold; }
-    /* line 21, ../sass/_post_style.scss */
     .entry > p.samurai {
       font-size: 2em;
       font-family: "SamuraiStd-R", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif; }
-  /* line 26, ../sass/_post_style.scss */
   .entry p.attachment {
     text-align: center; }
-    /* line 28, ../sass/_post_style.scss */
     .entry p.attachment img {
       max-width: 100%; }
-  /* line 34, ../sass/_post_style.scss */
   .entry h1, .entry h2, .entry h3, .entry h4, .entry h5 {
     padding-top: 1.5em;
     margin-bottom: 0.75em;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
-  /* line 39, ../sass/_post_style.scss */
   .entry h1 {
     font-size: 2.5em;
     color: #FBEE88;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
-  /* line 49, ../sass/_post_style.scss */
   .entry h2 {
     font-size: 1.8em;
     line-height: 1.2;
     color: #000; }
-  /* line 55, ../sass/_post_style.scss */
   .entry h3 {
     font-size: 1.5em;
     padding-bottom: 5px;
     line-height: 1.2;
     color: #333F46;
     border-bottom: 1px dotted #252e34; }
-  /* line 62, ../sass/_post_style.scss */
   .entry h4 {
     font-size: 1.3em;
     line-height: 1.2;
     color: #888;
     text-shadow: 1px 1px 2px #fff; }
-  /* line 68, ../sass/_post_style.scss */
   .entry h5 {
     font-size: 1.1em;
     line-height: 1.2; }
-  /* line 73, ../sass/_post_style.scss */
   .entry h6 {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold; }
-  /* line 79, ../sass/_post_style.scss */
   .entry strong, .entry b {
     color: #000;
-    font-weight: bold; }
-  /* line 83, ../sass/_post_style.scss */
+    font-weight: bold;
+    font-family: sans-serif; }
   .entry big,
   .entry strong.big {
     font-weight: bold;
+    font-family: sans-serif;
     font-size: 2em; }
-  /* line 88, ../sass/_post_style.scss */
   .entry em {
     color: #000;
     font-style: italic; }
-  /* line 93, ../sass/_post_style.scss */
   .entry abbr, .entry acronym {
     cursor: help;
     color: #333F46;
     border-bottom: 1px dashed #333F46; }
-  /* line 99, ../sass/_post_style.scss */
   .entry sup {
     font-size: 0.75em;
     vertical-align: top; }
-  /* line 103, ../sass/_post_style.scss */
   .entry sub {
     font-size: 0.75em;
     vertical-align: sub; }
-  /* line 107, ../sass/_post_style.scss */
   .entry var {
     font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
     font-style: italic; }
-  /* line 112, ../sass/_post_style.scss */
   .entry ins {
     text-decoration: none;
     color: #666;
     background: #FBEE88; }
-  /* line 118, ../sass/_post_style.scss */
   .entry del, .entry s {
     color: #aaa; }
-    /* line 120, ../sass/_post_style.scss */
     .entry del:before, .entry s:before {
       content: " "; }
-    /* line 121, ../sass/_post_style.scss */
     .entry del:after, .entry s:after {
       content: " "; }
-  /* line 125, ../sass/_post_style.scss */
   .entry ol, .entry ul, .entry dl {
     margin: 1em 0; }
-  /* line 128, ../sass/_post_style.scss */
   .entry ol li, .entry ul li, .entry dl dd {
     margin: 0.5em 0 0.8em 1em; }
-  /* line 129, ../sass/_post_style.scss */
   .entry ul, .entry ol {
     padding-left: 1.5em; }
-  /* line 130, ../sass/_post_style.scss */
   .entry ul li {
     list-style: outside disc; }
-  /* line 131, ../sass/_post_style.scss */
   .entry ol li {
     list-style: outside decimal; }
-  /* line 132, ../sass/_post_style.scss */
   .entry ul li li, .entry ol li li, .entry dd li {
     font-size: 0.8em; }
-  /* line 133, ../sass/_post_style.scss */
   .entry ul li ul li {
     list-style-type: circle; }
-  /* line 134, ../sass/_post_style.scss */
   .entry ol li ol li {
     list-style-type: decimal-leading-zero; }
-  /* line 135, ../sass/_post_style.scss */
   .entry dl dt {
     font-size: 1.2em;
     font-weight: bold;
     margin: 15px 0 0;
     text-shadow: 1px 1px 2px #fff;
     color: #252e34; }
-  /* line 142, ../sass/_post_style.scss */
   .entry dl dd {
     padding-left: 1.5em;
     margin-left: 0; }
-    /* line 145, ../sass/_post_style.scss */
     .entry dl dd:before {
       font-family: FontAwesome;
       font-weight: normal;
@@ -1878,53 +1560,42 @@ div.archive {
       text-decoration: inherit;
       content: "\f054";
       text-indent: -1.5em; }
-  /* line 156, ../sass/_post_style.scss */
   .entry blockquote {
     margin: 0.5em 0;
     padding: 32px;
     color: #808080;
     position: relative; }
-    /* line 161, ../sass/_post_style.scss */
     .entry blockquote:before, .entry blockquote:after {
       color: lightgrey;
       display: block;
       position: absolute;
       font-size: 24px;
       font-family: FontAwesome; }
-    /* line 169, ../sass/_post_style.scss */
     .entry blockquote:before {
       top: 0;
       left: 10px;
       content: "\f10d"; }
-    /* line 174, ../sass/_post_style.scss */
     .entry blockquote:after {
       bottom: 0;
       right: 10px;
       content: "\f10e"; }
-    /* line 179, ../sass/_post_style.scss */
     .entry blockquote p {
       margin: 0.5em 0; }
-    /* line 182, ../sass/_post_style.scss */
     .entry blockquote cite {
       display: block;
       text-align: right;
       font-size: 0.8em;
       font-weight: normal;
       color: #333F46; }
-  /* line 190, ../sass/_post_style.scss */
   .entry q, .entry cite {
     font-style: italic;
     color: #252e34; }
-  /* line 195, ../sass/_post_style.scss */
   .entry q[cite] {
     cursor: pointer; }
-  /* line 198, ../sass/_post_style.scss */
   .entry q:before {
     content: '"'; }
-  /* line 201, ../sass/_post_style.scss */
   .entry q:after {
     content: '"'; }
-  /* line 209, ../sass/_post_style.scss */
   .entry code, .entry kbd, .entry tt {
     background: #f7f7f7;
     border: 1px solid #ddd;
@@ -1934,24 +1605,18 @@ div.archive {
     padding: 1px 2px;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     color: #000; }
-  /* line 217, ../sass/_post_style.scss */
   .entry var {
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-  /* line 220, ../sass/_post_style.scss */
   .entry pre {
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     line-height: 1.2; }
-  /* line 224, ../sass/_post_style.scss */
   .entry .syntaxhighlighter {
     padding-top: 5px !important;
     padding-bottom: 5px !important; }
-    /* line 227, ../sass/_post_style.scss */
     .entry .syntaxhighlighter > table {
       font-size: 0.85em !important; }
-    /* line 230, ../sass/_post_style.scss */
     .entry .syntaxhighlighter code {
       -webkit-text-size-adjust: 100%; }
-  /* line 234, ../sass/_post_style.scss */
   .entry .code-format {
     background: #4D4945;
     color: #fff;
@@ -1963,13 +1628,10 @@ div.archive {
     border-radius: 15px;
     overflow: auto;
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-    /* line 243, ../sass/_post_style.scss */
     .entry .code-format table {
       width: 100%; }
-    /* line 244, ../sass/_post_style.scss */
     .entry .code-format tr.even {
       background: #57534E; }
-    /* line 245, ../sass/_post_style.scss */
     .entry .code-format th {
       color: #938C84;
       background-color: transparent;
@@ -1978,42 +1640,33 @@ div.archive {
       border-right: #938C84 2px solid;
       padding: 0 5px 0 0;
       vertical-align: top; }
-    /* line 254, ../sass/_post_style.scss */
     .entry .code-format td {
       padding: 0 0 0 15px;
       border-bottom: none; }
-    /* line 258, ../sass/_post_style.scss */
     .entry .code-format .quote {
       color: #A5EFB8; }
-    /* line 259, ../sass/_post_style.scss */
     .entry .code-format .notation {
       color: #BCE3F4; }
-  /* line 263, ../sass/_post_style.scss */
   .entry pre.aa {
-    font-family: IPAMonaGothic,'ＭＳ ゴシック',monospace;
+    font-family: IPAMonaGothic, 'ＭＳ ゴシック', monospace;
     font-size: 12px;
     line-height: 1.5;
     margin: 20px 0;
     color: #999; }
-  /* line 272, ../sass/_post_style.scss */
   .entry address {
     font-style: italic;
     font-size: 0.85em;
     color: #888;
     line-height: 1.4;
     padding: 0.5em 1em; }
-  /* line 281, ../sass/_post_style.scss */
   .entry .alert {
     font-size: 0.8em;
     font-weight: bold;
     color: #000; }
-    /* line 285, ../sass/_post_style.scss */
     .entry .alert:before {
       content: " ※"; }
-    /* line 286, ../sass/_post_style.scss */
     .entry .alert:after {
       content: " "; }
-  /* line 290, ../sass/_post_style.scss */
   .entry aside {
     margin: 1em 0;
     line-height: 1.4;
@@ -2022,72 +1675,57 @@ div.archive {
     -webkit-text-size-adjust: 100%;
     background: #f7f7f7;
     color: #666; }
-  /* line 301, ../sass/_post_style.scss */
   .entry table {
     margin: 20px 0;
     border-spacing: 0;
     empty-cells: show;
     border-collapse: collapse;
     width: 100%; }
-    /* line 308, ../sass/_post_style.scss */
     .entry table thead th, .entry table thead td {
       color: #000;
       padding: 5px 8px;
       border-bottom: 3px double #ddd;
       font-weight: bold; }
-    /* line 315, ../sass/_post_style.scss */
     .entry table caption {
       color: #666;
       text-align: right;
       font-size: 1em; }
-    /* line 321, ../sass/_post_style.scss */
     .entry table tbody th, .entry table tbody td {
       text-align: left;
       padding: 5px 8px;
       font-size: 0.85em;
       border-bottom: 1px solid #ddd; }
-    /* line 327, ../sass/_post_style.scss */
     .entry table tbody th {
       font-weight: bold;
       color: #000;
       white-space: nowrap; }
-    /* line 332, ../sass/_post_style.scss */
     .entry table tbody td {
       color: #888; }
-    /* line 335, ../sass/_post_style.scss */
     .entry table tbody tr:nth-child(2n) td,
     .entry table tbody tr:nth-child(2n) th {
       background: #f7f7f7; }
-  /* line 346, ../sass/_post_style.scss */
   .entry .alignright {
     float: right;
     margin-left: 1.5em; }
-  /* line 347, ../sass/_post_style.scss */
   .entry .alignleft {
     float: left;
     margin-right: 1.5em; }
-  /* line 348, ../sass/_post_style.scss */
   .entry .aligncenter,
   .entry div.alignnon,
   .entry figure.alignnon {
     margin: 1.5em auto; }
-  /* line 351, ../sass/_post_style.scss */
   .entry img.aligncenter {
     display: block; }
-  /* line 353, ../sass/_post_style.scss */
   .entry img.size-full {
     max-width: 100%;
     height: auto; }
-  /* line 358, ../sass/_post_style.scss */
   .entry div.wp-caption,
   .entry figure.wp-caption {
     margin-bottom: 1em; }
-  /* line 362, ../sass/_post_style.scss */
   .entry .wp-caption-text {
     font-size: 0.75em;
     color: #666;
     margin: 0.25em 0 0; }
-  /* line 373, ../sass/_post_style.scss */
   .entry input[type=text],
   .entry input[type=password],
   .entry input[type=email],
@@ -2099,65 +1737,53 @@ div.archive {
     border-radius: 3px;
     padding: 5px 10px;
     color: #444; }
-  /* line 141, ../sass/_single.scss */
   .entry div.fumiki-twitter-rendered {
     margin: 7px auto !important;
     width: auto !important;
     max-width: 502px !important; }
-  /* line 148, ../sass/_single.scss */
   .entry .lwp-invitation {
     clear: both; }
-  /* line 155, ../sass/_single.scss */
   .entry div.googlemap iframe,
   .entry iframe[src*=maps\.google],
   .entry iframe[src*=maps\.google] {
     width: 100%; }
 
 @media screen and (min-width: 1280px) {
-  /* line 164, ../sass/_single.scss */
   .entry {
     font-size: 2.5em; } }
 /* コメント */
-/* line 170, ../sass/_single.scss */
 #respond {
   margin: 40px auto 0;
   overflow: auto; }
 
 /*関連投稿*/
-/* line 176, ../sass/_single.scss */
 .related {
   margin: 20px 0;
   padding-top: 20px;
   border-top: 3px double #252e34;
   /*説明書き*/ }
-  /* line 180, ../sass/_single.scss */
   .related .related-links {
     font-size: 2em;
     font-weight: bold;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif;
     color: #333F46;
     margin: 0 1em 20px; }
-  /* line 188, ../sass/_single.scss */
   .related .meta {
     width: 233px;
     float: left;
     padding: 5px; }
-    /* line 192, ../sass/_single.scss */
     .related .meta h4 {
       font-size: 1.6em;
       color: #4C5A65;
       text-shadow: 1px 1px 2px #fff; }
-    /* line 197, ../sass/_single.scss */
     .related .meta .meta p {
       font-size: 1.2em;
       color: #666;
       text-shadow: 1px 1px 2px #fff; }
-    /* line 202, ../sass/_single.scss */
     .related .meta .meta p a {
       font-weight: bold; }
 
 /* 投稿ナビゲーション */
-/* line 209, ../sass/_single.scss */
 .next-previous {
   margin-top: 40px;
   padding-top: 40px;
@@ -2166,48 +1792,39 @@ div.archive {
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
   border-top: 3px double #888;
   font-size: 2em; }
-  /* line 215, ../sass/_single.scss */
   .next-previous i {
     font-size: 1.5em;
     text-decoration: none; }
-  /* line 219, ../sass/_single.scss */
   .next-previous p {
     width: 300px;
     float: left;
     font-size: 0.8em;
     line-height: 1.2; }
-    /* line 225, ../sass/_single.scss */
     .next-previous p.prev i {
       float: left;
       margin-right: 0.5em; }
-    /* line 230, ../sass/_single.scss */
     .next-previous p.next {
       text-align: right;
       float: right; }
-      /* line 233, ../sass/_single.scss */
       .next-previous p.next i {
         margin-left: 0.5em;
         float: right; }
 
 @media screen and (max-width: 959px) {
-  /* line 242, ../sass/_single.scss */
   .next-previous {
     padding-right: 10px;
     padding-left: 10px; } }
 /* 広告 */
-/* line 249, ../sass/_single.scss */
 .google-share {
   clear: both;
   margin-bottom: 20px;
   padding: 20px 10px;
   text-align: center;
   border-top: 3px double #888; }
-  /* line 255, ../sass/_single.scss */
   .google-share .like {
     margin-bottom: 20px;
     overflow: hidden;
     *zoom: 1; }
-    /* line 258, ../sass/_single.scss */
     .google-share .like li {
       float: left;
       width: 16%;
@@ -2215,18 +1832,15 @@ div.archive {
       height: 80px; }
 
 /* 関連記事についての注記 */
-/* line 268, ../sass/_single.scss */
 .single-content-detail {
   margin-top: 1.5em;
   padding: 1.5em 1.5em 1.5em 32px;
   font-size: 1.4em;
   position: relative; }
-  /* line 273, ../sass/_single.scss */
   .single-content-detail p {
     color: #888;
     line-height: 1.6;
     text-align: left; }
-  /* line 278, ../sass/_single.scss */
   .single-content-detail i {
     position: absolute;
     left: 10px;
@@ -2236,20 +1850,16 @@ div.archive {
     color: #888; }
 
 @media screen and (max-width: 959px) {
-  /* line 289, ../sass/_single.scss */
   .google-share {
     padding-left: 0;
     padding-right: 0; }
-    /* line 293, ../sass/_single.scss */
     .google-share .like li {
       width: 33%; }
-      /* line 295, ../sass/_single.scss */
       .google-share .like li:nth-child(4) {
         cleaf: left; } }
 /*---------------------
  * フッター
  */
-/* line 4, ../sass/_footer.scss */
 footer {
   color: #ddd;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
@@ -2262,22 +1872,17 @@ footer {
   /*プロフィール*/
   /*リンクの色設定*/
   /* 区切り線 */ }
-  /* line 12, ../sass/_footer.scss */
   footer a:link, footer a:visited {
     color: inherit;
     text-decoration: underline; }
-  /* line 16, ../sass/_footer.scss */
   footer a:hover {
     color: #ff4130;
     text-decoration: none; }
-  /* line 20, ../sass/_footer.scss */
   footer a:active {
     color: #ff0000;
     text-decoration: none; }
-  /* line 25, ../sass/_footer.scss */
   footer .inner {
     margin: 0 0.5em; }
-  /* line 28, ../sass/_footer.scss */
   footer h4 {
     font-size: 1.6em;
     font-weight: normal;
@@ -2288,54 +1893,42 @@ footer {
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
     box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0; }
-    /* line 36, ../sass/_footer.scss */
     footer h4.second, footer h4.widgettitle {
       margin-top: 2em; }
-    /* line 40, ../sass/_footer.scss */
     footer h4 i {
       margin-right: 0.25em; }
-  /* line 45, ../sass/_footer.scss */
   footer .avatar {
     display: block;
     margin: 10px 20px;
     float: left; }
-  /* line 53, ../sass/_footer.scss */
   footer .admin-name p {
     margin: 1em 0 1em 140px;
     font-size: 1.4em; }
-    /* line 57, ../sass/_footer.scss */
     footer .admin-name p strong {
       display: block;
       margin: 1em 0 0.5em;
       font-size: 1.6em;
       font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
-  /* line 65, ../sass/_footer.scss */
   footer blockquote {
     padding: 24px;
     font-size: 1.2em;
     line-height: 1.2;
     position: relative; }
-    /* line 70, ../sass/_footer.scss */
     footer blockquote p {
       margin: 0; }
-      /* line 72, ../sass/_footer.scss */
       footer blockquote p.tweet {
         font-size: 1.2em;
         line-height: 1.2; }
-    /* line 77, ../sass/_footer.scss */
     footer blockquote i {
       position: absolute;
       font-size: 18px;
       color: #252e34; }
-      /* line 81, ../sass/_footer.scss */
       footer blockquote i.fa-quote-left {
         left: 0;
         top: 0; }
-      /* line 85, ../sass/_footer.scss */
       footer blockquote i.fa-quote-right {
         right: 0;
         bottom: 0; }
-    /* line 90, ../sass/_footer.scss */
     footer blockquote cite {
       font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
       display: block;
@@ -2343,27 +1936,21 @@ footer {
       margin: 0.5em 0;
       font-size: 0.85em;
       font-style: italic; }
-  /* line 99, ../sass/_footer.scss */
   footer div.like-box-container {
     text-align: center;
     overflow: hidden;
     width: 100%; }
-  /* line 106, ../sass/_footer.scss */
   footer ol.inner li {
     margin: 5px 0; }
-    /* line 108, ../sass/_footer.scss */
     footer ol.inner li a {
       display: block;
       height: 32px;
       line-height: 32px;
       font-size: 1.2em; }
-      /* line 113, ../sass/_footer.scss */
       footer ol.inner li a:link, footer ol.inner li a:visited {
         text-decoration: none; }
-      /* line 117, ../sass/_footer.scss */
       footer ol.inner li a:hover {
         background-color: #252e34; }
-      /* line 120, ../sass/_footer.scss */
       footer ol.inner li a.one-line {
         overflow: hidden;
         white-space: nowrap;
@@ -2372,27 +1959,20 @@ footer {
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
         text-overflow: text-ellipsis; }
-    /* line 126, ../sass/_footer.scss */
     footer ol.inner li .hametuha, footer ol.inner li .minicome, footer ol.inner li .hametuha-inc {
       background: url("../img/social-icons-2.png") left top no-repeat;
       padding-left: 38px; }
-    /* line 130, ../sass/_footer.scss */
     footer ol.inner li .hametuha {
       background-position: left -288px; }
-    /* line 133, ../sass/_footer.scss */
     footer ol.inner li .minicome {
       background-position: left -320px; }
-    /* line 136, ../sass/_footer.scss */
     footer ol.inner li .hametuha-inc {
       background-position: left -352px; }
-    /* line 139, ../sass/_footer.scss */
     footer ol.inner li .mail, footer ol.inner li .feed {
       line-height: 32px; }
-      /* line 142, ../sass/_footer.scss */
       footer ol.inner li .mail i, footer ol.inner li .feed i {
         font-size: 24px;
         margin-right: 0.5em; }
-    /* line 147, ../sass/_footer.scss */
     footer ol.inner li.contact {
       font-size: 1.1em;
       margin: 0.5em 0;
@@ -2405,22 +1985,18 @@ footer {
       -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5);
       -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5);
       box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(255, 255, 255, 0.5); }
-      /* line 155, ../sass/_footer.scss */
       footer ol.inner li.contact a {
         line-height: 1.1;
         display: inline;
         font-size: 1em;
         background: none;
         padding-left: 0; }
-        /* line 161, ../sass/_footer.scss */
         footer ol.inner li.contact a:link, footer ol.inner li.contact a:visited {
           text-decoration: underline; }
-      /* line 165, ../sass/_footer.scss */
       footer ol.inner li.contact i {
         font-size: 2em;
         float: left;
         margin-right: 0.5em; }
-  /* line 174, ../sass/_footer.scss */
   footer ol.no-text li {
     font-size: 22px;
     width: 32px;
@@ -2434,20 +2010,15 @@ footer {
     float: left;
     line-height: 32px;
     margin-right: 10px; }
-  /* line 189, ../sass/_footer.scss */
   footer ul {
     padding-left: 20px; }
-    /* line 191, ../sass/_footer.scss */
     footer ul ul {
       padding-left: 1em; }
-    /* line 194, ../sass/_footer.scss */
     footer ul li {
       margin: 5px 0;
       font-size: 1.2em; }
-      /* line 197, ../sass/_footer.scss */
       footer ul li li {
         font-size: 1em; }
-      /* line 200, ../sass/_footer.scss */
       footer ul li a {
         display: block;
         padding: 3px 5px;
@@ -2455,43 +2026,34 @@ footer {
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px; }
-        /* line 205, ../sass/_footer.scss */
         footer ul li a:link, footer ul li a:visited {
           color: #fff;
           text-decoration: none; }
-        /* line 209, ../sass/_footer.scss */
         footer ul li a:hover, footer ul li a:active {
           background: #252e34; }
-  /* line 216, ../sass/_footer.scss */
   footer .divider {
     margin: 20px 0; }
 
 /*コピーライト*/
-/* line 222, ../sass/_footer.scss */
 #copy-note {
   font-size: 14px;
   text-align: center;
   padding-bottom: 20px; }
-  /* line 226, ../sass/_footer.scss */
   #copy-note .poweredby {
     font-size: 12px;
     margin-top: 20px; }
-    /* line 229, ../sass/_footer.scss */
     #copy-note .poweredby a {
       font-style: italic; }
 
 @media only screen and (max-width: 767px) {
-  /* line 235, ../sass/_footer.scss */
   #copy-note .poweredby {
     width: 60%;
     margin: 0 auto; } }
 @media screen and (max-width: 959px) {
-  /* line 245, ../sass/_footer.scss */
   footer .divider img {
     width: 50px;
     height: 50px; } }
 /* Ustream */
-/* line 254, ../sass/_footer.scss */
 #ustream-badge {
   display: none;
   width: 40px;
@@ -2508,123 +2070,95 @@ footer {
   -webkit-box-shadow: 0 0 5px #666;
   box-shadow: 0 0 5px #666; }
 
-/* line 270, ../sass/_footer.scss */
 body > a {
   display: block;
   height: 0; }
 
 /*書籍詳細*/
-/* line 5, ../sass/_lwp.scss */
 .ebook-meta {
   position: relative; }
-  /* line 7, ../sass/_lwp.scss */
   .ebook-meta .img-container {
     position: relative;
     float: left;
     width: 140px; }
-    /* line 11, ../sass/_lwp.scss */
     .ebook-meta .img-container .cover {
       width: 120px;
       height: 160px;
       height: auto; }
-  /* line 17, ../sass/_lwp.scss */
   .ebook-meta table {
     width: 490px;
     font-size: 1.2em;
     float: right; }
 
 @media screen and (min-width: 1280px) {
-  /* line 25, ../sass/_lwp.scss */
   .ebook-meta .img-container {
     width: 360px; }
-    /* line 27, ../sass/_lwp.scss */
     .ebook-meta .img-container .cover {
       width: 240px;
       height: 320px; }
-  /* line 32, ../sass/_lwp.scss */
   .ebook-meta table {
     font-size: 1.4em;
     width: 540px; } }
 @media screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 40, ../sass/_lwp.scss */
   .ebook-meta .img-container {
     width: 280px;
     text-align: left; }
-    /* line 43, ../sass/_lwp.scss */
     .ebook-meta .img-container .cover {
       width: 240px;
       height: 320px; }
-  /* line 48, ../sass/_lwp.scss */
   .ebook-meta table {
     width: 488px; } }
-/* line 56, ../sass/_lwp.scss */
 .ebook-meta .img-container {
   text-align: center; }
-  /* line 58, ../sass/_lwp.scss */
   .ebook-meta .img-container img.cover {
     -moz-box-shadow: 1px 1px 5px #000;
     -webkit-box-shadow: 1px 1px 5px #000;
     box-shadow: 1px 1px 5px #000; }
-  /* line 61, ../sass/_lwp.scss */
   .ebook-meta .img-container img.on-sale {
     position: absolute;
     left: 110px;
     top: 0px; }
-/* line 67, ../sass/_lwp.scss */
 .ebook-meta table {
   /*プロモーションリンク*/ }
-  /* line 68, ../sass/_lwp.scss */
   .ebook-meta table th, .ebook-meta table td {
     padding: 5px; }
-  /* line 71, ../sass/_lwp.scss */
   .ebook-meta table th {
     width: 8em;
     color: #333F46; }
-    /* line 74, ../sass/_lwp.scss */
     .ebook-meta table th i {
       margin-right: 0.5em; }
-  /* line 78, ../sass/_lwp.scss */
   .ebook-meta table td {
     text-shadow: 1px 1px 2px #fff;
     line-height: 1.2;
     color: #252e34; }
-  /* line 83, ../sass/_lwp.scss */
   .ebook-meta table .book-title {
     font-size: 2em;
     font-weight: bold;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
-  /* line 88, ../sass/_lwp.scss */
   .ebook-meta table .book-author {
     font-size: 1.6em;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatisseVPro-DB", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "メイリオ", Meiryo, serif; }
-  /* line 92, ../sass/_lwp.scss */
   .ebook-meta table .price {
     font-size: 2em;
     color: #ED8600; }
-    /* line 95, ../sass/_lwp.scss */
     .ebook-meta table .price .lwp-buynow {
       font-size: 0.8em; }
-    /* line 98, ../sass/_lwp.scss */
     .ebook-meta table .price .lwp-rest,
     .ebook-meta table .price .lwp-timer {
       font-size: 0.6em;
       color: #06c; }
-    /* line 103, ../sass/_lwp.scss */
     .ebook-meta table .price .lwp-timer .day,
     .ebook-meta table .price .lwp-timer .hour,
     .ebook-meta table .price .lwp-timer .minutes,
     .ebook-meta table .price .lwp-timer .seconds {
       font-weight: bold;
       font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-  /* line 111, ../sass/_lwp.scss */
   .ebook-meta table small {
     font-size: 0.85em;
     color: #666; }
-  /* line 115, ../sass/_lwp.scss */
   .ebook-meta table del {
     color: #999;
     text-shadow: none; }
-  /* line 120, ../sass/_lwp.scss */
   .ebook-meta table input.promotion-link {
     border: none;
     background: transparent;
@@ -2635,27 +2169,21 @@ body > a {
     font-style: italic; }
 
 /* コンテナ共通 */
-/* line 133, ../sass/_lwp.scss */
 .lwp-container {
   font-size: 1.4em;
   margin: 2em 0; }
-  /* line 136, ../sass/_lwp.scss */
   .lwp-container h2 {
     font-size: 2em;
     margin-bottom: 0.5em; }
-    /* line 139, ../sass/_lwp.scss */
     .lwp-container h2 i {
       margin-right: 0.5em; }
 
-/* line 147, ../sass/_lwp.scss */
 .lwp-message p.center {
   padding-top: 2em; }
-  /* line 149, ../sass/_lwp.scss */
   .lwp-message p.center .lwp-buynow {
     font-size: 2em; }
 
 /*ダウンロードリスト*/
-/* line 157, ../sass/_lwp.scss */
 .lwp-file-list {
   padding: 1em;
   background: #f7f7f7;
@@ -2663,31 +2191,25 @@ body > a {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   /*対応端末リスト*/ }
-  /* line 162, ../sass/_lwp.scss */
   .lwp-file-list .device {
     width: 100px;
     height: 100px;
     float: left;
     margin-bottom: 10px;
     margin-right: 10px; }
-    /* line 168, ../sass/_lwp.scss */
     .lwp-file-list .device small {
       display: block;
       font-size: 10px; }
-    /* line 172, ../sass/_lwp.scss */
     .lwp-file-list .device span {
       display: block;
       font-size: 11px;
       line-height: 1.1;
       font-weight: bold; }
-    /* line 178, ../sass/_lwp.scss */
     .lwp-file-list .device img {
       display: block;
       margin: 5px auto; }
-  /* line 183, ../sass/_lwp.scss */
   .lwp-file-list .valid {
     color: #698a7c; }
-  /* line 186, ../sass/_lwp.scss */
   .lwp-file-list p {
     font-size: 12px;
     color: #666;
@@ -2695,68 +2217,52 @@ body > a {
     margin: 10px 0;
     padding-top: 5px;
     text-shadow: 1px 1px 2px #fff; }
-    /* line 193, ../sass/_lwp.scss */
     .lwp-file-list p.device-desc {
       background: #fcfcfc;
       padding: 1em;
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       border-radius: 3px; }
-  /* line 199, ../sass/_lwp.scss */
   .lwp-file-list #download-list {
     margin-top: 1em; }
-  /* line 202, ../sass/_lwp.scss */
   .lwp-file-list .file-list {
     margin-bottom: 2em;
     width: 100%;
     border-collapse: collapse;
     border: none; }
-    /* line 207, ../sass/_lwp.scss */
     .lwp-file-list .file-list td {
       padding: 15px 5px 5px;
       border-bottom: 1px dotted #E5E5E5; }
-      /* line 210, ../sass/_lwp.scss */
       .lwp-file-list .file-list td.center {
         text-align: center; }
-      /* line 213, ../sass/_lwp.scss */
       .lwp-file-list .file-list td.width150 {
         width: 150px; }
-      /* line 216, ../sass/_lwp.scss */
       .lwp-file-list .file-list td em.mono {
         display: block; }
-      /* line 219, ../sass/_lwp.scss */
       .lwp-file-list .file-list td .file-title {
         font-size: 1.4em; }
-      /* line 223, ../sass/_lwp.scss */
       .lwp-file-list .file-list td .desc p {
         margin: 0; }
-      /* line 227, ../sass/_lwp.scss */
       .lwp-file-list .file-list td small {
         color: #888;
         font-size: 0.75em; }
-        /* line 230, ../sass/_lwp.scss */
         .lwp-file-list .file-list td small.desc {
           display: block;
           padding-top: 5px;
           font-size: 0.85em; }
 
-/* line 240, ../sass/_lwp.scss */
 .lwp-ticket-list {
   padding: 0 10px; }
-  /* line 242, ../sass/_lwp.scss */
   .lwp-ticket-list table {
     width: 100%;
     font-size: 1.2em;
     border-collapse: collapse; }
-    /* line 246, ../sass/_lwp.scss */
     .lwp-ticket-list table th, .lwp-ticket-list table td {
       padding: 1em; }
-    /* line 250, ../sass/_lwp.scss */
     .lwp-ticket-list table thead th {
       border-bottom: 3px double #ddd;
       color: #666; }
 
-/* line 1, ../sass/_sidebar.scss */
 .desc-box {
   /* グリッドシステム */
   /* 投稿リスト */
@@ -2764,13 +2270,10 @@ body > a {
   /* ニュースレター */
   /* クオート */
   /* 電子書籍ウィジェット */ }
-  /* line 4, ../sass/_sidebar.scss */
   .desc-box .grid_1, .desc-box .grid_2 {
     padding: 30px 0; }
-  /* line 8, ../sass/_sidebar.scss */
   .desc-box .no_shadow {
     border: none; }
-  /* line 14, ../sass/_sidebar.scss */
   .desc-box .grid_2 h2, .desc-box .grid_2 h3, .desc-box .grid_2 caption {
     line-height: 30px;
     height: 30px;
@@ -2779,57 +2282,43 @@ body > a {
     color: #252e34;
     text-shadow: 1px 1px 2px #fff;
     margin-bottom: 0.5em; }
-    /* line 22, ../sass/_sidebar.scss */
     .desc-box .grid_2 h2 i, .desc-box .grid_2 h3 i, .desc-box .grid_2 caption i {
       margin-right: 0.5em; }
-  /* line 26, ../sass/_sidebar.scss */
   .desc-box .grid_2 h4 {
     font-size: 1.4em; }
-  /* line 34, ../sass/_sidebar.scss */
   .desc-box .grid_2 p {
     margin: 10px 0;
     line-height: 1.4;
     font-size: 1.4em; }
-  /* line 39, ../sass/_sidebar.scss */
   .desc-box .grid_2 .st-tag-cloud {
     line-height: 1.1;
     margin-top: 10px; }
-    /* line 43, ../sass/_sidebar.scss */
     .desc-box .grid_2 .st-tag-cloud a:link, .desc-box .grid_2 .st-tag-cloud a:visited {
       text-decoration: none; }
-    /* line 46, ../sass/_sidebar.scss */
     .desc-box .grid_2 .st-tag-cloud a:hover {
       text-decoration: none;
       color: #ED8600 !important; }
-    /* line 50, ../sass/_sidebar.scss */
     .desc-box .grid_2 .st-tag-cloud a:active {
       text-decoration: none;
       color: #ff4d44 !important; }
-  /* line 56, ../sass/_sidebar.scss */
   .desc-box .grid_2 caption {
     margin-bottom: 10px; }
-  /* line 61, ../sass/_sidebar.scss */
   .desc-box table {
     width: 100%;
     border-collapse: collapse; }
-    /* line 64, ../sass/_sidebar.scss */
     .desc-box table caption {
       padding-top: 20px;
       margin-top: 0;
       border-top: 1px solid #fff; }
-    /* line 69, ../sass/_sidebar.scss */
     .desc-box table th, .desc-box table td {
       padding: 5px 10px;
       font-size: 1.2em; }
-    /* line 74, ../sass/_sidebar.scss */
     .desc-box table tr:nth-child(2n) th, .desc-box table tr:nth-child(2n) td {
       background-color: #fcfcfc; }
-    /* line 78, ../sass/_sidebar.scss */
     .desc-box table th {
       font-weight: bold;
       text-align: right;
       border-right: 1px solid #ddd; }
-  /* line 91, ../sass/_sidebar.scss */
   .desc-box ol.post-list li,
   .desc-box ol.wppp_list li {
     padding-top: 1em;
@@ -2838,7 +2327,6 @@ body > a {
     -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1); }
-    /* line 96, ../sass/_sidebar.scss */
     .desc-box ol.post-list li:first-child,
     .desc-box ol.wppp_list li:first-child {
       border-top: none;
@@ -2846,18 +2334,15 @@ body > a {
       -webkit-box-shadow: none;
       box-shadow: none;
       margin-top: 0; }
-    /* line 101, ../sass/_sidebar.scss */
     .desc-box ol.post-list li .post-title,
     .desc-box ol.wppp_list li .post-title {
       text-align: left; }
-    /* line 104, ../sass/_sidebar.scss */
     .desc-box ol.post-list li img,
     .desc-box ol.wppp_list li img {
       float: left;
       margin: 0 0.5em 0.5em 0;
       max-width: 80px;
       height: auto; }
-    /* line 110, ../sass/_sidebar.scss */
     .desc-box ol.post-list li .date,
     .desc-box ol.wppp_list li .date {
       clear: right;
@@ -2865,13 +2350,11 @@ body > a {
       text-align: right;
       font-size: 1.1em;
       padding-top: 0.5em; }
-    /* line 117, ../sass/_sidebar.scss */
     .desc-box ol.post-list li .desc,
     .desc-box ol.wppp_list li .desc {
       clear: left;
       font-size: 0.9em;
       line-height: 1.2; }
-    /* line 122, ../sass/_sidebar.scss */
     .desc-box ol.post-list li .score,
     .desc-box ol.wppp_list li .score {
       font-family: Georgia, "Times New Roman", Times, "KleePro-M", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", serif;
@@ -2884,45 +2367,35 @@ body > a {
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       border-radius: 3px; }
-  /* line 135, ../sass/_sidebar.scss */
   .desc-box ol.wppp_list li {
     overflow: hidden;
     *zoom: 1;
     font-size: 1em; }
-    /* line 138, ../sass/_sidebar.scss */
     .desc-box ol.wppp_list li a {
       font-size: 1.6em; }
-  /* line 145, ../sass/_sidebar.scss */
   .desc-box .widget_sp_image-image-link img.aligncenter {
     display: block;
     margin: 10px auto; }
-  /* line 150, ../sass/_sidebar.scss */
   .desc-box .widget_sp_image-description {
     font-size: 1.1em; }
-  /* line 153, ../sass/_sidebar.scss */
   .desc-box .textwidget {
     margin: 1em 0 2em;
     line-height: 1.4;
     font-size: 1.4em;
     text-shadow: 1px 1px 2px #fff; }
-    /* line 158, ../sass/_sidebar.scss */
     .desc-box .textwidget abbr {
       font-style: italic;
       font-weight: bold;
       border-bottom: 1px dashed #888; }
-  /* line 165, ../sass/_sidebar.scss */
   .desc-box #alo_easymail_widget_feedback {
     font-size: 1.1em;
     font-weight: bold;
     margin: 0.5em 1em;
     color: grey; }
-    /* line 170, ../sass/_sidebar.scss */
     .desc-box #alo_easymail_widget_feedback.alo_easymail_widget_ok {
       color: green; }
-  /* line 174, ../sass/_sidebar.scss */
   .desc-box #alo_em_widget_loading {
     margin: 0.5em 1em; }
-  /* line 178, ../sass/_sidebar.scss */
   .desc-box #alo_easymail_widget_form input[type=text] {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -2930,19 +2403,16 @@ body > a {
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset;
     box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 2px, rgba(0, 0, 0, 0.2) 1px 1px 2px inset; }
-  /* line 182, ../sass/_sidebar.scss */
   .desc-box #alo_easymail_widget_form .alo_easymail_preform_msg {
     font-size: 1.4em;
     margin: 0.5em 0;
     padding-bottom: 0.5em;
     border-bottom: 1px dotted #ddd;
     color: #000; }
-  /* line 189, ../sass/_sidebar.scss */
   .desc-box #alo_easymail_widget_form p.message, .desc-box #alo_easymail_widget_form .entry .lwp-invitation, .entry .desc-box #alo_easymail_widget_form .lwp-invitation {
     padding: 0.5em;
     padding-left: 42px;
     font-size: 1.2em; }
-  /* line 197, ../sass/_sidebar.scss */
   .desc-box .quotescollection_randomquote p:first-child {
     position: relative;
     background: #fff;
@@ -2950,7 +2420,6 @@ body > a {
     padding: 0.5em;
     margin-bottom: 20px;
     font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatissePro-L", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
-    /* line 204, ../sass/_sidebar.scss */
     .desc-box .quotescollection_randomquote p:first-child:after, .desc-box .quotescollection_randomquote p:first-child:before {
       top: 100%;
       border: solid transparent;
@@ -2959,48 +2428,39 @@ body > a {
       width: 0;
       position: absolute;
       pointer-events: none; }
-    /* line 213, ../sass/_sidebar.scss */
     .desc-box .quotescollection_randomquote p:first-child:after {
       border-color: rgba(255, 255, 255, 0);
       border-top-color: #ffffff;
       border-width: 14px;
       left: 50%;
       margin-left: -14px; }
-    /* line 220, ../sass/_sidebar.scss */
     .desc-box .quotescollection_randomquote p:first-child:before {
       border-color: rgba(204, 204, 204, 0);
       border-top-color: #cccccc;
       border-width: 15px;
       left: 50%;
       margin-left: -15px; }
-  /* line 230, ../sass/_sidebar.scss */
   .desc-box .quotescollection_randomquote cite {
     font-size: 0.9em;
     margin-top: 0.5em; }
-  /* line 236, ../sass/_sidebar.scss */
   .desc-box .widgets-ebook-content {
     border-top: 1px dashed #ddd;
     padding-top: 10px;
     margin-top: 10px;
     position: relative; }
-    /* line 241, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content:first-child {
       border-top: none; }
-    /* line 244, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content .attachment-pinky-cover {
       float: left;
       margin-right: 10px;
       -moz-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.5);
       -webkit-box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.5);
       box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.5); }
-    /* line 249, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content h4 {
       position: relative;
       padding-right: 3em; }
-      /* line 252, ../sass/_sidebar.scss */
       .desc-box .widgets-ebook-content h4 a {
         text-decoration: none; }
-      /* line 255, ../sass/_sidebar.scss */
       .desc-box .widgets-ebook-content h4 .price {
         position: absolute;
         right: 0;
@@ -3014,24 +2474,19 @@ body > a {
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         border-radius: 3px; }
-    /* line 268, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content .excerpt {
       font-size: 1.2em;
       text-shadow: 1px 1px 2px #fff;
       margin: 0.75em; }
-    /* line 273, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content .sale-icon {
       position: absolute;
       left: 60px;
       top: -1px; }
-    /* line 278, ../sass/_sidebar.scss */
     .desc-box .widgets-ebook-content a.button, .desc-box .widgets-ebook-content .button-download {
       font-size: 0.8em; }
 
-/* line 285, ../sass/_sidebar.scss */
 .widget_categories > ul {
   font-size: 1.4em; }
-  /* line 288, ../sass/_sidebar.scss */
   .widget_categories > ul li a {
     display: block;
     padding: 1em;
@@ -3039,24 +2494,18 @@ body > a {
     border-left-width: 2px;
     border-right-width: 2px;
     background: #f7f7f7; }
-    /* line 295, ../sass/_sidebar.scss */
     .widget_categories > ul li a:link, .widget_categories > ul li a:visited {
       text-decoration: none; }
-  /* line 299, ../sass/_sidebar.scss */
   .widget_categories > ul li li {
     font-size: 0.85em; }
-    /* line 301, ../sass/_sidebar.scss */
     .widget_categories > ul li li a {
       padding-left: 2em; }
-      /* line 303, ../sass/_sidebar.scss */
       .widget_categories > ul li li a:before {
         content: '\f138';
         font-family: 'FontAwesome';
         margin-right: 0.5em; }
-    /* line 309, ../sass/_sidebar.scss */
     .widget_categories > ul li li li a {
       padding-left: 3em; }
-      /* line 311, ../sass/_sidebar.scss */
       .widget_categories > ul li li li a:before {
         content: '\f054'; }
 
@@ -3064,59 +2513,46 @@ body > a {
  * レイアウトパーツ
  */
 /*全体レイアウト*/
-/* line 5, ../sass/_layout.scss */
 .margin {
   max-width: 960px;
   margin: 0 auto; }
 
-/* line 9, ../sass/_layout.scss */
 #main {
   margin: 0 20px; }
 
-/* line 13, ../sass/_layout.scss */
 #sidebar {
   width: 330px;
   float: right; }
 
-/* line 18, ../sass/_layout.scss */
 .home .margin {
   max-width: 1280px; }
 
-/* line 23, ../sass/_layout.scss */
 #sidebar .grid_2 {
   width: auto;
   float: none;
   margin-right: 5px;
   margin-left: 25px;
   border-bottom: 3px double #ddd; }
-  /* line 29, ../sass/_layout.scss */
   #sidebar .grid_2:first-child {
     border-top: none; }
-  /* line 32, ../sass/_layout.scss */
   #sidebar .grid_2:last-child {
     border-bottom: none; }
 
-/* line 37, ../sass/_layout.scss */
 .grid_4 {
   float: left;
   width: 280px;
   margin-right: 40px; }
-  /* line 41, ../sass/_layout.scss */
   .grid_4.last {
     margin-right: 20px; }
-  /* line 44, ../sass/_layout.scss */
   .grid_4.first {
     margin-left: 20px; }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 52, ../sass/_layout.scss */
   footer .grid_4 {
     width: 42%;
     margin: 0 4%; }
-    /* line 55, ../sass/_layout.scss */
     footer .grid_4.first {
       margin-left: 4%; }
-    /* line 58, ../sass/_layout.scss */
     footer .grid_4.last {
       clear: both;
       width: auto;
@@ -3124,51 +2560,39 @@ body > a {
       margin: 0;
       padding: 26px; } }
 @media screen and (min-width: 1280px) {
-  /* line 79, ../sass/_layout.scss */
   div.archive {
     padding-left: 30px; }
-    /* line 81, ../sass/_layout.scss */
     div.archive .archive-box {
       margin-right: 30px;
       margin-bottom: 30px; } }
 @media screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 95, ../sass/_layout.scss */
   #main {
     margin: 0 40px; }
 
-  /* line 99, ../sass/_layout.scss */
   .no-if-touch {
     display: none; }
 
-  /* line 102, ../sass/_layout.scss */
   .grid_4 {
     width: 230px;
     margin-right: 25px; }
-    /* line 105, ../sass/_layout.scss */
     .grid_4.last {
       margin-right: 10px; }
-    /* line 108, ../sass/_layout.scss */
     .grid_4.first {
       margin-left: 10px; }
 
-  /* line 115, ../sass/_layout.scss */
   header .title-meta {
     padding-left: 0;
     padding-right: 0; }
 
-  /* line 120, ../sass/_layout.scss */
   div.archive {
     padding-left: 15px; }
-    /* line 122, ../sass/_layout.scss */
     div.archive .archive-box {
       margin-right: 15px;
       margin-bottom: 15px; } }
 @media screen and (max-width: 767px) {
-  /* line 135, ../sass/_layout.scss */
   #main {
     margin: 0 10px; }
 
-  /* line 139, ../sass/_layout.scss */
   .grid_1,
   .grid_2,
   .grid_4 {
@@ -3176,14 +2600,12 @@ body > a {
     margin-right: 0;
     float: none; }
 
-  /* line 2, ../sass/_smartphone.scss */
   .margin,
   #respond {
     width: auto;
     padding-right: 0;
     padding-left: 0; }
 
-  /* line 8, ../sass/_smartphone.scss */
   .entry {
     width: auto;
     padding-right: 10px;
@@ -3191,11 +2613,9 @@ body > a {
     overflow: hidden;
     font-size: 1.4em;
     line-height: 1.6; }
-    /* line 15, ../sass/_smartphone.scss */
     .entry .syntaxhighlighter {
       width: 100% !important;
       margin-left: 0 !important; }
-    /* line 19, ../sass/_smartphone.scss */
     .entry .alignright,
     .entry .alignleft,
     .entry .aligncenter,
@@ -3205,39 +2625,31 @@ body > a {
       display: block;
       float: none;
       margin: 0 auto 1em; }
-    /* line 29, ../sass/_smartphone.scss */
     .entry img {
       max-width: 100%;
       height: auto; }
-      /* line 32, ../sass/_smartphone.scss */
       .entry img.size-full {
         max-width: 100%;
         height: auto; }
-    /* line 37, ../sass/_smartphone.scss */
     .entry .wp-caption {
       max-width: 300px; }
-    /* line 40, ../sass/_smartphone.scss */
     .entry iframe {
       max-width: 100%;
       height: auto; }
 
   /* ナビゲーションバー */
-  /* line 46, ../sass/_smartphone.scss */
   #wpadminbar {
     position: absolute;
     position: fixed;
     top: 0; }
-    /* line 50, ../sass/_smartphone.scss */
     #wpadminbar #wp-admin-bar-top-secondary {
       position: absolute;
       right: 0;
       width: 50%; }
 
   /* ナビゲーション */
-  /* line 57, ../sass/_smartphone.scss */
   #navi {
     /* ぱんくず */ }
-    /* line 59, ../sass/_smartphone.scss */
     #navi .breadcrumb {
       font-size: 0.8em;
       padding-left: 1em;
@@ -3250,218 +2662,167 @@ body > a {
       -ms-text-overflow: ellipsis;
       -o-text-overflow: ellipsis;
       text-overflow: ellipsis; }
-      /* line 67, ../sass/_smartphone.scss */
       #navi .breadcrumb i {
         font-size: 12px; }
-    /* line 71, ../sass/_smartphone.scss */
     #navi #sorter p {
       height: auto; }
 
-  /* line 76, ../sass/_smartphone.scss */
   #to-top a {
     margin-right: 10px; }
 
   /* トップページヘッダー */
   /* ヘッダー */
-  /* line 84, ../sass/_smartphone.scss */
   .header .title {
     padding: 30px 10px 30px;
     font-size: 3em; }
-  /* line 88, ../sass/_smartphone.scss */
   .header .title-meta {
     padding-right: 0;
     padding-left: 0; }
-    /* line 91, ../sass/_smartphone.scss */
     .header .title-meta .google {
       width: auto;
       float: none;
       margin-bottom: 20px;
       text-align: center; }
-    /* line 97, ../sass/_smartphone.scss */
     .header .title-meta table {
       float: none;
       width: 100%; }
-  /* line 102, ../sass/_smartphone.scss */
   .header .calendar {
     height: 60px;
     width: 80px;
     padding-top: 20px; }
-    /* line 106, ../sass/_smartphone.scss */
     .header .calendar .date {
       padding-top: 0.5em;
       font-size: 1em; }
-    /* line 110, ../sass/_smartphone.scss */
     .header .calendar .year {
       font-size: 1.2em; }
-  /* line 114, ../sass/_smartphone.scss */
   .header .excerpt {
     padding: 10px 10px 20px;
     width: auto;
     font-size: 1.4em; }
 
-  /* line 121, ../sass/_smartphone.scss */
   .ebook-detail img.cover {
     max-width: 120px;
     height: auto; }
 
-  /* line 129, ../sass/_smartphone.scss */
   .file-list td .file-meta small {
     display: block; }
-  /* line 134, ../sass/_smartphone.scss */
   .file-list td .desc p {
     font-size: 0.85em; }
-  /* line 138, ../sass/_smartphone.scss */
   .file-list td:first-child {
     display: none; }
-  /* line 141, ../sass/_smartphone.scss */
   .file-list td.center img {
     width: 30px;
     height: 30px; }
-  /* line 145, ../sass/_smartphone.scss */
   .file-list td.width150 {
     width: 100px;
     padding-left: 0;
     padding-right: 0; }
-    /* line 149, ../sass/_smartphone.scss */
     .file-list td.width150 a.button, .file-list td.width150 .button-download {
       padding: 3px 5px;
       font-size: 0.85em; }
-      /* line 152, ../sass/_smartphone.scss */
       .file-list td.width150 a.button small, .file-list td.width150 .button-download small {
         font-size: 1em; }
 
-  /* line 159, ../sass/_smartphone.scss */
   .google-share {
     width: 100%;
     paddign: 10px 0;
     background-image: none !important; }
-    /* line 163, ../sass/_smartphone.scss */
     .google-share .div_3 {
       float: none;
       width: 100%;
       text-align: center;
       margin: 10px 0; }
-      /* line 168, ../sass/_smartphone.scss */
       .google-share .div_3.share {
         width: 100%; }
-        /* line 170, ../sass/_smartphone.scss */
         .google-share .div_3.share table.like {
           width: 100%; }
 
   /* Masonry */
-  /* line 177, ../sass/_smartphone.scss */
   .desc-box {
     padding: 1em 0; }
-    /* line 180, ../sass/_smartphone.scss */
     .desc-box .grid_1, .desc-box .grid_2 {
       float: none;
       width: auto;
       margin-right: 0; }
-    /* line 186, ../sass/_smartphone.scss */
     .desc-box .title_box h1 {
       margin: 0 10px; }
-      /* line 188, ../sass/_smartphone.scss */
       .desc-box .title_box h1 img {
         max-width: 100%;
         height: auto; }
-    /* line 193, ../sass/_smartphone.scss */
     .desc-box .title_box .desc {
       margin-left: 0;
       font-size: 1.1em; }
 
-  /* line 200, ../sass/_smartphone.scss */
   div.archive .archive-box {
     width: auto;
     float: none; }
-    /* line 203, ../sass/_smartphone.scss */
     div.archive .archive-box .post-type {
       width: 100%; }
-    /* line 207, ../sass/_smartphone.scss */
     div.archive .archive-box.google p {
       text-align: center; }
 
   /* テーブル */
-  /* line 215, ../sass/_smartphone.scss */
   table.form-table input[type="text"],
   table.form-table input[type="password"],
   table.form-table input[type="email"],
   table.form-table input[type="search"],
   table.form-table textarea {
     width: 150px; }
-  /* line 222, ../sass/_smartphone.scss */
   table.form-table select {
     max-width: 200px; }
 
   /* フッター */
-  /* line 228, ../sass/_smartphone.scss */
   .grid_4 {
     width: auto;
     float: none;
     margin: 0 20px; }
-    /* line 232, ../sass/_smartphone.scss */
     .grid_4.last {
       margin-right: 20px; }
-    /* line 235, ../sass/_smartphone.scss */
     .grid_4.first {
       margin-left: 20px; }
-    /* line 238, ../sass/_smartphone.scss */
     .grid_4 h4 {
       margin-top: 2em; }
 
-  /* line 243, ../sass/_smartphone.scss */
   #copy-note p {
     width: auto;
     float: none; }
-    /* line 246, ../sass/_smartphone.scss */
     #copy-note p.center {
       width: 100%;
       padding-top: 1em;
       clear: both; }
 
   /* 領収書ページ */
-  /* line 254, ../sass/_smartphone.scss */
   #lwp-invoice {
     width: auto;
     padding: 0 10px; }
-    /* line 257, ../sass/_smartphone.scss */
     #lwp-invoice .header {
       padding-left: 0;
       padding-right: 0; }
-      /* line 260, ../sass/_smartphone.scss */
       #lwp-invoice .header h1 {
         text-align: center; }
-        /* line 262, ../sass/_smartphone.scss */
         #lwp-invoice .header h1 img {
           width: 240px;
           height: 25px; }
-        /* line 266, ../sass/_smartphone.scss */
         #lwp-invoice .header h1 span {
           text-align: left; }
-    /* line 271, ../sass/_smartphone.scss */
     #lwp-invoice .main {
       overflow: auto; }
-      /* line 272, ../sass/_smartphone.scss */
       #lwp-invoice .main p.indicator {
         background-size: 110px 10px;
         padding-bottom: 14px; }
-    /* line 283, ../sass/_smartphone.scss */
     #lwp-invoice.lwp-payment-info tr th {
       display: block;
       border-bottom: none; }
-    /* line 287, ../sass/_smartphone.scss */
     #lwp-invoice.lwp-payment-info tr td {
       overflow: hidden;
       *zoom: 1;
       display: block; }
-    /* line 294, ../sass/_smartphone.scss */
     #lwp-invoice .lwp-ticket-table thead {
       display: none; }
-    /* line 298, ../sass/_smartphone.scss */
     #lwp-invoice .lwp-ticket-table tbody th {
       display: block;
       white-space: normal;
       border-bottom: none; }
-    /* line 303, ../sass/_smartphone.scss */
     #lwp-invoice .lwp-ticket-table tbody td {
       display: block;
       font-size: 0.85em;
@@ -3469,42 +2830,33 @@ body > a {
       padding-right: 2px;
       padding-left: 2px;
       border-bottom: none; }
-      /* line 310, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(2):before {
         content: '購入日: '; }
-      /* line 313, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(3):before {
         content: '価格: '; }
-      /* line 316, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(4):before {
         content: '購入枚数: '; }
-      /* line 319, ../sass/_smartphone.scss */
       #lwp-invoice .lwp-ticket-table tbody td:nth-child(5) {
         border-bottom: 1px dotted #ddd; }
-        /* line 321, ../sass/_smartphone.scss */
         #lwp-invoice .lwp-ticket-table tbody td:nth-child(5):before {
           content: '使用済: '; } }
 /****************************************
  * 3.トップページ設定
  ****************************************/
 /* ヘッダー */
-/* line 10, ../sass/_front_page.scss */
 .title_box {
   position: relative;
   min-height: 256px;
   margin-bottom: 20px; }
-  /* line 14, ../sass/_front_page.scss */
   .title_box h1 {
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -128px;
     margin-top: -128px; }
-  /* line 21, ../sass/_front_page.scss */
   .title_box .header-image {
     width: 100%;
     height: auto; }
-  /* line 25, ../sass/_front_page.scss */
   .title_box .photo-credit {
     position: absolute;
     font-size: 1.2em;
@@ -3512,93 +2864,72 @@ body > a {
     bottom: 1em;
     color: #fcfcfc;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
-    /* line 33, ../sass/_front_page.scss */
     .title_box .photo-credit a:link, .title_box .photo-credit a:visited {
       color: #fcfcfc;
       text-decoration: underline; }
-    /* line 38, ../sass/_front_page.scss */
     .title_box .photo-credit a:hover, .title_box .photo-credit a:active {
       color: #ff0000;
       text-decoration: none; }
 
 @media screen and (max-width: 767px) {
-  /* line 50, ../sass/_front_page.scss */
   .title_box {
     min-height: 128px; }
-    /* line 52, ../sass/_front_page.scss */
     .title_box h1 {
       margin-left: -64px;
       margin-top: -64px; }
-      /* line 55, ../sass/_front_page.scss */
       .title_box h1 img {
         width: 128px;
         height: 128px; }
-    /* line 60, ../sass/_front_page.scss */
     .title_box .photo-credit {
       font-size: 1em; } }
 /* メインエリア */
-/* line 71, ../sass/_front_page.scss */
 .desc-box-front {
   padding: 0 0 2em;
   position: relative; }
-  /* line 76, ../sass/_front_page.scss */
   .desc-box-front .grid_2,
   .desc-box-front .grid_1 {
     float: left; }
-  /* line 80, ../sass/_front_page.scss */
   .desc-box-front .post-list h3 {
     height: auto; }
 
-/* line 97, ../sass/_front_page.scss */
 .desc-box-front {
   margin-left: 30px; }
-  /* line 87, ../sass/_front_page.scss */
   .desc-box-front .grid_2 {
     width: 280px;
     margin-right: 30px; }
-  /* line 91, ../sass/_front_page.scss */
   .desc-box-front .grid_1 {
     width: 590px;
     margin-right: 30px; }
 
 @media screen and (min-width: 1280px) {
-  /* line 102, ../sass/_front_page.scss */
   .desc-box-front {
     margin-left: 24px; }
-    /* line 87, ../sass/_front_page.scss */
     .desc-box-front .grid_2 {
       width: 280px;
       margin-right: 24px; }
-    /* line 91, ../sass/_front_page.scss */
     .desc-box-front .grid_1 {
       width: 584px;
       margin-right: 24px; } }
 @media screen and (min-width: 768px) and (max-width: 960px) {
-  /* line 108, ../sass/_front_page.scss */
   .desc-box-front {
     margin-left: 36px; }
-    /* line 87, ../sass/_front_page.scss */
     .desc-box-front .grid_2 {
       width: 330px;
       margin-right: 36px; }
-    /* line 91, ../sass/_front_page.scss */
     .desc-box-front .grid_1 {
       width: 696px;
       margin-right: 36px; } }
 @media screen and (max-width: 767px) {
-  /* line 114, ../sass/_front_page.scss */
   .desc-box-front {
     padding: 0 10px;
     width: auto;
     margin-right: 0;
     margin-left: 0; }
-    /* line 119, ../sass/_front_page.scss */
     .desc-box-front .grid_1,
     .desc-box-front .grid_2 {
       float: none;
       width: auto;
       margin-right: 0; } }
-/* line 136, ../sass/_front_page.scss */
 .desc-box-front .main-content h2 {
   line-height: 30px;
   height: 30px;
@@ -3608,27 +2939,22 @@ body > a {
   color: #000;
   margin-bottom: 20px;
   color: #333F46; }
-/* line 146, ../sass/_front_page.scss */
 .desc-box-front .main-content .desc {
   color: #333F46;
   font-size: 2em;
   line-height: 1.5;
   font-family: Garamond, "Baskerville", "Times New Roman", Times, "MatissePro-L", "游明朝体 ミディアム", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "IPA P明朝", "細明朝体", "MS P明朝", "ヒラギノ明朝体3", serif; }
-/* line 155, ../sass/_front_page.scss */
 .desc-box-front .grid_2 {
   border-bottom: 3px double #ddd; }
-  /* line 157, ../sass/_front_page.scss */
   .desc-box-front .grid_2 .about {
     padding: 20px;
     background: #f7f7f7; }
-    /* line 160, ../sass/_front_page.scss */
     .desc-box-front .grid_2 .about p {
       margin-bottom: 0;
       padding-bottom: 20px;
       border-bottom: 1px solid #888; }
 
 @media screen and (max-width: 767px) {
-  /* line 173, ../sass/_front_page.scss */
   .desc-box-front .main-content h2 {
     line-height: 20px;
     height: 20px;
@@ -3638,7 +2964,6 @@ body > a {
     color: #000;
     margin-bottom: 10px;
     color: #333F46; }
-  /* line 183, ../sass/_front_page.scss */
   .desc-box-front .main-content .desc {
     color: #333F46;
     font-size: 1.4em;
@@ -3648,7 +2973,6 @@ body > a {
 /****************************************
  * 8.div.tmkm-amazon-view
  ****************************************/
-/* line 12, ../sass/_affiliate.scss */
 div.tmkm-amazon-view {
   overflow: hidden;
   *zoom: 1;
@@ -3661,20 +2985,17 @@ div.tmkm-amazon-view {
   font-family: Helvetica, Arial, sans-serif;
   background-color: #fff;
   text-shadow: 1px 1px 2px #fff; }
-  /* line 24, ../sass/_affiliate.scss */
   div.tmkm-amazon-view .tmkm-amazon-title {
     font-size: 1.4em;
     line-height: 1.2;
     font-weight: bold;
     margin-bottom: 0.5em; }
-  /* line 30, ../sass/_affiliate.scss */
   div.tmkm-amazon-view .tmkm-amazon-img {
     float: right;
     margin: 0 0 1em 1em;
     padding: 0;
     width: 200px;
     text-align: center; }
-    /* line 36, ../sass/_affiliate.scss */
     div.tmkm-amazon-view .tmkm-amazon-img img {
       -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -3682,23 +3003,18 @@ div.tmkm-amazon-view {
       max-width: 200px;
       width: auto;
       height: auto; }
-  /* line 43, ../sass/_affiliate.scss */
   div.tmkm-amazon-view p {
     margin: 0.5em 0; }
-    /* line 45, ../sass/_affiliate.scss */
     div.tmkm-amazon-view p em {
       color: #000;
       font-style: normal;
       font-weight: bold; }
-    /* line 50, ../sass/_affiliate.scss */
     div.tmkm-amazon-view p.vendor {
       clear: both;
       font-size: 0.85em;
       text-align: right; }
-      /* line 54, ../sass/_affiliate.scss */
       div.tmkm-amazon-view p.vendor a {
         color: #999; }
-    /* line 58, ../sass/_affiliate.scss */
     div.tmkm-amazon-view p.additional-description {
       overflow: hidden;
       *zoom: 1;
@@ -3710,7 +3026,6 @@ div.tmkm-amazon-view {
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       border-radius: 3px; }
-      /* line 66, ../sass/_affiliate.scss */
       div.tmkm-amazon-view p.additional-description:before {
         content: '!';
         font-family: Georgia, serif;
@@ -3721,14 +3036,11 @@ div.tmkm-amazon-view {
         height: 1em;
         float: left;
         margin: 0 0.5em 0.5em 0; }
-    /* line 78, ../sass/_affiliate.scss */
     div.tmkm-amazon-view p.review {
       clear: both; }
-      /* line 80, ../sass/_affiliate.scss */
       div.tmkm-amazon-view p.review iframe {
         width: 100%;
         height: 180px; }
-    /* line 85, ../sass/_affiliate.scss */
     div.tmkm-amazon-view p span.label {
       display: inline-block;
       vertical-align: middle;
@@ -3736,36 +3048,30 @@ div.tmkm-amazon-view {
       *zoom: 1;
       *display: inline;
       width: 8em; }
-    /* line 89, ../sass/_affiliate.scss */
     div.tmkm-amazon-view p.price em {
       color: #ffb645; }
 
 @media screen and (max-width: 560px) {
-  /* line 97, ../sass/_affiliate.scss */
   div.tmkm-amazon-view .tmkm-amazon-img {
     float: none;
     margin-left: 0;
     width: auto;
     height: auto; }
-    /* line 102, ../sass/_affiliate.scss */
     div.tmkm-amazon-view .tmkm-amazon-img img {
       max-width: 120px;
       width: auto;
       height: auto; }
-  /* line 111, ../sass/_affiliate.scss */
   div.tmkm-amazon-view p.additional-description {
     margin-right: 0; } }
 /*
  * Notice: Firefox対応のため、インラインスタイルなどを書き出し
  * @see assets.php
  */
-/* line 8, ../sass/_netabare.scss */
 .netabare {
   position: relative;
   -webkit-filter: blur(7px);
   filter: blur(7px); }
 
-/* line 13, ../sass/_netabare.scss */
 a.netabare-opener {
   position: relative;
   left: 50%;
@@ -3777,18 +3083,15 @@ a.netabare-opener {
   -webkit-box-shadow: 1px 1px 2px 5px rgba(255, 255, 255, 0.8);
   box-shadow: 1px 1px 2px 5px rgba(255, 255, 255, 0.8); }
 
-/* line 23, ../sass/_netabare.scss */
 .netabare-inline {
   color: rgba(255, 255, 255, 0);
   text-shadow: 0 0 1em #000;
   zoom: 1;
   cursor: help; }
 
-/* line 31, ../sass/_netabare.scss */
 .non-ms-filter .netabare {
   background: #888;
   color: #888; }
-/* line 35, ../sass/_netabare.scss */
 .non-ms-filter .netabare-inline {
   color: #888;
   background: #888;
@@ -3798,7 +3101,6 @@ a.netabare-opener {
  * 5.5.電子書籍用設定
  ****************************************/
 /*サイドバー共通*/
-/* line 33, ../sass/core.scss */
 #right .rectangle {
   margin: 0 0 20px;
   background: #eee;
@@ -3807,16 +3109,13 @@ a.netabare-opener {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px; }
 
-/* line 41, ../sass/core.scss */
 #right .green {
   color: #ABCD03; }
 
-/* line 44, ../sass/core.scss */
 #right .orange {
   color: #FA8404; }
 
 /*一覧ページサイドバー*/
-/* line 49, ../sass/core.scss */
 #right dl.about-ebook dt {
   font-size: 22px;
   font-weight: bold;
@@ -3824,27 +3123,23 @@ a.netabare-opener {
   margin-bottom: 5px;
   border-bottom: 1px dotted #ccc; }
 
-/* line 56, ../sass/core.scss */
 #right dl.about-ebook dt span {
   display: block;
   font-size: 14px;
   font-weight: normal;
   font-style: italic; }
 
-/* line 62, ../sass/core.scss */
 #right dl.about-ebook dd {
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 20px;
   color: #666; }
 
-/* line 68, ../sass/core.scss */
 #right dl.about-ebook dd small {
   margin-top: 10px;
   display: block;
   text-align: right; }
 
-/* line 73, ../sass/core.scss */
 #right dl.about-ebook dd small a {
   padding: 3px 5px;
   font-size: 10px;
@@ -3855,30 +3150,25 @@ a.netabare-opener {
   -moz-border-radius: 3px; }
 
 /*サイドバー購入ページ*/
-/* line 84, ../sass/core.scss */
 #right .conversion,
 #right .price {
   margin: 20px 0; }
 
-/* line 88, ../sass/core.scss */
 #right .price {
   padding-bottom: 20px;
   border-bottom: 1px dotted #ccc;
   position: relative; }
 
-/* line 93, ../sass/core.scss */
 #right .how-to-buy {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px dotted #ccc; }
 
 /*セール中*/
-/* line 99, ../sass/core.scss */
 #right .price del {
   color: #999;
   font-size: 18px; }
 
-/* line 103, ../sass/core.scss */
 #right .price .discount {
   font-size: 14px;
   color: #fff;
@@ -3886,26 +3176,21 @@ a.netabare-opener {
   padding: 5px;
   border-radius: 10px; }
 
-/* line 110, ../sass/core.scss */
 #right .price .discount span {
   font-size: 18px;
   font-weight: bold; }
 
-/* line 114, ../sass/core.scss */
 #right .price .onsale {
   position: absolute;
   right: 0;
   top: 0; }
 
-/* line 119, ../sass/core.scss */
 #right .price .limit {
   font-size: 12px; }
 
-/* line 122, ../sass/core.scss */
 #right .price .limit strong {
   font-size: 14px; }
 
-/* line 125, ../sass/core.scss */
 #sale-timer {
   background: #fff url(img/ebook_clock.png) 10px center no-repeat;
   height: 50px;
@@ -3918,21 +3203,17 @@ a.netabare-opener {
   border-radius: 15px;
   font-size: 27px; }
 
-/* line 137, ../sass/core.scss */
 #sale-timer small {
   font-size: 14px; }
 
-/* line 141, ../sass/core.scss */
 #right .thank-you {
   font-size: 14px; }
 
-/* line 144, ../sass/core.scss */
 #right .price h3,
 #right .conversion h3 {
   font-size: 22px;
   font-weight: bold; }
 
-/* line 149, ../sass/core.scss */
 #right .price h3 span,
 #right .conversion h3 span {
   font-size: 11px;
@@ -3940,25 +3221,21 @@ a.netabare-opener {
   font-style: italic;
   display: block; }
 
-/* line 156, ../sass/core.scss */
 #right .price .real-price {
   font-size: 34px; }
 
-/* line 159, ../sass/core.scss */
 #right .conversion h4 {
   font-size: 14px;
   font-weight: bold;
   margin: 10px 0; }
 
 /*立ち読みエリア*/
-/* line 167, ../sass/core.scss */
 .ebook-more {
   position: relative;
   max-height: 200px;
   overflow: hidden;
   font-size: 0.7em; }
 
-/* line 173, ../sass/core.scss */
 .ebook-more-cover {
   position: absolute;
   height: 198px;
@@ -3971,7 +3248,6 @@ a.netabare-opener {
   border-right: none;
   opacity: 0.6; }
 
-/* line 185, ../sass/core.scss */
 .ebook-read-more {
   position: absolute;
   display: block;
@@ -3980,20 +3256,16 @@ a.netabare-opener {
   margin: -20px 0 0 !important;
   font-size: 2em; }
 
-/* line 193, ../sass/core.scss */
 .ebook-more-body {
   padding: 1em 2em; }
 
-/* line 196, ../sass/core.scss */
 .fancybox-inner .ebook-more-body {
   font-size: 2em; }
-  /* line 198, ../sass/core.scss */
   .fancybox-inner .ebook-more-body p {
     text-indent: 1em;
     line-height: 2; }
 
 /* スマートフォン用立ち読み */
-/* line 204, ../sass/core.scss */
 .ebook-more-modal {
   position: absolute;
   background: #fff;
@@ -4001,7 +3273,6 @@ a.netabare-opener {
   overflow: hidden;
   padding: 0;
   margin: 0; }
-  /* line 211, ../sass/core.scss */
   .ebook-more-modal .ebook-more-body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -4009,7 +3280,6 @@ a.netabare-opener {
     font-size: 1.2em;
     padding-top: 0;
     padding-bottom: 0; }
-    /* line 218, ../sass/core.scss */
     .ebook-more-modal .ebook-more-body::-webkit-scrollbar {
       background: #eee;
       overflow: visible;
@@ -4017,16 +3287,13 @@ a.netabare-opener {
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       border-radius: 5px; }
-    /* line 224, ../sass/core.scss */
     .ebook-more-modal .ebook-more-body::-webkit-scrollbar-thumb {
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       border-radius: 5px;
       background: #333; }
-    /* line 228, ../sass/core.scss */
     .ebook-more-modal .ebook-more-body::-webkit-scrollbar-corner {
       background: transparent; }
-  /* line 232, ../sass/core.scss */
   .ebook-more-modal .ebook-more-title {
     position: absolute;
     left: 0;
@@ -4038,7 +3305,6 @@ a.netabare-opener {
     text-indent: 1em;
     color: #999;
     font-style: italic; }
-  /* line 244, ../sass/core.scss */
   .ebook-more-modal .ebook-more-close {
     position: absolute;
     top: 10px;
@@ -4046,11 +3312,9 @@ a.netabare-opener {
     font-size: 15px; }
 
 /* 電子書籍サイドバー */
-/* line 255, ../sass/core.scss */
 .ebook-sidebar .widget_fumiki_ebook {
   padding-left: 10px;
   margin-bottom: 40px; }
-  /* line 258, ../sass/core.scss */
   .ebook-sidebar .widget_fumiki_ebook h3 {
     font-size: 2em;
     color: #252e34;
@@ -4059,30 +3323,25 @@ a.netabare-opener {
     font-weight: bold;
     text-shadow: 1px 1px 2px #fff;
     margin: 2em 0 1em; }
-  /* line 267, ../sass/core.scss */
   .ebook-sidebar .widget_fumiki_ebook li {
     width: 180px;
     padding-right: 10px;
     float: left;
     position: relative; }
-    /* line 272, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li .attachment-pinky-cover {
       display: block;
       margin: 0 auto 10px;
       -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
       -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
-    /* line 277, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li h4 {
       position: relative;
       text-align: center; }
-      /* line 280, ../sass/core.scss */
       .ebook-sidebar .widget_fumiki_ebook li h4 a {
         font-size: 1.5em;
         color: #000;
         text-shadow: 1px 1px 2px #fff;
         text-decoration: none; }
-      /* line 286, ../sass/core.scss */
       .ebook-sidebar .widget_fumiki_ebook li h4 .price {
         position: absolute;
         background-color: #ED8600;
@@ -4091,55 +3350,45 @@ a.netabare-opener {
         right: -5px;
         font-size: 2em;
         color: #fff; }
-    /* line 296, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li .excerpt {
       margin: 0.5em;
       font-size: 1.1em;
       line-height: 1.1; }
-    /* line 301, ../sass/core.scss */
     .ebook-sidebar .widget_fumiki_ebook li .sale-icon {
       position: absolute;
       top: -17px;
       left: 30px; }
 
 /*一覧ページ見出し*/
-/* line 311, ../sass/core.scss */
 body.ebooks .catch {
   padding: 20px 0;
   margin-bottom: 20px;
   border-bottom: 1px dotted #eee; }
 
 /*リボン*/
-/* line 318, ../sass/core.scss */
 .entry .book-list img.campaign {
   position: absolute;
   left: -9px;
   top: -11px; }
 
 /*商品詳細*/
-/* line 325, ../sass/core.scss */
 .entry .book-list {
   position: relative;
   padding-bottom: 20px;
   border-bottom: 1px dotted #E5E5E5;
   /*ボタン*/ }
-  /* line 329, ../sass/core.scss */
   .entry .book-list dl {
     width: 310px;
     margin-top: 0;
     float: left; }
-    /* line 333, ../sass/core.scss */
     .entry .book-list dl dd {
       margin-left: 0;
       padding-left: 0; }
-      /* line 336, ../sass/core.scss */
       .entry .book-list dl dd.orange {
         color: #ED8600; }
-  /* line 342, ../sass/core.scss */
   .entry .book-list p.more {
     margin: 0;
     padding: 15px 0 10px; }
-    /* line 345, ../sass/core.scss */
     .entry .book-list p.more a {
       background: #E4007F;
       padding: 8px 12px;
@@ -4153,23 +3402,19 @@ body.ebooks .catch {
       -webkit-box-shadow: 0 0 5px #888;
       box-shadow: 0 0 5px #888;
       text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.7); }
-      /* line 354, ../sass/core.scss */
       .entry .book-list p.more a:hover {
         text-shadow: none; }
-      /* line 357, ../sass/core.scss */
       .entry .book-list p.more a:active {
         -moz-box-shadow: none;
         -webkit-box-shadow: none;
         box-shadow: none; }
 
 /* 購入履歴 */
-/* line 367, ../sass/core.scss */
 .entry .wp-list-table {
   width: 99%;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #262c30; }
-  /* line 374, ../sass/core.scss */
   .entry .wp-list-table thead th,
   .entry .wp-list-table tfoot th {
     padding: 3px 5px;
@@ -4177,18 +3422,15 @@ body.ebooks .catch {
     font-size: 0.8em;
     text-shadow: 1px 1px 3px #000;
     background: url("../img/bg-texture-dark.jpg") left top repeat; }
-    /* line 380, ../sass/core.scss */
     .entry .wp-list-table thead th a:link,
     .entry .wp-list-table thead th a:visited,
     .entry .wp-list-table tfoot th a:link,
     .entry .wp-list-table tfoot th a:visited {
       text-decoration: none; }
-  /* line 386, ../sass/core.scss */
   .entry .wp-list-table tbody td {
     padding: 3px 5px;
     font-size: 0.75em; }
 
-/* line 392, ../sass/core.scss */
 .tablenav-pages {
   font-size: 0.75em;
   text-align: right;
@@ -4202,7 +3444,6 @@ body.ebooks .catch {
 /****************************************
  * 8.イベント設定
  ****************************************/
-/* line 407, ../sass/core.scss */
 body.single-events .title {
   text-align: center; }
 
@@ -4221,51 +3462,41 @@ body.single-events .title {
 /* メッセージ用の色 */
 /* フォント設定 */
 /*プラグインのCSSを打ち消し*/
-/* line 5, ../sass/_account.scss */
 body.login {
   padding: 0; }
-  /* line 7, ../sass/_account.scss */
   body.login #submit {
     margin: 0; }
 
-/* line 10, ../sass/_account.scss */
 .account .entry {
   max-width: 600px;
   margin-right: auto;
   margin-left: auto; }
 
 /*メイン*/
-/* line 17, ../sass/_account.scss */
 .login form p.submit input.button,
 #nlmg-resign-form p.submit input {
   font-size: 20px;
   cursor: pointer; }
 
 /*フォームパーツ*/
-/* line 24, ../sass/_account.scss */
 .login form textarea {
   resize: vertical;
   width: 90%;
   display: block;
   padding: 5px 10px;
   font-size: 20px; }
-/* line 31, ../sass/_account.scss */
 .login form select {
   font-size: 20px; }
-/* line 34, ../sass/_account.scss */
 .login form select option {
   font-size: 20px; }
-/* line 37, ../sass/_account.scss */
 .login form p {
   clear: left; }
-  /* line 39, ../sass/_account.scss */
   .login form p label {
     padding: 3px 0 5px;
     font-weight: bold;
     display: block;
     width: 250px;
     float: left; }
-  /* line 46, ../sass/_account.scss */
   .login form p.forgetmenot label {
     float: none;
     width: auto;
@@ -4275,47 +3506,39 @@ body.login {
     *zoom: 1;
     *display: inline; }
 
-/* line 53, ../sass/_account.scss */
 .form-table .description {
   display: block;
   margin: 1em 0;
   color: #999;
   clear: both; }
 
-/* line 59, ../sass/_account.scss */
 .login p input.input {
   font-size: 20px;
   padding: 5px 10px;
   width: 300px; }
 
 /* OAuth */
-/* line 65, ../sass/_account.scss */
 #wpg-login,
 #wpg-register,
 #wpg-regsiter {
   text-align: center; }
 
-/* line 70, ../sass/_account.scss */
 .login p.notice, .login .entry .lwp-invitation, .entry .login .lwp-invitation {
   color: #05A;
   border: 1px solid #06C;
   background-color: #9FC9F4;
   padding-left: 42px; }
 
-/* line 76, ../sass/_account.scss */
 #wpg-login {
   max-width: 320px;
   margin: 10px auto; }
-  /* line 79, ../sass/_account.scss */
   #wpg-login a {
     text-align: left;
     font-family: Helvetica, Arial, sans-serif; }
 
 /* リンク */
-/* line 85, ../sass/_account.scss */
 .login .tml-action-links {
   padding-left: 0; }
-  /* line 87, ../sass/_account.scss */
   .login .tml-action-links li {
     display: inline-block;
     vertical-align: middle;
@@ -4333,46 +3556,37 @@ body.login {
     line-height: 24px;
     height: 24px;
     margin: 0 5px 0 10px; }
-    /* line 98, ../sass/_account.scss */
     .login .tml-action-links li a {
       color: #252e34;
       text-decoration: none; }
-    /* line 102, ../sass/_account.scss */
     .login .tml-action-links li a:hover {
       color: #ff4130;
       text-decoration: underline; }
-    /* line 106, ../sass/_account.scss */
     .login .tml-action-links li:before {
       margin-right: 0.5em;
       font-family: FontAwesome;
       content: ""; }
-    /* line 112, ../sass/_account.scss */
     .login .tml-action-links li:first-child:before {
       content: ""; }
 
 /****************************************
 * 8.404設定
 ****************************************/
-/* line 426, ../sass/core.scss */
 #error404 {
   width: 320px;
   margin: 0 auto;
   height: 480px;
   position: relative;
   overflow: hidden; }
-  /* line 432, ../sass/core.scss */
   #error404 .logo {
     margin-top: 40px; }
-    /* line 434, ../sass/core.scss */
     #error404 .logo img {
       width: 300px;
       height: 31px; }
-    /* line 438, ../sass/core.scss */
     #error404 .logo .description {
       font-size: 1.2em;
       color: #888;
       text-shadow: 1px 1px 2px #fff; }
-  /* line 444, ../sass/core.scss */
   #error404 h1 {
     text-align: center;
     font-size: 30px;
@@ -4380,11 +3594,9 @@ body.login {
     text-shadow: 1px 1px 2px #fff;
     font-weight: bold;
     margin: 30px 0; }
-  /* line 452, ../sass/core.scss */
   #error404 p.message, #error404 .entry .lwp-invitation, .entry #error404 .lwp-invitation {
     font-size: 1.4em;
     margin: 1em 10px; }
-  /* line 456, ../sass/core.scss */
   #error404 #copy-note {
     font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace;
     font-size: 10px;
@@ -4396,7 +3608,6 @@ body.login {
     bottom: 2em;
     height: 2em;
     padding: 0; }
-    /* line 467, ../sass/core.scss */
     #error404 #copy-note p {
       width: 100%;
       float: none;
@@ -4407,7 +3618,6 @@ body.login {
 /****************************************
  * 7.決済フォーム
  ****************************************/
-/* line 480, ../sass/core.scss */
 #lwp-invoice {
   width: 640px;
   margin: 0 auto;
@@ -4415,34 +3625,27 @@ body.login {
   /* table common*/
   /* price table */
   /* CC Icon */ }
-  /* line 483, ../sass/core.scss */
   #lwp-invoice .header {
     padding: 20px 40px;
     border-bottom: 1px dotted #252e34; }
-    /* line 487, ../sass/core.scss */
     #lwp-invoice .header h1 span {
       font-size: 1.2em;
       color: #888;
       display: block;
       margin: 0.5em 0;
       text-shadow: 1px 1px 2px #fff; }
-  /* line 496, ../sass/core.scss */
   #lwp-invoice p.message, #lwp-invoice .entry .lwp-invitation, .entry #lwp-invoice .lwp-invitation {
     margin: 1em 0; }
-  /* line 502, ../sass/core.scss */
   #lwp-invoice p.required {
     text-align: right; }
-  /* line 505, ../sass/core.scss */
   #lwp-invoice .required {
     color: crimson; }
-  /* line 511, ../sass/core.scss */
   #lwp-invoice table.price-table, #lwp-invoice table.form-table {
     width: 100%;
     table-layout: auto;
     border-collapse: collapse;
     empty-cells: show;
     margin: 1em 0 1.5em; }
-    /* line 518, ../sass/core.scss */
     #lwp-invoice table.price-table caption, #lwp-invoice table.form-table caption {
       color: #ccc;
       text-align: left;
@@ -4450,107 +3653,82 @@ body.login {
       font-size: 1.5em;
       padding-bottom: 0.5em;
       border-bottom: 3px double #ddd; }
-    /* line 526, ../sass/core.scss */
     #lwp-invoice table.price-table th, #lwp-invoice table.price-table td, #lwp-invoice table.form-table th, #lwp-invoice table.form-table td {
       padding: 1em; }
-    /* line 530, ../sass/core.scss */
     #lwp-invoice table.price-table tbody th, #lwp-invoice table.price-table tbody td, #lwp-invoice table.form-table tbody th, #lwp-invoice table.form-table tbody td {
       text-align: left;
       font-size: 0.85em;
       border-bottom: 1px dotted #999; }
-    /* line 536, ../sass/core.scss */
     #lwp-invoice table.price-table tbody tr:nth-child(odd) th, #lwp-invoice table.price-table tbody tr:nth-child(odd) td, #lwp-invoice table.form-table tbody tr:nth-child(odd) th, #lwp-invoice table.form-table tbody tr:nth-child(odd) td {
       background-color: #f3f3f3; }
-  /* line 546, ../sass/core.scss */
   #lwp-invoice .price-table th {
     border-bottom: 1px solid #ddd; }
-  /* line 550, ../sass/core.scss */
   #lwp-invoice .price-table thead th {
     font-weight: bold; }
-  /* line 556, ../sass/core.scss */
   #lwp-invoice .price-table tbody tr:last-child th, #lwp-invoice .price-table tbody tr:last-child td {
     border-bottom: none; }
-  /* line 561, ../sass/core.scss */
   #lwp-invoice .price-table .price {
     white-space: nowrap;
     text-align: right; }
-  /* line 565, ../sass/core.scss */
   #lwp-invoice .price-table .recalculate {
     max-width: 40%; }
-    /* line 567, ../sass/core.scss */
     #lwp-invoice .price-table .recalculate span.description {
       font-size: 0.85em;
       color: #999; }
-  /* line 573, ../sass/core.scss */
   #lwp-invoice .price-table tfoot th {
     text-align: right;
     font-weight: bold; }
-  /* line 577, ../sass/core.scss */
   #lwp-invoice .price-table tfoot th, #lwp-invoice .price-table tfoot td {
     border-top: 3px double #ddd;
     border-bottom: 3px double #ddd; }
-  /* line 585, ../sass/core.scss */
   #lwp-invoice .form-table thead th, #lwp-invoice .form-table thead td {
     background: #4D4945;
     color: #f3f3f3; }
-  /* line 591, ../sass/core.scss */
   #lwp-invoice .form-table tbody th {
     font-weight: bold;
     white-space: nowrap; }
-  /* line 596, ../sass/core.scss */
   #lwp-invoice .form-table th.lwp-column-method {
     text-align: center; }
-  /* line 600, ../sass/core.scss */
   #lwp-invoice .form-table .lwp-column-method-desc small {
     display: block;
     padding-top: 0.5em;
     margin-top: 1em;
     border-top: 1px solid #ddd;
     color: #666; }
-  /* line 607, ../sass/core.scss */
   #lwp-invoice .form-table .lwp-column-method-desc strong {
     color: #e4007f; }
-  /* line 613, ../sass/core.scss */
   #lwp-invoice p.check-url-image {
     text-align: center;
     margin: 1em; }
-    /* line 616, ../sass/core.scss */
     #lwp-invoice p.check-url-image strong {
       font-size: 1.6em;
       letter-spacing: 0.25em;
       margin: 0.5em 0;
       font-family: "Courrier New", Courier, "andale mono", "lucida console", "Osaka-mono", "Osaka－等幅", "Meiryo UI", monospace; }
-  /* line 623, ../sass/core.scss */
   #lwp-invoice .ticket-footer-note {
     margin: 1em 0;
     padding: 1em;
     border-top: 1px dotted #ddd;
     border-bottom: 1px dotted #ddd; }
-  /* line 629, ../sass/core.scss */
   #lwp-invoice input[type=text],
   #lwp-invoice textarea {
     border: 1px solid #ddd;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px; }
-  /* line 636, ../sass/core.scss */
   #lwp-invoice textarea {
     width: 90%; }
-  /* line 639, ../sass/core.scss */
   #lwp-invoice .footer {
     margin: 20px;
     font-size: 1.4em;
     text-align: center;
     text-shadow: 1px 1px 2px #fff;
     color: #252e35; }
-  /* line 646, ../sass/core.scss */
   #lwp-invoice .main {
     font-size: 1.6em;
     margin: 30px 10px; }
-    /* line 649, ../sass/core.scss */
     #lwp-invoice .main p a.button, #lwp-invoice .main p .button-download {
       display: inline-block; }
-    /* line 652, ../sass/core.scss */
     #lwp-invoice .main p.indicator {
       text-align: center;
       background: url("../img/ajax-loader.gif") center bottom no-repeat;
@@ -4558,62 +3736,47 @@ body.login {
       padding-bottom: 20px;
       color: #888;
       text-shadow: 1px 1px 2px #fff, 1px 1px 2px rgba(0, 0, 0, 0.2) inset; }
-      /* line 659, ../sass/core.scss */
       #lwp-invoice .main p.indicator span {
         margin: 0 0.2em;
         font-size: 2em;
         font-weight: bold; }
-  /* line 668, ../sass/core.scss */
   #lwp-invoice .lwp-cc-icon {
     display: inline-block;
     width: 130px;
     height: 80px;
     background: url("../../../../plugins/literally-wordpress/assets/icon-payment-method@2x.png") left top no-repeat; }
-  /* line 674, ../sass/core.scss */
   #lwp-invoice .icon-paypal {
     background-position: 0 bottom; }
-  /* line 677, ../sass/core.scss */
   #lwp-invoice .icon-creditcard {
     background-position: 0 0; }
-  /* line 680, ../sass/core.scss */
   #lwp-invoice .icon-transfer {
     background-position: right bottom; }
-  /* line 683, ../sass/core.scss */
   #lwp-invoice .icon-cvs {
     background-position: -130px 0; }
-  /* line 686, ../sass/core.scss */
   #lwp-invoice .icon-payeasy {
     background-position: -130px bottom; }
-  /* line 689, ../sass/core.scss */
   #lwp-invoice .lwp-cc-small-icon {
     display: inline-block;
     margin-right: 0.5em;
     width: 52px;
     height: 32px;
     background: url("../../../../plugins/literally-wordpress/assets/icons-creditcards.png") left top no-repeat; }
-  /* line 696, ../sass/core.scss */
   #lwp-invoice .small-icon-jcb {
     background-position: left bottom; }
-  /* line 699, ../sass/core.scss */
   #lwp-invoice .small-icon-amex {
     background-position: -52px bottom; }
-  /* line 702, ../sass/core.scss */
   #lwp-invoice .small-icon-visa {
     background-position: -52px 0; }
-  /* line 705, ../sass/core.scss */
   #lwp-invoice .small-icon-master {
     background-position: -104px 0; }
-  /* line 708, ../sass/core.scss */
   #lwp-invoice .small-icon-diners {
     background-position: right bottom; }
-  /* line 711, ../sass/core.scss */
   #lwp-invoice .cvs-container {
     display: block;
     width: 8em;
     float: left;
     margin: 0 1em 1em 0;
     text-align: center; }
-  /* line 718, ../sass/core.scss */
   #lwp-invoice .lwp-cvs-small-icon {
     display: inline-block;
     margin-right: 0.5em;
@@ -4621,35 +3784,25 @@ body.login {
     height: 32px;
     background: #fff url("../../../../plugins/literally-wordpress/assets/icons-cvs.png") left top no-repeat;
     border: 1px solid #ccc; }
-  /* line 726, ../sass/core.scss */
   #lwp-invoice .cvs-container .lwp-cvs-small-icon {
     margin-right: 0; }
-  /* line 729, ../sass/core.scss */
   #lwp-invoice .small-icon-seven-eleven {
     background-position: left top; }
-  /* line 732, ../sass/core.scss */
   #lwp-invoice .small-icon-lawson {
     background-position: -32px -32px; }
-  /* line 735, ../sass/core.scss */
   #lwp-invoice .small-icon-ministop {
     background-position: 0 -32px; }
-  /* line 738, ../sass/core.scss */
   #lwp-invoice .small-icon-circle-k {
     background-position: -32px 0; }
-  /* line 741, ../sass/core.scss */
   #lwp-invoice .small-icon-sunkus {
     background-position: -64px 0; }
-  /* line 744, ../sass/core.scss */
   #lwp-invoice .small-icon-seicomart {
     background-position: -64px -32px; }
-  /* line 747, ../sass/core.scss */
   #lwp-invoice .small-icon-familymart {
     width: 64px;
     background-position: left bottom; }
-  /* line 751, ../sass/core.scss */
   #lwp-invoice .small-icon-daily-yamazaki {
     background-position: right bottom; }
-  /* line 754, ../sass/core.scss */
   #lwp-invoice p.sandbox {
     font-size: 0.9em;
     line-height: 1;
@@ -4667,12 +3820,10 @@ body.login {
     margin-top: 0;
     text-shadow: 1px 1px 2px #fff; }
 
-/* line 769, ../sass/core.scss */
 #lwp-submit {
   cursor: pointer; }
 
 /* Indicator */
-/* line 773, ../sass/core.scss */
 .lwp-indicator {
   text-align: right;
   font-size: small;
@@ -4680,7 +3831,6 @@ body.login {
   line-height: 15px;
   margin: 10px 0; }
 
-/* line 780, ../sass/core.scss */
 .lwp-indicator-progress-bg {
   display: inline-block;
   width: 100px;
@@ -4696,7 +3846,6 @@ body.login {
   background-image: -ms-linear-gradient(bottom, #dedede 28%, #ebebeb 84%);
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.28, #dedede), color-stop(0.84, #ebebeb)); }
 
-/* line 801, ../sass/core.scss */
 .lwp-indicator-progress {
   display: inline-block;
   height: 13px;
@@ -4709,14 +3858,12 @@ body.login {
   background-image: -ms-linear-gradient(bottom, #82d43f 28%, #64cf3a 67%, #c9e673 84%);
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.28, #82d43f), color-stop(0.67, #64cf3a), color-stop(0.84, #c9e673)); }
 
-/* line 820, ../sass/core.scss */
 .lwp-indicator-text {
   padding-top: 1px;
   vertical-align: top;
   font-size: 11px;
   font-weight: bold;
   color: #888; }
-  /* line 826, ../sass/core.scss */
   .lwp-indicator-text strong {
     vertical-align: top;
     color: #000; }
@@ -4728,7 +3875,6 @@ body.login {
  * iPhone用テンプレート
  */
 /*全体*/
-/* line 845, ../sass/core.scss */
 body.smartphone {
   /* 楽天 */
   /* コメント欄 */
@@ -4736,58 +3882,42 @@ body.smartphone {
   /* 電子書籍 */
   /* ログインフォーム*/
   /* 本棚 */ }
-  /* line 850, ../sass/core.scss */
   body.smartphone div.rakuten_details div.rakuten_info {
     width: 300px;
     font-size: 0.85em; }
-  /* line 857, ../sass/core.scss */
   body.smartphone #respond {
     width: auto;
     padding-right: 10px;
     padding-left: 10px; }
-  /* line 866, ../sass/core.scss */
   body.smartphone .ebook .eyecatch {
     padding: 20px 10px; }
-    /* line 868, ../sass/core.scss */
     body.smartphone .ebook .eyecatch img {
       max-width: 100%;
       height: auto; }
-  /* line 874, ../sass/core.scss */
   body.smartphone .ebook .device-list .device {
     width: 90px; }
-    /* line 876, ../sass/core.scss */
     body.smartphone .ebook .device-list .device:nth-child(3n) {
       margin-right: 0; }
-  /* line 880, ../sass/core.scss */
   body.smartphone .ebook .device-list .valid {
     background-position: -5px bottom; }
-  /* line 883, ../sass/core.scss */
   body.smartphone .ebook .device-list .invalid {
     background-position: -105px bottom; }
-  /* line 889, ../sass/core.scss */
   body.smartphone .ebook-sidebar .widget_fumiki_ebook {
     padding-left: 5px; }
-    /* line 891, ../sass/core.scss */
     body.smartphone .ebook-sidebar .widget_fumiki_ebook li {
       width: 150px;
       margin-bottom: 10px; }
-      /* line 894, ../sass/core.scss */
       body.smartphone .ebook-sidebar .widget_fumiki_ebook li:nth-child(2n) {
         padding-right: 5px; }
-      /* line 897, ../sass/core.scss */
       body.smartphone .ebook-sidebar .widget_fumiki_ebook li:nth-child(2n+1) {
         clear: left; }
-  /* line 904, ../sass/core.scss */
   body.smartphone .login #your-profile .form-table th {
     width: auto; }
-  /* line 908, ../sass/core.scss */
   body.smartphone .login form textarea {
     width: 150px;
     font-size: 1.2em; }
-  /* line 913, ../sass/core.scss */
   body.smartphone .login p input.input {
     width: 250px; }
-  /* line 919, ../sass/core.scss */
   body.smartphone #book-shelf .lwp-table thead th:nth-child(2),
   body.smartphone #book-shelf .lwp-table thead th:nth-child(3),
   body.smartphone #book-shelf .lwp-table thead th:nth-child(4),
@@ -4804,18 +3934,15 @@ body.smartphone {
   body.smartphone #book-shelf .lwp-table tbody tr td:nth-child(5),
   body.smartphone #book-shelf .lwp-table tbody tr td:nth-child(7) {
     display: none; }
-  /* line 937, ../sass/core.scss */
   body.smartphone #book-shelf .lwp-table thead th:nth-child(6),
   body.smartphone #book-shelf .lwp-table tbody td:nth-child(6) {
     white-space: nowrap;
     padding-right: 24px; }
-  /* line 942, ../sass/core.scss */
   body.smartphone #book-shelf .lwp-table tbody td:nth-child(6) {
     background-image: url("../img/icon-arrow-right.png");
     background-position: right center;
     background-repeat: no-repeat;
     background-size: 20px 16px; }
-  /* line 949, ../sass/core.scss */
   body.smartphone .ui-dialog-content table {
     margin: 5px 0 0; }
 
@@ -4824,74 +3951,57 @@ body.smartphone {
 Purchase History
 ------------------------
 */
-/* line 962, ../sass/core.scss */
 #book-shelf .tablenav .alignleft {
   float: left; }
-/* line 965, ../sass/core.scss */
 #book-shelf .tablenav .tablenav-pages {
   text-align: right; }
-/* line 968, ../sass/core.scss */
 #book-shelf .tablenav .clear {
   clear: left; }
-/* line 971, ../sass/core.scss */
 #book-shelf .tablenav .displaying-num {
   font-weight: bold;
   font-size: 0.9em;
   margin-right: 0.5em; }
-/* line 977, ../sass/core.scss */
 #book-shelf .lwp-table {
   font-size: 0.8em; }
-/* line 984, ../sass/core.scss */
 #book-shelf thead .column-price.desc:after,
 #book-shelf thead .column-expires.desc:after,
 #book-shelf thead .column-registered.desc:after, #book-shelf tfoot .column-price.desc:after,
 #book-shelf tfoot .column-expires.desc:after,
 #book-shelf tfoot .column-registered.desc:after {
   content: ' ▼'; }
-/* line 987, ../sass/core.scss */
 #book-shelf thead .column-price.asc:after,
 #book-shelf thead .column-expires.asc:after,
 #book-shelf thead .column-registered.asc:after, #book-shelf tfoot .column-price.asc:after,
 #book-shelf tfoot .column-expires.asc:after,
 #book-shelf tfoot .column-registered.asc:after {
   content: ' ▲'; }
-/* line 991, ../sass/core.scss */
 #book-shelf thead .column-quantity, #book-shelf tfoot .column-quantity {
   white-space: nowrap; }
-/* line 995, ../sass/core.scss */
 #book-shelf .column-price {
   white-space: nowrap; }
-/* line 998, ../sass/core.scss */
 #book-shelf .column-status {
   white-space: nowrap; }
-  /* line 1000, ../sass/core.scss */
   #book-shelf .column-status .lwp-auth,
   #book-shelf .column-status .lwp-success {
     color: green;
     font-weight: bold; }
-    /* line 1004, ../sass/core.scss */
     #book-shelf .column-status .lwp-auth i,
     #book-shelf .column-status .lwp-success i {
       background-color: green; }
-  /* line 1008, ../sass/core.scss */
   #book-shelf .column-status .lwp-cancel,
   #book-shelf .column-status .lwp-refund {
     color: #aaa; }
-  /* line 1012, ../sass/core.scss */
   #book-shelf .column-status .lwp-start {
     color: crimson;
     font-weight: bold; }
-  /* line 1016, ../sass/core.scss */
   #book-shelf .column-status .lwp-refund_requesting,
   #book-shelf .column-status .lwp-waiting_cancellation {
     color: orange; }
-  /* line 1020, ../sass/core.scss */
   #book-shelf .column-status small {
     font-size: 0.8em;
     font-weight: bold;
     color: #aaa; }
 
-/* line 1027, ../sass/core.scss */
 p.lwp-error-message {
   padding: 1em;
   margin: 5px 0 15px;
@@ -4902,7 +4012,6 @@ p.lwp-error-message {
   line-height: 1.2;
   background-color: #ffebe8; }
 
-/* line 1037, ../sass/core.scss */
 .lwp-ticket-table th {
   font-weight: bold;
   white-space: nowrap; }
@@ -4910,33 +4019,27 @@ p.lwp-error-message {
 /****************************************
  * 11. Facebook ページ
  ****************************************/
-/* line 1047, ../sass/core.scss */
 body.fan-gate-body {
   margin: 0 auto;
   overflow: hidden; }
 
-/* line 1051, ../sass/core.scss */
 .fan-gate-body .margin {
   width: auto;
   padding: 20px;
   border: 1px solid #ddd; }
 
-/* line 1056, ../sass/core.scss */
 .fan-gate-body .meta {
   text-align: left;
   padding: 30px 0; }
 
-/* line 1060, ../sass/core.scss */
 .fan-gate-body .meta p {
   font-size: 1.6em;
   text-shadow: 1px 1px 2px #fff;
   height: 30px;
   line-height: 30px; }
 
-/* line 1066, ../sass/core.scss */
 .fan-gate-body .meta p img {
   vertical-align: middle; }
 
-/* line 1069, ../sass/core.scss */
 .fan-gate-body .title {
   margin: 0; }
