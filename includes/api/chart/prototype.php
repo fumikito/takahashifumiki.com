@@ -125,7 +125,7 @@ abstract class Prototype extends Singleton
 		$url = esc_url($this->url());
 		$desc = $this->description;
 		$type = 'article';
-		$image = get_template_directory_uri().'/styles/img/graph/ogp.jpg';
+		$image = get_template_directory_uri().'/styles/img/graph/opg.jpg';
 		echo <<<HTML
 
 <!-- Open Graph -->
