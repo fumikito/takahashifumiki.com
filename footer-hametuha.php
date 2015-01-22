@@ -9,13 +9,13 @@
 					<a href="<?= esc_url($link['url']) ?>">
 						<h3>
 							<?= esc_html($link['title']) ?>
-							<?php if( true /*current_time('timestamp') - strtotime($link['post_date']) < 60 * 60 * 24 * 7 */): ?>
+							<?php if( current_time('timestamp') - strtotime($link['post_date']) < 60 * 60 * 24 * 7 ): ?>
 								<small class="new">New</small>
 							<?php endif ?>
 						</h3>
 						<p class="category">
-							<?php if( true /* isset($link['source']) */ ): ?>
-								<span><i class="fa fa-globe"></i> <?= esc_html('破滅派' /* $link['source'] */ ) ?></span>
+							<?php if( isset($link['source']) ): ?>
+								<span><i class="fa fa-globe"></i> <?= esc_html($link['source']) ?></span>
 							<?php endif; ?>
 							<span><i class="fa fa-tags"></i> <?= implode(', ', $link['category']) ?></span>
 							<span class="date"><i class="fa fa-calendar"></i> <?= mysql2date('Y年n月j日 H:i', $link['post_date']) ?></span>
