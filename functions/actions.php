@@ -40,7 +40,7 @@ function _fumiki_head(){
         }
 		$desc = esc_attr(str_replace("\n", "",  $desc));
 		$dir = get_stylesheet_directory_uri();
-		echo <<<EOS
+		echo <<<HTML
 <!-- Open Graph -->
 <meta property="og:locale" content="ja_jp" />
 <meta property="og:title" content="{$title}"/>
@@ -58,7 +58,7 @@ function _fumiki_head(){
 <meta name="twitter:description" content="{$desc}" />
 <meta name="twitter:image" content="{$image}" />
 <meta name="description" content="{$desc}" />
-EOS;
+HTML;
 	}
 	echo <<<EOS
 <!-- copyright -->

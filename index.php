@@ -54,4 +54,5 @@ get_header('title');
 </div>
 
 <?
+get_footer('hametuha');
 get_footer();

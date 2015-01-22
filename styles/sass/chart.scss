@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import "compass";
+@import "settings";
+
+.chart-title{
+  font-family: $old;
+  font-size: 3em;
+  margin: 1em;
+}
+
+#google-chart{
+  margin: 2em 1.5em;
+  min-height: 300px;
+
+}
+
+
+.chart-form{
+  margin: 2em 1em;
+  padding-top: 2em;
+  border-top: 3px double #eee;
+  &.loading {
+    @include opacity(.2);
+    input[type=submit] {
+      display: none;
+    }
+  }
+  label, p.description{
+    display: block;
+    width: 50%;
+    float: left;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 1em 0;
+    &:nth-child(2n + 1){
+      clear: left;
+    }
+    small{
+      font-weight: normal;
+      color: #666;
+      margin-left: 1em;
+    }
+  }
+  p.description{
+    font-weight: normal;
+    color: #999;
+  }
+  input[type=text],
+  input[type=number]{
+    display: block;
+    margin-top: 0.5em;
+    width: 80%;
+    padding: 0.25em 0.5em;
+    font-size: 1.8em;
+  }
+  input[type=number]{
+    text-align: right;
+  }
+  .submit-box{
+    clear: left;
+    padding-top: 2em;
+    .button{
+      font-size: 2em;
+    }
+
+  }
+}
+
+@media only screen and (max-width: $tablet - 1) {
+  .chart-form {
+    label, p.description{
+      width: 100%;
+      float: none;
+    }
+
+  }
+}

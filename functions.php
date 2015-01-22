@@ -71,7 +71,15 @@ spl_autoload_register(function($class_name){
 	'domain' => WP_DEBUG ?  'takahashifumiki.info' : 'takahashifumiki.com',
 ));
 
+// タグ
+/*
+\Fumiki\Taxonomy\Rich_Taxonomy::get_instance(array(
+	'post_tag'
+));
+*/
 
+// チャート
+\Fumiki\Service\Google\Chart::get_instance(array());
 
 //テーマサポートを追加
 add_theme_support('menus');

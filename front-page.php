@@ -100,4 +100,6 @@
 	
 </div><!-- //#content -->
 
-<? get_footer();
+<?
+get_footer('hametuha');
+get_footer();

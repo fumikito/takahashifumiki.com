@@ -10,14 +10,19 @@ add_theme_support('custom-header', array(
 // アイキャッチを有効化
 add_theme_support('post-thumbnails');
 
-// シンタックスハイライターを登録
+/**
+ * Register scripts
+ */
 add_action('init', function(){
+	// Syntax highlighter
     wp_register_style(
         'syntaxhighlighter-theme-fumiki',
         get_stylesheet_directory_uri().'/styles/stylesheets/syntax-highlighter.css',
         array('syntaxhighlighter-core'),
         fumiki_theme_version()
     );
+	// Google JS API
+	wp_register_script('google-js-api', 'https://www.google.com/jsapi', array(), null, false);
 });
 
 // テーマを登録

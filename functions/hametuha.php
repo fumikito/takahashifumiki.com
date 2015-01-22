@@ -24,11 +24,12 @@ function hametuha_posts(){
                 $posts = array();
                 foreach( $xml->channel->item as $item ){
                     $posts[]  = array(
-                        'title' => (string)$item->title,
-                        'excerpt' => (string)$item->description,
-                        'url' => (string)$item->link.'?utm_source=takahashifumiki.com&utm_medium=banner&utm_campaign=related',
+                        'title' => (string) $item->title,
+                        'excerpt' => (string) $item->description,
+                        'url' => (string) $item->link.'?utm_source=takahashifumiki.com&utm_medium=banner&utm_campaign=related',
                         'post_date' => date_i18n('Y-m-d H:i:s', strtotime($item->pubDate) + 60 * 60 * 9 ),
-                        'category' => (array)$item->category,
+                        'category' => (array) $item->category,
+                        'source' => '破滅派'
                     );
                 }
                 // 保存する

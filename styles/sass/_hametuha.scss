@@ -1,0 +1,126 @@
+
+/**========================
+ * 破滅派リンク
+ */
+.hametuha-links {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  .hametuha-title {
+    font-family: $title-font;
+    font-size: 2em;
+    color: $title-font-color;
+    margin: 15px 1em;
+    position: relative;
+  }
+  .hametuha-list {
+    border-bottom: 1px solid $thin-grey;
+    li {
+      border-top: 1px solid $thin-grey;
+      font-size: 1.4em;
+      position: relative;
+      a {
+        position: relative;
+        z-index: 2;
+        display: block;
+        padding: 1em 3em 1em 2em;
+        &:link, &:visited {
+          text-decoration: none;
+          color: #999;
+        }
+        &:hover {
+          text-decoration: none;
+          background-color: #fff8cf;
+        }
+        &:active {
+          background-color: $link-red;
+          * {
+            color: $white !important;
+          }
+        }
+        & > .fa {
+          position: absolute;
+          z-index: 3;
+          right: 0.5em;
+          font-size: 4em;
+          color: #ddd;
+          top: 50%;
+          margin-top: -0.5em;
+        }
+      }
+      h3 {
+        font-size: 1.5em;
+        font-family: $single-title-font;
+        color: $title-font-color;
+        margin-bottom: 0.5em;
+        .new {
+          font-size: 0.8em;
+          color: $link-red;
+          font-family: $mono;
+        }
+      }
+      .description {
+        p {
+          margin: 0.5em 0;
+          color: #666;
+          line-height: 1.4;
+          font-size: 0.85em;
+        }
+      }
+      .category {
+        span{
+          margin-right: 0.5em;
+        }
+        .fa {
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// タブレットまで
+@media only screen and (min-width: $tablet){
+  .hametuha-links{
+    .hametuha-list{
+      @include clearfix();
+      li{
+        float: left;
+        width: 33%;
+        &:nth-child(3n + 1){
+          clear: left;
+        }
+        a{
+          & > .fa{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// スマートフォン
+@media only screen and (max-width: $tablet - 1) {
+
+  .hametuha-links {
+    .hametuha-title {
+      font-size: 1.4em;
+    }
+    .hametuha-list li {
+      h3 {
+        font-size: 1.8em;
+      }
+      .description{
+        margin-right: 4.5em;
+      }
+      .category span {
+        display: block;
+        &.new {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

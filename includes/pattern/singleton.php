@@ -15,7 +15,7 @@ abstract class  Singleton
 	/**
 	 * @var Singleton
 	 */
-	protected static $instance = null;
+	protected static $instances = array();
 
 	/**
 	 * @var array
@@ -29,32 +29,21 @@ abstract class  Singleton
 	 *
 	 * @param array $argument
 	 */
-	abstract protected function __construct( array $argument );
+	abstract protected function __construct( array $argument = array() );
 
 	/**
 	 * Get instance
 	 *
-	 * @return Singleton
+	 * @param array $argument
+	 * @return static
 	 */
-	public static function get_instance( $argument = null ){
-		if(!self::$instance){
-			$class_name = get_called_class();
-			self::init($argument);
-		}
-		return self::$instance;
-	}
-
-	/**
-	 * Initialize method.
-	 *
-	 * @return void
-	 */
-	protected static function init( array $argument = array() ){
-		if(!self::$instance){
+	public static function get_instance( array $argument = array() ){
+		$class_name = get_called_class();
+		if( !isset(self::$instances[$class_name]) ){
 			// Merge arguments to default array
 			$merged = array_merge(self::$default_arguments, $argument);
-			$class_name = get_called_class();
-			self::$instance = new $class_name($merged);
+			self::$instances[$class_name] = new $class_name($merged);
 		}
+		return self::$instances[$class_name];
 	}
 }

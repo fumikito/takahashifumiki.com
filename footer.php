@@ -1,42 +1,4 @@
-
-
-<div class="hametuha-links margin">
-    <h2 class="hametuha-title">
-        <i class="fa fa-share-alt"></i> 破滅派に投稿しているもの
-        <a class="button" href="http://hametuha.com/author/takahashi_fumiki/">全部見る</a>
-    </h2>
-    <?php if( $hametuha_posts = hametuha_posts() ): ?>
-        <ol class="hametuha-list">
-            <?php $counter = 0; foreach($hametuha_posts as $hametu): $counter++; ?>
-                <li>
-                    <i class="fa fa-chevron-circle-right"></i>
-                    <a href="<?= esc_url($hametu['url']) ?>">
-                        <h3><?= esc_html($hametu['title']) ?></h3>
-                        <p class="category">
-                            <span><i class="fa fa-tags"></i> <?= implode(', ', $hametu['category']) ?></span>
-                            <span><i class="fa fa-calendar"></i> <?= mysql2date('Y年n月j日 H:i', $hametu['post_date']) ?></span>
-                            <?php if( current_time('timestamp') - strtotime($hametu['post_date']) < 60 * 60 * 24 * 7 ): ?>
-                            <span class="new"><i class="fa fa-star"></i>NEW!</span>
-                            <?php endif ?>
-                        </p>
-                        <div class="description">
-                            <?= wpautop($hametu['excerpt']) ?>
-                        </div>
-                    </a>
-                </li>
-                <?php if( $counter >= 3 ) break; ?>
-            <?php endforeach; ?>
-        </ol>
-    <?php else: ?>
-        <p class="message warning">データを取得できませんでした.....</p>
-    <?php endif; ?>
-</div><!-- //.hametuha-links -->
-
-
-
-
 <div class="margin pre-footer-navigation">
-
 
     <a id="footer-menu-toggle" href="#">
         <i class="fa fa-navicon"></i> メニュー
@@ -60,7 +22,7 @@
 
 
 <footer class="dark_bg">
-	
+
 	<div id="footer-nav" class="margin sans clearfix">
 
 		<div class="grid_4 first">

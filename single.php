@@ -169,5 +169,6 @@ get_header('title');
 </div><!-- //.margin -->
 
 <?
+get_footer('hametuha');
 get_footer();
 endif;//Mootoolsと通常single.phpの分岐終了

@@ -56,7 +56,7 @@ class Analytics extends Pattern\Singleton
 	 *
 	 * @param array $arguments
 	 */
-	protected function __construct( array $arguments ){
+	protected function __construct( array $arguments = array() ){
 		$this->profile_id = $arguments['profile_id'];
 		$this->domain = $arguments['domain'];
 		$this->init_time = microtime(true);

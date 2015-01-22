@@ -8,9 +8,8 @@
 </header>
 
 <div class="quotes-container">
-    <?php if( is_archive() ): ?>
-        <h1>名言コレクション</h1>
-    <?php endif; ?>
+
+    <h1>名言コレクション</h1>
 
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
         <div class="quotes-loop">
@@ -32,7 +31,7 @@
 
             <?php if( !is_archive() ): ?>
                 <p class="more-quotes">
-                  <a href="<?= home_url('/quotes/', 'http') ?>">NEED MORE QUOTES?</a>
+                  <a href="<?= home_url('/quotes/', 'http') ?>">Quotes Archives &raquo;</a>
                 </p>
             <?php endif; ?>
 
@@ -45,14 +44,5 @@
         ob_end_clean();
         echo str_replace('ページ', ' Pages', $content);
     }  ?>
-    <address>
-        <span>集めた人</span>
-        <?= get_avatar(1, 320) ?>
-        <p>
-            <a rel="home" href="<?= home_url('/', 'http') ?>">僕です。</a>
-        </p>
-    </address>
 </div><!-- //.quotes-conainer -->
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer() ?>
