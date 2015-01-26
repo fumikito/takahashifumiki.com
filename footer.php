@@ -53,7 +53,7 @@
 				Recent tweet
 			</h4>
 			<blockquote class="clearfix left no-if-touch">
-				<?php if(($tweet = get_twitter_timeline(1))): ?>
+				<?php if( ($tweet = get_twitter_timeline(1)) && is_array($tweet) ): ?>
 					<?php foreach($tweet as $t): ?>
 					<blockquote>
 						<i class="fa-quote-left"></i>
