@@ -84,7 +84,7 @@
                     My Facebook Page
                 </h4>
                 <div class="like-box-container">
-                    <div class="fb-like-box" data-href="http://www.facebook.com/takahashifumiki.page" data-width="292" data-height="420" data-show-faces="true" data-colorscheme="dark" data-stream="false" data-border-color="#3F464D" data-header="false"></div>
+	                <div class="fb-page" data-href="https://www.facebook.com/takahashifumiki.Page" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/takahashifumiki.Page"><a href="https://www.facebook.com/takahashifumiki.Page">高橋文樹</a></blockquote></div></div>
                 </div>
             </div>
         <?php endif; ?>
