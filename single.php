@@ -89,12 +89,19 @@ get_header('title');
 					</p>
 				<? else: ?>
 					<p class="message notice">
-						この<?= get_post_type_object(get_post_type())->labels->name; ?>は<strong><? lwp_the_price();?></strong>で販売しています。
-						<? if(lwp_has_files()): ?>
-							購入すると<a href="#download-contents">ダウンロードリスト</a>のファイルをダウンロードできるようになります。
+						この<?= get_post_type_object(get_post_type())->labels->name; ?>は<strong><? lwp_the_price();?></strong>で
+						<?php if( 'ebook' == get_post_type() ): ?>
+							販売していましたが、新規販売は中止しています。
+						<?php else: ?>
+							販売しています。
+						<?php endif; ?>
+						<? if( lwp_has_files() ): ?>
+							購入した方はと<a href="#download-contents">ダウンロードリスト</a>のファイルをダウンロードできるようになります。
 						<? endif; ?>
 					</p>
-					<p class="center"><? echo lwp_buy_now(null, null); ?></p>
+					<?php if( 'ebook' != get_post_type() ): ?>
+						<p class="center"><? echo lwp_buy_now(null, null); ?></p>
+					<?php endif; ?>
 				<? endif; ?>
 			</div>
 		<? endif; ?>
