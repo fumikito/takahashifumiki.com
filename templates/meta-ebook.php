@@ -12,11 +12,10 @@
 			<th><i class="fa-money"></i>価格</th>
 			<td class="price">
 				<? if(lwp_on_sale() && !lwp_is_owner()): ?>
-					<del class="old"><? echo lwp_currency_symbol().number_format(lwp_original_price())?></del>
 					<small class="mono"><? echo lwp_discout_rate(); ?></small>
 					<br />
 				<? endif; ?>
-				<span class="old"><? echo lwp_currency_symbol().number_format(lwp_price()); ?></span>
+				<span class="old"><del><? echo lwp_currency_symbol().number_format(lwp_price()); ?></del></span>
 				<? if(!lwp_is_owner() && !lwp_is_free(true) && 'ebook' != get_post_type()): ?>
 					<? echo lwp_buy_now(null, null); ?>
 				<? endif; ?>
