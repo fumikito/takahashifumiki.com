@@ -49,6 +49,9 @@ get_header('title');
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
+
+		<?php get_template_part('templates/single', 'ebook'); ?>
+
 	</div>
 	<!-- #main ends -->
 </div>

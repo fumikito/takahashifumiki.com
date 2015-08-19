@@ -44,5 +44,12 @@
         ob_end_clean();
         echo str_replace('ページ', ' Pages', $content);
     }  ?>
+
+
 </div><!-- //.quotes-conainer -->
+
+<?php get_template_part('templates/single', 'ebook'); ?>
+
+
+
 <?php get_footer() ?>
