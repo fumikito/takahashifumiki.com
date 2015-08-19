@@ -1,6 +1,6 @@
 <div class="hametuha-links margin">
 	<h2 class="hametuha-title">
-		<i class="fa fa-share-alt"></i> 他のサイトに寄稿しているもの
+		<i class="fa fa-share-alt"></i> 破滅派に投稿している作品
 	</h2>
 	<?php if( $hametuha_posts = hametuha_posts() ): ?>
 		<ol class="hametuha-list">

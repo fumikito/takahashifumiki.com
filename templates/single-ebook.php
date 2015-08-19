@@ -1,14 +1,32 @@
 <div class="related">
-    <h2 class="related-links"><i class="fa fa-book"></i> 電子書籍も買ってくれよな！</h2>
-    <ol class="post-list post-list-large">
-        <?
-            $ebooks = new WP_Query(array(
-                'post_type' => 'ebook',
-                'post_status' => 'publish',
-                'posts_per_page' => 3,
-            ));
-        while( $ebooks->have_posts() ): $ebooks->the_post(); ?>
-            <? get_template_part('templates/loop', get_post_type()); ?>
-        <? endwhile; wp_reset_postdata(); ?>
-    </ol>
+	<h2 class="related-links"><i class="fa fa-book"></i> Amazonで発売中の電子書籍</h2>
+	<ol class="feed feed--ebook clearfix">
+		<?php
+		$feed = hametuha_kdp();
+		shuffle($feed);
+		$counter = 0;
+		foreach ( $feed as $ebook ):
+			?>
+			<li class="feed__item">
+				<a class="feed__link" href="<?= $ebook['url']; ?>">
+
+					<img src="<?= $ebook['image'] ?>" alt="<?= esc_attr($ebook['title']); ?>" />
+
+					<div class="feed__content">
+						<h3 class="feed__title">
+							<?= esc_html($ebook['title']); ?>
+							<small><?= esc_html($ebook['category']) ?></small>
+						</h3>
+
+						<p class="feed__desc"><?= esc_html( $ebook['excerpt'] ) ?></p>
+
+						<strong>
+							<i class="fa fa-external-link"></i> Amazonで見る
+						</strong>
+
+					</div>
+				</a>
+			</li>
+		<?php endforeach; ?>
+	</ol>
 </div><!-- //.related -->

@@ -124,3 +124,95 @@
     }
   }
 }
+
+
+/**========================
+ * KDP
+ */
+.feed{
+  &--ebook{
+
+  }
+  &__item{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 25%;
+    float: left;
+    &:nth-child(4n + 1){
+      clear: left;
+    }
+  }
+  &__link{
+    display: block;
+    position: relative;
+    img{
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+    &:link{
+      color: #fff;
+    }
+    &:hover{
+      color: #fff;
+      .feed__content{
+        opacity: 1;
+      }
+    }
+  }
+  &__content{
+    opacity: 0;
+    background: rgba(25, 87, 107, 0.85);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: opacity linear .5s;
+  }
+  &__title{
+    text-align: center;
+    margin: 3em 1em 1.5em;
+    font-size: 18px;
+    font-weight: bold;
+    small{
+      display: block;
+      font-size: 0.85em;
+      margin-top: 0.5em;
+    }
+  }
+  &__desc{
+    font-size: 1.2em;
+    margin: 0 1em 1em;
+  }
+  strong{
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 1em 1em 0;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .feed{
+    &__item{
+      padding: 5px;
+      width: 33%;
+      &:nth-child(4n + 1){
+        clear: none;
+      }
+      &:nth-child(3n + 1){
+        clear: left;
+      }
+    }
+    &__title{
+      margin: 1em 0.5em;
+      font-size: 14px;
+    }
+    &__desc{
+      display: none;
+    }
+  }
+}
