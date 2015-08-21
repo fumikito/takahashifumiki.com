@@ -6,7 +6,7 @@
 /**
  * @const FUMIKI_VERSION テーマのバージョン
  */
-define("FUMIKI_VERSION", "4.0.10");
+define("FUMIKI_VERSION", "4.0.11");
 
 
 function fumiki_greeting(){
@@ -107,9 +107,9 @@ WP_Fulltext_Search::init();
 register_sidebar(array(
 	 'name' => "トップページ",
 	 'id' => 'normal-sidebar',
-	 'before_widget' => '<div id="%1$s" class="box widget grid_2 %2$s">',
-	 'after_widget' => "</div>",
-	 'before_title' => '<h2><i class="fa-check-circle"></i> ',
+	 'before_widget' => '<div id="%1$s" class="box widget widget--front grid_2 %2$s">',
+	 'after_widget' => "</div><!--frontwidgets-->",
+	 'before_title' => '<h2 class="widget__title">',
 	 'after_title' => "</h2>"
 ));
 register_sidebar(array(
@@ -123,10 +123,10 @@ register_sidebar(array(
 register_sidebar(array(
 	 'name' => "通常サイドバー",
 	 'id' => 'ebook-related',
-	 'before_widget' => '<div id="%1$s" class="box widget grid_2 no-shadow %2$s">',
+	 'before_widget' => '<div id="%1$s" class="box widget--front grid_2 no-shadow %2$s">',
 	 'after_widget' => "</div>",
-	 'before_title' => '<h3 class="entry-widget-title">',
-	 'after_title' => "</h3>"
+	 'before_title' => '<h2 class="entry-widget-title">',
+	 'after_title' => "</h2>"
 ));
 /**
  * 画像サイズを追加する

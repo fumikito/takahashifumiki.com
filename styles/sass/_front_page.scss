@@ -134,8 +134,7 @@ $logo-size: 256px;
     // トップページ投稿エリア
     .main-content{
         h2{
-            line-height: 30px;
-            height: 30px;
+            line-height: 1.1;
             font-size: 2.4em;
             font-family: $title-font;
             font-weight: bold;
@@ -163,6 +162,9 @@ $logo-size: 256px;
                 border-bottom: 1px solid $semi-light-grey;
             }
         }
+        li li ul {
+            display: none;
+        }
     }
 }
 
@@ -171,8 +173,6 @@ $logo-size: 256px;
         // トップページ投稿エリア
         .main-content{
             h2{
-                line-height: 20px;
-                height: 20px;
                 font-size: 1.8em;
                 font-family: $title-font;
                 font-weight: bold;

@@ -12,8 +12,6 @@
 
     .grid_2{
         h2, h3, caption{
-            line-height: 30px;
-            height: 30px;
             font-size: 24px;
             font-weight: bold;
             color: $deep-blue;
@@ -137,6 +135,72 @@
             font-size: 1em;
             a{
                 font-size: 1.6em;
+            }
+        }
+    }
+    .widget{
+        & > a{
+            display: block;
+            text-decoration: none;
+            &:hover{
+                background-color: #fffbd2;
+            }
+        }
+        &--post{
+            h2{
+                z-index: 10;
+                position: relative;
+            }
+            &:after{
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                content: "";
+                display: block;
+                border: 40px solid #279cbe;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+            }
+        }
+        &--ebook{
+            .feed{
+                &__title{
+                   color: #fff;
+                }
+                &__desc{
+                    margin-right: 1em;
+                    margin-left: 1em;
+                }
+            }
+            img{
+                min-height: 449px;
+                @media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+                    min-height: 300px;
+                    max-height:  300px;
+                }
+                @media screen and (max-width: ($tablet - 1px)){
+                    min-height: 200px;
+                    max-height: 200px;
+                }
+            }
+        }
+        &__thumbnail{
+            height: 80px;
+            position: relative;
+            z-index: 1;
+            background: transparent center center no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
+        &__meta{
+            color: #666;
+            font-size: 1.2em;
+            i{
+                color: #aaa;
             }
         }
     }
