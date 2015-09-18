@@ -8,6 +8,9 @@
  * @return void
  */
 function _fumiki_head(){
+	if( is_front_page() ){
+		echo '<meta name="p:domain_verify" content="d41b6fbe34cc94d28d077985fdc1fe7a"/>';
+	}
 	//Facebook用のメタ情報
 	if(is_front_page() || is_singular()){
 		$title = is_front_page() ? get_bloginfo('name') : wp_title('|', false, "right").get_bloginfo('name') ;
