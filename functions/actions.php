@@ -190,6 +190,22 @@ add_action('wp_head', function(){
     remove_action('wp_head','jetpack_og_tags');
 }, 1);
 
+/**
+ * Add inSite Code
+ */
+add_action('wp_footer', function(){
+    ?>
+    <!-- InSite v2 -->
+    <script type="text/javascript">
+        (function (){
+            var h = 'eb8f663ec9fe51ac718dd4232fe8b1ba242', d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0], i;
+            window.inSite = i = window.inSite || {}; i._ = []; i.init = function(a){i._.push(a);};
+            i.idHash = h; g.type = 'text/javascript'; g.async = true; g.defer = true; g.src='//insite-feedback.com/frontend.'+h+'.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End InSite Code -->
+    <?php
+}, 9999);
 
 /**
  * Cache ヘッダーを追加する
