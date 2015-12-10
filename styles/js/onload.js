@@ -398,7 +398,6 @@ jQuery(document).ready(function($){
 				});
 	}
 	
-	//Get Ustream Status
 });
 
 //ロードイベントでTwitterウィジェットを調整する

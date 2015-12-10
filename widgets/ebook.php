@@ -4,9 +4,9 @@
  * @package WordPress
  */
 class Fumiki_eBook extends WP_Widget{
-	function Fumiki_eBook() {
+	function __construct() {
 		// Instantiate the parent object
-		parent::WP_Widget( false, '電子書籍最新' , array('description' => '最新の電子書籍を表示します'));
+		parent::__construct( false, '電子書籍最新' , array('description' => '最新の電子書籍を表示します'));
 	}
 
 	/**

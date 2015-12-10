@@ -43,31 +43,17 @@ function _fumiki_admin_bar($wp_admin_bar){
 		'parent' => 'main-menues',
 		'href' =>  get_permalink(get_option('page_for_posts'))
 	));
-	if( !wp_is_mobile() ){
-		$categories = get_terms('category', array(
-			'parent' => 0,
+	$categories = get_terms( 'category', array(
+			'parent'  => 0,
 			'orderby' => 'id'
-		));
-		foreach($categories as $cat){
-			$wp_admin_bar->add_menu(array(
+	) );
+	foreach ( $categories as $cat ) {
+		$wp_admin_bar->add_menu( array(
 				'parent' => 'category',
-				'id' => 'cat-'.$cat->term_id,
-				'title' => $cat->name,
-				'href' => get_category_link($cat)
-			));
-			$children = get_terms('category', array(
-				'parent' => $cat->term_id,
-				'exclude' => 47
-			));
-			foreach($children as $child){
-				$wp_admin_bar->add_menu(array(
-					'parent' => 'cat-'.$cat->term_id,
-					'id' => 'cat-child-'.$child->term_id,
-					'title' => $child->name,
-					'href' => get_category_link($child->term_id)
-				));
-			}
-		}
+				'id'     => 'cat-' . $cat->term_id,
+				'title'  => $cat->name,
+				'href'   => get_category_link( $cat )
+		) );
 	}
     // 電子書籍
     $wp_admin_bar->add_menu(array(
@@ -97,11 +83,11 @@ function _fumiki_admin_bar_fix($wp_admin_bar){
 		$wp_admin_bar->remove_node('wp-logo');
 	}
 	//ログインしていないユーザー向け
-	if(!is_user_logged_in()){
+	if(!current_user_can('read')){
 		$wp_admin_bar->add_menu(array(
 			'parent' => 'top-secondary',
 			'id' => 'my-account',
-			'title' => 'こんにちはゲストさん！'
+			'title' => 'ログイン'
 		));
 		$wp_admin_bar->add_group(array(
 			'parent' => 'my-account',
@@ -115,7 +101,7 @@ function _fumiki_admin_bar_fix($wp_admin_bar){
 		$wp_admin_bar->add_menu(array(
 			'id' => 'adminbar-login',
 			'parent' => 'user-actions',
-			'title' => 'ログイン',
+			'title' => 'ログインする',
 			'href' => $url
 		));
 		$wp_admin_bar->add_menu(array(

@@ -152,22 +152,6 @@ add_shortcode('flash','flash_converter');
 
 
 /**
- * Ustreamのステータスを返す
- * @return void
- */
-function _fumiki_ustream_status(){
-	if(wp_verify_nonce($_REQUEST['nonce'], 'fumiki_ajax')){
-		$res = is_on_air() ? 1 : 0;
-		header('Content-Type: application/json');
-		echo json_encode(array('status' => $res));
-		die();
-	}
-}
-add_action('wp_ajax_ustream_status', '_fumiki_ustream_status');
-add_action('wp_ajax_nopriv_ustream_status', '_fumiki_ustream_status');
-
-
-/**
  * 記事のシングルページでSSLだったらリダイレクト
  *
  * @action template_redirect
@@ -206,32 +190,3 @@ add_action('wp_footer', function(){
     <!-- End InSite Code -->
     <?php
 }, 9999);
-
-/**
- * Cache ヘッダーを追加する
- *
- * @filter nocache_headers
- * @param array $headers
- * @return array
- */
-add_filter( 'nocache_headers' , function( $headers ){
-    $headers['X-Accel-Expires'] = 0;
-    return $headers;
-}, 1);
-
-
-/**
- * ヘッダーテスト
- *
- * cloudflareでキャッシュされないかのテスト
- *
- * @action template_redirect
- */
-add_action('template_redirect', function(){
-    if( is_page('about') ){
-        nocache_headers();
-    }
-});
-
-
-

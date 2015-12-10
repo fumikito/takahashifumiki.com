@@ -4,9 +4,9 @@
  * @package WordPress
  */
 class Fumiki_Facebook_Like extends WP_Widget{
-	function Fumiki_Facebook_Like() {
+	function __construct() {
 		// Instantiate the parent object
-		parent::WP_Widget( false, 'Facebook いいねボックス' , array('description' => 'FacebookアップでAPIキーを取得してください'));
+		parent::__construct( false, 'Facebook いいねボックス' , array('description' => 'FacebookアップでAPIキーを取得してください'));
 	}
 
 	function widget( $args, $instance ) {

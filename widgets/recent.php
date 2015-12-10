@@ -2,8 +2,8 @@
 class Recent_Widget extends WP_Widget{
 	
 	
-	function Recent_Widget(){
-		parent::WP_Widget(false, '投稿タイプ別最新投稿', array('description' => '投稿タイプ別に最新の投稿を表示します。'));
+	function __construct(){
+		parent::__construct(false, '投稿タイプ別最新投稿', array('description' => '投稿タイプ別に最新の投稿を表示します。'));
 	}
 	
 	function widget($args, $instance) {
