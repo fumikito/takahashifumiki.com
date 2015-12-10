@@ -212,7 +212,7 @@ jQuery(document).ready(function($){
 			offset = window.innerHeight - 50;
         }else{
             //それ以外
-			offset = $(window).height() - 100;
+			offset = $(window).height() - 120;
         }
         $('#to-top').css('top', offset);
     }

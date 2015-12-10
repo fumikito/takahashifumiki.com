@@ -266,7 +266,7 @@
   top: 40px;
   display: none;
   a {
-    margin-right: 40px;
+    margin-right: 45px;
     @include single-transition(opacity, 0.2s, ease-in-out, 0);
     &:link, &:visited {
       color: $deep-blue;
