@@ -2,11 +2,9 @@
 /*
  * Template Name: アカウント
  */
-	get_header('meta');
-	get_header('navi');
+	get_header();
 ?>
-	<?php if(have_posts()): while(have_posts()): the_post(); ?>
-	<?php get_header('title'); ?>
+	<?php if(have_posts()) :  while(have_posts()) :  the_post(); ?>
 
 <div id="content" class="margin account" class="clearfix">
 	<div class="entry">

@@ -5,7 +5,7 @@
 		$feed = hametuha_kdp();
 		shuffle($feed);
 		$counter = 0;
-		foreach ( $feed as $ebook ):
+		foreach ( $feed as $ebook ) :
 			?>
 			<li class="feed__item">
 				<a class="feed__link" href="<?= $ebook['url']; ?>">

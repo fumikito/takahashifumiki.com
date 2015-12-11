@@ -4,13 +4,13 @@
  */
 ?>
 <li class="clearfix loop loop-post">
-	<? fumiki_archive_photo("thumbnail"); ?>
+	<?php fumiki_archive_photo("thumbnail"); ?>
 
-	<? if( $score = get_the_score() ): ?>
+	<?php if( $score = get_the_score() ) :  ?>
     	<span class="score mono"><?= round($score * 10); ?>%</span>
-	<? endif; ?>
+	<?php endif; ?>
 
-	<h3 class="post-title"><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h3>
+	<h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
 	<span class="date mono">
 		<i class="fa-calendar"></i> <?php printf('%s（%s前）', get_the_date('Y.n.j'), human_time_diff(strtotime($post->post_date))); ?><br />

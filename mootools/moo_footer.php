@@ -18,7 +18,7 @@
 		<p>copyright &copy;2006-<?php echo date('Y'); ?> <a href="http://mad4milk.net">Valerio Proietti</a></p>
 	</div><!--container ends-->
 </div><!--footer ends-->
-<?php if(is_single() && !is_single('294')): ?>
+<?php if(is_single() && !is_single('294')) :  ?>
 <a id="toTop" href="#wrapper"><span>トップに戻る</span></a>
 <?php endif; ?>
 <!-- Scripts -->

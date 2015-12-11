@@ -50,7 +50,7 @@ class Recent_Widget extends WP_Widget{
 				<label for="<?php echo $this->get_field_id('post_type'); ?>">
 					投稿タイプ<br />
 					<select name="<?php echo $this->get_field_name('post_type'); ?>" id="<?php echo $this->get_field_id('post_type'); ?>">
-						<?php foreach(get_post_types(array('public' => true), 'objects') as $type): ?>
+						<?php foreach(get_post_types(array('public' => true), 'objects') as $type) :  ?>
 							<option value="<?php echo $type->name; ?>"<?php if($post_type == $type->name) echo ' selected="selected"';?>><?php echo $type->labels->name; ?></option>
 						<?php endforeach; ?>
 					</select>

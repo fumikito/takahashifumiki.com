@@ -20,7 +20,7 @@
 <body <?php body_class('fan-gate-body'); ?>>
 	<div id="fb-root">
 		<div class="margin fan-gate">
-			<?php if(have_posts()): while(have_posts()): the_post(); ?>
+			<?php if(have_posts()) :  while(have_posts()) :  the_post(); ?>
 			<div class="meta">
 				<h1 class="title mincho"><?php the_title(); ?></h1>
 			</div>
@@ -30,9 +30,9 @@
 						<tr>
 							<th>いいね</th>
 							<td>
-								<?php if(is_user_like_fangate()): ?>
+								<?php if(is_user_like_fangate()) :  ?>
 									いいねありがとうございます！
-								<?php else: ?>
+								<?php else :  ?>
 									いいねしてください…
 								<?php endif; ?>
 							</td>
@@ -40,9 +40,9 @@
 						<tr>
 							<th>Facebookへのログイン</th>
 							<td>
-								<?php if(is_guest_on_fangate()): ?>
+								<?php if(is_guest_on_fangate()) :  ?>
 									Facebookにログインしていません。
-								<?php else: ?>
+								<?php else :  ?>
 									Facebookにログイン中です。
 								<?php endif; ?>
 							</td>
@@ -50,9 +50,9 @@
 						<tr>
 							<th>高橋文樹.comアカウント</th>
 							<td>
-								<?php if(is_user_logged_in()):?>
+								<?php if(is_user_logged_in()) : ?>
 										高橋文樹.comにログインしています。
-								<?php else:?>
+								<?php else : ?>
 									高橋文樹.comにログインしていません。<a target="_top" href="<?php echo wp_login_url()?>">こちら</a>からログインしてください。
 								<?php endif; ?>
 							</td>
@@ -60,20 +60,20 @@
 						<tr>
 							<th>Facebookと高橋文樹.comの紐付け</th>
 							<td>
-								<?php if(get_user_id_on_fangate()): ?>
+								<?php if(get_user_id_on_fangate()) :  ?>
 									あなたのFacebookアカウントは高橋文樹.comに登録されています。
-								<?php else: ?>
+								<?php else :  ?>
 									あなたのFacebookアカウントと紐づいたユーザーは高橋文樹.comにいません。
 								<?php endif; ?>
 							</td>
 						</tr>
 					</tbody>
 				</table>
-				<?php if(is_user_logged_in() && get_user_id_on_fangate() && is_user_like_fangate()): ?>
+				<?php if(is_user_logged_in() && get_user_id_on_fangate() && is_user_like_fangate()) :  ?>
 					<p class="message success center">
 						ありがとうございます！
 					</p>
-				<?php else: ?>
+				<?php else :  ?>
 					<p class="message warning">
 						ログインしてアカウントを紐付けて「いいね！」すると、この表示が変わります。
 					</p>

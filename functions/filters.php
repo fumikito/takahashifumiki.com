@@ -267,7 +267,7 @@ add_filter('stylesheet_directory_uri', '_fumiki_static_url');
 function _fumiki_script_loader_src($src){
 	$home_url = home_url();
 	if( false !== strpos($src, $home_url) ){
-		$src = preg_replace('/(https?):\/\//', '$1://s.', $src);
+		$src = preg_replace('/(https?) : \/\//', '$1://s.', $src);
 	}
 	return $src;
 }
@@ -289,7 +289,7 @@ add_filter('style_loader_tag', function ($tag, $handle){
 		default:
 			$home_url = home_url('/', is_ssl() ? 'https' : 'http');
 			// 同一ドメインの静的リソースはstaticドメインより配信
-			$tag = preg_replace('/(https?):\/\/takahashifumiki/u', '$1://s.takahashifumiki', $tag);
+			$tag = preg_replace('/(https?) : \/\/takahashifumiki/u', '$1://s.takahashifumiki', $tag);
 			break;
 	}
 	return $tag;
@@ -307,7 +307,7 @@ function _fumiki_attachment_image_atts($atts){
 		$atts['src'] = str_replace('http://', 'https://', $atts['src']);
 	}
 	if(!is_admin()){
-		$atts['src'] = preg_replace("/(https?):\/\//", '$1://s.', $atts['src']);
+		$atts['src'] = preg_replace("/(https?) : \/\//", '$1://s.', $atts['src']);
 	}
 	return $atts;
 }
@@ -321,7 +321,7 @@ add_filter('wp_get_attachment_image_attributes', '_fumiki_attachment_image_atts'
  */
 function _fmiki_attachment_url($url){
 	if(!is_admin()){
-		$url = preg_replace("/(https?):\/\//", '$1://s.', $url);
+		$url = preg_replace("/(https?) : \/\//", '$1://s.', $url);
 	}
 	return $url;
 }

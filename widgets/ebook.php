@@ -36,7 +36,7 @@ class Fumiki_eBook extends WP_Widget{
 			}
 			$query = new WP_Query($query_string);
 			$counter = 0;
-			if($query->have_posts()): while($query->have_posts()): $query->the_post(); $counter++;
+			if($query->have_posts()) :  while($query->have_posts()) :  $query->the_post(); $counter++;
 				$class = '';
 				if(lwp_is_free()){
 					$class = ' ebook-free';
@@ -47,9 +47,9 @@ class Fumiki_eBook extends WP_Widget{
 		?>
 			<li class="clearfix widgets-ebook-content ebook-list<?php echo $counter.$class; ?>">
 				<a href="<?php the_permalink(); ?>">
-					<?php if(!empty($attachment)): ?>
+					<?php if(!empty($attachment)) :  ?>
 						<?php echo wp_get_attachment_image(current($attachment)->ID, 'pinky-cover'); ?>
-					<?php else: ?>
+					<?php else :  ?>
 						<img class="attachment-pinky-cover" src="<?php bloginfo('template_directory'); ?>/styles/img/archive_nophoto_ebook.png" width="90" height="120" alt="<?php the_title();  ?>" />
 					<?php endif; ?>
 				</a>
@@ -60,9 +60,9 @@ class Fumiki_eBook extends WP_Widget{
 				<p class="excerpt">
 					<?php echo fumiki_trim(get_the_excerpt(), 40); ?>
 				</p>
-				<?php if(lwp_on_sale()): ?>
+				<?php if(lwp_on_sale()) :  ?>
 					<img class="sale-icon" src="<?php bloginfo('template_directory'); ?>/styles/img/icon-sale-32.png" width="32" height="32" alt="Sale" />
-				<?php elseif(lwp_is_free()):?>
+				<?php elseif(lwp_is_free()) : ?>
 					<img class="sale-icon" src="<?php bloginfo('template_directory'); ?>/styles/img/icon-free-32.png" width="32" height="32" alt="Free" />
 				<?php endif;?>
 			</li>

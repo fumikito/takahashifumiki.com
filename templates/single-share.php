@@ -1,6 +1,6 @@
 <div class="google-share clearfix">
     <div class="share">
-        <? fumiki_share(get_the_title()." | ".get_bloginfo('name'), get_permalink()); ?>
+        <?php fumiki_share(get_the_title()." | ".get_bloginfo('name'), get_permalink()); ?>
     </div>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- 高橋文樹スマートフォン上 -->
@@ -12,7 +12,7 @@
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    <?php if( is_singular('post') ): ?>
+    <?php if( is_singular('post') ) :  ?>
     <div class="single-content-detail">
         <i class="fa fa-info"></i>
         <p>

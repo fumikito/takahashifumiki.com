@@ -1,18 +1,18 @@
-<? get_header('meta'); ?>
+<?php get_header(); ?>
 <div id="content" class="margin clearfix">
-	<? if(have_posts()): the_post(); ?>
+	<?php if(have_posts()) :  the_post(); ?>
 
 
 	<div class="title_box">
 		<h1 class="center">
-			<img alt="<? bloginfo('name'); ?>" src="<?= get_template_directory_uri(); ?>/styles/img/logo-front-page.png" width="256" height="256" />
+			<img alt="<?php bloginfo('name'); ?>" src="<?= get_template_directory_uri(); ?>/styles/img/logo-front-page.png" width="256" height="256" />
 		</h1>
-		<? if( ($image = fumiki_header_image()) ): ?>
-			<img class="header-image" src="<? header_image() ?>" alt="<?= esc_attr($image->post_title) ?>" />
-			<? if( !empty($image->post_excerpt) ): ?>
+		<?php if( ($image = fumiki_header_image()) ) :  ?>
+			<img class="header-image" src="<?php header_image() ?>" alt="<?= esc_attr($image->post_title) ?>" />
+			<?php if( !empty($image->post_excerpt) ) :  ?>
 				<p class="photo-credit"><?= $image->post_excerpt;  ?></p>
-			<? endif; ?>
-		<? endif; ?>
+			<?php endif; ?>
+		<?php endif; ?>
 	</div><!-- //.title_box -->
 
 
@@ -20,7 +20,7 @@
 	<div class="desc-box desc-box-front clearfix">
 
 		<div class="box grid_1 main-content no-border">
-			<h2><? the_title(); ?></h2>
+			<h2><?php the_title(); ?></h2>
 			<div class="desc">
 				<?= the_content(); ?>
 			</div>
@@ -32,7 +32,7 @@
 					<i class="fa-flag"></i>About me
 				</h2>
 				<p>
-					<? bloginfo('description'); ?><br />
+					<?php bloginfo('description'); ?><br />
 					管理者については<a href="<?= home_url('/about/', 'http');?>">高橋文樹について</a>をご覧下さい。
 				</p>
 				<table>
@@ -43,14 +43,14 @@
 					<tr>
 						<th>開始日</th>
 						<td class="mono">
-							<? $past = human_time_diff(strtotime('2008-4-18')); ?>
+							<?php $past = human_time_diff(strtotime('2008-4-18')); ?>
 							2008.4.18（<?= $past; ?>前）
 						</td>
 					</tr>
 					<tr>
 						<th>最新</th>
 						<td class="mono">
-							<? $last_updated = fumiki_get_latest_updated(); ?>
+							<?php $last_updated = fumiki_get_latest_updated(); ?>
 							<?= mysql2date('Y.n.j', $last_updated); ?>
 							（<?= human_time_diff(strtotime($last_updated)); ?>前）
 						</td>
@@ -67,7 +67,7 @@
 					<tr>
 						<th>総文字</th>
 						<td class="mono">
-							<? $length = fumiki_get_post_length(); ?>
+							<?php $length = fumiki_get_post_length(); ?>
 							<?= number_format($length)." (".number_format($length / $post_counts)."/1post)"; ?>
 						</td>
 					</tr>
@@ -80,7 +80,7 @@
 					</tr>
 					<tr>
 						<th>CMS</th>
-						<td class="mono">WordPress <? global $wp_version; echo $wp_version; ?></td>
+						<td class="mono">WordPress <?php global $wp_version; echo $wp_version; ?></td>
 					</tr>
 					</tbody>
 				</table>
@@ -99,7 +99,7 @@
 		?>
 		<div id="post-<?php the_ID(); ?>" class="box widget widget--front grid_2 widget--post">
 			<a href="<?php the_permalink() ?>">
-				<?php if( has_post_thumbnail() ): ?>
+				<?php if( has_post_thumbnail() ) :  ?>
 				<div class="widget__thumbnail" style="background-image: url('<?= current(wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium')) ?>')"></div>
 				<?php endif; ?>
 				<h2><?php the_title(); ?></h2>
@@ -119,7 +119,7 @@
 		$feed = hametuha_kdp();
 		shuffle($feed);
 		$counter = 0;
-		foreach ( $feed as $ebook ):
+		foreach ( $feed as $ebook ) :
 			?>
 			<div class="box feed widget widget--front grid_2 widget--ebook">
 				<a class="feed__link" href="<?= $ebook['url']; ?>">
@@ -148,7 +148,7 @@
 		
 	</div>
 	
-	<? endif; ?>
+	<?php endif; ?>
 	</div><!-- //.desc-box -->
 	
 

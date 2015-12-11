@@ -33,29 +33,29 @@ function _fumiki_tickets($parent_id){
 	global $lwp;
 	?>
 <tr>
-<th scope="row"><? the_title(); ?></th>
-<td><? lwp_the_price();?></td>
+<th scope="row"><?php the_title(); ?></th>
+<td><?php lwp_the_price();?></td>
 <td>
-	<? lwp_the_ticket_stock(); ?>
+	<?php lwp_the_ticket_stock(); ?>
 </td>
-<td><? the_content(); ?></td>
+<td><?php the_content(); ?></td>
 <td>
-	<? if(lwp_get_ticket_stock() <= 0): ?>
-		<? if(lwp_has_cancel_list()): ?>
-			<? if(lwp_is_user_waiting()): ?>
+	<?php if(lwp_get_ticket_stock() <= 0) :  ?>
+		<?php if(lwp_has_cancel_list()) :  ?>
+			<?php if(lwp_is_user_waiting()) :  ?>
 				キャンセル待ち申込済み<br />
 				<small>（<a href="<?= esc_attr(lwp_cancel_list_dequeue_url()); ?>" onclick="if(!confirm('キャンセル待ちを解除してよろしいですか？')) return false;">申込み解除</a>）</small>
-			<? else: ?>
-				<a rel="noindex,nofollow" href="<?= lwp_cancel_list_url(); ?>" onclick="if(!confirm('<? echo esc_js(get_the_title($parent_id)." ".get_the_title()); ?>にキャンセル待ちを申し込みます。よろしいですか？\n※キャンセル待ちに申し込むと在庫を増やした時にメールを受け取ることができますが優先的に購入できるものではありません。')) return false;">キャンセル待ち</a>
-			<? endif; ?>
-		<? else: ?>
+			<?php else :  ?>
+				<a rel="noindex,nofollow" href="<?= lwp_cancel_list_url(); ?>" onclick="if(!confirm('<?= esc_js(get_the_title($parent_id)." ".get_the_title()); ?>にキャンセル待ちを申し込みます。よろしいですか？\n※キャンセル待ちに申し込むと在庫を増やした時にメールを受け取ることができますが優先的に購入できるものではありません。')) return false;">キャンセル待ち</a>
+			<?php endif; ?>
+		<?php else :  ?>
 			売り切れ
-		<? endif; ?>
-	<? elseif(time() >= lwp_selling_limit('U', $parent_id)): ?>
+		<?php endif; ?>
+	<?php elseif(time() >= lwp_selling_limit('U', $parent_id)) :  ?>
 		募集終了
-	<? else: ?>
-		<a class="lwp-buynow" href="<? echo esc_url(lwp_buy_url());?>">注文</a>
-	<? endif; ?>
+	<?php else :  ?>
+		<a class="lwp-buynow" href="<?= esc_url(lwp_buy_url());?>">注文</a>
+	<?php endif; ?>
 </td>
 </tr>
 	<?

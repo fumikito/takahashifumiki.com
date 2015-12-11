@@ -1,8 +1,4 @@
-<?php
-get_header('meta');
-get_header('navi');
-get_header('title');
-?>
+<?php get_header(); ?>
 
 <div class="margin search-block">
     <?php get_search_form(); ?>
@@ -10,20 +6,20 @@ get_header('title');
 
 <div id="content" class="margin clearfix">
 	<div id="main">
-		<?php if( have_posts() ): ?>
+		<?php if( have_posts() ) :  ?>
 
-			<? if( function_exists('wp_pagenavi') ) wp_pagenavi() ?>
+			<?php if( function_exists('wp_pagenavi') ) wp_pagenavi() ?>
 
             <ol class="post-list post-list-large">
-				<? while( have_posts()): the_post(); ?>
-					<? get_template_part('templates/loop', get_post_type()); ?>
-				<? endwhile; ?>
+				<?php while( have_posts()) :  the_post(); ?>
+					<?php get_template_part('templates/loop', get_post_type()); ?>
+				<?php endwhile; ?>
 			</ol><!-- .entry ends-->
 
-            <? if( function_exists('wp_pagenavi') ) wp_pagenavi() ?>
+            <?php if( function_exists('wp_pagenavi') ) wp_pagenavi() ?>
 
 
-		<? else: ?>
+		<?php else :  ?>
 			<!-- 404 Not Found -->
 			<article class="entry">
 				<h2>該当する投稿はありませんでした</h2>
@@ -36,7 +32,7 @@ get_header('title');
 				</ul>
 			</article>
 			<!-- 404 Not Found -->
-		<? endif; ?>
+		<?php endif; ?>
 
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- 高橋文樹スマートフォン上 -->

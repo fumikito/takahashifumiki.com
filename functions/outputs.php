@@ -20,8 +20,8 @@ function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true"){
 		  type: 'profile',
 		  rpp: 5,
 		  interval: 3000,
-		  width: <? echo $width; ?>,
-		  height: <? echo $height; ?>,
+		  width: <?= $width; ?>,
+		  height: <?= $height; ?>,
 		  theme: {
 		    shell: {
 		      background: 'none',
@@ -35,7 +35,7 @@ function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true"){
 		  },
 		  features: {
 		    scrollbar: false,
-		    loop: <? echo $loop; ?>,
+		    loop: <?= $loop; ?>,
 		    live: true,
 		    hashtags: true,
 		    timestamp: true,
@@ -249,64 +249,64 @@ function ebook_cover_src($post = null){
 function fumiki_loop_container($additional_class = '', $score = false, $level = 2, $counter = 0){
 	global $post;
 	?>
-	<div class="archive-box archive-box-small<? if(!empty($additional_class)) echo ' '.$additional_class;?> archive-box-<?= get_post_type(); ?>">
+	<div class="archive-box archive-box-small<?php if(!empty($additional_class)) echo ' '.$additional_class;?> archive-box-<?= get_post_type(); ?>">
 		
 		<div class="post-type post-type-<?= get_post_type(); ?> clearfix">
 			<span class="post-type-label label-<?= get_post_type(); ?>">
-				<? switch(get_post_type()): case 'ebook': ?>
+				<?php switch(get_post_type()) :  case 'ebook': ?>
 					<i class="fa-book"></i>
-				<? break; case 'events': ?>
+				<?php break; case 'events': ?>
 					<i class="fa-bullhorn"></i>
-				<? break; default: ?>
+				<?php break; default: ?>
 					<i class="fa-pencil"></i>
-				<? endswitch; ?>
+				<?php endswitch; ?>
 				<?= get_post_type_object(get_post_type())->labels->name; ?>
 			</span>
 			<span class="post-counter-label"><?= $counter; ?></span>
 		</div>
 			
-		<h<? echo $level; ?> class="archive-title">
-			<a href="<? the_permalink(); ?>"><? the_title(); ?></a>
-		</h<? echo $level; ?>>
+		<h<?= $level; ?> class="archive-title">
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		</h<?= $level; ?>>
 		
 		<small class="mono">
-			<? printf('%s　%s前', get_the_time('Y/n/j (D)'), human_time_diff(strtotime($post->post_date))); ?>
+			<?php printf('%s　%s前', get_the_time('Y/n/j (D)'), human_time_diff(strtotime($post->post_date))); ?>
 		</small>
 			
-		<a class="photo" href="<? the_permalink(); ?>">
-			<? if(get_post_type() == 'ebook'): ?>
-				<img class="cover" src="<? echo ebook_cover_src(); ?>" alt="<? the_title(); ?>" width="240" height="320" />
-				<? if(!lwp_on_sale()): ?>
-					<img class="on-sale" src="<? bloginfo('template_directory'); ?>/styles/img/fa-sale-48.png" width="48" height="48" alt="On Sale" />
-				<? endif; ?>
+		<a class="photo" href="<?php the_permalink(); ?>">
+			<?php if(get_post_type() == 'ebook') :  ?>
+				<img class="cover" src="<?= ebook_cover_src(); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
+				<?php if(!lwp_on_sale()) :  ?>
+					<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/styles/img/fa-sale-48.png" width="48" height="48" alt="On Sale" />
+				<?php endif; ?>
 				<p class="price old">
-					<? lwp_the_price() ?>
+					<?php lwp_the_price() ?>
 				</p>
-			<? else: ?>
-				<? fumiki_archive_photo("thumbnail", $post, false); ?>
-			<? endif; ?>
+			<?php else :  ?>
+				<?php fumiki_archive_photo("thumbnail", $post, false); ?>
+			<?php endif; ?>
 		</a>
 		
-		<? if(get_post_type() == 'events'): ?>
+		<?php if(get_post_type() == 'events') :  ?>
 		<table class="event-table">
 			<tr>
 				<th><i class="fa-calendar"></i>開催日時</th>
 				<td>
-					<? if(lwp_is_oneday_event()): ?>
+					<?php if(lwp_is_oneday_event()) :  ?>
 						<?= lwp_event_starts('Y.n.j (D) <\b\r />H:i').'〜'.lwp_event_ends('H:i'); ?>
-					<? else: ?>
-						<? printf('開始: %s<br />終了: %s', lwp_event_starts('Y.n.j (D) H:i'), lwp_event_ends('Y.n.j (D) H:i')); ?>
-					<? endif; ?>
+					<?php else :  ?>
+						<?php printf('開始: %s<br />終了: %s', lwp_event_starts('Y.n.j (D) H:i'), lwp_event_ends('Y.n.j (D) H:i')); ?>
+					<?php endif; ?>
 				</td>
 			</tr>
 			<tr>
 				<th><i class="fa-time"></i>〆切</th>
 				<td>
-					<? if(lwp_is_event_available()): ?>
+					<?php if(lwp_is_event_available()) :  ?>
 						<?= lwp_selling_limit('Y.n.j (D)'); ?>
-					<? else: ?>
+					<?php else :  ?>
 						募集終了
-					<? endif; ?>
+					<?php endif; ?>
 				</td>
 			</tr>
 			<tr>
@@ -316,14 +316,14 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 				</td>
 			</tr>
 		</table>
-		<? endif; ?>
+		<?php endif; ?>
 		
 		<div class="desc clearfix">
-			<? the_excerpt(); ?>
+			<?php the_excerpt(); ?>
 		</div>
 		
 		<div class="taxonomies">
-		<? switch(get_post_type()){
+		<?php switch(get_post_type()){
 			case 'post':
 				$tax = array(
 					'category' => 'fa-folder-open',
@@ -334,24 +334,24 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 				$tax = array();
 				break;
 		} ?>
-		<? if(!empty($tax)): foreach($tax as $t => $icon_class):?>
-			<? $terms = get_the_terms(get_the_ID(), $t); ?>
-			<? if(!empty($terms) && !is_wp_error($terms)): ?>
+		<?php if(!empty($tax)) :  foreach($tax as $t => $icon_class) : ?>
+			<?php $terms = get_the_terms(get_the_ID(), $t); ?>
+			<?php if(!empty($terms) && !is_wp_error($terms)) :  ?>
 			<span class="<?= $t; ?>">
-				<? foreach($terms as $term): ?>
+				<?php foreach($terms as $term) :  ?>
 				<a href="<?= get_term_link($term); ?>">
 					<i class="<?= $icon_class; ?>"></i>
 					<?= esc_html($term->name); ?>
 				</a>
-				<? endforeach; endif; ?>
+				<?php endforeach; endif; ?>
 			</span>
-		<? endforeach; endif; ?>
+		<?php endforeach; endif; ?>
 		</div>
-		<? if($score): ?>
-			<span class="score"><? echo $score; ?></span>
-		<? endif; ?>
+		<?php if($score) :  ?>
+			<span class="score"><?= $score; ?></span>
+		<?php endif; ?>
 		<p class="more">
-			<a class="button-blue" href="<? the_permalink(); ?>">見る &raquo;</a>
+			<a class="button-blue" href="<?php the_permalink(); ?>">見る &raquo;</a>
 		</p>
 	</div>
 	<!-- .archive-box-small ends -->

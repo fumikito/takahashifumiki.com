@@ -108,9 +108,9 @@ class Analytics extends Pattern\Singleton
 			GAM.getTime = function(){
 				return Math.round(new Date() - this.start);
 			};
-            <?php if($hit): ?>
+            <?php if($hit) :  ?>
             GAM.webFont =  (Math.random() <= 0.5);
-            <?php else: ?>
+            <?php else :  ?>
             GAM.webFont = true;
             <?php endif; ?>
         </script>
@@ -134,9 +134,9 @@ class Analytics extends Pattern\Singleton
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			window.google_analytics_uacct = "<?= esc_js($this->profile_id) ?>";
 			ga('create', '<?= esc_js($this->profile_id) ?>', '<?= esc_js($this->domain) ?>');
-            <? if(is_user_logged_in()): ?>
+            <?php if(is_user_logged_in()) :  ?>
             ga('set', '&uid', '<?= get_current_user_id() ?>');
-            <? endif; ?>
+            <?php endif; ?>
             <?php
                 // ページ種別を出力
                 if( is_front_page() ){

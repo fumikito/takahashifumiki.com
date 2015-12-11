@@ -4,9 +4,9 @@ include_once(TEMPLATEPATH.'/mootools/moo_header.php');
  * ダウンロードページとの分岐
  ****************************************/
 
-if(is_single('294')):
+if(is_single('294')) :
 	include(TEMPLATEPATH."/mootools/download.php");
-else:
+else :
 ?>
 <!--main-menu starts-->
 <div id="main-menu" class="span-4">

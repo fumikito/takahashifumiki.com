@@ -1,9 +1,9 @@
 <nav id="navi" class="clearfix<?= (is_normal_archive() || is_404()) ? ' archive' : ''; ?>">
-	<? if(function_exists('bcn_display')): ?>
+	<?php if(function_exists('bcn_display')) :  ?>
 		<div class="breadcrumb margin">
 			<i class="fa-map-marker"></i>&nbsp;<?php bcn_display(); ?>
 		</div>
-	<? endif; ?>
+	<?php endif; ?>
 </nav><!-- //#navi -->
 
 <div id="to-top">
