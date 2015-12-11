@@ -345,22 +345,24 @@ function fumiki_loop_container( $additional_class = '', $score = false, $level =
 		</div>
 
 		<div class="taxonomies">
-			<?php switch ( get_post_type() ) {
+			<?php
+			switch ( get_post_type() ) {
 				case 'post':
 					$tax = array(
 						'category' => 'fa-folder-open',
-						'post_tag' => 'fa-tags'
+						'post_tag' => 'fa-tags',
 					);
 					break;
 				default:
 					$tax = array();
 					break;
-			} ?>
+			}
+			?>
 			<?php if ( ! empty( $tax ) ) : foreach ( $tax as $t => $icon_class ) : ?>
 				<?php $terms = get_the_terms( get_the_ID(), $t ); ?>
 				<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
 					<span class="<?= $t; ?>">
-				<?php foreach ( $terms as $term ) : ?>
+				<?php foreach ( $terms as $term ) : if ( is_wp_error( $term ) ) { continue; } ?>
 						<a href="<?= get_term_link( $term ); ?>">
 							<i class="<?= $icon_class; ?>"></i>
 							<?= esc_html( $term->name ); ?>
