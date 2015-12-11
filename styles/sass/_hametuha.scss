@@ -3,21 +3,47 @@
  * 破滅派リンク
  */
 .hametuha-links {
+
   padding-top: 2em;
   padding-bottom: 2em;
+  background: #f9f9f9;
+
+  border-top: 3px double #ddd;
+
   .hametuha-title {
+    text-align: center;
     font-family: $title-font;
     font-size: 2em;
     color: $title-font-color;
     margin: 15px 1em;
     position: relative;
   }
+
+  &__description{
+    text-align: center;
+    font-size: 1.4em;
+    color: #888;
+    margin-bottom: 2em;
+  }
+
+  .button{
+    font-size: 2em;
+
+  }
+
   .hametuha-list {
-    border-bottom: 1px solid $thin-grey;
+    margin: 2em 0;
     li {
-      border-top: 1px solid $thin-grey;
+
       font-size: 1.4em;
       position: relative;
+
+      @media only screen and (max-width: $tablet - 1){
+        border-top: 1px solid #ddd;
+        &:last-child{
+          border-bottom: 1px solid #ddd;
+        }
+      }
       a {
         position: relative;
         z-index: 2;
@@ -65,8 +91,15 @@
           line-height: 1.4;
           font-size: 0.85em;
         }
+        @media only screen and (max-width: $tablet - 1){
+          display: none;
+        }
       }
       .category {
+        line-height: 1.2;
+        .tags{
+          display: block;
+        }
         span{
           margin-right: 0.5em;
         }

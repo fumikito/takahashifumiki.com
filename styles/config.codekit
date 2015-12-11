@@ -363,6 +363,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/favicon\/hametuha.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17557,
+		"inputAbbreviatedPath": "\/img\/favicon\/hametuha.png",
+		"outputAbbreviatedPath": "\/img\/favicon\/hametuha.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/favicon\/logox1024.png": {
 		"fileType": 32768,
 		"ignore": 0,

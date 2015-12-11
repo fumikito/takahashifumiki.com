@@ -19,19 +19,31 @@ function hametuha_posts() {
 			libxml_use_internal_errors( true );
 			$xml = simplexml_load_string( $feed['body'], 'SimpleXMLElement', LIBXML_NOCDATA );
 			if ( false === $xml ) {
-				return array();
+				return [];
 			} else {
-				$posts = array();
+				$posts = [];
 				foreach ( $xml->channel->item as $item ) {
-					$posts[] = array(
+					$p      = [
 						'title'     => (string) $item->title,
 						'excerpt'   => (string) $item->description,
 						'url'       => (string) $item->link .
-									   '?utm_source=takahashifumiki.com&utm_medium=banner&utm_campaign=related',
+						               '?utm_source=takahashifumiki.com&utm_medium=banner&utm_campaign=related',
 						'post_date' => date_i18n( 'Y-m-d H:i:s', strtotime( $item->pubDate ) + 60 * 60 * 9 ),
 						'category'  => (array) $item->category,
 						'source'    => '破滅派',
-					);
+					];
+					$images = [];
+					foreach ( $item->children( 'media', true )->group->content as $thumbnail ) {
+						$data                             = $thumbnail->attributes();
+						$attributes                       = $thumbnail->attributes();
+						$images[ (string) $data['size'] ] = [
+							(string) $data['size'],
+							(string) $data['width'],
+							(string) $data['height'],
+						];
+					}
+					$p['images'] = $images;
+					$posts[]     = $p;
 				}
 				// 保存する
 				set_transient( 'hametu_posts', $posts, 60 * 60 * 2 );

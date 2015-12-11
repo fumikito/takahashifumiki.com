@@ -29,4 +29,8 @@
 			</li>
 		<?php endforeach; ?>
 	</ol>
+
+
+	<a target="_blank" rel="nofollow" href="http://www.amazon.co.jp/gp/search?ie=UTF8&camp=247&creative=1211&index=aps&keywords=%E9%AB%98%E6%A9%8B%E6%96%87%E6%A8%B9&linkCode=ur2&tag=takahashifumiki-22">高橋文樹の本</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=hametuha-22&l=ur2&o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
 </div><!-- //.related -->
