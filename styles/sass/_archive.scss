@@ -8,6 +8,7 @@
   margin: 1em 0;
   border-top: 3px double #f1f1f1;
   border-bottom: 3px double #f1f1f1;
+  font-size: 1.4em;
   .sort-title{
     font-size: 1.4em;
     display: block;
@@ -31,11 +32,11 @@
       display: block;
       margin-bottom: 0.5em;
       color: #888;
-
     }
   }
   #sort-fields{
     input, select{
+      max-width: 100%;
       width: 90%;
     }
   }
@@ -57,6 +58,7 @@
     padding: 5px 0;
     margin: 0 auto;
     text-align: center;
+    font-size: 20px;
     background-color: $white;
     @include border-radius(3px);
     border: 1px solid $thin-grey;

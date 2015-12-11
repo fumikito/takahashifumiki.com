@@ -6,6 +6,13 @@
 
 jQuery(document).ready(function($){
 
+	// クッキーをチェックして、ログインしてるか確認
+	var $loggineBtn = $('#login-button');
+	if( /fumikicustomer=1/.test(document.cookie) ){
+		$('.account__logged-out').remove();
+		$loggineBtn.attr('href', $loggineBtn.attr('data-href'));
+	}
+
     // ブラーフィルターがないブラウザ
     if(/Firefox/.test(navigator.userAgent) || (/MSIE/.test(navigator.userAgent) && !(/MSIE (5|6|7|8|9)\.0/.test(navigator.userAgent))) ){
         $('body').addClass('non-filter-blur');
@@ -36,18 +43,38 @@ jQuery(document).ready(function($){
             e.preventDefault();
             $(this).toggleClass('toggle');
         });
-        // トップの階層メニューはダブルクリックにしか反応しない
-        $('.menu > li > a').click(function(e){
-            var link = $(this);
-            if( 'go' !== link.attr('data-double-tap') ){
-                e.preventDefault();
-                link.attr('data-double-tap', 'go');
-                setTimeout(function(){
-                    link.attr('data-double-tap', null);
-                }, 500);
-            }
+        // トップの階層メニューは子要素がある場合、
+		// 展開する
+        $('.header--main .menu > li > a').click(function(e){
+			var $link = $(this);
+			if( $link.next('ul').length ){
+				// これは親要素
+				if( $link.hasClass('toggle') ){
+					// 飛ばす
+				}else{
+					$('.header--main .men > li > a').removeClass('toggle');
+					$link.addClass('toggle');
+					e.preventDefault();
+				}
+			}
         });
     }
+
+	var $mobileMenu;
+	$('#toggle-menu').click(function(e){
+		e.preventDefault();
+		if( ! $mobileMenu ){
+			$mobileMenu = $('<div class="header__mobile"><div class="header__mobile--container"></div></div>');
+			$mobileMenu.find('.header__mobile--container').append($('.header__logo'));
+			$mobileMenu.find('.header__mobile--container').append($('.header--main .nav-menu'));
+			$('body').append($mobileMenu);
+		}
+		$mobileMenu.toggleClass('toggle');
+		$(this).toggleClass('toggle');
+		if( $(this).hasClass('toggle') ){
+			$mobileMenu.find('.header__mobile--container').height($(window).height() - 60);
+		}
+	});
 
     // 検索フォーム
     $('#sorter').submit(function(e){

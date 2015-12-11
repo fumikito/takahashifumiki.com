@@ -1,19 +1,23 @@
 <?php get_header(); ?>
-<div id="content" class="margin clearfix">
-	<?php if(have_posts()) :  the_post(); ?>
 
-
-	<div class="title_box">
+	<div class="title_box" style="background-image: url('<?php header_image() ?>');">
+		<div class="margin">
 		<h1 class="center">
 			<img alt="<?php bloginfo('name'); ?>" src="<?= get_template_directory_uri(); ?>/styles/img/logo-front-page.png" width="256" height="256" />
 		</h1>
 		<?php if( ($image = fumiki_header_image()) ) :  ?>
-			<img class="header-image" src="<?php header_image() ?>" alt="<?= esc_attr($image->post_title) ?>" />
 			<?php if( !empty($image->post_excerpt) ) :  ?>
 				<p class="photo-credit"><?= $image->post_excerpt;  ?></p>
 			<?php endif; ?>
 		<?php endif; ?>
+
+		</div>
 	</div><!-- //.title_box -->
+
+<div id="content" class="margin clearfix">
+	<?php if(have_posts()) :  the_post(); ?>
+
+
 
 
 

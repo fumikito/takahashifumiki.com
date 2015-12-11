@@ -1,4 +1,17 @@
 <?php
+
+
+/**
+ * ログインしたらCookieをつける
+ */
+add_action( 'wp_login', function($login_name, $current_user){
+	setcookie("fumikicustomer", 1, current_time('timestamp') + ( 3600 * 24 * 14 ), "/",  preg_replace('#https?://#', '', rtrim(home_url(), '/')));
+}, 10, 2 );
+
+add_action('wp_logout', function(){
+	setcookie("fumikicustomer", 1, current_time('timestamp') - 10, "/",  preg_replace('#https?://#', '', rtrim(home_url(), '/')));
+});
+
 /**
  * Cache ヘッダーを追加する
  *
@@ -27,7 +40,7 @@ add_action( 'template_redirect', function () {
 	} elseif ( is_singular( 'ebook' ) ) {
 		nocache_headers();
 	} elseif ( is_singular( 'post' ) ) {
-		if ( lwp_has_files() ) {
+		if ( lwp_has_files() || lwp_has_ticket() ) {
 			nocache_headers();
 		}
 	}

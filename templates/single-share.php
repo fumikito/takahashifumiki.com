@@ -2,6 +2,7 @@
     <div class="share">
         <?php fumiki_share(get_the_title()." | ".get_bloginfo('name'), get_permalink()); ?>
     </div>
+    <p class="sponsered">SPONSORED LINK</p>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- 高橋文樹スマートフォン上 -->
     <ins class="adsbygoogle"

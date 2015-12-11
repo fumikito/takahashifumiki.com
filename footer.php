@@ -1,14 +1,6 @@
 <div class="margin pre-footer-navigation">
 
-	<a id="footer-menu-toggle" href="#">
-		<i class="fa fa-navicon"></i> メニュー
-	</a>
-
-
-	<?php wp_nav_menu( array( 'theme_location'  => 'top-page',
-	                          'container_class' => 'nav-menu',
-	                          'container'       => 'nav'
-	) ); ?>
+	<p class="sponsered">SPONSORED LINK</p>
 
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- 高橋文樹レスポンシブフッター上 -->

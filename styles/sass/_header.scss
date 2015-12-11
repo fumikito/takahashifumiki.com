@@ -1,0 +1,310 @@
+$header-height: 42px;
+body{
+  padding-top: $header-height;
+}
+.header{
+  $link: #fff;
+  $link-active: #ff97a2;
+  &__logo {
+    display: inline-block;
+    padding: 5px 10px;
+    @media only screen and (max-width: $tablet - 1){
+      display: none;
+    }
+  }
+  &--main{
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.4);
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: $header-height;
+    z-index: 500;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    // Link
+    a {
+      &:link, &:visited {
+        color: $link;
+        text-decoration: none;
+        border-color: $link;
+      }
+      &:hover, &:active {
+        color: $link-active;
+        text-decoration: none;
+        border-color: $link-active;
+      }
+    }
+    // ログイン
+    .account {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      display: block;
+      font-size: 14px;
+      line-height:1;
+      height: $header-height - 10;
+      padding: 8px 10px;
+      i{
+        margin-right: 5px;
+      }
+      border-width: 1px;
+      border-style: solid;
+      border-radius:2px;
+      &__logged-out{
+        & + .account__logged-in {
+          display: none;
+        }
+      }
+    }
+
+    // Nav menu
+    .nav-menu{
+      position: absolute;
+      top: 0;
+      left: 42px;
+      height: 42px;
+      & > ul{
+        display: inline-block;
+        position: relative;
+        & > li {
+          display: inline-block;
+          position: relative;
+          & > a{
+            display: inline-block;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 14px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1;
+            position: relative;
+          }
+          &:hover, &.toggle{
+            ul{
+              display: block;
+            }
+          }
+          ul {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: $body-color;
+            display: none;
+            li{
+              border-bottom: 1px solid #fff;
+            }
+            a{
+              display: block;
+              white-space: nowrap;
+              padding: 10px;
+              font-size: 14px;
+
+            }
+          }
+        }
+      }
+      @media only screen and (max-width: $tablet - 1) {
+        display: none;
+      }
+    }
+
+  }
+
+  &__toggler{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 32px;
+    padding: 5px;
+    @media only screen and  (max-width: $tablet - 1) {
+      display: inline-block;
+    }
+    .fa-close{
+      display: none;
+    }
+    &.toggle{
+    .fa-bars{
+      display: none;
+    }
+      .fa-close{
+        display: inline-block;
+      }
+      
+    }
+    
+  }
+
+  &__mobile{
+    position: fixed;
+    top: $header-height;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .7);
+    display: none;
+    font-size: 14px;
+    z-index: 9999;
+    &.toggle{
+      display: block;
+    }
+    &--container{
+      background: $body-color;
+      width: 80%;
+      margin: 20px auto;
+      box-sizing: border-box;
+      padding: 10px;
+      overflow-y: scroll;
+    }
+    .header__logo{
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .nav-menu{
+      font-weight:bold;
+      & > ul > li{
+        margin-bottom: 10px;
+      }
+      li{
+        border-bottom: 1px solid #fff;
+
+        border-left: 5px solid #fff;
+        padding-left: 5px;
+        &:last-child{
+          border-bottom: none;
+        }
+        li{
+          margin-left: 5px;
+          padding-left: 0;
+          border-left: 0;
+          border-bottom-style:dotted;
+          font-weight: normal;
+        }
+      }
+      ul ul{
+        border-top: 1px solid #fff;
+      }
+      a{
+        display: block;
+        padding: 10px;
+        &:link, &:visited{
+          color: $link;
+          text-decoration: none;
+        }
+        &:active{
+          color: $link-active;
+          text-decoration: none;
+        }
+        &:after{
+          content: " ›";
+        }
+      }
+    }
+  }
+
+}
+
+
+/*---------------------
+ * ヘッダーメタ
+ */
+
+// ロゴ
+.single-logo {
+  display: block;
+  margin: 40px auto;
+  width: 256px;
+  height: 256px;
+  @include transition(opacity 1s ease-in);
+  &:hover {
+    @include opacity(.4);
+  }
+}
+
+@media only screen and (max-width: $tablet - 1) {
+  .single-logo {
+    width: 128px;
+    height: 128px;
+    margin: 20px auto;
+    img {
+      width: 128px;
+      height: 128px;
+    }
+  }
+}
+
+/*タイトル*/
+.title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0;
+  padding: 40px 80px 40px;
+  color: $title-font-color;
+  font-size: 7em;
+  font-family: $single-title-font;
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  border-top: 3px double #f1f1f1;
+  strong {
+    display: block;
+    text-align: center;
+    font-size: 0.6em;
+    font-weight: bold;
+  }
+}
+
+/*投稿件数*/
+.header {
+  position: relative;
+  .excerpt {
+    padding: 1em 0 2em;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-shadow: 1px 1px 2px #fff;
+    font-style: italic;
+  }
+}
+
+/*タイトルメタ*/
+.title-meta {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  padding: 0 20px 10px;
+  border-bottom: 3px double #f1f1f1;
+  font-size: 1.4em;
+  text-align: center;
+  li {
+    @include inline-block();
+    margin-right: 1em;
+    .label {
+      color: $semi-light-grey;
+      margin-right: 0.25em;
+      font-weight: bold;
+      i {
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .title-meta {
+    margin: 0 10px 10px;
+    font-size: 1.2em;
+    text-align: left;
+  }
+}

@@ -6,58 +6,62 @@
 
 /**
  * Twitterウィジェットを表示
+ *
  * @param integer $height
  * @param integer|string $width 初期値はauto
+ *
  * @return void
  */
-function fumiki_twitter($height = 300, $width = '"auto"', $loop = "true"){
-?>
+function fumiki_twitter( $height = 300, $width = '"auto"', $loop = "true" ) {
+	?>
 	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
 	<script type="text/javascript">
-	//<![CDATA[
+		//<![CDATA[
 		new TWTR.Widget({
-		  version: 2,
-		  type: 'profile',
-		  rpp: 5,
-		  interval: 3000,
-		  width: <?= $width; ?>,
-		  height: <?= $height; ?>,
-		  theme: {
-		    shell: {
-		      background: 'none',
-		      color: '#f0f0f0'
-		    },
-		    tweets: {
-		      background: 'none',
-		      color: '#dfdfdf',
-		      links: '#ffffff'
-		    }
-		  },
-		  features: {
-		    scrollbar: false,
-		    loop: <?= $loop; ?>,
-		    live: true,
-		    hashtags: true,
-		    timestamp: true,
-		    avatars: false,
-		    behavior: 'all'
-		  }
+			version : 2,
+			type    : 'profile',
+			rpp     : 5,
+			interval: 3000,
+			width   : <?= $width; ?>,
+			height  : <?= $height; ?>,
+			theme   : {
+				shell : {
+					background: 'none',
+					color     : '#f0f0f0'
+				},
+				tweets: {
+					background: 'none',
+					color     : '#dfdfdf',
+					links     : '#ffffff'
+				}
+			},
+			features: {
+				scrollbar: false,
+				loop     : <?= $loop; ?>,
+				live     : true,
+				hashtags : true,
+				timestamp: true,
+				avatars  : false,
+				behavior : 'all'
+			}
 		}).render().setUser('takahashifumiki').start();
-	//]]>
+		//]]>
 	</script>
-<?
+	<?
 }
 
 /**
  * なかのひとを出力する
  * @return void
  */
-function fumiki_nakanohito(){
-	if(is_production() && !is_ssl()){
+function fumiki_nakanohito() {
+	if ( is_production() && ! is_ssl() ) {
 		?>
 		<p id="nakanohito"></p>
 		<noscript>
-		<a href="http://nakanohito.jp/"><img src="http://nakanohito.jp/an/?u=201672&amp;h=893199&amp;w=96&amp;guid=ON&amp;t=" border="0" width="96" height="96" alt="" /></a>
+			<a href="http://nakanohito.jp/"><img
+					src="http://nakanohito.jp/an/?u=201672&amp;h=893199&amp;w=96&amp;guid=ON&amp;t=" border="0"
+					width="96" height="96" alt=""/></a>
 		</noscript>
 		<?
 	}
@@ -65,14 +69,16 @@ function fumiki_nakanohito(){
 
 /**
  * はてなブックマークを出力する
+ *
  * @param string $title
  * @param string $sort hotかcount
  * @param type $need_script 同じページで2回以上読み込むなら2回目はfalse
  * @param type $num 初期値は5
+ *
  * @return void
  */
-function fumiki_hotentry($title = "はてなブックマーク", $sort = "hot", $need_script = true, $num = 7){
-	echo ($need_script) ? '<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>' : '';
+function fumiki_hotentry( $title = "はてなブックマーク", $sort = "hot", $need_script = true, $num = 7 ) {
+	echo ( $need_script ) ? '<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>' : '';
 	echo <<<EOS
 <script language="javascript" type="text/javascript">
 //<![CDATA[
@@ -93,46 +99,51 @@ EOS;
  * ページのタイトルを取得する
  * @return string
  */
-function fumiki_title(){
-	if(is_singular()){
+function fumiki_title() {
+	if ( 'quote' == get_post_type() ) {
+		return '名言コレクション';
+	}elseif ( is_singular() ) {
 		return get_the_title();
-	}elseif(is_post_type_archive('ebook')){
+	} elseif ( is_post_type_archive( 'ebook' ) ) {
 		return "高橋文樹の電子書籍一覧";
-	}elseif(is_post_type_archive('events')){
+	} elseif ( is_post_type_archive( 'events' ) ) {
 		return "高橋文樹のイベント一覧";
-	}elseif(is_home()){
+	} elseif ( is_home() ) {
 		return "最新の投稿";
-	}elseif(is_category()){
-		return 'カテゴリー: '.single_cat_title('', false);
-	}elseif(is_tag()){
-		return 'タグ: '.single_tag_title('', false);
-	}elseif(is_tax()){
+	} elseif ( is_category() ) {
+		return 'カテゴリー: ' . single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		return 'タグ: ' . single_tag_title( '', false );
+	} elseif ( is_tax() ) {
 		return '';
-	}elseif(is_date()){
-		$month = explode("月", single_month_title('',false));
-        return "{$month[1]}年{$month[0]}月の投稿";
-	}elseif(is_search()){
-		return "検索: ".get_search_query();
-	}elseif(is_404()){
+	} elseif ( is_date() ) {
+		$month = explode( "月", single_month_title( '', false ) );
+
+		return "{$month[1]}年{$month[0]}月の投稿";
+	} elseif ( is_search() ) {
+		return "検索: " . get_search_query();
+	} elseif ( is_404() ) {
 		return "ご指定のページは見つかりませんでした";
-	}else{
-		return wp_title('', false);
+	} else {
+		return wp_title( '', false );
 	}
 }
 
 /**
  * いいねボタンを出力する
+ *
  * @param string $title
- * @param string $url 
+ * @param string $url
+ *
  * @return void
  */
-function fumiki_share($title, $url){
-	$feed_url = 'http://cloud.feedly.com/#subscription%2Ffeed%2F'.rawurlencode(get_bloginfo('rss_url'));
-	$feed_src = get_bloginfo('template_directory')."/styles/img/container-feedly.png";
+function fumiki_share( $title, $url ) {
+	$feed_url    = 'http://cloud.feedly.com/#subscription%2Ffeed%2F' . rawurlencode( get_bloginfo( 'rss_url' ) );
+	$feed_src    = get_bloginfo( 'template_directory' ) . "/styles/img/container-feedly.png";
 	$subscribers = fumiki_feed_count();
-	
+
 	$fb_url = is_front_page() ? 'https://www.facebook.com/TakahashiFumiki.Page' : $url;
-	
+
 	echo <<<EOS
 	<ul class="like">
 		<li>
@@ -183,58 +194,62 @@ EOS;
 
 /**
  * アーカイブページのサムネイルを表示する
- * @param string $size thumbnail か medium 
+ *
+ * @param string $size thumbnail か medium
  * @param object $post (optional) 指定しないばあいは現在の投稿
  * @param bool $show_nophoto falseにすると、ない場合は何も表示しない
  * @param bool $echo
+ *
  * @return string
  */
-function fumiki_archive_photo($size = "medium-thumbnail", $post = null, $show_nophoto = true, $echo = true){
-	$post = get_post($post);
-    $image_id = false;
-    if( has_post_thumbnail($post->ID) ){
-        $image_id = get_post_thumbnail_id();
-    }else{
-        $images = get_children("post_parent=".$post->ID."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
-        if(!empty($images)){
-            $image_id = current($images)->ID;
-        }
-    }
-    if( $image_id ){
-		if($echo){
-			echo wp_get_attachment_image($image_id,$size);
-		}else{
-			return wp_get_attachment_image($image_id,$size);
+function fumiki_archive_photo( $size = "medium-thumbnail", $post = null, $show_nophoto = true, $echo = true ) {
+	$post     = get_post( $post );
+	$image_id = false;
+	if ( has_post_thumbnail( $post->ID ) ) {
+		$image_id = get_post_thumbnail_id();
+	} else {
+		$images = get_children( "post_parent=" . $post->ID . "&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1" );
+		if ( ! empty( $images ) ) {
+			$image_id = current( $images )->ID;
 		}
-	}elseif( $show_nophoto ){
-		$width = ($size == "medium-thumbnail") ? 280 : 150;
-		$height = ($size == "medium-thumbnail") ? 200 : 100;
-		$src = ($size == "medium-thumbnail") ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
-		if($echo){
-			echo '<img class="attachment-medium" src="'.get_bloginfo('template_directory').'/styles/img/'.$src.'" width="'.$width.'" height="'.$height.'" alt="写真なし" />';
+	}
+	if ( $image_id ) {
+		if ( $echo ) {
+			echo wp_get_attachment_image( $image_id, $size );
+		} else {
+			return wp_get_attachment_image( $image_id, $size );
+		}
+	} elseif ( $show_nophoto ) {
+		$width  = ( $size == "medium-thumbnail" ) ? 280 : 150;
+		$height = ( $size == "medium-thumbnail" ) ? 200 : 100;
+		$src    = ( $size == "medium-thumbnail" ) ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
+		if ( $echo ) {
+			echo '<img class="attachment-medium" src="' . get_bloginfo( 'template_directory' ) . '/styles/img/' . $src . '" width="' . $width . '" height="' . $height . '" alt="写真なし" />';
 		}
 	}
 }
 
 /**
  * カバー画像のURLを返す
+ *
  * @param int|object $post
+ *
  * @return string
  */
-function ebook_cover_src($post = null){
-	$post = get_post($post);
-	$attachment_id = get_post_meta($post->ID, 'cover', true);
-	if(!$attachment_id){
+function ebook_cover_src( $post = null ) {
+	$post          = get_post( $post );
+	$attachment_id = get_post_meta( $post->ID, 'cover', true );
+	if ( ! $attachment_id ) {
 		return '';
 	}
-	if(is_numeric($attachment_id)){
-		$attachment = wp_get_attachment_image_src($attachment_id, 'large');
-		if($attachment){
+	if ( is_numeric( $attachment_id ) ) {
+		$attachment = wp_get_attachment_image_src( $attachment_id, 'large' );
+		if ( $attachment ) {
 			return $attachment[0];
-		}else{
+		} else {
 			return '';
 		}
-	}else{
+	} else {
 		return $attachment_id;
 	}
 }
@@ -242,112 +257,119 @@ function ebook_cover_src($post = null){
 /**
  * アーカイブページでループを出力する
  * @global object $post 現在の投稿
+ *
  * @param string $additional_class
  * @param string $score
- * @param int $level 
+ * @param int $level
  */
-function fumiki_loop_container($additional_class = '', $score = false, $level = 2, $counter = 0){
+function fumiki_loop_container( $additional_class = '', $score = false, $level = 2, $counter = 0 ) {
 	global $post;
 	?>
-	<div class="archive-box archive-box-small<?php if(!empty($additional_class)) echo ' '.$additional_class;?> archive-box-<?= get_post_type(); ?>">
-		
+	<div class="archive-box archive-box-small<?php if ( ! empty( $additional_class ) ) {
+		echo ' ' . $additional_class;
+	} ?> archive-box-<?= get_post_type(); ?>">
+
 		<div class="post-type post-type-<?= get_post_type(); ?> clearfix">
 			<span class="post-type-label label-<?= get_post_type(); ?>">
-				<?php switch(get_post_type()) :  case 'ebook': ?>
+				<?php switch ( get_post_type() ) : case 'ebook': ?>
 					<i class="fa-book"></i>
-				<?php break; case 'events': ?>
-					<i class="fa-bullhorn"></i>
-				<?php break; default: ?>
-					<i class="fa-pencil"></i>
-				<?php endswitch; ?>
-				<?= get_post_type_object(get_post_type())->labels->name; ?>
+					<?php break;
+					case 'events': ?>
+						<i class="fa-bullhorn"></i>
+						<?php break;
+					default: ?>
+						<i class="fa-pencil"></i>
+					<?php endswitch; ?>
+				<?= get_post_type_object( get_post_type() )->labels->name; ?>
 			</span>
 			<span class="post-counter-label"><?= $counter; ?></span>
 		</div>
-			
+
 		<h<?= $level; ?> class="archive-title">
 			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h<?= $level; ?>>
-		
+
 		<small class="mono">
-			<?php printf('%s　%s前', get_the_time('Y/n/j (D)'), human_time_diff(strtotime($post->post_date))); ?>
+			<?php printf( '%s　%s前', get_the_time( 'Y/n/j (D)' ), human_time_diff( strtotime( $post->post_date ) ) ); ?>
 		</small>
-			
+
 		<a class="photo" href="<?php the_permalink(); ?>">
-			<?php if(get_post_type() == 'ebook') :  ?>
-				<img class="cover" src="<?= ebook_cover_src(); ?>" alt="<?php the_title(); ?>" width="240" height="320" />
-				<?php if(!lwp_on_sale()) :  ?>
-					<img class="on-sale" src="<?php bloginfo('template_directory'); ?>/styles/img/fa-sale-48.png" width="48" height="48" alt="On Sale" />
+			<?php if ( get_post_type() == 'ebook' ) : ?>
+				<img class="cover" src="<?= ebook_cover_src(); ?>" alt="<?php the_title(); ?>" width="240"
+				     height="320"/>
+				<?php if ( ! lwp_on_sale() ) : ?>
+					<img class="on-sale" src="<?php bloginfo( 'template_directory' ); ?>/styles/img/fa-sale-48.png"
+					     width="48" height="48" alt="On Sale"/>
 				<?php endif; ?>
 				<p class="price old">
 					<?php lwp_the_price() ?>
 				</p>
-			<?php else :  ?>
-				<?php fumiki_archive_photo("thumbnail", $post, false); ?>
+			<?php else : ?>
+				<?php fumiki_archive_photo( "thumbnail", $post, false ); ?>
 			<?php endif; ?>
 		</a>
-		
-		<?php if(get_post_type() == 'events') :  ?>
-		<table class="event-table">
-			<tr>
-				<th><i class="fa-calendar"></i>開催日時</th>
-				<td>
-					<?php if(lwp_is_oneday_event()) :  ?>
-						<?= lwp_event_starts('Y.n.j (D) <\b\r />H:i').'〜'.lwp_event_ends('H:i'); ?>
-					<?php else :  ?>
-						<?php printf('開始: %s<br />終了: %s', lwp_event_starts('Y.n.j (D) H:i'), lwp_event_ends('Y.n.j (D) H:i')); ?>
-					<?php endif; ?>
-				</td>
-			</tr>
-			<tr>
-				<th><i class="fa-time"></i>〆切</th>
-				<td>
-					<?php if(lwp_is_event_available()) :  ?>
-						<?= lwp_selling_limit('Y.n.j (D)'); ?>
-					<?php else :  ?>
-						募集終了
-					<?php endif; ?>
-				</td>
-			</tr>
-			<tr>
-				<th><i class="fa-group"></i>参加人数</th>
-				<td>
-					<?= number_format(lwp_participants_number()); ?>名
-				</td>
-			</tr>
-		</table>
+
+		<?php if ( get_post_type() == 'events' ) : ?>
+			<table class="event-table">
+				<tr>
+					<th><i class="fa-calendar"></i>開催日時</th>
+					<td>
+						<?php if ( lwp_is_oneday_event() ) : ?>
+							<?= lwp_event_starts( 'Y.n.j (D) <\b\r />H:i' ) . '〜' . lwp_event_ends( 'H:i' ); ?>
+						<?php else : ?>
+							<?php printf( '開始: %s<br />終了: %s', lwp_event_starts( 'Y.n.j (D) H:i' ), lwp_event_ends( 'Y.n.j (D) H:i' ) ); ?>
+						<?php endif; ?>
+					</td>
+				</tr>
+				<tr>
+					<th><i class="fa-time"></i>〆切</th>
+					<td>
+						<?php if ( lwp_is_event_available() ) : ?>
+							<?= lwp_selling_limit( 'Y.n.j (D)' ); ?>
+						<?php else : ?>
+							募集終了
+						<?php endif; ?>
+					</td>
+				</tr>
+				<tr>
+					<th><i class="fa-group"></i>参加人数</th>
+					<td>
+						<?= number_format( lwp_participants_number() ); ?>名
+					</td>
+				</tr>
+			</table>
 		<?php endif; ?>
-		
+
 		<div class="desc clearfix">
 			<?php the_excerpt(); ?>
 		</div>
-		
+
 		<div class="taxonomies">
-		<?php switch(get_post_type()){
-			case 'post':
-				$tax = array(
-					'category' => 'fa-folder-open',
-					'post_tag' => 'fa-tags'
-				);
-				break;
-			default:
-				$tax = array();
-				break;
-		} ?>
-		<?php if(!empty($tax)) :  foreach($tax as $t => $icon_class) : ?>
-			<?php $terms = get_the_terms(get_the_ID(), $t); ?>
-			<?php if(!empty($terms) && !is_wp_error($terms)) :  ?>
-			<span class="<?= $t; ?>">
-				<?php foreach($terms as $term) :  ?>
-				<a href="<?= get_term_link($term); ?>">
-					<i class="<?= $icon_class; ?>"></i>
-					<?= esc_html($term->name); ?>
-				</a>
-				<?php endforeach; endif; ?>
-			</span>
-		<?php endforeach; endif; ?>
+			<?php switch ( get_post_type() ) {
+				case 'post':
+					$tax = array(
+						'category' => 'fa-folder-open',
+						'post_tag' => 'fa-tags'
+					);
+					break;
+				default:
+					$tax = array();
+					break;
+			} ?>
+			<?php if ( ! empty( $tax ) ) : foreach ( $tax as $t => $icon_class ) : ?>
+				<?php $terms = get_the_terms( get_the_ID(), $t ); ?>
+				<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
+					<span class="<?= $t; ?>">
+				<?php foreach ( $terms as $term ) : ?>
+						<a href="<?= get_term_link( $term ); ?>">
+							<i class="<?= $icon_class; ?>"></i>
+							<?= esc_html( $term->name ); ?>
+						</a>
+					<?php endforeach; endif; ?>
+				</span>
+			<?php endforeach; endif; ?>
 		</div>
-		<?php if($score) :  ?>
+		<?php if ( $score ) : ?>
 			<span class="score"><?= $score; ?></span>
 		<?php endif; ?>
 		<p class="more">
@@ -361,11 +383,13 @@ function fumiki_loop_container($additional_class = '', $score = false, $level = 
 
 /**
  * Google Adsenceを出力する
- * @param int $number 
+ *
+ * @param int $number
+ *
  * @return void
  */
-function google_ads($number = 1){
-	switch($number){
+function google_ads( $number = 1 ) {
+	switch ( $number ) {
 		case 1:
 		default:
 			echo <<<EOS
@@ -398,9 +422,9 @@ EOS;
 EOS;
 			break;
 		case 3:
-			if(wp_is_mobile()){
-				google_ads(4);
-			}else{
+			if ( wp_is_mobile() ) {
+				google_ads( 4 );
+			} else {
 				echo <<<EOS
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- 高橋文樹.com2011関連投稿 -->
@@ -473,118 +497,132 @@ EOS;
 
 /**
  * 投稿が古い場合にメッセージを出力する
- * @param object $post 
+ *
+ * @param object $post
+ *
  * @return void
  */
-function the_expiration_info($post = null){
-	$date_diff = get_outdated_days($post);
-	echo '（<span class="mono">'.number_format($date_diff).'</span>日前）';
+function the_expiration_info( $post = null ) {
+	$date_diff = get_outdated_days( $post );
+	echo '（<span class="mono">' . number_format( $date_diff ) . '</span>日前）';
 }
 
 /**
  * 投稿が指定した日数を過ぎているか
+ *
  * @param int|object $post
+ *
  * @return boolean
  */
-function is_expired_post($post = null){
-	return get_outdated_days($post) > 365;
+function is_expired_post( $post = null ) {
+	return get_outdated_days( $post ) > 365;
 }
 
 /**
  * 経過した日数を返す
+ *
  * @param int|object $post
+ *
  * @return int
  */
-function get_outdated_days($post){
-	$post = get_post($post);
-	return floor((current_time('timestamp') - strtotime($post->post_date)) / 60 / 60 / 24);
+function get_outdated_days( $post ) {
+	$post = get_post( $post );
+
+	return floor( ( current_time( 'timestamp' ) - strtotime( $post->post_date ) ) / 60 / 60 / 24 );
 }
 
 /**
  * 過ぎている日数を返す
+ *
  * @param int|object $post
+ *
  * @return string
  */
-function get_outdate_string($post = null){
-	$post = _fumiki_get_post($post);
-	$date_diff = floor((current_time('timestamp') - strtotime($post->post_date)) / 60 / 60 / 24);
-	$year = "<strong><span class=\"mono\">".floor($date_diff / 365)."</span>年";
-	if(($date_diff / 365) - $year > 0.5){
+function get_outdate_string( $post = null ) {
+	$post      = _fumiki_get_post( $post );
+	$date_diff = floor( ( current_time( 'timestamp' ) - strtotime( $post->post_date ) ) / 60 / 60 / 24 );
+	$year      = "<strong><span class=\"mono\">" . floor( $date_diff / 365 ) . "</span>年";
+	if ( ( $date_diff / 365 ) - $year > 0.5 ) {
 		$year .= "半";
 	}
-	return $year.'前</strong>';
+
+	return $year . '前</strong>';
 }
 
 /**
  * Ustreamのチャンネルがオンエア中になっているかどうかを返す
  * @return boolean
  */
-function is_on_air(){
-	$ust_status_array = get_transient( 'ustream_status' ) ;
-	if(false === $ust_status_array){
-		$opt = stream_context_create(array(
+function is_on_air() {
+	$ust_status_array = get_transient( 'ustream_status' );
+	if ( false === $ust_status_array ) {
+		$opt               = stream_context_create( array(
 			'http' => array( 'timeout' => 3 )
-		));
-		$ust_status_serial = file_get_contents('http://api.ustream.tv/php/channel/' . urlencode('一人バーベキュー入門') . '/getValueOf/status',0,$opt);
-		$ust_status_array = unserialize($ust_status_serial);
-		set_transient('ustream_status', $ust_status_serial, 120);
+		) );
+		$ust_status_serial = file_get_contents( 'http://api.ustream.tv/php/channel/' . urlencode( '一人バーベキュー入門' ) . '/getValueOf/status', 0, $opt );
+		$ust_status_array  = unserialize( $ust_status_serial );
+		set_transient( 'ustream_status', $ust_status_serial, 120 );
 	}
-	if(isset($ust_status_array['results']) && $ust_status_array['results'] == 'live'){
+	if ( isset( $ust_status_array['results'] ) && $ust_status_array['results'] == 'live' ) {
 		return true;
-	}else{
+	} else {
 		return false;
 	}
 }
 
 /**
  * はてなブックマークのXMLを返す
- * 
+ *
  * @param string $sort 'count' 'eid', または 'hot'のいずれか
- *  
+ *
  */
-function get_hatena_rss($sort = 'count'){
-	$hatena_transient_name = 'hatena_hotentry_'.$sort;
-	$xml = get_transient($hatena_transient_name) ;
-	if(false === $xml){
-		$endpoint = 'http://b.hatena.ne.jp/entrylist?sort='.$sort.'&url=http://takahashifumiki.com&mode=rss';
-		$context = stream_context_create(array(
+function get_hatena_rss( $sort = 'count' ) {
+	$hatena_transient_name = 'hatena_hotentry_' . $sort;
+	$xml                   = get_transient( $hatena_transient_name );
+	if ( false === $xml ) {
+		$endpoint = 'http://b.hatena.ne.jp/entrylist?sort=' . $sort . '&url=http://takahashifumiki.com&mode=rss';
+		$context  = stream_context_create( array(
 			'http' => array( 'timeout' => 3 )
-		));
-		$response = file_get_contents($endpoint, 0, $context);
-		set_transient($hatena_transient_name, $response, 60 * 60 * 2);
+		) );
+		$response = file_get_contents( $endpoint, 0, $context );
+		set_transient( $hatena_transient_name, $response, 60 * 60 * 2 );
 		$xml = $response;
 	}
-	if($xml){
-		return simplexml_load_string($xml);
-	}else{
+	if ( $xml ) {
+		return simplexml_load_string( $xml );
+	} else {
 		return $xml;
 	}
 }
 
 /**
  * RSSから日付を返す
+ *
  * @param SimpleXMLElement $item
- * @return string 
+ *
+ * @return string
  */
-function get_hatena_date($item){
-	$dc = $item->children('http://purl.org/dc/elements/1.1/');
-	if($dc->date){
-		return (string)$dc->date;
-	}else{
+function get_hatena_date( $item ) {
+	$dc = $item->children( 'http://purl.org/dc/elements/1.1/' );
+	if ( $dc->date ) {
+		return (string) $dc->date;
+	} else {
 		return "";
 	}
 }
 
 /**
  * RSSからブックマーク数を返す
+ *
  * @param SimpleXMLElement $item
+ *
  * @return int
  */
-function get_hatena_count($item){
-	$hatena = $item->children('http://www.hatena.ne.jp/info/xmlns#');
-	if($hatena->bookmarkcount){
-		return (int)$hatena->bookmarkcount;
-	}else{
+function get_hatena_count( $item ) {
+	$hatena = $item->children( 'http://www.hatena.ne.jp/info/xmlns#' );
+	if ( $hatena->bookmarkcount ) {
+		return (int) $hatena->bookmarkcount;
+	} else {
 		return 0;
 	}
 }
@@ -592,58 +630,68 @@ function get_hatena_count($item){
 
 /**
  * Twitter タイムラインを取得する
+ *
  * @param int $count
- * @param string $screen_name 
+ * @param string $screen_name
+ *
  * @return array
  */
-function get_twitter_timeline($count = 20, $screen_name = 'takahashifumiki'){
-    if( !function_exists('twitter_get_timeline') ){
+function get_twitter_timeline( $count = 20, $screen_name = 'takahashifumiki' ) {
+	if ( ! function_exists( 'twitter_get_timeline' ) ) {
 		return false;
 	}
 	$transient_name = "twitter_public_timeline_{$screen_name}_{$count}";
-	$twt_timeline = get_transient($transient_name);
-	if(false === $twt_timeline){
-		$twt_timeline = twitter_get_timeline($screen_name, array(
+	$twt_timeline   = get_transient( $transient_name );
+	if ( false === $twt_timeline ) {
+		$twt_timeline = twitter_get_timeline( $screen_name, array(
 			'count' => $count,
-		));
-		if( $twt_timeline ){
-			set_transient($transient_name, $twt_timeline, 60 * 30);
+		) );
+		if ( $twt_timeline ) {
+			set_transient( $transient_name, $twt_timeline, 60 * 30 );
 		}
 	}
+
 	return $twt_timeline;
 }
 
 /**
  * つぶやきを無害化してリンクする
+ *
  * @param string $tweet
+ *
  * @return string
  */
-function tweet_linkify($tweet){
-	return preg_replace("/(https?:\/\/[^ 　\t\n\r]+)/u", '<a href="$1$2" target="_blank">$1$2</a>', esc_html($tweet));
+function tweet_linkify( $tweet ) {
+	return preg_replace( "/(https?:\/\/[^ 　\t\n\r]+)/u", '<a href="$1$2" target="_blank">$1$2</a>', esc_html( $tweet ) );
 }
 
 /**
  * アスキーアートを表示する
+ *
  * @param array $args
  * @param string $content
+ *
  * @return string
  */
-function _fumiki_asciiart($args, $content){
-	return "<div style=\"line-height:1.8; font-size:16px; font-family:'Mona','IPA モナー Pゴシック','IPAMonaPGothic','IPA mona PGothic','IPA MONAPGOTHIC','MS PGothic AA','mona-gothic-jisx0208.1990-0','MS PGothic','ＭＳ Ｐゴシック', Osaka, mono;\">".$content.'</div>';
+function _fumiki_asciiart( $args, $content ) {
+	return "<div style=\"line-height:1.8; font-size:16px; font-family:'Mona','IPA モナー Pゴシック','IPAMonaPGothic','IPA mona PGothic','IPA MONAPGOTHIC','MS PGothic AA','mona-gothic-jisx0208.1990-0','MS PGothic','ＭＳ Ｐゴシック', Osaka, mono;\">" . $content . '</div>';
 }
-add_shortcode('aa', '_fumiki_asciiart');
+
+add_shortcode( 'aa', '_fumiki_asciiart' );
 
 /**
  * 文字列を特定の長さで切って返す
+ *
  * @param string $string
  * @param int $length
  * @param string $ellipsis
- * @return string 
+ *
+ * @return string
  */
-function fumiki_trim($string, $length = 32, $ellipsis = '&hellip;'){
-	if(mb_strlen($string, 'utf-8') >= $length){
-		return mb_substr($string, 0, $length, 'utf-8').$ellipsis;
-	}else{
+function fumiki_trim( $string, $length = 32, $ellipsis = '&hellip;' ) {
+	if ( mb_strlen( $string, 'utf-8' ) >= $length ) {
+		return mb_substr( $string, 0, $length, 'utf-8' ) . $ellipsis;
+	} else {
 		return $string;
 	}
 }
@@ -651,47 +699,53 @@ function fumiki_trim($string, $length = 32, $ellipsis = '&hellip;'){
 /**
  * 指定した投稿タイプの公開記事数を返す
  * @global wpdb $wpdb
+ *
  * @param string|array $post_types
- * @return int 
+ *
+ * @return int
  */
-function fumiki_get_post_count($post_types = array()){
+function fumiki_get_post_count( $post_types = array() ) {
 	global $wpdb;
-	if(empty($post_types)){
-		$post_types = array('post', 'page', 'ebook', 'events');
-	}elseif(is_string($post_types)){
-		$post_types = array($post_types);
+	if ( empty( $post_types ) ) {
+		$post_types = array( 'post', 'page', 'ebook', 'events' );
+	} elseif ( is_string( $post_types ) ) {
+		$post_types = array( $post_types );
 	}
-	$in_clouse = implode(',', array_map(function($var){
-		return "'".(string)$var."'";
-	}, $post_types));
-	$sql = <<<EOS
+	$in_clouse = implode( ',', array_map( function ( $var ) {
+		return "'" . (string) $var . "'";
+	}, $post_types ) );
+	$sql       = <<<EOS
 		SELECT COUNT(ID) FROM {$wpdb->posts}
 		WHERE post_status = 'publish' AND post_type IN ({$in_clouse})
 EOS;
-	return (int) $wpdb->get_var($sql);
+
+	return (int) $wpdb->get_var( $sql );
 }
 
 /**
  * 投稿の総文字数を返す
  * @global wpdb $wpdb
+ *
  * @param array $post_types
- * @return string 
+ *
+ * @return string
  */
-function fumiki_get_post_length($post_types = array()){
+function fumiki_get_post_length( $post_types = array() ) {
 	global $wpdb;
-	if(empty($post_types)){
-		$post_types = array('post', 'page', 'ebook', 'events');
-	}elseif(is_string($post_types)){
-		$post_types = array($post_types);
+	if ( empty( $post_types ) ) {
+		$post_types = array( 'post', 'page', 'ebook', 'events' );
+	} elseif ( is_string( $post_types ) ) {
+		$post_types = array( $post_types );
 	}
-	$in_clouse = implode(',', array_map(function($var){
-		return "'".(string)$var."'";
-	}, $post_types));
-	$sql = <<<EOS
+	$in_clouse = implode( ',', array_map( function ( $var ) {
+		return "'" . (string) $var . "'";
+	}, $post_types ) );
+	$sql       = <<<EOS
 		SELECT SUM(CHAR_LENGTH(post_content)) FROM {$wpdb->posts}
 		WHERE post_status = 'publish' AND post_type IN ({$in_clouse})
 EOS;
-	return (int) $wpdb->get_var($sql);
+
+	return (int) $wpdb->get_var( $sql );
 }
 
 /**
@@ -699,7 +753,7 @@ EOS;
  * @global wpdb $wpdb
  * @return string
  */
-function fumiki_get_latest_updated(){
+function fumiki_get_latest_updated() {
 	global $wpdb;
 	$sql = <<<EOS
 		SELECT post_date FROM {$wpdb->posts}
@@ -707,39 +761,42 @@ function fumiki_get_latest_updated(){
 		ORDER BY post_date DESC
 		LIMIT 1
 EOS;
-	return $wpdb->get_var($sql);
+
+	return $wpdb->get_var( $sql );
 }
 
 /**
  * はてなブックマークの総数を取得する
  * @return int
  */
-function hatena_total_bookmark_count(){
-	$cache = get_transient('hatena_bookmark_total_count');
-	if(false === $cache){
+function hatena_total_bookmark_count() {
+	$cache = get_transient( 'hatena_bookmark_total_count' );
+	if ( false === $cache ) {
 		require ABSPATH . WPINC . '/class-IXR.php';
-		$client = new IXR_Client('http://b.hatena.ne.jp/xmlrpc');
-		$client->query('bookmark.getTotalCount', 'http://takahashifumiki.com/');
+		$client = new IXR_Client( 'http://b.hatena.ne.jp/xmlrpc' );
+		$client->query( 'bookmark.getTotalCount', 'http://takahashifumiki.com/' );
 		$cache = $client->getResponse();
-		set_transient('hatena_bookmark_total_count', $cache, 60 * 60 * 24);
+		set_transient( 'hatena_bookmark_total_count', $cache, 60 * 60 * 24 );
 	}
-	return (int)$cache;
+
+	return (int) $cache;
 }
 
 /**
  * カテゴリー名を渡すとリンクを返す
+ *
  * @param string $category_name
- * @return string 
+ *
+ * @return string
  */
-function get_cat_tag($category_name){
-	$cat_id = get_cat_ID($category_name);
-	if($cat_id){
-		return sprintf('<a href="%s">%s</a>', get_category_link($cat_id), $category_name);
-	}else{
+function get_cat_tag( $category_name ) {
+	$cat_id = get_cat_ID( $category_name );
+	if ( $cat_id ) {
+		return sprintf( '<a href="%s">%s</a>', get_category_link( $cat_id ), $category_name );
+	} else {
 		return '';
 	}
 }
-
 
 
 /**
@@ -748,56 +805,60 @@ function get_cat_tag($category_name){
  * @param array $attr
  * @param string $string HTMLマークアップ
  * @param string $content
+ *
  * @return string
  */
-function _fumiki_caption_shortcode($string, $attr, $content = null) {
-	extract(shortcode_atts(array(
-		'id'	=> '',
-		'align'	=> 'alignnone',
-		'width'	=> '',
+function _fumiki_caption_shortcode( $string, $attr, $content = null ) {
+	extract( shortcode_atts( array(
+		'id'      => '',
+		'align'   => 'alignnone',
+		'width'   => '',
 		'caption' => ''
-	), $attr));
-	if ( 1 > (int) $width || empty($caption) ){
+	), $attr ) );
+	if ( 1 > (int) $width || empty( $caption ) ) {
 		return $content;
 	}
 
-	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+	if ( $id ) {
+		$id = 'id="' . esc_attr( $id ) . '" ';
+	}
 
-	return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px">'
-	. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
+	return '<figure ' . $id . 'class="wp-caption ' . esc_attr( $align ) . '" style="width: ' . ( 10 + (int) $width ) . 'px">'
+	       . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
-add_filter('img_caption_shortcode', '_fumiki_caption_shortcode', 10, 3);
+
+add_filter( 'img_caption_shortcode', '_fumiki_caption_shortcode', 10, 3 );
 
 
-add_shortcode('nanji_han', function($atts = array()){
-	$now = current_time('mysql');
-	$date = mysql2date('m-d', $now);
-	$hour = intval(mysql2date('H', $now));
-	switch( $hour ){
+add_shortcode( 'nanji_han', function ( $atts = array() ) {
+	$now  = current_time( 'mysql' );
+	$date = mysql2date( 'm-d', $now );
+	$hour = intval( mysql2date( 'H', $now ) );
+	switch ( $hour ) {
 		case 15:
 			return 'オヤツ・アーン';
 			break;
 		default:
-			if( '12-24' == $date && 16 > $hour ){
+			if ( '12-24' == $date && 16 > $hour ) {
 				return 'アンアン・アーン';
 				break;
 			}
-			if( '12-31' == $date && 22 > $hour ){
+			if ( '12-31' == $date && 22 > $hour ) {
 				return 'ジョヤノカネ・ゴーン';
 				break;
 			}
 			$time_str = '';
-			$hour_str = array('ゼロ', 'イチ', 'ニ', 'サン', 'ヨ', 'ゴ', 'ロク', 'シチ', 'ハチ', 'ク', 'ジュウ', 'ジュウイチ', 'ジュウニ');
-			if( isset($hour_str[$hour]) ){
-				$time_str = $hour_str[$hour];
-			}elseif( isset($hour_str[$hour - 12]) ){
-				$time_str = $hour_str[$hour - 12];
+			$hour_str = array( 'ゼロ', 'イチ', 'ニ', 'サン', 'ヨ', 'ゴ', 'ロク', 'シチ', 'ハチ', 'ク', 'ジュウ', 'ジュウイチ', 'ジュウニ' );
+			if ( isset( $hour_str[ $hour ] ) ) {
+				$time_str = $hour_str[ $hour ];
+			} elseif ( isset( $hour_str[ $hour - 12 ] ) ) {
+				$time_str = $hour_str[ $hour - 12 ];
 			}
-			if( $time_str ){
-				return $time_str.'ジ・ハーン';
-			}else{
+			if ( $time_str ) {
+				return $time_str . 'ジ・ハーン';
+			} else {
 				return $time_str;
 			}
 			break;
 	}
-});
+} );

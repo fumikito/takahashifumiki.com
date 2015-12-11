@@ -9,8 +9,11 @@ $logo-size: 256px;
 /* ヘッダー */
 .title_box{
     position: relative;
-    min-height: $logo-size;
+    min-height: $logo-size * 1.5;
     margin-bottom: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     h1{
         position: absolute;
         left: 50%;
@@ -48,7 +51,7 @@ $logo-size: 256px;
 // スマホの時は画像サイズ半分
 @media screen and (max-width:  ($tablet - 1) ){
     .title_box{
-        min-height: $logo-size / 2;
+        min-height: $logo-size;
         h1{
             margin-left: $logo-size / 4 * -1;
             margin-top: $logo-size / 4 * -1;

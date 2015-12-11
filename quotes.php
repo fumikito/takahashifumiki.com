@@ -2,8 +2,6 @@
 
 <div class="quotes-container">
 
-	<h1>名言コレクション</h1>
-
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<div class="quotes-loop">
 

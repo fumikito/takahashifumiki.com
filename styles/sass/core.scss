@@ -8,21 +8,22 @@
 @import "compass/utilities/general/clearfix";
 @import "compass/css3";
 @import "compass/typography/text/ellipsis";
-@import "_settings";
-@import "_components";
+@import "settings";
+@import "components";
 @import 'quotes';
-@import "_post_style";
-@import "_navigation";
-@import "_archive";
-@import "_single";
-@import "_footer";
-@import '_lwp';
-@import "_sidebar";
-@import "_smartphone";
-@import "_layout";
-@import "_front_page";
-@import '_affiliate';
-@import '_netabare';
+@import "post_style";
+@import "navigation";
+@import "header";
+@import "archive";
+@import "single";
+@import "footer";
+@import 'lwp';
+@import "sidebar";
+@import "smartphone";
+@import "layout";
+@import "front_page";
+@import 'affiliate';
+@import 'netabare';
 
 
 /****************************************
