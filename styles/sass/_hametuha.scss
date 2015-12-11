@@ -9,6 +9,7 @@
   background: #f9f9f9;
 
   border-top: 3px double #ddd;
+  border-bottom: 3px double #ddd;
 
   .hametuha-title {
     text-align: center;
@@ -162,6 +163,47 @@
 /**========================
  * KDP
  */
+.kdp{
+  &--single{
+    .row {
+      @include clearfix();
+      display: none;
+      opacity: 0;
+      transition: opacity 1s linear 0;
+      &.toggle{
+        display: block;
+        opacity: 1;
+      }
+    }
+    .col-xs-3{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 33%;
+      float: left;
+      text-align: center;
+    }
+  }
+  &__title{
+    padding: 40px 0;
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    i{
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: orange;
+    }
+  }
+  &__more{
+    margin: 20px;
+    a{
+      display: block;
+      font-size: 2.5em;
+      padding: 10px;
+    }
+  }
+}
 .feed{
   &--ebook{
 

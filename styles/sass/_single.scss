@@ -109,6 +109,11 @@
       font-weight: bold;
     }
   }
+  .desc {
+    @media only screen and (max-width: $tablet - 1) {
+      display: none;
+    }
+  }
 }
 
 /* 投稿ナビゲーション */
@@ -157,7 +162,6 @@
   margin-bottom: 20px;
   padding: 20px 10px;
   text-align: center;
-  border-top: 3px double $semi-light-grey;
   .like {
     margin-bottom: 20px;
     @include clearfix();

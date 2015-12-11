@@ -90,7 +90,7 @@ function _fumiki_assets(){
 			'font-awesome',
 			get_template_directory_uri()."/libs/font-awesome/css/font-awesome.min.css",
 			array(),
-			'4.2.0',
+			'4.5.0',
 			'screen'
 		);
 

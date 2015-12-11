@@ -23,7 +23,7 @@ function hametuha_posts() {
 			} else {
 				$posts = [];
 				foreach ( $xml->channel->item as $item ) {
-					$p      = [
+					$p           = [
 						'title'     => (string) $item->title,
 						'excerpt'   => (string) $item->description,
 						'url'       => (string) $item->link .
@@ -32,17 +32,7 @@ function hametuha_posts() {
 						'category'  => (array) $item->category,
 						'source'    => '破滅派',
 					];
-					$images = [];
-					foreach ( $item->children( 'media', true )->group->content as $thumbnail ) {
-						$data                             = $thumbnail->attributes();
-						$attributes                       = $thumbnail->attributes();
-						$images[ (string) $data['size'] ] = [
-							(string) $data['size'],
-							(string) $data['width'],
-							(string) $data['height'],
-						];
-					}
-					$p['images'] = $images;
+					$p['images'] = hametuha_grab_feed_image( $item );
 					$posts[]     = $p;
 				}
 				// 保存する
@@ -57,12 +47,37 @@ function hametuha_posts() {
 }
 
 /**
+ * RSSから画像を引っこ抜く
+ *
+ * @param SimpleXMLElement $item
+ *
+ * @return array
+ */
+function hametuha_grab_feed_image( $item ) {
+	$images = [];
+	foreach ( $item->children( 'media', true )->group->content as $thumbnail ) {
+		$data                             = $thumbnail->attributes();
+		$attributes                       = $thumbnail->attributes();
+		$images[ (string) $data['size'] ] = [
+			(string) $data['url'],
+			(string) $data['width'],
+			(string) $data['height'],
+		];
+	}
+
+	return $images;
+}
+
+/**
  * 投稿を取得する
  *
  * @return array|mixed
  */
 function hametuha_kdp() {
 	$posts = get_transient( 'hametuha_kdp' );
+	if ( WP_DEBUG ) {
+		$posts = false;
+	}
 	if ( false === $posts ) {
 		try {
 			$posts = array();
@@ -78,17 +93,21 @@ function hametuha_kdp() {
 			if ( false !== $xml ) {
 				foreach ( $xml->channel->item as $item ) {
 					$thumbnials = $item->children( 'media', true )->thumbnail->attributes();
-					$posts[]    = array(
+
+					$p = array(
 						'title'     => (string) $item->title,
 						'excerpt'   => (string) $item->description,
 						'url'       => (string) $item->children( 'dc', true )->relation,
 						'post_date' => date_i18n( 'Y-m-d H:i:s', strtotime( $item->pubDate ) + 60 * 60 * 9 ),
 						'category'  => (string) $item->category,
-						'image'     => str_replace( 'http://', 'https://', $thumbnials['url'] ),
+						'image'     => str_replace( 'http://', 'https://', (string) $thumbnials['url'] ),
 					);
+
+					$p['images'] = hametuha_grab_feed_image( $item );
+					$posts[]     = $p;
 				}
 				// 保存する
-//				set_transient( 'hametuha_kdp', $posts, 60 * 60 * 2 );
+				set_transient( 'hametuha_kdp', $posts, 60 * 60 * 2 );
 			}
 		} catch ( Exception $e ) {
 			return array();

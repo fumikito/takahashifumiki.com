@@ -14,8 +14,20 @@
 		</div>
 	</div><!-- //.title_box -->
 
-<div id="content" class="margin clearfix">
 	<?php if(have_posts()) :  the_post(); ?>
+
+	<div class="welcome-box">
+		<div class="margin">
+			<div class="main-content">
+				<h2><?php the_title(); ?></h2>
+				<div class="desc">
+					<?php the_content(); ?>
+				</div>
+			</div><!-- //.main-content -->
+		</div>
+	</div>
+
+<div id="content" class="margin clearfix">
 
 
 
@@ -23,12 +35,6 @@
 
 	<div class="desc-box desc-box-front clearfix">
 
-		<div class="box grid_1 main-content no-border">
-			<h2><?php the_title(); ?></h2>
-			<div class="desc">
-				<?= the_content(); ?>
-			</div>
-		</div><!-- //.main-content -->
 
 		<div class="box grid_2 no_shadow">
 			<div class="about">
@@ -128,7 +134,7 @@
 			<div class="box feed widget widget--front grid_2 widget--ebook">
 				<a class="feed__link" href="<?= $ebook['url']; ?>">
 
-					<img src="<?= $ebook['image'] ?>" alt="<?= esc_attr($ebook['title']); ?>" height="449" />
+					<img src="<?= isset($ebook['images']['medium'] ) ? $ebook['images']['medium'][0] : $ebook['image']  ?>" alt="<?= esc_attr($ebook['title']); ?>" height="449" />
 
 					<div class="feed__content">
 						<h3 class="feed__title">

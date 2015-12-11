@@ -165,14 +165,15 @@ the_post();
 
 		<?php if( function_exists('related_posts') ) related_posts() ?>
 
-        <?php get_template_part('templates/single', 'ebook'); ?>
 
 	</div>
 	<!-- #main ends -->
 
 </div><!-- //.margin -->
 
-<?
+<?php get_template_part('templates/single', 'ebook'); ?>
+
+<?php
 get_footer('hametuha');
 get_footer();
 endif;//Mootoolsと通常single.phpの分岐終了

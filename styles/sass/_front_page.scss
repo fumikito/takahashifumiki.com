@@ -10,7 +10,6 @@ $logo-size: 256px;
 .title_box{
     position: relative;
     min-height: $logo-size * 1.5;
-    margin-bottom: 20px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -68,6 +67,41 @@ $logo-size: 256px;
 
 
 
+
+.welcome-box{
+    background: #f9f9f9;
+    border-bottom: 3px solid #ddd;
+    .main-content{
+        padding: 40px 20px;
+    }
+    p.avatar{
+        text-align: center;
+        img{
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+        }
+
+    }
+        h2{
+            text-align: center;
+            line-height: 1.1;
+            font-size: 2.4em;
+            font-family: $title-font;
+            font-weight: bold;
+            color: $title-font-color;
+            margin-bottom: 20px;
+            color: $semi-blue;
+        }
+        .desc{
+            margin: 0 auto;
+            max-width: 670px;
+            color: $semi-blue;
+            font-size: 2em;
+            line-height: 1.5;
+            font-family: $body-font;
+        }
+}
 
 
 /* メインエリア */
@@ -135,23 +169,6 @@ $logo-size: 256px;
 // 中の調整
 .desc-box-front{
     // トップページ投稿エリア
-    .main-content{
-        h2{
-            line-height: 1.1;
-            font-size: 2.4em;
-            font-family: $title-font;
-            font-weight: bold;
-            color: $title-font-color;
-            margin-bottom: 20px;
-            color: $semi-blue;
-        }
-        .desc{
-            color: $semi-blue;
-            font-size: 2em;
-            line-height: 1.5;
-            font-family: $body-font;
-        }
-    }
 
     // その他
     .grid_2{
@@ -167,28 +184,6 @@ $logo-size: 256px;
         }
         li li ul {
             display: none;
-        }
-    }
-}
-
-@media screen and (max-width: $tablet - 1) {
-    .desc-box-front{
-        // トップページ投稿エリア
-        .main-content{
-            h2{
-                font-size: 1.8em;
-                font-family: $title-font;
-                font-weight: bold;
-                color: $title-font-color;
-                margin-bottom: 10px;
-                color: $semi-blue;
-            }
-            .desc{
-                color: $semi-blue;
-                font-size: 1.4em;
-                line-height: 1.5;
-                font-family: $body-font;
-            }
         }
     }
 }
