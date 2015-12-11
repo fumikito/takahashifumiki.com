@@ -39,10 +39,6 @@
 
 </div><!-- //.quotes-conainer -->
 
-<div class="margin">
-	<?php get_template_part( 'templates/single', 'ebook' ); ?>
-
-</div>
-
+<?php get_template_part( 'templates/single', 'ebook' ); ?>
 
 <?php get_footer() ?>
