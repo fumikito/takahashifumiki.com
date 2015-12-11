@@ -47,12 +47,12 @@
 			</script>
 
 
-			<?php get_template_part( 'templates/single', 'ebook' ); ?>
 
 		</div>
 		<!-- #main ends -->
 	</div>
+<?php get_template_part( 'templates/single', 'ebook' ); ?>
 
-<?
+<?php
 get_footer( 'hametuha' );
 get_footer();
