@@ -5,6 +5,7 @@
 /*全体レイアウト*/
 .margin {
   max-width: $desktop;
+  width: auto;
   margin: 0 auto;
 }
 
@@ -19,6 +20,7 @@
 
 .home .margin {
   max-width: 1280px;
+  width: auto;
 }
 
 #sidebar .grid_2 {
@@ -147,8 +149,16 @@
 // --------------------------------------------------
 @media screen and (max-width: ($tablet - 1px)) {
 
+  body{
+    width: 100%;
+  }
+
   #main {
     margin: 0 10px;
+  }
+
+  .margin{
+    width: 100%;
   }
 
   .grid_1,

@@ -5,7 +5,6 @@
 /*global Modernizr:true*/
 
 jQuery(document).ready(function ($) {
-
     // クッキーをチェックして、ログインしてるか確認
     var $loggineBtn = $('#login-button');
     if (/fumikicustomer=1/.test(document.cookie)) {
@@ -271,7 +270,6 @@ jQuery(document).ready(function ($) {
         }
         $('#to-top').css('top', offset);
     }
-
     setToTop();
     $(window).resize(setToTop);
     $('#to-top a').click(function (e) {
@@ -297,10 +295,6 @@ jQuery(document).ready(function ($) {
         }
     });
     if ($('body').hasClass('smartphone')) {
-        //1px スクロール
-        setTimeout(function () {
-            window.scrollTo(0, 1);
-        }, 100);
         var smartPhoneReadContainer = null;
         //電子書籍立ち読み
         $('.ebook-read-more a').click(function (e) {

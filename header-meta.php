@@ -9,7 +9,7 @@
 		if ( is_front_page() ) {
 			echo ' | ' . get_bloginfo( 'description' );
 		}
-	?></title>
+		?></title>
 	<?php wp_head(); ?>
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo( 'rss2_url' ); ?>" title="高橋文樹.com 最新の投稿"/>
 	<link rel="profile" href="http://gmpg.org/xfn/11"/>
@@ -25,3 +25,12 @@
 		js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=264573556888294";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function (d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+		if (!d.getElementById(id)) {
+			js = d.createElement(s);
+			js.id = id;
+			js.src = p + '://platform.twitter.com/widgets.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}
+	}(document, 'script', 'twitter-wjs');</script>

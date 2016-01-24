@@ -95,7 +95,7 @@ function _fumiki_assets(){
 		);
 
         // Font Plus
-        wp_enqueue_script('font-plus', '//webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D&aa=1', array(), null, true);
+        wp_enqueue_script('font-plus', '//webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D&delay=1', null, null, true);
 
 		//メインCSS
 		wp_enqueue_style(
@@ -106,23 +106,21 @@ function _fumiki_assets(){
 			'screen'
 		);
 
-		//fancybox
-		if(!is_smartphone()){
-			$src = WP_DEBUG ? 'fancybox' : 'fancybox.pack';
-			wp_enqueue_script(
-				'fancybox',
-				get_template_directory_uri()."/libs/fancybox/jquery.{$src}.js",
-				array('jquery', 'jquery-ui-mouse'),
-				'2.1.5',
-				true
-			);
-			wp_enqueue_style(
-				'fancybox',
-				get_template_directory_uri()."/libs/fancybox/jquery.fancybox.css",
-				array(),
-				'2.1.5'
-			);
-		}
+		// fancybox
+		$src = WP_DEBUG ? 'fancybox' : 'fancybox.pack';
+		wp_enqueue_script(
+			'fancybox',
+			get_template_directory_uri() . "/libs/fancybox/jquery.{$src}.js",
+			array( 'jquery', 'jquery-ui-mouse' ),
+			'2.1.5',
+			true
+		);
+		wp_enqueue_style(
+			'fancybox',
+			get_template_directory_uri() . "/libs/fancybox/jquery.fancybox.css",
+			array(),
+			'2.1.5'
+		);
 		// メインのJS
         wp_enqueue_script(
             'fumiki-core',

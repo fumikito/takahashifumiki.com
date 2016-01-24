@@ -220,8 +220,12 @@
   &__link{
     display: block;
     position: relative;
+    text-align: center;
     img{
-      max-width: 100%;
+      @media only screen and (max-width: $tablet - 1) {
+        max-width: 100%;
+      }
+      max-width: 200px;
       width: auto;
       height: auto;
     }
@@ -258,7 +262,9 @@
     }
   }
   &__desc{
-    font-size: 1.2em;
+    line-height: 1.4;
+    font-size: 14px;
+    text-align: left;
     margin: 0 1em 1em;
   }
   strong{
