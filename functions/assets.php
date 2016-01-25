@@ -95,7 +95,7 @@ function _fumiki_assets(){
 		);
 
         // Font Plus
-        wp_enqueue_script('font-plus', '//webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D&delay=1', null, null, true);
+        wp_enqueue_script('font-plus', '//webfont.fontplus.jp/accessor/script/fontplus.js?xnZANi~MEp8%3D', null, null, true);
 
 		//メインCSS
 		wp_enqueue_style(

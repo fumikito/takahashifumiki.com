@@ -176,10 +176,10 @@
                 }
             }
             img{
-                min-height: 449px;
+                min-height: 320px;
                 @media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
                     min-height: 300px;
-                    max-height:  300px;
+                    max-height:  320px;
                 }
                 @media screen and (max-width: ($tablet - 1px)){
                     min-height: 200px;
