@@ -177,6 +177,10 @@
 // フォローしてください
 .followMe{
   margin: 40px 0;
+  .fan-gate-body &{
+    margin-bottom: 0;
+    text-align: center;
+  }
   &__wrapper{
     @extend .clearfix;
   }

@@ -49,6 +49,11 @@ spl_autoload_register(function($class_name){
 ));
 */
 
+// コマンド
+if( defined('WP_CLI') && WP_CLI ){
+	WP_CLI::add_command( \Fumiki\Command\Twitter::COMMAND_NAME , '\Fumiki\Command\Twitter' );
+}
+
 // チャート
 \Fumiki\Service\Google\Chart::get_instance(array());
 

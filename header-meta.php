@@ -16,7 +16,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
 </head>
 <body <?php body_class( '' ); ?>>
+<?php if ( 'page-facebook.php' !== get_page_template_slug() ) : ?>
 <div id="fb-root"></div>
+<?php endif; ?>
 <script>(function (d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
