@@ -37,7 +37,7 @@ add_action( 'template_redirect', function () {
 	// No cache headers.
 	if ( is_page( 'about' ) ) {
 		nocache_headers();
-	} elseif ( is_singular( 'ebook' ) ) {
+	} elseif ( is_singular( 'ebook' ) || ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) ) {
 		nocache_headers();
 	} elseif ( is_singular( 'post' ) ) {
 		if ( lwp_has_files() || lwp_has_ticket() ) {
