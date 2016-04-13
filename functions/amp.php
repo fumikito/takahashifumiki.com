@@ -113,6 +113,19 @@ HTML;
 } );
 
 /**
+ * ロゴ追加
+ */
+add_filter( 'amp_post_template_metadata', function ( $data ){
+	$data['publisher']['logo'] = [
+		'@type' => 'ImageObject',
+		'url' => get_stylesheet_directory_uri().'/styles/img/favicon/amp-logo.png',
+		'height' => 60,
+		'width' => 600,
+	];
+	return $data;
+} );
+
+/**
  * Google analyticsを追加
  */
 add_filter( 'amp_post_template_analytics', function ( $analytics ) {
