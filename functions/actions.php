@@ -53,6 +53,7 @@ function _fumiki_head(){
 <meta property="og:type" content="{$type}" />
 <meta property="og:site_name" content="高橋文樹.com"/>
 <meta property="fb:admins" content="1034317368" />
+<meta property="fb:pages" content="240120469352376" />
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@takahashifumiki" />
