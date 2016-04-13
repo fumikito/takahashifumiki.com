@@ -24,6 +24,7 @@
 @import "front_page";
 @import 'affiliate';
 @import 'netabare';
+@import "fan_gate";
 
 
 /****************************************
@@ -326,7 +327,7 @@ body.ebooks .catch{
 .entry .book-list{
 	position: relative;
 	padding-bottom: 20px;
-	border-bottom: 1px dotted #E5E5E5;	
+	border-bottom: 1px dotted #E5E5E5;
 	dl{
 		width: 310px;
 		margin-top: 0;
@@ -421,9 +422,9 @@ body.single-events{
 
 
 
- /****************************************
- * 8.404設定
- ****************************************/
+/****************************************
+* 8.404設定
+****************************************/
 #error404{
 	width: 320px;
 	margin: 0 auto;
@@ -448,7 +449,7 @@ body.single-events{
 		color: #8ab29f;
 		text-shadow: 1px 1px 2px #fff;
 		font-weight: bold;
-		margin: 30px 0;	
+		margin: 30px 0;
 	}
 	p.message{
 		font-size: 1.4em;
@@ -497,8 +498,8 @@ body.single-events{
 	p.message{
 		margin: 1em 0;
 	}
-	
-	
+
+
 	/* Notice */
 	p.required{
 		text-align: right;
@@ -506,10 +507,10 @@ body.single-events{
 	.required{
 		color: crimson;
 	}
-	
+
 	/* table common*/
 	table{
-		&.price-table, 
+		&.price-table,
 		&.form-table{
 			width: 100%;
 			table-layout: auto;
@@ -541,7 +542,7 @@ body.single-events{
 			}
 		}
 	}
-	
+
 	/* price table */
 	.price-table{
 		th{
@@ -561,7 +562,7 @@ body.single-events{
 		}
 		.price{
 			white-space: nowrap;
-			text-align: right;	
+			text-align: right;
 		}
 		.recalculate{
 			max-width: 40%;
@@ -610,7 +611,7 @@ body.single-events{
 			}
 		}
 	}
-	
+
 	p.check-url-image{
 		text-align: center;
 		margin: 1em;
@@ -664,13 +665,13 @@ body.single-events{
 			}
 		}
 	}
-	
+
 	/* CC Icon */
 	.lwp-cc-icon{
 		display: inline-block;
 		width: 130px;
 		height: 80px;
-		background: url('../../../../plugins/literally-wordpress/assets/icon-payment-method@2x.png') left top no-repeat; 
+		background: url('../../../../plugins/literally-wordpress/assets/icon-payment-method@2x.png') left top no-repeat;
 	}
 	.icon-paypal {
 		background-position: 0 bottom;
@@ -792,11 +793,11 @@ body.single-events{
 	background-image: -webkit-linear-gradient(bottom, rgb(222,222,222) 28%, rgb(235,235,235) 84%);
 	background-image: -ms-linear-gradient(bottom, rgb(222,222,222) 28%, rgb(235,235,235) 84%);
 	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.28, rgb(222,222,222)),
-		color-stop(0.84, rgb(235,235,235))
+									linear,
+									left bottom,
+									left top,
+									color-stop(0.28, rgb(222,222,222)),
+									color-stop(0.84, rgb(235,235,235))
 	);
 }
 .lwp-indicator-progress{
@@ -810,12 +811,12 @@ body.single-events{
 	background-image: -webkit-linear-gradient(bottom, rgb(130,212,63) 28%, rgb(100,207,58) 67%, rgb(201,230,115) 84%);
 	background-image: -ms-linear-gradient(bottom, rgb(130,212,63) 28%, rgb(100,207,58) 67%, rgb(201,230,115) 84%);
 	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.28, rgb(130,212,63)),
-		color-stop(0.67, rgb(100,207,58)),
-		color-stop(0.84, rgb(201,230,115))
+									linear,
+									left bottom,
+									left top,
+									color-stop(0.28, rgb(130,212,63)),
+									color-stop(0.67, rgb(100,207,58)),
+									color-stop(0.84, rgb(201,230,115))
 	);
 }
 .lwp-indicator-text{
@@ -844,8 +845,8 @@ body.single-events{
  */
 /*全体*/
 body.smartphone{
-	
-	
+
+
 	/* 楽天 */
 	div.rakuten_details{
 		div.rakuten_info{
@@ -860,8 +861,8 @@ body.smartphone{
 		padding-right: 10px;
 		padding-left: 10px;
 	}
-	
-	
+
+
 	/* 電子書籍リスト */
 	.ebook{
 		.eyecatch{
@@ -1003,7 +1004,7 @@ Purchase History
 			color: green;
 			font-weight: bold;
 			i{
-				background-color: green;			
+				background-color: green;
 			}
 		}
 		.lwp-cancel,
@@ -1039,35 +1040,8 @@ p.lwp-error-message{
 		font-weight: bold;
 		white-space: nowrap;
 	}
-	
+
 }
 
-/****************************************
- * 11. Facebook ページ
- ****************************************/
-body.fan-gate-body{
-	margin:0 auto;
-	overflow: hidden;
-}
-.fan-gate-body .margin{
-	width:auto;
-	padding:20px;
-	border:1px solid #ddd;
-}
-.fan-gate-body .meta{
-	text-align:left;
-	padding:30px 0;
-}
-.fan-gate-body .meta p{
-	font-size:1.6em;
-	text-shadow:1px 1px 2px #fff;
-	height:30px;
-	line-height:30px;
-}
-.fan-gate-body .meta p img{
-	vertical-align: middle;
-}
-.fan-gate-body .title{
-	margin:0;
-}
+
 

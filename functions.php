@@ -49,6 +49,11 @@ spl_autoload_register(function($class_name){
 ));
 */
 
+// コマンド
+if( defined('WP_CLI') && WP_CLI ){
+	WP_CLI::add_command( \Fumiki\Command\Twitter::COMMAND_NAME , '\Fumiki\Command\Twitter' );
+}
+
 // チャート
 \Fumiki\Service\Google\Chart::get_instance(array());
 
@@ -70,6 +75,7 @@ get_template_part("functions/feed");
 get_template_part("functions/quotes");
 get_template_part("functions/hametuha");
 get_template_part('functions/cloudflare');
+get_template_part('functions/amp');
 
 /*
 get_template_part('functions/wp-fulltext-search');

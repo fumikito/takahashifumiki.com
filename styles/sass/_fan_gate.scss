@@ -1,0 +1,52 @@
+/****************************************
+ * 11. Facebook ページ
+ ****************************************/
+.fan-gate-body{
+  margin: 0 auto;
+  padding-top: 0 !important;
+  overflow: auto;
+  .entry{
+    min-height: 0;
+  }
+  .margin {
+    width: auto;
+    padding: 20px;
+  }
+  .single-logo{
+    margin: 40px auto 20px;
+    width: 128px;
+    height: 128px;
+    img{
+      width: 128px;
+      height: 128px;
+    }
+  }
+  .meta {
+    text-align: left;
+    padding: 30px 0;
+     p {
+      font-size: 1.6em;
+      text-shadow: 1px 1px 2px #fff;
+      height: 30px;
+      line-height: 30px;
+       img {
+         vertical-align: middle;
+       }
+    }
+  }
+  .title {
+    margin: 0;
+    font-size: 3em;
+    padding: 1.5em;
+  }
+}
+
+.fangate{
+  margin-bottom: 20px;
+
+  &__status{
+    font-size: 2em;
+    text-align: center;
+    color: #888;
+  }
+}

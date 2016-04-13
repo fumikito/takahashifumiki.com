@@ -132,6 +132,7 @@ a {
  * テキスト・背景色
  */
 body {
+  overflow-x: hidden;
   color: $body-color;
   word-wrap: break-word;
   text-align: justify;
@@ -140,6 +141,7 @@ body {
   font-size: 10px;
   background: $body-bg-color;
   position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* FontAwesome */
