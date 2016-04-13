@@ -31,7 +31,9 @@ get_header( 'meta' );
 					Facebookと連携済みです
 				</div>
 
-				＜ぢｖ＞
+				<div class="fangate__status">
+
+				</div>
 
 			</div>
 

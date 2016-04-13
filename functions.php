@@ -75,6 +75,7 @@ get_template_part("functions/feed");
 get_template_part("functions/quotes");
 get_template_part("functions/hametuha");
 get_template_part('functions/cloudflare');
+get_template_part('functions/amp');
 
 /*
 get_template_part('functions/wp-fulltext-search');

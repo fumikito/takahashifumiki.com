@@ -132,6 +132,7 @@ a {
  * テキスト・背景色
  */
 body {
+  overflow-x: hidden;
   color: $body-color;
   word-wrap: break-word;
   text-align: justify;

@@ -76,4 +76,71 @@ class Twitter extends \WP_CLI_Command {
 		fclose( $handle );
 		\WP_CLI::success( 'CSVを出力しました' );
 	}
+
+
+	/**
+	 * Get unfollowing power user.
+	 *
+	 * ## OPTIONS
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp twitter rank
+	 *
+	 * @param array $args
+	 * @param array $assoc_args
+	 */
+	public function rank( $args, $assoc_args ) {
+		$twitter = \Gianism\Service\Twitter::get_instance();
+		$friends = [];
+		foreach (
+			[
+				'/friends/list'   => false,
+			] as $endpoint => $is_follower
+		) {
+			$cursor = '-1';
+			while ( $result = $twitter->call_api( $endpoint, [
+				'count'  => 200,
+				'cursor' => $cursor,
+			] ) ) {
+				if ( ! is_array( $result->users ) ) {
+					break;
+				}
+				foreach ( $result->users as $user ) {
+					$friends[] = $user->id_str;
+				}
+				$cursor = $result->next_cursor;
+				if ( ! $result->next_cursor ) {
+					break;
+				}
+				sleep( 60 );
+			}
+		}
+		foreach (
+			[
+				'/followers/list' => true,
+			] as $endpoint => $is_follower
+		) {
+			$cursor = '-1';
+			while ( $result = $twitter->call_api( $endpoint, [
+				'count'  => 200,
+				'cursor' => $cursor,
+			] ) ) {
+				if ( ! is_array( $result->users ) ) {
+					break;
+				}
+				foreach ( $result->users as $user ) {
+					if ( $user->followers_count < 2000  || false !== array_search( $user->id_str, $friends ) ) {
+						continue;
+					}
+					\WP_CLI::line( sprintf( '%08d https://twitter.com/%s/', $user->followers_count, $user->screen_name ) );
+				}
+				$cursor = $result->next_cursor;
+				if ( ! $result->next_cursor ) {
+					break;
+				}
+				sleep( 60 );
+			}
+		}
+	}
 }
