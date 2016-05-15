@@ -3,11 +3,21 @@
  * @package takahashifumiki
  */
 
+
 /**
  * wp_headで出力する
  * @return void
  */
 function _fumiki_head(){
+	echo <<<HTML
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+	google_ad_client: "ca-pub-0087037684083564",
+	enable_page_level_ads: true
+});
+</script>
+HTML;
 	if( is_front_page() ){
 		echo '<meta name="p:domain_verify" content="d41b6fbe34cc94d28d077985fdc1fe7a"/>';
 	}
