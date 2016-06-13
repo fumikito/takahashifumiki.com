@@ -1,0 +1,118 @@
+@imoprt 'compass';
+
+/****************************************
+ * 8.div.tmkm-amazon-view
+ ****************************************/
+
+$hamazon-bg-color: #fff;
+$hamazon-price-color: #d99b3b;
+$hamazon-link-color: #06c;
+$hamazon-description-bg-color: cyan;
+
+div.tmkm-amazon-view {
+  clear: both;
+  margin: 1em auto;
+  padding: 1em 1.5em;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+  font-family: $font-family-sans-serif;
+
+  .tmkm-amazon-title {
+    font-size: 1.4em;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  .tmkm-amazon-img {
+    float: right;
+    margin: 0 0 1em 1em;
+    padding: 0;
+    width: 200px;
+    text-align: center;
+    img {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      max-width: 200px;
+      width: auto;
+      height: auto;
+    }
+  }
+  p {
+    margin: 0.5em 0;
+    em {
+      color: #000;
+      font-style: normal;
+      font-weight: bold;
+    }
+    &.vendor {
+      clear: both;
+      font-size: 0.85em;
+      text-align: right;
+      a {
+        color: #999;
+      }
+    }
+    &.additional-description {
+      font-size: 1.2em;
+      line-height: 1.2;
+      margin: 1em 220px 1em 0;
+      padding: 1em;
+      background: #fff;
+      border-radius: 3px;
+      &:before {
+        content: '!';
+        font-family: Georgia, serif;
+        color: #eee;
+        font-size: 2em;
+        display: block;
+        width: 0.5em;
+        height: 1em;
+        float: left;
+        margin: 0 0.5em 0.5em 0;
+      }
+      &:after{
+        content: "";
+        clear: both;
+      }
+
+    }
+    &.review {
+      clear: both;
+      iframe {
+        width: 100%;
+        height: 180px;
+      }
+    }
+    span.label{
+      margin-right: 1em;
+    }
+    &.price em {
+      color: $hamazon-price-color;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  div.tmkm-amazon-view {
+    .tmkm-amazon-img {
+      float: none;
+      margin-left: 0;
+      width: auto;
+      height: auto;
+      img{
+        max-width: 120px;
+        width: auto;
+        height: auto;
+
+      }
+
+    }
+    p {
+      &.additional-description {
+        margin-right: 0;
+      }
+
+    }
+  }
+}
+

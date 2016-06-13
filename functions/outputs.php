@@ -143,22 +143,24 @@ function fumiki_share( $title, $url ) {
 	$subscribers = fumiki_feed_count();
 
 	$fb_url = is_front_page() ? 'https://www.facebook.com/TakahashiFumiki.Page' : $url;
+	$tw_url = 'https://twitter.com/search?f=tweets&vertical=default&q='. rawurlencode( $url ) .'&src=typd';
 
-	echo <<<EOS
-	<ul class="like">
-		<li>
+	echo <<<HTML
+	<div class="row share">
+		<div class="share-item col-xs-4 col-md-2">
 			<!-- Facebook -->
 			<div class="fb-like" data-href="{$fb_url}" data-send="false" data-layout="box_count" data-width="72" data-show-faces="false"></div>
-		</li>
-		<li>
+		</div>
+		<div class="share-item col-xs-4 col-md-2">
 			<!-- twitter -->
+			<div id="twitter-share-widget"><a href="{$tw_url}" target="_blank">反応</a></div>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$url}" data-text="「{$title}」" data-count="vertical" data-via="takahashifumiki" data-related="hametuha:高橋文樹の主催するオンライン文芸誌です。" data-lang="ja">ツイート</a>
-		</li>
-		<li>
+		</div>
+		<div class="share-item col-xs-4 col-md-2">
 			<!-- Hatena -->
 			<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-		</li>
-		<li>
+		</div>
+		<div class="share-item col-xs-4 col-md-2">
 			<!-- Google + -->
 			<div class="g-plusone" data-href="{$url}" data-size="tall"></div>
 			<script type="text/javascript">
@@ -169,26 +171,21 @@ function fumiki_share( $title, $url ) {
 					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 				})();
 			</script>
-		</li>
-		<li>
+		</div>
+		<div class="share-item col-xs-4 col-md-2">
 			<!-- Feedly -->
 			<a id="feedburner-count" href="{$feed_url}" title="高橋文樹.com 更新情報" rel="alternate" class="tool-tip inline-block">
 				<span class="mono">{$subscribers}</span>
 				<img src="{$feed_src}" alt="高橋文樹.com 更新情報" width="52" height="62" />
 			</a>
-		</li>
-		<li>
+		</div>
+		<div class="share-item col-xs-4 col-md-2">
             <!-- Pocket -->
             <a data-pocket-label="pocket" data-pocket-count="vertical" class="pocket-btn" data-lang="en"></a>
             <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
-		</li>
-	</ul>
-EOS;
-	/*
-	<!-- linkedin -->
-	<script src="http://platform.linkedin.com/in.js" type="text/javascript" async="async"></script>
-	<script type="IN/Share" data-url="{$url}" data-counter="top"></script>
-	 */
+		</div>
+	</div>
+HTML;
 }
 
 /**
@@ -214,16 +211,16 @@ function fumiki_archive_photo( $size = "medium-thumbnail", $post = null, $show_n
 	}
 	if ( $image_id ) {
 		if ( $echo ) {
-			echo wp_get_attachment_image( $image_id, $size );
+			echo wp_get_attachment_image( $image_id, $size, false, [ 'class' => 'img-circle'] );
 		} else {
-			return wp_get_attachment_image( $image_id, $size );
+			return wp_get_attachment_image( $image_id, $size, false, [ 'class' => 'img-circle'] );
 		}
 	} elseif ( $show_nophoto ) {
 		$width  = ( $size == "medium-thumbnail" ) ? 280 : 150;
 		$height = ( $size == "medium-thumbnail" ) ? 200 : 100;
 		$src    = ( $size == "medium-thumbnail" ) ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
 		if ( $echo ) {
-			echo '<img class="attachment-medium" src="' . get_bloginfo( 'template_directory' ) . '/styles/img/' . $src . '" width="' . $width . '" height="' . $height . '" alt="写真なし" />';
+			echo '<img class="img-circle" src="' . get_bloginfo( 'template_directory' ) . '/assets/img/' . $src . '" width="' . $width . '" height="' . $height . '" alt="写真なし" />';
 		}
 	}
 }
@@ -571,30 +568,6 @@ function is_on_air() {
 	}
 }
 
-/**
- * はてなブックマークのXMLを返す
- *
- * @param string $sort 'count' 'eid', または 'hot'のいずれか
- *
- */
-function get_hatena_rss( $sort = 'count' ) {
-	$hatena_transient_name = 'hatena_hotentry_' . $sort;
-	$xml                   = get_transient( $hatena_transient_name );
-	if ( false === $xml ) {
-		$endpoint = 'http://b.hatena.ne.jp/entrylist?sort=' . $sort . '&url=http://takahashifumiki.com&mode=rss';
-		$context  = stream_context_create( array(
-			'http' => array( 'timeout' => 3 )
-		) );
-		$response = file_get_contents( $endpoint, 0, $context );
-		set_transient( $hatena_transient_name, $response, 60 * 60 * 2 );
-		$xml = $response;
-	}
-	if ( $xml ) {
-		return simplexml_load_string( $xml );
-	} else {
-		return $xml;
-	}
-}
 
 /**
  * RSSから日付を返す
@@ -766,22 +739,7 @@ EOS;
 	return $wpdb->get_var( $sql );
 }
 
-/**
- * はてなブックマークの総数を取得する
- * @return int
- */
-function hatena_total_bookmark_count() {
-	$cache = get_transient( 'hatena_bookmark_total_count' );
-	if ( false === $cache ) {
-		require ABSPATH . WPINC . '/class-IXR.php';
-		$client = new IXR_Client( 'http://b.hatena.ne.jp/xmlrpc' );
-		$client->query( 'bookmark.getTotalCount', 'http://takahashifumiki.com/' );
-		$cache = $client->getResponse();
-		set_transient( 'hatena_bookmark_total_count', $cache, 60 * 60 * 24 );
-	}
 
-	return (int) $cache;
-}
 
 /**
  * カテゴリー名を渡すとリンクを返す
@@ -863,3 +821,49 @@ add_shortcode( 'nanji_han', function ( $atts = array() ) {
 			break;
 	}
 } );
+
+
+
+/**
+ * Change WP-Pagenavi's output
+ *
+ * @package hametuha
+ * @filter wp_pagenavi
+ *
+ * @param string $html
+ *
+ * @return string
+ */
+add_filter( 'wp_pagenavi', function ( $html ) {
+	// Remove div.
+	$html = trim( preg_replace( '/<\/?div([^>]*)?>/u', '', $html ) );
+	// Wrap links with li.
+	$html = preg_replace( '/(<a[^>]*?>[^<]*<\/a>)/u', '<li>$1</li>', $html );
+	// Wrap links with span considering class name.
+	$html = preg_replace_callback( '/<span([^>]*?)>[^<]*<\/span>/u', function ( $matches ) {
+		if ( false !== strpos( $matches[1], 'current' ) ) {
+			// This is current page.
+			$class_name = 'active';
+		} elseif ( false !== strpos( $matches[1], 'pages' ) ) {
+			// This is page number.
+			$class_name = 'disabled';
+		} elseif ( false !== strpos( $matches[1], 'extend' ) ) {
+			// This is ellipsis.
+			$class_name = 'disabled';
+		} else {
+			// No class.
+			$class_name = '';
+		}
+
+		return "<li class=\"{$class_name}\">{$matches[0]}</li>";
+	}, $html );
+
+	$html = str_replace( 'ページ', '', $html );
+
+	// Wrap with ul as you like.
+	return <<<HTML
+<div class="row text-center">
+    <ul class="pagination pagination-centered">{$html}</ul>
+</div>
+HTML;
+}, 10, 2 );

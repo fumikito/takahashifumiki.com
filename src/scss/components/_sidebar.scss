@@ -1,0 +1,55 @@
+.widget {
+  &-title {
+    @extend %headings;
+  }
+  &-hametuha {
+    background-color: #fff;
+    padding: 20px 10px !important;
+    .widget-title {
+      margin-top: 0;
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+}
+
+
+.widget_sp_image {
+  &-description {
+    margin-top: 10px;
+    font-family: $title-font;
+  }
+  &-image-link {
+    display: block;
+    img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      .sidebar & {
+        min-width: 100%;
+      }
+    }
+
+  }
+}
+
+.sidebar {
+  .widget {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    &:first-child {
+      padding-top: 0;
+      .widget-title {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+    min-width: 100%;
+  }
+}

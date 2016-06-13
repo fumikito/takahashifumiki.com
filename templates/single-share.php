@@ -1,28 +1,62 @@
-<div class="google-share clearfix">
-	<div class="share">
-		<?php fumiki_share( get_the_title() . " | " . get_bloginfo( 'name' ), get_permalink() ); ?>
+<?php if ( is_singular() ) : ?>
+	<?php get_template_part( 'templates/share', 'general' ) ?>
+<?php endif; ?>
+
+
+
+<?php fumiki_share( get_the_title() . ' | '. get_bloginfo( 'name' ), get_permalink() ); ?>
+
+
+<div class="row">
+	
+	<div class="col-xs-12 col-sm-6 mb">
+		
+		<p class="ad-title">SPONSORED LINK</p>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 高橋文樹レスポンシブフッター上 -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-0087037684083564"
+		     data-ad-slot="9343442847"
+		     data-ad-format="auto"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		<?php if ( $tags = get_the_tags() ) : ?>
+			<h2 class="post-tags-title"><i class="fa fa-tags"></i> この投稿のタグ</h2>
+			<div class="post-tags-list">
+				<?php foreach ( $tags as $tag ) : ?>
+					<?php printf(
+						'<a href="%s" class="btn btn-raised btn-primary"><i class="fa fa-tag"></i> %s(%d)</a>',
+						get_tag_link( $tag ),
+						esc_html( $tag->name ),
+						$tag->count
+					) ?>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( is_singular( 'post' ) ) : ?>
+			<?php if ( is_singular( 'post' ) ) : ?>
+				<div class="post-detail">
+					<h2 class="post-detail-title"><i class="fa fa-info"></i> この記事について</h2>
+					<p class="post-detail-desc">
+						この記事は<?php the_author_posts_link() ?>が<?php the_time( get_option( 'date_format' ) ) ?>に<?php the_category( ', ' ) ?>の記事として公開しました。
+					</p>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
 	</div>
-	<?php if ( is_singular() ) : ?>
-		<?php get_template_part('template/share', 'general') ?>
-	<?php endif; ?>
-	<p class="sponsered">SPONSORED LINK</p>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- 高橋文樹スマートフォン上 -->
-	<ins class="adsbygoogle"
-	     style="display:block"
-	     data-ad-client="ca-pub-0087037684083564"
-	     data-ad-slot="9969902841"
-	     data-ad-format="auto"></ins>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-	<?php if ( is_singular( 'post' ) ) : ?>
-		<div class="single-content-detail">
-			<i class="fa fa-info"></i>
-			<p>
-				この記事は<?php the_category( ', ' ) ?>にカテゴライズされています。タグは<?php the_tags( '', ', ' ) ?>です。
-				そこら辺を見ると、似たような記事が見つかるかもしれません。
-			</p>
-		</div>
-	<?php endif; ?>
-</div><!-- //.google-share -->
+	
+	<div class="col-xw-12 col-sm-6 mb">
+		<?php
+		if ( function_exists( 'related_posts' ) ) {
+			related_posts();
+		}
+		?>
+	</div>
+	
+</div>
+
+<?php get_template_part( 'templates/list', 'general' ) ?>

@@ -85,16 +85,6 @@ add_action('wp_head', '_fumiki_head', 0);
 remove_action( 'wp_head' , 'jetpack_og_tags' );
 
 
-/**
- * メニューを登録する
- */
-function _fumiki_menu(){
-	register_nav_menus(array(
-		'main-pages' => 'メインページ',
-		'top-page' => 'トップページ'
-	));
-}
-add_action("init", "_fumiki_menu");
 
 
 /**

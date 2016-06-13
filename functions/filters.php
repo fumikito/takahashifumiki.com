@@ -3,6 +3,17 @@
  * @package takahashifumiki
  */
 
+
+/**
+ * MooToolsの場合だけテンプレート変更
+ */
+add_filter( 'template_include', function( $template ){
+	if ( is_singular() && in_category(47) ) {
+		$template = get_template_directory().'/mootools/moo.php';
+	}
+	return $template;
+} );
+
 /**
  * タイトルを変更する
  * @param string $title

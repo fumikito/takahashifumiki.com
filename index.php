@@ -1,58 +1,86 @@
 <?php get_header(); ?>
+	<div class="container container-main">
+		<div class="row">
 
-	<div class="margin search-block">
-		<?php get_search_form(); ?>
-	</div>
+			<div class="page-header">
 
-	<div id="content" class="margin clearfix">
-		<div id="main">
-			<?php if ( have_posts() ) : ?>
+				<p class="page-header-image">
+					<img class="page-header-src" alt="<?php bloginfo( 'name' ); ?>"
+					     src="<?= get_template_directory_uri(); ?>/assets/img/logo-front-page.png"
+					     width="200" height="200"/>
+				</p>
 
-				<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi() ?>
+				<h1 class="page-header-text"><?php the_archive_title() ?></h1>
 
-				<ol class="post-list post-list-large">
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'templates/loop', get_post_type() ); ?>
-					<?php endwhile; ?>
-				</ol><!-- .entry ends-->
+			</div>
 
-				<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi() ?>
+			<article id="main" class="col-xs-12 col-md-9">
 
+				<?php get_search_form(); ?>
 
-			<?php else : ?>
-				<!-- 404 Not Found -->
-				<article class="entry">
-					<h2>該当する投稿はありませんでした</h2>
+				<?php get_template_part( 'templates/single', 'ad' ) ?>
 
-					<p>ご迷惑おかけいたします。以下の方法をお試しください。</p>
-					<ul>
-						<li><a href="#sorter">検索フォーム</a>から別の言葉で探す</li>
-						<li><a href="#menu">ページ上部左上のメニュー</a>から探す</li>
-						<li><a href="<?= home_url( '/inquiry/', 'https' ) ?>">メールフォーム</a>から問い合わせる</li>
-						<li><a href="#footer-nav">フッター</a>にあるTwitterなどのリンクから問い合わせる</li>
-					</ul>
-				</article>
-				<!-- 404 Not Found -->
-			<?php endif; ?>
+				<?php if ( have_posts() ) : ?>
 
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- 高橋文樹スマートフォン上 -->
-			<ins class="adsbygoogle"
-			     style="display:block; margin-top: 20px;"
-			     data-ad-client="ca-pub-0087037684083564"
-			     data-ad-slot="9969902841"
-			     data-ad-format="auto"></ins>
-			<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+					<?php if ( function_exists( 'wp_pagenavi' ) ) {
+						wp_pagenavi();
+					} ?>
+
+					<ol class="post-loop-list large">
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'templates/loop', 'large' ); ?>
+						<?php endwhile; ?>
+					</ol><!-- .entry ends-->
+
+					<?php if ( function_exists( 'wp_pagenavi' ) ) {
+						wp_pagenavi();
+					} ?>
 
 
+				<?php else : ?>
+					<!-- 404 Not Found -->
+					<div class="entry">
 
-		</div>
-		<!-- #main ends -->
-	</div>
-<?php get_template_part( 'templates/single', 'ebook' ); ?>
+						<h2>該当する投稿はありませんでした</h2>
 
-<?php
-get_footer( 'hametuha' );
-get_footer();
+						<p>ご迷惑おかけいたします。以下の方法をお試しください。</p>
+
+						<ul>
+							<li><a href="#sorter">検索フォーム</a>から別の言葉で探す</li>
+							<li>ページ上部のメニューから探す</li>
+							<li><a href="<?= home_url( '/inquiry/', 'https' ) ?>">メールフォーム</a>から問い合わせる</li>
+							<li>フッターにあるTwitterやFacebookメッセージなどのリンクから問い合わせる</li>
+						</ul>
+
+					</div>
+					<!-- 404 Not Found -->
+				<?php endif; ?>
+
+				<div class="mb">
+
+				<p class="ad-title">SPONSORED LINK</p>
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- 高橋文樹レスポンシブフッター上 -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-0087037684083564"
+				     data-ad-slot="9343442847"
+				     data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+				</div>
+
+				<?php get_template_part( 'templates/list', 'general' ) ?>
+				
+			</article>
+			<!-- #main ends -->
+			<aside class="col-xs-12 col-md-3 sidebar">
+				<?php get_sidebar() ?>
+			</aside>
+
+		</div><!-- //.row -->
+
+	</div><!-- container -->
+
+<?php get_footer();

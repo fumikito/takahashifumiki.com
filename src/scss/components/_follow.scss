@@ -1,0 +1,121 @@
+
+
+// シェア
+.share{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &-item{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+}
+
+// フォローしてください
+.followMe{
+  margin: 40px 0;
+  .fan-gate-body &{
+    margin-bottom: 0;
+    text-align: center;
+  }
+  &__title {
+    color: #888;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-family: $title-font;
+  }
+  &__lead{
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+
+  &__div{
+    float: left;
+    width: 50%;
+    height: 120px;
+    @media only screen and (max-width: $screen-xs-max) {
+      width: 100%;
+      height: auto;
+      float: none;
+    }
+    &--facebook{
+      background: #315096;
+    }
+    &--twitter{
+      background: #55acee;
+    }
+  }
+  &__button{
+    padding-top: 20px;
+    text-align: center;
+  }
+  &__desc{
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 20px 10px;
+  }
+}
+
+
+/* FeedBurner */
+#feedburner-count {
+  display: inline-block;
+  width: 52px;
+  height: 62px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  span {
+    position: absolute;
+    display: block;
+    width: 52px;
+    font-size: 14px;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+
+// Twitter
+#twitter-share-widget {
+  position: relative;
+  padding: 0 15px;
+  width: 75px;
+  height: 31px;
+  line-height: 31px;
+  color: inherit;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  z-index: 0;
+  margin: 0 auto 9px;
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 50%;
+    margin-left: -6px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #FFF transparent transparent transparent;
+    z-index: 0;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    bottom: -6px; left: 50%;
+    margin-left: -6px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #CCC transparent transparent transparent;
+    z-index: -1;
+  }
+}

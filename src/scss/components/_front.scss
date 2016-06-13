@@ -1,0 +1,137 @@
+.front-image {
+  margin-top: $navbar-height;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-title {
+    padding: 80px 0;
+    @media only screen and (max-width: $screen-sm-min) {
+      padding: 20px 0;
+      img {
+        width: 128px;
+        height: 128px;
+      }
+    }
+  }
+
+  &-credit {
+    text-align: right;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+  }
+
+}
+
+.front-welcome {
+  border-bottom: 1px solid #ddd;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  &-title {
+    font-family: $title-font;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &-pict {
+    text-align: center;
+    margin: 20px 0;
+    img {
+      border-radius: 50%;
+    }
+  }
+  &-desc {
+    font-family: $body-font;
+    font-size: 18px;
+  }
+}
+
+.front-info {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  &-title,
+  caption {
+    font-family: $title-font;
+    font-size: 20px;
+    .fa {
+      color: #aaa;
+    }
+  }
+  &-table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    th, td {
+      padding: 1em;
+      border-bottom: 1px dotted #aaa;
+    }
+    th {
+      font-weight: bold;
+      font-family: $font-bold;
+    }
+
+  }
+}
+
+@mixin front-size($n) {
+  $ratio: 100% / $n;
+  $margin: $ratio / 20;
+  $width: ( 100% - ( $margin * ($n + 1) ) ) / $n;
+  .row {
+    padding-left: $margin;
+  }
+  .widget {
+    width: $width;
+    margin-right: $margin;
+  }
+}
+
+.front-widgets {
+  padding: 40px 0;
+  .row{
+    position: relative;
+  }
+  .widget {
+    float: left;
+    margin-bottom: 20px;
+  }
+  @include front-size(4);
+  @each $var in (
+          $screen-md-max 3,
+          $screen-sm-max 2,
+          $screen-xs-max 1
+  ) {
+    @media only screen and (max-width: nth($var, 1)) {
+      @include front-size(nth($var, 2));
+    }
+  }
+}
+
+.like-box-container {
+  height: 500px;
+}
+
+.alo_easymail{
+  &_form_table{
+  th, td{
+    padding: 0.5em 0.75em;
+  }
+}
+  &_disclaimer{
+    margin: 5px 0;
+    padding: 0.5em;
+    background: #ddd;
+  }
+  &_widget_form{
+    .input-submit{
+      @extend .btn;
+      @extend .btn-raised;
+      @extend .btn-primary;
+      width: 100%;
+      
+      display: block;
+    }
+  }
+}
+

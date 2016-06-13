@@ -47,6 +47,30 @@ function hametuha_posts() {
 }
 
 /**
+ * はめにゅーのフィードを取得する
+ *
+ * @return array|null
+ */
+function get_hamenew() {
+	$posts = [];
+	$feed = fetch_feed( 'https://hametuha.com/news/feed/' );
+	if ( ! is_wp_error( $feed ) ) {
+		$posts = $feed->get_items( 0, 5 );
+	}
+	return $posts;
+}
+
+/**
+ * フィードの取得キャッシュ時間を調整
+ */
+add_filter( 'wp_feed_cache_transient_lifetime' , function( $lifetime, $url ) {
+	if ( false !== strpos( $url, 'https://hametuha.com/news/feed/' ) ) {
+		$lifetime = 1800;
+	}
+	return $lifetime;
+}, 10, 2 );
+
+/**
  * RSSから画像を引っこ抜く
  *
  * @param SimpleXMLElement $item

@@ -1,0 +1,43 @@
+/*
+ * Notice: Firefox対応のため、インラインスタイルなどを書き出し
+ * @see assets.php
+ */
+
+.netabare{
+    position: relative;
+    -ms-filter: blur(7px) ;
+    -moz-filter: blur(7px) ;
+    -o-filter: blur(7px) ;
+    -webkit-filter: blur(7px) ;
+    filter: blur(7px) ;
+}
+
+
+a.netabare-opener{
+    position: relative;
+    left: 50%;
+    margin-left: -108px;
+    margin-top: -25px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 1px 1px 2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.netabare-inline{
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 1em $title-font-color;
+    zoom: 1;
+    cursor: help;
+}
+
+.non-ms-filter{
+    .netabare{
+        background: $semi-light-grey;
+        color: $semi-light-grey;
+    }
+    .netabare-inline{
+        color: $semi-light-grey;
+        background: $semi-light-grey;
+        text-shadow: none;
+    }
+}

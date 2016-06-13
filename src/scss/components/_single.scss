@@ -1,0 +1,151 @@
+.page-header {
+  border-bottom-color: #ddd;
+  margin: 80px 0 40px;
+  padding-bottom: 40px;
+  @media only screen and (max-width: $screen-sm-max) {
+    margin: 60px 0 10px;
+  }
+  &-text {
+    text-align: center;
+    font-size: 4em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-family: $title-font;
+    padding-right: 2em;
+    padding-left: 2em;
+    @media only screen and (max-width: $screen-sm-max) {
+      padding-right: 0.5em;
+      padding-left: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+    }
+  }
+  &-image {
+    text-align: center;
+    @media only screen and (max-width: $screen-sm-max) {
+      img{
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+  &-meta {
+    margin-top: 40px;
+    font-size: 0.85em;
+    .fa {
+      color: #ddd;
+    }
+  }
+}
+
+.entry{
+  @include post_style();
+}
+
+.eyecatch {
+  margin-bottom: 40px;
+  img {
+    max-width: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+
+  }
+  figcaption {
+    font-size: 0.85em;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+%headings {
+
+  font-size: 20px;
+  font-family: $title-font;
+  i {
+    color: #aaa;
+  }
+}
+
+// タグ
+.post-tags {
+  &-title {
+    @extend %headings;
+    margin-top: 20px;
+  }
+}
+
+// 関連記事
+.related {
+  &-title {
+    margin-top: 0;
+    @extend %headings;
+  }
+}
+
+.post-detail {
+  &-title {
+    @extend %headings;
+  }
+}
+
+.nextprevious {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  .prev, .next {
+    width: 50%;
+    .fa {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      font-size: 20px;
+      color: #ccc;
+    }
+  }
+  .prev {
+    float: left;
+    text-align: left;
+    a{
+      padding-left: 40px;
+    }
+    .fa {
+      left: 10px;
+    }
+    &:last-child {
+      border-right: 1px solid #ddd;
+    }
+  }
+  .next {
+    float: right;
+    text-align: right;
+    a{
+      padding-right: 40px;
+    }
+    &:last-child {
+      border-left: 1px solid #ddd;
+    }
+    .fa {
+      right: 10px;
+    }
+  }
+  small {
+    display: block;
+    color: #aaa;
+  }
+  a {
+    display: block;
+    padding: 30px 20px;
+    position: relative;
+    &:link, &:visited {
+      text-decoration: none;
+      color: #000;
+    }
+    &:hover, &:active {
+      text-decoration: none;
+      color: #000;
+      background: #fff;
+    }
+  }
+}

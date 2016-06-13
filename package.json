@@ -1,0 +1,51 @@
+{
+  "name": "takahashifumiki",
+  "version": "1.0.0",
+  "description": "A WordPress theme for takahashifumiki.com",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp build",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fumikito/takahashifumiki.com.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "fumikito <guy@hametuha.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fumikito/takahashifumiki.com/issues"
+  },
+  "homepage": "https://github.com/fumikito/takahashifumiki.com#readme",
+  "devDependencies": {
+    "arrive": "^2.3.1",
+    "bootstrap-material-design": "^0.5.10",
+    "bootstrap-sass": "^3.3.6",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^3.0",
+    "gulp-imagemin": "^2.4",
+    "gulp-include": "^2.2.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "^2.0",
+    "gulp-load-plugins": "^1.2",
+    "gulp-pleeease": "^2.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sass": "^2.2",
+    "gulp-sass-bulk-import": "^1.0",
+    "gulp-sourcemaps": "^1.5",
+    "gulp-uglify": "^1.5",
+    "gulp-util": "^3.0",
+    "html5shiv": "^3.7.3",
+    "imagemin-pngquant": "^4.0.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.0",
+    "lodash": "^4.2.1",
+    "respond.js": "^1.4.2"
+  }
+}

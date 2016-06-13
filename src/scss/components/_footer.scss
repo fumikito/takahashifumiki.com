@@ -1,0 +1,49 @@
+
+.footer{
+  background: #fff;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, .1);
+  border-top: 1px solid #ddd;
+
+  &-profile{
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &-title{
+    margin: 40px 0 20px;
+    font-family: $title-font;
+    .fa{
+      color: #ddd;
+    }
+  }
+
+  &-social{
+    &-btn{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+
+  &-copy{
+    font-size: 12px;
+    &-text{
+      color: #000;
+    }
+  }
+
+  &-poweredby{
+    color: #888;
+  }
+
+  &-menu{
+    ul{
+      padding-left: 30px;
+    }
+    li{
+      margin: 15px 0;
+    }
+  }
+
+}
