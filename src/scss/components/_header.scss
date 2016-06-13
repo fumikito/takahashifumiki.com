@@ -1,0 +1,60 @@
+.header {
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    .navbar-toggle .icon-bar{
+      background-color: #000;
+    }
+    .header-navbar {
+      @media only screen and (max-width: $grid-float-breakpoint) {
+        .open .dropdown-menu {
+          background-color: #f9f9f9;
+          & > li > a {
+            font-size: 0.85em;
+            &:link, &:visited {
+              color: #000;
+              text-decoration: none;
+            }
+            &:hover, &:active {
+              color: #aaa;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      * li {
+        &.active a {
+          background-color: #eee;
+          &:link, &:visited {
+            color: #000;
+            text-decoration: none;
+          }
+          &:hover, &:active {
+            color: #aaa;
+            text-decoration: none;
+          }
+        }
+        & > a {
+          &:link, &:visited {
+            color: #000;
+            text-decoration: none;
+          }
+          &:hover, &:active {
+            color: #aaa;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb{
+  margin-top: $navbar-height;
+  @media only screen and (min-width: $screen-lg) {
+    margin-top: $navbar-height + 10;
+  }
+  font-size: 0.85em;
+  border-bottom: 1px solid #ddd;
+}

@@ -31,7 +31,7 @@
 					) :
 				?>
 					<a class="button button-download" href="<?= lwp_file_link($f->ID); ?>" rel="nofollow,noindex">
-						<i class="fa-download"></i>
+						<i class="fa fa-download"></i>
 						ダウンロード
 						<small><?= lwp_get_size($f); ?></small>
 					</a>

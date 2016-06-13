@@ -9,27 +9,19 @@
         $tag_list = implode(', ', $terms);
     }
 ?>
-<ul class="title-meta">
-    <li>
-        <span class="label"><i class="fa-calendar"></i></span>
+<div class="page-header-meta clearfix">
+    <div class="col-xs-12 col-sm-4 text-center">
+        <i class="fa fa-calendar"></i>
         <?php the_date() ?>
-        <?php the_expiration_info(); ?>
-    </li>
-    <li>
-        <span class="label"><i class="fa-tachometer"></i></span>
-        <span class="mono"><?= number_format($length); ?></span>文字
-        （所要時間<?= floor($length / 400); ?>分）
-    </li>
-    <li>
-        <span class="label"><i class="fa-comments"></i></span>
-        <span class="mono"><?php comments_number('0件', "1件", '%件'); ?></span>
-    </li>
-    <li>
-        <span class="label"><i class="fa-folder-open"></i></span>
-        <?php the_category(', '); ?>
-    </li>
-    <li>
-        <span class="label"><i class="fa-tags"></i></span>
-        <?= $tag_list ?>
-    </li>
-</ul>
+        <small><?php the_expiration_info(); ?></small>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+        <i class="fa fa-tachometer"></i>
+        <?= number_format( $length ); ?>文字
+        <small>（読了時間<?= floor( $length / 400 ); ?>分）</small>
+    </div>
+        <div class="col-xs-12 col-sm-4 text-center">
+        <i class="fa fa-folder-open"></i>
+        <?php the_category( ', ' ); ?>
+    </div>
+</div>

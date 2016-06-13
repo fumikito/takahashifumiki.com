@@ -1,0 +1,71 @@
+
+.container-main{
+  padding-bottom: 60px;
+}
+
+.fa{
+  min-width: 1em;
+}
+
+.mb{
+  margin-bottom: 20px;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+}
+
+
+// Fix fab buttons
+.btn-fab .fa{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a{
+  &:link{
+    color: #000;
+    text-decoration: underline;
+    .nav &, &.btn{
+      text-decoration: none;
+    }
+  }
+  &:visited{
+    color: #888;
+    text-decoration: underline;
+    .nav &, &.btn{
+      text-decoration: none;
+    }
+  }
+  &:hover{
+    color: $teal-500;
+    text-decoration: none;
+  }
+  &:active{
+    color: $teal-300;
+  }
+}
+
+//  Fix tab buttons
+.nav-tabs{
+  .active{
+    background-color: darken( $brand-primary, 10 );
+  }
+  &.nav-info{
+    background: $brand-info;
+    .active{
+      background-color: darken( $brand-info, 10 );
+    }
+  }
+  &.nav-inverse{
+    background: $mdb-brand-inverse;
+    .active{
+      background-color: darken( $mdb-brand-inverse, 10 );
+    }
+  }
+}

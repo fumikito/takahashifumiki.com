@@ -1,0 +1,37 @@
+.quotes{
+  &-loop{
+    border-top: 1px solid #ddd;
+    padding: 40px 0;
+    &:first-child{
+      border-top: none;
+    }
+  }
+  &-single{
+    margin: 80px 0;
+    border-top: none;
+  }
+
+  &-sign{
+    color: #aaa;
+    font-size: 2.4em;
+  }
+
+  &-content{
+    font-size: 2em;
+    font-family: $title-font;
+    color: #000;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    @media only screen and ( max-width: $screen-xs-max ) {
+      font-size: 1.4em;
+    }
+  }
+  &-cite {
+    font-family: $font-family-sans-serif;
+    font-size: 0.65em;
+    color: #888;
+  }
+
+
+
+}

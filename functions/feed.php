@@ -148,3 +148,116 @@ function fumiki_feed_count($format = true){
 
 	return $subscribers;
 }
+
+
+/**
+ * はてなブックマークの総数を取得する
+ * @return int
+ */
+function hatena_total_bookmark_count() {
+	$cache = get_transient( 'hatena_bookmark_total_count' );
+	if ( false === $cache ) {
+		require ABSPATH . WPINC . '/class-IXR.php';
+		$client = new IXR_Client( 'http://b.hatena.ne.jp/xmlrpc' );
+		$client->query( 'bookmark.getTotalCount', 'http://takahashifumiki.com/' );
+		$cache = $client->getResponse();
+		set_transient( 'hatena_bookmark_total_count', $cache, 60 * 60 * 24 );
+	}
+
+	return (int) $cache;
+}
+
+
+/**
+ * はてなブックマークのXMLを返す
+ *
+ * @param string $sort 'count' 'eid', または 'hot'のいずれか
+ * @return array
+ */
+function get_hatena_rss( $sort = 'count' ) {
+	$hatena_transient_name = 'hatena_hotentry_' . $sort;
+	$endpoint = 'http://b.hatena.ne.jp/entrylist?mode=rss&url=takahashifumiki.com&sort='.$sort;
+	$feed = fetch_feed( $endpoint );
+	if ( is_wp_error( $feed ) ) {
+		return [];
+	} else {
+		if ( 'count' === $sort ) {
+			$rank = [];
+			for ( $i = 0, $l = $feed->get_item_quantity(); $i < $l; $i++ ) {
+				$item = $feed->get_item($i);
+				$rank[$i] = $item->get_item_tags( 'http://www.hatena.ne.jp/info/xmlns#', 'bookmarkcount' )[0]['data'];
+			}
+			arsort($rank);
+			$items = [];
+			foreach ( $rank as $index => $value ) {
+				$items[] = $feed->get_item($index);
+				if ( 5 <= count($items) ) {
+					break;
+				}
+			}
+			return $items;
+		} else {
+			return $feed->get_items( 0, 5 );
+		}
+	}
+}
+
+/**
+ * ランキングを取得する
+ *
+ * @param string $start_date
+ * @param string $end_date
+ * @param string $metrics
+ * @param array $params
+ *
+ * @return array
+ */
+function get_ga( $start_date, $end_date, $metrics, $params = [] ) {
+	try{
+		$google = Gianism\Service\Google::get_instance();
+		if( ! $google || ! $google->ga_profile['view'] ) {
+			throw new \Exception( 'Google Analytics is not connected.', 500 );
+		}
+		$result = $google->ga->data_ga->get('ga:'.$google->ga_profile['view'], $start_date, $end_date, $metrics, $params);
+		if( $result && ( 0 < count($result->rows) ) ) {
+			return $result->rows;
+		}else{
+			return [];
+		}
+	}  catch ( \Exception $e ){
+		if ( WP_DEBUG ) {
+			trigger_error( sprintf( '[GA Error:%s] %s', $e->getCode(), $e->getMessage() ) );
+		}
+		return [];
+	}
+}
+
+/*
+$hatebu = array(
+	'hot'   => '注目',
+	'eid'   => '新着',
+	'count' => '人気',
+);
+$key    = array_rand( $hatebu );
+$hatena = get_hatena_rss( $key );
+if ( $hatena ) :
+	?>
+	<div class="box grid_2">
+		<h3><i class="fa-bookmark"></i> はてぶで<?= $hatebu[ $key ]; ?></h3>
+		<ol class="post-list">
+			<?php $counter = 0;
+			foreach ( $hatena->item as $item ) : $counter ++; ?>
+				<li>
+					<span class="score old"><?= number_format( get_hatena_count( $item ) ); ?>B</span>
+					<h4>
+						<a href="<?= $item->link; ?>"><?= str_replace( " | 高橋文樹.com", "", (string) $item->title ); ?></a>
+					</h4>
+					<span class="date mono"><?= mysql2date( 'Y.n.j', (string) get_hatena_date( $item ) ); ?></span>
+				</li>
+				<?php if ( $counter >= 5 ) {
+					break;
+				} endforeach; ?>
+		</ol>
+	</div>
+<?php endif; ?>
+*/
