@@ -143,7 +143,7 @@ function fumiki_share( $title, $url ) {
 	$subscribers = fumiki_feed_count();
 
 	$fb_url = is_front_page() ? 'https://www.facebook.com/TakahashiFumiki.Page' : $url;
-	$tw_url = 'https://twitter.com/search?f=tweets&vertical=default&q='. rawurlencode( $url ) .'&src=typd';
+	$tw_url = 'https://twitter.com/search?f=tweets&vertical=default&q='. rawurlencode( preg_replace( '#^https?://#', '', $url ) ) .'&src=typd';
 
 	echo <<<HTML
 	<div class="row share">
