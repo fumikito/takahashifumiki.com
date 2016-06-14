@@ -170,7 +170,7 @@
 
 				<?php get_template_part( 'templates/single', 'share' ); ?>
 
-				<div id="respond"><?php comments_template(); ?></div>
+				<div id="respond" class="row comment-wrapper" style="overflow-x: hidden;"><?php comments_template(); ?></div>
 
 			</article>
 			<!-- #main ends -->
