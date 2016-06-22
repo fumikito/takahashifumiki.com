@@ -149,3 +149,148 @@
     }
   }
 }
+
+
+//
+// LWP
+//
+.lwp-buynow{
+}
+.lwp-message{
+  .notice{
+    font-size: 1.2em;
+    strong{
+      font-family: $font-bold;
+    }
+    & + .center{
+      padding-bottom: 2em;
+      margin-bottom: 2em;
+      border-bottom: 3px double #ddd;
+    }
+  }
+  .center{
+    text-align: center;
+  }
+  .success{
+    padding: 1em;
+    @extend .alert;
+    @extend .alert-success;
+    a{
+      @extend .alert-link;
+    }
+  }
+}
+.lwp-invitation{
+  display: none;
+}
+
+/*ダウンロードリスト*/
+.lwp-file-list{
+  padding: 1em;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-bottom: 2em;
+  /*対応端末リスト*/
+  .device{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-bottom:10px;
+    margin-right:10px;
+    text-align: center;
+    &-desc{
+      clear: both;
+      margin: 1em 0;
+    }
+    small{
+      display: block;
+      font-size:10px;
+    }
+    span{
+      display: block;
+      font-size: 11px;
+      line-height: 1.1;
+      font-weight: bold;
+    }
+    img{
+      display: block;
+      margin: 5px auto;
+    }
+  }
+  .valid{
+    color: $brand-success;
+  }
+  p{
+    font-size: 12px;
+    color: #888;
+    line-height: 1.4;
+    margin: 10px 0;
+    padding-top: 5px;
+    &.device-desc{
+      padding: 1em;
+      border-radius: 3px;
+    }
+  }
+  #download-list{
+    margin-top: 1em;
+  }
+  .file-list{
+    margin-bottom: 2em;
+    width:100%;
+    border-collapse: collapse;
+    border: none;
+    td{
+      padding: 15px 5px 5px;
+      border-bottom: 1px dotted #E5E5E5;
+      &.center{
+        text-align: center;
+      }
+      &.width150{
+        width: 150px;
+      }
+      em.mono{
+        display: block;
+      }
+      .file-title{
+        font-size: 1.4em;
+      }
+      .desc{
+        p{
+          margin: 0;
+        }
+      }
+      small{
+        color: #888;
+        font-size: 0.75em;
+        &.desc{
+          display: block;
+          padding-top: 5px;
+          font-size: 0.85em;
+        }
+      }
+    }
+  }
+}
+.lwp-file-alert{
+  background: #ddd;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+.lwp-ticket-list{
+  padding: 0 10px;
+  table{
+    width: 100%;
+    font-size: 1.2em;
+    border-collapse: collapse;
+    th, td{
+      padding: 1em;
+    }
+    thead{
+      th{
+        border-bottom: 3px double #ddd;
+        color: #888;
+      }
+    }
+  }
+}

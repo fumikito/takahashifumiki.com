@@ -125,12 +125,12 @@ $gutter-highlighted: #9f9f9f;
   }
 
   .comments{
-    &, A{
+    &, a{
       color: $comment-color !important;
     }
   }
   .string{
-    &, {
+    &, a{
       color: $string-color !important;
     }
   }
