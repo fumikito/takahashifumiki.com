@@ -23,7 +23,7 @@ add_action( 'init', function () {
 	// Syntax highlighter
 	wp_register_style(
 		'syntaxhighlighter-theme-fumiki',
-		get_stylesheet_directory_uri() . '/styles/stylesheets/syntax-highlighter.css',
+		get_stylesheet_directory_uri() . '/assets/css/syntax-highlighter.css',
 		array( 'syntaxhighlighter-core' ),
 		fumiki_theme_version()
 	);

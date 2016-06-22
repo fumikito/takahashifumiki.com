@@ -15,14 +15,14 @@ global $wp_query;
 			<div class="form-group label-floating">
 				<label class="control-label" for="archive-search">検索ワード</label>
 				<input class="form-control" type="text" name="s" value="<?php the_search_query(); ?>"
-				       placeholder="指定なし" id="archive-search"/>
+				       placeholder="" id="archive-search"/>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">
 			<div class="form-group label-floating">
 				<label class="control-label" for="archive-tag">タグ</label>
-				<input class="form-control" type="text" name="tag" value="<?= esc_attr( get_query_var( 'tag' ) ) ?>"
-				       placeholder="指定なし" id="archive-tag"/>
+				<input class="form-control" type="text" name="tag" value="<?= esc_attr( rawurldecode( get_query_var( 'tag' ) ) ) ?>"
+				       placeholder="" id="archive-tag"/>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">

@@ -6,7 +6,7 @@
 		<tr class="<?= ($counter % 2 == 0) ? 'even' : 'odd';?>">
 			<td class="center">
 				<?php $ext = lwp_get_ext($f); ?>
-				<img src="<?php bloginfo('template_directory'); ?>/styles/img/ebook-filetypes/<?= $ext; ?>.png" alt="<?= $ext; ?>" width="75" height="75" />
+				<img src="<?php bloginfo('template_directory'); ?>/assets/img/ebook-filetypes/<?= $ext; ?>.png" alt="<?= $ext; ?>" width="75" height="75" />
 				<em class="mono"><?= strtoupper($ext); ?></em>
 			</td>
 			<td>
@@ -38,7 +38,7 @@
 					<small class="desc">クリックしてダウンロード</small>
 				<?php else :  ?>
 					<a class="button button-disabled" title="サイズ：<?= lwp_get_size($f); ?>" href="#" onclick="return false;">
-						<i class="fa-times-circle-o"></i>
+						<i class="fa fa-times-circle-o"></i>
 						利用不可
 						<small><?= lwp_get_size($f); ?></small>
 					</a>

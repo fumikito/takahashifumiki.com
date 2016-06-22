@@ -12,6 +12,12 @@
   .indent {
     text-indent: 1em;
   }
+  label{
+    font-family: $sans;
+  }
+  input, textarea{
+    font-family: $mono;
+  }
   & > p {
     margin: 1em 0;
     &.dropcap {
@@ -36,10 +42,11 @@
   }
 
   /*見出し*/
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, h6 {
     padding-top: 1.5em;
     margin-bottom: 0.75em;
-    font-family: $title-font;
+    font-family: $body-bold;
+    font-weight: bold;
   }
   h1 {
     font-size: 2.5em;
@@ -69,20 +76,18 @@
   }
 
   h6 {
-    font-family: $sans;
-    font-weight: bold;
   }
 
   /* 装飾 */
   strong, b {
     color: #000;
     font-weight: bold;
-    font-family: $font-family-sans-serif;
+    font-family: $font-bold;
   }
   big,
   strong.big {
     font-weight: bold;
-    font-family: $font-family-sans-serif;
+    font-family: $font-bold;
     font-size: 2em;
   }
   em {
@@ -313,17 +318,17 @@
   }
 
   /*注意書き*/
-  .alert {
-    font-size: 0.8em;
-    font-weight: bold;
-    color: #000;
-    &:before {
-      content: " ※"
-    }
-    &:after {
-      content: " "
-    }
-  }
+  //.alert {
+  //  font-size: 0.8em;
+  //  font-weight: bold;
+  //  color: #000;
+  //  &:before {
+  //    content: " ※"
+  //  }
+  //  &:after {
+  //    content: " "
+  //  }
+  //}
 
   /* 余談 */
   aside {

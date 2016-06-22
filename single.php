@@ -96,7 +96,7 @@
 								<?php endif; ?>
 							</p>
 							<?php if ( 'ebook' != get_post_type() ) : ?>
-								<p class="center"><?= lwp_buy_now( null, null ); ?></p>
+								<p class="center"><?= str_replace( 'class="lwp-buynow"', 'class="btn btn-success btn-lg btn-raised"', lwp_buy_now( null, null ) ); ?></p>
 							<?php endif; ?>
 						<?php endif; ?>
 					</div>
@@ -126,19 +126,25 @@
 								<div class="device<?= ( $d["valid"] ) ? ' valid' : ' invalid'; ?>">
 									<small class="center sans"><?= $d["valid"] ? "確認済" : "未確認"; ?></small>
 									<img
-										src="<?= get_template_directory_uri(); ?>/styles/img/ebook-devices/<?= $d["slug"]; ?>.png"
+										src="<?= get_template_directory_uri(); ?>/assets/img/ebook-devices/<?= $d["slug"]; ?>.png"
 										alt="<?= $d["name"]; ?>" width="48" height="48"/>
 									<span class="sans center"><?= $d["name"]; ?></span>
 								</div>
 								<!-- .device ends -->
 							<?php endforeach; ?>
-							<p class="clrB sans device-desc">
+							<p class="text-muted device-desc">
 								ここに掲載されていないものでも表示できる場合があります。端末は管理人が購入し次第検証いたします。<br/>
 								端末追加のご要望については<a href="<?php home_url( '/inquiry/', 'https' ); ?>">お問い合わせ</a>よりご連絡ください。
 							</p>
 						</div>
 						<h2 id="download-list"><i class="fa fa-download"></i>ダウンロード</h2>
 						<?php get_template_part( 'templates/table', 'downloadables' ); ?>
+						<?php if ( ! is_user_logged_in() ) : ?>
+						<div class="lwp-file-alert">
+							購入したのにダウンロード出来ないという方は、<a rel="nofollow" href="<?= wp_login_url( get_permalink() ) ?>">こちら</a>からログインいただき、リロードしてみてください。
+							どうしても解決しない場合は<a href="<?= home_url( '/inquiry/', 'https' ) ?>">お問い合わせ</a>よりご連絡ください。
+						</div>
+						<?php endif; ?>
 					</div><!-- //.lwp-file-list -->
 				<?php endif; ?>
 
