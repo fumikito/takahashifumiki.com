@@ -91,7 +91,7 @@ else :
 </div><!--main-menu ends-->
 
 <?php
-	$moo_id = split('/',$_SERVER['REQUEST_URI']);
+	$moo_id = explode('/',$_SERVER['REQUEST_URI']);
 	$moo_id = $moo_id[count($moo_id) - 2];
 	echo get_post($moo_id)->post_content;
 ?>
