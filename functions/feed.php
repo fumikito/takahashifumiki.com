@@ -324,6 +324,17 @@ do_action( 'rss_tag_pre', 'rss2' );
 	 */
 	do_action( 'rss2_head');
 
+	// Filter for amazon link
+	add_filter( 'wp_hamazon_amazon', function( $tag ) {
+		$tag = preg_replace( '#<p class="tmkm-amazon-img">(.*?)</p>#u', '<figure>$1</figure>', $tag );
+		return $tag;
+	} );
+
+	add_filter( 'the_content', function($content){
+		$content = preg_replace( '#(<blockquote class="twitter-tweet" (data-)?width="[0-9]+">.*?</script></p>)#us', '<figure class="op-social"><iframe>$1</iframe></figure>', $content);
+		return $content;
+	} );
+
 	while( have_posts()) : the_post();
 	?>
 	<item>
