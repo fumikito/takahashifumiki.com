@@ -232,32 +232,136 @@ function get_ga( $start_date, $end_date, $metrics, $params = [] ) {
 	}
 }
 
-/*
-$hatebu = array(
-	'hot'   => '注目',
-	'eid'   => '新着',
-	'count' => '人気',
-);
-$key    = array_rand( $hatebu );
-$hatena = get_hatena_rss( $key );
-if ( $hatena ) :
+/**
+ * リライトルールを登録
+ */
+add_filter( 'rewrite_rules_array', function( $rules ) {
+	return array_merge( [
+		'^instant-articles/?$' => 'index.php?feed=instant_article&post_type=post&posts_per_page=20&orderby=modified&order=desc',
+		'^instant-articles/page/([0-9+])/?$' => 'index.php?feed=instant_article&post_type=post&posts_per_page=20&orderby=modified&order=desc&paged=$matches[1]',
+	], $rules );
+} );
+
+/**
+ * インスタントアーティクルを追加
+ */
+add_filter( 'feed_content_type', function($types){
+	$types['instant_article'] = 'aplication/xml+rss';
+	return $types;
+} );
+
+/**
+ * フィードを出力
+ */
+add_action( 'do_feed_instant_article', function() {
+	header('Content-Type: ' . feed_content_type('rss2') . '; charset=' . get_option('blog_charset'), true);
+	echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
+/**
+ * Fires between the xml and rss tags in a feed.
+ *
+ * @since 4.0.0
+ *
+ * @param string $context Type of feed. Possible values include 'rss2', 'rss2-comments',
+ *                        'rdf', 'atom', and 'atom-comments'.
+ */
+do_action( 'rss_tag_pre', 'rss2' );
+?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	<?php
+	/**
+	 * Fires at the end of the RSS root to add namespaces.
+	 *
+	 * @since 2.0.0
+	 */
+	do_action( 'rss2_ns' );
 	?>
-	<div class="box grid_2">
-		<h3><i class="fa-bookmark"></i> はてぶで<?= $hatebu[ $key ]; ?></h3>
-		<ol class="post-list">
-			<?php $counter = 0;
-			foreach ( $hatena->item as $item ) : $counter ++; ?>
-				<li>
-					<span class="score old"><?= number_format( get_hatena_count( $item ) ); ?>B</span>
-					<h4>
-						<a href="<?= $item->link; ?>"><?= str_replace( " | 高橋文樹.com", "", (string) $item->title ); ?></a>
-					</h4>
-					<span class="date mono"><?= mysql2date( 'Y.n.j', (string) get_hatena_date( $item ) ); ?></span>
-				</li>
-				<?php if ( $counter >= 5 ) {
-					break;
-				} endforeach; ?>
-		</ol>
-	</div>
-<?php endif; ?>
-*/
+>
+
+<channel>
+	<title><?php wp_title_rss(); ?></title>
+	<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
+	<link><?php bloginfo_rss('url') ?></link>
+	<description><?php bloginfo_rss("description") ?></description>
+	<lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
+	<language><?php bloginfo_rss( 'language' ); ?></language>
+	<sy:updatePeriod><?php
+		$duration = 'hourly';
+
+		/**
+		 * Filter how often to update the RSS feed.
+		 *
+		 * @since 2.1.0
+		 *
+		 * @param string $duration The update period. Accepts 'hourly', 'daily', 'weekly', 'monthly',
+		 *                         'yearly'. Default 'hourly'.
+		 */
+		echo apply_filters( 'rss_update_period', $duration );
+	?></sy:updatePeriod>
+	<sy:updateFrequency><?php
+		$frequency = '1';
+
+		/**
+		 * Filter the RSS update frequency.
+		 *
+		 * @since 2.1.0
+		 *
+		 * @param string $frequency An integer passed as a string representing the frequency
+		 *                          of RSS updates within the update period. Default '1'.
+		 */
+		echo apply_filters( 'rss_update_frequency', $frequency );
+	?></sy:updateFrequency>
+	<?php
+	/**
+	 * Fires at the end of the RSS2 Feed Header.
+	 *
+	 * @since 2.0.0
+	 */
+	do_action( 'rss2_head');
+
+	while( have_posts()) : the_post();
+	?>
+	<item>
+		<title><?php the_title_rss() ?></title>
+		<link><?php the_permalink_rss() ?></link>
+	<?php if ( get_comments_number() || comments_open() ) : ?>
+		<comments><?php comments_link_feed(); ?></comments>
+	<?php endif; ?>
+		<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false); ?></pubDate>
+		<dc:creator><![CDATA[<?php the_author() ?>]]></dc:creator>
+		<author><![CDATA[<?php the_author() ?>]]></author>
+		<?php the_category_rss('rss2') ?>
+
+		<guid isPermaLink="false"><?php the_guid(); ?></guid>
+		<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
+		<?php
+			ob_start();
+			get_template_part( 'templates/instant-article' );
+			$content = ob_get_contents();
+			ob_end_clean();
+		?>
+		<content:encoded><![CDATA[<?php echo $content; ?>]]></content:encoded>
+	<?php if ( get_comments_number() || comments_open() ) : ?>
+		<wfw:commentRss><?php echo esc_url( get_post_comments_feed_link(null, 'rss2') ); ?></wfw:commentRss>
+		<slash:comments><?php echo get_comments_number(); ?></slash:comments>
+	<?php endif; ?>
+	<?php rss_enclosure(); ?>
+	<?php
+	/**
+	 * Fires at the end of each RSS2 feed item.
+	 *
+	 * @since 2.0.0
+	 */
+	do_action( 'rss2_item' );
+	?>
+	</item>
+	<?php endwhile; ?>
+</channel>
+</rss>
+	<?php
+} );
