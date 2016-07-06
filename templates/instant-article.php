@@ -4,6 +4,18 @@
 	<meta charset="utf-8">
 	<link rel="canonical" href="<?php the_permalink() ?>">
 	<meta property="op:markup_version" content="v1.0">
+	<?php
+	$category = get_the_category();
+	$tags = get_the_tags();
+	if ( $tags && ! is_wp_error( $tags ) ) {
+		$category = array_merge( $category, $tags );
+	}
+	if ( $category ) :
+	?>
+	<meta property="op:tags" content="<?= esc_attr( implode(', ', array_map( function( $cat ){
+		return $cat->name;
+	}, $category) ) ) ?>">
+	<?php endif; ?>
 </head>
 <body>
 <article>
@@ -33,6 +45,12 @@
 		<?php endif; ?>
 
 	</header>
+
+
+	<!-- An ad within your article -->
+	<figure class="op-ad">
+		<iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement=264573556888294_1215625441783096&adtype=banner300x250"></iframe>
+	</figure>
 
 	<!-- Body text for your article -->
 	<?php the_content(); ?>
