@@ -46,12 +46,6 @@
 
 	</header>
 
-
-	<!-- An ad within your article -->
-	<figure class="op-ad">
-		<iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement=264573556888294_1215625441783096&adtype=banner300x250"></iframe>
-	</figure>
-
 	<!-- Body text for your article -->
 	<?php the_content(); ?>
 
