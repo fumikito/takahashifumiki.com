@@ -96,7 +96,10 @@
 								<?php endif; ?>
 							</p>
 							<?php if ( 'ebook' != get_post_type() ) : ?>
-								<p class="center"><?= str_replace( 'class="lwp-buynow"', 'class="btn btn-success btn-lg btn-raised"', lwp_buy_now( null, null ) ); ?></p>
+								<p class="center">
+									<?= str_replace( 'class="lwp-buynow"', 'class="btn btn-success btn-lg btn-raised"', lwp_buy_now( null, null ) ); ?>
+									<a class="btn btn-default btn-raised btn-lg" href="<?= wp_login_url( get_permalink().'?timestamp='.current_time( 'timestamp' ) ) ?>">購入済み</a>
+								</p>
 							<?php endif; ?>
 						<?php endif; ?>
 					</div>
@@ -115,6 +118,11 @@
 				<div id="contents-last">&nbsp;</div>
 
 				<!-- // file lists -->
+				<?php if ( ! lwp_is_free( true ) && ! is_user_logged_in() ) : ?>
+				<p class="text-center">
+					<a class="btn btn-info btn-raised btn-lg" href="<?= wp_login_url( get_permalink().'?timestamp='.current_time('timestamp') ) ?>">購入済みの方はログインしてください</a>
+				</p>
+				<?php endif; ?>
 				<?php if ( lwp_has_files() ) : ?>
 					<div class="lwp-file-list lwp-container">
 						<h2><i class="fa fa-laptop"></i> 対応端末</h2>
