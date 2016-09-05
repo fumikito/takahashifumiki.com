@@ -59,4 +59,17 @@
 	
 </div>
 
+<div class="row">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- 高橋文樹.com 関連コンテンツ -->
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-client="ca-pub-0087037684083564"
+	     data-ad-slot="3571032443"
+	     data-ad-format="autorelaxed"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
+
 <?php get_template_part( 'templates/list', 'general' ) ?>

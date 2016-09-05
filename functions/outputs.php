@@ -149,7 +149,7 @@ function fumiki_share( $title, $url ) {
 	<div class="row share">
 		<div class="share-item col-xs-4 col-md-2">
 			<!-- Facebook -->
-			<div class="fb-like" data-href="{$fb_url}" data-send="false" data-layout="box_count" data-width="72" data-show-faces="false"></div>
+			<div class="fb-like" data-href="{$fb_url}" data-share="true" data-layout="box_count" data-width="72" data-show-faces="false"></div>
 		</div>
 		<div class="share-item col-xs-4 col-md-2">
 			<!-- twitter -->
