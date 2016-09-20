@@ -5,49 +5,54 @@
 
 
 /**
- * Twitterウィジェットを表示
+ * タイトルをいい感じにする
  *
- * @param integer $height
- * @param integer|string $width 初期値はauto
- *
- * @return void
+ * @param null|int|WP_Post $post
+ * @return string
  */
-function fumiki_twitter( $height = 300, $width = '"auto"', $loop = "true" ) {
-	?>
-	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
-	<script type="text/javascript">
-		//<![CDATA[
-		new TWTR.Widget({
-			version : 2,
-			type    : 'profile',
-			rpp     : 5,
-			interval: 3000,
-			width   : <?= $width; ?>,
-			height  : <?= $height; ?>,
-			theme   : {
-				shell : {
-					background: 'none',
-					color     : '#f0f0f0'
-				},
-				tweets: {
-					background: 'none',
-					color     : '#dfdfdf',
-					links     : '#ffffff'
-				}
-			},
-			features: {
-				scrollbar: false,
-				loop     : <?= $loop; ?>,
-				live     : true,
-				hashtags : true,
-				timestamp: true,
-				avatars  : false,
-				behavior : 'all'
-			}
-		}).render().setUser('takahashifumiki').start();
-		//]]>
-	</script>
-	<?
+function fumiki_single_title( $post = null ) {
+	$post = get_post( $post );
+	$parsed = wp_cache_get( $post->ID, 'post_parsed_title' );
+	if ( false === $parsed ) {
+		$title = single_post_title( '', false );
+		$parsed = fumiki_budou_tokenize( $title );
+		if ( is_wp_error( $parsed ) ) {
+			$parsed = $title;
+		} else {
+			$parsed = implode( '', array_map( function( $token ) {
+				return sprintf( '<span class="budou">%s</span>', esc_html( $token ) );
+			}, $parsed ) );
+			wp_cache_set( $post->ID, $parsed, 'post_parsed_title' );
+		}
+	}
+	return $parsed;
+}
+
+/**
+ * 投稿が更新されたらキャッシュを削除
+ */
+add_action( 'save_post', function( $post_id, $post ) {
+	if ( wp_is_post_autosave( $post ) || wp_is_post_revision( $post ) ) {
+		return;
+	}
+	wp_cache_delete( $post_id, 'post_parsed_title' );
+	fumiki_single_title( $post );
+}, 10, 2 );
+
+/**
+ * Budouにより文字列を分割する
+ *
+ * @param string $string
+ *
+ * @return array|WP_Error
+ */
+function fumiki_budou_tokenize( $string ) {
+	$endpoint = 'http://bushidou.hametuha.pics/json?q='.rawurlencode( $string );
+	$response = wp_remote_get( $endpoint );
+	if ( is_wp_error( $response ) ) {
+		return $response;
+	}
+	return json_decode( $response['body'] );
 }
 
 /**

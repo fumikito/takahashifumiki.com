@@ -39,10 +39,6 @@ add_action( 'template_redirect', function () {
 		nocache_headers();
 	} elseif ( is_singular( 'ebook' ) ) {
 		nocache_headers();
-	} elseif ( is_singular( 'post' ) ) {
-		if ( lwp_has_files() || lwp_has_ticket() ) {
-			nocache_headers();
-		}
 	}
 	// Add CF tags.
 	$tags = '';
@@ -169,4 +165,4 @@ add_action( 'transition_post_status', function ( $new_status, $old_status, $post
 	if ( 'publish' === $new_status && 'future' === $old_status ) {
 		purge_cf_cache( $post );
 	}
-}, 10, 2 );
+}, 10, 3 );
