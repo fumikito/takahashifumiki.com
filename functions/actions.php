@@ -3,12 +3,11 @@
  * @package takahashifumiki
  */
 
-
 /**
  * wp_headで出力する
  * @return void
  */
-function _fumiki_head(){
+add_action('wp_head', function(){
 	echo <<<HTML
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -18,11 +17,11 @@ function _fumiki_head(){
 });
 </script>
 HTML;
-	if( is_front_page() ){
+	if ( is_front_page() ) {
 		echo '<meta name="p:domain_verify" content="d41b6fbe34cc94d28d077985fdc1fe7a"/>';
 	}
 	//Facebook用のメタ情報
-	if(is_front_page() || is_singular()){
+	if ( is_front_page() || is_singular() ) {
 		$title = is_front_page() ? get_bloginfo('name') : wp_title('|', false, "right").get_bloginfo('name') ;
 		$url = is_front_page() ?  trailingslashit(home_url('/', 'http')) : get_permalink();
 		$image = get_template_directory_uri()."/styles/img/favicon/faviconx512.png";
@@ -78,8 +77,7 @@ HTML;
 <!-- copyright -->
 <meta name="copyright" content="copyright 2008 takahashifumiki.com" />
 EOS;
-}
-add_action('wp_head', '_fumiki_head', 0);
+}, 0);
 
 //JetpackのOGPをオフにする
 remove_action( 'wp_head' , 'jetpack_og_tags' );

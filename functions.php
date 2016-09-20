@@ -62,6 +62,7 @@ add_theme_support( 'menus' );
 
 //ファイルの読み込み
 get_template_part( 'functions/assets' );
+get_template_part( 'functions/backward', 'compats' );
 get_template_part( 'functions/adminbar' );
 get_template_part( 'functions/actions' );
 get_template_part( 'functions/filters' );

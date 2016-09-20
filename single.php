@@ -13,7 +13,7 @@
 					     width="200" height="200"/>
 				</p>
 				
-				<h1 class="page-header-text"><?php single_post_title() ?></h1>
+				<h1 class="page-header-text"><?= fumiki_single_title() ?></h1>
 
 				<?php get_template_part( 'templates/meta', get_post_type() ); ?>
 
@@ -61,50 +61,10 @@
 						<div class="img-container">
 							<img class="cover" src="<?= get_post_meta( get_the_ID(), 'cover', true ); ?>"
 							     alt="<?php the_title(); ?>" width="240" height="320"/>
-							<?php if ( lwp_on_sale() ) : ?>
-								<div class="on-sale old">
-									<i class="fa-start"></i>
-									Sale
-								</div>
-							<?php endif; ?>
 						</div><!-- .img-container -->
 						<?php get_template_part( 'templates/meta', 'ebook' ); ?>
 					</div>
 				<?php endif; ?>
-
-				<!-- // Buy message -->
-				<?php if ( ! lwp_is_free( true ) ) : ?>
-					<div class="lwp-message lwp-container">
-						<?php if ( lwp_is_owner() ) : ?>
-							<p class="message success">
-								お買い上げありがとうございます!
-								<?php if ( lwp_has_files() ) : ?>
-									<a href="#download-contents">ダウンロードリスト</a>からファイルをダウンロードしてください。
-								<?php endif; ?>
-							</p>
-						<?php else : ?>
-							<p class="message notice">
-								この<?= get_post_type_object( get_post_type() )->labels->name; ?>
-								は<strong><?php lwp_the_price(); ?></strong>で
-								<?php if ( 'ebook' == get_post_type() ) : ?>
-									販売していましたが、新規販売は中止しています。
-								<?php else : ?>
-									販売しています。
-								<?php endif; ?>
-								<?php if ( lwp_has_files() ) : ?>
-									購入した方はと<a href="#download-contents">ダウンロードリスト</a>のファイルをダウンロードできるようになります。
-								<?php endif; ?>
-							</p>
-							<?php if ( 'ebook' != get_post_type() ) : ?>
-								<p class="center">
-									<?= str_replace( 'class="lwp-buynow"', 'class="btn btn-success btn-lg btn-raised"', lwp_buy_now( null, null ) ); ?>
-									<a class="btn btn-default btn-raised btn-lg" href="<?= wp_login_url( get_permalink().'?timestamp='.current_time( 'timestamp' ) ) ?>">購入済み</a>
-								</p>
-							<?php endif; ?>
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
-
 
 				<div class="entry clearfix">
 					<?php the_content(); ?>
@@ -116,66 +76,6 @@
 				) ); ?>
 
 				<div id="contents-last">&nbsp;</div>
-
-				<!-- // file lists -->
-				<?php if ( ! lwp_is_free( true ) && ! is_user_logged_in() ) : ?>
-				<p class="text-center">
-					<a class="btn btn-info btn-raised btn-lg" href="<?= wp_login_url( get_permalink().'?timestamp='.current_time('timestamp') ) ?>">購入済みの方はログインしてください</a>
-				</p>
-				<?php endif; ?>
-				<?php if ( lwp_has_files() ) : ?>
-					<div class="lwp-file-list lwp-container">
-						<h2><i class="fa fa-laptop"></i> 対応端末</h2>
-						<?php $devices = lwp_get_devices(); ?>
-						<div class="device-list clearfix">
-							<?php foreach ( $devices as $d ) : if ( 'valid' != $d['valid'] ) {
-								continue;
-							} ?>
-								<div class="device<?= ( $d["valid"] ) ? ' valid' : ' invalid'; ?>">
-									<small class="center sans"><?= $d["valid"] ? "確認済" : "未確認"; ?></small>
-									<img
-										src="<?= get_template_directory_uri(); ?>/assets/img/ebook-devices/<?= $d["slug"]; ?>.png"
-										alt="<?= $d["name"]; ?>" width="48" height="48"/>
-									<span class="sans center"><?= $d["name"]; ?></span>
-								</div>
-								<!-- .device ends -->
-							<?php endforeach; ?>
-							<p class="text-muted device-desc">
-								ここに掲載されていないものでも表示できる場合があります。端末は管理人が購入し次第検証いたします。<br/>
-								端末追加のご要望については<a href="<?php home_url( '/inquiry/', 'https' ); ?>">お問い合わせ</a>よりご連絡ください。
-							</p>
-						</div>
-						<h2 id="download-list"><i class="fa fa-download"></i>ダウンロード</h2>
-						<?php get_template_part( 'templates/table', 'downloadables' ); ?>
-						<?php if ( ! is_user_logged_in() ) : ?>
-						<div class="lwp-file-alert">
-							購入したのにダウンロード出来ないという方は、<a rel="nofollow" href="<?= wp_login_url( get_permalink() ) ?>">こちら</a>からログインいただき、リロードしてみてください。
-							どうしても解決しない場合は<a href="<?= home_url( '/inquiry/', 'https' ) ?>">お問い合わせ</a>よりご連絡ください。
-						</div>
-						<?php endif; ?>
-					</div><!-- //.lwp-file-list -->
-				<?php endif; ?>
-
-				<!-- // ticket list -->
-				<?php if ( lwp_has_ticket() ) : ?>
-					<div class="lwp-ticket-list lwp-container">
-						<h2><i class="fa fa-ticket"></i><?php the_title(); ?>のチケット</h2>
-						<table id="ticket-list" class="form-table">
-							<thead>
-							<tr>
-								<th scope="col">名称</th>
-								<th scope="col">価格</th>
-								<th scope="col">在庫</th>
-								<th scope="col">詳細</th>
-								<th scope="col">&nbsp;</th>
-							</tr>
-							</thead>
-							<tbody>
-							<?php lwp_list_tickets( 'callback=_fumiki_tickets' ); ?>
-							</tbody>
-						</table>
-					</div><!-- //.lwp-ticket-list -->
-				<?php endif; ?>
 
 				<div class="row nextprevious">
 					<?php previous_post_link( '<div class="prev">%link</div>', '<small>前の投稿</small><i class="fa fa-arrow-circle-left"></i>%title' ); ?>
