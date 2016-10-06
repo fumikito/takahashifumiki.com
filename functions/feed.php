@@ -245,10 +245,12 @@ add_filter( 'rewrite_rules_array', function( $rules ) {
 /**
  * インスタントアーティクルを追加
  */
-add_filter( 'feed_content_type', function($types){
-	$types['instant_article'] = 'aplication/xml+rss';
-	return $types;
-} );
+add_filter( 'feed_content_type', function( $content_type, $type ){
+	if ( 'instant_article' == $type ) {
+		$content_type = 'application/xml+rss';
+	}
+	return $content_type;
+}, 10, 2 );
 
 /**
  * フィードを出力
