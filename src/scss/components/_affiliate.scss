@@ -9,6 +9,21 @@ $hamazon-price-color: #d99b3b;
 $hamazon-link-color: #06c;
 $hamazon-description-bg-color: cyan;
 
+.hamazon-message.error{
+  &:before{
+    content: "Amazon Product Advertizing API";
+    display: block;
+    color: #aaa;
+    text-align: center;
+    margin: 0 0 1em;
+    font-family: sans-serif;
+  }
+  text-align: center;
+  color: #888;
+  padding: 1em;
+  font-size: 0.6em;
+}
+
 div.tmkm-amazon-view {
   clear: both;
   margin: 1em auto;

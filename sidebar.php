@@ -42,7 +42,7 @@
 					</a>
 				</li>
 				<?php
-				if ( $counter >= 6 ) {
+				if ( $counter >= 5 ) {
 					break;
 				}
 				?>
