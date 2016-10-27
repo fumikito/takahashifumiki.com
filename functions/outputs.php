@@ -17,12 +17,16 @@ function fumiki_single_title( $post = null ) {
 		$title = single_post_title( '', false );
 		$parsed = fumiki_budou_tokenize( $title );
 		if ( is_wp_error( $parsed ) ) {
-			$parsed = $title;
+			return $title;
 		} else {
 			$parsed = implode( '', array_map( function( $token ) {
 				return sprintf( '<span class="budou">%s</span>', esc_html( $token ) );
 			}, $parsed ) );
-			wp_cache_set( $post->ID, $parsed, 'post_parsed_title' );
+			if ( empty( $parsed ) ) {
+				return $title;
+			} else {
+				wp_cache_set( $post->ID, $parsed, 'post_parsed_title' );
+			}
 		}
 	}
 	return $parsed;
