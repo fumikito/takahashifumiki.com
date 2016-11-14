@@ -214,7 +214,7 @@ function get_hatena_rss( $sort = 'count' ) {
  */
 function get_ga( $start_date, $end_date, $metrics, $params = [] ) {
 	try{
-		$google = Gianism\Service\Google::get_instance();
+		$google = Gianism\Plugins\Analytics::get_instance();
 		if( ! $google || ! $google->ga_profile['view'] ) {
 			throw new \Exception( 'Google Analytics is not connected.', 500 );
 		}
