@@ -620,13 +620,13 @@ function get_hatena_count( $item ) {
  * @return array
  */
 function get_twitter_timeline( $count = 20, $screen_name = 'takahashifumiki' ) {
-	if ( ! function_exists( 'twitter_get_timeline' ) ) {
+	if ( ! function_exists( 'gianism_twitter_get_timeline' ) ) {
 		return false;
 	}
 	$transient_name = "twitter_public_timeline_{$screen_name}_{$count}";
 	$twt_timeline   = get_transient( $transient_name );
 	if ( false === $twt_timeline ) {
-		$twt_timeline = twitter_get_timeline( $screen_name, array(
+		$twt_timeline = gianism_twitter_get_timeline( $screen_name, array(
 			'count' => $count,
 		) );
 		if ( $twt_timeline ) {
