@@ -34,7 +34,8 @@
 				<p class="footer-contact">
 					執筆・Web制作のお仕事については<a href="<?php echo home_url( '/inquiry/', 'https' ); ?>">お問い合わせフォーム</a>よりご連絡下さい。
 					なるべく早くお返事します。
-					Facebookページのメッセージでもお返事致します。プロフィール画像をスキャンしてください。
+					Facebookページのメッセージでもお返事致します。プロフィール画像をスキャンするか、
+					<a href="https://m.me/TakahashiFumiki.Page">リンクをクリック</a>してください。
 				</p>
 				</div>
 			</div><!-- //.grid_4 -->

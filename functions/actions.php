@@ -17,66 +17,98 @@ add_action('wp_head', function(){
 });
 </script>
 HTML;
-	if ( is_front_page() ) {
-		echo '<meta name="p:domain_verify" content="d41b6fbe34cc94d28d077985fdc1fe7a"/>';
-	}
 	//Facebook用のメタ情報
 	if ( is_front_page() || is_singular() ) {
-		$title = is_front_page() ? get_bloginfo('name') : wp_title('|', false, "right").get_bloginfo('name') ;
-		$url = is_front_page() ?  trailingslashit(home_url('/', 'http')) : get_permalink();
-		$image = get_template_directory_uri()."/styles/img/favicon/faviconx512.png";
-		if( !is_front_page() ){
-            $image_id = false;
-            if( has_post_thumbnail() ){
-                $image_id = get_post_thumbnail_id();
-            }else{
-                $images = get_children("post_parent=".get_the_ID()."&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1");
-                if(!empty($images)){
-                    $image_id = current($images)->ID;
-                }
-            }
-            if( $image_id ){
-                $image = wp_get_attachment_image_src($image_id, 'large');
-                $image = $image[0];
-            }
+		$title = is_front_page() ? get_bloginfo( 'name' ) : wp_title( '|', false, 'right' ) . get_bloginfo( 'name' );
+		$url   = is_front_page() ? trailingslashit( home_url( '/', 'http' ) ) : get_permalink();
+		$image = get_template_directory_uri() . '/styles/img/favicon/faviconx512.png';
+		if ( ! is_front_page() ) {
+			$image_id = false;
+			if ( has_post_thumbnail() ) {
+				$image_id = get_post_thumbnail_id();
+			} else {
+				$images = get_children( 'post_parent=' . get_the_ID() . '&post_mime_type=image&orderby=menu_order&order=ASC&posts_per_page=1' );
+				if ( ! empty( $images ) ) {
+					$image_id = current( $images )->ID;
+				}
+			}
+			if ( $image_id ) {
+				$image = wp_get_attachment_image_src( $image_id, 'large' );
+				$image = $image[0];
+			}
 		}
-		$type = is_front_page() ? "website" : 'article';
-		if(get_post_type() == 'ebook'){
-			$type = 'book';
+		$type = is_front_page() ? 'website' : 'article';
+		if ( is_front_page() ) {
+			$desc = get_bloginfo( 'description' );
+		} else {
+			global $post;
+			$desc = $post->post_excerpt ?: wp_trim_words( strip_tags( strip_shortcodes( $post->post_content ) ), 120, '...' );
 		}
-        if( is_front_page() ){
-            $desc = get_bloginfo('description');
-        }else{
-            global $post;
-            $desc = $post->post_excerpt ?: wp_trim_words(strip_tags(strip_shortcodes($post->post_content)), 120, '...');
-        }
-		$desc = esc_attr(str_replace("\n", "",  $desc));
+		$desc = esc_attr( str_replace( "\n", '',  $desc ) );
 		$dir = get_stylesheet_directory_uri();
-		echo <<<HTML
-<!-- Open Graph -->
-<meta property="og:locale" content="ja_jp" />
-<meta property="og:title" content="{$title}"/>
-<meta property="og:url" content="{$url}" />
-<meta property="og:image" content="{$image}" />
-<meta property="og:description" content="{$desc}" />
-<meta property="og:type" content="{$type}" />
-<meta property="og:site_name" content="高橋文樹.com"/>
-<meta property="fb:admins" content="1034317368" />
-<meta property="fb:pages" content="240120469352376" />
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@takahashifumiki" />
-<meta name="twitter:url" content="{$url}" />
-<meta name="twitter:title" content="{$title}" />
-<meta name="twitter:description" content="{$desc}" />
-<meta name="twitter:image" content="{$image}" />
-<meta name="description" content="{$desc}" />
-HTML;
+		$properties = [
+			'name'     => [
+				[ 'description', $desc ],
+				[ 'copyright', 'copyright 2008 takahashifumiki.com' ],
+				[ 'twitter:card', 'summary' ],
+				[ 'twitter:site', '@takahashifumiki' ],
+				[ 'twitter:url', $url ],
+				[ 'twitter:title', $title ],
+				[ 'twitter:description', $desc ],
+				[ 'twitter:image', $image ],
+			],
+			'property' => [
+				[ 'og:locale', 'ja_JP' ],
+				[ 'og:title', $title ],
+				[ 'og:url', $url ],
+				[ 'og:image', $image ],
+				[ 'og:description', $desc ],
+				[ 'og:type', $type ],
+				[ 'og:site_name', get_bloginfo( 'name' ) ],
+				[ 'fb:admins', '1034317368' ],
+				[ 'fb:pages', '240120469352376' ],
+			    [ 'fb:app_id', '264573556888294' ],
+			    [ 'fb:profile_id', '240120469352376' ],
+				[ 'article:author', 'https://www.facebook.com/TakahashiFumiki.Page/' ],
+			    [ 'article:publisher', '240120469352376' ],
+			],
+		];
+		if ( ! is_front_page() ) {
+			$terms = [];
+			if ( $categories = get_the_category( get_queried_object_id() ) ) {
+				$terms += $categories;
+				foreach ( $categories as $term ) {
+					$properties['property'][] = [ 'article:section', $term->name ];
+				}
+			}
+			if ( $tags = get_the_tags( get_queried_object_id() ) ) {
+				$terms += $tags;
+				foreach ( $tags as $term ) {
+					$properties['property'][] = [ 'article:tag', $term->name ];
+				}
+			}
+			if ( $terms ) {
+				$properties['name'][] = [ 'keywords', implode( ',', array_map( function( $term ) {
+					return $term->name;
+				}, $terms ) ) ];
+			}
+			$properties['property'][] = [ 'article:published_time', mysql2date( DateTime::ATOM, get_queried_object()->post_date ) ];
+			$properties['property'][] = [ 'article:modified_time', mysql2date( DateTime::ATOM, get_queried_object()->post_modified ) ];
+			// Add related
+			if ( function_exists( 'yarpp_get_related' ) ) {
+				foreach ( yarpp_get_related( [], get_queried_object_id() ) as $post ) {
+					$properties['property'][] = [ 'og:see_olso', get_permalink( $post ) ];
+				}
+			}
+		} else {
+			$properties['name'][] = [ 'p:domain_verify', 'd41b6fbe34cc94d28d077985fdc1fe7a' ];
+		}
+		foreach ( $properties as $property => $vals ) {
+			foreach ( $vals as list( $key, $val ) ) {
+				printf( '<meta %s="%s" content="%s" />'."\n", $property, esc_attr( $key ), esc_attr( $val ) );
+			}
+		}
 	}
-	echo <<<EOS
-<!-- copyright -->
-<meta name="copyright" content="copyright 2008 takahashifumiki.com" />
-EOS;
 }, 0);
 
 //JetpackのOGPをオフにする
