@@ -26,7 +26,7 @@ add_action( 'admin_bar_menu', function ( $wp_admin_bar ) {
 		'parent' => 'main-menues',
 		'title'  => '<i class="fa fa-home ab-icon"></i><span class="ab-label">ホーム</span>',
 		'id'     => 'main-pages',
-		'href'   => home_url( '', 'http' ),
+		'href'   => home_url( '' ),
 	) );
 	//カテゴリー追加
 	$wp_admin_bar->add_menu( array(

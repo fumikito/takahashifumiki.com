@@ -87,7 +87,7 @@ EOS;
  */
 add_filter('post_link', function($link, $post){
     if( 'quote' == $post->post_type ){
-        $link = home_url("/quote/{$post->ID}/", 'http');
+        $link = home_url("/quote/{$post->ID}/");
     }
     return $link;
 }, 10, 2);
@@ -117,7 +117,7 @@ add_action('wp_head', function(){
     if( ($quote = $wp_query->get('quote')) && is_numeric($quote) ){
         remove_action('wp_head', 'rel_canonical');
         add_action('wp_head', function() use ($quote){
-            printf('<link rel="canonical" href="%s" />', home_url('/quote/'.$quote.'/', 'http'));
+            printf('<link rel="canonical" href="%s" />', home_url('/quote/'.$quote.'/'));
         });
     }
 }, 1);
