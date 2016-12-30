@@ -1,7 +1,7 @@
 <?php
 global $wp_query;
 ?>
-<form method="get" id="sorter" action="<?= home_url( '', 'http' ) ?>">
+<form method="get" id="sorter" action="<?= home_url( '' ) ?>">
 
 	<input type="hidden" name="post_type" value="any"/>
 

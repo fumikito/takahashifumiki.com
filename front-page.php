@@ -37,7 +37,7 @@
 					</h2>
 					<p>
 						<?php bloginfo( 'description' ); ?><br/>
-						管理者については<a href="<?= home_url( '/about/', 'http' ); ?>">高橋文樹について</a>をご覧下さい。
+						管理者については<a href="<?= home_url( '/about/' ); ?>">高橋文樹について</a>をご覧下さい。
 					</p>
 					<table class="front-info-table">
 						<caption>

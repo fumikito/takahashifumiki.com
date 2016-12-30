@@ -95,7 +95,7 @@ class Analytics extends Pattern\Singleton
 	public function print_timer(){
         $hit = false;
         // Webフォントの読み込みを次のページだけランダムにする
-        foreach( ( false === strpos(home_url('/', 'http'), '.com') ? array(2173, 2864, 2876) : array(1266, 1403, 2173)) as $post_id){
+        foreach( ( false === strpos(home_url('/'), '.com') ? array(2173, 2864, 2876) : array(1266, 1403, 2173)) as $post_id){
             if( is_single($post_id) ){
                 $hit = true;
             }

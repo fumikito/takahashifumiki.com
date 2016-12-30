@@ -20,7 +20,7 @@ HTML;
 	//Facebook用のメタ情報
 	if ( is_front_page() || is_singular() ) {
 		$title = is_front_page() ? get_bloginfo( 'name' ) : wp_title( '|', false, 'right' ) . get_bloginfo( 'name' );
-		$url   = is_front_page() ? trailingslashit( home_url( '/', 'http' ) ) : get_permalink();
+		$url   = is_front_page() ? trailingslashit( home_url( '/' ) ) : get_permalink();
 		$image = get_template_directory_uri() . '/styles/img/favicon/faviconx512.png';
 		if ( ! is_front_page() ) {
 			$image_id = false;

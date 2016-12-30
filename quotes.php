@@ -43,7 +43,7 @@
 					<?php if ( ! is_archive() ) : ?>
 						<hr />
 						<p class="more-quotes text-center">
-							<a class="btn btn-raised btn-primary btn-lg" href="<?= home_url( '/quotes/', 'http' ) ?>">好きな言葉一覧へ</a>
+							<a class="btn btn-raised btn-primary btn-lg" href="<?= home_url( '/quotes/' ) ?>">好きな言葉一覧へ</a>
 						</p>
 					<?php endif; ?>
 

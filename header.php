@@ -18,7 +18,7 @@ get_header( 'meta' );
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?= home_url( '/', 'http' ) ?>">
+			<a class="navbar-brand" href="<?= home_url( '/' ) ?>">
 				<img src="<?= get_stylesheet_directory_uri() ?>/assets/img/favicon/faviconx120.png" width="32" height="32" alt="<?= esc_attr(get_bloginfo('name')) ?>">
 			</a>
 		</div>

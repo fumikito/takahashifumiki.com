@@ -134,7 +134,7 @@ function make_cf_request( $endpoint, $params = [ ], $method = 'GET' ) {
  * @return array|mixed|object|WP_Error
  */
 function purge_cf_cache( $post ) {
-	$urls = [ home_url( '/', 'http' ) ];
+	$urls = [ home_url( '/' ) ];
 	if ( 'post' == $post->post_type ) {
 		$urls[] = get_permalink( $post );
 		foreach ( array_merge( get_the_category( $post->ID ), get_the_tags( $post->ID ) ) as $term ) {
