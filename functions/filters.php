@@ -167,94 +167,6 @@ function _fumiki_home_url($url, $path = '', $orig_scheme = 'http'){
 add_filter('home_url', '_fumiki_home_url', 10, 2);
 
 /**
- * SSLが指定されている場合はURLを返す
- *
- * @param string $url
- * @return string
- */
-function _fumiki_login_ssl($url){
-	if( force_ssl_admin() ){
-		$url = str_replace('http:', 'https:', $url);
-	}
-	return $url;
-}
-add_filter('login_url', '_fumiki_login_ssl');
-add_filter('register', '_fumiki_login_ssl');
-add_filter('logout_url', '_fumiki_login_ssl');
-add_filter('logout_redirect', '_fumiki_login_ssl');
-
-/**
- * Theme My Loginが出力する管理画面へのURLをSSLにする
- *
- * @param string $url
- * @param string $action
- * @param int|string $instance
- * @return string
- */
-function _fumiki_admin_ssl($url, $action = 'login', $instance = ''){
-	switch($action){
-		case 'login':
-		case 'register':
-		case 'lostpassword':
-		case 'retrievepassword':
-		case 'resetpass':
-		case 'rp':
-			if( force_ssl_admin() ){
-				$url = str_replace('http:', 'https:', $url);
-			}
-			break;
-		default:
-			if( force_ssl_admin() ){
-				$url = str_replace('http:', 'https:', $url);
-			}
-			break;
-	}
-	return $url;
-}
-add_filter('tml_action_url', '_fumiki_admin_ssl');
-
-/**
- * Theme My LoginがSSLにリダイレクトしてくれないのをなんとかする
- *
- * @param string $link
- * @param string $query
- * @return string
- */
-function _fumiki_login_link($link, $query = ''){
-	if( force_ssl_admin() ){
-		$link = str_replace('http:', 'https:', $link);
-	}
-	return $link;
-}
-add_filter('tml_page_link', '_fumiki_login_link');
-
-/**
- * Disqusのスクリプトが関係ないところにも読み込まれるのを防止
- *
- * @return void
- */
-function _fumiki_remove_disqus(){
-	if(is_ssl()){
-		remove_action('wp_footer', 'dsq_output_footer_comment_js');
-	}
-}
-add_action('wp_footer', '_fumiki_remove_disqus', 1);
-
-/**
- * キャプチャがSSL対応になっていないので直す
- *
- * @param array $dir
- * @return array 
- */
-function _fumiki_simplecaptch_override($dir){
-	if(is_ssl() && isset($dir['url'])){
-		$dir['url'] = str_replace('http://', 'https://s.', $dir['url']);
-	}
-	return $dir;
-}
-add_filter('wpcf7_upload_dir', '_fumiki_simplecaptch_override');
-
-/**
  * テーマディレクトリのURLをCDN対応にする
  *
  * @param string $url
@@ -313,10 +225,6 @@ add_filter('style_loader_tag', function ($tag, $handle){
  * @return array
  */
 function _fumiki_attachment_image_atts($atts){
-	if(is_ssl() && false !== strpos($atts['src'], 'http://')){
-		//SSLに置換
-		$atts['src'] = str_replace('http://', 'https://', $atts['src']);
-	}
 	if(!is_admin()){
 		$atts['src'] = preg_replace("/(https?) : \/\//", '$1://s.', $atts['src']);
 	}
@@ -362,12 +270,9 @@ add_filter('image_widget_image_url', '_fumiki_image_widget_url', 10, 3);
 /**
  * リダイレクトループにならないようにする
  */
-function _fumiki_wp_redirect(){
-	if( is_singular('ebook') ){
-		remove_action('template_redirect', 'redirect_canonical');
-	}
-}
-add_action('template_redirect', '_fumiki_wp_redirect', 1);
+add_action('template_redirect', function(){
+	remove_action('template_redirect', 'redirect_canonical');
+}, 1);
 
 /**
  * AjaxのURLを現在のスキームにあわせる

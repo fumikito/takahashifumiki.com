@@ -181,21 +181,6 @@ function flash_converter($atts, $content = null){
 }
 add_shortcode('flash','flash_converter');
 
-
-/**
- * 記事のシングルページでSSLだったらリダイレクト
- *
- * @action template_redirect
- */
-add_action('template_redirect', function(){
-    if( is_ssl() && ( is_singular('post') || is_front_page() ) ){
-        $url = str_replace('https://', 'http://', get_permalink());
-        wp_safe_redirect($url, 301);
-        exit;
-    }
-});
-
-
 /**
  * JetpackのOGPを消す
  *
