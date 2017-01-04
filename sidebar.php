@@ -106,7 +106,7 @@
 			<i class="fa fa-amazon"></i> Amazonで見る
 		</a>
 		<img
-			src="http://ir-jp.amazon-adsystem.com/e/ir?t=hametuha-22&l=ur2&o=9" width="1" height="1" border="0" alt=""
+			src="https://ir-jp.amazon-adsystem.com/e/ir?t=hametuha-22&l=ur2&o=9" width="1" height="1" border="0" alt=""
 			style="border:none !important; margin:0px !important;"/>
 	</p>
 
