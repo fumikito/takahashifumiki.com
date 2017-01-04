@@ -1,6 +1,6 @@
 <?php
 /**
- * @package WordPress
+ * @package takahashifumiki
  */
 
 
@@ -72,7 +72,7 @@ function fumiki_nakanohito() {
 					src="http://nakanohito.jp/an/?u=201672&amp;h=893199&amp;w=96&amp;guid=ON&amp;t=" border="0"
 					width="96" height="96" alt=""/></a>
 		</noscript>
-		<?
+		<?php
 	}
 }
 
@@ -87,7 +87,7 @@ function fumiki_nakanohito() {
  * @return void
  */
 function fumiki_hotentry( $title = "はてなブックマーク", $sort = "hot", $need_script = true, $num = 7 ) {
-	echo ( $need_script ) ? '<script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>' : '';
+	echo ( $need_script ) ? '<script language="javascript" type="text/javascript" src="https://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>' : '';
 	echo <<<EOS
 <script language="javascript" type="text/javascript">
 //<![CDATA[
@@ -147,6 +147,9 @@ function fumiki_title() {
  * @return void
  */
 function fumiki_share( $title, $url ) {
+    if ( is_preview() ) {
+        return;
+    }
 	$feed_url    = 'http://cloud.feedly.com/#subscription%2Ffeed%2F' . rawurlencode( get_bloginfo( 'rss_url' ) );
 	$feed_src    = get_bloginfo( 'template_directory' ) . "/styles/img/container-feedly.png";
 	$subscribers = fumiki_feed_count();
@@ -167,7 +170,7 @@ function fumiki_share( $title, $url ) {
 		</div>
 		<div class="share-item col-xs-4 col-md-2">
 			<!-- Hatena -->
-			<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+			<a href="http://b.hatena.ne.jp/entry/{$url}" class="hatena-bookmark-button" data-hatena-bookmark-title="{$title}" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 		</div>
 		<div class="share-item col-xs-4 col-md-2">
 			<!-- Google + -->
@@ -220,16 +223,16 @@ function fumiki_archive_photo( $size = "medium-thumbnail", $post = null, $show_n
 	}
 	if ( $image_id ) {
 		if ( $echo ) {
-			echo wp_get_attachment_image( $image_id, $size, false, [ 'class' => 'img-circle'] );
+			echo wp_get_attachment_image( $image_id, $size, false, [ 'class' => 'img-archive'] );
 		} else {
-			return wp_get_attachment_image( $image_id, $size, false, [ 'class' => 'img-circle'] );
+			return wp_get_attachment_image( $image_id, $size, false, [ 'class' => 'img-archive'] );
 		}
 	} elseif ( $show_nophoto ) {
 		$width  = ( $size == "medium-thumbnail" ) ? 280 : 150;
 		$height = ( $size == "medium-thumbnail" ) ? 200 : 100;
 		$src    = ( $size == "medium-thumbnail" ) ? "archive_nophoto.gif" : "archive_nophoto_small.gif";
 		if ( $echo ) {
-			echo '<img class="img-circle" src="' . get_bloginfo( 'template_directory' ) . '/assets/img/' . $src . '" width="' . $width . '" height="' . $height . '" alt="写真なし" />';
+			echo '<img class="img-archive" src="' . get_bloginfo( 'template_directory' ) . '/assets/img/' . $src . '" width="' . $width . '" height="' . $height . '" alt="写真なし" />';
 		}
 	}
 }
@@ -384,7 +387,7 @@ function fumiki_loop_container( $additional_class = '', $score = false, $level =
 		</p>
 	</div>
 	<!-- .archive-box-small ends -->
-	<?
+	<?php
 }
 
 
@@ -776,7 +779,7 @@ function get_cat_tag( $category_name ) {
  *
  * @return string
  */
-function _fumiki_caption_shortcode( $string, $attr, $content = null ) {
+add_filter( 'img_caption_shortcode', function ( $string, $attr, $content = null ) {
 	extract( shortcode_atts( array(
 		'id'      => '',
 		'align'   => 'alignnone',
@@ -793,9 +796,7 @@ function _fumiki_caption_shortcode( $string, $attr, $content = null ) {
 
 	return '<figure ' . $id . 'class="wp-caption ' . esc_attr( $align ) . '" style="width: ' . ( 10 + (int) $width ) . 'px">'
 	       . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
-}
-
-add_filter( 'img_caption_shortcode', '_fumiki_caption_shortcode', 10, 3 );
+}, 10, 3 );
 
 
 add_shortcode( 'nanji_han', function ( $atts = array() ) {

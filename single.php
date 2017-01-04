@@ -23,7 +23,7 @@
 
 				<?php if ( has_post_thumbnail() ) : ?>
 					<figure class="eyecatch row">
-						<?
+						<?php
 						$attachment = get_post( get_post_thumbnail_id() );
 						the_post_thumbnail( 'large', array(
 							'alt'   => $attachment->post_title,

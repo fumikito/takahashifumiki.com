@@ -58,7 +58,7 @@ function _fumiki_tickets($parent_id){
 	<?php endif; ?>
 </td>
 </tr>
-	<?
+	<?php
 }
 
 

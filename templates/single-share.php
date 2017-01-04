@@ -23,9 +23,12 @@
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 
+	</div>
+	
+	<div class="col-xw-12 col-sm-6 mb">
 		<?php if ( $tags = get_the_tags() ) : ?>
-			<h2 class="post-tags-title"><i class="fa fa-tags"></i> この投稿のタグ</h2>
-			<div class="post-tags-list">
+            <h2 class="post-tags-title"><i class="fa fa-tags"></i> この投稿のタグ</h2>
+            <div class="post-tags-list">
 				<?php foreach ( $tags as $tag ) : ?>
 					<?php printf(
 						'<a href="%s" class="btn btn-raised btn-primary"><i class="fa fa-tag"></i> %s(%d)</a>',
@@ -34,27 +37,19 @@
 						$tag->count
 					) ?>
 				<?php endforeach; ?>
-			</div>
+            </div>
 		<?php endif; ?>
 
 		<?php if ( is_singular( 'post' ) ) : ?>
 			<?php if ( is_singular( 'post' ) ) : ?>
-				<div class="post-detail">
-					<h2 class="post-detail-title"><i class="fa fa-info"></i> この記事について</h2>
-					<p class="post-detail-desc">
-						この記事は<?php the_author_posts_link() ?>が<?php the_time( get_option( 'date_format' ) ) ?>に<?php the_category( ', ' ) ?>の記事として公開しました。
-					</p>
-				</div>
+                <div class="post-detail">
+                    <h2 class="post-detail-title"><i class="fa fa-info"></i> この記事について</h2>
+                    <p class="post-detail-desc">
+                        この記事は<?php the_author_posts_link() ?>が<?php the_time( get_option( 'date_format' ) ) ?>に<?php the_category( ', ' ) ?>の記事として公開しました。
+                    </p>
+                </div>
 			<?php endif; ?>
 		<?php endif; ?>
-	</div>
-	
-	<div class="col-xw-12 col-sm-6 mb">
-		<?php
-		if ( function_exists( 'related_posts' ) ) {
-			related_posts();
-		}
-		?>
 	</div>
 	
 </div>

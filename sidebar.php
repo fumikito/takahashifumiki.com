@@ -35,10 +35,11 @@
 							<span class="tags"><i
 									class="fa fa-tags"></i> <?= implode( ', ', $link['category'] ) ?></span>
 						</p>
-
+                        <?php if ( 1 === $counter ) : ?>
 						<div class="hametuha-list-description">
 							<?= wpautop( $link['excerpt'] ) ?>
 						</div>
+                        <?php endif; ?>
 					</a>
 				</li>
 				<?php

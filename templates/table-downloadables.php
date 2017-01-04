@@ -20,7 +20,7 @@
 				</div>
 			</td>
 			<td class="width150 center">
-				<?
+				<?php
 					$accessibility = lwp_get_accessibility($f);
 					if(
 						($accessibility == "owner" && lwp_is_owner() ) //購入者限定でかつ所有権がある
@@ -43,7 +43,7 @@
 						<small><?= lwp_get_size($f); ?></small>
 					</a>
 					<small class="desc">
-						<?
+						<?php
 							switch($accessibility){
 								case "owner":
 									echo "購入後ダウンロード可能";

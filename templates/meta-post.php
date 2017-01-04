@@ -1,4 +1,4 @@
-<?
+<?php
     $length = fumiki_content_length();
     $tag_list = 'なし';
     if( ($tags = get_the_tags()) ){

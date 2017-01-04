@@ -61,8 +61,8 @@
 						</tr>
 						<tr>
 							<th>投稿数</th>
-							<td class="mono"><?
-								$post_counts = fumiki_get_post_count();
+							<td class="mono"><?php
+								$post_counts = fumiki_get_post_count(['post']);
 								echo number_format( $post_counts );
 								$past_days = ( current_time( 'timestamp' ) - strtotime( '2008-4-18' ) ) / 60 / 60 / 24;
 								printf( " (月%s本)", round( $post_counts / $past_days * 30 ) );
@@ -152,4 +152,4 @@
 <?php endif; ?>
 
 
-<? get_footer();
+<?php get_footer();
