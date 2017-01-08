@@ -52,7 +52,7 @@ spl_autoload_register( function ( $class_name ) {
 // コマンド
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	WP_CLI::add_command( \Fumiki\Command\Twitter::COMMAND_NAME, '\Fumiki\Command\Twitter' );
-	WP_CLI::add_command( \Fumiki\Command\Facebook::COMMAND_NAME, '\Fumiki\Command\Facebook' );
+//	WP_CLI::add_command( \Fumiki\Command\Facebook::COMMAND_NAME, '\Fumiki\Command\Facebook' );
 }
 
 // チャート
