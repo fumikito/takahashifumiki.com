@@ -49,6 +49,13 @@
 					</div>
 				<?php endif; ?>
 
+				<?php if ( in_category( 'dream-diary' ) ) : ?>
+					<div id="outdated-post" class="alert alert-info">
+						この投稿は<a class="alert-link" href="<?= get_term_link( 'dream-diary', 'category' ) ?>">夢日記</a>です。
+						まったく現実とはことなることが書いてある可能性がありますが、ご了承ください。
+					</div>
+				<?php endif; ?>
+
 				<?php if ( ! empty( $post->post_excerpt ) ) : ?>
 					<div class="post-excerpt">
 						<?php the_excerpt(); ?>
