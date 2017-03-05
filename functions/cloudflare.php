@@ -22,7 +22,14 @@ add_action('wp_logout', function(){
  * @return array
  */
 add_filter( 'nocache_headers', function ( $headers ) {
-	$headers['X-Accel-Expires'] = 0;
+	// シングルページは絶対にキャッシュしない
+	if ( is_front_page() || is_single() ) {
+		unset( $headers['Expires'] );
+		unset( $headers['Cache-Control'] );
+		unset( $headers['Pragma'] );
+	} else {
+		$headers['X-Accel-Expires'] = 0;
+	}
 
 	return $headers;
 }, 1 );
