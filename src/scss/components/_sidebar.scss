@@ -13,6 +13,10 @@
       }
     }
   }
+  .carousel{
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
 .widget_recent_entries{
@@ -39,7 +43,7 @@
 .widget_sp_image {
   &-description {
     margin-top: 10px;
-    font-family: $title-font;
+    font-family: $body-font;
   }
   &-image-link {
     display: block;

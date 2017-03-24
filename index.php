@@ -2,18 +2,6 @@
 	<div class="container container-main">
 		<div class="row">
 
-			<div class="page-header">
-
-				<p class="page-header-image">
-					<img class="page-header-src" alt="<?php bloginfo( 'name' ); ?>"
-					     src="<?= get_template_directory_uri(); ?>/assets/img/logo-front-page.png"
-					     width="200" height="200"/>
-				</p>
-
-				<h1 class="page-header-text"><?php the_archive_title() ?></h1>
-
-			</div>
-
 			<article id="main" class="col-xs-12 col-md-9">
 
 				<?php get_search_form(); ?>
@@ -71,8 +59,6 @@
 				</script>
 				</div>
 
-				<?php get_template_part( 'templates/list', 'general' ) ?>
-				
 			</article>
 			<!-- #main ends -->
 			<aside class="col-xs-12 col-md-3 sidebar">
@@ -82,5 +68,7 @@
 		</div><!-- //.row -->
 
 	</div><!-- container -->
+
+<?php get_template_part( 'templates/front', 'footer' ) ?>
 
 <?php get_footer();

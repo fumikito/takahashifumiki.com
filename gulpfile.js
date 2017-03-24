@@ -44,7 +44,9 @@ gulp.task('jsconcat', function () {
 
 // JS Hint
 gulp.task('jshint', function () {
-  return gulp.src(['./src/js/**/*.js'])
+  return gulp.src([
+    './src/js/**/*.js'
+  ])
     .pipe($.jshint('./src/.jshintrc'))
     .pipe($.jshint.reporter('jshint-stylish'));
 });
@@ -74,9 +76,13 @@ gulp.task('copylib', function () {
       './node_modules/respond.js/dest/respond.src.js'
     ])
       .pipe($.uglify())
-      .pipe(gulp.dest('./assets/js/'))
-  )
-    ;
+      .pipe(gulp.dest('./assets/js/')),
+    // Copy headroom
+    gulp.src([
+      './node_modules/headroom.js/dist/headroom.min.js',
+      './node_modules/headroom.js/dist/jQuery.headroom.min.js'
+    ]).pipe(gulp.dest('./assets/js'))
+  );
 });
 
 // Image min

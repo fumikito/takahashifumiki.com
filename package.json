@@ -4,7 +4,9 @@
   "description": "A WordPress theme for takahashifumiki.com",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp build",
+    "start": "gulp build && gulp watch",
+    "watch": "gulp watch",
+    "build": "gulp build",
     "gulp": "gulp"
   },
   "repository": {
@@ -41,6 +43,7 @@
     "gulp-sourcemaps": "^1.5",
     "gulp-uglify": "^1.5",
     "gulp-util": "^3.0",
+    "headroom.js": "^0.9.3",
     "html5shiv": "^3.7.3",
     "imagemin-pngquant": "^4.0.0",
     "jshint": "^2.9.1",

@@ -3,13 +3,14 @@
 /**
  * 破滅派に投稿した最新のものを取得する
  *
+ * @deprecated
  * @return array|mixed
  */
 function hametuha_posts() {
 	$posts = get_transient( 'hametu_posts' );
 	if ( false === $posts ) {
 		try {
-			$url  = 'http://hametuha.com/author/takahashi_fumiki/feed/';
+			$url  = 'https://hametuha.com/author/takahashi_fumiki/feed/';
 			$feed = wp_remote_get( $url, array(
 				'timeout' => 5,
 			) );
@@ -49,11 +50,12 @@ function hametuha_posts() {
 /**
  * はめにゅーのフィードを取得する
  *
+ * @deprecated
  * @return array|null
  */
 function get_hamenew() {
 	$posts = [];
-	$feed = fetch_feed( 'https://hametuha.com/news/feed/' );
+	$feed = fetch_feed( 'https://hametuha.com/author/takahashi_fumiki/feed/?post_type=news' );
 	if ( ! is_wp_error( $feed ) ) {
 		$posts = $feed->get_items( 0, 5 );
 	}
@@ -62,10 +64,20 @@ function get_hamenew() {
 
 /**
  * フィードの取得キャッシュ時間を調整
+ *
+ * @param int    $lifetime
+ * @param string $url
+ * @return int
  */
 add_filter( 'wp_feed_cache_transient_lifetime' , function( $lifetime, $url ) {
-	if ( false !== strpos( $url, 'https://hametuha.com/news/feed/' ) ) {
-		$lifetime = 1800;
+	foreach ( [
+		'hametuha.com' => 1800,
+	    'capitalp.jp'  => 1801,
+	    'gianism.info' => 1802,
+	] as $domain => $time ) {
+		if ( false !== strpos( $url, $domain ) ) {
+			return $time;
+		}
 	}
 	return $lifetime;
 }, 10, 2 );
@@ -73,6 +85,7 @@ add_filter( 'wp_feed_cache_transient_lifetime' , function( $lifetime, $url ) {
 /**
  * RSSから画像を引っこ抜く
  *
+ * @deprecated
  * @param SimpleXMLElement $item
  *
  * @return array

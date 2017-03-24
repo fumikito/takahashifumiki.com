@@ -34,7 +34,7 @@
         $(elt).after(button);
         button.click(function (e) {
           e.preventDefault();
-          if (confirm(netabareMsg)) {
+          if (window.confirm(netabareMsg)) {
             $(elt).removeClass('netabare').removeClass('non-filter-blur');
             if ($(elt).effect) {
               $(elt).effect('highlight', {}, 1000);
@@ -47,7 +47,7 @@
                 eventLabel   : $(this).attr('data-index'),
                 eventValue   : 1
               });
-            } catch (e) {
+            } catch (err) {
             }
             $(this).remove();
           }
@@ -57,7 +57,7 @@
       } else if ($(elt).hasClass('netabare-inline')) {
         // ネタバレインライン
         $(elt).click(function (e) {
-          if (confirm(netabareMsg)) {
+          if (window.confirm(netabareMsg)) {
             $(this).removeClass('netabare-inline').effect('highlight', {}, 1000).unbind('click');
             try {
               ga('send', {
@@ -67,30 +67,38 @@
                 eventLabel   : (index + 1),
                 eventValue   : 1
               });
-            } catch (e) {
+            } catch (err) {
             }
           }
         });
       }
     });
 
-
     // トップページ Masonry
-    var $homeContainer = $('.front-widgets .row');
-    if ( $homeContainer.length ) {
-      $homeContainer.imagesLoaded(function(){
-        $homeContainer.masonry({
-          itemSelector: '.widget'
+    $(document).on('masonry', '.front-widgets', function(){
+      var $homeContainer = $(this).find('.row');
+      if ($homeContainer.length) {
+        $homeContainer.imagesLoaded(function () {
+          $homeContainer.masonry({
+            itemSelector: '.widget'
+          });
         });
-      });
-    }
+      }
+    });
+    var $front = $('.front-widgets');
+    $front.trigger('masonry')
   });
-  
+
+  // Headroom
+  $(".headroom").headroom();
+
+
 })(jQuery);
 
 
 //ロードイベントでTwitterウィジェットを調整する
 (function ($) {
+  "use strict";
   $.event.add(window, 'load', function () {
     //Twitterウィジェットの調整
     $('.twitter-tweet-rendered').each(function (index, elt) {
@@ -98,3 +106,5 @@
     });
   });
 })(jQuery);
+
+

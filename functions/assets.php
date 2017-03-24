@@ -81,14 +81,6 @@ function fumiki_header_image() {
  * アセットを登録する
  */
 add_action( 'init', function () {
-	// Images Loaded
-	wp_register_script(
-		'images-loaded',
-		get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.js',
-		[],
-		'4.1.0',
-		'screen'
-	);
 	// Ripples
 	wp_register_style(
 		'ripples',
@@ -153,6 +145,21 @@ add_action( 'init', function () {
 		'0.5.10',
 		true
 	);
+	// Headroom
+	wp_register_script(
+		'headroom',
+		get_template_directory_uri() . '/assets/js/headroom.min.js',
+		[],
+		'0.9.3',
+		true
+	);
+	wp_register_script(
+		'jquery-headroom',
+		get_template_directory_uri() . '/assets/js/jQuery.headroom.min.js',
+		[ 'headroom', 'jquery' ],
+		'0.9.3',
+		true
+	);
 } );
 
 /**
@@ -173,7 +180,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script(
 		'fumiki-main',
 		get_template_directory_uri() . '/assets/js/main.js',
-		[ 'bootstrap-material', 'font-plus', 'font-awesome', 'jquery-masonry', 'images-loaded' ],
+		[ 'bootstrap-material', 'font-plus', 'font-awesome', 'jquery-masonry', 'jquery-headroom' ],
 		fumiki_theme_version(),
 		true
 	);
@@ -187,9 +194,8 @@ add_action( 'wp_enqueue_scripts', function () {
 		'nonce'    => wp_create_nonce( 'fumiki_ajax' ),
 	) );
 
-	////tmkm-amazonのCSSを打ち消し
+	//tmkm-amazonのCSSを打ち消し
 	remove_action( 'wp_head', 'add_tmkmamazon_stylesheet' );
-
 } );
 
 /**

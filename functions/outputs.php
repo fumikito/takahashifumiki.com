@@ -13,6 +13,9 @@
 function fumiki_single_title( $post = null ) {
 	$post = get_post( $post );
 	$parsed = wp_cache_get( $post->ID, 'post_parsed_title' );
+	if ( get_query_var( 'quote' ) && ! is_404() ) {
+		return '好きな言葉';
+	}
 	if ( false === $parsed ) {
 		$title = single_post_title( '', false );
 		$parsed = fumiki_budou_tokenize( $title );
@@ -20,7 +23,8 @@ function fumiki_single_title( $post = null ) {
 			return $title;
 		} else {
 			$parsed = implode( '', array_map( function( $token ) {
-				return sprintf( '<span class="budou">%s</span>', esc_html( $token ) );
+				$classes = preg_match( '#[ぁ-んァ-ヶー一-龠]#u', $token ) ? 'jp' : 'ascii';
+				return sprintf( '<span class="budou %s">%s</span>', $classes, esc_html( $token ) );
 			}, $parsed ) );
 			if ( empty( $parsed ) ) {
 				return $title;

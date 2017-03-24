@@ -4,15 +4,6 @@
 
 	<div class="row">
 
-		<div class="page-header">
-			<p class="page-header-image">
-				<img class="page-header-src" alt="<?php bloginfo( 'name' ); ?>" src="<?= get_template_directory_uri(); ?>/assets/img/logo-front-page.png"
-				     width="200" height="200"/>
-			</p>
-			<h1 class="page-header-text">好きな言葉</h1>
-		</div>
-
-
 		<div class="col-xs-12 col-md-8 col-md-offset-2">
 
 
@@ -62,5 +53,7 @@
 	</div>
 
 </div><!-- //.quotes-conainer -->
+
+<?php get_template_part( 'templates/front', 'footer' ) ?>
 
 <?php get_footer() ?>

@@ -1,27 +1,62 @@
-.front-image {
-  margin-top: $navbar-height;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  &-title {
-    padding: 80px 0;
-    @media only screen and (max-width: $screen-sm-min) {
-      padding: 20px 0;
-      img {
-        width: 128px;
-        height: 128px;
+.card{
+  &-link{
+    transition: color .3s linear, background-color .3s linear, box-shadow .3s linear;
+    display: block;
+    margin: 10px;
+    background: #fff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+    &:link, &:visited{
+      text-decoration: none;
+    }
+    &:hover, &:active{
+      text-decoration: none;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0);
+      background: #f7f9e0;
+    }
+  }
+  &-body{
+    padding: 10px;
+  }
+  &-title{
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-family: $title-font;
+    line-height: 1.1;
+  }
+  &-meta{
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #666;
+    i{
+      color: #aaa;
+    }
+  }
+  &-desc{
+    color: #666;
+    font-size: 12px;
+    p{
+      &:last-child{
+        margin-bottom: 0;
       }
     }
   }
-
-  &-credit {
-    text-align: right;
-    color: #fff;
-    text-shadow: 0 0 5px #000;
+  &-image{
+    max-width: 100%;
+    width: auto;
+    height: auto;
   }
-
+  &-footer{
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    &-icon{
+      margin-right: 10px;
+    }
+    &-title{
+      color: #888;
+    }
+  }
 }
+
 
 .front-welcome {
   border-bottom: 1px solid #ddd;
@@ -89,7 +124,11 @@
 
 .front-widgets {
   padding: 40px 0;
-  .row{
+  &.dense{
+    background: #ddd;
+    border-top: 1px solid #ccc;
+  }
+  .row {
     position: relative;
   }
   .widget {
@@ -112,26 +151,36 @@
   height: 500px;
 }
 
-.alo_easymail{
-  &_form_table{
-  th, td{
-    padding: 0.5em 0.75em;
+.alo_easymail {
+  &_form_table {
+    th, td {
+      padding: 0.5em 0.75em;
+    }
   }
-}
-  &_disclaimer{
+  &_disclaimer {
     margin: 5px 0;
     padding: 0.5em;
     background: #ddd;
   }
-  &_widget_form{
-    .input-submit{
+  &_widget_form {
+    .input-submit {
       @extend .btn;
       @extend .btn-raised;
       @extend .btn-primary;
       width: 100%;
-      
+
       display: block;
     }
   }
 }
 
+.budou{
+  display: inline-block;
+  &.ascii{
+    margin-left: 0.25em;
+    & + .jp{
+      margin-left: 0.25em;
+    }
+  }
+
+}

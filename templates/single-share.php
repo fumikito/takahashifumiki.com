@@ -2,11 +2,6 @@
 	<?php get_template_part( 'templates/share', 'general' ) ?>
 <?php endif; ?>
 
-
-
-<?php fumiki_share( get_the_title() . ' | '. get_bloginfo( 'name' ), get_permalink() ); ?>
-
-
 <div class="row">
 	
 	<div class="col-xs-12 col-sm-6 mb">
@@ -66,5 +61,3 @@
 		(adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
 </div>
-
-<?php get_template_part( 'templates/list', 'general' ) ?>
