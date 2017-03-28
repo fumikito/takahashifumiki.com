@@ -90,11 +90,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(5px);
+    .toggle &{
+      filter: none;
+    }
     z-index: 1;
   }
   &-cover{
     background-color: rgba(0, 0, 0, .4);
     z-index: 2;
+    .toggle &{
+      background-color: transparent;
+    }
   }
 
 
@@ -132,6 +138,9 @@
     font-family: $title-font;
     padding-right: 2em;
     padding-left: 2em;
+    .toggle & {
+      opacity: 0;
+    }
     .front-image &{
       margin-top: 0.5em;
       margin-bottom: 0.5em;
@@ -155,6 +164,35 @@
     color: #fff;
     text-shadow: 0 0 5px #000;
     font-family: $mono;
+  }
+  &-toggle{
+    position: absolute;
+    display: block;
+    left: 10px;
+    bottom: 10px;
+    z-index: 6;
+    color: #fff;
+    width: 3em;
+    line-height: 3em;
+    text-align: center;
+    border-radius: 100%;
+    background-color: rgba( 255, 255, 255, .2 );
+    box-shadow: 0 0 3px 0 rgba( 0, 0, 0, .2 );
+    transition: background-color .3s 0 linear, color .3s 0 linear;
+    &:hover{
+      background-color: rgba( 255, 255, 255, .4 );
+      color: $brand-danger;
+    }
+    .toggle & {
+      background-color: #fff;
+    }
+    i{
+      .toggle &{
+        color: $brand-primary;
+      }
+      color: #fff;
+      font-size: 1.5em;
+    }
   }
 }
 

@@ -52,7 +52,7 @@ if ( is_singular() && has_post_thumbnail( get_queried_object() ) ) {
 	$has_eye_catch = true;
 }
 ?>
-<div class="front-image<?= $has_eye_catch ? '-eyecatch': '' ?>">
+<div id="front-image-wrapper" class="front-image<?= $has_eye_catch ? '-eyecatch': '' ?>">
 
 	<div class="front-image-sheet" style="background-image: url('<?= esc_url( $image ) ?>')"></div>
 	<div class="front-image-cover"></div>
@@ -66,6 +66,12 @@ if ( is_singular() && has_post_thumbnail( get_queried_object() ) ) {
 				<?php endif; ?>
 				<?= fumiki_single_title() ?>
 			</h1>
+
+			<?php if ( $has_eye_catch ) : ?>
+			<a href="#" class="front-image-toggle" title="クリックすると写真がよく見えます">
+				<i class="fa fa-camera"></i>
+			</a>
+			<?php endif; ?>
 
 			<?php if ( is_front_page() && ( $image = fumiki_header_image() ) ) : ?>
 				<?php if ( $image->post_excerpt ) : ?>

@@ -92,6 +92,10 @@
   // Headroom
   $(".headroom").headroom();
 
+  $('.front-image-toggle').click(function(e){
+    e.preventDefault();
+    $('#front-image-wrapper').toggleClass('toggle');
+  });
 
 })(jQuery);
 
