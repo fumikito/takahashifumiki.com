@@ -333,9 +333,11 @@ do_action( 'rss_tag_pre', 'rss2' );
 	} );
 
 	add_filter( 'the_content', function($content){
-		$content = preg_replace( '#(<blockquote class="twitter-tweet" (data-)?width="[0-9]+">.*?</script></p>)#us', '<figure class="op-social"><iframe>$1</iframe></figure>', $content);
+		$content = preg_replace( '#(<blockquote class="twitter-tweet" (data-)?width="[0-9]+">.*?</script></p>)#us', '<figure class="op-interactive"><iframe>$1</iframe></figure>', $content);
 		return $content;
 	} );
+
+	add_filter( '' );
 
 	while( have_posts()) : the_post();
 	?>

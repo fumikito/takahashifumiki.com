@@ -784,22 +784,38 @@ function get_cat_tag( $category_name ) {
  * @return string
  */
 add_filter( 'img_caption_shortcode', function ( $string, $attr, $content = null ) {
-	extract( shortcode_atts( array(
+	global $content_width;
+	$attr = shortcode_atts( array(
 		'id'      => '',
 		'align'   => 'alignnone',
-		'width'   => '',
+		'width'   => $content_width,
 		'caption' => ''
-	), $attr ) );
-	if ( 1 > (int) $width || empty( $caption ) ) {
-		return $content;
+	), $attr );
+	if ( $attr['caption'] ) {
+		$caption = sprintf( '<figcaption class="wp-caption-text">%s</figcaption>', wp_kses( $attr['caption'], [ 'a' => [ 'href' => true ] ] ) );
+	} else {
+		$caption = '';
 	}
-
-	if ( $id ) {
-		$id = 'id="' . esc_attr( $id ) . '" ';
+	$args = [
+		'class' => esc_attr( implode( ' ', [ 'wp-caption', $attr['align'] ] ) ),
+		'style' => esc_attr( sprintf( 'width: %dpx', esc_attr( $attr['width'] ) ) ),
+	];
+	if ( $attr['id'] ) {
+		$args['id'] = esc_attr( $attr['id'] );
 	}
-
-	return '<figure ' . $id . 'class="wp-caption ' . esc_attr( $align ) . '" style="width: ' . ( 10 + (int) $width ) . 'px">'
-	       . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
+	if ( is_feed( 'instant_article' ) && preg_match( '#attachment_(\\d+)#u', $attr['id'], $match ) ) {
+		$content = wp_get_attachment_image( $match[1], 'full' );
+		unset($args['style']);
+	}
+	// Build html attirbutes
+	$html_attr = '';
+	foreach ( $args as $k => $v ) {
+		$html_attr .= " {$k}=\"{$v}\"";
+	}
+	return sprintf(
+			'<figure %s>%s%s</figure>',
+			$html_attr, $content, $caption
+	);
 }, 10, 3 );
 
 

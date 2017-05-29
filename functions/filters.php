@@ -108,26 +108,6 @@ add_action( 'pre_ping', function( &$links ) {
 	}
 });
 
-/**
- * リライトルールを変更する
- * @param WP_Rewrite $wp_rewrite 
- * @deprecated 2.3.4
- * @return void
- */
-function _fumiki_rewrite($wp_rewrite){
-	if(is_production()){
-		$new_rewrite = array(
-			'main/facebook' => 'main/index.php?pagename=facebook'
-		);
-	}else{
-		$new_rewrite = array(
-			'main/facebook' => 'index.php?pagename=facebook'
-		);
-	}
-	$wp_rewrite->rules = array_merge($new_rewrite, $wp_rewrite->rules);
-}
-//add_filter('generate_rewrite_rules', '_fumiki_rewrite');
-
 
 
 /**

@@ -11,6 +11,7 @@ define( 'FUMIKI_VERSION', wp_get_theme()->get( 'Version' ) );
 /**
  * コンテンツ幅を設定
  */
+global $content_width;
 if ( ! isset( $content_width ) ) {
 	$content_width = 840;
 }
