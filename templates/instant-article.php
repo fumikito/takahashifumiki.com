@@ -52,7 +52,7 @@
 
 	<!-- An ad within your article -->
 	<figure class="op-ad">
-		<iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement=264573556888294_1215205251825115&adtype=banner300x250"></iframe>
+		<iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement=434159416946376_434159596946358&adtype=banner300x250"></iframe>
 	</figure>
 
 	<!-- Analytics code for your article -->
