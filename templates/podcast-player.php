@@ -23,11 +23,6 @@
 	<?php fumiki_share( get_the_title(), get_permalink() ) ?>
 </div>
 
-
-<div class="container">
-	<?php comment_form() ?>
-</div>
-
 <div class="container podcast-pager">
 
 	<div class="row">
