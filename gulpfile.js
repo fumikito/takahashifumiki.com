@@ -62,12 +62,15 @@ gulp.task('copylib', function () {
       './node_modules/arrive/minified/arrive.min.js',
       './node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
       './node_modules/bootstrap-material-design/dist/js/material.min.js',
+      './node_modules/bootstrap-material-design/dist/js/material.min.js.map',
+      './node_modules/bootstrap-material-design/dist/js/ripples.min.js.map',
       './node_modules/bootstrap-material-design/dist/js/ripples.min.js'
     ])
       .pipe(gulp.dest('./assets/js/')),
     // Copy Bootstrap-materials
     gulp.src([
-      './node_modules/bootstrap-material-design/dist/css/ripples.min.css'
+      './node_modules/bootstrap-material-design/dist/css/ripples.min.css',
+      './node_modules/bootstrap-material-design/dist/css/ripples.min.css.map'
     ])
       .pipe(gulp.dest('./assets/css/')),
     // Build unpacked Libraries.

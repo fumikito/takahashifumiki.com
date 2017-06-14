@@ -1,0 +1,90 @@
+$dahlgren-base: #222;
+$dahlgren-color: #fff;
+$dhalgren-accent: $brand-danger;
+
+.podcast {
+
+  &-dahlgren-radio {
+    background-color: $dahlgren-base !important;
+    color: #fff;
+    a:link, a:visited {
+      color: #fff;
+      text-decoration: underline;
+    }
+    a:hover, a:active {
+      color: $brand-danger;
+      text-decoration: none;
+    }
+  }
+
+  &-header {
+
+    &-title {
+      margin: 0;
+      padding: 40px 0;
+      text-align: center;
+      img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+
+  }
+
+  &-main {
+
+    .container {
+      max-width: 640px;
+    }
+
+    &-title {
+      color: #fff;
+    }
+
+  }
+
+  &-excerpt {
+    color: #888;
+    font-size: 1.4em;
+    line-height: 1.4;
+  }
+
+  &-content {
+    margin: 40px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+    .podcast_player {
+      margin: 20px 0;
+      clear: both;
+    }
+    .mejs-container,
+    .mejs-container .mejs-controls {
+      background-color: #444 !important;
+    }
+  }
+
+  &-pager {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+
+    a {
+      display: block;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      small {
+        display: block;
+        color: #888;
+      }
+    }
+  }
+
+  &-footer {
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+}

@@ -87,7 +87,7 @@ get_template_part( 'functions/hametuha' );
 get_template_part( 'functions/cloudflare' );
 get_template_part( 'functions/sidebar' );
 get_template_part( 'functions/amp' );
-
+get_template_part( 'functions/podcast' );
 /*
 get_template_part('functions/wp-fulltext-search');
 WP_Fulltext_Search::init();
