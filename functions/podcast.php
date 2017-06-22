@@ -23,14 +23,18 @@ add_action( 'ssp_after_feed', function() {
 		if ( ! $series || is_wp_error( $series ) ) {
 			throw new Exception( 'No series' );
 		}
-		$xml     = simplexml_load_string( $content );
-		$channel = $xml->channel;
 
 		$term_link = get_term_link( $series );
 
-		$channel->link[0]         = $term_link;
-		$channel->image->link[0]  = $term_link;
-		echo $xml->saveXML();
+		$content = preg_replace_callback( '#<link>([^<]+)</link>#u', function( $match ) use ( $term_link ) {
+			if ( home_url( '/' ) == $match[1] ) {
+				$link = sprintf( '<link>%s</link>', $term_link );
+			} else {
+				$link = $match[0];
+			}
+			return $link;
+		}, $content );
+		echo $content;
 	} catch ( Exception $e ) {
 		echo $content;
 		return;
