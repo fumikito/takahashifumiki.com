@@ -20,81 +20,16 @@ add_action( 'ssp_after_feed', function() {
 		}
 
 		$series  = get_term_by( 'slug', $slug, 'series' );
+		if ( ! $series || is_wp_error( $series ) ) {
+			throw new Exception( 'No series' );
+		}
 		$xml     = simplexml_load_string( $content );
 		$channel = $xml->channel;
 
-
-		$title     = htmlspecialchars( $series->name, XML_HTML_DOCUMENT_NODE );
-		$lead      = htmlspecialchars( get_term_meta( $series->term_id, 'lead', true ), XML_HTML_DOCUMENT_NODE );
-		$desc      = htmlspecialchars( $series->description, XML_HTML_DOCUMENT_NODE );
 		$term_link = get_term_link( $series );
 
-		$channel->title[0]        = $title;
-		$channel->image->title[0] = $title;
 		$channel->link[0]         = $term_link;
 		$channel->image->link[0]  = $term_link;
-
-		$google = $channel->children( 'googleplay', true );
-		$itunes = $channel->children( 'itunes', true );
-		// Change subtitle
-		$itunes->subtitle[0] = $lead;
-		// Change Description
-		$channel->description[0] = $desc;
-		$itunes->summary[0]      = $desc;
-		$google->description[0]  = $desc;
-
-		// Copyright
-		$channel->copyright[0] = htmlspecialchars( '© 2017 Takahashi Fumiki', XML_HTML_DOCUMENT_NODE );
-
-		// Author
-		$owner                 = '高橋文樹';
-		$owner_mail            = get_option( 'admin_email' );
-		$itunes->author[0]     = $owner;
-		$google->author[0]     = $owner;
-		$itunes_owner          = $itunes->owner->children( 'itunes', true );
-		$itunes_owner->name[0] = $owner;
-		$itunes_owner->email   = $owner_mail;
-
-		// Images
-		if ( $thumbnail_id = get_term_meta( $series->term_id, 'thumbnail_id', true ) ) {
-			$image                                = wp_get_attachment_image_url( $thumbnail_id, 'full' );
-			$channel->image->url[0]               = $image;
-			$itunes->image[0]->attributes()->href = $image;
-		}
-		$google->image[0]->attributes()->href = $image;
-
-
-		// Categories
-		for ( $i = 3; $i > 0; $i -- ) {
-			$main = "podcast_cat";
-			$sub  = "podcast_sub_cat";
-			if ( $main_cat = get_term_meta( $series->term_id, "{$main}_{$i}", true ) ) {
-				if ( isset( $itunes->category[ $i - 1 ] ) ) {
-					// Category exists
-					$cat = $itunes->category[ $i - 1 ];
-				} else {
-					// not exists.
-					$cat = $itunes->addChild( 'category' );
-				}
-				$cat->attributes()->text = $main_cat;
-				if ( $sub_cat = get_term_meta( $series->term_id, "{$sub}_{$i}", true ) ) {
-					// Does it has sub category?
-					if ( isset( $cat->children( 'itunes', true )->category[0] ) ) {
-						// Child exists.
-						$child = $cat->children( 'itunes', true )->category[0];
-					} else {
-						// No child
-						$child = $cat->addChild( 'category', '', 'itunes' );
-					}
-					$child->attributes()->text = $sub_cat;
-				} elseif ( isset( $cat->children( 'itunes', true )->category[0] ) ) {
-					unset( $cat->children( 'itunes', true )->category[0] );
-				}
-			} elseif ( isset( $itunes->category[ $i - 1 ] ) ) {
-				// Remove category if not set
-				unset( $itunes->category[ $i - 1 ] );
-			}
-		}
 		echo $xml->saveXML();
 	} catch ( Exception $e ) {
 		echo $content;
