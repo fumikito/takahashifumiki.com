@@ -337,8 +337,6 @@ do_action( 'rss_tag_pre', 'rss2' );
 		return $content;
 	} );
 
-	add_filter( '' );
-
 	while( have_posts()) : the_post();
 	?>
 	<item>
