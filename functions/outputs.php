@@ -55,7 +55,7 @@ add_action( 'save_post', function( $post_id, $post ) {
  * @return array|WP_Error
  */
 function fumiki_budou_tokenize( $string ) {
-	$endpoint = 'http://bushidou.hametuha.pics/json?q='.rawurlencode( $string );
+	$endpoint = 'https://punctuate.space/json?q='.rawurlencode( $string );
 	$response = wp_remote_get( $endpoint );
 	if ( is_wp_error( $response ) ) {
 		return $response;
