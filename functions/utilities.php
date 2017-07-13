@@ -274,7 +274,7 @@ function fumiki_current_language() {
 	if ( ! is_page() ) {
 		return 'ja';
 	}
-	$language = get_post_meta( get_queried_object_id(), '_language', true );
+	$language = get_post_meta( get_queried_object_id(), 'language', true );
 	if ( ! $language ) {
 		return 'ja';
 	}
