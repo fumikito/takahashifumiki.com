@@ -19,7 +19,13 @@ add_action('wp_head', function(){
 HTML;
 	//Facebook用のメタ情報
 	if ( is_front_page() || is_singular() ) {
-		$title = is_front_page() ? get_bloginfo( 'name' ) : wp_title( '|', false, 'right' ) . get_bloginfo( 'name' );
+		if ( is_front_page() ) {
+			$title = get_bloginfo( 'name' );
+		} elseif ( is_singular( 'podcast' ) ) {
+			$title = wp_title( ' | ', false, 'right' );
+		} else {
+			$title = wp_title( ' | ', false, 'right' ) . get_bloginfo( 'name' );
+		}
 		$url   = is_front_page() ? trailingslashit( home_url( '/' ) ) : get_permalink();
 		$image = get_template_directory_uri() . '/styles/img/favicon/faviconx512.png';
 		if ( ! is_front_page() ) {
@@ -35,6 +41,23 @@ HTML;
 			if ( $image_id ) {
 				$image = wp_get_attachment_image_src( $image_id, 'large' );
 				$image = $image[0];
+			}
+			// If podcast, change url
+			if ( is_singular( 'podcast' ) ) {
+				$series = get_the_terms( get_queried_object_id(), 'series' );
+				if ( ! is_wp_error( $series ) && $series ) {
+					foreach ( $series as $s ) {
+						$term_meta = get_term_meta( $s->term_id, 'eyecatch_id', true );
+						if ( ! $term_meta ) {
+							continue;
+						}
+						$img_url = wp_get_attachment_image_url( $term_meta, 'full' );
+						if ( $img_url ) {
+							$image = $img_url;
+							break;
+						}
+					}
+				}
 			}
 		}
 		$type = is_front_page() ? 'website' : 'article';
