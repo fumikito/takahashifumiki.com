@@ -15,6 +15,16 @@ $dhalgren-accent: $brand-danger;
       color: $brand-danger;
       text-decoration: none;
     }
+    .share{
+      a:link, a:visited{
+        color: #000;
+        text-decoration: none;
+      }
+      a:hover, a:active{
+        color: #00a0d2;
+        text-decoration: none;
+      }
+    }
   }
 
   &-header {
@@ -29,6 +39,79 @@ $dhalgren-accent: $brand-danger;
         height: auto;
       }
     }
+
+  }
+
+  &-card{
+    &-wrapper{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      a{
+        text-decoration: none !important;
+      }
+    }
+  }
+
+  &-list{
+
+    margin: 40px 0;
+    $icon-size: 80px;
+
+    &-item{
+
+      &:nth-child(2n+1){
+        clear: left;
+      }
+
+
+
+      a{
+        display: block;
+        position: relative;
+        padding: 20px 20px 20px $icon-size + 40;
+        min-height: $icon-size;
+        &:link, &:visited{
+          background: rgba( 255, 255, 255, .1 );
+          color: $white;
+          text-decoration: none;
+        }
+        &:hover, &:active{
+          background: rgba( 255, 255, 255, .2 );
+          color: $yellow;
+          text-decoration: none;
+        }
+      }
+
+    }
+    &-signal {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      color: rgba( 255, 255, 255, .1 );
+      &:before{
+        font-size: $icon-size;
+      }
+    }
+    &-title{
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    &-meta{
+      font-size: 14px;
+      margin-bottom: 10px;
+      margin-right: 1em;
+      color: #aaa;
+      span{
+        margin-right: 10px;
+      }
+      .fa{
+        color: #888;
+      }
+    }
+
 
   }
 

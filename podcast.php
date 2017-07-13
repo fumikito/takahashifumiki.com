@@ -34,10 +34,20 @@ if ( is_singular( 'podcast' ) ) {
 
 } elseif ( is_tax( 'series' ) ) {
 	get_template_part( 'templates/podcast-header', fumiki_podcast_slug() );
-	while ( have_posts() ) {
-		the_post();
-		get_template_part( 'templates/loop-podcast', fumiki_podcast_slug() );
-	}
+	?>
+	<div class="container">
+
+		<div class="podcast-list row">
+		<?php
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'templates/loop-podcast', fumiki_podcast_slug() );
+		}
+		?>
+		</div>
+	</div>
+
+	<?php
 	get_template_part( 'templates/podcast-card', fumiki_podcast_slug() );
 } else {
 	// TODO: Portal

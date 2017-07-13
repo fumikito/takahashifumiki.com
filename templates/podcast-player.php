@@ -27,10 +27,10 @@
 
 	<div class="row">
 		<div class="col-xs-6">
-			<?php previous_post_link( '%link', '<small>次のエピソード</small>%title', true, '', 'series' ) ?>
+			<?php previous_post_link( '%link', '<small>前のエピソード</small>%title', true, '', 'series' ) ?>
 		</div>
 		<div class="col-xs-6">
-			<?php next_post_link( '%link', '<small>前のエピソード</small>%title', true, '', 'series' ) ?>
+			<?php next_post_link( '%link', '<small>次のエピソード</small>%title', true, '', 'series' ) ?>
 		</div>
 	</div>
 </div>
