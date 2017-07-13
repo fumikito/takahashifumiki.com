@@ -1,7 +1,3 @@
-<?php if ( is_singular() ) : ?>
-	<?php get_template_part( 'templates/share', 'general' ) ?>
-<?php endif; ?>
-
 <div class="row">
 	
 	<div class="col-xs-12 col-sm-6 mb">
@@ -48,6 +44,11 @@
 	</div>
 	
 </div>
+
+<?php if ( is_singular() ) : ?>
+	<?php get_template_part( 'templates/share', 'general' ) ?>
+<?php endif; ?>
+
 
 <div class="row">
 	<script async

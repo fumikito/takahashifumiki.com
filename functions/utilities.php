@@ -264,3 +264,27 @@ function mywp_login($args){
 		'mail' => $user->user_email
 	);
 }
+
+/**
+ * Get language
+ *
+ * @return string
+ */
+function fumiki_current_language() {
+	if ( ! is_page() ) {
+		return 'ja';
+	}
+	$language = get_post_meta( get_queried_object_id(), '_language', true );
+	if ( ! $language ) {
+		return 'ja';
+	}
+	switch ( $language ) {
+		case 'en':
+		case 'fr':
+			return $language;
+			break;
+		default:
+			return 'ja';
+			break;
+	}
+}

@@ -213,3 +213,40 @@
     text-overflow: ellipsis;
   }
 }
+
+
+//
+// =-------------------
+// English alert
+//
+//
+.english-speaker{
+  display: none;
+  background: $title-font-color;
+  color: $white;
+  .may-prefer-english & {
+    display: block;
+  }
+  p{
+    padding: 1em;
+    margin: 0;
+    font-size: 16px;
+    i{
+      color: darken( $title-font-color, 15 );
+      margin-right: 0.5em;
+    }
+    a{
+      font-weight:bold;
+      &:link, &:visited{
+        color: $white;
+        text-decoration: underline;
+      }
+      &:hover, &:active{
+        color: $yellow-100;
+        text-decoration: none;
+      }
+
+    }
+  }
+}
+

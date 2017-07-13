@@ -2,35 +2,32 @@
 	<div class="container container-main">
 		<div class="row">
 
-			<article id="main" class="col-xs-12 col-md-8">
+			<article id="main" class="col-xs-12 col-md-10 col-md-offset-1">
 
-				<?php get_template_part( 'templates/single', 'ad' ) ?>
+				<?php if ( have_posts() ) : ?>
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-					<div class="entry clearfix">
-						<?php the_content(); ?>
-					</div>
+						<div class="entry clearfix">
+							<?php the_content(); ?>
+						</div>
 
-					<?php wp_link_pages( array(
-						'before' => '<div class="wp-pagenavi clrB"><span class="pages">ページ: </span>',
-						'after'  => '</div>',
-					) ); ?>
+						<?php wp_link_pages( array(
+							'before' => '<div class="wp-pagenavi clrB"><span class="pages">ページ: </span>',
+							'after'  => '</div>',
+						) ); ?>
 
-					<?php get_template_part( 'templates/single', 'share' ); ?>
+					<?php endwhile; ?>
 
-				<?php endwhile; endif; ?>
+				<?php endif; ?>
+
+				<?php get_template_part( 'templates/share', 'general' ) ?>
 
 			</article>
 			<!-- #main ends -->
-			<aside class="col-xs-12 col-md-4">
-				<?php get_sidebar() ?>
-			</aside>
 
 		</div><!-- //.row -->
 
 	</div><!-- container -->
-
-<?php get_template_part( 'templates/front', 'footer' ) ?>
 
 <?php get_footer();

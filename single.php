@@ -77,6 +77,5 @@
 		</div><!-- //.row -->
 
 	</div><!-- container -->
-	<?php get_template_part( 'templates/front', 'footer' ) ?>
 
 <?php get_footer();

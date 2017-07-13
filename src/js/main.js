@@ -97,6 +97,28 @@
     $('#front-image-wrapper').toggleClass('toggle');
   });
 
+  // Check UA and if english, show add title
+  var browserLanguage = function() {
+    var ua = window.navigator.userAgent.toLowerCase();
+    try {
+      // chrome
+      if( ua.indexOf( 'chrome' ) != -1 ){
+        return ( navigator.languages[0] || navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2);
+      }
+      // それ以外
+      else{
+        return ( navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2);
+      }
+    }
+    catch( e ) {
+      return undefined;
+    }
+  };
+  if ( 'ja' !== browserLanguage() ) {
+    $('body').addClass('may-prefer-english');
+  }
+
+
 })(jQuery);
 
 

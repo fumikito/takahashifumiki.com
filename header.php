@@ -62,9 +62,10 @@ if ( is_singular() && has_post_thumbnail( get_queried_object() ) ) {
 
 			<h1 class="front-image-text">
 				<?php if ( is_front_page() ) : ?>
-					<?= get_avatar( 1, 128, '', '高橋文樹', [ 'class' => 'front-image-avatar' ] ) ?>
+					<?= get_avatar( 1, 128, '', '高橋文樹.com', [ 'class' => 'front-image-avatar' ] ) ?>
+				<?php else : ?>
+					<?= fumiki_single_title() ?>
 				<?php endif; ?>
-				<?= fumiki_single_title() ?>
 			</h1>
 
 			<?php if ( $has_eye_catch ) : ?>
@@ -84,6 +85,22 @@ if ( is_singular() && has_post_thumbnail( get_queried_object() ) ) {
 	</div>
 </div>
 
+<?php if ( 'ja' == fumiki_current_language() ) : ?>
+<div class="english-speaker">
+
+	<div class="container">
+
+		<p>
+			<i class="fa fa-globe"></i> Hi, I detected your main language is not Japanese.
+			I have an english version of <a href="<?= home_url( '/en' ) ?>">about me</a>,
+			so please try it!
+		</p>
+
+	</div>
+
+</div>
+<?php endif; ?>
+
 <?php if ( ! is_front_page() ) : ?>
 
 	<?php if ( function_exists( 'bcn_display' ) ) : ?>
@@ -94,8 +111,9 @@ if ( is_singular() && has_post_thumbnail( get_queried_object() ) ) {
 		</div>
 	<?php endif; ?>
 
-
 <?php endif; ?>
+
+
 
 <?php /*
 <a id="login-button" class="account" rel="nofollow" href="<?= wp_login_url($_SERVER['REQUEST_URI']) ?>" data-href="<?= admin_url('/index.php') ?>">

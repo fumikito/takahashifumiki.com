@@ -2,4 +2,3 @@
 /*
  * Replaced by Disqus
  */
-?>

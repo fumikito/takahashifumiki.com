@@ -46,8 +46,8 @@
   h1, h2, h3, h4, h5, h6 {
     padding-top: 1.5em;
     margin-bottom: 0.75em;
-    font-family: $body-bold;
-    font-weight: bold;
+    font-family: $heading-font;
+    font-weight: normal;
   }
   h1 {
     font-size: 2.5em;
@@ -56,9 +56,9 @@
   h2 {
     font-size: 2em;
     line-height: 1.2;
-    padding-bottom: 5px;
+    //padding-bottom: 5px;
     color: $emphasized-text-color;
-    border-bottom: 1px dotted $emphasized-text-color;
+    //border-bottom: 1px dotted $emphasized-text-color;
   }
   h3 {
     font-size: 1.5em;
