@@ -91,6 +91,9 @@ add_filter('body_class', function($classes){
 	if( is_page('facebook') ){
 		$classes[] = 'facebook';
 	}
+	if ( 'ja' !== fumiki_current_language() ) {
+		$classes[] = 'in-english-please';
+	}
 	return $classes;
 });
 

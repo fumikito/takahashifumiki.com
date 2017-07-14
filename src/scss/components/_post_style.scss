@@ -1,6 +1,9 @@
 @mixin post_style() {
   text-align: justify;
   text-justify: inter-ideograph;
+  .in-english-please &{
+    text-align: left;
+  }
   //本文
   font-size: 1.4em;
   @media only screen and (max-width: $screen-xs-max){
