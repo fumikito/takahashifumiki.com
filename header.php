@@ -64,7 +64,21 @@ if ( is_singular() && has_post_thumbnail( get_queried_object() ) ) {
 				<?php if ( is_front_page() ) : ?>
 					<?= get_avatar( 1, 128, '', '高橋文樹.com', [ 'class' => 'front-image-avatar' ] ) ?>
 				<?php else : ?>
-					<?= fumiki_single_title() ?>
+					<?php
+					if ( is_singular() ) {
+						echo fumiki_single_title();
+					} elseif ( is_category() || is_tax() || is_tag() ) {
+						$taxonomy = get_taxonomy( get_queried_object()->taxonomy );
+						echo esc_html( sprintf( '%s: %s', $taxonomy->label, get_queried_object()->name ) );
+					} elseif ( is_search() ) {
+						echo '検索結果';
+					} elseif ( is_404() ) {
+						echo 'Not Found';
+					} else {
+						the_archive_title();
+					}
+
+					?>
 				<?php endif; ?>
 			</h1>
 

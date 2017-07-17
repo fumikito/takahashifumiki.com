@@ -88,12 +88,6 @@ add_action( 'pre_amp_render_post', function () {
 </div>
 HTML;
 		$content = $ad.$content;
-		// サムネイル追加
-		if ( has_post_thumbnail() ) {
-			// Just add the raw <img /> tag; our sanitizer will take care of it later.
-			$image   = sprintf( '<p class="featured-image">%s</p>', get_the_post_thumbnail() );
-			$content = $image . $content;
-		}
 		// 記事の後の広告
 		$content .= <<<HTML
 <div class="amp-ad-container">
@@ -106,8 +100,6 @@ HTML;
 </amp-ad>
 </div>
 HTML;
-
-
 		return $content;
 	} );
 } );
