@@ -50,11 +50,21 @@
 <?php endif; ?>
 
 
-<div class="row">
+<div class="roaaw">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-0087037684083564"
+     data-ad-slot="5721553648"></ins>
+					<script>
+					     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
 	<script async
 src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
-style="display:block"
+style="display:block;background-color: #eee;"
 data-ad-format="autorelaxed" data-ad-client="ca-pub-0087037684083564"
 data-ad-slot="5721553648"></ins>
 <script>
