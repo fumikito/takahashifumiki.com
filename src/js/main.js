@@ -7,7 +7,11 @@
 
   $.material.init();
 
+
   jQuery(document).ready(function ($) {
+    // フォームの初期値を設定
+    var date = new Date();
+    $('input[name="MMERGE4"]').val( [ ('0' + date.getDate()).slice( -2 ), ( '0' + ( date.getMonth() + 1 ) ).slice(-2), date.getFullYear() ].join(' / ') );
     // クッキーをチェックして、ログインしてるか確認
     var $loggineBtn = $('#login-button');
     if (/fumikicustomer=1/.test(document.cookie)) {
