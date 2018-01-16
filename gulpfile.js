@@ -9,7 +9,9 @@ var gulp        = require('gulp'),
 gulp.task('sass', function () {
 
   return gulp.src(['./src/scss/**/*.scss'])
-    .pipe($.plumber())
+    .pipe($.plumber({
+      errorHandler: $.notify.onError('<%= error.message %>')
+    }))
     .pipe($.sassBulkImport())
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -31,12 +33,18 @@ gulp.task('sass', function () {
 // Minify All
 gulp.task('jsconcat', function () {
   return gulp.src(['./src/js/**/*.js'])
+    .pipe($.plumber({
+      errorHandler: $.notify.onError('<%= error.message %>')
+    }))
     .pipe($.sourcemaps.init({
       loadMaps: true
     }))
     .pipe($.include())
-    .pipe($.uglify())
-    .on('error', $.util.log)
+    .pipe($.uglify({
+      output:{
+        comments: /^!/
+      }
+    }))
     .pipe($.sourcemaps.write('./map'))
     .pipe(gulp.dest('./assets/js/'));
 });
@@ -103,11 +111,11 @@ gulp.task('imagemin', function () {
 // watch
 gulp.task('watch', function () {
   // Make SASS
-  gulp.watch('./src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/scss/**/*.scss', ['sass']);
   // Uglify all
-  gulp.watch(['./src/js/**/*.js'], ['js']);
+  gulp.watch(['src/js/**/*.js'], ['js']);
   // Minify Image
-  gulp.watch('./src/img/**/*', ['imagemin']);
+  gulp.watch('src/img/**/*', ['imagemin']);
 });
 
 // Build

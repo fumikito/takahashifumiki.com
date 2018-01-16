@@ -87,12 +87,12 @@
 							[
 								'facebook'     => 'https://www.facebook.com/TakahashiFumiki.Page',
 								'twitter'      => 'https://twitter.com/#!/takahashifumiki',
-								'google-plus'  => 'https://plus.google.com/108058172987021898722?rel=author',
 								'youtube-play' => 'https://www.youtube.com/user/takahashifumiki',
 								'github'       => 'https://github.com/fumikito',
-								'foursquare'   => 'https://ja.foursquare.com/takahashifumiki',
 								'instagram'    => 'http://listagr.am/n/takahashifumiki',
+								'google-plus'  => 'https://plus.google.com/108058172987021898722?rel=author',
 								'linkedin'     => 'http://www.linkedin.com/pub/' . rawurlencode( '文樹-高橋' ) . '/41/5b4/a54',
+								'pinterest'    => 'https://www.pinterest.jp/fumikit/',
 
 							] as $brand => $url
 						) : ?>

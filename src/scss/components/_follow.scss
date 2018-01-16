@@ -36,7 +36,7 @@
 
   &__div{
     float: left;
-    width: 50%;
+    width: 33.333333333%;
     height: 120px;
     @media only screen and (max-width: $screen-xs-max) {
       width: 100%;
@@ -49,8 +49,12 @@
     &--twitter{
       background: #55acee;
     }
+    &--youtube{
+      background: #FF0000;
+    }
   }
   &__button{
+    min-height: 53px;
     padding-top: 20px;
     text-align: center;
   }

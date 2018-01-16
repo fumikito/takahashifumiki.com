@@ -382,7 +382,7 @@
       }
       tr:nth-child(2n) td,
       tr:nth-child(2n) th {
-        background: $zebra-white;
+        background: #f0f0f0;
       }
     }
   }
@@ -436,8 +436,21 @@
   input[type=search],
   textarea {
     border: 1px solid #ddd;
+    background: #f9f9f9;
     border-radius: 3px;
     padding: 5px 10px;
     color: #444;
+  }
+
+  .form-group{
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=search],
+    textarea {
+      &:focus{
+        color: #fff;
+      }
+    }
   }
 }

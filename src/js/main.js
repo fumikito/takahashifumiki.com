@@ -90,7 +90,7 @@
       }
     });
     var $front = $('.front-widgets');
-    $front.trigger('masonry')
+    $front.trigger('masonry');
   });
 
   // Headroom
