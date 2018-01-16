@@ -446,11 +446,14 @@
     input[type=text],
     input[type=password],
     input[type=email],
-    input[type=search],
-    textarea {
+    input[type=search]{
       &:focus{
         color: #fff;
       }
+    }
+    textarea.form-control{
+      background: #f9f9f9;
+      border: 1px solid #ddd;
     }
   }
 }
