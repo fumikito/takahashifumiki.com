@@ -70,3 +70,16 @@ add_shortcode( 'mailchimp', function ( $atts = [], $contnet = '' ) {
         return trim( $line );
     }, explode( "\n", $form ) ) ) );
 } );
+
+
+/**
+ * Emebed popup
+ */
+add_action( 'wp_footer', function() {
+	if ( ! is_single() ) {
+		return;
+	}
+	?>
+	<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"9b5777bb4451fb83373411d34","lid":"bf9c92d04a"}) })</script>
+	<?php
+}, 999 );
