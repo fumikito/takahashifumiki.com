@@ -9,15 +9,35 @@
 
 
   jQuery(document).ready(function ($) {
-    // フォームの初期値を設定
-    var date = new Date();
-    $('input[name="MMERGE4"]').val( [ ('0' + date.getDate()).slice( -2 ), ( '0' + ( date.getMonth() + 1 ) ).slice(-2), date.getFullYear() ].join('/') );
+
     // クッキーをチェックして、ログインしてるか確認
     var $loggineBtn = $('#login-button');
     if (/fumikicustomer=1/.test(document.cookie)) {
       $('.account__logged-out').remove();
       $loggineBtn.attr('href', $loggineBtn.attr('data-href'));
     }
+
+    // メルマガフォームの登録
+    $('#mc_embed_signup form').submit(function(e){
+      try{
+        ga('send', {
+          hitType: 'pageview',
+          page: '/newsletter/submit',
+          title: 'ニュースレター購読申込完了'
+        });
+      }catch(err){}
+    });
+
+    // お問い合わせ完了/inquiry/complete/
+    $('form.wpcf7-form').on('wpcf7mailsent', function(){
+      try{
+        ga('send', {
+          hitType: 'pageview',
+          page: location.pathname + 'complete/',
+          title: document.title + '完了'
+        });
+      }catch(err){}
+    });
 
     // ブラーフィルターがないブラウザ
     if (/Firefox/.test(navigator.userAgent) || (/MSIE/.test(navigator.userAgent) && !(/MSIE (5|6|7|8|9)\.0/.test(navigator.userAgent)))) {
