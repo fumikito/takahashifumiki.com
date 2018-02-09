@@ -4,71 +4,22 @@ add_action( 'amp_post_template_head', function () {
 
 } );
 
-/**
- * AMPに要素を追加する
- */
-add_action( 'amp_post_template_footer', function () {
-	?>
-<footer class="amp-footer-content">
-	<p>&copy; 2008 Takahashi Fumiki</p>
-</footer>
-	<?php
-} );
 
 add_action( 'amp_post_template_css', function ( $amp_template ) {
 	// only CSS here please...
-	$url = get_stylesheet_directory_uri().'/styles/img/favicon/faviconx120.png';
-	echo <<<CSS
-nav.amp-wp-title-bar {
-	padding: 12px 0;
-	background: #fff;
-}
-nav.amp-wp-title-bar a {
-	background: transparent url( '{$url}' ) center 10px no-repeat;
-	background-size: 40px 40px;
-	display: block;
-	height: 20px;
-	padding-top: 45px;
-	width: 100%;
-	margin: 0 auto 10px;
-	color: #666;
-	text-align: center;
-	
-}
-.amp-wp-content{
-	color: #222;
-}
-.tmkm-amazon-view{
-	border-top: 3px double #ddd;
-	border-bottom: 3px double #ddd;
-	margin: 10px 0;
-	padding: 10px;
-	font-size :0.85em;
-}
-.tmkm-amazon-img amp-img{
-	margin: 0 auto;
-}
-.tmkm-amazon-view p{
-	margin: 0.25em 0;
-}
-.amp-footer-content{
-	text-align: center;
-	font-size: 12px;
-	color: #fff;
-	background: #252E34;
-	padding: 20px;
-}
-body{
-font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
-padding-bottom: 0;
-}
-.amp-ad-container{
-margin: 10px -16px;
-text-align: center;
-}
-CSS;
+	$css = get_stylesheet_directory() . '/assets/css/amp.css';
+	if ( file_exists( $css ) ) {
+		echo trim( preg_replace( '#/\*(.*?)\*/#', '', file_get_contents( $css ) ) );
+	}
 } );
 
+add_action( 'amp_post_template_data', function ( $data ) {
+	//デフォルト読み込みのフォントMerriweatherを削除
+	$data['font_urls'] = array(
+		'FontAwesome' => 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+	);
+	return $data;
+} );
 
 /**
  * 画像を追加する

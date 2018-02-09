@@ -43,7 +43,6 @@ spl_autoload_register( function ( $class_name ) {
 	}
 } );
 
-
 // Analyticsを登録
 \Fumiki\Service\Google\Analytics::get_instance( array(
 	'profile_id' => 'UA-5329295-4',

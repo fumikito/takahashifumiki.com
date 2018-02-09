@@ -1,0 +1,221 @@
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+$primary-color: #252E34;
+$amp-gap: 16px;
+%meta-title{
+  color: #888;
+  margin: 0 $amp-gap $amp-gap;
+  text-align: center;
+}
+
+
+//
+// body content
+// ----------------
+//
+.amp-wp-content{
+  color: #222;
+}
+
+//
+// Affiliate
+// ----------------
+//
+.tmkm-amazon{
+  &-view {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    p {
+      line-height: 1.1;
+      font-size: 0.85em;
+      margin: 0.5em 0;
+      span.label{
+        color: #888;
+        margin-right: 0.25em;
+        &:after{
+          content: ": ";
+        }
+      }
+      em{
+        color: #000;
+        font-style: normal;
+      }
+      &.tmkm-amazon-title {
+        margin-bottom: 1em;
+        font-weight: bold;
+        small{
+          margin-left: 0.5em;
+        }
+      }
+      &.vendor{
+        text-align: center;
+        font-size: 0.8em;
+      }
+    }
+  }
+  &-img amp-img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+//
+// Related posts
+// ------------
+//
+
+.amp-related{
+  &-posts{
+    margin-top: $amp-gap;
+    margin-bottom: $amp-gap;
+    padding: $amp-gap 0;
+  }
+  &-title{
+    @extend %meta-title;
+  }
+  &-item{
+    border-bottom: 1px solid #ccc;
+    h2 + & {
+      border-top: 1px solid #ccc;
+    }
+    &-link{
+      position: relative;
+      overflow: hidden;
+      display: block;
+      transition: background-color .3s linear, color .3s linear;
+      &:link, &:visited{
+        text-decoration: none;
+        background-color: #fff;
+      }
+      &:hover, &:active{
+        text-decoration: none;
+        background-color: #f9f9f9;
+      }
+      &:after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+      amp-img{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        max-width: 60px;
+        width: auto;
+        height: auto;
+      }
+    }
+    &-title{
+      display: block;
+      margin-right: 60px;
+      padding: $amp-gap;
+      small{
+        color: #888;
+        margin-left: 0.25em;
+      }
+    }
+  }
+}
+
+
+//
+// Read more
+// =======
+//
+.amp-read-more{
+  &-title{
+    @extend %meta-title;
+  }
+  &-lead{
+    margin: $amp-gap;
+    color: #666;
+    line-height: 1.2;
+    text-align: center;
+  }
+  &-link{
+    display: block;
+    padding: $amp-gap;
+    text-align: center;
+    transition: background-color .3s linear, color .3s linear;
+    border-width: 3px;
+    border-style: solid;
+    &:link, &:visited{
+      color: #fff;
+      text-decoration: none;
+    }
+    &:hover, &:active{
+      text-decoration: none;
+    }
+    @each $var in (
+      newsletter $primary-color,
+      facebook #3b5998,
+      twitter #1da1f2,
+      youtube #ff0000,
+    ){
+      $slug: nth($var, 1);
+      $color: nth($var, 2);
+      &-#{$slug} {
+        border-color: $color;
+        &:link, &:visited{
+          color: #fff;
+          background-color: $color;
+        }
+        &:hover, &:active{
+          background: #fff;
+          color: $color;
+        }
+      }
+    }
+  }
+  &-home{
+    display: block;
+    margin: $amp-gap * 2 $amp-gap;
+    padding: $amp-gap;
+    text-align: center;
+    border: 5px solid $primary-color;
+    &:link, &:visited{
+      color: $primary-color;
+      background-color: #fff;
+      text-decoration: none;
+    }
+    &:hover, &:active{
+      color: #fff;
+      background-color: $primary-color;
+    }
+  }
+}
+
+//
+// footer
+// ------------
+//
+.amp-footer-content{
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  background: $primary-color;
+  padding: 20px;
+  a:link, a:visited{
+    color: #fff;
+    text-decoration: underline;
+  }
+  a:hover, a:active{
+    color: yellow;
+    text-decoration: none;
+  }
+}
+
+//
+// Ad
+// ------------------
+//
+.amp-ad-container{
+  margin: 10px -16px;
+  text-align: center;
+}
+
+

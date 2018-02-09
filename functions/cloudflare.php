@@ -71,7 +71,7 @@ add_action( 'template_redirect', function () {
  *
  * @return array|mixed|object|WP_Error
  */
-function make_cf_request( $endpoint, $params = [ ], $method = 'GET' ) {
+function make_cf_request( $endpoint, $params = [], $method = 'GET' ) {
 	if ( ! defined( 'CF_MAIL' ) || ! defined( 'CF_TOKEN' ) || ! defined( 'CF_ZONE_ID' ) ) {
 		return new WP_Error( 500, 'No Credentials set.' );
 	}
@@ -141,15 +141,23 @@ function make_cf_request( $endpoint, $params = [ ], $method = 'GET' ) {
  * @return array|mixed|object|WP_Error
  */
 function purge_cf_cache( $post ) {
+	if ( WP_DEBUG ) {
+		return null;
+	}
 	$urls = [ home_url( '/' ) ];
 	if ( 'post' == $post->post_type ) {
 		$urls[] = get_permalink( $post );
-		foreach ( array_merge( get_the_category( $post->ID ), get_the_tags( $post->ID ) ) as $term ) {
-			$urls[] = get_term_link( $term, $term->taxonomy );
+		$categories = get_the_category( $post->ID );
+		if ( $categories && ! is_wp_error( $categories ) ) {
+			foreach ( array_merge( get_the_category( $post->ID ), get_the_tags( $post->ID ) ) as $term ) {
+				$urls[] = get_term_link( $term, $term->taxonomy );
+			}
 		}
 	}
 
-	$response = make_cf_request( '/zones/' . CF_ZONE_ID . '/purge_cache', [ 'files' => $urls ], 'DELETE' );
+	$response = make_cf_request( '/zones/' . CF_ZONE_ID . '/purge_cache', [
+		'files' => $urls,
+	], 'DELETE' );
 
 	if ( is_wp_error( $response ) ) {
 		return $response;

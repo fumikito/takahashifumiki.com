@@ -425,6 +425,13 @@
     margin: 0.25em 0 0;
   }
 
+  // iframe
+  iframe{
+    max-width: 100%;
+    //width: auto;
+    //height: auto;
+  }
+
   /*パスワード保護されていた場合*/
   .blocked form {
   }
