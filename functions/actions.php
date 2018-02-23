@@ -212,3 +212,18 @@ add_shortcode('flash','flash_converter');
 add_action('wp_head', function(){
     remove_action('wp_head','jetpack_og_tags');
 }, 1);
+
+/**
+ * Google Adsenseの自動広告タグを入れてみる
+ */
+add_action( 'wp_head', function() {
+	?>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-0087037684083564",
+            enable_page_level_ads: true
+        });
+	</script>
+	<?php
+} );
