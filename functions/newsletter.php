@@ -89,3 +89,19 @@ add_action( 'wp_footer', function() {
 	<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"9b5777bb4451fb83373411d34","lid":"bf9c92d04a"}) })</script>
 	<?php
 }, 999 );
+
+/**
+ * Short code for messenger
+ */
+add_shortcode( 'fb-messenger', function() {
+    return <<<HTML
+<div class="text-center">
+    <div class="fb-messengermessageus"
+         messenger_app_id="264573556888294"
+         page_id="240120469352376"
+         color="blue"
+         size="standard" >
+    </div>
+</div>
+HTML;
+} );

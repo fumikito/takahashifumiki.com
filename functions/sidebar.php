@@ -25,9 +25,9 @@ register_sidebar( array(
 /**
  * メニューを登録する
  */
-add_action( 'init', function (){
-	register_nav_menus(array(
+add_action( 'init', function () {
+	register_nav_menus( array(
+		'top-page'   => 'ヘッダー',
 		'main-pages' => 'フッター',
-		'top-page' => 'ヘッダー',
-	));
+	) );
 } );

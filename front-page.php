@@ -92,13 +92,6 @@
 								<?= number_format( $length ) . " (" . number_format( $length / $post_counts ) . "/1post)"; ?>
 							</td>
 						</tr>
-
-						<tr>
-							<th>はてブ</th>
-							<td class="mono">
-								<?= number_format( hatena_total_bookmark_count() ); ?>
-							</td>
-						</tr>
 						<tr>
 							<th>CMS</th>
 							<td class="mono">WordPress <?php global $wp_version;

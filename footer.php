@@ -26,55 +26,11 @@
 						</p>
 					</div>
 				</div><!-- //.footer-content -->
-
-				<div class="footer-content">
-					<h3 class="footer-title">
-						<i class="fa fa-envelope"></i>
-						お問い合わせ
-					</h3>
-					<p class="footer-contact">
-						執筆・Web制作のお仕事については<a href="<?php echo home_url( '/inquiry/', 'https' ); ?>">お問い合わせフォーム</a>よりご連絡下さい。
-						なるべく早くお返事します。
-						Facebookページのメッセージでもお返事致します。プロフィール画像をスキャンするか、
-						<a href="https://m.me/TakahashiFumiki.Page">リンクをクリック</a>してください。
-					</p>
-					<div class="text-center">
-						<div class="fb-messengermessageus"
-							 messenger_app_id="264573556888294"
-							 page_id="240120469352376"
-							 color="blue"
-							 size="standard" >
-						</div>
-					</div>
-				</div>
 			</div><!-- //.grid_4 -->
 
 
 			<div class="col-xs-12 col-md-4">
 
-				<div class="footer-content">
-
-					<h3 class="footer-title">
-						<i class="fa fa-globe"></i>
-						関連のあるサイト
-					</h3>
-					<ol class="nav nav-pills nav-stacked">
-						<?php foreach (
-							[
-								'破滅派 | オンライン文芸誌' => 'https://hametuha.com/doujin/detail/takahashi_fumiki/',
-								'株式会社破滅派'            => 'https://hametuha.co.jp/',
-								'ミニコミ誌販売サイト'      => 'https://minico.me',
-								'Amazon著者ページ'          => 'http://www.amazon.co.jp/%E9%AB%98%E6%A9%8B-%E6%96%87%E6%A8%B9/e/B004LU3VVK',
-							] as $label => $url
-						) : ?>
-							<li>
-								<a target="_blank" href="<?= $url ?>">
-									<?= esc_html( $label ) ?>
-								</a>
-							</li>
-						<?php endforeach; ?>
-					</ol>
-				</div>
 
 				<div class="footer-content">
 
@@ -104,31 +60,30 @@
 					</div>
 				</div>
 
-				<div class="footer-content hidden-xs hidden-sm">
-					<h3 class="footer-title">
-						<i class="fa fa-twitter"></i>
-						最近のつぶやき
-					</h3>
-					<?php if ( ( $tweet = get_twitter_timeline( 1 ) ) && is_array( $tweet ) ) : ?>
-						<?php foreach ( $tweet as $t ) : ?>
-							<blockquote class="footer-tweet">
-								<p><?php echo tweet_linkify( $t->text ); ?></p>
-								<p class="text-right">
-									<cite>
-										<a href="https://twitter.com/takahashifumiki/status/<?php echo $t->id_str; ?>"
-										   target="_blank">
-											<?php echo date( 'M jS Y(D) H:i', strtotime( $t->created_at ) ); ?>
-											&nbsp;
-										</a>
-									</cite>
-								</p>
-							</blockquote>
-							<?php break; endforeach; ?>
-					<?php else : ?>
-						つぶやきを取得できませんでした。
-					<?php endif; ?>
-				</div>
+                <div class="footer-content">
 
+                    <h3 class="footer-title">
+                        <i class="fa fa-link"></i>
+                        関連リンク
+                    </h3>
+                    <ol class="nav nav-pills nav-stacked">
+						<?php foreach (
+							[
+								'破滅派 | オンライン文芸誌' => 'https://hametuha.com/doujin/detail/takahashi_fumiki/',
+								'株式会社破滅派'            => 'https://hametuha.co.jp/',
+								'ミニコミ誌販売サイト'      => 'https://minico.me',
+								'Amazon著者ページ'          => 'https://www.amazon.co.jp/高橋-文樹/e/B004LU3VVK',
+								'WordPressニュース'         => 'https://capitalp.jp',
+							] as $label => $url
+						) : ?>
+                            <li>
+                                <a target="_blank" href="<?= $url ?>">
+									<?= esc_html( $label ) ?>
+                                </a>
+                            </li>
+						<?php endforeach; ?>
+                    </ol>
+                </div>
 			</div><!-- //.grid_4 -->
 
 
@@ -137,14 +92,55 @@
 				<div class="footer-content">
 
 					<h3 class="footer-title">
-						<i class="fa fa-info-circle"></i> お読みください
+						<i class="fa fa-amazon"></i> 高橋文樹先生の電子書籍
 					</h3>
 
-					<?php wp_nav_menu( [
-						'location'        => 'main-pages',
-						'container'       => 'nav',
-						'container_class' => 'footer-menu',
-					] ) ?>
+					<?php
+					$feed = hametuha_kdp();
+					shuffle( $feed );
+					?>
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+							<?php for ( $i = 0, $l = count( $feed ); $i < $l; $i++ ) : ?>
+                                <li data-target="#carousel-example-generic" data-slide-to="<?= $i ?>" class="<?= $i ? '' : 'active' ?>"></li>
+							<?php endfor ?>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+							<?php $counter = 0; foreach ( $feed as $item ) : ?>
+                                <a class="item<?= $counter ? '' : ' active' ?>" href="<?= esc_url( $item['url'] ) ?>">
+                                    <img src="<?= isset( $item['images']['medium'] ) ? $item['images']['medium'][0] : $item['image'] ?>"
+                                         alt="<?= esc_attr( $item['title'] ); ?>">
+                                    <div class="carousel-caption">
+										<?= esc_attr( $item['title'] ); ?>
+                                    </div>
+                                </a>
+								<?php $counter++; endforeach; ?>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+
+                    <p>
+                        <a class="btn btn-block btn-raised btn-link" target="_blank" rel="nofollow"
+                           href="http://www.amazon.co.jp/gp/search?ie=UTF8&camp=247&creative=1211&index=aps&keywords=%E9%AB%98%E6%A9%8B%E6%96%87%E6%A8%B9&linkCode=ur2&tag=takahashifumiki-22">
+                            <i class="fa fa-amazon"></i> Amazonで見る
+                        </a>
+                        <img
+                                src="https://ir-jp.amazon-adsystem.com/e/ir?t=hametuha-22&l=ur2&o=9" width="1" height="1" border="0" alt=""
+                                style="border:none !important; margin:0px !important;"/>
+                    </p>
 
 				</div>
 
